@@ -39,3 +39,5 @@
     Macula平台要求使用UTF-8的文件编码格式，可通过Eclipse -> Preference -> General -> Workspace 中，设定Text file encoding的方式设置项目环境为UTF-8编码。
     
     ![tutorials-eclipse-workspace.jpg](tutorials-eclipse-workspace.jpg "tutorials-eclipse-workspace.jpg")
+    
+    
