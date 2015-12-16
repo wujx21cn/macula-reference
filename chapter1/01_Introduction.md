@@ -11,7 +11,7 @@ Macula开发平台使用的开源技术有：
 *   Freemarker：Freemarker作为展示模版的优秀框架，可通过Macro宏、标签等 多种方式代理JSP，除了Freemarker的性能与JSP不相上下外，Freemarker模板可根据多种方式载入，如类路径、Web路径、文件路径等，这样Freemarker模版可以方便的打包到业务插件JAR中。
 *   JSON：当前数据的传输标准，除XML外，JSON以其轻巧、易读以及传输量小的优点，在Macula平台中，在Ajax领域，使用JSON作为数据交换格式。
 
-![技术架构图](tech-architecture.jpg)
+![技术架构图](tech-architecture.jpg "技术架构图")
 
 
 
