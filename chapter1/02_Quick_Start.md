@@ -145,4 +145,8 @@ Macula 平台的 DAO 层基于 Spring-Data-JPA（hibernate） 做了一些封装
 
 #### 2.9.2.1 Domain 定义
 
+Domain 的定义也是采用接口类和实现类的方式（业务系统中，可以接口与实现使用相同的类，简化开发的工作量），在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 接口类放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
+
+```package org.macula.uim.base.domain;```
+
 
