@@ -31,3 +31,4 @@
 
     准备运行时需要的数据库资源。
 另外，为了方便开发Freemarker模版等，可加入Freemarker IDE插件等，为了增强代码的健壮性，可加入FindBugs、CheckStyle等Eclipse插件。
+
