@@ -169,3 +169,28 @@ Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package
 
 实现类的示例：
 
+```@Entity
+@org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
+@Table(name = "MA_UIM_USER")
+public class JpaUIMUser extends AbstractAuditable<Long> implements User {
+
+	private static final long serialVersionUID = Version.value();
+
+	/** 用户名 */
+	@Column(name = "USER_NAME", length = 50, nullable = false, unique = true)
+	@Size(min = 3, max = 50)
+	private String userName;
+
+	/** 密码 */
+	@Column(name = "PASSWORD", length = 50, nullable = false)
+	@Size(min = 3, max = 50)
+	@JsonIgnore
+	@XStreamOmitField
+	private String password;
+
+	/** 用户类型 */
+	@Column(name = "USER_TYPE", length = 3, nullable = false)
+	@NotNull
+	private String userType;
+}```
+
