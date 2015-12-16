@@ -58,3 +58,4 @@
 
 导入方式为，选择File->Import->Maven->Existing Maven Projects的方式：
 
+![tutorials-maven-import.jpg](tutorials-maven-import.jpg "tutorials-maven-import.jpg")
