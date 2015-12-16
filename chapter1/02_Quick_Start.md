@@ -149,4 +149,16 @@ Domain 的定义也是采用接口类和实现类的方式（业务系统中，�
 
 ```package org.macula.uim.base.domain;```
 
+接口类示例：
 
+```public interface User {
+
+	/** 用户名 */
+	String getUserName();
+
+	/** 密码 */
+	String getPassword();
+
+	/** 用户类型 */
+	String getUserType();
+}```
