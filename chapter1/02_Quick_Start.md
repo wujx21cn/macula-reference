@@ -104,4 +104,17 @@
 
 ## 2.7 Webapp模块修改
 
+最终部署运行的模块是创建的war模块，在当前开发下，可通过拷贝macula-webapp下的src/resources和src/webapp目录下的所有文件，然后对相关文件进行修改的方式进行。
 
+* web.xml修改
+
+    可将web显示的名称修改为需要的业务系统名称
+    
+* macula.properties修改
+
+    需要修改应用的名称、应用实例的名称、CAS验证地址等信息。
+    
+* applicationContext-root.xml修改
+
+    该文件主要修改连接数据库的信息。
+通过修改上述文件后，即可完成项目的发布与部署。
