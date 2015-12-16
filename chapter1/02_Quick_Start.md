@@ -208,4 +208,7 @@ Repository 一般只需要增加一个接口类，并且继承 MaculaJpaReposito
 
 Repository 接口的示例如下：
 
+```
+public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLog, Long> {
+```
 
