@@ -75,3 +75,5 @@
 为创建一个pom模块的pom.xml，可以在向导中选择maven-archetype-site来创建。
 
 ![tutorials-maven-newwizard2.jpg](tutorials-maven-newwizard2.jpg "tutorials-maven-newwizard2.jpg")
+
+
