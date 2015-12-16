@@ -169,7 +169,8 @@ Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package
 
 实现类的示例：
 
-```@Entity
+```
+@Entity
 @org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
 @Table(name = "MA_UIM_USER")
 public class JpaUIMUser extends AbstractAuditable<Long> implements User {
@@ -192,7 +193,8 @@ public class JpaUIMUser extends AbstractAuditable<Long> implements User {
 	@Column(name = "USER_TYPE", length = 3, nullable = false)
 	@NotNull
 	private String userType;
-}```
+}
+```
 
 从实现类我们可以看到通过 annotation 加了数据库表和字段的定义，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如果指定了自动生成数据库表结构，那么可以自动生成对应的数据库表。
 
