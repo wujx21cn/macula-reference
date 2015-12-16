@@ -65,3 +65,9 @@
 通过这种方式，可导入macula平台的所有子模块。
 
 ## 2.4 新建业务项目
+
+通过Eclipse的新建Maven向导来创建新的业务工程项目。
+
+![tutorials-maven-newwizard.jpg](tutorials-maven-newwizard.jpg
+"tutorials-maven-newwizard.jpg")
+
