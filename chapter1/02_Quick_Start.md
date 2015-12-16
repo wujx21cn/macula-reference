@@ -17,7 +17,9 @@
 *   Maven-Eclipse插件
 
     Maven插件： http://download.eclipse.org/technology/m2e/releases
+    
     Maven-Wtp插件：在安装了上面的插件后，在Preference->Maven ->Discovery中，选择WTP插件安装。
+    
 *   svn-Eclipse插件
 
     SVN插件：http://subclipse.tigris.org/update_1.6.x/
