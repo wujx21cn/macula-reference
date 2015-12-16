@@ -94,4 +94,4 @@
 
 以macula-samples为例，可以看出最终创建的子模块如下图所示：
 
-
+![tutorials-maven-modules.jpg](tutorials-maven-modules.jpg "tutorials-maven-modules.jpg")
