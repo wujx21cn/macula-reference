@@ -163,3 +163,5 @@ Domain 的定义也是采用接口类和实现类的方式（业务系统中，�
 	String getUserType();
 }```
 
+Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
+
