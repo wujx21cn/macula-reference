@@ -143,4 +143,5 @@ http://learn.knockoutjs.com/
 
 Macula 平台的 DAO 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
 
+#### 2.9.2.1 Domain 定义
 
