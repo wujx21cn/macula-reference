@@ -167,3 +167,5 @@ Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package
 
 ```package org.macula.uim.base.domain.impl;```
 
+实现类的示例：
+
