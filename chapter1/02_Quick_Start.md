@@ -47,3 +47,5 @@
     通过Eclipse -> Preference -> Server -> Runtime Envionment选取增加Apache Tomcat6.0服务：   
     
     ![tutorials-eclipse-server.jpg](tutorials-eclipse-server.jpg "tutorials-eclipse-server.jpg")
+    
+    ![tutorials-eclipse-tomcat.jpg](tutorials-eclipse-tomcat.jpg "tutorials-eclipse-tomcat.jpg")    
