@@ -40,7 +40,7 @@
     
     ![tutorials-eclipse-workspace.jpg](tutorials-eclipse-workspace.jpg "tutorials-eclipse-workspace.jpg")
     
-* 服务器设置
+* **服务器设置**
 
     业务系统最终需要在J2EE容器中运行，这里选择Tomcat6.0作为服务器容器，在Eclipse中，需要进行相关配置。
 
