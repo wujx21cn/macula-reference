@@ -96,4 +96,8 @@
 
 ![tutorials-maven-modules.jpg](tutorials-maven-modules.jpg "tutorials-maven-modules.jpg")
 
+其创建过程为通过点击Modules下的Create按钮，逐一创建子模块。
+
+在创建子模块时，选择Parent-Project为上面创建的父模块。如创建macula-samples下的子模块macula-samples-demo时，需要选择macula-samples-parent作为Parent Project。
+
 
