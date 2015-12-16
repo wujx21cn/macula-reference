@@ -101,3 +101,5 @@
 在创建子模块时，选择Parent-Project为上面创建的父模块。如创建macula-samples下的子模块macula-samples-demo时，需要选择macula-samples-parent作为Parent Project。
 
 ![tutorials-maven-newmodule.jpg](tutorials-maven-newmodule.jpg "tutorials-maven-newmodule.jpg")
+
+
