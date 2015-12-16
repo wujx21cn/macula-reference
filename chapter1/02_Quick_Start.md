@@ -63,3 +63,5 @@
 ![tutorials-maven-import2.jpg](tutorials-maven-import2.jpg "tutorials-maven-import2.jpg")
 
 通过这种方式，可导入macula平台的所有子模块。
+
+## 2.4 新建业务项目
