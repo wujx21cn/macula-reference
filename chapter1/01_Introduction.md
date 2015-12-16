@@ -31,12 +31,12 @@ Macula开发平台使用的开源技术有：
 
 除了上述介绍的部分模块外，Macula平台还引入插件的机制，通过在项目开发中提炼出一些有用的插件，加入了Macula平台中来，从而使得Macula平台更具有生命力。
 
-![](case-architecture.jpg)
-
+![](case-architecture.jpg "技术架构图")
+  
 ## 1.3 部署运行
 Macula开发平台涉及的层面较广，包含了macula-uim的统一认证平台以及统一用户管理平台，macula-admin的应用系统管理平台，以及最终的应用系统webapp等。
 
 为了标识部署时的不同方式，下面按最常用的部署方式（包括数据库访问），构建macula运行部署图。
 
-
+![运行部署图](deploy-architecture.jpg "运行部署图")
 
