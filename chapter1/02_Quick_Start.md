@@ -138,3 +138,7 @@ KnockoutJS 教程
 http://learn.knockoutjs.com/
 
 该教程是假设开发人员已经获取到 Macula 平台的代码，并且配置好了 Eclipse 开发环境。教程从实际开发角度出发，一步步详细解释了整个开发过程。
+
+### 2.9.2 Domain 和 DAO 层
+
+
