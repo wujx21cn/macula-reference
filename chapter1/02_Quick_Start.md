@@ -68,12 +68,10 @@
 
 通过Eclipse的新建Maven向导来创建新的业务工程项目。
 
-![tutorials-maven-newwizard.jpg](tutorials-maven-newwizard.jpg
-"tutorials-maven-newwizard.jpg")
+![tutorials-maven-newwizard.jpg](tutorials-maven-newwizard.jpg "tutorials-maven-newwizard.jpg")
 
 在下一步中，可选择pom模块、jar模块或war，在新项目创建时，请选择pom模块的方式，创建项目根，其他模块以子模块的方式存在。
 
 为创建一个pom模块的pom.xml，可以在向导中选择maven-archetype-site来创建。
 
-![tutorials-maven-newwizard2.jpg](tutorials-maven-newwizard2.jpg
-"tutorials-maven-newwizard2.jpg")
+![tutorials-maven-newwizard2.jpg](tutorials-maven-newwizard2.jpg "tutorials-maven-newwizard2.jpg")
