@@ -657,3 +657,19 @@ $form.find('.cancel-btn').click(function() {
 });
 ```
 
+上面代码说明在点击取消按钮的时候，会调用 closeDialog 方法，这个方法是 Macula 框架提供的，会关闭弹出的对话框。
+
+**通过 Ajax 读取服务器端的数据示例代码**
+
+```
+var currentId = $form.attr('item-id');
+if (currentId) {
+	$.getJSON(base + '/admin/macula-uim/user/get/' + currentId,
+			function(data) {
+				ko.mapping.updateFromJS(viewModel, data.returnObject);
+				viewModel.rePassword = viewModel.password;
+				ko.applyBindings(viewModel, $content[0]);
+			});
+}
+```
+
