@@ -405,3 +405,17 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 </@layout.ajaxContent>
 ```
 
+页面部分用到了 JQuery 和 KnockoutJS 技术，两种技术结合到一起使用，看起来不太容易理解。下面从功能按钮部分开始，详细讲解一下相关内容。
+
+**功能按钮部分**
+
+看一下新增按钮在页面中的定义：
+
+```
+<button id="finder-add-action-${code}" type="button" class="btn btn-has-icon"
+	href="javascript:void(0);" target="dialog::{title: '新增用户', width:'650',height:'600'}"
+	url="admin/macula-uim/user/create">
+	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/btn_add.gif"/></i>新增用户</span></span>
+</button>
+```
+
