@@ -536,4 +536,10 @@ eventBindingElement.bind(Constants.data_arrive_event, function(e, data) {
 
 首先页面的下面需要有这段代码:
 
+```
+<@layout.content_foot>
+	<@layout.content_pager "${code}"/>
+</@layout.content_foot>
+```
+
 
