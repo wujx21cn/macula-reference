@@ -704,3 +704,5 @@ actionsViewModel.onDeleteAction = function(e) {
 };
 ```
 
+我们可以看到，该功能会先提示用户是否确认要删除，确认后会调用服务器端对应的处理。
+
