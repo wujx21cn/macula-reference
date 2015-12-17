@@ -356,3 +356,4 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 ${runtime.name}
 ${runtime.vmName}
 ```
+####2.9.5.2 AJAX JSON 方式
