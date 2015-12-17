@@ -91,3 +91,5 @@
 下面以macula开发平台下的包为例，介绍其他包内容的创建。
 
 除macula-webapp为war项目和macula-docs为文档说明构建项目定义为pom外，其他项目均定义成jar模块格式，通过Eclipse的maven向导可创建jar格式的maven模块。
+
+
