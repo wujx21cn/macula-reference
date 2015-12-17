@@ -730,4 +730,6 @@ target 的几个主要用法是：
 ```
 $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 ```
+用了 updateContents，方法很巧妙。
+
 
