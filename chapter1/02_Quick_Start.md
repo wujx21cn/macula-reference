@@ -516,3 +516,19 @@ Parts['search'].ajaxSubmit({
 });	
 ```
 
+上面代码中我们可以看到在服务端成功执行后返回数据时会触发一个 event，这个 event 会被绑定到一段 JS 代码，来完成页面上数据的刷新。实际代码如下：
+
+```
+eventBindingElement.bind(Constants.data_arrive_event, function(e, data) {
+	PageData.dataTotal = data.totalElements;
+	// 将列表数据赋给列表ViewModel
+	tableViewModel.content(data.content);
+	
+	if (data.content && data.content.length) {
+		Parts['nodata'].hideme();
+	} else {
+		Parts['nodata'].showme();
+	}
+})
+```
+
