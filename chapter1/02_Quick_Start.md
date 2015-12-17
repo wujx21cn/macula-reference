@@ -688,3 +688,19 @@ if (currentId) {
 </button>
 ```
 
+上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下
+
+```
+actionsViewModel.onDeleteAction = function(e) {
+	var row = actionsViewModel.selectedRow();
+	if (row != null && confirm('您确定要删除用户' + '【' + row.id + '】吗？')) {
+		$(e.currentTarget).attr('url',
+				'admin/macula-uim/user/delete/' + row.id);
+		return true;
+	}
+	e.stopPropagation();
+	Parts['refresh'].trigger('click');
+	return false;
+};
+```
+
