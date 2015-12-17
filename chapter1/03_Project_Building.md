@@ -112,5 +112,13 @@
 2. war模块目录结构
 
     war模块可通过maven-wtp插件，将war模块直接发布到Eclipse定义的Server中，对于war模块，除了具备jar模块的文档结构外，另外增加了src/main/webapp目录，该目录按标准的J2EE应用的目录格式和命名方式。特别的，对于main/webapp下的目录结构，也需要严格按照下列命名：
+    
+    * webapp/META-INF ：下面放置该模块的一些自描述信息。
+    
+    * webapp/resources ：该目录下放置静态内容信息，包括图片文件、javascript文件等。
+    
+    * webapp/WEB-INF ：该目录为标准的J2EE要求目录。
+    
+    
 
 
