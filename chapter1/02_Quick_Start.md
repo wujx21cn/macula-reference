@@ -916,3 +916,11 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 #### 2.9.6.5 如何做 Radio 输入功能
 
+Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应的数据值是直接保存到数据库中的，不需要做额外的转换处理。示例如下：
+
+```
+<input type="radio" name="user.sex" value="M" data-bind="checked: sex"/>男
+<input type="radio" name="user.sex" value="F" data-bind="checked: sex"/>女
+```
+
+
