@@ -315,4 +315,18 @@ public RuntimeSnapshot getRuntimeSnapshot() {
 }
 ```
 
+返回的数据在页面上会通过 AJAX 的方式获取到。
+
+因为大部分列表功能都是支持分页功能的，我们下面讲解一下怎样做支持分页的列表功能。
+
+因为Macula的数据读取是采用 AJAX 的方式处理的。所以我们针对这个列表功能要增加两个 controller 方法，一个是用来显示页面，采用了 Spring MVC 的方式；另一个是用来读取数据给 AJAX 请求。
+
+方法一示例：
+```
+@RequestMapping(value = "/user/list", method = RequestMethod.GET)
+public String list() {
+	return super.getRelativePath("/user/list");
+}
+```
+
 
