@@ -914,4 +914,5 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 如果没有那个 hidden 字段那我们选择 Checkbox 的值就无法保存到服务器端，主要是因为我们在 Domain 层定义的 enabled 属性是 Boolean 类型，而页面里的 Checkbox 可以是任意值，所以需要一点额外的转换处理。
 
+#### 2.9.6.5 如何做 Radio 输入功能
 
