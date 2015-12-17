@@ -564,3 +564,30 @@ Parts['pager'].maculapagination({
 public abstract class UIMController extends BaseController {
 ```
 
+而在其他 Controller 类中，只需要定义 admin/macula-uim 下面的 URL 部分就可以，示例代码如下：
+
+```
+@RequestMapping(value = "/user/create", method = RequestMethod.GET)
+public String create() {
+	return super.getRelativePath("/user/edit");
+}
+```
+
+上面的示例是对应 URL 请求 admin/macula-uim/user/create 到目录 src/main/resources/views/admin/macula-uim/users/ 下的 edit.ftl 文件。
+
+**edit.ftl 文件**
+
+这个文件定义了页面显示结构，主要分为下面几个部分：
+
+```
+<#assign code="edit-user" />
+<#assign title>
+	<#if id?exists>编辑xxx<#else>新增xxx</#if>
+</#assign>	
+<@layout.ajaxContent title=title scripts="admin/macula-uim/user/edit.js">
+	<@layout.content_main>	
+		页面内容
+	</@layout.content_main>
+</@layout.ajaxContent>
+```
+
