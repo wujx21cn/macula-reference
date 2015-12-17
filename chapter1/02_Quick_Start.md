@@ -272,3 +272,16 @@ src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 ```
 是用来设置需要扫描哪些 package。
 
+#### 2.9.4.1 Spring MVC 方式
+
+方法声明里需要有 org.springframework.ui.Model 参数，方法上面需要加上 annotation @RequestMapping，映射到 URL 请求，示例：
+
+```
+@RequestMapping(value = "/system/runtime", method = RequestMethod.GET)
+public String showSnapshot(Model model) {
+  …
+}
+```
+
+
+
