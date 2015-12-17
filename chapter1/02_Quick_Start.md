@@ -382,3 +382,26 @@ $(function() {
 	});
 });
 ```
+#### 2.9.5.3 List 页面
+
+List 页面主要分为3个部分，第一部分是上面的功能按钮部分，第二部分是中间的数据列表显示部分，第三部分是下面的分页处理部分。
+
+整个页面的结构是这样的：
+
+```
+<@layout.ajaxContent title="用户列表" scripts="admin/macula-uim/user/list.js">
+	<#assign code="user-list" />
+	<@layout.content_head>
+		功能按钮部分
+	</@layout.content_head>
+
+	<@layout.content_main>
+		数据列表显示部分
+	</@layout.content_main>
+
+<@layout.content_foot>  //分页处理部分，这部分基本都是一样的
+		<@layout.content_pager "${code}"/>
+</@layout.content_foot>
+</@layout.ajaxContent>
+```
+
