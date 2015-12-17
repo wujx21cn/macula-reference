@@ -283,5 +283,9 @@ public String showSnapshot(Model model) {
 }
 ```
 
+需要传递给页面的数据采用 model.addAttribute(“attributeName”, attributeObject); 的方式，在FreeMarker 页面上采用 ${attributeName.propertyName} 的方式访问。
+
+附：示例用到的 Java Bean 部分代码，下面的示例代码可能涉及这个 Bean：
+
 
 
