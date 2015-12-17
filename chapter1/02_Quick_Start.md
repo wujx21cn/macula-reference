@@ -812,4 +812,21 @@ var validator = $form.validate({
 });
 ```
 
+上面是把表单提交的处理绑定到一个方法，方式是采用 AJAX 的方式提交表单，然后根据提交结果显示不同信息。返回结果 data 是一个 JSON 对象，属性 data.success 是判断操作是否成功，说明操作完成而且没有抛出异常。如果有错误返回那 data.success 就是 false，通过 data.exceptionMessage 就可以显示出错误信息。
+
+下面我们再看一下服务器端的处理。
+
+Controller 的代码是：
+
+```
+@RequestMapping(value = "/user/savepassword", method = RequestMethod.POST)
+@OpenApi
+public Long savePassword(@RequestParam("username") String username, 
+						 @RequestParam("oldpassword") String oldPassword,
+						 @RequestParam("newpassword") String newPassword) {
+	
+	return userManagerService.changePassword(username, oldPassword, newPassword);
+}
+```
+
 
