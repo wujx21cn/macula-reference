@@ -642,3 +642,4 @@ var viewModel = ko.mapping.fromJS({
 	password : '',
 });
 ```
+
