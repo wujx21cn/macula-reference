@@ -445,3 +445,47 @@ actionsViewModel.onEditAction = function(e) {
 };
 ```
 
+**数据列表显示部分**
+
+这部分主要是定义表格结构和要显示的数据内容，采用了 KnockoutJS 的Model和View绑定技术。定义表格结构示例如下：
+
+```
+<table class="treeTable gridlist">
+	<thead>
+		<th>用户名</th>
+		<th>用户姓名</th>
+		<th>是否有效</th>
+		<th>用户类型 </th>
+		<th>用户来源</th>
+		<th>用户编号</th>
+		<th>所属组织</th>
+	</thead>
+	<tbody data-bind="template: { name: 'finder-data-tmpl-${code}' }" />					
+</table>
+```
+这个结构先是定义表头，然后是数据绑定设置。
+
+```
+<tbody data-bind="template: { name: 'finder-data-tmpl-${code}' }" />
+```
+
+这个是说明表格的数据是由 KnockoutJS 的模板绑定方式定义的，模板部分的定义示例如下：
+
+```
+<script id="finder-data-tmpl-${code}" type="text/x-jquery-tmpl">
+<#noparse>
+	{{each(i,row) content}}
+		<tr class="{{if i%2 == 0}}even{{else}}odd{{/if}}" data-bind="click: function(e) { onRowClick(e,row); }">
+			<td>${userRealName}</td>
+			<td>${userName}</td>
+			<td>${enabled}</td>
+			<td>${userType}</td>	
+			<td>${userFrom}</td>
+			<td>${userNo}</td>
+			<td>${orgCode}</td>
+		</tr>
+	{{/each}} 
+</#noparse>
+</script>
+```
+
