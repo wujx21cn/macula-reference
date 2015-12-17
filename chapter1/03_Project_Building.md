@@ -126,6 +126,10 @@
 
 1. java包（文件夹）的命名
     
+    java包（文件夹）必须以小写字母命名，同时按照模块名称建立父包，并按照用途可创建controller、domain、repository、service、util、support、vo子包，避免创建晦涩难懂的包名，加大系统的复杂度。
+
+2. 国际化文件
+
     
 
 
