@@ -910,4 +910,8 @@ VALUE：select name as label, id as code from ma_base_data_source
 <input type="checkbox" data-bind="checked: enabled" />
 ```
 
+页面上显示的是 Checkbox，它跟页面 model 中的 enabled 属性绑定，还有一个 hidden 字段也是跟 enabled 属性对应，而且定义它的 type 是 boolean。
+
+如果没有那个 hidden 字段那我们选择 Checkbox 的值就无法保存到服务器端，主要是因为我们在 Domain 层定义的 enabled 属性是 Boolean 类型，而页面里的 Checkbox 可以是任意值，所以需要一点额外的转换处理。
+
 
