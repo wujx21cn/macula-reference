@@ -925,4 +925,19 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 上面就实现了两个 Radio，都绑定页面 Model 上的 sex 属性，每个 Radio 对应的 Value 是不同的，根据选择不同在服务器端保存的值也不同。 (框架同时也提供了radiolist与checkboxlist可以使用，具体示例可以用关键字 checkboxlist或 radiolist 搜索 .ftl 文件)
 
+#### 2.9.6.6 使用日期输入控件
+
+我们框架采用了一个叫作 My97 的日期输入控件，控件的官方网址是：
+
+http://www.my97.net/
+
+这个控件的功能比较全面，我们常用的限定日期可选范围，比如在某一天以前，或者在页面上某个日期输入框的值以后等等。下面示例是有效日期和失效日期，是一个常见的日期处理功能。
+
+```
+<input type="text" id="effectiveDate" name="user.effectiveDate" data-bind="value: effectiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}'})"/>
+
+<input type="text" name="user.inactiveDate" data-bind="value: inactiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}',minDate:'#F{$dp.$D(\'effectiveDate\')}'})"/>
+                    
+```
+
 
