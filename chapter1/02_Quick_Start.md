@@ -711,6 +711,9 @@ actionsViewModel.onDeleteAction = function(e) {
 #### 2.9.6.1 调用 URL 刷新内容区域
 
 **1. 在 HTML 的 <A HREF 中使用**
-
+```
+<a href="JavaScript:void(0);" target="update" url="admin/macula-base/system/runtime/gc">触发内存回收</a>
+```
 
 **2. 在 JavaScript 代码中使用**
+
