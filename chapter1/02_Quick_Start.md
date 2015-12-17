@@ -287,5 +287,19 @@ public String showSnapshot(Model model) {
 
 附：示例用到的 Java Bean 部分代码，下面的示例代码可能涉及这个 Bean：
 
+```
+/**
+ * @return the name
+ */
+public String getName() {
+	return name;
+}
 
+/**
+ * @return the vmName
+ */
+public String getVmName() {
+	return vmName;
+}
+```
 
