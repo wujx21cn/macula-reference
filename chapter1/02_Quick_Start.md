@@ -345,3 +345,14 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 
 ###2.9.5 页面层
 
+页面部分有两个文件，一个是 .ftl 文件，另一个是 .js 文件，.ftl 文件是定义页面显示界面，.js 文件是 JavaScript 逻辑，用于实现数据的存取处理。在ftl文件中，通过scriptJs把javascript逻辑包含进来。
+
+####2.9.5.1 Spring MVC 方式
+
+只需要增加 .ftl 页面，在 .ftl 页面里采用 FreeMarker 的方式访问返回的数据。
+
+示例：
+```
+${runtime.name}
+${runtime.vmName}
+```
