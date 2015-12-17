@@ -940,4 +940,8 @@ http://www.my97.net/
                     
 ```
 
+上面第一个是有效日期，第二个是失效日期。
 
+我们可以看到 Wdate 用来区分这个是日期输入控件，有个 ${dateTimePattern} 是日期时间格式，这个是统一在 src/main/resources 目录下的 macula.properties 文件里定义的。
+
+在失效日期中，有个设置是 minDate:'#F{$dp.$D(\'effectiveDate\')}'，这个是限定这个日期值要大于有效日期的输入框的日期值。
