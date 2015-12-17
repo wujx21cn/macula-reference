@@ -623,3 +623,22 @@ public String create() {
 </div>
 ```
 
+里面要注意的是对于输入框的定义，有个数据绑定（data-bind）的处理，我们在下面 edit.js 里会说明。
+
+**edit.js 文件**
+
+这个文件主要是完成3项工作：
+
+1. 定义跟 edit.ftl 页面里对应的 model
+2. 绑定 edit.ftl 页面里对应的按钮操作
+3. 通过 Ajax 读取服务器端的数据
+
+**Model 定义方面示例代码是这样的**
+
+```
+var viewModel = ko.mapping.fromJS({
+	id : '',
+	userName : '',
+	password : '',
+});
+```
