@@ -591,3 +591,35 @@ public String create() {
 </@layout.ajaxContent>
 ```
 
+这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
+
+```
+<div id="page-${code}" class="tableform">
+<form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-uim/user/saveuser" method="post">
+<input type="hidden" name="user.id" data-bind="value: id" />
+<div class="division">
+	<table cellspacing="0" cellpadding="0" border="0">
+		<tbody>
+			<tr>
+				<th><label>用户名：</label></th>
+				<td><input type="text" name="user.userName" maxlength="50" data-bind="value: userName" validate="required:true,rangelength:[1,20]" style="width: 200px;" /></td>
+			</tr>
+			<tr>
+				<th><label>密码：</label></th>
+				<td><input type="password" name="user.password" id="password" maxlength="50" data-bind="value: password" validate="required:true,minlength:6" style="width: 200px;" /></td>
+			</tr>
+	</table>
+</div>
+<div class="table-action">
+	<button type="submit" class="btn btn-primary">
+		<span><span>保存</span></span>
+	</button>
+	<button type="button" class="btn btn-secondary cancel-btn">
+		<span><span>关闭</span></span>
+	</button>
+							
+</div>
+</form>		
+</div>
+```
+
