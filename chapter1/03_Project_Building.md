@@ -20,3 +20,49 @@
 
 在Macula开发平台中，macula-parent就是用来定义这些信息的，整个模块已有一个文件，即maven需要的pom.xml，在该文件中，定义了所使用的所有第三方包的信息，编译信息，模块发布信息等等。
 
+**例 3.1. macula-parent中唯一的文件pom.xml**
+
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.macula</groupId>
+
+    <artifactId>macula-parent</artifactId>
+
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Macula Framework Parent</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jdkLevel>1.6</jdkLevel>
+
+        <jvmargs>-XX:MaxPermSize=384m -Xms512m -Xmx1024m</jvmargs>
+
+        <hibernate.version>3.6.0.Final</hibernate.version>
+
+        <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+
+        <spring.version>3.0.5.RELEASE</spring.version>
+
+        <spring-data-jpa.version>1.0.0.M1</spring-data-jpa.version>
+
+        <spring-security.version>3.1.0.RC1</spring-security.version>
+
+        <casclient.version>3.2.1-SNAPSHOT</casclient.version>
+
+        <slf4j.version>1.6.1</slf4j.version>
+
+    </properties>
+
+    ...
+
+</project>
+```
