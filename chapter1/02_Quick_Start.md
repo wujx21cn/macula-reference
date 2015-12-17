@@ -329,4 +329,17 @@ public String list() {
 }
 ```
 
+这个方法是用来显示页面，页面文件是 src/main/resources 对应 /user/ 目录下的 list.ftl 文件。
+
+方法二示例：
+
+```
+@RequestMapping(value = "/user/users", method = RequestMethod.POST)
+@OpenApi
+public Page<JpaUIMUser> getUsers(Pageable pageable) {
+	return userManagerService.getAllUsers(pageable);
+}	
+```
+
+这个方法是获取到一页数据，并把数据返回，是直接返回 bean list 结果，到 AJAX 客户端会转成 JSON 格式。
 
