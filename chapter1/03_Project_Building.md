@@ -132,6 +132,8 @@
 
     国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-core的国际化文件必须放置在rseources/i18n/macula-core目录下，这样可避免文件的重名。
     
-3.     
+3. Spring配置文件
+
+    
 
 
