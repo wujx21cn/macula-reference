@@ -96,6 +96,8 @@
 
     在maven创建项目后，将创建目录：
     
+    
+    
 2. war模块目录结构
 
     war模块可通过maven-wtp插件，将war模块直接发布到Eclipse定义的Server中，对于war模块，除了具备jar模块的文档结构外，另外增加了src/main/webapp目录，该目录按标准的J2EE应用的目录格式和命名方式。特别的，对于main/webapp下的目录结构，也需要严格按照下列命名：
