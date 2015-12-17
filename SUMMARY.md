@@ -4,7 +4,7 @@
 * [Macula介绍](chapter1/chapter1.md)
    * [概述](chapter1/01_Introduction.md)
    * [快速开始](chapter1/02_Quick_Start.md)
-   * 项目构建
+   * [项目构建](chapter1/03_Project_Building.md)
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
    * [领域模型层](chapter2/02_Domain.md)
