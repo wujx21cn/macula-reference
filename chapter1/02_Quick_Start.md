@@ -881,4 +881,22 @@ NAME：语言
 VALUE：1:中文|2:英文
 ```
 
+上面就定义了一个下拉框的数据，是语言选择的，有两个数据，一个是中文，另一个是英文，对应的数据值分别是 1 和 2。
+
+**2.动态下拉框数据定义**
+
+```
+CODE：datasource_list
+NAME：数据源列表
+VALUE：select name as label, id as code from ma_base_data_source
+```
+
+上面例子定义了一个动态下拉框数据，关键是 VALUE 字段的 SQL 语句，需要有 code 和 label 两个字段名，以 as 的方式把其他字段名转为 code 和 label。
+
+在页面上使用示例如下：
+
+```
+<select name="user.locale" data-bind="options: $Param('language'), optionsText: 'label', optionsValue:'code', value: locale" />
+```
+
 
