@@ -727,5 +727,7 @@ target 的几个主要用法是：
 
 **2. 在 JavaScript 代码中使用**
 
-
+```
+$(document.body).updateContents(base + '/admin/macula-base/system/runtime');
+```
 
