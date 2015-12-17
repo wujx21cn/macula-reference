@@ -735,4 +735,48 @@ $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 
 #### 2.9.6.2 通过 jQuery 提交表单并获得返回结果
 
+做 Web 程序开发经常遇到的一个问题是提交表单后显示操作结果，按照传统做法是额外增加一个显示结果的 Web 页面，这个方法增加了开发工作量，而且额外增加了一个以后需要维护的文件。
 
+还有个常用的方法是继续使用当前的页面，把返回信息显示在当前页面表单的上方。但这样需要重新刷新当前页面，而且还要把已经输入的各个数据重新放置到各输入框中，对于一些复杂的像下拉框输入，还要涉及重新取下拉框数据，实现比较麻烦而且对性能有影响。
+
+我们可以用 jQuery 来实现这个处理，并且根据提交的返回信息直接在页面端用 JavaScript 显示出来，不需要刷新页面，也不需要增加额外的文件，很方便。下面我就讲解一下实现方法。
+
+下面这个例子是用于实现修改密码的功能，用户输入旧密码和新密码后提交，服务器端要判断旧密码是否跟数据库中的一致，如果不一致就显示错误信息。如果没有错误信息返回就说明修改成功，页面就显示修改成功的信息。
+
+先看 .ftl 页面文件对表单的定义：
+
+```
+<form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post">
+	<div class="division">
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody>
+				<tr>
+					<th><label>用户名：</label></th>
+					<td><input type="text" name="username" maxlength="50" validate="required:true,rangelength:[1,20]" style="width: 200px;" /></td>
+				</tr>
+				<tr>
+					<th><label>旧密码：</label></th>
+					<td><input type="password" name="oldpassword" maxlength="50" validate="required:true,minlength:6" style="width: 200px;" /></td>
+				</tr>
+				<tr>
+					<th><label>新密码：</label></th>
+					<td><input type="password" name="newpassword" id="newpassword" maxlength="50" validate="required:true,minlength:6" style="width: 200px;" /></td>
+				</tr>
+				<tr>
+					<th><label>再次输入新密码：</label></th>
+					<td><input type="password" name="reNewpassword" maxlength="50" validate="required:true,minlength:6,equalTo:'#newpassword'" style="width: 200px;" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="table-action">
+		<button type="submit" class="btn btn-primary">
+			<span><span>保存</span></span>
+		</button>
+		<button type="button" class="btn btn-secondary cancel-btn">
+			<span><span>关闭</span></span>
+		</button>
+	</div>			
+</form>
+```
