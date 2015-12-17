@@ -506,3 +506,13 @@ ko.applyBindings(tableViewModel, $('#finder-list-user-list'));
 
 读取数据的逻辑示例如下：
 
+```
+Parts['search'].ajaxSubmit({
+	url	: base + '/admin/macula-uim/user/users',
+	dataType : 'json',
+	success	: function(data) {
+		eventBindingElement.trigger(Constants.data_arrive_event, [data]);
+	}
+});	
+```
+
