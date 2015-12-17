@@ -899,4 +899,6 @@ VALUE：select name as label, id as code from ma_base_data_source
 <select name="user.locale" data-bind="options: $Param('language'), optionsText: 'label', optionsValue:'code', value: locale" />
 ```
 
+页面使用方法对于常量数据和动态数据都是一样的，采用 data-bind 的方式用 $Param 把下拉框数据填充到下拉框里。
+
 
