@@ -255,3 +255,20 @@ private UIMUserRepository uimUserRepository;
 private UserManagerService userManagerService;
 ```
 
+Autowired 来帮助我们把 Service 注入到 Controller 中，我们可以在 Controller 直接使用 Service 的各种接口，不需要考虑实例化的处理。
+
+**新增加的 Controller 类需要注意的问题**
+
+要在类声明上面加上 annotation @Controller，这个很重要，是让我们框架能自动识别这个类是 Controller 类，如果不加就会出问题。
+
+这部分自动扫描 Controller 的配置是在各资源包的这个文件中
+
+src/main/resources/META-INF/spring/macula-xxx-servlet.xml
+
+里面有一行：
+
+```
+<context:component-scan base-package="org.macula.admin.**.controller" />
+```
+是用来设置需要扫描哪些 package。
+
