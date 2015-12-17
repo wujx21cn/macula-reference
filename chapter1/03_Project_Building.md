@@ -143,6 +143,7 @@
     
     Freemarker文件放置在resources/views目录下，并按模块名称创建子目录。
 
+## 3.4 自定义目录
 
 
 
