@@ -676,3 +676,15 @@ if (currentId) {
 上面代码使用了 JQuery 技术向服务器端发起请求，并以 JSON 的方式接收服务器端返回的数据，服务器端一般以 bean 或者 bean list 的方式返回数据，JQuery 会自动转成 JSON 格式，方便页面上使用。
 
 #### 2.9.5.5 删除功能
+
+删除功能一般是直接在 list 页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。
+
+我们先看一下 list 页面上对于删除功能按钮的定义
+
+```
+<button id="finder-delete-action-${code}" type="button" class="btn btn-has-icon" data-bind="click: onDeleteAction, enable: onDeleteEnable"
+	href="javascript:void(0);" target="command">
+	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/delete.gif"/></i>删除</span></span>
+</button>
+```
+
