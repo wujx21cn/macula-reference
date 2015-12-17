@@ -134,6 +134,10 @@
     
 3. Spring配置文件
 
+    对Spring的配置文件，必须放置在resources/META-INF/spring目录下，并在命名上按下列要求命名：
+    
+    * 应用层的命名：按照macula-模块名称-app.xml的方式命名。
+    * Servlet层的命名：按照macula-模块名-servlet.xml的方式命名。
     
 
 
