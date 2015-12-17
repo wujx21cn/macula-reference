@@ -365,3 +365,20 @@ ${runtime.vmName}
 <span data-bind="text: name"></span>
 <span data-bind="text: vmName"><span>
 ```
+.js 文件示例：
+```
+$(function() {
+	var code = 'system-runtime';
+
+	var viewModel = ko.mapping.fromJS({
+		name : '',
+		vmName : '',
+	});
+
+	ko.applyBindings(viewModel);
+			
+	$.getJSON(base + '/admin/macula-base/system/runtime/get', function(data) {
+		ko.mapping.updateFromJS(viewModel, data.returnObject);
+	});
+});
+```
