@@ -343,3 +343,5 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 
 这个方法是获取到一页数据，并把数据返回，是直接返回 bean list 结果，到 AJAX 客户端会转成 JSON 格式。
 
+###2.9.5 页面层
+
