@@ -10,3 +10,6 @@
 
 ![macula-svn-path.jpg](macula-svn-path.jpg "macula-svn-path.jpg")
 
+对项目的开发代码，主要在trunk中开发，在项目开发发布版本后，将通过标签以及branches的方式，记录历史版本，具体的svn操作信息请查看svn的使用指南，这里仅介绍基本的代码结构规划。
+
+
