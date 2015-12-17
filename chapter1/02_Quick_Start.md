@@ -651,3 +651,9 @@ data-bind="value: userName"
 
 绑定页面按钮操作示例代码
 
+```
+$form.find('.cancel-btn').click(function() {
+	$(this).trigger('closeDialog');
+});
+```
+
