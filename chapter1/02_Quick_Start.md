@@ -873,3 +873,12 @@ public Long changePassword(String username, String oldPassword, String newPasswo
 
 示例分别如下：
 
+**1.常量下拉框数据定义**
+
+```
+CODE：language
+NAME：语言
+VALUE：1:中文|2:英文
+```
+
+
