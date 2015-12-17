@@ -224,4 +224,24 @@ public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLo
 ```
 Page<JpaUIMUser> getAllUsers(Pageable pageable); 
 ```
+然后在 Service 实现类中增加实现方法，示例如下：
+```
+@Override
+public Page<JpaUIMUser> getAllUsers(Pageable pageable) {
+	return uimUserRepository.findAll(pageable);
+}
+```
+上面示例实现的是list方法，list一般需要支持分页功能。
 
+该实现方法调用了 DAO 层的对应方法，这个方法是已经存在的，只要 UIMUserRepository 是按照 Macula 框架标准定义的就可以。
+
+DAO 层的注入使用Spring的注入annotation，示例如下：
+```
+@Autowired
+private UIMUserRepository uimUserRepository;	
+```
+根据一定的命名规则，Macula 就可以自动完成 Repository 实例的注入，我们不需要考虑实例化的处理。
+
+**新增加 Service 类需要注意的问题**
+
+增加 Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。
