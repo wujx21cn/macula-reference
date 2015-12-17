@@ -643,3 +643,11 @@ var viewModel = ko.mapping.fromJS({
 });
 ```
 
+页面里输入框通过这个方式跟 model 绑定起来
+
+data-bind="value: userName"
+
+绑定后我们在 JavaScript 代码中修改 userName 值的时候，页面中输入框的值也会跟着变化（这是使用了 KnockoutJS 的技术）。
+
+绑定页面按钮操作示例代码
+
