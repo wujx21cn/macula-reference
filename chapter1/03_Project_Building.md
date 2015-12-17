@@ -138,6 +138,9 @@
     
     * 应用层的命名：按照macula-模块名称-app.xml的方式命名。
     * Servlet层的命名：按照macula-模块名-servlet.xml的方式命名。
+
+4. Freemarker文件
+    
     
 
 
