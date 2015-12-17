@@ -66,3 +66,24 @@
 
 </project>
 ```
+
+在macula-parent的maven设置中，指定了maven第三方包获取点：
+
+```
+<repositories>
+
+    <repository>
+
+        <id>macula-repo</id>
+
+        <name>macula-repo</name>
+
+        <url>http://maven.infinitus.com.cn:8081/nexus/content/groups/public</url>
+
+    </repository>
+
+</repositories>
+
+```
+
+
