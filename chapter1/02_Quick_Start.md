@@ -715,5 +715,17 @@ actionsViewModel.onDeleteAction = function(e) {
 <a href="JavaScript:void(0);" target="update" url="admin/macula-base/system/runtime/gc">触发内存回收</a>
 ```
 
+关键是 target 的使用，Macula 的 UI 框架能够根据 target 做不同处理。
+
+target 的几个主要用法是：
+
+* _blank 和 blank，这是新开浏览器窗口；
+* menu 是以菜单的方式打开；
+* dialog 是以 DIV 对话框的方式打开；
+* update 是更新页面上某一个部分的内容；
+* replace 是替换某部分内容 。
+
 **2. 在 JavaScript 代码中使用**
+
+
 
