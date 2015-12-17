@@ -733,3 +733,6 @@ $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 用了 updateContents，方法很巧妙。
 
 
+#### 2.9.6.2 通过 jQuery 提交表单并获得返回结果
+
+
