@@ -706,3 +706,8 @@ actionsViewModel.onDeleteAction = function(e) {
 
 我们可以看到，该功能会先提示用户是否确认要删除，确认后会调用服务器端对应的处理。
 
+### 2.9.6 开发技巧汇总
+
+#### 2.9.6.1 调用 URL 刷新内容区域
+
+**1. 在 HTML 的 <A HREF 中使用**
