@@ -559,4 +559,8 @@ Parts['pager'].maculapagination({
 
 /admin/macula 目录是由 macula-uim-admin 资源包里的基本 Controller 类 UIMController 定义的，其他的 Controller 类都是继承了 UIMController，对应的定义代码如下：
 
+```
+@RequestMapping("admin/macula-uim")
+public abstract class UIMController extends BaseController {
+```
 
