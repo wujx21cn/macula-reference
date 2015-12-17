@@ -218,3 +218,10 @@ public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLo
 如果常用的 DAO 操作不够用，可以定义特殊的 Repository 接口类，增加我们需要的方法，并增加相应的实现类。（这里涉及到一个Repository扫描的定义）
 
 ### 2.9.3 Service 层
+我们需要在 Service 层提供常用的方法，比如 list、save、delete 等。
+
+首先在 Service 接口类中增加方法定义，示例如下：
+```
+Page<JpaUIMUser> getAllUsers(Pageable pageable); 
+```
+
