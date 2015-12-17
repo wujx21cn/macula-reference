@@ -829,4 +829,34 @@ public Long savePassword(@RequestParam("username") String username,
 }
 ```
 
+这个看起来很简单，调用了 Service 的一个方法。
+
+再看 Service 代码：
+
+```
+@Override
+@Transactional
+public Long changePassword(String username, String oldPassword, String newPassword)
+{
+	JpaUIMUser user = uimUserRepository.findByUserName(username);
+	
+	if (user == null)
+	{
+		throw new UIMException("macula.uim.user.changePwds.invalidUserName");
+	}
+	
+	//if the old password is different from the submitted password, will throw an exception
+	if ( !user.getPassword().equals(getPasswordEncoder().encodePassword(oldPassword,null)) )
+	{
+		throw new UIMException("macula.uim.user.changePwds.invalidOldPassword");
+	}
+	
+	user.setPassword(getPasswordEncoder().encodePassword(newPassword, null));
+	
+	uimUserRepository.save(user);
+	
+	return user.getId();
+}
+```
+
 
