@@ -216,3 +216,5 @@ Repository 接口的示例如下：
 public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLog, Long> {
 ```
 如果常用的 DAO 操作不够用，可以定义特殊的 Repository 接口类，增加我们需要的方法，并增加相应的实现类。（这里涉及到一个Repository扫描的定义）
+
+### 2.9.3 Service 层
