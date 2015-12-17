@@ -533,3 +533,7 @@ eventBindingElement.bind(Constants.data_arrive_event, function(e, data) {
 ```
 
 **分页处理部分**
+
+首先页面的下面需要有这段代码:
+
+
