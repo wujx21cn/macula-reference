@@ -245,3 +245,5 @@ private UIMUserRepository uimUserRepository;
 **新增加 Service 类需要注意的问题**
 
 增加 Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。
+
+### 2.9.4 Controller 层
