@@ -901,4 +901,13 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 页面使用方法对于常量数据和动态数据都是一样的，采用 data-bind 的方式用 $Param 把下拉框数据填充到下拉框里。
 
+#### 2.9.6.4 如何做 Checkbox 输入功能
+
+用我们框架实现Checkbox 功能有点小技巧，需要用到额外的一个 hidden 字段用于保存 Checkbox 的值。实现示例如下：
+
+```
+<input type="hidden" name="user.enabled" data-bind="value: enabled, type: 'boolean' " />
+<input type="checkbox" data-bind="checked: enabled" />
+```
+
 
