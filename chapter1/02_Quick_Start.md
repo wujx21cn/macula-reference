@@ -781,4 +781,33 @@ $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 </form>
 ```
 
+上面定义了一个表格样子的 form。
 
+然后看一下 .js 文件的内容：
+
+```
+var $content = $('#page-' + code);
+var $form = $content.find('form:first');
+$.metadata.setType('attr', 'validate');
+var validator = $form.validate({
+	submitHandler : function(form) {
+		$(form).ajaxSubmit(
+				{
+					success : function(data) {
+						if (data.success) {
+							MessageBox.info('保存成功!', true);
+						} else {
+							var errors = {};
+							$(data.validateErrors).each(function() {
+								errors[this.element] = this.message;
+							});
+							validator.showErrors(errors);
+							if( data.exceptionMessage ) {
+								MessageBox.info ('【错误】' + data.exceptionMessage, true);
+							}
+						}
+					}
+				});
+	}
+});
+```
