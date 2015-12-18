@@ -328,4 +328,10 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 ## 4.3 JPA配置
 
+在Macula平台中，对数据存取的访问要求采用符合J2EE标准的JPA的方式，默认情况下使用JPA的Hibernate实现。
 
+1. JPA的persistence.xml文件配置
+    
+    在基于macula的项目中，可以不需要配置persistence.xml文件
+
+2. 
