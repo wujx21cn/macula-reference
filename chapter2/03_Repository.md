@@ -45,3 +45,4 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 这里ApplicationRepository通过继承JpaRepository，并通过指定泛型<JpaApplication,Long>来标识JpaRepository的操作对象，即完成了Application领域模型的基本存取接口定义。
 
 对于增加的findByAppId接口定义，将在下一节介绍。
+
