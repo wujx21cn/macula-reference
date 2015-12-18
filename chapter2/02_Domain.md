@@ -16,4 +16,8 @@
     
 * 主键类型定义为Long
     
+    在无特殊要求的情况下，尽量将主键定义为Long型，并继承AbstractPersistable
+
+* 主键关联与映射
+
     
