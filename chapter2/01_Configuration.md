@@ -390,8 +390,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     freemarker.properties文件在演示的模块中，定义了：
     ```
-    
+    auto_import="/spring.ftl" as spring, "/macula.ftl" as macula, "/layout.ftl" as layout    
     ```
+    
     
 
     
