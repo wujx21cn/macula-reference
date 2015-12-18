@@ -93,7 +93,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 除开已有的JpaRepository中已有的接口定义不需要再编写实现类外，对于查询部分接口，也同样不需要编写实现，但需要查询方法定义名称定义符合一定的规范。
 
-例 6.4. 根据findBy后面的属性名查询：
+**例 6.4. 根据findBy后面的属性名查询：**
 
 ```
 public List<Person> findByLastname(String lastname);
@@ -102,24 +102,26 @@ public List<Person> findByLastname(String lastname);
 该方法标识采用Lastname属性查询Person列表，lastname的属性值为参数。
 
 
-例 6.5. 根据findBy后的属性名分页、排序查询：
+**例 6.5. 根据findBy后的属性名分页、排序查询：**
 
 ```
 public Page<User> findByLastname(String lastname, Pageable pageable);
 public List<User> findByLastname(String lastname, Sort sort);     
 ```
 
-例 6.6. 根据findBy后的多个属性查询：
+**例 6.6. 根据findBy后的多个属性查询：**
 
 ```
 public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
 ```
 
-例 6.7. 根据findBy后的属性的子属性查询：
+**例 6.7. 根据findBy后的属性的子属性查询：**
 
 ```
 public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 ```
 
 该方法通过address.zipCode来查询Persion对象列表
+
+**表 6.1. 支持的属性之间的连接关键字**
 
