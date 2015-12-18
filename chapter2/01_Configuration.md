@@ -277,5 +277,20 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     在web.xml中定义：
     
+    ```
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/configs/servletContext-mvc.xml,classpath:/configs/servletContext-app.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    ```
 
