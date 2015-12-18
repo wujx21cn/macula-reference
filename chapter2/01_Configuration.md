@@ -371,5 +371,12 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 3. JPA部分参数设置
 
+    在JPA的运行中有多个参数可以配置，一般情况下，采用的Hibernate的JPA实现，那么Hibernate中可用的参数，都可以通过配置的方式，配置在EntityManagerFactoryBean的配置中，这里主要介绍2个有用的配置：
+    
+    * showSql：是否输出SQL语句
+    * generateDdl：是否输出建表语句（更新表结构语句）
+    
+    ***重要***
+    
     
     
