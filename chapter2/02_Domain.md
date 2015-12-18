@@ -79,7 +79,10 @@
 
 * AbstractAuditable：用来标识领域模型是可审计的，即增加了审计的四个字段。
 
-* 
+* AuditChanged：用来记录变更的数据日志。
+
+ 
+
 
 
 
