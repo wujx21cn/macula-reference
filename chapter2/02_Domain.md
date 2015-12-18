@@ -28,3 +28,15 @@
 
 在使用AbstractAuditable是，需要注意映射表字段的关系：
 
+* createdBy：创建人，通常只在数据新增时写入，映射字段为CREATED_BY，该字段一般情况下不能修改，记录数据创建人。
+
+* createdDate：创建时间，与createBy相同，映射字段为CREATED_DATE，记录数据创建时间。
+
+* lastModifiedBy：最后更新人，通常在数据新增和修改时变化，映射字段为LAST_MODIFIED_BY，记录数据最后更新人。
+
+* lastModifiedDate：最后更新时间，与lastModifiedBy相同，映射字段为LAST_MODIFIED_DATE，用来记录数据最后更新时间。
+
+
+
+
+
