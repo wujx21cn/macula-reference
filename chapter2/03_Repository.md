@@ -51,3 +51,5 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 为了能在Spring-Data的基础上具有一定的扩展性，Macula平台基于JpaRepository定义了MaculaJpaRepository接口，并增加了getEntityManager等方法，用来提高JpaRepository的可操作性。
 
+***重要***
+
