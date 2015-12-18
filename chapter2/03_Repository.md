@@ -73,4 +73,12 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 *请注意这里的配置与Spring-Data中介绍的一样，但factory-class请使用macula平台编写的FactoryBean，它主要完成了在自定义接口与实现时，如果使用了@Transactional或EntityManager对象，将会使用配置中的transaction-manager-ref与entity-manager-factory-ref配置的Bean作为注入，这样可保证自定义接口与原接口使用相同的jpa entityManager与事务处理。*
 
 对于这里定义的repository命名中，各属性值的说明如下：
+* base-package：指明扫描时的目录，可以允许通过**的方式，定义匹配的目录。这里请在实际使用中，使包的扫描范围尽量精确，以加快扫描进度以及减少不必要的Spring Bean扫描。
 
+* entity-manager-factory-ref：这里指明JpaRepository以及自定义接口中所使用的JPA EntityManagerFactory Bean的名字，通过这里的定义，可实现在多个JPA EntityManagerFactory Bean定义的情况下，引入正确的Bean实例。
+
+* transaction-manager-ref：该属性指明在JpaRepository与自定义接口中，使用到了@Trasactional注解时，所使用的事务。在JpaRepository中，已经存在了定义的@Transactional注解的接口，所以为了避免在定义了多个TransactionManager的情况下，能正确引入响应的事务处理Bean，可通过该属性来定义。
+
+* factory-class：可以看到，这里我们只定义了需要的接口，而不需要编写实现，而通过接口转化为Spring可识别的Bean，采用了Spring的FactoryBean（Bean工厂）的模式，所以需要定义一个用来生成Bean实例的工厂Class，这里，已经由Macula框架完成了该Bean工厂的实现，即org.macula.core.repository.MaculaJpaRepositoryFactoryBean，该Bean扩展自Spring-Data对应的Bean工厂，如有兴趣可继续查看Spring-Data的实现。
+
+* 
