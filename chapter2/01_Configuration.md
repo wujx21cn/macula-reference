@@ -385,6 +385,13 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 在Macula平台中，Freemarker作为界面显示层的重要组成部分，在界面的显示上，均可采用Freemarker模板作为显示界面。对于Freemarker的设置，主要有2个部分：
 
 * freemarker.properties
-* 
+
+    该文件位于war模块的resources根目录，文件内容包括了可配置的Freemarker的属性。（具体的可配置属性，请参考Freemarker文档）
+
+    freemarker.properties文件在演示的模块中，定义了：
+    
+    
+
+    
 
     
