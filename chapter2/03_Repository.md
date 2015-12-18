@@ -246,3 +246,5 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
 对于接口的实现类名，有一定的规则，默认情况下，使用接口类名+Impl的方式命名实现类，才可以通过定义自动检测到，在macula平台开发下，强制要求按这个命名规则命名。
 
+
+## 6.6 自定义接口中的EntityManager和TransactionManager
