@@ -317,4 +317,6 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     *应用代码必须严格按照上述代码定义。*
     
+7. configs/applicationContext-macula.xml
+    
     
