@@ -273,4 +273,4 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
     
 * 自定义实现中的@Transactional，可直接定义在接口中，但在@Transactional的定义中，不要指定transactional使用的TrasactionManager的名称，道理和使用EntityManager相同，都由Macula平台的factory-class来统一处理。
 
-
+对于Repository层的开发，这里主要介绍了macula平台在Spring-Data下做出的扩展，更多的示例可参考macula平台提供的插件模块和示例模块，对于Spring-Data自身提供的功能，可以查看Spring-Data的官方文档。
