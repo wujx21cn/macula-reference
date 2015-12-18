@@ -58,3 +58,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 ## 6.3 Spring自动扫描
 
+通过Spring-Data的自定义命名空间，可将上述的JpaRepository定义的接口直接转化为spring bean，而不需要编写实际的实现类。
+
+例 6.3. Macula平台下定制的Repository -Factory实例：
+
