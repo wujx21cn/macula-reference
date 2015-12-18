@@ -294,3 +294,6 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     </servlet-mapping>
     ```
 
+    ***重要***
+    
+    应用必须严格按照上述代码定义。
