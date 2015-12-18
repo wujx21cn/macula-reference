@@ -104,4 +104,9 @@ public List<Person> findByLastname(String lastname);
 
 例 6.5. 根据findBy后的属性名分页、排序查询：
 
+```
+public Page<User> findByLastname(String lastname, Pageable pageable);
+public List<User> findByLastname(String lastname, Sort sort);     
+```
+
 
