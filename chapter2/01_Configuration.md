@@ -260,5 +260,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     *该扫描Configuraion配置信息Bean的配置不允许修改。*
     
+5. configs/applicationContext-app.xml
     
     
+6. 
