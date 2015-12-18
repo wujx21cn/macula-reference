@@ -262,5 +262,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 5. configs/applicationContext-app.xml
     
+    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
+
+    对于引入的子模块的Spring信息，必须如下定义：
+    
     
 6. 
