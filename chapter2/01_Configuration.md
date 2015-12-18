@@ -369,5 +369,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     *在上述配置中，entityManagerFactory_macula和transactionManager_macula命名不能修改，一般情况下，强烈建议您按照上述代码配置，不需要做出修改。对于业务模块来说，使用的数据库通常与macula自身的数据库不一样，这就需要配置不同的数据源、entityManagerFactory以及transactionManager。为了降低系统整体的复杂度，在同一个Request/Response周期中，尽量不要使用多个transactionManager。*
     
+3. JPA部分参数设置
+
     
     
