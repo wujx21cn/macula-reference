@@ -380,5 +380,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     *上面2个参数，如果使用默认的applicationContext-app.xml中的配置，将会读取macula框架的Configuration配置的参数值进行设定。*
     
-    
+## 4.4 Freemarker配置
+
+
     
