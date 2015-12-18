@@ -248,3 +248,14 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
 
 ## 6.6 自定义接口中的EntityManager和TransactionManager
+
+为了保证repositories命名空间定义的spring自动扫描能准确的将EntityManager和TransactionManager注入到自定义的实现中，对自定义实现类需要做下列规范：
+
+* 自定义实现类不能标记@Service、@Repository、@Component等注解
+
+* 自定义实现类可通过@Autowire在注入需要的bean实例
+
+* 自定义实现需要使用EntityManager时，不可通过@PersistentContext注入entityManager，只能通过实现JpaEntityManagerAware接口中的setEntityManager来获取entityManager的注入。
+
+其中JpaEntityManagerAware的接口标记如下为：
+
