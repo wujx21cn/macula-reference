@@ -256,14 +256,15 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 * 自定义实现类可通过@Autowire在注入需要的bean实例
 
 * 自定义实现需要使用EntityManager时，不可通过@PersistentContext注入entityManager，只能通过实现JpaEntityManagerAware接口中的setEntityManager来获取entityManager的注入。
+    
+    其中JpaEntityManagerAware的接口标记如下为：
+    
+    ```
+    public interface JpaEntityManagerAware {
+    
+        public void setEntityManager(EntityManager entityManager);
+    
+    }
+    ```
 
-其中JpaEntityManagerAware的接口标记如下为：
-
-```
-public interface JpaEntityManagerAware {
-
-    public void setEntityManager(EntityManager entityManager);
-
-}
-```
-
+注意
