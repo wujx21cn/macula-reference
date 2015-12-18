@@ -8,4 +8,7 @@
 * Freemarker配置
 * Log4J配置
 
- 
+## 4.1 Macula配置
+
+1. **macula.properties**
+    
