@@ -232,3 +232,11 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
 **例 6.10. 对外使用的接口：UserRepository**
 
+```
+public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRepositoryCustom {
+
+  // Declare query methods here
+
+}
+```
+
