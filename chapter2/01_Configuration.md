@@ -17,12 +17,6 @@
     **表 4.1. macula.properties可配置属性**
     
     <table summary="macula.properties可配置属性" border="1">
-    	<colgroup>
-    		<col>
-    		<col>
-    		<col>
-    		<col>
-    	</colgroup>
     	<thead>
     		<tr>
     			<th>属性名称</th>
