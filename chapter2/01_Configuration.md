@@ -217,4 +217,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 4. applicationContext-root.xml
     
+    该文件放置路径与applicationContext-ref.xml中配置的classpath:applicationContext-root.xml一致，即必须放在src/main/resources目录。
+
+    应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
+    
     
