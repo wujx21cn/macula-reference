@@ -91,4 +91,11 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 ## 6.4 接口方法
 
+除开已有的JpaRepository中已有的接口定义不需要再编写实现类外，对于查询部分接口，也同样不需要编写实现，但需要查询方法定义名称定义符合一定的规范。
+
+例 6.4. 根据findBy后面的属性名查询：
+
+```
+public List<Person> findByLastname(String lastname);
+```
 
