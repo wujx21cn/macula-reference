@@ -250,4 +250,15 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     </bean>
     ```
+    同时，该文件也是定义配置信息（即Macula平台的Configuration信息的修改Bean）读取的设置，默认情况下，通过扫描org.macula.core.config目录下的所有Bean，在更新Configuration信息，代码如下：
+    
+    ```
+    <context:component-scan base-package="org.macula.core.config" />
+    ```
+    
+    ***重要***
+    
+    *该扫描Configuraion配置信息Bean的配置不允许修改。*
+    
+    
     
