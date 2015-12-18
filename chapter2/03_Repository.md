@@ -201,3 +201,5 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 	</tbody>
 </table>
 
+关于扩展JpaRepository接口中可定义的方法而不用编写实现代码的部分，可查看Spring-Data中JPA部分（data-jpa）的文档。
+
