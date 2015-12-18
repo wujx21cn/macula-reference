@@ -419,8 +419,11 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
         </property>
     </bean>    
     ```
+    通过上述配置可看出，除了freemarker.properties的配置外，主要定义了Freemarker最终模板的访问路径为基于classpath:views/的路径访问，由于该路径是一个classpath路径，所以实际上，在所有的业务模块（包括war模块和jar模块）中，都可以编写freemarker文档，并能在部署后正常访问。
     
-*     
+    同样，这里定义的一个主要属性是preferFileSystemAccess属性，该属性标识是否采用文件系统加载的方式加载freemarker模版，在开发模式下可设置为true，它标识能侦查到文件的变化，并自动重新加载模板。 
+    
+    
     
 
     
