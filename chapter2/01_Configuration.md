@@ -271,4 +271,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     ```
     即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-*-app.xml命名配置文件。
-6. 
+6. Sping MVC定义
+    
+    
+
