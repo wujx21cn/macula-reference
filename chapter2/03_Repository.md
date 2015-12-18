@@ -46,3 +46,5 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 对于增加的findByAppId接口定义，将在下一节介绍。
 
+
+## 6.2 MaculaJpaRepository接口
