@@ -149,9 +149,9 @@
     	</tbody>
     </table>
     
-    **提示**
+    ***提示***
     
-    只有war型的模块才可能需要macula.properties文件，并放在在src/main/resources目录下，以实现运行期能通过classpath:/macula.properties访问。
-    对于非war的jar型模块，依据所需的情况定制，绝大多数情况下，macula.properties文件不是必须的，更多的使用在测试场合，此时，可将macula.properties放置在src/test/resources下，使该配置在测试周期下可用。
+    *只有war型的模块才可能需要macula.properties文件，并放在在src/main/resources目录下，以实现运行期能通过classpath:/macula.properties访问。
+    对于非war的jar型模块，依据所需的情况定制，绝大多数情况下，macula.properties文件不是必须的，更多的使用在测试场合，此时，可将macula.properties放置在src/test/resources下，使该配置在测试周期下可用。**
 
 
