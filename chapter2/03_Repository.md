@@ -99,3 +99,9 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 public List<Person> findByLastname(String lastname);
 ```
 
+该方法标识采用Lastname属性查询Person列表，lastname的属性值为参数。
+
+
+例 6.5. 根据findBy后的属性名分页、排序查询：
+
+
