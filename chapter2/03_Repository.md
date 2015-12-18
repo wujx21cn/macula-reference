@@ -117,4 +117,7 @@ public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, Str
 
 例 6.7. 根据findBy后的属性的子属性查询：
 
+```
+public List<Person> findByAddress_ZipCode(ZipCode zipCode);
+```
 
