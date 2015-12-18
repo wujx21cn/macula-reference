@@ -221,4 +221,33 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
     
+    ```
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    
+        <property name="url">
+    
+            <value>jdbc:oracle:thin:@192.168.0.180:1521:dstest</value>
+    
+        </property>
+    
+        <property name="driverClassName">
+    
+            <value>oracle.jdbc.driver.OracleDriver</value>
+    
+        </property>
+    
+        <property name="username">
+    
+            <value>macula</value>
+    
+        </property>
+    
+        <property name="password">
+    
+            <value>macula</value>
+    
+        </property>
+    
+    </bean>
+    ```
     
