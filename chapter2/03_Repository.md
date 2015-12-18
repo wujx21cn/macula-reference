@@ -121,3 +121,5 @@ public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, Str
 public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 ```
 
+该方法通过address.zipCode来查询Persion对象列表
+
