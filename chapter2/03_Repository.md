@@ -115,4 +115,6 @@ public List<User> findByLastname(String lastname, Sort sort);
 public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
 ```
 
+例 6.7. 根据findBy后的属性的子属性查询：
+
 
