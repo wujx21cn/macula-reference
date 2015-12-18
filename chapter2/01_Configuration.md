@@ -303,5 +303,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     ```
     <import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
     <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven />
+    <!-- Forwards requests to the "/" resource to the "welcome" view --> 
 
     ```
