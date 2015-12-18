@@ -205,3 +205,5 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 
 ## 6.5 自定义接口与实现
 
+对于一些业务需求在以上介绍的在接口定义即可完成的，不需要编写自定义接口，否则需要编写自定义的接口并实现自定义接口。
+
