@@ -393,6 +393,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     auto_import="/spring.ftl" as spring, "/macula.ftl" as macula, "/layout.ftl" as layout    
     ```
     
+    即可以载入spring.ftl，macula.ftl，layout.ftl三个freemarker macro，这样，在其他freemarker文件中，需要使用它们定义的宏的时候，可以不用再在模块中声明导入，freemarker管理器可自动导入这三个宏并按指定的别名使用。
+    
+    
     
 
     
