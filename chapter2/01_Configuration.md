@@ -384,6 +384,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 在Macula平台中，Freemarker作为界面显示层的重要组成部分，在界面的显示上，均可采用Freemarker模板作为显示界面。对于Freemarker的设置，主要有2个部分：
 
-
+* freemarker.properties
+* 
 
     
