@@ -270,3 +270,5 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
     ***注意***
     
     *该接口由macula平台提供，并由repositories中定义的factory-class：org.macula.core.repository.MaculaJpaRepositoryFactoryBean来正确处理，为了保证自定义实现能灵活的替换EntityManager而做出的扩展。*
+    
+    
