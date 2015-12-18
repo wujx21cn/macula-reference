@@ -70,3 +70,6 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 ***重要***
 
+*请注意这里的配置与Spring-Data中介绍的一样，但factory-class请使用macula平台编写的FactoryBean，它主要完成了在自定义接口与实现时，如果使用了@Transactional或EntityManager对象，将会使用配置中的transaction-manager-ref与entity-manager-factory-ref配置的Bean作为注入，这样可保证自定义接口与原接口使用相同的jpa entityManager与事务处理。*
+
+
