@@ -266,5 +266,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     对于引入的子模块的Spring信息，必须如下定义：
     
-    
+    ```
+    <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
+
+    ```
 6. 
