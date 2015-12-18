@@ -36,7 +36,9 @@
 
 * lastModifiedDate：最后更新时间，与lastModifiedBy相同，映射字段为LAST_MODIFIED_DATE，用来记录数据最后更新时间。
 
+***重要***
 
+*以上四个字段，均不能为空。*
 
 
 
