@@ -424,7 +424,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     同样，这里定义的一个主要属性是preferFileSystemAccess属性，该属性标识是否采用文件系统加载的方式加载freemarker模版，在开发模式下可设置为true，它标识能侦查到文件的变化，并自动重新加载模板。 
     
     
-    
+## 4.5 Log4j配置
+
+
 
     
 
