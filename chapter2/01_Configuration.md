@@ -389,7 +389,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     该文件位于war模块的resources根目录，文件内容包括了可配置的Freemarker的属性。（具体的可配置属性，请参考Freemarker文档）
 
     freemarker.properties文件在演示的模块中，定义了：
+    ```
     
+    ```
     
 
     
