@@ -57,6 +57,19 @@
 
 *批次的值可以是用户输入的数据，也可以是程序自动生成的值，默认情况下，采用系统生成的值，它用来标识单次变化时，所变化的数据范围，便于变化日志的展示和查看等。*
 
+对于需要记录变化日志的实体，需要在实体的类上添加@Auditable注解，然后对于需要记录变更日志的字段添加@Auditable注解。同时，EntityManagerFactory需要添加相应的监听器：
+
+```
+<property name="jpaProperties">
+	<props>
+		<prop key="hibernate.ejb.event.post-update">
+			org.macula.core.hibernate.audit.AuditedEventListener
+		</prop>
+	</props>
+</property>
+		
+```
+
 
 
 
