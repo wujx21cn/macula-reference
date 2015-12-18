@@ -218,3 +218,15 @@ public interface UserRepositoryCustom {
 }
 ```
 
+**例 6.9. 自定义接口实现**
+
+```
+public class UserRepositoryImpl implements UserRepositoryCustom {
+
+  public void someCustomMethod(User user) {
+    // Your custom implementation
+  }
+
+}
+```
+
