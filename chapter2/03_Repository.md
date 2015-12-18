@@ -109,4 +109,10 @@ public Page<User> findByLastname(String lastname, Pageable pageable);
 public List<User> findByLastname(String lastname, Sort sort);     
 ```
 
+例 6.6. 根据findBy后的多个属性查询：
+
+```
+public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
+```
+
 
