@@ -211,4 +211,10 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     </bean>
     ```
-4.     
+    ***重要***
+    
+    *对于该文件的内容，必须与上述指定代码内容一致*
+    
+4. applicationContext-root.xml
+    
+    
