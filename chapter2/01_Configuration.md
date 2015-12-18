@@ -334,4 +334,6 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     在基于macula的项目中，可以不需要配置persistence.xml文件
 
-2. 
+2. JPA中Spring的配置
+
+    
