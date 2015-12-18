@@ -319,4 +319,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 7. configs/applicationContext-macula.xml
     
+    该Spring定义为macula平台的相关配置信息，该文件可从实例代码中拷贝，并不允许修改。
+
+8. 子模块Spring配置信息
+    
     
