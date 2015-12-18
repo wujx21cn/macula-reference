@@ -323,4 +323,4 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 8. 子模块Spring配置信息
     
-    
+    子模块Spring配置信息必须放置在src/main/resources/META-INF/spring目录下，并按照macula-*-app.xml定义，每个模块可定义多个Spring配置文件。但需要注意不要与其他模块命名相同。
