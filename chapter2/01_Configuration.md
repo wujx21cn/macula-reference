@@ -357,5 +357,12 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
         </property>
     </bean>
     
-    
+    <!-- @Transaction -->
+    <tx:advice id="maculaTxAdvise" transaction-manager="transactionManager_macula" />
+    <aop:config>
+        <aop:pointcut id="maculaPointcut" expression="execution(* org.macula..*.*(..)) and execution(!* org.macula.samples..*.*(..)) and @within(org.springframework.stereotype.Service)" />
+        <aop:advisor advice-ref="maculaTxAdvise" pointcut-ref="maculaPointcut" />
+    </aop:config>
     ```
+    
+    
