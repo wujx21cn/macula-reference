@@ -62,3 +62,11 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 例 6.3. Macula平台下定制的Repository -Factory实例：
 
+```
+<jpa:repositories base-package="org.macula.base.**.repository" entity-manager-factory-ref="entityManagerFacotry"
+        transaction-manager-ref="transactionManager" factory-class="org.macula.core.repository.MaculaJpaRepositoryFactoryBean" />
+
+```
+
+***重要***
+
