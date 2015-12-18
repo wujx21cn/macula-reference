@@ -8,7 +8,7 @@
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
    * [领域模型层](chapter2/02_Domain.md)
-   * 数据存取层
+   * [数据存取层](chapter2/03_Repository.md)
    * 业务服务层
    * 展示层
    * 时间与格式
