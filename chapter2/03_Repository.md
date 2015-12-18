@@ -29,3 +29,16 @@ public interface Repository<T, ID extends Serializable> {
 }
 ```
 
+在现有的macula框架下，因为使用Spring-Data的JPA模块来构建Repository，所以，对于一般的存取层接口来说，直接通过继承该接口的方式来实现通用存取接口的实现。
+
+例 6.2. 比如实现Application领域模型的存取接口定义为：
+
+```
+public interface ApplicationRepository extends JpaRepository<JpaApplication, Long> {
+
+
+    public JpaApplication findByAppId(String appId);
+
+}
+```
+
