@@ -56,3 +56,5 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 *为了适应Macula平台的扩展性，在编写Repository时，需要继承MaculaJpaRepository，而不是JpaRepository。*
 
 
+## 6.3 Spring自动扫描
+
