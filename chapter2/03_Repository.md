@@ -81,4 +81,11 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 * factory-class：可以看到，这里我们只定义了需要的接口，而不需要编写实现，而通过接口转化为Spring可识别的Bean，采用了Spring的FactoryBean（Bean工厂）的模式，所以需要定义一个用来生成Bean实例的工厂Class，这里，已经由Macula框架完成了该Bean工厂的实现，即org.macula.core.repository.MaculaJpaRepositoryFactoryBean，该Bean扩展自Spring-Data对应的Bean工厂，如有兴趣可继续查看Spring-Data的实现。
 
-* 
+***重要***
+
+*这里只定义了Repository的接口，即可通过Spring-Data的一个扫描即可生成对应的Bean的实例，看似非常神奇，实际上使用了Spring的FactoryBean的构建方式，通过工厂来返回了一个JpaRepository的实现来作为我们定义的接口的实现，而自定义的接口，则通过命名上查找对应的Class Implement来构建custom的实现。
+这里repositories标签扫描的规则是：*
+
+ * *接口扩展了JpaRepository，即extends JpaRepository。*
+ * *接口如果通过注解@NoRepositoryBean，则标识不用扫描该接口*
+
