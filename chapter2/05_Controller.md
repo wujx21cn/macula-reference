@@ -259,6 +259,8 @@ public class AdminMaculaBaseController extends BaseController {
     }
     ```
     
+    通过Macula平台扩展后的提交的数据格式，将可以通过下面提交方式绑定：
+    
     
     
 
