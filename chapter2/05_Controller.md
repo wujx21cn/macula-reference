@@ -376,6 +376,7 @@ public class AdminMaculaBaseController extends BaseController {
         </property>
     </bean>    
     ```
+    
     配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
     
     ***重要***
