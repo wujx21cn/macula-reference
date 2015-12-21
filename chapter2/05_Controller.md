@@ -372,17 +372,15 @@ public class AdminMaculaBaseController extends BaseController {
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
     
         <property name="converters">
-    
             <list>
-    
                 <bean class="org.macula.core.mvc.RepositoryConverter" />
-    
             </list>
-    
         </property>
     
     </bean>    
     ```
+    
+    
 
 
     
