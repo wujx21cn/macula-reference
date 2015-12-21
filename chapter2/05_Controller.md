@@ -389,6 +389,9 @@ public class AdminMaculaBaseController extends BaseController {
     * *待转化类必须实现Persistable接口*
     * *该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值。*
     
+
+    例 8.2 通过传入主键，直接转化为相应的对象
+    
     
 
 
