@@ -364,6 +364,12 @@ public class AdminMaculaBaseController extends BaseController {
 
 4. 类型转换
 
+    很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
+
+    对应的applicationContext-mvc.xml中配置如下：
     
+    
+
+
     
 
