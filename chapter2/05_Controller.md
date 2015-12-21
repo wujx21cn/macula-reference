@@ -217,4 +217,9 @@ public class AdminMaculaBaseController extends BaseController {
 
 1. Bean参数绑定
     
+    默认情况下，String MVC对参数的绑定方式，采用直接属性名与给定POJO属性名相同的方式实现绑定，为了更好的区分具体的参数信息，Macula平台扩展了这类绑定，允许
+    
+    ```
+    
+    ```
 
