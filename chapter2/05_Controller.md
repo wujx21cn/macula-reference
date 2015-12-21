@@ -180,6 +180,22 @@ public class PageResponse extends Response {
 
 ## 8.5 国际化
 
+国际化 可分为页面国际化和提示信息国际化。
+
+页面国际化可以通过多个Freemarker文件解决，通过不同的国际化后缀来区分不同地区的页面；比如：index.ftl，如果要添加一个英文页面，可以添加index_en_US.ftl，这样当英文国家的用户访问系统时，将最先使用index_en_US.ftl文件。
+
+提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n/xxxx/messages_xx_XX.properties等众多资源文件，同时添加到applicationContext-macula.xml配置文件中。
+
+## 8.6 表单校验
+
+在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
+
+在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Domain中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
+
+失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
+
+## 8.7 使用基类Controller
+
 
 
 
