@@ -287,7 +287,27 @@ public class AdminMaculaBaseController extends BaseController {
    
 2. FormBean的表单防重复提交   
 
+    在Form提交时，为了防止用户对表单的重复提交，除了使用客户端脚本控制按钮的状态外，平台提供了防重复提交的解决方案。
+
+    一般情况下，防重复提交有2个应用场景：1)防止用户无意识的重复提交；2)防止用户恶意的重复提交。
     
+    对于无意识的提交，只需要在页面隐藏一个唯一性的Token，在表单提交时返回，在服务端校验并销毁即可完成对Token的验证而阻止该提交。
+    
+    对于用户可能存在的恶意提交，可通过在表单提交时，插入验证码的方式来进行，用户必须正确输入了验证码，并在服务端校验成功后，才能进行业务逻辑的处理。
+    
+    在平台实现的方式上，采用在FormBean注解中加入属性：
+    
+    valid：(boolean)是否需要检测重复提交；
+    
+    token：(String)在表单页面中提交的参数名称，默认值为ftoken，除非与业务中的字段冲突，否则不需要设置为其他值；
+    
+    captcha：(boolean)是否检测验证码，来防止恶意提交
+    
+    整个校验过程由FormBeanArgumentResolver完成。
+    
+    相应的，在界面层面，需要配合在表单中加入防重复提交信息，在macula.ftl中提供了freemarker宏的默认实现。在该默认实现情况下，可通过在表单位置加入<@macula.formToken />即可，对于需要加入校验码的情况下，使用<@macula.formToken captcha=true />
+    
+    具体的实现可参考macula.ftl文件。
 
     
 
