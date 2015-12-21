@@ -9,7 +9,7 @@
    * [配置文件](chapter2/01_Configuration.md)
    * [领域模型层](chapter2/02_Domain.md)
    * [数据存取层](chapter2/03_Repository.md)
-   * 业务服务层
+   * [业务服务层](chapter2/04_Service.md)
    * 展示层
    * 时间与格式
    * 异常处理
