@@ -265,6 +265,8 @@ public class AdminMaculaBaseController extends BaseController {
     ?user.userName=Wilson&user.password=123456
     ```
     
+    为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
+    
     
     
 
