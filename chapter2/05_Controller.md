@@ -334,6 +334,8 @@ public class AdminMaculaBaseController extends BaseController {
     }
     
     ```
+    为了实现这个扩展，主要在applicationContext-mvc.xml文件中的PageableArgumentResolver定义：
+
     
 
     
