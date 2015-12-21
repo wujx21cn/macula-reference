@@ -220,6 +220,22 @@ public class AdminMaculaBaseController extends BaseController {
     默认情况下，String MVC对参数的绑定方式，采用直接属性名与给定POJO属性名相同的方式实现绑定，为了更好的区分具体的参数信息，Macula平台扩展了这类绑定，允许
     
     ```
+    pojo名+ . + 属性名
+    ```
+    的方式绑定。
+    
+    **例 8.1. 两种绑定的区别**
+    
+    比如在Controller中，会返回的用户信息保存，其Controller原型为：
     
     ```
+    public User save(User user){
+
+    // something
+
+    return user;
+
+    }
+    ```
+    
 
