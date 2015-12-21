@@ -314,7 +314,9 @@ public class AdminMaculaBaseController extends BaseController {
    *主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。
     特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$(form).trigger('changeCaptcha')即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。*  
     
-    
+3. Pageable参数绑定
+
+
 
     
 
