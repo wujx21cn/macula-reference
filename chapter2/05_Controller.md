@@ -49,4 +49,76 @@ public ExecuteResponse delete(@PathVariable String userName) {
 
 ```
 
+## 8.4 REST数据返回格式
+
+为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
+
+```
+public class Response {
+
+	/** 是否成功标识 */
+	private boolean success;
+
+	/** 系统级错误代码 */
+	private String errorCode;
+	/** 系统级错误信息 */
+	private String errorMessage;
+
+	/** 业务级错误代码 */
+	private String exceptionCode;
+	/** 业务级错误信息 */
+	private String exceptionMessage;
+
+	/** 异常详细信息 */
+	private String exceptionStack;
+	/** 服务端重定向信息 */
+	private String redirection;
+
+	/** 校验结果信息 */
+	private List<FieldError> validateErrors;
+
+	public Response() {
+		this.success = true;
+	}
+
+	public Response(MaculaException exception) {
+		this.success = false;
+		this.errorCode = exception.getParentCode();
+		this.errorMessage = ApplicationContext.getMessage(errorMessage);
+		this.exceptionCode = exception.getMessage();
+		this.exceptionMessage = exception.getLocalizedMessage();
+		this.exceptionStack = exception.getFullStackMessage();
+
+		if (exception instanceof FormBindException) {
+			List<FieldError> fieldErrors = ((FormBindException) exception).getFieldErrors();
+			for (FieldError fieldError : fieldErrors) {
+				this.addValidateError(fieldError);
+			}
+		}
+	}
+}         
+```
+
+```
+public class ExecuteResponse<T> extends Response {
+
+	/** 结果信息 */
+	private final T returnObject;
+
+	public ExecuteResponse(T result) {
+		this.returnObject = result;
+	}
+
+	/**
+	 * @return the result
+	 */
+	public T getReturnObject() {
+		return returnObject;
+	}
+
+}
+```
+
+
+
 
