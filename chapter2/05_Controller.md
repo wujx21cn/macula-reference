@@ -279,6 +279,8 @@ public class AdminMaculaBaseController extends BaseController {
     </bean>
     ```
     
+    通过对自定义参数的解析，可以实现上述的变化。
+    
     
     
 
