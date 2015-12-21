@@ -381,8 +381,14 @@ public class AdminMaculaBaseController extends BaseController {
     ```
     配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
     
+    ***重要***
     
+    *除了加入该ConversionService外，还需要注意：*
     
+    * *普通的VO对象不要实现Persistable接口，即不能使用该转换*
+    * *待转化类必须实现Persistable接口*
+    * *该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值。*
+    *
 
 
     
