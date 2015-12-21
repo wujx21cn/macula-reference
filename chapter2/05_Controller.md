@@ -166,6 +166,18 @@ public class PageResponse extends Response {
 *为了减少对编程的干扰，正常情况下，Controller中的方法可以仍然按照Service接口中的方法的返回值正常返回数据，对于原使用@ResponseBody注解的方法，如果需要，则通过使用@OpenApi注解来自动处理对应的返回值，默认情况下，采用@OpenApi 注解后，非Response、Map、Model等类型的返回值，会被包裹成ExecuteResponse，而Page<?>返回值会被包裹成PageResponse。*
 
 
+@OpenApi注解的启用需要配置RequestMappingHandlerAdapter的customReturnValueHandlers属性：
+
+```
+<property name="customReturnValueHandlers">
+    <list>
+        <bean class="org.macula.core.mvc.OpenApiReturnValueHandler">
+            <constructor-arg ref="messageConverters"/>              
+        </bean>
+    </list>
+</property>
+```
+
 
 
 
