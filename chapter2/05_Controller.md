@@ -14,4 +14,39 @@
 * /功能名称/：针对模块下的某一功能，需要给出功能的名称。
 * /操作名称/：针对某一功能下具体的操作，需要给出操作的名称，如index,new,edit,save,read,delete,query等动词。
 
+所以最终的地址命名为：
+
+* 管理功能：/admin/模块名/功能名/操作名称/参数/其他
+* 用户功能：/front/模块名/功能名/操作名称/参数/其他
+
+
+## 8.2. 请求方式规划
+
+为了保证业务系统不被重复的请求以及不正确的请求干扰，对于请求方式做如下规划：
+
+* 对于获取单条数据或显示新增与编辑页面的方式可以使用GET请求
+* 对于删除数据、保存数据或提交多条数据给后台的应该使用POST方式
+* 有多个查询条件的查询功能应该使用POST方式
+
+## 8.3 REST
+
+在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
+
+在Macula平台开发中，将不通过地址中的参数来传递参数值，而直接通过地址信息来传递参数值。
+
+如请求的地址：/admin/macula-uim/user/delete/user1 可通过Controller中定义
+
+```
+@RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
+
+@OpenApi
+
+public ExecuteResponse delete(@PathVariable String userName) {
+
+    //do something
+
+}
+
+```
+
 
