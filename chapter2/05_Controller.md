@@ -368,7 +368,21 @@ public class AdminMaculaBaseController extends BaseController {
 
     对应的applicationContext-mvc.xml中配置如下：
     
+    ```
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
     
+        <property name="converters">
+    
+            <list>
+    
+                <bean class="org.macula.core.mvc.RepositoryConverter" />
+    
+            </list>
+    
+        </property>
+    
+    </bean>    
+    ```
 
 
     
