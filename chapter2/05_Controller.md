@@ -316,7 +316,11 @@ public class AdminMaculaBaseController extends BaseController {
     
 3. Pageable参数绑定
 
-
+    在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
+    
+    对于Pageable参数的绑定，比如Controller中编写：
+    
+    
 
     
 
