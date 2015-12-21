@@ -213,5 +213,8 @@ public class AdminMaculaBaseController extends BaseController {
 
 ## 8.8 参数绑定校验
 
+在Spring MVC默认的基础上，Macula开发平台在参数绑定上做了适当扩展，以适应与Struts（Webwork）等相同的对参数处理的一致性，具体来说，有如下的变化：
 
+1. Bean参数绑定
+    
 
