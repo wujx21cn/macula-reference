@@ -119,6 +119,46 @@ public class ExecuteResponse<T> extends Response {
 }
 ```
 
+```
+public class PageResponse extends Response {
+
+	/** 本次请求的记录数 */
+	private final int size;
+	
+	/** 当前页码，从零开始 */
+	private final int number;
+	
+	/** 总记录数 */
+	private final long totalElements;
+	
+	/** 总页数 */
+	private final int totalPages;
+	
+	/** 本页的总记录数 */
+	private final int numberOfElements;
+	
+	/** 是否首页 */
+	private final boolean firstPage;
+	
+	/** 是否最后页 */
+	private final boolean lastPage;
+	
+	/** 内容列表 */
+	private final List<?> content;
+
+	public PageResponse(Page<?> page) {
+		this.size = page.getSize();
+		this.number = page.getNumber();
+		this.totalElements = page.getTotalElements();
+		this.totalPages = page.getTotalPages();
+		this.numberOfElements = page.getNumberOfElements();
+		this.firstPage = page.isFirstPage();
+		this.lastPage = page.isLastPage();
+		this.content = page.getContent();
+	}
+}
+```
+
 
 
 
