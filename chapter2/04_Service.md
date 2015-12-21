@@ -4,3 +4,4 @@ Macula开发平台自身是基于Spring作为开发基础，在Spring Framework�
 
 业务服务层通过Spring Bean来定义，其开发本省与一般的基于Spring的J2EE开发一致，下面就Macula平台所做出的一些要求做一些介绍。
 
+## 7.1 业务服务层必须具备易读性接口
