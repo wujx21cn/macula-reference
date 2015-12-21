@@ -267,6 +267,18 @@ public class AdminMaculaBaseController extends BaseController {
     
     为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
     
+    ```
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="customArgumentResolvers">
+            <list>
+                <bean class="org.macula.core.mvc.FormBeanArgumentResolver">
+                    <property name="webBindingInitializer" ref="webBindingInitializer" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+    ```
+    
     
     
 
