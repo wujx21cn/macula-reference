@@ -369,13 +369,11 @@ public class AdminMaculaBaseController extends BaseController {
     对应的applicationContext-mvc.xml中配置如下：
     ```
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-    
         <property name="converters">
             <list>
                 <bean class="org.macula.core.mvc.RepositoryConverter" />
             </list>
         </property>
-    
     </bean>    
     ```
     配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
