@@ -211,5 +211,7 @@ public class AdminMaculaBaseController extends BaseController {
 在BaseController中处理了大量的异常处理方式以及数据返回要求的设定。
 
 
+## 8.8 参数绑定校验
+
 
 
