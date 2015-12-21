@@ -308,6 +308,8 @@ public class AdminMaculaBaseController extends BaseController {
     相应的，在界面层面，需要配合在表单中加入防重复提交信息，在macula.ftl中提供了freemarker宏的默认实现。在该默认实现情况下，可通过在表单位置加入<@macula.formToken />即可，对于需要加入校验码的情况下，使用<@macula.formToken captcha=true />
     
     具体的实现可参考macula.ftl文件。
+    
+
 
     
 
