@@ -18,3 +18,4 @@ Macula开发平台自身是基于Spring作为开发基础，在Spring Framework�
 
 ## 7.4 服务层的Spring Bean定义
 
+如无特殊的需要，尽量使用@Service来定义业务层的Bean，对于主要注入的其他依赖的Bean，则通过构造函数的方式注入，通过构造函数的注入方式是Spring 3.0后推崇的做法，具体可参考Spring Framework相关文档。
