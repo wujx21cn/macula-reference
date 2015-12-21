@@ -196,6 +196,18 @@ public class PageResponse extends Response {
 
 ## 8.7 使用基类Controller
 
+在展示层编写的Controller实现，需要直接或间接扩展至BaseController
+
+```
+@RequestMapping("admin/macula-base")
+
+public class AdminMaculaBaseController extends BaseController {
+
+    //something
+
+}
+```
+
 
 
 
