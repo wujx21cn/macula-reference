@@ -285,6 +285,9 @@ public class AdminMaculaBaseController extends BaseController {
     
    *需要注意的是，使用Macula平台的绑定方式的前提是：必须使用@FormBean前缀，并且不能使用诸如@ModelAttribute、@RequestBody等Spring的绑定注解。*
    
-   
+2. FormBean的表单防重复提交   
+
+    
+
     
 
