@@ -594,7 +594,7 @@ public String create() {
 
 这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
 
-```
+```html
 <div id="page-${code}" class="tableform">
 <form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-uim/user/saveuser" method="post">
 <input type="hidden" name="user.id" data-bind="value: id" />
