@@ -259,7 +259,7 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
     
     其中JpaEntityManagerAware的接口标记如下为：
     
-    ```
+    ```java
     public interface JpaEntityManagerAware {
     
         public void setEntityManager(EntityManager entityManager);
