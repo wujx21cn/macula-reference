@@ -277,7 +277,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     在web.xml中定义：
     
-    ```
+    ```xml
     <servlet>
         <servlet-name>appServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
