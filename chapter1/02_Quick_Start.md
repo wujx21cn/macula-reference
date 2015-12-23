@@ -507,7 +507,7 @@ ko.applyBindings(tableViewModel, $('#finder-list-user-list'));
 
 读取数据的逻辑示例如下：
 
-```
+```javascri
 Parts['search'].ajaxSubmit({
 	url	: base + '/admin/macula-uim/user/users',
 	dataType : 'json',
