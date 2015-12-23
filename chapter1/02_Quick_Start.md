@@ -268,7 +268,7 @@ src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 
 里面有一行：
 
-```
+```java
 <context:component-scan base-package="org.macula.admin.**.controller" />
 ```
 是用来设置需要扫描哪些 package。
