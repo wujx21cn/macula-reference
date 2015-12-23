@@ -221,7 +221,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
     
-    ```
+    ```xml
         <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     
         <property name="url">
