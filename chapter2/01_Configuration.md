@@ -164,7 +164,7 @@
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
 1. J2EE项目下，web.xml中的Spring通过Listener载入
-    ```
+    ```xml
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
