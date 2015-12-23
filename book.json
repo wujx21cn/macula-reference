@@ -9,14 +9,6 @@
     	// Custom links at top of sidebar
     	"sidebar": {
     	    "Macula Reference": "http://macula.top/macula-reference"
-    	},
-        // Sharing links
-        "sharing": {
-            "google": null,
-            "facebook": null,
-            "twitter": null,
-            "weibo": null,
-            "all": null
-        }
+    	}
     }
 }
