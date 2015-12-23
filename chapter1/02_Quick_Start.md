@@ -636,7 +636,7 @@ public String create() {
 
 **Model 定义方面示例代码是这样的**
 
-```
+```javascript
 var viewModel = ko.mapping.fromJS({
 	id : '',
 	userName : '',
