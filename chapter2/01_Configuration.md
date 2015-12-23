@@ -397,7 +397,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 * Spring View中的设置
 
-    ```
+    ```xml
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <!-- preferFileSystemAccess can make hot file detection, use true for development -->
         <property name="preferFileSystemAccess" value="false" />
