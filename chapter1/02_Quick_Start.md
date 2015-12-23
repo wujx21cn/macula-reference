@@ -176,7 +176,7 @@ package org.macula.uim.base.domain.impl;
 
 实现类的示例：
 
-```
+```java
 @Entity
 @org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
 @Table(name = "MA_UIM_USER")
