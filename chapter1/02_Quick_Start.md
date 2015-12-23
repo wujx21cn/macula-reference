@@ -545,7 +545,7 @@ eventBindingElement.bind(Constants.data_arrive_event, function(e, data) {
 
 然后 .js 文件中通过下面代码处理分页
 
-```
+```javascript
 Parts['pager'].maculapagination({
 	code	: code
 });	
