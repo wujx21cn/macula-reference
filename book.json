@@ -1,16 +1,11 @@
 {
-    // 图书标题和描述 (默认从README抽取)
     "title": "Macula Reference",
     "description": "Macula Framework and Plugins Reference!",
-    // 语言
     "language": "zh",
-     // 模版中的链接 (null: default, false: remove, string: new value)
     "links": {
-    	// Custom links at top of sidebar
     	"sidebar": {
     	    "Macula Reference": "http://macula.top/macula-reference"
     	},
-        // Sharing links
         "sharing": {
             "google": null,
             "facebook": null,
