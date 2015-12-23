@@ -209,7 +209,7 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 
 **例 6.8. 自定义接口：UserRepositoryCustom**
 
-```
+```java
 public interface UserRepositoryCustom {
 
 
