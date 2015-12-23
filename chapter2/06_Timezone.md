@@ -8,12 +8,12 @@
 
 1. 登录时由系统主动设置用户的时区并保存在用户的HTTP SESSION中；
 
-    ```
+    ```xml
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.SessionTimeZoneResolver" />
     ```
 2. 登录时由系统主动设置用户的时区并保存在用户的COOKIE中；
     
-    ```
+    ```xml
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.CookieTimeZoneResolver" />
     ```
 3. 登录时自动获取用户浏览器的时区；
