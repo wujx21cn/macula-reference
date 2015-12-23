@@ -8,7 +8,7 @@
     "links": {
     	// Custom links at top of sidebar
     	"sidebar": {
-    	    "Custom link name": "https://customlink.com"
+    	    "Macula Reference": "https://macula.top/macula-reference"
     	},
         // Sharing links
         "sharing": {
