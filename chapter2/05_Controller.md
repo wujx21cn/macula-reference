@@ -36,7 +36,7 @@
 
 如请求的地址：/admin/macula-uim/user/delete/user1 可通过Controller中定义
 
-```
+```java
 @RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
 
 @OpenApi
@@ -53,7 +53,7 @@ public ExecuteResponse delete(@PathVariable String userName) {
 
 为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
 
-```
+```java
 public class Response {
 
 	/** 是否成功标识 */
