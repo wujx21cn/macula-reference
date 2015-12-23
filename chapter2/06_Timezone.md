@@ -16,3 +16,5 @@
     ```
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.CookieTimeZoneResolver" />
     ```
+3. 登录时自动获取用户浏览器的时区；
+
