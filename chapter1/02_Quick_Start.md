@@ -866,7 +866,7 @@ public Long changePassword(String username, String oldPassword, String newPasswo
 
 页面端会以 JSON 的方式获取到服务器端返回的对象，然后进行结果判断，并且显示对应的信息。
 
-##### 2.9.6.3 如何做下拉框输入功能
+####2.9.6.3 如何做下拉框输入功能
 
 下拉框是我们开发Web应用经常需要用到的，下面我讲解一下 Macula 框架中如何实现下拉框功能。
 
