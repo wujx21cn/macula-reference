@@ -237,7 +237,7 @@ public Page<JpaUIMUser> getAllUsers(Pageable pageable) {
 该实现方法调用了 DAO 层的对应方法，这个方法是已经存在的，只要 UIMUserRepository 是按照 Macula 框架标准定义的就可以。
 
 DAO 层的注入使用Spring的注入annotation，示例如下：
-```
+```java
 @Autowired
 private UIMUserRepository uimUserRepository;	
 ```
