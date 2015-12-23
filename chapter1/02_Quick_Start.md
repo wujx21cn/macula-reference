@@ -277,7 +277,7 @@ src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 
 方法声明里需要有 org.springframework.ui.Model 参数，方法上面需要加上 annotation @RequestMapping，映射到 URL 请求，示例：
 
-```
+```java
 @RequestMapping(value = "/system/runtime", method = RequestMethod.GET)
 public String showSnapshot(Model model) {
   …
