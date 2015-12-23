@@ -380,7 +380,6 @@ public class AdminMaculaBaseController extends BaseController {
     配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
     
     ***重要***
-    
     *除了加入该ConversionService外，还需要注意：*
     
     * *普通的VO对象不要实现Persistable接口，即不能使用该转换*
@@ -398,6 +397,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     }    
     ```
+    
     如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
     
     当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends JpaRepository<User>的实现。
