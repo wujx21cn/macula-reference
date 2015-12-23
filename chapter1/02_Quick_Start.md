@@ -353,7 +353,7 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 只需要增加 .ftl 页面，在 .ftl 页面里采用 FreeMarker 的方式访问返回的数据。
 
 示例：
-```freemarke
+```jsp
 ${runtime.name}
 ${runtime.vmName}
 ```
