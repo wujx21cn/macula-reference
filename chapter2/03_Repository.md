@@ -220,7 +220,7 @@ public interface UserRepositoryCustom {
 
 **例 6.9. 自定义接口实现**
 
-```
+```java
 public class UserRepositoryImpl implements UserRepositoryCustom {
 
   public void someCustomMethod(User user) {
