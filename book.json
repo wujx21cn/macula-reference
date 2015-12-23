@@ -1,5 +1,5 @@
 {
-    
+    // 图书标题和描述 (默认从README抽取)
     "title": "Macula Reference",
     "description": "Macula Framework and Plugins Reference!",
     "language": "zh",
