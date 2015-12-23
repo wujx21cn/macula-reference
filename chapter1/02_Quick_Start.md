@@ -906,7 +906,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 用我们框架实现Checkbox 功能有点小技巧，需要用到额外的一个 hidden 字段用于保存 Checkbox 的值。实现示例如下：
 
-```
+```html
 <input type="hidden" name="user.enabled" data-bind="value: enabled, type: 'boolean' " />
 <input type="checkbox" data-bind="checked: enabled" />
 ```
