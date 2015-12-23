@@ -222,11 +222,11 @@ public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLo
 我们需要在 Service 层提供常用的方法，比如 list、save、delete 等。
 
 首先在 Service 接口类中增加方法定义，示例如下：
-```
+```java
 Page<JpaUIMUser> getAllUsers(Pageable pageable); 
 ```
 然后在 Service 实现类中增加实现方法，示例如下：
-```
+```java
 @Override
 public Page<JpaUIMUser> getAllUsers(Pageable pageable) {
 	return uimUserRepository.findAll(pageable);
