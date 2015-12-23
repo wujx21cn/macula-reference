@@ -560,14 +560,14 @@ Parts['pager'].maculapagination({
 
 /admin/macula 目录是由 macula-uim-admin 资源包里的基本 Controller 类 UIMController 定义的，其他的 Controller 类都是继承了 UIMController，对应的定义代码如下：
 
-```jav
+```java
 @RequestMapping("admin/macula-uim")
 public abstract class UIMController extends BaseController {
 ```
 
 而在其他 Controller 类中，只需要定义 admin/macula-uim 下面的 URL 部分就可以，示例代码如下：
 
-```
+```java
 @RequestMapping(value = "/user/create", method = RequestMethod.GET)
 public String create() {
 	return super.getRelativePath("/user/edit");
