@@ -69,7 +69,7 @@
 
 在macula-parent的maven设置中，指定了maven第三方包获取点：
 
-```
+```xml
 <repositories>
 
     <repository>
