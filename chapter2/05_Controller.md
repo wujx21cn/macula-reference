@@ -198,7 +198,7 @@ public class PageResponse extends Response {
 
 在展示层编写的Controller实现，需要直接或间接扩展至BaseController
 
-```xml
+```java
 @RequestMapping("admin/macula-base")
 
 public class AdminMaculaBaseController extends BaseController {
