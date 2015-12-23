@@ -300,7 +300,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     在configs/servletContext-mvc.xml定义：
     
-    ```
+    ```xml
     <import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
     
     <!-- Enables the Spring MVC @Controller programming model -->
