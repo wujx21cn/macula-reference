@@ -7,7 +7,7 @@
 JPA数据存取接口JpaRepository默认可实现下列功能：
 
 例 6.1. JpaRepository 接口
-```
+```java
 public interface Repository<T, ID extends Serializable> {
 
     T save(T entity); 
@@ -33,7 +33,7 @@ public interface Repository<T, ID extends Serializable> {
 
 例 6.2. 比如实现Application领域模型的存取接口定义为：
 
-```
+```java
 public interface ApplicationRepository extends JpaRepository<JpaApplication, Long> {
 
 
@@ -62,7 +62,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 例 6.3. Macula平台下定制的Repository -Factory实例：
 
-```
+```xml
 <jpa:repositories base-package="org.macula.base.**.repository" entity-manager-factory-ref="entityManagerFacotry"
         transaction-manager-ref="transactionManager" factory-class="org.macula.core.repository.MaculaJpaRepositoryFactoryBean" />
 
