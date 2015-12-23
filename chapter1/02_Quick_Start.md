@@ -323,7 +323,7 @@ public RuntimeSnapshot getRuntimeSnapshot() {
 因为Macula的数据读取是采用 AJAX 的方式处理的。所以我们针对这个列表功能要增加两个 controller 方法，一个是用来显示页面，采用了 Spring MVC 的方式；另一个是用来读取数据给 AJAX 请求。
 
 方法一示例：
-```
+```java
 @RequestMapping(value = "/user/list", method = RequestMethod.GET)
 public String list() {
 	return super.getRelativePath("/user/list");
