@@ -337,7 +337,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 2. JPA中Spring的配置
 
     应用可创建多个JPA的EntityManagerFactory，但要求macula平台自身插件所需要的entityManagerFactory必须已在Spring配置文件中配置（配置在configs/applicationContext-app.xml）文件中，并配置了相应的Transaction处理。
-    ```
+    ```xml
     <!-- App Entity Manager -->
     <bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
         <property name="persistenceUnitManager">
