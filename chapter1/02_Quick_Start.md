@@ -251,7 +251,7 @@ private UIMUserRepository uimUserRepository;
 
 要选择专门存放 controller 类的 package 下，比如 org.macula.admin.base.controller 下。在 Controller 中一般需要调用 Service 层，Macula 框架使用Spring的注入annotation 来处理 Service 层的注入，示例如下：
 
-```
+```java
 @Autowired
 private UserManagerService userManagerService;
 ```
