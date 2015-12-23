@@ -119,7 +119,7 @@ public class ExecuteResponse<T> extends Response {
 }
 ```
 
-```
+```java
 public class PageResponse extends Response {
 
 	/** 本次请求的记录数 */
