@@ -746,7 +746,7 @@ $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 
 先看 .ftl 页面文件对表单的定义：
 
-```
+```html
 <form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post">
 	<div class="division">
 		<table cellspacing="0" cellpadding="0" border="0">
