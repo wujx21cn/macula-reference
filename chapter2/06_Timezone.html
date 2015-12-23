@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>基础插件 | </title>
+        <title>时间与格式 | </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.1">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter4/chapter4.html" />
+    <link rel="next" href="../chapter3/chapter3.html" />
     
     
-    <link rel="prev" href="../chapter2/06_Timezone.html" />
+    <link rel="prev" href="../chapter2/05_Controller.html" />
     
 
         
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="3" data-chapter-title="基础插件" data-filepath="chapter3/chapter3.md" data-basepath=".." data-revision="Wed Dec 23 2015 10:38:50 GMT+0800 (CST)">
+    <div class="book" data-level="2.6" data-chapter-title="时间与格式" data-filepath="chapter2/06_Timezone.md" data-basepath=".." data-revision="Wed Dec 23 2015 10:38:50 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -233,7 +233,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="chapter2/06_Timezone.html">
+        <li class="chapter active" data-level="2.6" data-path="chapter2/06_Timezone.html">
             
                 
                     <a href="../chapter2/06_Timezone.html">
@@ -281,7 +281,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="chapter3/chapter3.html">
+        <li class="chapter " data-level="3" data-path="chapter3/chapter3.html">
             
                 
                     <a href="../chapter3/chapter3.html">
@@ -524,7 +524,21 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x57FA;&#x7840;&#x63D2;&#x4EF6;">&#x57FA;&#x7840;&#x63D2;&#x4EF6;</h1>
+                        <h1 id="&#x65F6;&#x95F4;&#x4E0E;&#x683C;&#x5F0F;">&#x65F6;&#x95F4;&#x4E0E;&#x683C;&#x5F0F;</h1>
+<p>&#x4E3A;&#x4E86;&#x9002;&#x5E94;&#x591A;&#x4E2A;&#x65F6;&#x533A;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x5BF9;&#x65F6;&#x533A;&#x505A;&#x7EDF;&#x4E00;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x540C;&#x5730;&#x533A;&#x80FD;&#x591F;&#x5448;&#x73B0;&#x5404;&#x5730;&#x533A;&#x4E60;&#x60EF;&#x7684;&#x65E5;&#x671F;&#x98CE;&#x683C;</p>
+<h2 id="&#x65F6;&#x533A;&#x914D;&#x7F6E;">&#x65F6;&#x533A;&#x914D;&#x7F6E;</h2>
+<p>&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#xFF0C;&#x5176;&#x65F6;&#x533A;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x4E0D;&#x540C;&#x7528;&#x6237;&#x7684;&#x65F6;&#x533A;&#x4FE1;&#x606F;&#xFF0C;Macula&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li><p>&#x767B;&#x5F55;&#x65F6;&#x7531;&#x7CFB;&#x7EDF;&#x4E3B;&#x52A8;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x7684;&#x65F6;&#x533A;&#x5E76;&#x4FDD;&#x5B58;&#x5728;&#x7528;&#x6237;&#x7684;HTTP SESSION&#x4E2D;&#xFF1B;</p>
+<pre><code> &lt;bean id=&quot;timeZoneResolver&quot; class=&quot;org.macula.core.mvc.timezone.SessionTimeZoneResolver&quot; /&gt;
+</code></pre></li>
+<li><p>&#x767B;&#x5F55;&#x65F6;&#x7531;&#x7CFB;&#x7EDF;&#x4E3B;&#x52A8;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x7684;&#x65F6;&#x533A;&#x5E76;&#x4FDD;&#x5B58;&#x5728;&#x7528;&#x6237;&#x7684;COOKIE&#x4E2D;&#xFF1B;</p>
+<pre><code> &lt;bean id=&quot;timeZoneResolver&quot; class=&quot;org.macula.core.mvc.timezone.CookieTimeZoneResolver&quot; /&gt;
+</code></pre></li>
+<li><p>&#x767B;&#x5F55;&#x65F6;&#x81EA;&#x52A8;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x65F6;&#x533A;&#xFF1B;</p>
+<pre><code> &lt;bean id=&quot;timeZoneResolver&quot; class=&quot;org.macula.core.mvc.timezone.CookieAutoTimeZoneResolver&quot; /&gt;
+</code></pre></li>
+</ol>
 
                     
                     </section>
@@ -535,10 +549,10 @@
         </div>
 
         
-        <a href="../chapter2/06_Timezone.html" class="navigation navigation-prev " aria-label="Previous page: 时间与格式"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter2/05_Controller.html" class="navigation navigation-prev " aria-label="Previous page: 展示层"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter4/chapter4.html" class="navigation navigation-next " aria-label="Next page: 扩展插件"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter3/chapter3.html" class="navigation navigation-next " aria-label="Next page: 基础插件"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
