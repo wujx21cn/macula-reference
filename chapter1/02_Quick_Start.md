@@ -334,7 +334,7 @@ public String list() {
 
 方法二示例：
 
-```
+```java
 @RequestMapping(value = "/user/users", method = RequestMethod.POST)
 @OpenApi
 public Page<JpaUIMUser> getUsers(Pageable pageable) {
