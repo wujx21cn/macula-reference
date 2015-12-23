@@ -170,7 +170,7 @@ public interface User {
 
 Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
 
-```
+```java
 package org.macula.uim.base.domain.impl;
 ```
 
