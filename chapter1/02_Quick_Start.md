@@ -367,7 +367,7 @@ ${runtime.vmName}
 <span data-bind="text: vmName"><span>
 ```
 .js 文件示例：
-```
+```javascript
 $(function() {
 	var code = 'system-runtime';
 
