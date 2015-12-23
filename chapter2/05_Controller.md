@@ -168,7 +168,7 @@ public class PageResponse extends Response {
 
 @OpenApi注解的启用需要配置RequestMappingHandlerAdapter的customReturnValueHandlers属性：
 
-```
+```xml
 <property name="customReturnValueHandlers">
     <list>
         <bean class="org.macula.core.mvc.OpenApiReturnValueHandler">
