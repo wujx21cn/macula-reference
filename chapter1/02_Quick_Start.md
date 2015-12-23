@@ -834,7 +834,7 @@ public Long savePassword(@RequestParam("username") String username,
 
 再看 Service 代码：
 
-```
+```java
 @Override
 @Transactional
 public Long changePassword(String username, String oldPassword, String newPassword)
