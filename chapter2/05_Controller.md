@@ -414,7 +414,7 @@ public ModelAndView excel2() {
 }
 ```
 
-
+上述代码将会去views/admin[front]/xxxx/so_master/目录下寻找excel.xls的Excel模板文件，然后通过ExcelUtils解析该模板文件生成需要的Excel文件。
     
 
 
