@@ -406,6 +406,14 @@ public class AdminMaculaBaseController extends BaseController {
 
 为了更好的支持Excel的导出功能，系统提供了ExcelView类结合ExcelUtils的Excel模板方式导出Excel。只要按照ExcelUtils的语法制作Excel模板，然后放在FreeMarker模板文件放置的目录中，在Controller中如下使用：
 
+```
+public ModelAndView excel2() {
+	Map<String, Object> model = new HashMap<String, Object>();
+	model.put("name", "变量");
+	return new ModelAndView(new ExcelView(getRelativePath("/so_master/excel")), model);                   
+}
+```
+
 
     
 
