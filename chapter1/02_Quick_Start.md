@@ -896,7 +896,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 在页面上使用示例如下：
 
-```
+```html
 <select name="user.locale" data-bind="options: $Param('language'), optionsText: 'label', optionsValue:'code', value: locale" />
 ```
 
