@@ -320,7 +320,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     对于Pageable参数的绑定，比如Controller中编写：
     
-    ```
+    ```java
     @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
 
     public Page<User> list(Pageable pageable) {
