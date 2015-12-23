@@ -786,7 +786,7 @@ $(document.body).updateContents(base + '/admin/macula-base/system/runtime');
 
 然后看一下 .js 文件的内容：
 
-```
+```javascript
 var $content = $('#page-' + code);
 var $form = $content.find('form:first');
 $.metadata.setType('attr', 'validate');
