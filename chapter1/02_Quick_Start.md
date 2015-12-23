@@ -154,7 +154,7 @@ package org.macula.uim.base.domain;
 
 接口类示例：
 
-```
+```java
 public interface User {
 
 	/** 用户名 */
