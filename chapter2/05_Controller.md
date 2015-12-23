@@ -405,6 +405,8 @@ public class AdminMaculaBaseController extends BaseController {
 ## 8.9 ExcelView
 
 为了更好的支持Excel的导出功能，系统提供了ExcelView类结合ExcelUtils的Excel模板方式导出Excel。只要按照ExcelUtils的语法制作Excel模板，然后放在FreeMarker模板文件放置的目录中，在Controller中如下使用：
+
+
     
 
 
