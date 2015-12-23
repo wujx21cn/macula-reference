@@ -171,7 +171,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     ```
     
 2. Listener需要设置的参数
-    ```
+    ```xml
     <context-param>
     
         <param-name>locatorFactorySelector</param-name>
