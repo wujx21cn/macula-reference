@@ -934,7 +934,7 @@ http://www.my97.net/
 
 这个控件的功能比较全面，我们常用的限定日期可选范围，比如在某一天以前，或者在页面上某个日期输入框的值以后等等。下面示例是有效日期和失效日期，是一个常见的日期处理功能。
 
-```
+```html
 <input type="text" id="effectiveDate" name="user.effectiveDate" data-bind="value: effectiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}'})"/>
 
 <input type="text" name="user.inactiveDate" data-bind="value: inactiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}',minDate:'#F{$dp.$D(\'effectiveDate\')}'})"/>
