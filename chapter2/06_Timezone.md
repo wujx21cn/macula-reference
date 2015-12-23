@@ -18,6 +18,6 @@
     ```
 3. 登录时自动获取用户浏览器的时区；
 
-    ```
+    ```xml
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.CookieAutoTimeZoneResolver" />       
     ```
