@@ -308,7 +308,7 @@ public String getVmName() {
 
 对于需要支持 AJAX JSON 的 controller 方法不需要 org.springframework.ui.Model 参数，需要增加 annotation @OpenApi，controller 方法可以直接返回 pojo bean。方法声明格式示例：
 
-```
+```java
 @RequestMapping(value="/system/runtime/get",method=RequestMethod.GET)
 @OpenApi
 public RuntimeSnapshot getRuntimeSnapshot() {
