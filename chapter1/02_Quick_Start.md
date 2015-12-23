@@ -652,7 +652,7 @@ data-bind="value: userName"
 
 绑定页面按钮操作示例代码
 
-```
+```javascript
 $form.find('.cancel-btn').click(function() {
 	$(this).trigger('closeDialog');
 });
@@ -662,7 +662,7 @@ $form.find('.cancel-btn').click(function() {
 
 **通过 Ajax 读取服务器端的数据示例代码**
 
-```
+```javascript
 var currentId = $form.attr('item-id');
 if (currentId) {
 	$.getJSON(base + '/admin/macula-uim/user/get/' + currentId,
