@@ -450,7 +450,7 @@ actionsViewModel.onEditAction = function(e) {
 
 这部分主要是定义表格结构和要显示的数据内容，采用了 KnockoutJS 的Model和View绑定技术。定义表格结构示例如下：
 
-```
+```html
 <table class="treeTable gridlist">
 	<thead>
 		<th>用户名</th>
