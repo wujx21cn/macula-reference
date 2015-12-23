@@ -95,7 +95,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 **例 6.4. 根据findBy后面的属性名查询：**
 
-```
+```java
 public List<Person> findByLastname(String lastname);
 ```
 
@@ -104,14 +104,14 @@ public List<Person> findByLastname(String lastname);
 
 **例 6.5. 根据findBy后的属性名分页、排序查询：**
 
-```
+```java
 public Page<User> findByLastname(String lastname, Pageable pageable);
 public List<User> findByLastname(String lastname, Sort sort);     
 ```
 
 **例 6.6. 根据findBy后的多个属性查询：**
 
-```
+```java
 public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
 ```
 
