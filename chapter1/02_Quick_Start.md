@@ -819,7 +819,7 @@ var validator = $form.validate({
 
 Controller 的代码是：
 
-```javascrip
+```java
 @RequestMapping(value = "/user/savepassword", method = RequestMethod.POST)
 @OpenApi
 public Long savePassword(@RequestParam("username") String username, 
