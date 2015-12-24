@@ -399,7 +399,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
     
-    当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends JpaRepository<User>的实现。
+    当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>`的实现。
 
 
 ## 8.9 ExcelView
