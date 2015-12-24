@@ -1,6 +1,6 @@
 # 业务服务层
 
-Macula开发平台自身是基于Spring作为开发基础，在Spring Framework的基础省，增加的一些规则和CoC的标准与规范，所以对于服务层，更多的需要介绍的是服务层的开发规范。
+Macula开发平台自身是基于Spring作为开发基础，在Spring Framework的基础上，增加的一些规则和CoC的标准与规范，所以对于服务层，更多的需要介绍的是服务层的开发规范。
 
 业务服务层通过Spring Bean来定义，其开发本省与一般的基于Spring的J2EE开发一致，下面就Macula平台所做出的一些要求做一些介绍。
 
