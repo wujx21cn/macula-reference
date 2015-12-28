@@ -24,3 +24,4 @@ SQL语句中的参数部分可以使用#()#或者#[]#，#()#中的参数会通�
 
 \#()#或者#()#中可以是标准的Spring表达式，默认提供的变量有自行传入的参数和UserPrincipal的对象user。
 
+## 15.4 实现ValueEntryResolver接口
