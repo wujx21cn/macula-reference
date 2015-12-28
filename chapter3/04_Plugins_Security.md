@@ -170,5 +170,7 @@ public interface SecurityResourceProvider extends SecurityProvider {
 
 在应用Spring Security来保护整个应用地址的大前提下，Macula相应的对整个Filter链进行了改写和定制，具体如下：
 
+**表 17.1. Macula Filter过滤器介绍**
+
 
 
