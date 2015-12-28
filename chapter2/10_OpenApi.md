@@ -217,7 +217,8 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     	In ;
     }
     ```
-    下面举例说明，有如下POJO类
+    
+下面举例说明，有如下POJO类
     
     ```java
     public class User {
@@ -234,9 +235,9 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
         private String code;
     }            
     ```
-    String[] codes参数应转为“codes=value1、codes=value2”；
+String[] codes参数应转为“codes=value1、codes=value2”；
     
-    User user参数应该转为
+User user参数应该转为
     ```java
     user.userName=xxx
     user.password=xxx
@@ -249,9 +250,11 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     user.girls['key2'].code=xxx
     user.date=2011-07-11T18:34:55.001Z    // 注意这个是零时区的时间       
     ```
-    List<User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
+List<User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
 
-    Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
+Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
+
+
     
     
     
