@@ -261,6 +261,8 @@ Open API接口调用注意事项：
 * 签名方式为 md5(appsecret + key + value .... key + value+appsecret)然后转大写字母,其中key,value对是除签名和图片外的所有请求参数按key做的升序排列, value无需编码。appsecret是应用注册时系统给出的密钥。hmac的签名方式是hmac(key+value...+key+value, appsecret)
 * 请注意API的请求方式，非指定方式API不响应。
 
+## 13.2 Open API的返回
+
 
 
 
