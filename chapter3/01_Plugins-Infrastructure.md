@@ -197,149 +197,27 @@
     ```java
     public interface UserContext {
     
-    
-        /**
-    
-         * 
-    
-         * ��(7.
-    
-         * 
-    
-         * @return ��(7�o
-    
-         */
-    
         UserPrincipal getUser();
-    
-    
-        /**
-    
-         * ��(7
-    
-    
-         * 
-    
-         * @return ��(7
-    
-    
-         */
-    
+ 
         String getUsername();
-    
-    
-        /**
-    
-         * �ٚ�^'<.
-    
-         * 
-    
-         * @param property
-    
-         *            �㐄^'
-    
-         * @return ����Ӝ
-    
-         */
-    
+
         Object resolve(String property);
     
-    
         Object resolve(String property, UserContext userContext);
-    
-    
-        /**
-    
-         * /&��.
-    
-         * 
-    
-         * @param property
-    
-         *             e��K�^'
-    
-         * @return ��/&��
-    
-         */
-    
+  
         boolean isResolved(String property);
-    
-    
-        /**
-    
-         * 9nSM�(7
-    
-    ��*Spring EL �hgL
-    
-    �.
-    
-         * 
-    
-         * @return ��Spring EL 
-    
-    �
-    
-         */
-    
+  
         EvaluationContext createEvaluationContext();
-    
-    
-        /**
-    
-         * ��(7���.
-    
-         */
-    
+  
         void fireUserChangedEvent();
-    
-    
-        /**
-    
-         * ��VegLӜ
-    
-         * 
-    
-         * @param code
-    
-         *             e�Ve�
-    
-         * @param target
-    
-         *             e�����pn
-    
-         * @return ��gLVeӜ
-    
-         * 
-    
-         */
-    
+
         PolicyResult vote(String code, Object target);
     
-    
-        /**
-    
-         * ��VegLӜ
-    
-         * 
-    
-         * @param code
-    
-         *             e�Ve�
-    
-         * @return ��gLVeӜ
-    
-         */
-    
         PolicyResult vote(String code);
-    
-    
-        /**
-    
-         * �
-    
-         */
     
         void destory();
     
     }    
     ```
+    
+    
