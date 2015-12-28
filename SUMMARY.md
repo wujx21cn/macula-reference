@@ -15,7 +15,7 @@
    * [异常处理](chapter2/07_Exception.md)
    * [缓存服务](chapter2/08_Cache.md)
    * [单元测试](chapter2/09_JUnit.md)
-   * 开放API
+   * [开放API](chapter2/10_OpenApi.md)
 * [基础插件](chapter3/chapter3.md)
    * 基础设施
    * 数据提供
