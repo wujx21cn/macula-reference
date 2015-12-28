@@ -47,6 +47,8 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 *为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  *
 
+## 10.3 Ajax请求下HttpServletResponse返回CODE处理
+
 
 
 
