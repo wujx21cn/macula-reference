@@ -13,3 +13,5 @@
     * 接口尽量采用"able", "ible", or "er"，如Runnable命名
     * 尽量不采用首字母为I或加上IF后缀的命名方式，如IBookDao,BookDaoIF。(II)
 
+## 18.2 注释规范(Document Convertions)
+
