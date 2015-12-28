@@ -210,8 +210,8 @@ public interface SecurityResourceProvider extends SecurityProvider {
 		<tr>
 			<td>4</td>
 			<td>org.springframework.security.web.context.SecurityContextPersistenceFilter</td>
-			<td> </td>
-			<td> </td>
+			<td></td>
+			<td></td>
 		</tr>
 	</tbody>
 </table>
