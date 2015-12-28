@@ -4,3 +4,8 @@
 
 ## 13.1 Open API的调用
 
+Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调用参数分为系统级参数和应用级参数。
+
+* 系统级参数：附加在Open API的URL之后，作为Query String传递
+
+    
