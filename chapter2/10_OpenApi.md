@@ -234,5 +234,20 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
         private String code;
     }            
     ```
+    String[] codes参数应转为“codes=value1、codes=value2”；
+    
+    User user参数应该转为
+    ```java
+    user.userName=xxx
+    user.password=xxx
+    user.org.code=xxx
+    user.orgs[0].code=xxx
+    user.orgs[1].code=xxx
+    user.params['key1']=xxx
+    user.params['key2']=xxx
+    user.girls['key1'].code=xxx
+    user.girls['key2'].code=xxx
+    user.date=2011-07-11T18:34:55.001Z    // 注意这个是零时区的时间       
+    ```
     
     
