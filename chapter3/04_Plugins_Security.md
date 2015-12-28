@@ -49,4 +49,6 @@
     
 ## 17.2 权限配置
 
-    
+![macula-security-biz.jpg](../images/chapter3/macula-security-biz.jpg "macula-security-biz.jpg")
+
+
