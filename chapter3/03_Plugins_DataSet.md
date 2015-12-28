@@ -244,6 +244,12 @@ public interface DataLoader<T> extends Ordered {
 }
 ```
 
+```
+public interface DataSetLoader extends DataLoader<DataSet> {
+
+}
+```
+
 
         
         
