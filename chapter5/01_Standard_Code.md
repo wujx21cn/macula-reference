@@ -66,6 +66,8 @@
     * 用Double 而不是Float，因为float会容易出现小数点后N位的误差，对计算结果要求严格的使用BidDecimal。
     * 尽量使用第三方库而不是自己编写方法。比如集合间的运算操作可通过apache下的CollectionUtils助手类。
     
-    
+2. 异常处理
+
+    * 
     
     
