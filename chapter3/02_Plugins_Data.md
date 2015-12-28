@@ -49,4 +49,6 @@ public interface ValueEntryResolver extends Ordered, Comparable<ValueEntryResolv
 
 默认情况下，表达式可以使用的变量有：
 
-
+* user：代表是当前用户的userPrincipal
+* 系统参数：为参数表中定义的内容，引用时使用DataParam$前缀加DataParamCode的方式。
+* 自定义参数：通过new UserContextWrapper(userContext, params)添加自定义参数。
