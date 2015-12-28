@@ -33,7 +33,9 @@
     
 2. 注释的格式
    
-    * 
+    * 注释中的第一个句子要以（英文）句号、问号或者感叹号结束。Javadoc生成工具会将注释中的第一个句子放在方法汇总表和索引中。
+    * 为了在JavaDoc和IDE中能快速链接跳转到相关联的类与方法，尽量多的使用@see xxx.MyClass，@see xx.MyClass#find(String)。
+    * Class必须以@author声明作者，体现代码责任，通过@since ${date}标记代码最初产生时间，通过@version $$Id: Standard-Code.xml 4930 2014-03-04 09:45:57Z wzp $$记录当前版本信息
 
     
     
