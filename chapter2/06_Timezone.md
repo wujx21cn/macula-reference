@@ -59,3 +59,13 @@ Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给Fre
 
 ## 9.2 日期与数字格式设置
 
+日期格式统一设置在macula.properties中，如下所示：
+
+```
+pattern.datetime = yyyy-MM-dd HH:mm:ss
+pattern.date = yyyy-MM-dd
+pattern.time = HH:mm:ss
+pattern.number = #
+```
+上述配置同样会对FreeMarker的日期格式做设置，freemarker.properties中无需再设置。
+
