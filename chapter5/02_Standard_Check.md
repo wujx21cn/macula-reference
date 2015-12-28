@@ -24,4 +24,6 @@
     
     选择codetemplates.xml文件。
     
-*     
+* Code Formatter设置
+
+    
