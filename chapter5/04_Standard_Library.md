@@ -36,3 +36,5 @@
 
 对于第三方开发包的调整，需要提出人、项目组、架构组三方面的共同确认，其审批流程如下：
 
+![lib-standard-flow.jpg](../images/chapter5/lib-standard-flow.jpg "lib-standard-flow.jpg")
+
