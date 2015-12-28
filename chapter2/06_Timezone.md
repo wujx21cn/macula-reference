@@ -22,4 +22,5 @@
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.CookieAutoTimeZoneResolver" />       
     ```
     
-    
+服务器端的程序可以通过MaculaRequestContextUtils程序来设置或获取时区：
+
