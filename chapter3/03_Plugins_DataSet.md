@@ -179,6 +179,8 @@
 
     考虑到数据集定义的可移植性，以及各系统间同步时的便捷性，增加了DataSet的XML定义方式。其定义模型参考了Spring的Bean定义模型，通过增加Spring的Bean Handler处理以及Schema的限制，实现DataSet的定义。
     
+    在XML中定义的DataSet，其载入方式与Spring ApplicationContext初始化方式一致，即每个DataSet即为一个Spring Bean。由于DataSet的数量众多，以及为了使应用的服务Bean与DataSet分开，DataSet的XML定义将遵循相应的命名规则一致载入。XML文件的命名规则为：
+    
     
 
         
