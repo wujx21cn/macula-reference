@@ -59,6 +59,8 @@ Macula开发平台的缓存基于Spring-Cache模块，通过EhCache与Memcached�
 	</tbody>
 </table>
 
+## 11.2 Session级Cache
+
 
 
 
