@@ -56,6 +56,10 @@
     
     * FreemarkerDataHandler
     
+    该处理器将输入的表达式当作Freemarker的片段来处理，完全遵循Freemarker的语法。由于在处理器中，总是传入了UserContext上下文，所以在Freemarker表达式中，默认可以使用的有user变量，以及UserContext中可被解析的变量，均可在Freemarker表达式中解析。
+
+    例如，UserContext中的user为{name: Jokeway}，并且能够解析Country属性为String("China")，那么下面的表达式：
+    
     
 
 
