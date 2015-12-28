@@ -22,4 +22,5 @@ createFieldOption方法提供进一步匹配具体的dataCode的方式，返回�
 
 SQL语句中的参数部分可以使用#()#或者#[]#，#()#中的参数会通过PreparedStatement注入SQL，而#[]#中的参数则是通过字符串拼接的方式组成新的SQL，如果需要用单引号包裹数据，可以使用#['var']#。
 
-#()#或者#()#中可以是标准的Spring表达式，默认提供的变量有自行传入的参数和UserPrincipal的对象user。
+\#()#或者#()#中可以是标准的Spring表达式，默认提供的变量有自行传入的参数和UserPrincipal的对象user。
+
