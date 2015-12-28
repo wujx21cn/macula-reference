@@ -51,6 +51,53 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
 
+例 10.1. ExceptionNegotiateFilter中对HttpServletResponse的部分包装：
+
+```java
+@Override
+
+public void sendError(int sc, String msg) throws IOException {
+
+    this.message = msg;
+
+    setStatus(sc); // super.sendError(sc, msg);
+
+}
+
+
+@Override
+
+public void sendError(int sc) throws IOException {
+
+    setStatus(sc); // super.sendError(sc);
+
+}
+
+
+@Override
+
+public void sendRedirect(String location) throws IOException {
+
+    this.redirection = location;
+
+    setStatus(SC_MOVED_TEMPORARILY); // super.sendRedirect(location);
+
+}
+
+
+@Override
+
+public void setStatus(int sc) {
+
+    this.status = sc;
+
+    this.alarm = (sc != SC_OK);
+
+    super.setStatus(sc != SC_OK ? SC_EXPECTATION_FAILED : SC_OK);
+
+}
+```
+
 
 
 
