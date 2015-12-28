@@ -32,7 +32,7 @@
 * [技术标准](chapter5/chapter5.md)
    * [Java代码规范](chapter5/01_Standard_Code.md)
    * [代码审计规范](chapter5/02_Standard_Check.md)
-   * 单元测试标准
+   * [单元测试标准](chapter5/03_Standard_JUnit.md)
    * 第三方包使用标准
    * 新技术引入标准
 * [附录](chapter6/chapter6.md)
