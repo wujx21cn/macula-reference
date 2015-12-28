@@ -47,5 +47,11 @@ public class MaculaRequestContextUtils extends RequestContextUtils {
 
 Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给FreeMarker设置不同的用户时区。并在FreeMarker中添加了如下变量：
 
+* dateTimePattern：日期时间格式，来源于FreeMarker中的配置；
+* datePattern：日期格式，来源于FreeMarker中的配置；
+* timePattern：时间格式，来源于FreeMarker中的配置；
+* timeZone：用户时区ID，为GMT格式，如GMT+08:00；
+* timeZoneOffset：用户时区偏移分钟数，正时区返回的是负数，负时区返回的是正数。
+
 
 
