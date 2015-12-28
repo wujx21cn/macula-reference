@@ -134,12 +134,14 @@
     
 3. 处理器链的配置
 
-在DataSet未明确指定处理器链时，所使用的处理器链为：
+    在DataSet未明确指定处理器链时，所使用的处理器链为：
+    
+    * 没有设置数据源：StaticOptionsDataHandler
+    * 设置了数据源：FreemarkerDataHandler、QueryParserDataHandler、QueryExecutorHandler
+    
+    在DataSet的API中，getHandlerChain得到的数据格式如下（基于XStream）：
 
-* 没有设置数据源：StaticOptionsDataHandler
-* 设置了数据源：FreemarkerDataHandler、QueryParserDataHandler、QueryExecutorHandler
-
-
+    
 
     
         
