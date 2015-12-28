@@ -126,5 +126,44 @@ public interface SecurityCatalogProvider extends SecurityProvider {
 
 Macula框架已经实现了一个抽象类AbstractResourceProvider，用于快速注册一个资源到Macula框架，基于AbstractResourceProvider抽象类时，资源与角色的关系由Macula框架自行管理，否则不可以使用AbstractResourceProvider类。
 
+```
+public interface SecurityResourceProvider extends SecurityProvider {
 
+	/**
+	 * 所有的资源信息列表
+	 */
+	List<ResourceData> list();
+
+	/** 指定角色的关联资源信息列表 */
+	List<ResourceData> getResourcesByRole(Long roleId);
+
+	/** 指定角色列表的关联资源信息列表 */
+	List<ResourceData> getResourcesSetByRoles(Collection<Long> roleIds);
+
+	/** 获取角色关联资源树 */
+	List<ResourceData> getResourcesTreeByRoles(Collection<Long> roleIds, Long root, int level);
+
+	/** 获取角色对应的关联资源 */
+	Map<Long, List<ResourceData>> findRoleResourceMap(Collection<Long> roleIds);
+
+	/** 获取指定资源关联的角色列表 */
+	List<Long> getRolesByResource(Long resourceId);
+
+	/** 获取资源对应的资源、角色列表映射 */
+	Map<Long, List<Long>> findResourceRoleMap(Collection<Long> resourceIds);
+
+	/** 增加角色与资源关联 */
+	void addResourcesByRole(Long roleId, Collection<Long> resourceIds);
+
+	/** 增加角色与资源关联 */
+	void addRolesByResource(Collection<Long> roleIds, Long resourceId);
+
+	/** 删除角色与资源关联 */
+	void removeResourcesByRole(Long roleId, Collection<Long> resourceIds);
+
+	/** 删除角色与资源关联 */
+	void removeRolesByResource(Collection<Long> roleIds, Long resourceId);
+}		
+
+```
 
