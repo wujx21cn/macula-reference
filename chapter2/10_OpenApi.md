@@ -73,5 +73,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     	</tbody>
     </table>
     
+* 应用级参数：根据规定的请求方式不同，应用级参数传递的方式不同，GET方式应用级参数附加在Open API的URL之后作为Query String传递，POST方式的应用级参数需使用FORM提交的方式传递。
+
     
     
