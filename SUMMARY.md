@@ -18,7 +18,7 @@
    * [开放API](chapter2/10_OpenApi.md)
 * [基础插件](chapter3/chapter3.md)
    * [基础设施](chapter3/01_Plugins-Infrastructure.md)
-   * 数据提供
+   * [数据提供](chapter3/02_Plugins_Data.md)
    * 数据集
    * 权限管理
 * [扩展插件](chapter4/chapter4.md)
