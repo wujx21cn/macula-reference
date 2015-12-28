@@ -142,8 +142,17 @@
     在DataSet的API中，getHandlerChain得到的数据格式如下（基于XStream）：
 
     ```xml
-    
-    
+    <list>
+    <HandlerEntry>
+        <className>org.macula.base.data.handle.impl.FreemarkerDataHandler</className>
+    </HandlerEntry>
+    <HandlerEntry>
+        <className>org.macula.base.data.handle.impl.QueryParserDataHandler</className>
+    </HandlerEntry>
+    <HandlerEntry>
+        <className>org.macula.base.data.handle.impl.QueryExecutorHandler</className>
+    </HandlerEntry>
+    </list>
     ```
 
     
