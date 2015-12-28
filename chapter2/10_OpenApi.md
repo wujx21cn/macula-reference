@@ -254,6 +254,15 @@ List<User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样�
 
 Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
 
+Open API接口调用注意事项：
+* 所有的请求和响应数据编码皆为utf-8格式，url里的所有参数值请做urlencode编码。如果请求的Content-Type是application/x-www-form-urlencoded， http body里的所有参数值也做urlencode编码；如果是multipart/form-data格式，每个表单字段的参数值无需编码,但每个表单字段的charset部分需要指定为utf-8。
+* 所有api请求内的日期格式都为ISO8601标准，如yyyy-MM-dd'T'HH:mm:ss.SSS'Z'，注意小时格式是24小时制，例如：2008-03-12T18:23:43.233Z。响应内的日期格式和返回格式相同。
+* 所有api请求参数内的format(即返回格式)可选值为json,xml,默认json。（暂时只支持JSON）
+* 签名方式为 md5(appsecret + key + value .... key + value+appsecret)然后转大写字母,其中key,value对是除签名和图片外的所有请求参数按key做的升序排列, value无需编码。appsecret是应用注册时系统给出的密钥。hmac的签名方式是hmac(key+value...+key+value, appsecret)
+* 请注意API的请求方式，非指定方式API不响应。
+
+
+
 
     
     
