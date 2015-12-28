@@ -36,3 +36,5 @@
 
 在Eclipse -> Windows -> Preference -> checkstyle中导入checkstyle.xml ，进行代码检查。
 
+## 19.4. Eclipse FindBugs
+
