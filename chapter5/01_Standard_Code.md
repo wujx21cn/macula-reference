@@ -58,6 +58,7 @@
 
 1. 基本规范
 
+    * 当API会面对不可知的调用者时，方法需要对输入参数进行校验，如不符合则抛出IllegalArgumentException，建议使用Spring的Assert系列函数。
     * 
     
     
