@@ -127,13 +127,17 @@ Instance级表示的是独立于服务实例的Cache，用于多应用实例间�
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="redisConnectionFactory" />
     </bean>
+    
     <!-- Application Cache -->
-
     <bean class="org.macula.core.cache.redis.RedisCacheManager">
         <constructor-arg index="0" ref="redisTemplate" />
         <property name="cacheName" value="applicationCache" />
     </bean>
 ```
+
+## 11.5 Cache接口
+
+Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springframework.cache.Cache接口。
 
 
 
