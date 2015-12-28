@@ -68,6 +68,7 @@
     
 2. 异常处理
 
+    * 重新抛出的异常必须保留原来的异常，即throw new NewException("message", e); 而不能写成throw new NewException("message")。
     * 
     
     
