@@ -24,6 +24,10 @@
 
 1. 表达式
     
+    表达式可以是一个SQL语句，也可以是包含了Freemarker、Spring EL等表达式的混搭模式的字符串，表达式的内容是任意的，只要下面提到的处理器能处理。需要注意的事DataSet的目的是为了提供一个数据集合，所以表达式往往是一个SQL Select语句。
+
+    在特殊情况下，数据集是静态的Key-Value集合，此时数据集可以不需要引用数据源（详见StaticOptionsDataHandler的介绍）。
     
+2.     
 
 
