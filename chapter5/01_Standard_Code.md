@@ -38,6 +38,8 @@
     * Class必须以@author声明作者，体现代码责任，通过@since ${date}标记代码最初产生时间，通过@version \$\$Id: Standard-Code.xml 4930 2014-03-04 09:45:57Z wzp $$记录当前版本信息
     * 标识(java keyword, class/method/field/argument名，Constants)在注释中第一次出现时以 {@linkxxx.Myclass}注解以便JavaDoc与IDE中可以链接。(II)
 
+3. 注释的内容
+
 
 
     
