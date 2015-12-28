@@ -80,7 +80,7 @@ pattern.number = #
 * AJAX请求返回的日期
 
     AJAX请求返回的日期格式默认是ISO8601标准，org.joda.time.DateTime返回如2011-07-15T12:23:45.222+08:00的格式，java.util.Date返回如2011-07-15T04:23:45.222Z的格式。
-
+    
     Macula框架提供了$date.format(iso8601date, pattern)的方法来转换为浏览器需要显示的格式。
     
     
