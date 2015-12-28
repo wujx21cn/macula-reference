@@ -21,7 +21,17 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 1. 校验类异常
 
     在Controller方法中如果需要调用BaseController基类中的hasErrors()方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
-    
     ```java
-    
+    public User save(@Valid @FormBean("user") User user){
+    if (hasErrors()) {
+        throw new FormBindException(getMergedBindingResults());
+    }
+    // something
+    return user;
+    }          
     ```
+    
+    FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
+
+
+
