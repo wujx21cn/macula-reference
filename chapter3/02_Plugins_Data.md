@@ -28,3 +28,19 @@ SQL语句中的参数部分可以使用#()#或者#[]#，#()#中的参数会通�
 
 可以通过实现ValueEntryResolver接口，使得表达式中可以直接使用该接口实现对应的KEY，也可以通过UserContext.resolve()方法获取该接口实现提供的数据。
 
+```java
+public interface ValueEntryResolver extends Ordered, Comparable<ValueEntryResolver> {
+
+	/**
+	 * 是否能解析.
+	 */
+	boolean support(String key);
+
+	/**
+	 * 解析指定的值.
+	 */
+	ValueEntry resolve(String attribute, UserContext userContext);
+
+}		
+```
+
