@@ -61,6 +61,10 @@ Macula开发平台的缓存基于Spring-Cache模块，通过EhCache与Memcached�
 
 ## 11.2 Session级Cache
 
+Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下，HttpSession未做集群下的复制，所以理论上可存放任意数据，但在保证每个用户尽量少的占用系统资源的要求，尽量减少Session级的Cache数据。
+
+在Spring中配置的Bean如下：
+
 
 
 
