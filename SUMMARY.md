@@ -17,7 +17,7 @@
    * [单元测试](chapter2/09_JUnit.md)
    * [开放API](chapter2/10_OpenApi.md)
 * [基础插件](chapter3/chapter3.md)
-   * 基础设施
+   * [基础设施](chapter3/01_Plugins-Infrastructure.md)
    * 数据提供
    * 数据集
    * 权限管理
