@@ -60,6 +60,7 @@
 
     * 当API会面对不可知的调用者时，方法需要对输入参数进行校验，如不符合则抛出IllegalArgumentException，建议使用Spring的Assert系列函数。
     * 因为System.out.println()，e.printStackTrace()仅把信息显示在控制台，因此不允许使用，必须使用logger打印并记录信息。
+    * 在数组中的元素(如String [1])，如果不再使用需要设为NULL，否则会内存泄漏。因此直接用Collections类而不要使用数组。
     * 
     
     
