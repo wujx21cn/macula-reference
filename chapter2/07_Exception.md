@@ -33,5 +33,8 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
     
     FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
 
+2. 业务类异常
+
+    
 
 
