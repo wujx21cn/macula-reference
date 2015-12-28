@@ -74,6 +74,9 @@
     
 3. JDK5.0规范
 
-    * 
+    * 重载方法必须使用@Override，可避免父类方法改变时导致重载函数失效。
+    * 不需要关心的warning信息用@SuppressWarnings("unused"), @SuppressWarnings("unchecked"), @SuppressWarnings("serial") 注释。
+    
+    
     
     
