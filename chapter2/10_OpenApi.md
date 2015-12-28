@@ -217,5 +217,9 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     	In ;
     }
     ```
+    下面举例说明，有如下POJO类
     
+    ```java
+    
+    ```
     
