@@ -292,7 +292,28 @@ Open API的返回分为正常返回和异常返回。
 
 * 正常返回PageResponse<User>则JSON格式如下：
 
-    
+    ```json
+    {
+        /** 是否成功标识 */
+        "success" : true,
+    	/** 本次请求的页大小 */
+    	"size" : 20,	
+    	/** 当前页码，从零开始 */
+    	"number" : 5,
+    	/** 总记录数 */
+    	"totalElements" : 501,
+    	/** 总页数 */
+    	"totalPages" : 26,	
+    	/** 本页的总记录数 */
+    	"numberOfElements" : 20,	
+    	/** 是否首页 */
+    	"firstPage" : false,	
+    	/** 是否最后页 */
+    	"lastPage" : false,	
+    	/** 内容列表 */
+    	"content" : [ {user1 json}, {user2 json}, ... ]
+    }
+    ```
 
 
     
