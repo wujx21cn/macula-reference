@@ -63,6 +63,7 @@
     * 在数组中的元素(如String [1])，如果不再使用需要设为NULL，否则会内存泄漏。因此直接用Collections类而不要使用数组。
     * 在不需要封闭修改的时候，可使用protected 或 private，使用protected可方便子类重载，在遵循Java开闭原则下，尽量使代码可被外部修改程度降低。
     * 变量，参数和返回值定义尽量基于接口而不是具体实现类，如Map map = new HashMap();
+    * 用Double 而不是Float，因为float会容易出现小数点后N位的误差，对计算结果要求严格的使用BidDecimal。
     * 
     
     
