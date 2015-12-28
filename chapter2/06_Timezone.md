@@ -104,5 +104,6 @@ DateConverter可以处理日期时间、日期、时间格式的字符串，格�
 *对于使用@DateTimeFormat注解的日期，其在转换时是使用@DateTimeFormat注解中指定的格式，这里建议定义一个常量的日期时间、日期、时间格式与macula.properties中保持一致，指定@DateTimeFormat的格式时使用这个常量即可。*
 
 
+##9.5 数字格式转换
 
 
