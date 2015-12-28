@@ -87,5 +87,21 @@ Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域�
         overflowToDisk="true"
         />
 ```
+* name
+    
+    ehcache的cache名，对应于Instance级的Cache名称为instanceCache；
+
+* maxElementsInMemory
+
+    标识在Cache中可存放的数据条目数；
+    
+* timeToIdleSeconds
+
+    数据闲置时间，超过闲置时间将被移除
+    
+* timeToLiveSeconds
+
+    
+
 
 
