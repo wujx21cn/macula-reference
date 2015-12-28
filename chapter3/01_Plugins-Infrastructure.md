@@ -224,4 +224,8 @@
     
     如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
     
+    ```
+    UserContext userContext = userPrincipal.createUserContext();
+    ```
     
+    * 
