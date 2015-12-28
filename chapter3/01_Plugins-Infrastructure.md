@@ -182,5 +182,8 @@
     
     * 通过UserContext获取
     
+    如果仅有用户的用户名信息，也可通过先构建UserContext，然后通过UserContext反向构建UserPrincipal的方式构建用户信息。
+    
+    
     
     
