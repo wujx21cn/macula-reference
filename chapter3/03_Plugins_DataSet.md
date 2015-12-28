@@ -254,8 +254,9 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 
 ***重要***
 
-*与DataSet相同，数据源（DataSource）以及数据参数（DataParam）都采用了类似的定义和加载方式。
-一个通过XML定义DataSource的例子：*
+*与DataSet相同，数据源（DataSource）以及数据参数（DataParam）都采用了类似的定义和加载方式。*
+
+*一个通过XML定义DataSource的例子：*
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -278,6 +279,10 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 
 </spring:beans>  
 ```
+
+*DataSource的XML定义文件的路径为：resources/data/模块名/XXX-datasource.xml*
+
+*一个通过XML定义DataParam的例子：*
 
 
 
