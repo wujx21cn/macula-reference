@@ -74,5 +74,18 @@ Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下
 
 ## 11.3 Instance级Cache
 
+Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域，缓存数据通过EhCache实现。
+
+对实例级Cache的配置可通过ehcache.xml来实现。
+
+```xml
+    <cache name="instanceCache" 
+        maxElementsInMemory="300"
+        eternal="false"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="true"
+        />
+```
 
 
