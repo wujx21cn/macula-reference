@@ -53,5 +53,7 @@ Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给Fre
 * timeZone：用户时区ID，为GMT格式，如GMT+08:00；
 * timeZoneOffset：用户时区偏移分钟数，正时区返回的是负数，负时区返回的是正数。
 
+***提示***
 
+*在设置页面上的日期控件格式时，建议使用Macula暴露出来的对应的日期Pattern。*
 
