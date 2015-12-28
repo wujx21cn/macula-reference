@@ -75,4 +75,12 @@ pattern.number = #
 
 * FreeMarker中显示日期
 
+    在FreeMarker中，如果是java.util.Date类型的日期，可以直接通过mydate?datetime，mydate?date，mydate?time分别显示日期时间、日期、时间样式的日期字符串，格式采用预先配置的格式。而对于org.joda.time.DateTime类型的日期需要先调用toDate()方法，然后在依照java.util.Date类型的日期处理。
+    
+* AJAX请求返回的日期
+
+    AJAX请求返回的日期格式默认是ISO8601标准，org.joda.time.DateTime返回如2011-07-15T12:23:45.222+08:00的格式，java.util.Date返回如2011-07-15T04:23:45.222Z的格式。
+
+    Macula框架提供了$date.format(iso8601date, pattern)的方法来转换为浏览器需要显示的格式。
+    
     
