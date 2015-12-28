@@ -73,3 +73,6 @@ pattern.number = #
 
 服务器端产生日期对象后，需要转为字符串才能显示，日期对象有java.util.Date和 org.joda.time.DateTime 。
 
+* FreeMarker中显示日期
+
+    
