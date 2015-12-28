@@ -65,6 +65,11 @@ Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下
 
 在Spring中配置的Bean如下：
 
-
+```
+    <!-- Session Cache -->
+	<bean class="org.macula.core.cache.session.SessionCacheFactoryBean">
+		<property name="name" value="sessionCache" />
+	</bean>
+```
 
 
