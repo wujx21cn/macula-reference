@@ -93,5 +93,128 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     
     * 常见的输入输出类型：
     
+    ```java
+    public class Response {
+	/** 是否成功标识 */
+	private boolean success;
+
+	/** 系统级错误代码 */
+	private String errorCode;
+	/** 系统级错误信息 */
+	private String errorMessage;
+
+	/** 业务级错误代码 */
+	private String exceptionCode;
+	/** 业务级错误信息 */
+	private String exceptionMessage;
+
+	/** 异常详细信息 */
+	private String exceptionStack;
+
+	/** 服务端重定向信息 */
+	private String redirection;
+
+	/** 校验结果信息 */
+	private List<FieldError> validateErrors;
+    }
+                                    
+    public class ExecuteResponse<T> extends Response {
+    	/** 结果信息 */
+    	private T returnObject;
+    }
     
+    public class PageResponse<T> extends Response {
+    	/** 本次请求的记录数 */
+    	private int size;
+    
+    	/** 当前页码，从零开始 */
+    	private int number;
+    
+    	/** 总记录数 */
+    	private long totalElements;
+    
+    	/** 总页数 */
+    	private int totalPages;
+    
+    	/** 本页的总记录数 */
+    	private int numberOfElements;
+    
+    	/** 是否首页 */
+    	private boolean firstPage;
+    
+    	/** 是否最后页 */
+    	private boolean lastPage;
+    
+    	/** 内容列表 */
+    	private List<T> content;
+    }
+    
+    public class FieldError {
+    	// 元素名，与页面元素名一致  
+    	private String element;
+    	
+    	// 错误信息  
+    	private String message;
+    }
+    
+    public class CommonCondition {
+    
+    	/** 要查询的条件字段(或属性)名称 */
+    	private String name;
+    
+    	/** 字段数据类型：Boolean, Integer, Long, Double, String, Timestamp, Date */
+    	private DataType dataType;
+    
+    	/** 
+    	 * 比较符：StartWith, EndWith, Contains, NotContains, Equals, GreaterThan, GreaterOrEqual
+    	 * LessThan, LessOrEqual, NotEqual, BeforeThan, AfterThan, Between, Is, In
+    	 **/
+    	private CriteriaType criteriaType;
+    
+    	/** 条件值 */
+    	private Object value;
+    
+    	/** 另一个条件值 */
+    	private Object anotherValue;
+    }
+    
+    public enum DataType {
+    
+    	Boolean(Boolean.class), Integer(Integer.class), Long(Long.class), 
+        Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
+    }
+    
+    public enum CriteriaType {
+    	// like '%x'
+    	StartWith,
+    	// like 'x%'
+    	EndWith,
+    	// like '%x%'
+    	Contains,
+    	// not like '%x%'
+    	NotContains,
+    	// = x
+    	Equals,
+    	// > x
+    	GreaterThan,
+    	// >= x
+    	GreaterOrEqual,
+    	// < x
+    	LessThan,
+    	// <= x
+    	LessOrEqual,
+    	// <> x
+    	NotEqual,
+    	// < x 早于
+    	BeforeThan,
+    	// > x 晚于
+    	AfterThan,
+    
+    	// >= x1 and < x2
+    	Between,
+    	Is,
+    	// in ( x1, x2 )
+    	In ;
+    }
+    ```
     
