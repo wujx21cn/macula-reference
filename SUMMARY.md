@@ -34,7 +34,7 @@
    * [代码审计规范](chapter5/02_Standard_Check.md)
    * [单元测试标准](chapter5/03_Standard_JUnit.md)
    * [第三方包使用标准](chapter5/04_Standard_Library.md)
-   * 新技术引入标准
+   * [新技术引入标准](chapter5/05_Standard_Import.md)
 * [附录](chapter6/chapter6.md)
    * 表结构
    * 版本变更说明
