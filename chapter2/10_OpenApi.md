@@ -265,7 +265,30 @@ Open API接口调用注意事项：
 
 Open API的返回分为正常返回和异常返回。
 
+* 正常返回ExecuteResponse<User>则JSON格式如下：
 
+    ```json
+    {
+        /** 是否成功标识 */
+    	"success" : true,
+        /** User对象 */
+        "returnObject" : {
+            "userName" : "xxx",
+            "password" : "xxx",
+            "org" : {
+                "code" : "xxxx"
+            },
+            "orgs" : [{"code" : "xx"},{"code" : "yy"}],
+            "params" : {
+                "key" : "value"
+        `    },
+            "girls" : {
+                "key" : {"code" : "xx"}
+        `    },        
+            "date" : "2011-07-11T18:12:35.900Z"
+        }
+    }
+    ```
 
 
     
