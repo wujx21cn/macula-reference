@@ -72,5 +72,7 @@ Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下
 	</bean>
 ```
 
+## 11.3 Instance级Cache
+
 
 
