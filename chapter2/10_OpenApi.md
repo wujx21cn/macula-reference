@@ -8,4 +8,6 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 * 系统级参数：附加在Open API的URL之后，作为Query String传递
 
+    **表 13.1. Open API请求系统级参数**
+    
     
