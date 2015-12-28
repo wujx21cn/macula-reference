@@ -10,4 +10,66 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
     **表 13.1. Open API请求系统级参数**
     
+    <table summary="Open API请求系统级参数" border="1">
+    	<colgroup>
+    		<col />
+    		<col />
+    		<col />
+    		<col />
+    	</colgroup>
+    	<thead>
+    		<tr>
+    			<th>名称</th>
+    			<th>类型</th>
+    			<th>是否必要</th>
+    			<th>说明</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>app_key</td>
+    			<td>String</td>
+    			<td>Y</td>
+    			<td>在Macula后台中创建应用时分配的KEY</td>
+    		</tr>
+    		<tr>
+    			<td>timestamp</td>
+    			<td>String</td>
+    			<td> </td>
+    			<td>时间戳，为现在的GMT时间到GMT1970年1月1日0时0分0秒的毫秒数。Open
+    				API服务端允许客户端请求时间误差为5分钟。</td>
+    		</tr>
+    		<tr>
+    			<td>sign</td>
+    			<td>String</td>
+    			<td>Y</td>
+    			<td>对API调用的所有参数签名，包括应用级参数</td>
+    		</tr>
+    		<tr>
+    			<td>session</td>
+    			<td>String</td>
+    			<td>N</td>
+    			<td>CAS的PT，如果是后台应用的调用接口，无需该参数，平台会使用appKey作为用户名判定应用的权限。如果有的话，则会根据PT解析出具体操作的用户，按照具体用户的权限评定是否可以访问该Open
+    				API。</td>
+    		</tr>
+    		<tr>
+    			<td>format</td>
+    			<td>String</td>
+    			<td>N</td>
+    			<td>目前支持xml，json格式，默认是json</td>
+    		</tr>
+    		<tr>
+    			<td>v</td>
+    			<td>String</td>
+    			<td>N</td>
+    			<td>API协议版本号，默认是1.0</td>
+    		</tr>
+    		<tr>
+    			<td>sign_method</td>
+    			<td>String</td>
+    			<td>N</td>
+    			<td>签名算法，默认支持md5和hmac两种，不写就是md5</td>
+    		</tr>
+    	</tbody>
+    </table>
     
