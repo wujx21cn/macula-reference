@@ -53,4 +53,8 @@
 
 ## 17.3 用户分组提供者接口
 
+默认情况下，Macula框架只提供了基于组织结构的用户分组，如果需要添加其他的用户分组信息，可以通过实现SecurityCatalogProvider的方式提供新的用户分组信息。
+
+Macula框架实现了一个抽象类AbstractCatalogProvider，可以基于AbstractCatalogProvider快速添加一个新的用户分组，不过用户分组与用户之间的关系会统一由Macula框架来管理，如果需要自行管理，则不能使用该抽象类。
+
 
