@@ -228,4 +228,6 @@
     UserContext userContext = userPrincipal.createUserContext();
     ```
     
-    * 
+    * 通过UserContextFactory构建
+    
+    
