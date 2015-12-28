@@ -221,7 +221,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 下面举例说明，有如下POJO类
     
 ```java
-    public class User {
+public class User {
     private String userName;
     private String password;
     private Org org;
@@ -233,7 +233,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     
     public class Org {
         private String code;
-    }            
+}            
 ```
 String[] codes参数应转为“codes=value1、codes=value2”；
     
