@@ -16,3 +16,10 @@ createFieldOption方法提供进一步匹配具体的dataCode的方式，返回�
 
 ## 15.3 SQL数据提供
 
+可以通过在数据库中配置SQL语句、数据源、参数的方式来处理复杂的SQL语句。
+
+通过org.macula.base.data.util.DataSetUtils里面的query方法获取SQL语句的执行结果
+
+SQL语句中的参数部分可以使用#()#或者#[]#，#()#中的参数会通过PreparedStatement注入SQL，而#[]#中的参数则是通过字符串拼接的方式组成新的SQL，如果需要用单引号包裹数据，可以使用#['var']#。
+
+#()#或者#()#中可以是标准的Spring表达式，默认提供的变量有自行传入的参数和UserPrincipal的对象user。
