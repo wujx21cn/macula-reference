@@ -21,3 +21,5 @@
     ```xml
     <bean id="timeZoneResolver" class="org.macula.core.mvc.timezone.CookieAutoTimeZoneResolver" />       
     ```
+    
+    
