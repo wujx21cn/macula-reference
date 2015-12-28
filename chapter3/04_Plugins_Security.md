@@ -46,3 +46,7 @@
 * 这几个权限主体的相互关系如下图所示：
 
     ![macula-security-acl.jpg](../images/chapter3/macula-security-acl.jpg "macula-security-acl.jpg")
+    
+## 17.2 权限配置
+
+
