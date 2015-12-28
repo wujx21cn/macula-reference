@@ -47,4 +47,6 @@ public interface ValueEntryResolver extends Ordered, Comparable<ValueEntryResolv
 
 ## 15.5 表达式说明
 
+默认情况下，表达式可以使用的变量有：
+
 
