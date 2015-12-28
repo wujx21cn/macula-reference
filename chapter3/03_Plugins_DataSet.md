@@ -303,7 +303,8 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 </spring:beans>  
 ```
 
-
+*DataParam的XML文件定义的路径为：resources/data/模块名/XXX-dataparam.xml
+DataParam也可以通过在表达式中写入[ref=需要引用的DataParam的Code]的方式来覆盖设置的Value值。*
 
 
         
