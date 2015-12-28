@@ -49,6 +49,8 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 ## 10.3 Ajax请求下HttpServletResponse返回CODE处理
 
+在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
+
 
 
 
