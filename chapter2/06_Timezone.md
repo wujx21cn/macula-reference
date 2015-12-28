@@ -84,3 +84,5 @@ pattern.number = #
     Macula框架提供了$date.format(iso8601date, pattern)的方法来转换为浏览器需要显示的格式。
     
     
+## 9.4 字符串转为日期    
+
