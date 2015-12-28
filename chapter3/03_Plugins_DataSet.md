@@ -141,7 +141,10 @@
     
     在DataSet的API中，getHandlerChain得到的数据格式如下（基于XStream）：
 
+    ```xml
     
+    
+    ```
 
     
         
