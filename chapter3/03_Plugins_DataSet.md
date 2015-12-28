@@ -177,6 +177,8 @@
     
 2. 基于XML定义
 
+    考虑到数据集定义的可移植性，以及各系统间同步时的便捷性，增加了DataSet的XML定义方式。其定义模型参考了Spring的Bean定义模型，通过增加Spring的Bean Handler处理以及Schema的限制，实现DataSet的定义。
+    
     
 
         
