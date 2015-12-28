@@ -45,5 +45,7 @@ public class MaculaRequestContextUtils extends RequestContextUtils {
 
 ```
 
+Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给FreeMarker设置不同的用户时区。并在FreeMarker中添加了如下变量：
+
 
 
