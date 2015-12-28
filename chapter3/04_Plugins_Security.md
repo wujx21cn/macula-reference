@@ -172,5 +172,47 @@ public interface SecurityResourceProvider extends SecurityProvider {
 
 **表 17.1. Macula Filter过滤器介绍**
 
-
+<table summary="Macula Filter过滤器介绍" border="1">
+	<colgroup>
+		<col />
+		<col />
+		<col />
+		<col />
+	</colgroup>
+	<thead>
+		<tr>
+			<th> </th>
+			<th>Class类</th>
+			<th>功能说明</th>
+			<th>注意要点</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>org.macula.base.security.web.ExceptionNegotiateFilter</td>
+			<td>用来处理Ajax状态下，对于非正常情况下也能返回Response对象给客户端js处理。同时，如果server端出异常，将使用MaculaExceptionTranslator来试图转换为用户友好的异常信息输出。</td>
+			<td><span class="bold"><strong>该过滤器只对ajax请求起作用。</strong></span>经过该过滤器后，因为只有500的状态客户端浏览器会解析内容，所以当应用出现异常或其他非200的状态码时，统一将状态码修改500，同时构建Response对象输出。
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>org.springframework.security.web.session.ConcurrentSessionFilter</td>
+			<td>记录本实例上登录的用户信息</td>
+			<td>该Filter未进行用户只能一个有效Session在线的控制。</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>org.macula.base.security.log.AccessLogRecordFilter</td>
+			<td>日志记录的Filter</td>
+			<td>是一个后置的Filter，在执行完之后，发布一个AccessLogEvent事件，对该事件的处理需要另外编写ApplicationListener来处理。</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>org.springframework.security.web.context.SecurityContextPersistenceFilter</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+	</tbody>
+</table>
 
