@@ -230,4 +230,6 @@
     
     * 通过UserContextFactory构建
     
+    如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
+    
     
