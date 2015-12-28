@@ -13,3 +13,6 @@
 通过UserContext中提供的resolve(DataParamValueEntryResolver.PREFIX + dataParamCode)方法，可以获取参数的数据，对于多列的数据集可以通过org.macula.base.data.util.DataSetUtils里面的createFieldOptions方法获取格式化好的数据。
 
 createFieldOption方法提供进一步匹配具体的dataCode的方式，返回单条记录，这里有两种匹配方式，一种是参数SQL返回多条记录，通过循环匹配dataCode，对于数据量比较大的数据信息，可以直接在SQL中使用#(dataCode)#获取要翻译的代码。
+
+## 15.3 SQL数据提供
+
