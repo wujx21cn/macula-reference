@@ -219,4 +219,3 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     ```
     
     
-    
