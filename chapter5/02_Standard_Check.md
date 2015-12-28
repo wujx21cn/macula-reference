@@ -14,4 +14,6 @@
 
 * Clean Up设置
 
+    通过Eclipse菜单 Window -> Preference -> Java -> Clean Up -> Import
+    
     
