@@ -43,6 +43,13 @@
     ```
     
     形成的最终数据集为：
+    ```java
+    List<Object[]> {
+        Object[] { "name", "Wilson"},
+        Object[] { "name", "Jokeway"}
+    }
+    ```
+    
     
     
 
