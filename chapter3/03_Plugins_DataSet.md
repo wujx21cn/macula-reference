@@ -228,7 +228,21 @@
 
 为了统一数据集的载入方式，以及方便的定制以及扩展，Macula通过抽象载入接口，可通过实现该接口实现其他方式的载入。
 
+```java
+public interface DataLoader<T> extends Ordered {
+	/**
+	 * 根据code加载Data
+	 * @param code 代码
+	 * @return T
+	 */
+	public T loader(String code);
 
+	/**
+	 * 将缓存的data清除
+	 */
+	public void refresh();
+}
+```
         
         
         
