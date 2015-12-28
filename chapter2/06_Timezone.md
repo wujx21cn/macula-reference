@@ -69,3 +69,7 @@ pattern.number = #
 ```
 上述配置同样会对FreeMarker的日期格式做设置，freemarker.properties中无需再设置。
 
+## 9.3 日期转为字符串
+
+服务器端产生日期对象后，需要转为字符串才能显示，日期对象有java.util.Date和 org.joda.time.DateTime 。
+
