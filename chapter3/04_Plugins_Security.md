@@ -181,7 +181,7 @@ public interface SecurityResourceProvider extends SecurityProvider {
 	</colgroup>
 	<thead>
 		<tr>
-			<th> </th>
+			<th></th>
 			<th>Class类</th>
 			<th>功能说明</th>
 			<th>注意要点</th>
