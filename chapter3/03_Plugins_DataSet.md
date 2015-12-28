@@ -60,6 +60,11 @@
 
     例如，UserContext中的user为{name: Jokeway}，并且能够解析Country属性为String("China")，那么下面的表达式：
     
-    
+    ```
+    我的名字是${user.name}
+    <#if xyz == 'China'>
+       ，你好来自中国的朋友！
+    </#if>
+    ```
 
 
