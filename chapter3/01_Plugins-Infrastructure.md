@@ -232,4 +232,8 @@
     
     如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
     
+    ```
+    String userName = "Wilson";
     
+    UserContext userContext = userContextFactory.createContext(userName);
+    ```
