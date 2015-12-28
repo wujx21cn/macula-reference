@@ -258,8 +258,28 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 一个通过XML定义DataSource的例子：*
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 
+<spring:beans xmlns="http://www.maculaframework.org/schema/data" xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+    		http://www.maculaframework.org/schema/data http://www.maculaframework.org/schema/data/macula-data.xsd">
+    		
+	<datasource id="macula_ds" name="MACULA测试">
+		<jndi>false</jndi>
+		<dataSourceType>DATABASE</dataSourceType>
+		<url>jdbc:oracle:thin:@192.168.0.180:1521:dstest</url>
+		<driver>oracle.jdbc.driver.OracleDriver</driver>
+		<username>macula</username>
+		<password>macula</password>
+		<validationQuery>select 1 from dual</validationQuery>
+	</datasource>
+
+</spring:beans>  
 ```
+
+
 
 
         
