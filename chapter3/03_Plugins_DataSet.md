@@ -284,7 +284,24 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 
 *一个通过XML定义DataParam的例子：*
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 
+<spring:beans xmlns="http://www.maculaframework.org/schema/data" xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+    		http://www.maculaframework.org/schema/data http://www.maculaframework.org/schema/data/macula-data.xsd">
+    		
+	<dataparam id="TEST_PARAM_XX" name="测试参数">
+		<type>DATAAPP</type>
+		<value>select name as label, code as code from MA_BASE_DATA_SET</value>
+		<valueScope>NONE</valueScope>
+		<dataType>String</dataType>	
+		<dataSource>macula_ds</dataSource>
+	</dataparam>
+</spring:beans>  
+```
 
 
         
