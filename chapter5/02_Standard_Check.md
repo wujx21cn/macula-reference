@@ -17,3 +17,4 @@
     通过Eclipse菜单 Window -> Preference -> Java -> Clean Up -> Import
     
     选择cleanup.xml文件。
+*     
