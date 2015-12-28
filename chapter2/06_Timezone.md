@@ -106,4 +106,7 @@ DateConverter可以处理日期时间、日期、时间格式的字符串，格�
 
 ##9.5 数字格式转换
 
+数字格式默认是"#"，如果需要显示为货币格式，在FreeMarker中可以使用${x?string.currency}，在Javascript中需要自行处理。
+
+对于接收的格式，可以通过@NumberFormat注解设置源字符串的对应格式。
 
