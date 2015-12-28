@@ -163,7 +163,8 @@ public interface SecurityResourceProvider extends SecurityProvider {
 
 	/** 删除角色与资源关联 */
 	void removeRolesByResource(Collection<Long> roleIds, Long resourceId);
-}		
-
+}	
 ```
+
+
 
