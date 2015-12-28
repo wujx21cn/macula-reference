@@ -97,6 +97,12 @@ pattern.number = #
     </property>
 </bean>
 ```
+DateConverter可以处理日期时间、日期、时间格式的字符串，格式必须和macula.properties中的保持一致。同时DateConverter也支持ISO8601格式的日期字符串。
+
+***小心***
+
+*对于使用@DateTimeFormat注解的日期，其在转换时是使用@DateTimeFormat注解中指定的格式，这里建议定义一个常量的日期时间、日期、时间格式与macula.properties中保持一致，指定@DateTimeFormat的格式时使用这个常量即可。*
+
 
 
 
