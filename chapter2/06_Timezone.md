@@ -86,3 +86,17 @@ pattern.number = #
     
 ## 9.4 字符串转为日期    
 
+如果需要转到的日期类型是java.util.Date及其子类，Macula框架通过org.macula.core.mvc.convert.DateConverter处理，配置如下：
+
+```xml
+<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="converters">
+        <list>              
+            <bean class="org.macula.core.mvc.convert.DateConverter" />
+        </list>
+    </property>
+</bean>
+```
+
+
+
