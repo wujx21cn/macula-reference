@@ -126,7 +126,7 @@ public interface SecurityCatalogProvider extends SecurityProvider {
 
 Macula框架已经实现了一个抽象类AbstractResourceProvider，用于快速注册一个资源到Macula框架，基于AbstractResourceProvider抽象类时，资源与角色的关系由Macula框架自行管理，否则不可以使用AbstractResourceProvider类。
 
-```
+```java
 public interface SecurityResourceProvider extends SecurityProvider {
 
 	/**
