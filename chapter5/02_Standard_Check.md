@@ -20,4 +20,6 @@
     
 * Code Template设置
 
+    通过Eclipse菜单 Window -> Preference -> Java -> Code Template -> Import
+    
     
