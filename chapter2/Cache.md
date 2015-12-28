@@ -173,6 +173,8 @@ Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springfr
     </bean>
 ```
 
+## 11.7 Cache的其他用途
 
+由于该Cache最终为Spring-Cache实现，所以对于Spring-Cache的其他用途，如通过annotation标识方法的缓存等，请具体参见Spring文档。
 
 
