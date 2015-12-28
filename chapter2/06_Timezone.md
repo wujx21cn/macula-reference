@@ -57,3 +57,5 @@ Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给Fre
 
 *在设置页面上的日期控件格式时，建议使用Macula暴露出来的对应的日期Pattern。*
 
+## 9.2 日期与数字格式设置
+
