@@ -32,3 +32,7 @@
     
 ## 19.3 Eclipse Check Style
 
+通过Eclipse的CheckStyle插件，可以更加严格的检查Java代码的规范性。
+
+在Eclipse -> Windows -> Preference -> checkstyle中导入checkstyle.xml ，进行代码检查。
+
