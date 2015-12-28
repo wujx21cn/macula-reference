@@ -13,7 +13,7 @@
    * [展示层](chapter2/05_Controller.md)
    * [时间与格式](chapter2/06_Timezone.md)
    * [异常处理](chapter2/07_Exception.md)
-   * 缓存服务
+   * [缓存服务](chapter2/Cache.md)
    * 单元测试
    * 开放API
 * [基础插件](chapter3/chapter3.md)
