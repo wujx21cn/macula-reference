@@ -101,3 +101,5 @@ public void setStatus(int sc) {
 这个包装主要实现的是在于Ajax请求时，如果程序代码调用了response.sendError或sendRedirect时，能正确返回给Ajax调用的客户端出错的信息以及重定向的地址。
 
 
+
+
