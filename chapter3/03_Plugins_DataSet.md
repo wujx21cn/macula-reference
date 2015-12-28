@@ -250,6 +250,8 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 }
 ```
 
+上一节提到的数据库载入以及XML载入就是通过DataSetLoader的两个实现类DbDataSetLoaderImpl和XmlDataSetLoaderImpl完成的。
+
 
         
         
