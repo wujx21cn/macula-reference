@@ -240,5 +240,7 @@
 
 ***重要***
 
-*对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。*    
+*对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。*
+
+
     
