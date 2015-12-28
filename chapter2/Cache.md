@@ -141,7 +141,37 @@ Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springfr
 
 ## 11.6 Cache的总体配置
 
+```xml
+  <bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
+        <property name="cacheManagers">
+            <list>
+                <!-- Instance Cache -->
+                <bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
+                    <property name="cacheManager">
+                        <bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+                    </property>
+                </bean>
 
+                <bean class="org.springframework.cache.support.SimpleCacheManager">
+                    <property name="caches">
+                        <set>
+                            <!-- Session Cache -->
+                            <bean class="org.macula.core.cache.session.SessionCacheFactoryBean">
+                                <property name="name" value="sessionCache" />
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+
+                <!-- Application Cache -->
+                <bean class="org.macula.core.cache.redis.RedisCacheManager">
+                    <constructor-arg index="0" ref="redisTemplate" />
+                    <property name="cacheName" value="applicationCache" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+```
 
 
 
