@@ -172,6 +172,12 @@
     ```java
     UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
     ```
+    * 通过SecurityUtils获取
     
+    对于已经登录的用户，可通过SecurityUtils来获取
+    
+    ```java
+    UserPrincipal principal = SecurityUtils.getUserDetails();
+    ```
     
     
