@@ -315,7 +315,24 @@ Open API的返回分为正常返回和异常返回。
     }
     ```
     
-    
+* 异常返回时的JSON格式如下：
+
+    ```json
+    {
+    	/** 是否成功标识 */
+    	"success" : false,
+    	/** 系统级错误代码 */
+    	"errorCode" : "params.10",
+    	/** 系统级错误信息 */
+    	"errorMessage" : "缺少APP KEY参数",
+    	/** 业务级错误代码(如果存在则指的是具体的业务错误信息) */
+    	"exceptionCode" : "xxx",
+    	/** 业务级错误信息(如果存在则指的是具体的业务错误信息) */
+    	"exceptionMessage" : "中文",
+    	/** 异常详细信息 */
+    	"exceptionStack" : "error stack"
+    }
+    ```
 
 
     
