@@ -25,7 +25,25 @@
 服务器端的程序可以通过MaculaRequestContextUtils程序来设置或获取时区：
 
 ```java
+public class MaculaRequestContextUtils extends RequestContextUtils {
 
+	/**
+	 * 获取当前的时区解析器
+	 */
+    public static TimeZoneResolver getTimeZoneResolver(HttpServletRequest request) {
+        return (TimeZoneResolver) request.getAttribute(MaculaDispatcherServlet.TIMEZONE_RESOLVER_ATTRIBUTE);
+    }
+
+    /**
+     * 获取当前请求的时区
+     */
+    public static TimeZone getTimeZone(HttpServletRequest request) {
+        return getTimeZoneResolver(request).resolveTimeZone(request);
+    }
+
+}
 
 ```
+
+
 
