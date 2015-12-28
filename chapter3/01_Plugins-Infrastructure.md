@@ -180,6 +180,7 @@
     UserPrincipal principal = SecurityUtils.getUserDetails();
     ```
     
+    * 通过UserContext获取
     
     
     
