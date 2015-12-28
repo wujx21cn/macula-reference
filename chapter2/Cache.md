@@ -101,7 +101,11 @@ Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域�
     
 * timeToLiveSeconds
 
+    数据生存时间，即从放入Cache到数据失效的时间
     
+在Spring中配置的Bean如下：
+
+
 
 
 
