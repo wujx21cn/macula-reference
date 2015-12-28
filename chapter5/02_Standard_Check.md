@@ -22,4 +22,6 @@
 
     通过Eclipse菜单 Window -> Preference -> Java -> Code Template -> Import
     
+    选择codetemplates.xml文件。
+    
     
