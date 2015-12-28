@@ -76,6 +76,8 @@
     
     * QueryParserDataHandler
     
+    该处理器是基于Macula的语法解析方式进行解析。Macula的表达式基于Spring EL，并在Spring EL的基础上加入了自定义部分，具体如下：
     
+        * 
 
 
