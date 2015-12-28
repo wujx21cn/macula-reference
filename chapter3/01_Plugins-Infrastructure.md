@@ -224,7 +224,7 @@
     
     如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
     
-    ```
+    ```java
     UserContext userContext = userPrincipal.createUserContext();
     ```
     
@@ -232,8 +232,10 @@
     
     如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
     
-    ```
+    ```java
     String userName = "Wilson";
     
     UserContext userContext = userContextFactory.createContext(userName);
     ```
+    
+    
