@@ -38,6 +38,10 @@
     
     例如表达式为：
     
+    ```
+    name:Wilson|name:Jokeway
+    ```
+    
     
     
 
