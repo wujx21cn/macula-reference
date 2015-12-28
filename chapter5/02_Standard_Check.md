@@ -29,3 +29,6 @@
     通过Eclipse菜单 Window -> Preference -> Java -> Formatter -> Import
 
     选择formatter.xml文件。
+    
+## 19.3 Eclipse Check Style
+
