@@ -220,6 +220,18 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     下面举例说明，有如下POJO类
     
     ```java
+    public class User {
+    private String userName;
+    private String password;
+    private Org org;
+    private List<Org> orgs;
+    private Map<String, String> params;
+    private Map<String, Org> girls;
+    private Date date;
+    }
     
+    public class Org {
+        private String code;
+    }            
     ```
     
