@@ -15,4 +15,6 @@
 2. 测试用例命名规范
 
     测试用例的命名规则为test+用例方法名称，比如要测试的方法命名为findUserByName，那么测试用例的命名则为testFindUserByName，
+    其命名规则符合Java方法的命名规则。
+    
     
