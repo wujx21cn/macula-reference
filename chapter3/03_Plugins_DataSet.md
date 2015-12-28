@@ -257,7 +257,9 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 *与DataSet相同，数据源（DataSource）以及数据参数（DataParam）都采用了类似的定义和加载方式。
 一个通过XML定义DataSource的例子：*
 
+```xml
 
+```
 
 
         
