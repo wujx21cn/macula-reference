@@ -122,3 +122,9 @@ public interface SecurityCatalogProvider extends SecurityProvider {
 
 ## 17.4 资源提供者接口
 
+资源是一类具有时间性的可访问或操作的集合，比如系统菜单，用户可以通过实现SecurityResourceProvider接口，来达到通过Macula框架管理您指定资源的目的。实际上可以理解为一个细粒度的数据权限行为。
+
+Macula框架已经实现了一个抽象类AbstractResourceProvider，用于快速注册一个资源到Macula框架，基于AbstractResourceProvider抽象类时，资源与角色的关系由Macula框架自行管理，否则不可以使用AbstractResourceProvider类。
+
+
+
