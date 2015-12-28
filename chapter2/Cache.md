@@ -139,5 +139,9 @@ Instance级表示的是独立于服务实例的Cache，用于多应用实例间�
 
 Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springframework.cache.Cache接口。
 
+## 11.6 Cache的总体配置
+
+
+
 
 
