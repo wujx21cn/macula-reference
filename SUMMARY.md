@@ -30,7 +30,7 @@
    * 系统集成
    * 系统监控
 * [技术标准](chapter5/chapter5.md)
-   * Java代码规范
+   * [Java代码规范](chapter5/01_Standard_Code.md)
    * 代码审计规范
    * 单元测试标准
    * 第三方包使用标准
