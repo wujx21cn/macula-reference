@@ -12,3 +12,4 @@
     * 不允许使用汉语拼音命名 避免使用下划线(静态变量除外)
     * 接口尽量采用"able", "ible", or "er"，如Runnable命名
     * 尽量不采用首字母为I或加上IF后缀的命名方式，如IBookDao,BookDaoIF。(II)
+
