@@ -184,6 +184,10 @@
     
     如果仅有用户的用户名信息，也可通过先构建UserContext，然后通过UserContext反向构建UserPrincipal的方式构建用户信息。
     
-    
+    ```java
+    String userName = "Wilson";
+    UserContext userContext = userContextFactory.createContext(userName);
+    UserPrincipal userPrincipal = userContext.getUser();
+    ```
     
     
