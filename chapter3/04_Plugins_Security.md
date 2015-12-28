@@ -57,4 +57,65 @@
 
 Macula框架实现了一个抽象类AbstractCatalogProvider，可以基于AbstractCatalogProvider快速添加一个新的用户分组，不过用户分组与用户之间的关系会统一由Macula框架来管理，如果需要自行管理，则不能使用该抽象类。
 
+```java
+public interface SecurityCatalogProvider extends SecurityProvider {
 
+	/**
+	 * 获取该分类下的所有信息.
+	 * 
+	 * @return 该分类所有信息列表
+	 */
+	List<CatalogData> list();
+
+	/**
+	 * 获取指定用户在该分类下所拥有的分类列表.
+	 * 
+	 * @param username
+	 *            用户名
+	 * @return 用户在该分类下的信息列表
+	 */
+	List<CatalogData> getCatalogsByUser(String username);
+
+	/**
+	 * 获取该分类下具体值所关联的用户列表.
+	 * 
+	 * @param catalogId
+	 *            具体的分类值
+	 * @return 用户列表信息
+	 */
+	List<String> getUsersByCatalog(Long catalogId);
+
+	/**
+	 * 在分类下加入用户关联信息
+	 * 
+	 * @param username
+	 *            用户名
+	 * @param catalogIds
+	 *            具体的分类值列表
+	 */
+	void addCatalogsByUser(String username, Collection<Long> catalogIds);
+
+	/**
+	 * 在分类下加入用户关联信息
+	 * 
+	 * @param usernames
+	 *            用户名列表
+	 * @param catalogId
+	 *            具体的分类值
+	 */
+	void addUsersByCatalog(Collection<String> usernames, Long catalogId);
+
+	/**
+	 * 在分类下删除用户关联信息
+	 * 
+	 * @param username
+	 *            用户名
+	 * @param catalogIds
+	 */
+	void removeCatalogsByUser(String username, Collection<Long> catalogIds);
+
+	void removeUsersByCatalog(Collection<String> usernames, Long catalogId);
+
+}    	
+    	
+```
