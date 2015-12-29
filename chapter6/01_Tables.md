@@ -307,7 +307,7 @@
 
 ## 23.5. 用户授权
 
-### 23.5.1. MA_BASE_ACL_ROLE
+### 23.5.1 MA_BASE_ACL_ROLE
 
 
 
