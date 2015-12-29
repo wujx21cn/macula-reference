@@ -29,3 +29,7 @@
 
 ### 23.1.2 MA_BASE_APP_INSTANCE
 
+**表 23.2. MA_BASE_APP_INSTANCE**
+
+
+
