@@ -426,7 +426,7 @@
 | EVENT_ADDR | 请求IP地址 | VARCHAR2(255) | NULL |  |  |
 | EVENT_BROWSER | 请求浏览器 | VARCHAR2(255) | NULL |  |  |
 | EVENT_TYPE | 事件类型 | VARCHAR2(10) | NOT NULL |  |  |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| EVENT_TIME | 事件时间 | TIMESTAMP | 3:8 | 4:8 | 5:8 |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 
