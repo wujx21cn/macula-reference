@@ -401,7 +401,7 @@
 | IS_LOCKED | 是否锁定 | NUMBER(1) | NOT NULL | 默认:0 |  |
 | LOCKED_TIME | 锁定时间 | TIMESTAMP | NULL |  |  |
 | REM_ME_LAST_USED | RememberMe最后使用时间  | TIMESTAMP | 	NULL |  |  |
-| 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
+| REM_ME_SERIES | RememberMe序列号 | 2:16 | 3:16 | 4:16 | 5:16 |
 | 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
 | 0:18 | 1:18 | 2:18 | 3:18 | 4:18 | 5:18 |
 | 0:19 | 1:19 | 2:19 | 3:19 | 4:19 | 5:19 |
