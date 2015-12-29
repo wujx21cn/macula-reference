@@ -364,6 +364,8 @@
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
 
 
+### 23.5.4 MA_BASE_ACL_USER_CAT
+
 
 
 
