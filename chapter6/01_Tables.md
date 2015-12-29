@@ -150,7 +150,7 @@
 | ARG_LABEL | 参数标题 | VARCHAR2(50) | NOT NULL |  | 标题 |
 | ARG_CLZ | 输入参数类型 | VARCHAR2(50) | NOT NULL |  | Boolean、Integer、 Long、Double、 String、Timestamp、 Date |
 | ARG_CONTROL | 参数控件 | VARCHAR2(20) | NOT NULL | Text | 枚举 Text等 |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| DEFAULT_VALUE | 缺省值 | VARCHAR2(50) | NULL |  |  |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
