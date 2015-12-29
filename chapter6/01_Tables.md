@@ -80,8 +80,8 @@
 | APP_ID | 应用ID | VARCHAR2(20) | NULL |  |  |
 | TYPE | 枚举类型 | VARCHAR2(10) | NOT NULL |  | 唯一索引 |
 | CODE | 枚举编码 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
+| NAME | 枚举名称 | VARCHAR2(50) | NOT NULL |  |  |
+| LOCALE | 枚举语言 | VARCHAR2(255) | NOT NULL |  | 按照java.util.Locale的标准 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
