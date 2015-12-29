@@ -207,7 +207,7 @@
 | ORG_TYPE | 组织类型 | VARCHAR2(2) | NOT NULL |  | 'HO'：总部用户；'B0'：分公司用户；'S0'：服务中心用户；'HC'：货仓用户 |
 | IS_ASSIGNABLE | 是否可分配 | NUMBER(1) | NOT NULL | 默认:1 |  |
 | ENABLED | 是否有效 | NUMBER(1) | NOT NULL | 默认:1 |  |
-| 0:18 | 1:18 | 2:18 | 3:18 | 4:18 | 5:18 |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | 0:19 | 1:19 | 2:19 | 3:19 | 4:19 | 5:19 |
 | 0:20 | 1:20 | 2:20 | 3:20 | 4:20 | 5:20 |
 
