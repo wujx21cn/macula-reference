@@ -373,11 +373,11 @@
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 主键 |
 | USER_NAME | 用户名 | VARCHAR2(50) | NOT NULL |  | 唯一索引 |
 | CAT_TYPE | 分组类型 | VARCHAR2(10) | NOT NULL |  | 唯一索引 |
-| 0:5 | 1:5 | 2:5 | 3:5 | 4:5 | 5:5 |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
+| CAT_ID | 分组ID | NUMBER(19) | NOT NULL |  | 唯一索引 |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 
 
