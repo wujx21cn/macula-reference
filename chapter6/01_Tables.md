@@ -431,7 +431,7 @@
 | EVENT_COMMENTS | 事件备注 | VARCHAR2(255) | NULL |  | &nbsp;|
 
 
-
+### 23.6.3. MA_BASE_ACL_ACCESS_LOG
 
 
 
