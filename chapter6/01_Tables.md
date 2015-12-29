@@ -299,7 +299,7 @@
 | DECISIONRULE_ID | 决策规则ID | NUMBER(19) | NULL |  | 外键 |
 | QUERYRULE_ID | 查询规则ID | NUMBER(19) | NULL |  | 外键 |
 | DENY_REASON | 拒绝原因 | VARCHAR2(255) | NULL |  |  |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| ORDERED | 排序 | NUMBER(10) | NOT NULL | 默认:0 |  |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
