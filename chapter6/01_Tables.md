@@ -113,7 +113,7 @@
 | PARENT_ID | 分组父ID | NUMBER(19) | NULL | 外键 |  |
 | COMMENTS | 备注 | VARCHAR2(255)| NULL |  |  |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:18 | 1:18 | 2:18 | 3:18 | 4:18 | 5:18 |
 | 0:19 | 1:19 | 2:19 | 3:19 | 4:19 | 5:19 |
 
