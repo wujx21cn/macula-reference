@@ -397,7 +397,7 @@
 | LOGIN_FAILED_TIME | 	登录失败时间 | NUMBER(10) | TIMESTAMP |  |  |
 | PWD_FAILED_TIMES | 密码输入出错次数 | NUMBER(10) | NOT NULL | 默认:0 |  |
 | RETRIEVE_PWD_TIMES | 获取密码次数 | NUMBER(10) | 	NOT NULL | 默认:0 |  |
-| 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
+| RETRIEVE_PWD_TIME | 最后获取密码时间 | TIMESTAMP | NULL |  |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
