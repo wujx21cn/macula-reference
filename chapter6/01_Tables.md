@@ -298,7 +298,7 @@
 | USERRULE_ID | 用户规则ID | NUMBER(19) | NOT NULL |  | 外键 |
 | DECISIONRULE_ID | 决策规则ID | NUMBER(19) | NULL |  | 外键 |
 | QUERYRULE_ID | 查询规则ID | NUMBER(19) | NULL |  | 外键 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
+| DENY_REASON | 拒绝原因 | VARCHAR2(255) | NULL |  |  |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
