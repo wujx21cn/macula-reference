@@ -441,7 +441,7 @@
 | USER_NAME | 用户名 | VARCHAR2(255) | NULL |  | 索引 |
 | ACTION_ID | 功能ID | NUMBER(19) | NOT NULL |  | 索引 |
 | APP_ID | 应用的ID | VARCHAR2(50) | NOT NULL |  |  |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
+| APP_INST | 应用实例 | VARCHAR2(50) | NOT NULL |  |  |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
