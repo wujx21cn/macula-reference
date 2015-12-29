@@ -402,7 +402,7 @@
 | LOCKED_TIME | 锁定时间 | TIMESTAMP | NULL |  |  |
 | REM_ME_LAST_USED | RememberMe最后使用时间  | TIMESTAMP | 	NULL |  |  |
 | REM_ME_SERIES | RememberMe序列号 | VARCHAR2(64) | NULL |  |  |
-| 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
+| REM_ME_TOKEN | RememberMe值 | VARCHAR2(64) | 3:17 | 4:17 | 5:17 |
 | 0:18 | 1:18 | 2:18 | 3:18 | 4:18 | 5:18 |
 | 0:19 | 1:19 | 2:19 | 3:19 | 4:19 | 5:19 |
 | 0:20 | 1:20 | 2:20 | 3:20 | 4:20 | 5:20 |
