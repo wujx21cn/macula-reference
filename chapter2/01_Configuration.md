@@ -15,7 +15,7 @@
     Macula配置文件 macula.properties位于Maven项目的src/main/resources目录下，实现macula平台自身的可配置信息。
 
     **表 4.1. macula.properties可配置属性**
-    
+
     <table summary="macula.properties可配置属性" border="1">
     	<colgroup>
     		<col>
