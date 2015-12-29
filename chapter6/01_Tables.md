@@ -173,7 +173,7 @@
 | DESCRIPTION | 菜单描述 | VARCHAR2(255) | 	NULL |  |  |
 | URI | ACTION的地址 | VARCHAR2(255) | NULL |  |  |
 | HTTP_METHOD | HTTP请求方式 | VARCHAR2(10) | NULL |  | GET，POST |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
+| LOG_OPTION | 	日志记录选项  | NUMBER(10) | NULL |  | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
