@@ -322,7 +322,7 @@
 | IS_INHERITABLE | 是否可继承 | NUMBER(1) | NOT NULL | 默认:1 |  |
 | INHERIT_FROM | 继承自 | NUMBER(19) | NULL |  | 外键 |
 | IS_EXECUTABLE | 是否可执行 | NUMBER(1) | NOT NULL | 默认:1 |  |
-| USERRULE_ID | 用户规则ID | NUMBER(19) | NULL |  | 5:11 |
+| USERRULE_ID | 用户规则ID | NUMBER(19) | NULL |  | 外键 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
