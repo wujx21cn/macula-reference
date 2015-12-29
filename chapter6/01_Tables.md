@@ -392,7 +392,7 @@
 | LOGIN_USER_NAME | 登录后的用户名 | VARCHAR2(50) | NULL |  |  |
 | IS_LOGIN_IN | 是否在线 | 	NUMBER(1) | NOT NULL | 	默认:0 |  |
 | LAST_CHG_PWD_TIME | 上次密码修改时间 | TIMESTAMP | NULL |  |  |
-| NEED_CHG_PWD | 登录后是否需要修改密码 | 2:7 | 3:7 | 4:7 | 5:7 |
+| NEED_CHG_PWD | 登录后是否需要修改密码 | NUMBER(1) | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
