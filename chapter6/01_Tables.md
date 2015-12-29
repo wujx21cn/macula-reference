@@ -94,5 +94,7 @@
 
 ### 23.2.3 MA_BASE_DATA_PARAM
 
+**表 23.5. MA_BASE_DATA_PARAM**
+
 
 
