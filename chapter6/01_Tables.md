@@ -428,7 +428,7 @@
 | EVENT_TYPE | 事件类型 | VARCHAR2(10) | NOT NULL |  |  |
 | EVENT_TIME | 事件时间 | TIMESTAMP | NOT NULL |  |  |
 | EVENT_RESULT | 事件结果 | VARCHAR2(10) | NOT NULL |  |  |
-| EVENT_COMMENTS | 事件备注 | VARCHAR2(255) | NULL |  |  |
+| EVENT_COMMENTS | 事件备注 | VARCHAR2(255) | NULL |  | &nbsp|
 
 
 
