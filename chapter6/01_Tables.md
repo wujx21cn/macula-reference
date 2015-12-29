@@ -146,7 +146,7 @@
 | -- | -- | -- | -- | -- | -- |
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 	主键 |
 | DATASET_ID | 数据集ID | NUMBER(19) | NOT NULL |  | 外键 |
-| ARG_NAME | 输入参数名称 | VARCHAR2(20) | NOT NULL |  | 5:4 |
+| ARG_NAME | 输入参数名称 | VARCHAR2(20) | NOT NULL |  | DATASET_ID+ARG_NAME唯一索引 |
 | 0:5 | 1:5 | 2:5 | 3:5 | 4:5 | 5:5 |
 | 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
