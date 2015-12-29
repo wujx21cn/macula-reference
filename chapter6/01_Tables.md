@@ -406,7 +406,7 @@
 | LAST_LOGIN_ADDR | 最后登录IP |VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_BROWSER | 最后登录浏览器 | VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_INST | 最后登录实例| VARCHAR2(255) | NULL |  |  |
-| 0:21 | 1:21 | 2:21 | 3:21 | 4:21 | 5:21 |
+| LAST_LOGIN_TIME | 最后登录时间 | TIMESTAMP | NULL |  |  |
 | 0:22 | 1:22 | 2:22 | 3:22 | 4:22 | 5:22 |
 | 0:23 | 1:23 | 2:23 | 3:23 | 4:23 | 5:23 |
 | 0:24 | 1:24 | 2:24 | 3:24 | 4:24 | 5:24 |
