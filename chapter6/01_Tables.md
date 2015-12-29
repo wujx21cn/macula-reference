@@ -108,7 +108,7 @@
 | PARAM_CLZ | 数据类型 | VARCHAR2(10) | NULL |  | Boolean、Integer、 Long、Double、 String、Timestamp、 Date |
 | DATASOURCE_ID | 数据源ID | NUMBER(19) | NULL |  | 外键 |
 | ORDERED | 排序 | 	NUMBER(10) | NOT NULL | 默认:0 |  |
-| 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
+| IS_GROUP | 是否分组 | NUMBER(1) | NOT NULL | 默认:0 |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
