@@ -442,7 +442,7 @@
 | ACTION_ID | 功能ID | NUMBER(19) | NOT NULL |  | 索引 |
 | APP_ID | 应用的ID | VARCHAR2(50) | NOT NULL |  |  |
 | APP_INST | 应用实例 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
+| START_TIME | 请求开始时间 | TIMESTAMP(6) | NOT NULL |  |  |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
