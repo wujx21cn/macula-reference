@@ -408,7 +408,7 @@
 | LAST_LOGIN_INST | 最后登录实例| VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_TIME | 最后登录时间 | TIMESTAMP | NULL |  |  |
 | LAST_LOGOUT_TIME | 最后登出时间 | TIMESTAMP | NULL |  |  |
-| ILLEGAL_REQUEST | 是否锁屏请求 | 	NUMBER(1) | NOT NULL | 4:23 | 5:23 |
+| ILLEGAL_REQUEST | 是否锁屏请求 | 	NUMBER(1) | NOT NULL | 默认值: 0 |  |
 | 0:24 | 1:24 | 2:24 | 3:24 | 4:24 | 5:24 |
 | 0:25 | 1:25 | 2:25 | 3:25 | 4:25 | 5:25 |
 | 0:26 | 1:26 | 2:26 | 3:26 | 4:26 | 5:26 |
