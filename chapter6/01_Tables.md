@@ -228,7 +228,7 @@
 | PASSWORD | 密码 | VARCHAR2(50) | NULL | | |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
-| 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 
 
