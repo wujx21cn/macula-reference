@@ -151,7 +151,7 @@
 | ARG_CLZ | 输入参数类型 | VARCHAR2(50) | NOT NULL |  | Boolean、Integer、 Long、Double、 String、Timestamp、 Date |
 | ARG_CONTROL | 参数控件 | VARCHAR2(20) | NOT NULL | Text | 枚举 Text等 |
 | DEFAULT_VALUE | 缺省值 | VARCHAR2(50) | NULL |  |  |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
+| DATAPARAM_ID | 数据参数ID | NUMBER(19) | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
