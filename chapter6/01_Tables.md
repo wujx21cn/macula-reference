@@ -134,7 +134,7 @@
 | PARENT_ID | 分组父ID | NUMBER(19) | NULL |  | 外键 |
 | MID | 所属菜单 | NUMBER(19)| NULL |  | 外键 |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
 
