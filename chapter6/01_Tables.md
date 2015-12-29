@@ -184,7 +184,6 @@
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 	最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
-| 0:20 | 1:20 | 2:20 | 3:20 | 4:20 | 5:20 |
-| 0:21 | 1:21 | 2:21 | 3:21 | 4:21 | 5:21 |
+
 
 
