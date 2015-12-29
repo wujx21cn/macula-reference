@@ -357,10 +357,11 @@
 | -- | -- | -- | -- | -- | -- |
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 主键 |
 | USER_NAME | 用户名 | VARCHAR2(50) | NOT NULL |  | USER_NAME+ROLE_ID唯一索引 |
-| 0:4 | 1:4 | 2:4 | 3:4 | 4:4 | 5:4 |
-| 0:5 | 1:5 | 2:5 | 3:5 | 4:5 | 5:5 |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
+| ROLE_ID | 角色ID | NUMBER(19) | NOT NULL |  | 外键 |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
 
 
 
