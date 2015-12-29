@@ -4,6 +4,8 @@
 
 ### 23.1.1. MA_BASE_APPLICATION
 
+**表 23.1. MA_BASE_APPLICATION**
+
 | 字段名称 | 中文名称 | 数据库字段类型 | 是否允许为空 | 默认值 | 备注 |
 | -- | -- | -- | -- | -- | -- |
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 主关键字 |
