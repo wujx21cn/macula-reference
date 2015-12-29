@@ -72,6 +72,8 @@
 
 ### 23.2.2 MA_BASE_DATA_ENUM
 
+**表 23.4. MA_BASE_DATA_ENUM**
+
 
 
 
