@@ -447,7 +447,7 @@
 | REQUEST_ADDR | 远程客户端地址 | VARCHAR2(50) | NOT NULL |  |  |
 | REQUEST_URL | 请求URL | VARCHAR2(1024) | NOT NULL |  |  |
 | REQUEST_DETAIL | 请求明细 | CLOB | NULL |  |  |
-| RESPONSE_CODE | 响应CODE | VARCHAR2(10) | 3:12 | 4:12 | 5:12 |
+| RESPONSE_CODE | 响应CODE | VARCHAR2(10) | NULL |  |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
