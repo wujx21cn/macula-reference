@@ -185,7 +185,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 	最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-## # 23.3.3 MA_BASE_ACL_ORG
+### 23.3.3 MA_BASE_ACL_ORG
 
 **表 23.10. MA_BASE_ACL_ORG**
 
@@ -211,6 +211,9 @@
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+
+### 23.3.4 MA_BASE_ACL_PROVIDER_DEF
+
 
 
 
