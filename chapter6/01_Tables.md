@@ -22,6 +22,6 @@
 | COMMENTS | 应用备注 | VARCHAR2(255) | NULL |  |  |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
-| 0:18 | 1:18 | 2:18 | 3:18 | 4:18 | 5:18 |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | 0:19 | 1:19 | 2:19 | 3:19 | 4:19 | 5:19 |
 | 0:20 | 1:20 | 2:20 | 3:20 | 4:20 | 5:20 |
