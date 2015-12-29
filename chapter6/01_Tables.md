@@ -88,7 +88,7 @@
 | PARENT_ID | 分组父ID | NUMBER(19) | NULL |  |  |
 | COMMENTS | 备注 | VARCHAR2(255) | NULL |  |  |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
 | 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
 
