@@ -39,7 +39,7 @@
 | NAME | 实例名称 | VARCHAR2(50) | 	NOT NULL |  |  |
 | HOME_PAGE | 实例入口地址 | VARCHAR2(255) | NOT NULL |  |  |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 
