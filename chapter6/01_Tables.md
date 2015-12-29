@@ -433,6 +433,8 @@
 
 ### 23.6.3. MA_BASE_ACL_ACCESS_LOG
 
+**表 23.22. MA_BASE_ACL_ACCESS_LOG**
+
 
 
 
