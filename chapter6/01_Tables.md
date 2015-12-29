@@ -379,6 +379,8 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
+## 23.6. 系统信息
+
 
 
 
