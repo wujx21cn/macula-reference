@@ -154,7 +154,7 @@
 | DATAPARAM_ID | 数据参数ID | NUMBER(19) | NULL |  | 外键 |
 | ALLOW_NULL | 	是否允许为空 | NUMBER(1) | NOT NULL| 默认:0 |  |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL | 4:12 | 5:12 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 
