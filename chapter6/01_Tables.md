@@ -225,7 +225,7 @@
 | PROTOCOL | 协议 | VARCHAR2(20) | NOT NULL |  | HESSIAN BURLAP JSON_REST |
 | URI | 地址 | VARCHAR2(255) | NULL |  |  |
 | USER_NAME | 用户名 | VARCHAR2(50) | NULL |  |  |
-| PASSWORD | 密码 | VARCHAR2(50) | 3:9 | 4:9 | 5:9 |
+| PASSWORD | 密码 | VARCHAR2(50) | NULL | | |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
