@@ -59,7 +59,7 @@
 | URI | JDBC URL地址 | VARCHAR2(255) | NOT NULL |  | 如果是JNDI，这里填写JNDI NAME |
 | DRIVER | JDBC驱动 | VARCHAR2(255) | NULL |  |  |
 | USER_NAME | 数据库用户名 | VARCHAR2(50) | NULL|  |  |
-| 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
+| PASSWORD | 数据库密码 | VARCHAR2(50) | NULL |  |  |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
