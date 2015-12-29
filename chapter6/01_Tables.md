@@ -221,7 +221,7 @@
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 主键 |
 | APP_ID | 	应用ID | VARCHAR2(20) | NULL |  |  |
 | NAME | 名称 | VARCHAR2(20) | NOT NULL |  | 唯一索引 |
-| 0:5 | 1:5 | 2:5 | 3:5 | 4:5 | 5:5 |
+| GROUP_NAME | 分类 | VARCHAR2(20) | NOT NULL |  | CATALOG_PROVIDER :分组提供者 RESOURCE_PROVIDER :资源提供者 |
 | 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
