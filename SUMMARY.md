@@ -37,5 +37,5 @@
    * [新技术引入标准](chapter5/05_Standard_Import.md)
 * [附录](chapter6/chapter6.md)
    * [表结构](chapter6/01_Tables.md)
-   * 版本变更说明
+   * [版本变更说明](chapter6/Upgrade.md)
 
