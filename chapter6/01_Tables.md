@@ -222,7 +222,7 @@
 | APP_ID | 	应用ID | VARCHAR2(20) | NULL |  |  |
 | NAME | 名称 | VARCHAR2(20) | NOT NULL |  | 唯一索引 |
 | GROUP_NAME | 分类 | VARCHAR2(20) | NOT NULL |  | CATALOG_PROVIDER :分组提供者 RESOURCE_PROVIDER :资源提供者 |
-| PROTOCOL | 协议 | VARCHAR2(20) | NOT NULL |  | 5:6 |
+| PROTOCOL | 协议 | VARCHAR2(20) | NOT NULL |  | HESSIAN BURLAP JSON_REST |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
