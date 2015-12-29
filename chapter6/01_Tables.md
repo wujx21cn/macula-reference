@@ -227,7 +227,7 @@
 | USER_NAME | 用户名 | VARCHAR2(50) | NULL |  |  |
 | PASSWORD | 密码 | VARCHAR2(50) | NULL | | |
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 
