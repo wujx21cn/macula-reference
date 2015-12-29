@@ -170,7 +170,7 @@
 | APP_ID | 应用ID | VARCHAR2(20) | NULL |  |  |
 | CODE | 菜单编码 | VARCHAR2(50)| NOT NULL |  | 唯一索引 |
 | NAME | 菜单名称 | VARCHAR2(50)| NOT NULL |  |  |
-| DESCRIPTION | 菜单描述 | 2:6 | 3:6 | 4:6 | 5:6 |
+| DESCRIPTION | 菜单描述 | VARCHAR2(255) | 	NULL |  |  |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
