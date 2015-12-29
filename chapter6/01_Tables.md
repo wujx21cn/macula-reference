@@ -405,7 +405,7 @@
 | REM_ME_TOKEN | RememberMe值 | VARCHAR2(64) | NULL |  |  |
 | LAST_LOGIN_ADDR | 最后登录IP |VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_BROWSER | 最后登录浏览器 | VARCHAR2(255) | NULL |  |  |
-| 0:20 | 1:20 | 2:20 | 3:20 | 4:20 | 5:20 |
+| LAST_LOGIN_INST | 最后登录实例| VARCHAR2(255) | 3:20 | 4:20 | 5:20 |
 | 0:21 | 1:21 | 2:21 | 3:21 | 4:21 | 5:21 |
 | 0:22 | 1:22 | 2:22 | 3:22 | 4:22 | 5:22 |
 | 0:23 | 1:23 | 2:23 | 3:23 | 4:23 | 5:23 |
