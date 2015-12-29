@@ -300,10 +300,10 @@
 | QUERYRULE_ID | 查询规则ID | NUMBER(19) | NULL |  | 外键 |
 | DENY_REASON | 拒绝原因 | VARCHAR2(255) | NULL |  |  |
 | ORDERED | 排序 | NUMBER(10) | NOT NULL | 默认:0 |  |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
-| 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
-| 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
-| 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
 
 
 
