@@ -399,7 +399,7 @@
 | RETRIEVE_PWD_TIMES | 获取密码次数 | NUMBER(10) | 	NOT NULL | 默认:0 |  |
 | RETRIEVE_PWD_TIME | 最后获取密码时间 | TIMESTAMP | NULL |  |  |
 | IS_LOCKED | 是否锁定 | NUMBER(1) | NOT NULL | 默认:0 |  |
-| 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
+| LOCKED_TIME | 锁定时间 | TIMESTAMP | NULL |  |  |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
 | 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
 | 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
