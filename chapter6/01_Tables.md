@@ -9,10 +9,10 @@
 | ID | 顺序号 | NUMBER(19) | NOT NULL |  | 主关键字 |
 | APP_ID | 应用的ID | VARCHAR2(20) | NOT NULL |  | 唯一索引 |
 | APP_NAME | 应用名称 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:5 | 1:5 | 2:5 | 3:5 | 4:5 | 5:5 |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| HOME_PAGE | 应用入口地址 | VARCHAR2(255) | NOT NULL |  |  |
+| SECURE_KEY | 应用公钥 | VARCHAR2(1024) | NOT NULL | | 	OpenAPI访问时的密码 |
+| PRIVATE_KEY | 应用私钥 | VARCHAR2(1024) | NOT NULL | 保留 |  |
+| CONTACT | 联系方式 | VARCHAR2(255) | NULL | | |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
