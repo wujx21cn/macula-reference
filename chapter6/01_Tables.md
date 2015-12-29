@@ -320,8 +320,8 @@
 | IS_RESIGNABLE | 是否可下放分配 | NUMBER(1) | NOT NULL | 默认:1 |  |
 | IS_RULE | 是否规则角色 | 	NUMBER(1) | NOT NULL | 默认:0 |  |
 | IS_INHERITABLE | 是否可继承 | NUMBER(1) | NOT NULL | 默认:1 |  |
-| INHERIT_FROM | 继承自 | NUMBER(19) | 3:9 | 4:9 | 5:9 |
-| 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
+| INHERIT_FROM | 继承自 | NUMBER(19) | NULL |  | 外键 |
+| IS_EXECUTABLE | 是否可执行 | NUMBER(1) | NOT NULL | 默认:1 |  |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
