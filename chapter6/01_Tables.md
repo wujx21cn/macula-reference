@@ -104,7 +104,7 @@
 | CODE | 参数代码 | VARCHAR2(50) | NOT NULL |  |  |
 | NAME | 参数名称 | VARCHAR2(50) | NOT NULL |  |  |
 | VALUE | 参数值 | 	VARCHAR2(500) | NOT NULL |  |  |
-| VALUE_SCOPE | 参数值缓存级别 | VARCHAR2(20) | NOT NULL |  | 5:8 |
+| VALUE_SCOPE | 参数值缓存级别 | VARCHAR2(20) | NOT NULL |  | NONE:不缓存 SESSION:会话级 INSTANCE:实例级 APPLICATION:应用级 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
