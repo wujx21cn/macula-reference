@@ -398,7 +398,7 @@
 | PWD_FAILED_TIMES | 密码输入出错次数 | NUMBER(10) | NOT NULL | 默认:0 |  |
 | RETRIEVE_PWD_TIMES | 获取密码次数 | NUMBER(10) | 	NOT NULL | 默认:0 |  |
 | RETRIEVE_PWD_TIME | 最后获取密码时间 | TIMESTAMP | NULL |  |  |
-| 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
+| IS_LOCKED | 是否锁定 | NUMBER(1) | NOT NULL | 默认:0 |  |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
 | 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
