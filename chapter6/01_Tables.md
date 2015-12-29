@@ -174,7 +174,7 @@
 | URI | ACTION的地址 | VARCHAR2(255) | NULL |  |  |
 | HTTP_METHOD | HTTP请求方式 | VARCHAR2(10) | NULL |  | GET，POST |
 | LOG_OPTION | 	日志记录选项  | NUMBER(10) | NULL |  | REQUEST_HEAD REQUEST_PARAM SESSION_ATTR REQUEST_ATTR之组合 |
-| LOG_LEVEL | 日志记录级别 | 2:10 | 3:10 | 4:10 | 5:10 |
+| LOG_LEVEL | 日志记录级别 | VARCHAR2(10) | NULL|  | ANY：全部请求 LOGON：登录后的请求 ERROR：出错后的请求 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
