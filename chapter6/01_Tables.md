@@ -366,6 +366,9 @@
 
 ### 23.5.4 MA_BASE_ACL_USER_CAT
 
+**表 23.19. MA_BASE_ACL_USER_CAT**
+
+
 
 
 
