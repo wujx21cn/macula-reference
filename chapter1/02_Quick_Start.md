@@ -362,7 +362,7 @@ ${runtime.vmName}
 需要增加 .ftl 页面和对应的 .js 文件，在 .js 文件里实现数据的读取和绑定处理，采用了 KnockoutJS 的技术。
 
 .ftl 页面示例：
-```
+```html
 <span data-bind="text: name"></span>
 <span data-bind="text: vmName"><span>
 ```
