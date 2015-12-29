@@ -178,7 +178,7 @@
 | EFFECTIVE_TIME | 生效日期 | TIMESTAMP(6)| NULL |  |  |
 | INACTIVE_TIME | 失效日期 | TIMESTAMP(6)| NULL |  |  |
 | IS_GROUP | 是否分组 | NUMBER(1) | NOT NULL | 默认:0 |  |
-| 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
+| PARENT_ID | 分组父ID | NUMBER(19) | NULL |  | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
 | 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
 | 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
