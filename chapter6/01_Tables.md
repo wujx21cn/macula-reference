@@ -37,8 +37,8 @@
 | APP_ID | 应用的ID | VARCHAR2(20) | NOT NULL |  | 外键 |
 | CODE | 实例代码 | VARCHAR2(50) | NOT NULL |  | APP_ID+CODE唯一索引 |
 | NAME | 实例名称 | VARCHAR2(50) | 	NOT NULL |  |  |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
+| HOME_PAGE | 实例入口地址 | VARCHAR2(255) | NOT NULL |  |  |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
