@@ -407,7 +407,7 @@
 | LAST_LOGIN_BROWSER | 最后登录浏览器 | VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_INST | 最后登录实例| VARCHAR2(255) | NULL |  |  |
 | LAST_LOGIN_TIME | 最后登录时间 | TIMESTAMP | NULL |  |  |
-| 0:22 | 1:22 | 2:22 | 3:22 | 4:22 | 5:22 |
+| LAST_LOGOUT_TIME | 最后登出时间 | TIMESTAMP | NULL |  |  |
 | 0:23 | 1:23 | 2:23 | 3:23 | 4:23 | 5:23 |
 | 0:24 | 1:24 | 2:24 | 3:24 | 4:24 | 5:24 |
 | 0:25 | 1:25 | 2:25 | 3:25 | 4:25 | 5:25 |
