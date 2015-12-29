@@ -396,7 +396,7 @@
 | OLD_PWD | 密码历史 | VARCHAR2(250) | NULL |  | 用逗号分割 |
 | LOGIN_FAILED_TIME | 	登录失败时间 | NUMBER(10) | TIMESTAMP |  |  |
 | PWD_FAILED_TIMES | 密码输入出错次数 | NUMBER(10) | NOT NULL | 默认:0 |  |
-| 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
+| RETRIEVE_PWD_TIMES | 获取密码次数 | NUMBER(10) | 	NOT NULL | 默认:0 |  |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
