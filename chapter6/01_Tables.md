@@ -152,7 +152,7 @@
 | ARG_CONTROL | 参数控件 | VARCHAR2(20) | NOT NULL | Text | 枚举 Text等 |
 | DEFAULT_VALUE | 缺省值 | VARCHAR2(50) | NULL |  |  |
 | DATAPARAM_ID | 数据参数ID | NUMBER(19) | NULL |  | 外键 |
-| 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
+| ALLOW_NULL | 	是否允许为空 | NUMBER(1) | NOT NULL| 默认:0 |  |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
