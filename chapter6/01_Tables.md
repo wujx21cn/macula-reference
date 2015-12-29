@@ -25,7 +25,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |   |
 
 ### 23.1.2 MA_BASE_APP_INSTANCE
 
@@ -41,6 +41,6 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
 
 
