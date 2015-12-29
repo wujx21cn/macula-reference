@@ -443,7 +443,7 @@
 | APP_ID | 应用的ID | VARCHAR2(50) | NOT NULL |  |  |
 | APP_INST | 应用实例 | VARCHAR2(50) | NOT NULL |  |  |
 | START_TIME | 请求开始时间 | TIMESTAMP(6) | NOT NULL |  |  |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
+| END_TIME | 请求结束时间 | TIMESTAMP(6) | NOT NULL |  |  |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
