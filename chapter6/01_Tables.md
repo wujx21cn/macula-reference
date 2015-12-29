@@ -449,10 +449,10 @@
 | REQUEST_DETAIL | 请求明细 | CLOB | NULL |  |  |
 | RESPONSE_CODE | 响应CODE | VARCHAR2(10) | NULL |  |  |
 | ERROR_MESSAGE | 错误信息 | CLOB |	NULL |  |  |
-| 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
-| 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
-| 0:16 | 1:16 | 2:16 | 3:16 | 4:16 | 5:16 |
-| 0:17 | 1:17 | 2:17 | 3:17 | 4:17 | 5:17 |
+| CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
+| CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 
 
