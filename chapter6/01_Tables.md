@@ -394,7 +394,7 @@
 | LAST_CHG_PWD_TIME | 上次密码修改时间 | TIMESTAMP | NULL |  |  |
 | NEED_CHG_PWD | 登录后是否需要修改密码 | NUMBER(1) | NOT NULL |  |  |
 | OLD_PWD | 密码历史 | VARCHAR2(250) | NULL |  | 用逗号分割 |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
+| LOGIN_FAILED_TIME | 	登录失败时间 | NUMBER(10) | TIMESTAMP |  |  |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
