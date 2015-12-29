@@ -253,6 +253,8 @@
 
 ### 23.4.2 MA_BASE_ACL_USER_RULE
 
+**表 23.13. MA_BASE_ACL_USER_RULE**
+
 
 
 
