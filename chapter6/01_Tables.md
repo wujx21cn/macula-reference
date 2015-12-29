@@ -309,6 +309,8 @@
 
 ### 23.5.1 MA_BASE_ACL_ROLE
 
+**表 23.16. MA_BASE_ACL_ROLE**
+
 
 
 
