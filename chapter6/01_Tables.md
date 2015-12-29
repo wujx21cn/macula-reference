@@ -445,7 +445,7 @@
 | START_TIME | 请求开始时间 | TIMESTAMP(6) | NOT NULL |  |  |
 | END_TIME | 请求结束时间 | TIMESTAMP(6) | NOT NULL |  |  |
 | REQUEST_ADDR | 远程客户端地址 | VARCHAR2(50) | NOT NULL |  |  |
-| REQUEST_URL | 请求URL | VARCHAR2(1024) | 3:10 | 4:10 | 5:10 |
+| REQUEST_URL | 请求URL | VARCHAR2(1024) | NOT NULL |  |  |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
