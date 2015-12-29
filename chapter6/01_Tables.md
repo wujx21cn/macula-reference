@@ -47,4 +47,6 @@
 
 ### 23.2.1 MA_BASE_DATA_SOURCE
 
+**表 23.3. MA_BASE_APP_INSTANCE**
+
 
