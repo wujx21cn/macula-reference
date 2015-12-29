@@ -56,9 +56,9 @@
 | NAME | 数据源名称 | VARCHAR2(50) | NOT NULL |  |  |
 | TYPE | 数据源类型 | VARCHAR2(10) | NOT NULL | 默认:DATABASE | 目前支持DATABASE和LDAP两种类型 |
 | IS_JNDI | 是否使用jndi | NUMBER(1) | NOT NULL | 默认:0 |  |
-| 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
-| 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
-| 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
+| URI | JDBC URL地址 | VARCHAR2(255) | NOT NULL |  | 如果是JNDI，这里填写JNDI NAME |
+| DRIVER | JDBC驱动 | VARCHAR2(255) | NULL |  |  |
+| USER_NAME | 数据库用户名 | VARCHAR2(50) | NULL|  |  |
 | 0:10 | 1:10 | 2:10 | 3:10 | 4:10 | 5:10 |
 | 0:11 | 1:11 | 2:11 | 3:11 | 4:11 | 5:11 |
 | 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
