@@ -176,7 +176,7 @@
 | LOG_OPTION | 	日志记录选项  | NUMBER(10) | NULL |  | REQUEST_HEAD REQUEST_PARAM SESSION_ATTR REQUEST_ATTR之组合 |
 | LOG_LEVEL | 日志记录级别 | VARCHAR2(10) | NULL|  | ANY：全部请求 LOGON：登录后的请求 ERROR：出错后的请求 |
 | EFFECTIVE_TIME | 生效日期 | TIMESTAMP(6)| NULL |  |  |
-| 0:12 | 1:12 | 2:12 | 3:12 | 4:12 | 5:12 |
+| INACTIVE_TIME | 失效日期 | TIMESTAMP(6)| NULL |  |  |
 | 0:13 | 1:13 | 2:13 | 3:13 | 4:13 | 5:13 |
 | 0:14 | 1:14 | 2:14 | 3:14 | 4:14 | 5:14 |
 | 0:15 | 1:15 | 2:15 | 3:15 | 4:15 | 5:15 |
