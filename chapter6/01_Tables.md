@@ -148,7 +148,7 @@
 | DATASET_ID | 数据集ID | NUMBER(19) | NOT NULL |  | 外键 |
 | ARG_NAME | 输入参数名称 | VARCHAR2(20) | NOT NULL |  | DATASET_ID+ARG_NAME唯一索引 |
 | ARG_LABEL | 参数标题 | VARCHAR2(50) | NOT NULL |  | 标题 |
-| 0:6 | 1:6 | 2:6 | 3:6 | 4:6 | 5:6 |
+| ARG_CLZ | 输入参数类型 | VARCHAR2(50) | NOT NULL |  | Boolean、Integer、 Long、Double、 String、Timestamp、 Date |
 | 0:7 | 1:7 | 2:7 | 3:7 | 4:7 | 5:7 |
 | 0:8 | 1:8 | 2:8 | 3:8 | 4:8 | 5:8 |
 | 0:9 | 1:9 | 2:9 | 3:9 | 4:9 | 5:9 |
