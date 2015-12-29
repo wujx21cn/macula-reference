@@ -210,7 +210,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.3.4 MA_BASE_ACL_PROVIDER_DEF
 
@@ -229,7 +229,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ## 23.4 业务策略
 
@@ -249,7 +249,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.4.2 MA_BASE_ACL_USER_RULE
 
@@ -267,7 +267,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.4.3 MA_BASE_ACL_POLICY
 
@@ -285,7 +285,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.4.4 MA_BASE_ACL_POLICY_ENTRY
 
@@ -303,7 +303,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ## 23.5. 用户授权
 
@@ -332,7 +332,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.5.2. MA_BASE_ACL_ROLE_RES
 
@@ -347,7 +347,7 @@
 | CREATED_BY | 创建人 | VARCHAR2(50) | NOT NULL |  |  |
 | CREATED_TIME | 创建时间 | TIMESTAMP | NOT NULL |  |  |
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
-| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
+| LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
 ### 23.5.3 MA_BASE_ACL_USER_ROLE
 
