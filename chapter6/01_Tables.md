@@ -351,6 +351,8 @@
 
 ### 23.5.3 MA_BASE_ACL_USER_ROLE
 
+**表 23.18. MA_BASE_ACL_USER_ROLE**
+
 
 
 
