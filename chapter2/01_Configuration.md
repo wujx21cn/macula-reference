@@ -173,25 +173,17 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 2. Listener需要设置的参数
     ```xml
     <context-param>
-    
         <param-name>locatorFactorySelector</param-name>
-    
         <param-value>classpath:/configs/applicationContext-ref.xml</param-value>
-    
     </context-param>
     
     <context-param>
-    
         <param-name>parentContextKey</param-name>
-    
         <param-value>MaculaContextRoot</param-value>
-    
     </context-param>
     
     <context-param>
-    
         <param-name>contextConfigLocation</param-name>
-    
         <param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml</param-value>
     
     </context-param>
