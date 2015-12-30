@@ -77,7 +77,7 @@
 
 ![tutorials-maven-newwizard2.jpg](../images/chapter1/tutorials-maven-newwizard2.jpg "tutorials-maven-newwizard2.jpg")
 
-从而可以得到一个项目的根目录，在这个项目跟目录中，用来处理打包、发布等，均写在该pom.xml中，具体可参考macula工程根下的pom.xml文件。
+从而可以得到一个项目的根目录，在这个项目根目录中，用来处理打包、发布等，均写在该pom.xml中，具体可参考macula工程根下的pom.xml文件。
 
 ## 2.5 创建业务父模块
 
