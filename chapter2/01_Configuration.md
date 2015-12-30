@@ -198,9 +198,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     ```xml
     <bean id="MaculaContextRoot" class="org.springframework.context.support.ClassPathXmlApplicationContext">
-    
         <constructor-arg index="0" value="classpath:applicationContext-root.xml" />
-    
     </bean>
     ```
     ***重要***
