@@ -424,7 +424,7 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 
 再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
 
-```
+```html
 <button id="finder-edit-action-${code}" type="button" class="btn btn-has-icon" data-bind="click: onEditAction, enable: onEditEnable"
 	href="javascript:void(0);" target="dialog::{title: '编辑用户', width:'650',height:'600'}">
 	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/btn_edit.gif"/></i>编辑</span></span>
