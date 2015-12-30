@@ -682,7 +682,7 @@ if (currentId) {
 
 我们先看一下 list 页面上对于删除功能按钮的定义
 
-```
+```html
 <button id="finder-delete-action-${code}" type="button" class="btn btn-has-icon" data-bind="click: onDeleteAction, enable: onDeleteEnable"
 	href="javascript:void(0);" target="command">
 	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/delete.gif"/></i>删除</span></span>
