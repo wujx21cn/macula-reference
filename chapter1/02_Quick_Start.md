@@ -582,7 +582,10 @@ public String create() {
 		//...
 	};
 	//...
-	
+	$.getJSON(base + '/admin/macula-base/datasource/datasrc/' + currentId, function(data) {
+		vm = new viewModel(data.returnObject);
+		ko.applyBindings(vm, $form[0]);
+	});	
 ```
 
 页面里输入框通过这个方式跟 model 绑定起来
