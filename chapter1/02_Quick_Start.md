@@ -505,20 +505,6 @@ public String create() {
 这个文件定义了页面显示结构，主要分为下面几个部分：
 
 ```
-<#assign code="edit-user" />
-<#assign title>
-	<#if id?exists>编辑xxx<#else>新增xxx</#if>
-</#assign>	
-<@layout.ajaxContent title=title scripts="admin/macula-uim/user/edit.js">
-	<@layout.content_main>	
-		页面内容
-	</@layout.content_main>
-</@layout.ajaxContent>
-
-<#assign title>
-	<#if id?exists>编辑数据源<#else>新增数据源</#if>
-</#assign>
-
 <@layout.mower_admin title=title scripts="admin/macula-base/datasource/edit_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="edit-datasource" />
 		<@ui.panel>
