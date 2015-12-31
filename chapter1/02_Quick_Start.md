@@ -603,7 +603,7 @@ data-bind="value: name"
 </a>
 ```
 
-上面代码说明在点击取消按钮的时候，会调用 closeDialog 方法，这个方法是 Macula 框架提供的，会关闭弹出的对话框。
+上面代码说明在点击取消按钮的时候，会调用 popBreadcrumb 方法，处理面包屑并返回List 页面。
 
 **通过 Ajax 读取服务器端的数据示例代码**
 
