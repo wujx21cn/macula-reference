@@ -429,7 +429,7 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 </a>
 ```
 
-这里我们直接用JQuery为这个按钮的click事件绑定了方法。这个方法 里先获取被选取记录的id，然后触发pushBreadcrumb事件，并转到编辑页面。对应绑定方法的定义是在.js文件中，代码如下：
+这里我们直接用JQuery为这个按钮的click事件绑定了方法。这个方法 里先获取被选取记录的行id，然后触发pushBreadcrumb事件，并转到编辑页面。对应绑定方法的定义是在.js文件中，代码如下：
 
 ```javascript
 // 编辑按钮
@@ -450,7 +450,7 @@ var _onEditAction = function() {
 
 **数据列表显示部分**
 
-这部分主要是定义表格结构和要显示的数据内容，采用了 KnockoutJS 的Model和View绑定技术。定义表格结构示例如下：
+这部分主要是定义表格结构和要显示的数据内容，采用了dataTables 。定义表格结构示例如下：
 
 ```html
 <table class="treeTable gridlist">
