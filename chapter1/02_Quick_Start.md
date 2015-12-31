@@ -482,11 +482,11 @@ var _onEditAction = function() {
 
 首先在 src/main/resources/views 目录下，根据 URL 建立相应的子目录，然后增加2个文件 edit.ftl 和 edit.js。比如在 macula-plugin-admin 资源包中，对应 /datasource/edit URL 需要在 src/main/resources/views/admin/macula-base/datasource/ 目录下增加 edit.ftl 和 edit.js。
 
-/admin/macula 目录是由 macula-uim-admin 资源包里的基本 Controller 类 UIMController 定义的，其他的 Controller 类都是继承了 UIMController，对应的定义代码如下：
+/admin/macula-base 目录是由 macula-plugin-admin 资源包里的基本 Controller 类 AdminMaculaBaseController 定义的，其他的 Controller 类都是继承了 AdminMaculaBaseController，对应的定义代码如下：
 
 ```java
-@RequestMapping("admin/macula-uim")
-public abstract class UIMController extends BaseController {
+@RequestMapping("/admin/macula-base")
+public abstract class AdminMaculaBaseController extends BaseController {
 ```
 
 而在其他 Controller 类中，只需要定义 admin/macula-uim 下面的 URL 部分就可以，示例代码如下：
