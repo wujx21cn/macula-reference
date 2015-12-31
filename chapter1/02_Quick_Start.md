@@ -514,6 +514,24 @@ public String create() {
 		页面内容
 	</@layout.content_main>
 </@layout.ajaxContent>
+
+<#assign title>
+	<#if id?exists>编辑数据源<#else>新增数据源</#if>
+</#assign>
+
+<@layout.mower_admin title=title scripts="admin/macula-base/datasource/edit_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="edit-datasource" />
+		<@ui.panel>
+			<@ui.panel_head>
+				<div class="col-xs-12 col-md-12">
+				    功能按钮部分
+				</div>
+			</@ui.panel_head>
+			<@ui.panel_body>
+
+			</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
 ```
 
 这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
