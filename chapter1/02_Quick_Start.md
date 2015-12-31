@@ -480,7 +480,7 @@ var _onEditAction = function() {
 
 新增和修改页面一般使用相同的 .ftl 和 .js 文件，通过逻辑判断当前处理的操作是新增还是修改操作。如果新增和修改功能差别很大，就需要考虑分开两个页面。我们下面以相同页面做示例讲解一下。
 
-首先在 src/main/resources/views 目录下，根据 URL 建立相应的子目录，然后增加2个文件 edit.ftl 和 edit.js。比如在 macula-plugin-admin 资源包中，对应 /datasource/edit URL 需要在 src/main/resources/views/admin/macula-uim/datasource/ 目录下增加 edit.ftl 和 edit.js。
+首先在 src/main/resources/views 目录下，根据 URL 建立相应的子目录，然后增加2个文件 edit.ftl 和 edit.js。比如在 macula-plugin-admin 资源包中，对应 /datasource/edit URL 需要在 src/main/resources/views/admin/macula-base/datasource/ 目录下增加 edit.ftl 和 edit.js。
 
 /admin/macula 目录是由 macula-uim-admin 资源包里的基本 Controller 类 UIMController 定义的，其他的 Controller 类都是继承了 UIMController，对应的定义代码如下：
 
