@@ -389,21 +389,20 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 
 整个页面的结构是这样的：
 
-```
-<@layout.ajaxContent title="用户列表" scripts="admin/macula-uim/user/list.js">
-	<#assign code="user-list" />
-	<@layout.content_head>
-		功能按钮部分
-	</@layout.content_head>
-
-	<@layout.content_main>
-		数据列表显示部分
-	</@layout.content_main>
-
-<@layout.content_foot>  //分页处理部分，这部分基本都是一样的
-		<@layout.content_pager "${code}"/>
-</@layout.content_foot>
-</@layout.ajaxContent>
+```htm
+<@layout.mower_admin title="数据源列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="datasource-list" />
+	<@ui.panel>
+		<@ui.panel_head>
+			<div class="col-xs-12 col-md-12">
+				功能按钮部分
+			</div>
+		</@ui.panel_head>
+		<@ui.panel_body>
+				数据列表显示部分(包括分页处理)
+		</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
 ```
 
 页面部分用到了 JQuery 和 KnockoutJS 技术，两种技术结合到一起使用，看起来不太容易理解。下面从功能按钮部分开始，详细讲解一下相关内容。
