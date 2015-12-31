@@ -523,33 +523,46 @@ public String create() {
 这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
 
 ```html
-<div id="page-${code}" class="tableform">
-<form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-uim/user/saveuser" method="post">
-<input type="hidden" name="user.id" data-bind="value: id" />
-<div class="division">
-	<table cellspacing="0" cellpadding="0" border="0">
-		<tbody>
-			<tr>
-				<th><label>用户名：</label></th>
-				<td><input type="text" name="user.userName" maxlength="50" data-bind="value: userName" validate="required:true,rangelength:[1,20]" style="width: 200px;" /></td>
-			</tr>
-			<tr>
-				<th><label>密码：</label></th>
-				<td><input type="password" name="user.password" id="password" maxlength="50" data-bind="value: password" validate="required:true,minlength:6" style="width: 200px;" /></td>
-			</tr>
-	</table>
-</div>
-<div class="table-action">
-	<button type="submit" class="btn btn-primary">
-		<span><span>保存</span></span>
-	</button>
-	<button type="button" class="btn btn-secondary cancel-btn">
-		<span><span>关闭</span></span>
-	</button>
-							
-</div>
-</form>		
-</div>
+<form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-base/datasource/save" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip"><#--??-->
+	<input type="hidden" name="datasource.id" data-bind="value: id" />
+	<input type="hidden" id="testDataSource" name="testDataSource" data-bind="value: testDataSource, type: 'boolean'" />
+	<div class="form-body">
+		<h3 class="form-section">数据源信息</h3>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">
+	                <label class="control-label col-md-3">数据源编码：</label>
+	                 <div class="col-md-9">
+	                    <input type="text"  name="datasource.code" data-bind="value: code" class="form-control input-sm" required maxlength="50" <#if id?exists>readOnly</#if> />
+	                        </div>
+	                </div>
+	            </div>
+		    </div>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">
+	                <label class="control-label col-md-3">数据源名称：</label>
+	                    <div class="col-md-9">
+	                        <input type="text"  name="datasource.name" data-bind="value: name" class="form-control input-sm" required maxlength="50"/>
+	                    </div>
+	                </div>
+	            </div>
+	         </div>
+	    </div>
+...
+	    <div class="row">
+		    <div class="col-md-12">
+		        <div class="form-group">
+		            <label class="control-label col-md-3">测试结果：</label>
+		                <div class="col-md-9">
+		                    <textarea data-bind="value: testResult, type: 'bool'" rows="2" cols="58" disabled="true"></textarea>
+		                </div>
+		        </div>
+		    </div>
+		</div>
+															
+	</div>
+</form>
 ```
 
 里面要注意的是对于输入框的定义，有个数据绑定（data-bind）的处理，我们在下面 edit.js 里会说明。
