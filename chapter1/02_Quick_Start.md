@@ -528,7 +528,7 @@ public String create() {
 				</div>
 			</@ui.panel_head>
 			<@ui.panel_body>
-
+                页面内容
 			</@ui.panel_body>
 	</@ui.panel>
 </@layout.mower_admin>
