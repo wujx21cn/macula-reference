@@ -450,20 +450,26 @@ var _onEditAction = function() {
 
 **数据列表显示部分**
 
-这部分主要是定义表格结构和要显示的数据内容，采用了dataTables 。定义表格结构示例如下：
+这部分主要是定义表格结构和要显示的数据内容，采用了dataTables 插件。定义表格结构示例如下：
 
 ```html
-<table class="treeTable gridlist">
+<table id="list-${code}" class="table table-striped table-bordered table-hover" 
+    width="100%"
+    data-serverSide="true" 
+    data-paging="false" 
+    data-ordering="false" 
+    data-ajax-url="${base}/admin/macula-base/datasource/cons"
+    data-ajax-type="get"
+    data-select="true"
+    data-row-id="id"
+    rel="datatables">
 	<thead>
-		<th>用户名</th>
-		<th>用户姓名</th>
-		<th>是否有效</th>
-		<th>用户类型 </th>
-		<th>用户来源</th>
-		<th>用户编号</th>
-		<th>所属组织</th>
+		<tr>
+			<th data-name="code">数据源编码</th>
+			<th data-name="name">数据源名称</th>
+			<th data-name="dataSourceType">数据源类型</th>
+		</tr>
 	</thead>
-	<tbody data-bind="template: { name: 'finder-data-tmpl-${code}' }" />					
 </table>
 ```
 这个结构先是定义表头，然后是数据绑定设置。
