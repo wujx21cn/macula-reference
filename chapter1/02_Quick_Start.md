@@ -581,7 +581,6 @@ public String create() {
 		ko.mapping.fromJS(data, {}, self);
 		//...
 	};
-	
 	//...
 	
 ```
