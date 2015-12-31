@@ -389,7 +389,7 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 
 整个页面的结构是这样的：
 
-```htm
+```html
 <@layout.mower_admin title="数据源列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="datasource-list" />
 	<@ui.panel>
