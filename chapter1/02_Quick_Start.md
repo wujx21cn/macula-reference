@@ -423,10 +423,10 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
 
 ```html
-<button id="finder-edit-action-${code}" type="button" class="btn btn-has-icon" data-bind="click: onEditAction, enable: onEditEnable"
-	href="javascript:void(0);" target="dialog::{title: '编辑用户', width:'650',height:'600'}">
-	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/btn_edit.gif"/></i>编辑</span></span>
-</button>
+<a id="edit-action-${code}" class="btn btn-default" data-label="编辑">
+	<i class="fa fa-pencil fa-lg"></i>
+	编辑
+</a>
 ```
 
 这个按钮需要注意的是 data-bind 的用法，data-bind 是 KnockoutJS 提供的功能，用于绑定数据或者事件，对应绑定方法的定义是在 .js 文件中，代码如下：
