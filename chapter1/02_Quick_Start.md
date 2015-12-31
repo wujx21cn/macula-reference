@@ -624,16 +624,27 @@ data-bind="value: name"
 上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下
 
 ```javascript
-actionsViewModel.onDeleteAction = function(e) {
-	var row = actionsViewModel.selectedRow();
-	if (row != null && confirm('您确定要删除用户' + '【' + row.id + '】吗？')) {
-		$(e.currentTarget).attr('url',
-				'admin/macula-uim/user/delete/' + row.id);
-		return true;
-	}
-	e.stopPropagation();
-	Parts['refresh'].trigger('click');
-	return false;
+// 删除按钮
+var _oDeleteAction = function() {
+    $('#delete-action-' + code).click(function(e) {
+	    var row = $(table).DataTable().selectedRows();
+	
+	    if (row && row.length > 0) {
+	       ModalBox.confirm('您确定要删除数据源' + '【' + row[0].code + '】吗？', function(result) {
+	       if (result) {
+	           $.post(base + '/admin/macula-base/datasource/delete/' + row[0].id, function(data) {
+    	        if (data.success) {
+    	               $(table).DataTable().ajax.reload();
+    	           } else {
+    	               MessageBox.error(data.exceptionMessage);
+    	           }
+	            });
+	           }
+	       });
+	    } else {
+	       MessageBox.info('请选择一条记录删除.');
+	    }
+    });
 };
 ```
 
