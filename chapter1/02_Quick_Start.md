@@ -412,11 +412,10 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 看一下新增按钮在页面中的定义：
 
 ```html
-<button id="finder-add-action-${code}" type="button" class="btn btn-has-icon"
-	href="javascript:void(0);" target="dialog::{title: '新增用户', width:'650',height:'600'}"
-	url="admin/macula-uim/user/create">
-	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/btn_add.gif"/></i>新增用户</span></span>
-</button>
+<a id="add-action-${code}" class="btn btn-default" data-toggle="pushBreadcrumb" data-label="新增" data-page="admin/macula-base/datasource/create">
+	<i class="fa fa-plus-circle fa-lg"></i>
+	新增
+</a>
 ```
 
 这个按钮是弹出一个对话框，显示新增的界面，里面没有太多处理，主要需要注意 target 和 url 的定义，”dialog” 表示以一个 DIV 层的方式显示对话框，可以定义对话框的标题、宽和高。url 是对话框要显示的页面的 url。
