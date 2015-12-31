@@ -573,14 +573,17 @@ public String create() {
 1. 通过 Ajax 读取服务器端的数据,构造跟 edit.ftl 页面里对应的 model
 2. 绑定 edit.ftl 页面里对应的按钮操作
 
-**Model 定义方面示例代码是这样的**
+第1项工作示例代码是这样的**
 
 ```javascript
-var viewModel = ko.mapping.fromJS({
-	id : '',
-	userName : '',
-	password : '',
-});
+	var viewModel = function(data) {
+		var self = this;
+		ko.mapping.fromJS(data, {}, self);
+		//...
+	};
+	
+	//...
+	
 ```
 
 页面里输入框通过这个方式跟 model 绑定起来
