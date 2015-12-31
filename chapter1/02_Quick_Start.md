@@ -549,13 +549,14 @@ public String create() {
 	            </div>
 	         </div>
 	    </div>
+	    ...
 	    <div class="row">
 		    <div class="col-md-12">
 		        <div class="form-group">
 		            <label class="control-label col-md-3">测试结果：</label>
-		                <div class="col-md-9">
-		                    <textarea data-bind="value: testResult, type: 'bool'" rows="2" cols="58" disabled="true"></textarea>
-		                </div>
+		               <div class="col-md-9">
+		                   <textarea data-bind="value: testResult, type: 'bool'" rows="2" cols="58" disabled="true"></textarea>
+		               </div>
 		        </div>
 		    </div>
 		</div>
