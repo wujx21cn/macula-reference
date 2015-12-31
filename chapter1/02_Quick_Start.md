@@ -522,7 +522,7 @@ public String create() {
 
 这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
 
-```html
+```
 <form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-base/datasource/save" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip"><#--??-->
 	<input type="hidden" name="datasource.id" data-bind="value: id" />
 	<input type="hidden" id="testDataSource" name="testDataSource" data-bind="value: testDataSource, type: 'boolean'" />
@@ -549,7 +549,6 @@ public String create() {
 	            </div>
 	         </div>
 	    </div>
-...	    
 	    <div class="row">
 		    <div class="col-md-12">
 		        <div class="form-group">
