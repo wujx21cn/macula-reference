@@ -472,31 +472,7 @@ var _onEditAction = function() {
 	</thead>
 </table>
 ```
-这个结构先是定义表头，然后是数据绑定设置。
 
-```html
-<tbody data-bind="template: { name: 'finder-data-tmpl-${code}' }" />
-```
-
-这个是说明表格的数据是由 KnockoutJS 的模板绑定方式定义的，模板部分的定义示例如下：
-
-```html
-<script id="finder-data-tmpl-${code}" type="text/x-jquery-tmpl">
-<#noparse>
-	{{each(i,row) content}}
-		<tr class="{{if i%2 == 0}}even{{else}}odd{{/if}}" data-bind="click: function(e) { onRowClick(e,row); }">
-			<td>${userRealName}</td>
-			<td>${userName}</td>
-			<td>${enabled}</td>
-			<td>${userType}</td>	
-			<td>${userFrom}</td>
-			<td>${userNo}</td>
-			<td>${orgCode}</td>
-		</tr>
-	{{/each}} 
-</#noparse>
-</script>
-```
 
 
 
