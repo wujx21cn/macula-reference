@@ -432,15 +432,19 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 这个按钮需要注意的是 data-bind 的用法，data-bind 是 KnockoutJS 提供的功能，用于绑定数据或者事件，对应绑定方法的定义是在 .js 文件中，代码如下：
 
 ```javascript
-actionsViewModel.onEditAction = function(e) {
-	var row = actionsViewModel.selectedRow();
-	if (row != null) {
-		$(e.currentTarget).attr('url',
-				'admin/macula-uim/user/edit/' + row.id);
-		return true;
-	}
-	e.stopPropagation();
-	return false;
+// 编辑按钮
+var _onEditAction = function() {
+	$('#edit-action-' + code).click(function(e) {
+	   var ids = $(table).DataTable().selectedRowIds();
+	   if (ids.length > 0) {
+		    $(this).trigger({
+		    	type :'push.mu.breadcrumb',
+		    	page : base + '/admin/macula-base/datasource/edit/' + ids[0]
+		    })
+	   } else {
+	       MessageBox.error('请选择一条记录编辑.');
+	   }
+    });
 };
 ```
 
