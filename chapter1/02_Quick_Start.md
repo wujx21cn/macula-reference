@@ -631,14 +631,14 @@ var _oDeleteAction = function() {
 	
 	    if (row && row.length > 0) {
 	       ModalBox.confirm('您确定要删除数据源' + '【' + row[0].code + '】吗？', function(result) {
-	       if (result) {
-	           $.post(base + '/admin/macula-base/datasource/delete/' + row[0].id, function(data) {
-    	        if (data.success) {
-    	               $(table).DataTable().ajax.reload();
-    	           } else {
-    	               MessageBox.error(data.exceptionMessage);
-    	           }
-	            });
+	            if (result) {
+	                $.post(base + '/admin/macula-base/datasource/delete/' + row[0].id, function(data) {
+        	            if (data.success) {
+        	               $(table).DataTable().ajax.reload();
+        	            } else {
+        	               MessageBox.error(data.exceptionMessage);
+        	            }
+	                });
 	           }
 	       });
 	    } else {
