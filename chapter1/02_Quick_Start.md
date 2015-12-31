@@ -588,7 +588,7 @@ public String create() {
 	});	
 ```
 
-Ajax返回的数据中包含了被编辑对象的信息，如本例中就是code, name等信息，页面里输入框通过这个方式跟 model 绑定起来
+Ajax返回的数据中包含了被编辑对象的信息，如本例中就是code, name等信息，页面里输入框通过这个方式跟 model 绑定起来。上面代码使用了 JQuery 技术向服务器端发起请求，并以 JSON 的方式接收服务器端返回的数据，服务器端一般以 bean 或者 bean list 的方式返回数据，JQuery 会自动转成 JSON 格式，方便页面上使用。
 
 data-bind="value: name"
 
@@ -605,21 +605,8 @@ data-bind="value: name"
 
 上面代码说明在点击取消按钮的时候，会调用 popBreadcrumb 方法，处理面包屑并返回List 页面。
 
-**通过 Ajax 读取服务器端的数据示例代码**
 
-```javascript
-var currentId = $form.attr('item-id');
-if (currentId) {
-	$.getJSON(base + '/admin/macula-uim/user/get/' + currentId,
-			function(data) {
-				ko.mapping.updateFromJS(viewModel, data.returnObject);
-				viewModel.rePassword = viewModel.password;
-				ko.applyBindings(viewModel, $content[0]);
-			});
-}
-```
 
-上面代码使用了 JQuery 技术向服务器端发起请求，并以 JSON 的方式接收服务器端返回的数据，服务器端一般以 bean 或者 bean list 的方式返回数据，JQuery 会自动转成 JSON 格式，方便页面上使用。
 
 #### 2.9.5.5 删除功能
 
