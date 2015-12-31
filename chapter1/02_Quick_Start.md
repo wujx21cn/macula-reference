@@ -504,7 +504,7 @@ public String create() {
 
 这个文件定义了页面显示结构，主要分为下面几个部分：
 
-```
+```html
 <@layout.mower_admin title=title scripts="admin/macula-base/datasource/edit_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="edit-datasource" />
 		<@ui.panel>
