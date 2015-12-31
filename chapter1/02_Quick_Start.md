@@ -573,7 +573,7 @@ public String create() {
 1. 通过 Ajax 读取服务器端的数据,构造跟 edit.ftl 页面里对应的 model
 2. 绑定 edit.ftl 页面里对应的按钮操作
 
-绑定model事例：
+绑定model示例代码
 
 ```javascript
 	var viewModel = function(data) {
