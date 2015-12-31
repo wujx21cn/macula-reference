@@ -450,7 +450,7 @@ var _onEditAction = function() {
 
 **数据列表显示部分**
 
-这部分主要是定义表格结构和要显示的数据内容，采用了dataTables 插件。定义表格结构示例如下：
+这部分主要是定义表格结构和要显示的数据内容，采用了datatables 插件。定义表格结构示例如下：
 
 ```html
 <table id="list-${code}" class="table table-striped table-bordered table-hover" 
@@ -472,7 +472,7 @@ var _onEditAction = function() {
 	</thead>
 </table>
 ```
-
+其中，`data-serverSide`指明数据是否从服务器端获取；`data-paging`指明数据是否分页显示；`data-ordering`指明是否对数据排序；`data-ajax-url`指明从服务器端获取数据的URL；`data-ajax-type`指明从服务器端获取数据的请求方式，get或post；`data-select`指明表格中的行是否能被选中；`data-row-id`指明数据中的哪一列做为表格中的 行的id;`rel="datatables"`指明使用datatables插件；余下是表格表头的定义。
 
 
 
