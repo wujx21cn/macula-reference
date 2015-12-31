@@ -597,9 +597,10 @@ data-bind="value: name"
 绑定页面按钮操作示例代码
 
 ```javascript
-$form.find('.cancel-btn').click(function() {
-	$(this).trigger('closeDialog');
-});
+<a id="cancel-action-${code}" class="btn btn-default" data-toggle="popBreadcrumb">
+	<i class="fa fa-reply fa-lg"></i>
+	取消
+</a>
 ```
 
 上面代码说明在点击取消按钮的时候，会调用 closeDialog 方法，这个方法是 Macula 框架提供的，会关闭弹出的对话框。
