@@ -418,7 +418,7 @@ List 页面主要分为3个部分，第一部分是上面的功能按钮部分�
 </a>
 ```
 
-这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑。`data-page` 是要显示的新页面的 url。
+这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑。`data-page`用于指定要显示的新页面的 url。
 
 再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
 
