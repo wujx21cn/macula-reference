@@ -573,7 +573,7 @@ public String create() {
 1. 通过 Ajax 读取服务器端的数据,构造跟 edit.ftl 页面里对应的 model
 2. 绑定 edit.ftl 页面里对应的按钮操作
 
-第1项工作示例代码是这样的：
+绑定model事例：
 
 ```javascript
 	var viewModel = function(data) {
@@ -592,7 +592,7 @@ Ajax返回的数据中包含了被编辑对象的信息，如本例中就是code
 
 data-bind="value: name"
 
-绑定后我们在 JavaScript 代码中修改 nam 值的时候，页面中输入框的值也会跟着变化（这是使用了 KnockoutJS 的技术）。
+绑定后我们在 JavaScript 代码中修改 name 值的时候，页面中输入框的值也会跟着变化（这是使用了 KnockoutJS 的技术）。
 
 绑定页面按钮操作示例代码
 
