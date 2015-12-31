@@ -498,67 +498,7 @@ var _onEditAction = function() {
 </script>
 ```
 
-对应 .js 文件中数据的定义是这样
 
-```
-var tableViewModel = ko.mapping.fromJS({
-	content : []
-});
-
-	
-ko.applyBindings(tableViewModel, $('#finder-list-user-list'));
-```
-
-上面代码是把数据跟视图绑定到一起。
-
-数据是存放到 content 数组中的，页面通过 AJAX 请求服务端 controller 上对应的方法，然后以 JSON 的格式获取到，然后再放到 content 数组中。因为该数据已经跟页面视图对应的显示表格绑定起来，那显示表格就可以自动显示出数据。
-
-读取数据的逻辑示例如下：
-
-```javascript
-Parts['search'].ajaxSubmit({
-	url	: base + '/admin/macula-uim/user/users',
-	dataType : 'json',
-	success	: function(data) {
-		eventBindingElement.trigger(Constants.data_arrive_event, [data]);
-	}
-});	
-```
-
-上面代码中我们可以看到在服务端成功执行后返回数据时会触发一个 event，这个 event 会被绑定到一段 JS 代码，来完成页面上数据的刷新。实际代码如下：
-
-```javascript
-eventBindingElement.bind(Constants.data_arrive_event, function(e, data) {
-	PageData.dataTotal = data.totalElements;
-	// 将列表数据赋给列表ViewModel
-	tableViewModel.content(data.content);
-	
-	if (data.content && data.content.length) {
-		Parts['nodata'].hideme();
-	} else {
-		Parts['nodata'].showme();
-	}
-})
-```
-
-**分页处理部分**
-
-首先页面的下面需要有这段代码:
-
-```
-<@layout.content_foot>
-	<@layout.content_pager "${code}"/>
-</@layout.content_foot>
-```
-
-然后 .js 文件中通过下面代码处理分页
-
-```javascript
-Parts['pager'].maculapagination({
-	code	: code
-});	
-          
-```
 
 #### 2.9.5.4 新增及修改页面
 
