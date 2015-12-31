@@ -498,7 +498,7 @@ public String create() {
 }
 ```
 
-上面的示例是对应 URL 请求 admin/macula-uim/user/create 到目录 src/main/resources/views/admin/macula-uim/users/ 下的 edit.ftl 文件。
+上面的示例是对应 URL 请求 admin/macula-base/datasource/create 到目录 src/main/resources/views/admin/macula-base/datasource/ 下的 edit.ftl 文件。
 
 **edit.ftl 文件**
 
