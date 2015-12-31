@@ -615,10 +615,10 @@ data-bind="value: name"
 我们先看一下 list 页面上对于删除功能按钮的定义
 
 ```html
-<button id="finder-delete-action-${code}" type="button" class="btn btn-has-icon" data-bind="click: onDeleteAction, enable: onDeleteEnable"
-	href="javascript:void(0);" target="command">
-	<span><span><i class="btn-icon"><@macula.themeImage src="bundle/delete.gif"/></i>删除</span></span>
-</button>
+<a id="delete-action-${code}" class="btn btn-danger">
+    <i class="fa fa-trash-o fa-lg"></i>
+	删除
+</a>
 ```
 
 上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下
