@@ -489,12 +489,12 @@ var _onEditAction = function() {
 public abstract class AdminMaculaBaseController extends BaseController {
 ```
 
-而在其他 Controller 类中，只需要定义 admin/macula-uim 下面的 URL 部分就可以，示例代码如下：
+而在其他 Controller 类中，只需要定义 /datasource/create 下面的 URL 部分就可以，示例代码如下：
 
 ```java
-@RequestMapping(value = "/user/create", method = RequestMethod.GET)
+@RequestMapping(value = "/datasource/create", method = RequestMethod.GET)
 public String create() {
-	return super.getRelativePath("/user/edit");
+	return super.getRelativePath("/datasource/edit");
 }
 ```
 
