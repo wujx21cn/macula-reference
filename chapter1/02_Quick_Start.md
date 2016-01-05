@@ -667,15 +667,6 @@ var _oDeleteAction = function() {
 
 ```html
 <@ui.panel_head>
-	
-	<div class="table-action">
-		<button type="submit" class="btn btn-primary">
-			<span><span>保存</span></span>
-		</button>
-		<button type="button" class="btn btn-secondary cancel-btn">
-			<span><span>关闭</span></span>
-		</button>
-	</div>
 	<div class="col-xs-12 col-md-12">
 		<a id="save-action-${code}" class="btn btn-primary">
 			<i class="fa fa-check-circle fa-lg"></i>
