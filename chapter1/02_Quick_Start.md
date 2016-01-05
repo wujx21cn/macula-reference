@@ -652,32 +652,8 @@ var _oDeleteAction = function() {
 
 ### 2.9.6 开发技巧汇总
 
-#### 2.9.6.1 调用 URL 刷新内容区域
 
-**1. 在 HTML 的 <A HREF 中使用**
-```html
-<a href="JavaScript:void(0);" target="update" url="admin/macula-base/system/runtime/gc">触发内存回收</a>
-```
-
-关键是 target 的使用，Macula 的 UI 框架能够根据 target 做不同处理。
-
-target 的几个主要用法是：
-
-* _blank 和 blank，这是新开浏览器窗口；
-* menu 是以菜单的方式打开；
-* dialog 是以 DIV 对话框的方式打开；
-* update 是更新页面上某一个部分的内容；
-* replace 是替换某部分内容 。
-
-**2. 在 JavaScript 代码中使用**
-
-```javascript
-$(document.body).updateContents(base + '/admin/macula-base/system/runtime');
-```
-用了 updateContents，方法很巧妙。
-
-
-#### 2.9.6.2 通过 jQuery 提交表单并获得返回结果
+#### 2.9.6.1 通过 jQuery 提交表单并获得返回结果
 
 做 Web 程序开发经常遇到的一个问题是提交表单后显示操作结果，按照传统做法是额外增加一个显示结果的 Web 页面，这个方法增加了开发工作量，而且额外增加了一个以后需要维护的文件。
 
