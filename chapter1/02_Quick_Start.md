@@ -511,9 +511,7 @@ public String create() {
 	<#assign code="edit-datasource" />
 		<@ui.panel>
 			<@ui.panel_head>
-				<div class="col-xs-12 col-md-12">
-				    功能按钮部分
-				</div>
+				功能按钮部分
 			</@ui.panel_head>
 			<@ui.panel_body>
                 页面内容
