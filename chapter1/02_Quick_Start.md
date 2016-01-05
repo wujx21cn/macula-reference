@@ -859,9 +859,9 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 #### 2.9.6.5 使用日期输入控件
 
-日期时间输入控件具体可以参考Macula UI的官方文档：
+日期时间输入控件具体可以参考 Macula UI 的官方文档：
 
-http://macula.top/mower/javascript.html#datetimepicker
+[Macula UI 日期时间控件](http://macula.top/mower/javascript.html#datetimepicker)
 
 下面我们给出一个日期+时间选择的例子：
 
