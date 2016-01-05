@@ -874,7 +874,7 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 http://macula.top/mower/javascript.html#datetimepicker
 
-下面我们给出一个例子：
+下面我们给出一个日期+时间选择的例子：
 
 ```html
 
