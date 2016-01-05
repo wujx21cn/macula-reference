@@ -666,8 +666,8 @@ var _oDeleteAction = function() {
 先看 .ftl 页面文件对表单的定义：
 
 ```html
-<form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post">
-	<div class="division">
+<form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
+	<div class="form-body">
 		<table cellspacing="0" cellpadding="0" border="0">
 			<tbody>
 				<tr>
