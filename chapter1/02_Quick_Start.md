@@ -672,7 +672,7 @@ var _oDeleteAction = function() {
 			<i class="fa fa-check-circle fa-lg"></i>
 			保存
 		</a>
-		<a id="cancel-action-${code}" class="btn btn-default"         data-toggle="popBreadcrumb">
+		<a id="cancel-action-${code}" class="btn btn-default" data-toggle="popBreadcrumb">
 			<i class="fa fa-reply fa-lg"></i>
 			关闭
 		</a>
