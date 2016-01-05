@@ -670,12 +670,12 @@ var _oDeleteAction = function() {
 	<div class="form-body">
 		<div class="row">
 	        <div class="col-md-12">
-	                            <div class="form-group">
-	                                <label class="control-label col-md-3">数据源编码：</label>
-	                                <div class="col-md-9">
-	                                    <input type="text"  name="datasource.code" data-bind="value: code" class="form-control input-sm" required maxlength="50" <#if id?exists>readOnly</#if> />
-	                                </div>
-	                            </div>
+	           <div class="form-group">
+	               <label class="control-label col-md-3">用户名：</label>
+	               <div class="col-md-9">
+	                   <input type="text"  name="username"  class="form-control input-sm" required maxlength="20"/>
+	               </div>
+	           </div>
 	        </div>
 		 </div>	
 	
