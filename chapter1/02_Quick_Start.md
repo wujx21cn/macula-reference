@@ -759,33 +759,19 @@ var validator = $form.validate({
 $('#save-action-' + code).click(function(e) {
 	$form.ajaxValidSubmit({
 		success : function(data) {
-			MessageBox.success('保存成功');
+		    if (data.success) {
+			    MessageBox.success('保存成功');
+			}else {
+			    if( data.exceptionMessage ) {
+			        AlertBox.error(data.exceptionMessage);
+			    }
+			}
 		},
-		error : function() {
+		error : function(data) {
 		}
 	});
 });
 
-$form.ajaxValidSubmit({
-	success : function(data) {
-        if (data.success) {
-		    var returnValue = data.returnObject;
-				if (returnValue == true) {
-					MessageBox.success('保存成功');
-				} else {
-					vm.testResult(data.returnObject);
-					MessageBox.info(data.returnObject);
-				}
-		} else {
-			data.exceptionMessage && AlertBox.error(data.exceptionMessage);
-		}
-		
-		$form.trigger('changeCaptcha');
-						
-	},
-	error : function() {
-	}
-});
 ```
 
 上面是把表单提交的处理绑定到一个方法，方式是采用 AJAX 的方式提交表单，然后根据提交结果显示不同信息。返回结果 data 是一个 JSON 对象，属性 data.success 是判断操作是否成功，说明操作完成而且没有抛出异常。如果有错误返回那 data.success 就是 false，通过 data.exceptionMessage 就可以显示出错误信息。
