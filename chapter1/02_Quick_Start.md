@@ -673,7 +673,7 @@ var _oDeleteAction = function() {
 	           <div class="form-group">
 	               <label class="control-label col-md-3">用户名：</label>
 	               <div class="col-md-9">
-	                   <input type="text"  name="username"  class="form-control input-sm" required maxlength="20"/>
+	                   <input type="text"  name="username"  class="form-control input-sm" required maxlength="50"/>
 	               </div>
 	           </div>
 	        </div>
@@ -687,28 +687,27 @@ var _oDeleteAction = function() {
 	               </div>
 	           </div>
 	        </div>
-		 </div>		 
-	
-		<table cellspacing="0" cellpadding="0" border="0">
-			<tbody>
-				<tr>
-					<th><label>用户名：</label></th>
-					<td><input type="text" name="username" maxlength="50" validate="required:true,rangelength:[1,20]" style="width: 200px;" /></td>
-				</tr>
-				<tr>
-					<th><label>旧密码：</label></th>
-					<td><input type="password" name="oldpassword" maxlength="50" validate="required:true,minlength:6" style="width: 200px;" /></td>
-				</tr>
-				<tr>
-					<th><label>新密码：</label></th>
-					<td><input type="password" name="newpassword" id="newpassword" maxlength="50" validate="required:true,minlength:6" style="width: 200px;" /></td>
-				</tr>
-				<tr>
-					<th><label>再次输入新密码：</label></th>
-					<td><input type="password" name="reNewpassword" maxlength="50" validate="required:true,minlength:6,equalTo:'#newpassword'" style="width: 200px;" /></td>
-				</tr>
-			</tbody>
-		</table>
+		 </div>	
+		<div class="row">
+	        <div class="col-md-12">
+	           <div class="form-group">
+	               <label class="control-label col-md-3">新密码：</label>
+	               <div class="col-md-9">
+	                   <input type="password"  name="newpassword"  class="form-control input-sm" required maxlength="50"/>
+	               </div>
+	           </div>
+	        </div>
+		 </div>
+		<div class="row">
+	        <div class="col-md-12">
+	           <div class="form-group">
+	               <label class="control-label col-md-3">再次输入新密码：</label>
+	               <div class="col-md-9">
+	                   <input type="password"  name="reNewpassword"  class="form-control input-sm" required maxlength="50"/>
+	               </div>
+	           </div>
+	        </div>
+		 </div>
 	</div>
 	
 	<div class="table-action">
