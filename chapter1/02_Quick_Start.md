@@ -757,7 +757,6 @@ var validator = $form.validate({
 });
 
 $('#save-action-' + code).click(function(e) {
-	var that = $(this);
 	$form.ajaxValidSubmit({
 		success : function(data) {
 			MessageBox.success('保存成功');
