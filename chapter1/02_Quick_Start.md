@@ -834,6 +834,10 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 ```html
 <select name="dataParam.dataSourceId" data-bind="options: dataSourceIdParams.dataparam_datasource_list, optionsText: 'label', optionsValue:'id', optionsCaption: '无',value: 'NONE'" class="chosen-select form-control"/>
+
+<script type="text/javascript">
+	var dataSourceIdParams={<@macula.writeDataParamsJs 'dataparam_datasource_list' />};
+</script>
 ```
 
 页面使用方法对于常量数据和动态数据都是一样的，采用 data-bind 的方式用 $Param 把下拉框数据填充到下拉框里。
