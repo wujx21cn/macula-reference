@@ -532,7 +532,7 @@ public String create() {
 	            <div class="form-group">		
 		            <label class="control-label col-md-3">数据源编码：</label>
 		            <div class="col-md-9">
-		            
+		                <input type="text"  name="datasource.code" data-bind="value: code" class="form-control input-sm" required maxlength="50" />
 		            </div>
 		        </div>
 		    </div>
