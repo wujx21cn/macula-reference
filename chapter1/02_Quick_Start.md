@@ -785,7 +785,7 @@ public Long changePassword(String username, String oldPassword, String newPasswo
 
 页面端会以 JSON 的方式获取到服务器端返回的对象，然后进行结果判断，并且显示对应的信息。
 
-#### 2.9.6.3 如何做下拉框输入功能
+#### 2.9.6.2 如何做下拉框输入功能
 
 下拉框是我们开发Web应用经常需要用到的，下面我讲解一下 Macula 框架中如何实现下拉框功能。
 
@@ -821,7 +821,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 页面使用方法对于常量数据和动态数据都是一样的，采用 data-bind 的方式用 $Param 把下拉框数据填充到下拉框里。
 
-#### 2.9.6.4 如何做 Checkbox 输入功能
+#### 2.9.6.3 如何做 Checkbox 输入功能
 
 用我们框架实现Checkbox 功能有点小技巧，需要用到额外的一个 hidden 字段用于保存 Checkbox 的值。实现示例如下：
 
@@ -834,7 +834,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 如果没有那个 hidden 字段那我们选择 Checkbox 的值就无法保存到服务器端，主要是因为我们在 Domain 层定义的 enabled 属性是 Boolean 类型，而页面里的 Checkbox 可以是任意值，所以需要一点额外的转换处理。
 
-#### 2.9.6.5 如何做 Radio 输入功能
+#### 2.9.6.4 如何做 Radio 输入功能
 
 Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应的数据值是直接保存到数据库中的，不需要做额外的转换处理。示例如下：
 
@@ -845,7 +845,7 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 上面就实现了两个 Radio，都绑定页面 Model 上的 sex 属性，每个 Radio 对应的 Value 是不同的，根据选择不同在服务器端保存的值也不同。 (框架同时也提供了radiolist与checkboxlist可以使用，具体示例可以用关键字 checkboxlist或 radiolist 搜索 .ftl 文件)
 
-#### 2.9.6.6 使用日期输入控件
+#### 2.9.6.5 使用日期输入控件
 
 我们框架采用了一个叫作 My97 的日期输入控件，控件的官方网址是：
 
