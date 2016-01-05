@@ -677,7 +677,17 @@ var _oDeleteAction = function() {
 	               </div>
 	           </div>
 	        </div>
-		 </div>	
+		 </div>
+		<div class="row">
+	        <div class="col-md-12">
+	           <div class="form-group">
+	               <label class="control-label col-md-3">旧密码：</label>
+	               <div class="col-md-9">
+	                   <input type="password"  name="oldpassword"  class="form-control input-sm" required maxlength="50"/>
+	               </div>
+	           </div>
+	        </div>
+		 </div>		 
 	
 		<table cellspacing="0" cellpadding="0" border="0">
 			<tbody>
