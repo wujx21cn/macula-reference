@@ -676,20 +676,16 @@ var _oDeleteAction = function() {
 			<span><span>关闭</span></span>
 		</button>
 	</div>
-				<div class="col-xs-12 col-md-12">
-				    <a id="test-action-${code}" class="btn btn-info">
-				        <i class="fa fa-check-circle fa-lg"></i>
-				        验证
-				    </a>
-				    <a id="save-action-${code}" class="btn btn-primary">
-				        <i class="fa fa-check-circle fa-lg"></i>
-				        保存
-				    </a>
+	<div class="col-xs-12 col-md-12">
+		<a id="save-action-${code}" class="btn btn-primary">
+			<i class="fa fa-check-circle fa-lg"></i>
+			保存
+		</a>
 				    <a id="cancel-action-${code}" class="btn btn-default" data-toggle="popBreadcrumb">
 				        <i class="fa fa-reply fa-lg"></i>
 				        取消
-				    </a>
-				</div>
+		</a>
+	</div>
 </@ui.panel_head>
 <@ui.panel_body>
     <form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
