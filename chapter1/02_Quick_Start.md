@@ -877,7 +877,27 @@ http://macula.top/mower/javascript.html#datetimepicker
 下面我们给出一个日期+时间选择的例子：
 
 ```html
-
-
+<div class="form-group">
+    <div class='input-group date datetimepicker-all'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
+</div>
+<script type="text/javascript">
+// 选择时间和日期
+$(".datetimepicker-all").datetimepicker(
+{
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+    showMeridian: 1,
+    format: "yyyy-mm-dd hh:ii"
+});
+</script>
 ```
 
