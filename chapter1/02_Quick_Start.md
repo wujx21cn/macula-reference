@@ -530,7 +530,7 @@ public String create() {
 		<div class="row">
 	        <div class="col-md-12">
 	            <div class="form-group">		
-		            
+		            <label class="control-label col-md-3">数据源编码：</label>
 		        </div>
 		    </div>
         </div>
