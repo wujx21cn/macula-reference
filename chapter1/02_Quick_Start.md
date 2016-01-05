@@ -834,13 +834,12 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 ```html
 <select name="dataParam.dataSourceId" data-bind="options: dataSourceIdParams.dataparam_datasource_list, optionsText: 'label', optionsValue:'id', optionsCaption: '无',value: 'NONE'" class="chosen-select form-control"/>
-
-<script type="text/javascript">
-	var dataSourceIdParams={<@macula.writeDataParamsJs 'dataparam_datasource_list' />};
-</script>
 ```
 
-页面使用方法对于常量数据和动态数据都是一样的，采用 data-bind 的方式用 $Param 把下拉框数据填充到下拉框里。
+我们需要使用自定义的freemarker宏writeDataParamsJs从后台获得下拉框数据，赋给javscript中的变量，然后采用 data-bind 的方式把下拉框数据填充到下拉框里。因此我们需要在 .ftl 文件中增加以下代码。
+
+```html
+```
 
 #### 2.9.6.3 如何做 Checkbox 输入功能
 
