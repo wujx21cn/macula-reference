@@ -537,6 +537,27 @@ public String create() {
 		        </div>
 		    </div>
         </div>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">
+	                <label class="control-label col-md-3">数据源名称：</label>
+	                    <div class="col-md-9">
+	                        <input type="text"  name="datasource.name" data-bind="value: name" class="form-control input-sm" required maxlength="50"/>
+	                    </div>
+	                </div>
+	            </div>
+	         </div>
+	    </div>
+	    <div class="row">
+		    <div class="col-md-12">
+		        <div class="form-group">
+		            <label class="control-label col-md-3">测试结果：</label>
+		               <div class="col-md-9">
+		                   <textarea data-bind="value: testResult, type: 'bool'" rows="2" cols="58" disabled="true"></textarea>
+		               </div>
+		        </div>
+		    </div>
+		</div>        
 	</div>
 </form>
 ```
