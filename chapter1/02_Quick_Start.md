@@ -525,7 +525,7 @@ public String create() {
 ```html
 <form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-base/datasource/save" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
     <input type="hidden" name="datasource.id" data-bind="value: id" />
-
+    
 </form>
 ```
 
