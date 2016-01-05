@@ -833,10 +833,10 @@ VALUE：select name as label, id as code from ma_base_data_source
 在页面上使用示例如下：
 
 ```html
-<select name="dataParam.dataSourceId" data-bind="options: dataSourceIdParams.dataparam_datasource_list, optionsText: 'label', optionsValue:'id', optionsCaption: '无',value: 'NONE'" class="chosen-select form-control"/>
+<select name="dataParam.dataSourceId" data-bind="options: dataSourceIdParams.datasource_list, optionsText: 'label', optionsValue:'id', optionsCaption: '无',value: 'NONE'" class="chosen-select form-control"/>
 ```
 
-我们需要使用由Macula定义的freemarker宏writeDataParamsJs从后台获得下拉框数据，赋给javscript中的变量，然后采用 data-bind 的方式把下拉框数据填充到下拉框里。因此我们需要在 .ftl 文件中增加以下代码。
+我们需要使用由Macula框架定义的freemarker宏writeDataParamsJs从后台获得下拉框数据，赋给javscript中的变量，然后采用 data-bind 的方式把下拉框数据填充到下拉框里。因此我们需要在 .ftl 文件中增加以下代码。
 
 ```html
 <script type="text/javascript">
