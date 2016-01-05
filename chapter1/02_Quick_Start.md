@@ -667,6 +667,15 @@ var _oDeleteAction = function() {
 
 ```html
 <@ui.panel_head>
+	
+	<div class="table-action">
+		<button type="submit" class="btn btn-primary">
+			<span><span>保存</span></span>
+		</button>
+		<button type="button" class="btn btn-secondary cancel-btn">
+			<span><span>关闭</span></span>
+		</button>
+	</div>
 				<div class="col-xs-12 col-md-12">
 				    <a id="test-action-${code}" class="btn btn-info">
 				        <i class="fa fa-check-circle fa-lg"></i>
@@ -683,59 +692,51 @@ var _oDeleteAction = function() {
 				</div>
 </@ui.panel_head>
 <@ui.panel_body>
-<form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
-	<div class="form-body">
-		<div class="row">
-	        <div class="col-md-12">
-	           <div class="form-group">
-	               <label class="control-label col-md-3">用户名：</label>
-	               <div class="col-md-9">
-	                   <input type="text"  name="username"  class="form-control input-sm" required maxlength="50"/>
-	               </div>
-	           </div>
-	        </div>
-		 </div>
-		<div class="row">
-	        <div class="col-md-12">
-	           <div class="form-group">
-	               <label class="control-label col-md-3">旧密码：</label>
-	               <div class="col-md-9">
-	                   <input type="password"  name="oldpassword"  class="form-control input-sm" required maxlength="50"/>
-	               </div>
-	           </div>
-	        </div>
-		 </div>	
-		<div class="row">
-	        <div class="col-md-12">
-	           <div class="form-group">
-	               <label class="control-label col-md-3">新密码：</label>
-	               <div class="col-md-9">
-	                   <input type="password"  name="newpassword"  class="form-control input-sm" required maxlength="50"/>
-	               </div>
-	           </div>
-	        </div>
-		 </div>
-		<div class="row">
-	        <div class="col-md-12">
-	           <div class="form-group">
-	               <label class="control-label col-md-3">再次输入新密码：</label>
-	               <div class="col-md-9">
-	                   <input type="password"  name="reNewpassword"  class="form-control input-sm" required maxlength="50"/>
-	               </div>
-	           </div>
-	        </div>
-		 </div>
-	</div>
-	
-	<div class="table-action">
-		<button type="submit" class="btn btn-primary">
-			<span><span>保存</span></span>
-		</button>
-		<button type="button" class="btn btn-secondary cancel-btn">
-			<span><span>关闭</span></span>
-		</button>
-	</div>			
-</form>
+    <form id="form-${code}" action="${base}/admin/macula-uim/user/savepassword" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
+    	<div class="form-body">
+    		<div class="row">
+    	        <div class="col-md-12">
+    	           <div class="form-group">
+    	               <label class="control-label col-md-3">用户名：</label>
+    	               <div class="col-md-9">
+    	                   <input type="text"  name="username"  class="form-control input-sm" required maxlength="50"/>
+    	               </div>
+    	           </div>
+    	        </div>
+    		 </div>
+    		<div class="row">
+    	        <div class="col-md-12">
+    	           <div class="form-group">
+    	               <label class="control-label col-md-3">旧密码：</label>
+    	               <div class="col-md-9">
+    	                   <input type="password"  name="oldpassword"  class="form-control input-sm" required maxlength="50"/>
+    	               </div>
+    	           </div>
+    	        </div>
+    		 </div>	
+    		<div class="row">
+    	        <div class="col-md-12">
+    	           <div class="form-group">
+    	               <label class="control-label col-md-3">新密码：</label>
+    	               <div class="col-md-9">
+    	                   <input type="password"  name="newpassword"  class="form-control input-sm" required maxlength="50"/>
+    	               </div>
+    	           </div>
+    	        </div>
+    		 </div>
+    		<div class="row">
+    	        <div class="col-md-12">
+    	           <div class="form-group">
+    	               <label class="control-label col-md-3">再次输入新密码：</label>
+    	               <div class="col-md-9">
+    	                   <input type="password"  name="reNewpassword"  class="form-control input-sm" required maxlength="50"/>
+    	               </div>
+    	           </div>
+    	        </div>
+    		 </div>
+    	</div>
+    			
+    </form>
 </@ui.panel_body>
 ```
 
