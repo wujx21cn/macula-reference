@@ -870,21 +870,14 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 #### 2.9.6.5 使用日期输入控件
 
-我们框架采用了一个叫作 My97 的日期输入控件，控件的官方网址是：
+日期时间输入控件具体可以参考Macula UI的官方文档：
 
-http://www.my97.net/
+http://macula.top/mower/javascript.html#datetimepicker
 
-这个控件的功能比较全面，我们常用的限定日期可选范围，比如在某一天以前，或者在页面上某个日期输入框的值以后等等。下面示例是有效日期和失效日期，是一个常见的日期处理功能。
+下面我们给出一个例子：
 
 ```html
-<input type="text" id="effectiveDate" name="user.effectiveDate" data-bind="value: effectiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}'})"/>
 
-<input type="text" name="user.inactiveDate" data-bind="value: inactiveDate, type:'date'" autocomplete="off" class="Wdate" onFocus="WdatePicker({dateFmt:'${dateTimePattern}',minDate:'#F{$dp.$D(\'effectiveDate\')}'})"/>
-                    
+
 ```
 
-上面第一个是有效日期，第二个是失效日期。
-
-我们可以看到 Wdate 用来区分这个是日期输入控件，有个 ${dateTimePattern} 是日期时间格式，这个是统一在 src/main/resources 目录下的 macula.properties 文件里定义的。
-
-在失效日期中，有个设置是 minDate:'#F{$dp.$D(\'effectiveDate\')}'，这个是限定这个日期值要大于有效日期的输入框的日期值。
