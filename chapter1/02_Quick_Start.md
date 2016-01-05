@@ -722,7 +722,6 @@ var _oDeleteAction = function() {
     	        </div>
     		 </div>
     	</div>
-    			
     </form>
 </@ui.panel_body>
 ```
