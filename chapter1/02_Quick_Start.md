@@ -525,7 +525,19 @@ public String create() {
 ```html
 <form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-base/datasource/save" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
     <input type="hidden" name="datasource.id" data-bind="value: id" />
-    
+    <div class="form-body">
+		<h3 class="form-section">数据源信息</h3>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">
+	                <label class="control-label col-md-3">数据源编码：</label>
+	                 <div class="col-md-9">
+	                    <input type="text"  name="datasource.code" data-bind="value: code" class="form-control input-sm" required maxlength="50" <#if id?exists>readOnly</#if> />
+	                </div>
+	            </div>
+	        </div>
+		 </div>
+	</div>
 </form>
 ```
 
