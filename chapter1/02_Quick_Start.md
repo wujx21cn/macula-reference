@@ -528,9 +528,11 @@ public String create() {
     <div class="form-body">
 		<h3 class="form-section">数据源信息</h3>
 		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">		
 		
-		
-		
+		        </div>
+		    </div>
         </div>
 	</div>
 </form>
