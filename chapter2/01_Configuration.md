@@ -8,23 +8,7 @@
 * Freemarker配置
 * Log4J配置
 
-## 4.1 Macula配置
 
-
-
-## 4.2 Spring配置
-
- 
-
-
-## 4.3 JPA配置
-
-
-    
-## 4.4 Freemarker配置
-
-    
-## 4.5 Log4j配置
 
 
 
