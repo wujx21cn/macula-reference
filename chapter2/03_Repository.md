@@ -7,7 +7,7 @@
 JPA数据存取接口JpaRepository默认可实现下列功能：
 
 例 6.1. JpaRepository 接口
-```
+```java
 public interface Repository<T, ID extends Serializable> {
 
     T save(T entity); 
@@ -33,7 +33,7 @@ public interface Repository<T, ID extends Serializable> {
 
 例 6.2. 比如实现Application领域模型的存取接口定义为：
 
-```
+```java
 public interface ApplicationRepository extends JpaRepository<JpaApplication, Long> {
 
 
@@ -42,7 +42,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 }
 ```
 
-这里ApplicationRepository通过继承JpaRepository，并通过指定泛型<JpaApplication,Long>来标识JpaRepository的操作对象，即完成了Application领域模型的基本存取接口定义。
+这里ApplicationRepository通过继承JpaRepository，并通过指定泛型`<JpaApplication,Long>`来标识JpaRepository的操作对象，即完成了Application领域模型的基本存取接口定义。
 
 对于增加的findByAppId接口定义，将在下一节介绍。
 
@@ -62,7 +62,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 例 6.3. Macula平台下定制的Repository -Factory实例：
 
-```
+```xml
 <jpa:repositories base-package="org.macula.base.**.repository" entity-manager-factory-ref="entityManagerFacotry"
         transaction-manager-ref="transactionManager" factory-class="org.macula.core.repository.MaculaJpaRepositoryFactoryBean" />
 
@@ -95,7 +95,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 **例 6.4. 根据findBy后面的属性名查询：**
 
-```
+```java
 public List<Person> findByLastname(String lastname);
 ```
 
@@ -104,20 +104,20 @@ public List<Person> findByLastname(String lastname);
 
 **例 6.5. 根据findBy后的属性名分页、排序查询：**
 
-```
+```java
 public Page<User> findByLastname(String lastname, Pageable pageable);
 public List<User> findByLastname(String lastname, Sort sort);     
 ```
 
 **例 6.6. 根据findBy后的多个属性查询：**
 
-```
+```java
 public List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
 ```
 
 **例 6.7. 根据findBy后的属性的子属性查询：**
 
-```
+```java
 public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 ```
 
@@ -209,7 +209,7 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 
 **例 6.8. 自定义接口：UserRepositoryCustom**
 
-```
+```java
 public interface UserRepositoryCustom {
 
 
@@ -220,7 +220,7 @@ public interface UserRepositoryCustom {
 
 **例 6.9. 自定义接口实现**
 
-```
+```java
 public class UserRepositoryImpl implements UserRepositoryCustom {
 
   public void someCustomMethod(User user) {
@@ -232,7 +232,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
 **例 6.10. 对外使用的接口：UserRepository**
 
-```
+```java
 public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRepositoryCustom {
 
   // Declare query methods here
@@ -259,7 +259,7 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
     
     其中JpaEntityManagerAware的接口标记如下为：
     
-    ```
+    ```java
     public interface JpaEntityManagerAware {
     
         public void setEntityManager(EntityManager entityManager);

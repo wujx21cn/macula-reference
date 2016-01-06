@@ -36,7 +36,7 @@
 
 如请求的地址：/admin/macula-uim/user/delete/user1 可通过Controller中定义
 
-```
+```java
 @RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
 
 @OpenApi
@@ -53,7 +53,7 @@ public ExecuteResponse delete(@PathVariable String userName) {
 
 为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
 
-```
+```java
 public class Response {
 
 	/** 是否成功标识 */
@@ -99,7 +99,7 @@ public class Response {
 }         
 ```
 
-```
+```java
 public class ExecuteResponse<T> extends Response {
 
 	/** 结果信息 */
@@ -119,7 +119,7 @@ public class ExecuteResponse<T> extends Response {
 }
 ```
 
-```
+```java
 public class PageResponse extends Response {
 
 	/** 本次请求的记录数 */
@@ -168,7 +168,7 @@ public class PageResponse extends Response {
 
 @OpenApi注解的启用需要配置RequestMappingHandlerAdapter的customReturnValueHandlers属性：
 
-```
+```xml
 <property name="customReturnValueHandlers">
     <list>
         <bean class="org.macula.core.mvc.OpenApiReturnValueHandler">
@@ -198,7 +198,7 @@ public class PageResponse extends Response {
 
 在展示层编写的Controller实现，需要直接或间接扩展至BaseController
 
-```
+```java
 @RequestMapping("admin/macula-base")
 
 public class AdminMaculaBaseController extends BaseController {
@@ -228,7 +228,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     比如在Controller中，会返回的用户信息保存，其Controller原型为：
     
-    ```
+    ```java
     public User save(User user){
 
     // something
@@ -246,7 +246,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     此时Spring将自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
     
-    ```
+    ```java
     public User save(@Valid @FormBean("user") User user){
 
     if (hasErrors()) {
@@ -267,7 +267,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
     
-    ```
+    ```xml
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="customArgumentResolvers">
             <list>
@@ -320,7 +320,7 @@ public class AdminMaculaBaseController extends BaseController {
     
     对于Pageable参数的绑定，比如Controller中编写：
     
-    ```
+    ```java
     @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
 
     public Page<User> list(Pageable pageable) {
@@ -336,7 +336,7 @@ public class AdminMaculaBaseController extends BaseController {
     ```
     为了实现这个扩展，主要在applicationContext-mvc.xml文件中的PageableArgumentResolver定义：
 
-    ```
+    ```xml
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 
     <property name="messageConverters" ref="messageConverters" />
@@ -367,7 +367,7 @@ public class AdminMaculaBaseController extends BaseController {
     很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
     对应的applicationContext-mvc.xml中配置如下：
-    ```
+    ```xml
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <list>
@@ -387,7 +387,7 @@ public class AdminMaculaBaseController extends BaseController {
     * *该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值*
     
     ***例 8.2. 通过传入主键，直接转化为相应的对象***
-    ```
+    ```java
     @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
     
     public User edit(@PathVariable("userId") User user) {
@@ -399,14 +399,14 @@ public class AdminMaculaBaseController extends BaseController {
     
     如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
     
-    当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends JpaRepository<User>的实现。
+    当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>`的实现。
 
 
 ## 8.9 ExcelView
 
 为了更好的支持Excel的导出功能，系统提供了ExcelView类结合ExcelUtils的Excel模板方式导出Excel。只要按照ExcelUtils的语法制作Excel模板，然后放在FreeMarker模板文件放置的目录中，在Controller中如下使用：
 
-```
+```java
 public ModelAndView excel2() {
 	Map<String, Object> model = new HashMap<String, Object>();
 	model.put("name", "变量");

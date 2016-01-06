@@ -59,7 +59,7 @@
 
 对于需要记录变化日志的实体，需要在实体的类上添加@Auditable注解，然后对于需要记录变更日志的字段添加@Auditable注解。同时，EntityManagerFactory需要添加相应的监听器：
 
-```
+```xml
 <property name="jpaProperties">
 	<props>
 		<prop key="hibernate.ejb.event.post-update">

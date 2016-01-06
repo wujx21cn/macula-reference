@@ -15,7 +15,7 @@
     Macula配置文件 macula.properties位于Maven项目的src/main/resources目录下，实现macula平台自身的可配置信息。
 
     **表 4.1. macula.properties可配置属性**
-    
+
     <table summary="macula.properties可配置属性" border="1">
     	<colgroup>
     		<col>
@@ -164,34 +164,26 @@
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
 1. J2EE项目下，web.xml中的Spring通过Listener载入
-    ```
+    ```xml
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     ```
     
 2. Listener需要设置的参数
-    ```
+    ```xml
     <context-param>
-    
         <param-name>locatorFactorySelector</param-name>
-    
         <param-value>classpath:/configs/applicationContext-ref.xml</param-value>
-    
     </context-param>
     
     <context-param>
-    
         <param-name>parentContextKey</param-name>
-    
         <param-value>MaculaContextRoot</param-value>
-    
     </context-param>
     
     <context-param>
-    
         <param-name>contextConfigLocation</param-name>
-    
         <param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml</param-value>
     
     </context-param>
@@ -204,11 +196,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 3. configs/applicationContext-ref.xml
     
-    ```
+    ```xml
     <bean id="MaculaContextRoot" class="org.springframework.context.support.ClassPathXmlApplicationContext">
-    
         <constructor-arg index="0" value="classpath:applicationContext-root.xml" />
-    
     </bean>
     ```
     ***重要***
@@ -221,38 +211,30 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
     
-    ```
+    ```xml
         <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     
         <property name="url">
-    
             <value>jdbc:oracle:thin:@192.168.0.180:1521:dstest</value>
-    
         </property>
     
         <property name="driverClassName">
-    
             <value>oracle.jdbc.driver.OracleDriver</value>
-    
         </property>
     
         <property name="username">
-    
             <value>macula</value>
-    
         </property>
     
         <property name="password">
-    
             <value>macula</value>
-    
         </property>
     
     </bean>
     ```
     同时，该文件也是定义配置信息（即Macula平台的Configuration信息的修改Bean）读取的设置，默认情况下，通过扫描org.macula.core.config目录下的所有Bean，在更新Configuration信息，代码如下：
     
-    ```
+    ```xml
     <context:component-scan base-package="org.macula.core.config" />
     ```
     
@@ -266,7 +248,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     对于引入的子模块的Spring信息，必须如下定义：
     
-    ```
+    ```xml
     <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
 
     ```
@@ -277,7 +259,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
     在web.xml中定义：
     
-    ```
+    ```xml
     <servlet>
         <servlet-name>appServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -300,7 +282,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     在configs/servletContext-mvc.xml定义：
     
-    ```
+    ```xml
     <import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
     
     <!-- Enables the Spring MVC @Controller programming model -->
@@ -337,7 +319,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 2. JPA中Spring的配置
 
     应用可创建多个JPA的EntityManagerFactory，但要求macula平台自身插件所需要的entityManagerFactory必须已在Spring配置文件中配置（配置在configs/applicationContext-app.xml）文件中，并配置了相应的Transaction处理。
-    ```
+    ```xml
     <!-- App Entity Manager -->
     <bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
         <property name="persistenceUnitManager">
@@ -397,7 +379,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
 * Spring View中的设置
 
-    ```
+    ```xml
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <!-- preferFileSystemAccess can make hot file detection, use true for development -->
         <property name="preferFileSystemAccess" value="false" />
