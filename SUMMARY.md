@@ -3,7 +3,7 @@
 * [序言](README.md)
 * [Macula介绍](chapter1/chapter1.md)
    * [概述](chapter1/01_Introduction.md)
-        * [1.1 技术架构](chapter1/01_Introduction.md##)
+        * [1.1 技术架构]
    * [快速开始](chapter1/02_Quick_Start.md)
    * [项目构建](chapter1/03_Project_Building.md)
 * [核心技术](chapter2/chapter2.md)
