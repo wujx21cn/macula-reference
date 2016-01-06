@@ -24,6 +24,12 @@
             * [2.9.5. 页面层](chapter1/2-9-5.md)
             * [2.9.6. 开发技巧汇总](chapter1/2-9-6.md)
    * [项目构建](chapter1/03_Project_Building.md)
+        * [3.1. SVN项目创建]
+        * [3.2. Maven及目录结构]
+        * [3.3. 文件命名]
+        * [3.4. 自定义目录]
+        * [3.5. 配置文件]
+        * [3.6. 依赖包及版本]
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
    * [领域模型层](chapter2/02_Domain.md)
