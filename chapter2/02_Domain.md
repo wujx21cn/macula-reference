@@ -16,33 +16,7 @@
 
 ## 5.3 变化日志
 
-数据变更日志采用单独的日指标进行记录，业务系统中，涉及到的数据变更日志均记录在同一数据表中，变更日志的数据表记录方式如下：
 
-* 变化表：tableName
-* 变化字段：columnName
-* 变化数据ID：dataId
-* 变化前的数据：oldValue
-* 变化后的数据：newValue
-* 变化的批次：batchNo
-
-用户操作所产生的一次数据变化，可能导致一各实体的多个字段值变化，则记录多条变化日志，分别对应变化的字段，但对于该次变化的批次，将是一样的。
-
-***重要***
-
-*批次的值可以是用户输入的数据，也可以是程序自动生成的值，默认情况下，采用系统生成的值，它用来标识单次变化时，所变化的数据范围，便于变化日志的展示和查看等。*
-
-对于需要记录变化日志的实体，需要在实体的类上添加@Auditable注解，然后对于需要记录变更日志的字段添加@Auditable注解。同时，EntityManagerFactory需要添加相应的监听器：
-
-```xml
-<property name="jpaProperties">
-	<props>
-		<prop key="hibernate.ejb.event.post-update">
-			org.macula.core.hibernate.audit.AuditedEventListener
-		</prop>
-	</props>
-</property>
-		
-```
 
 
 ## 5.4 领域模型接口
