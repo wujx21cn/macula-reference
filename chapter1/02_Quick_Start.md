@@ -11,17 +11,7 @@
     
 ##2.3 项目的导入
 
-以macula-samples为例，macula-samples采用svn+maven进行基础的代码管理与开发，下面通过maven平台自身的项目导入，来介绍已有项目的导入。
 
-可通过svn下载macula平台代码（如放置在D:\workspace\macula-samples目录），然后通过Eclipse导入的方式将macula平台的代码导入。
-
-导入方式为，选择File->Import->Maven->Existing Maven Projects的方式：
-
-![tutorials-maven-import.jpg](../images/chapter1/tutorials-maven-import.jpg "tutorials-maven-import.jpg")
-
-![tutorials-maven-import2.jpg](../images/chapter1/tutorials-maven-import2.jpg "tutorials-maven-import2.jpg")
-
-通过这种方式，可导入macula平台的所有子模块。
 
 ## 2.4 新建业务项目
 
