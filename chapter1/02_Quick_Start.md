@@ -15,17 +15,7 @@
 
 ## 2.4 新建业务项目
 
-通过Eclipse的新建Maven向导来创建新的业务工程项目。
 
-![tutorials-maven-newwizard.jpg](../images/chapter1/tutorials-maven-newwizard.jpg "tutorials-maven-newwizard.jpg")
-
-在下一步中，可选择pom模块、jar模块或war，在新项目创建时，请选择pom模块的方式，创建项目根，其他模块以子模块的方式存在。
-
-为创建一个pom模块的pom.xml，可以在向导中选择maven-archetype-site来创建。
-
-![tutorials-maven-newwizard2.jpg](../images/chapter1/tutorials-maven-newwizard2.jpg "tutorials-maven-newwizard2.jpg")
-
-从而可以得到一个项目的根目录，在这个项目根目录中，用来处理打包、发布等，均写在该pom.xml中，具体可参考macula工程根下的pom.xml文件。
 
 ## 2.5 创建业务父模块
 
