@@ -6,7 +6,7 @@
 
 对于资源部分，当前实现的资源主要有菜单资源和功能资源，用来解决功能权限的问题，对于数据权限，将通过与角色、用户属性、待检测数据联合作用的方式来实现数据权限。
 
-## 17.1 权限管理的几大主体
+## 权限管理的几大主体
 
 权限管理主要是围绕用户、角色、用户组等几方面而形成的对某资源具有操作或不可操作的问题。它包含的主体有：
 
@@ -47,11 +47,11 @@
 
     ![macula-security-acl.jpg](../images/chapter3/macula-security-acl.jpg "macula-security-acl.jpg")
     
-## 17.2 权限配置
+## 权限配置
 
 ![macula-security-biz.jpg](../images/chapter3/macula-security-biz.jpg "macula-security-biz.jpg")
 
-## 17.3 用户分组提供者接口
+## 用户分组提供者接口
 
 默认情况下，Macula框架只提供了基于组织结构的用户分组，如果需要添加其他的用户分组信息，可以通过实现SecurityCatalogProvider的方式提供新的用户分组信息。
 
@@ -120,7 +120,7 @@ public interface SecurityCatalogProvider extends SecurityProvider {
     	
 ```
 
-## 17.4 资源提供者接口
+## 资源提供者接口
 
 资源是一类具有时间性的可访问或操作的集合，比如系统菜单，用户可以通过实现SecurityResourceProvider接口，来达到通过Macula框架管理您指定资源的目的。实际上可以理解为一个细粒度的数据权限行为。
 
@@ -166,7 +166,7 @@ public interface SecurityResourceProvider extends SecurityProvider {
 }	
 ```
 
-## 17.5 权限过滤详解
+## 权限过滤详解
 
 在应用Spring Security来保护整个应用地址的大前提下，Macula相应的对整个Filter链进行了改写和定制，具体如下：
 
