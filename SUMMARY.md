@@ -5,7 +5,6 @@
    * [概述](chapter1/01_Introduction.md)
    * [快速开始](chapter1/02_Quick_Start.md)
    * [项目构建](chapter1/03_Project_Building.md)
-       * [3.3. 文件命名](chapter1/3-3.md)
        * [3.4. 自定义目录](chapter1/3-4.md)
        * [3.5. 配置文件](chapter1/3-5.md)
        * [3.6. 依赖包及版本](chapter1/3-6.md)
