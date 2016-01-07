@@ -2,7 +2,7 @@
 
 为了适应多个时区访问一个系统的要求，有必要对时区做统一的处理，不同地区能够呈现各地区习惯的日期风格
 
-## 9.1 时区配置
+## 时区配置
 
 对于不同的用户请求，其时区是不一样的，为了获取不同用户的时区信息，Macula框架提供了三种方式：
 
@@ -57,7 +57,7 @@ Macula已经对FreeMarkerView做了处理，每次不同的用户请求会给Fre
 
 *在设置页面上的日期控件格式时，建议使用Macula暴露出来的对应的日期Pattern。*
 
-## 9.2 日期与数字格式设置
+## 日期与数字格式设置
 
 日期格式统一设置在macula.properties中，如下所示：
 
@@ -69,7 +69,7 @@ pattern.number = #
 ```
 上述配置同样会对FreeMarker的日期格式做设置，freemarker.properties中无需再设置。
 
-## 9.3 日期转为字符串
+## 日期转为字符串
 
 服务器端产生日期对象后，需要转为字符串才能显示，日期对象有java.util.Date和 org.joda.time.DateTime 。
 
@@ -84,7 +84,7 @@ pattern.number = #
     Macula框架提供了$date.format(iso8601date, pattern)的方法来转换为浏览器需要显示的格式。
     
     
-## 9.4 字符串转为日期    
+## 字符串转为日期    
 
 如果需要转到的日期类型是java.util.Date及其子类，Macula框架通过org.macula.core.mvc.convert.DateConverter处理，配置如下：
 
@@ -104,7 +104,7 @@ DateConverter可以处理日期时间、日期、时间格式的字符串，格�
 *对于使用@DateTimeFormat注解的日期，其在转换时是使用@DateTimeFormat注解中指定的格式，这里建议定义一个常量的日期时间、日期、时间格式与macula.properties中保持一致，指定@DateTimeFormat的格式时使用这个常量即可。*
 
 
-##9.5 数字格式转换
+## 数字格式转换
 
 数字格式默认是"#"，如果需要显示为货币格式，在FreeMarker中可以使用${x?string.currency}，在Javascript中需要自行处理。
 
