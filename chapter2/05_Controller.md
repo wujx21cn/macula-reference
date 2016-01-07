@@ -4,7 +4,7 @@
 
 同时对于Ajax部分，在javascript框架中建议使用jquery框架。
 
-## 8.1 地址规划
+## 地址规划
 
 对于当前大部分的业务系统，存在终端使用和后台管理的情况以及未来对于F5在地址分发方面的合理性布局，在地址规划上，需要按一定的规则进行：
 
@@ -20,7 +20,7 @@
 * 用户功能：/front/模块名/功能名/操作名称/参数/其他
 
 
-## 8.2. 请求方式规划
+## 请求方式规划
 
 为了保证业务系统不被重复的请求以及不正确的请求干扰，对于请求方式做如下规划：
 
@@ -28,7 +28,7 @@
 * 对于删除数据、保存数据或提交多条数据给后台的应该使用POST方式
 * 有多个查询条件的查询功能应该使用POST方式
 
-## 8.3 REST
+## REST
 
 在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
 
@@ -49,7 +49,7 @@ public ExecuteResponse delete(@PathVariable String userName) {
 
 ```
 
-## 8.4 REST数据返回格式
+## REST数据返回格式
 
 为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
 
@@ -178,7 +178,7 @@ public class PageResponse extends Response {
 </property>
 ```
 
-## 8.5 国际化
+## 国际化
 
 国际化 可分为页面国际化和提示信息国际化。
 
@@ -186,7 +186,7 @@ public class PageResponse extends Response {
 
 提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n/xxxx/messages_xx_XX.properties等众多资源文件，同时添加到applicationContext-macula.xml配置文件中。
 
-## 8.6 表单校验
+## 表单校验
 
 在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
 
@@ -194,7 +194,7 @@ public class PageResponse extends Response {
 
 失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
 
-## 8.7 使用基类Controller
+## 使用基类Controller
 
 在展示层编写的Controller实现，需要直接或间接扩展至BaseController
 
@@ -211,7 +211,7 @@ public class AdminMaculaBaseController extends BaseController {
 在BaseController中处理了大量的异常处理方式以及数据返回要求的设定。
 
 
-## 8.8 参数绑定校验
+## 参数绑定校验
 
 在Spring MVC默认的基础上，Macula开发平台在参数绑定上做了适当扩展，以适应与Struts（Webwork）等相同的对参数处理的一致性，具体来说，有如下的变化：
 
@@ -402,7 +402,7 @@ public class AdminMaculaBaseController extends BaseController {
     当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>`的实现。
 
 
-## 8.9 ExcelView
+## ExcelView
 
 为了更好的支持Excel的导出功能，系统提供了ExcelView类结合ExcelUtils的Excel模板方式导出Excel。只要按照ExcelUtils的语法制作Excel模板，然后放在FreeMarker模板文件放置的目录中，在Controller中如下使用：
 
