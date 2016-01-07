@@ -129,8 +129,8 @@
 
 通过maven命令，mvn package可实现打包，如果需要发布到仓库中，可使用mvn install命令。
 
-
-# 2.9.1. 概要介绍
+## 2.9. 程序开发
+### 2.9.1. 概要介绍
 
 Macula 框架使用了 Spring，JPA（Hibernate），JQuery和KnockoutJS 等关键技术，所以要想熟练掌握框架，需要对这些技术很熟悉。一般做过 Java 开发的对 Spring 和 JPA（Hibernate） 都会有些了解，但对 JQuery 和 KnockoutJS 可能了解不多，特别是 KnockoutJS。所以有必要加强对 JQuery 和 KnockoutJS 的学习。 下面列举了 JQuery 和 KnockoutJS 的教程的链接，希望能帮助开发人员快速掌握这两种技术。
 
