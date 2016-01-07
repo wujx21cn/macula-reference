@@ -14,7 +14,6 @@
        * [6.3. Spring自动扫描](chapter2/6-3.md)
        * [6.4. 接口方法](chapter2/6-4.md)
        * [6.5. 自定义接口与实现](chapter2/6-5.md)
-       * [6.6. 自定义接口中的EntityManager和TransactionManager](chapter2/6-6.md)
    * [业务服务层](chapter2/04_Service.md)
    * [展示层](chapter2/05_Controller.md)
    * [时间与格式](chapter2/06_Timezone.md)
