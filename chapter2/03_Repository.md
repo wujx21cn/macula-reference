@@ -89,3 +89,48 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
  * *接口扩展了JpaRepository，即extends JpaRepository。*
  * *接口如果通过注解@NoRepositoryBean，则标识不用扫描该接口*
+ * 
+ 
+### 6.5. 自定义接口与实现
+
+对于一些业务需求在以上介绍的在接口定义即可完成的，不需要编写自定义接口，否则需要编写自定义的接口并实现自定义接口。
+
+**例 6.8. 自定义接口：UserRepositoryCustom**
+
+```java
+public interface UserRepositoryCustom {
+
+
+    public void someCustomMethod(User user);
+
+}
+```
+
+**例 6.9. 自定义接口实现**
+
+```java
+public class UserRepositoryImpl implements UserRepositoryCustom {
+
+  public void someCustomMethod(User user) {
+    // Your custom implementation
+  }
+
+}
+```
+
+**例 6.10. 对外使用的接口：UserRepository**
+
+```java
+public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRepositoryCustom {
+
+  // Declare query methods here
+
+}
+```
+
+参考这个流程，可以看出，只有针对特殊需要的接口，才需要编写额外的接口。
+
+针对Java的特殊性，实现类必须实现完整的接口定义，所以对于自定义方法的部分，需要将自定义方法独立定义成一个接口类，然后将最终需要使用的接口继承该接口即可。
+
+对于接口的实现类名，有一定的规则，默认情况下，使用接口类名+Impl的方式命名实现类，才可以通过定义自动检测到，在macula平台开发下，强制要求按这个命名规则命名。
+ 
