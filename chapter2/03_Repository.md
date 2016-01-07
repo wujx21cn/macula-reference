@@ -3,7 +3,7 @@
 在数据存取层，与传统的DAO层的实现不同，这里引入Spring-Data开源框架，可实现部分接口只定义接口，而不用编写实现，可减少编码的工作量。
 
 
-### 6.1. JPA数据存取接口
+### JPA数据存取接口
 
 
 JPA数据存取接口JpaRepository默认可实现下列功能：
@@ -48,7 +48,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 对于增加的findByAppId接口定义，将在下一节介绍。
 
-### 6.2. MaculaJpaRepository接口
+### MaculaJpaRepository接口
 
 为了能在Spring-Data的基础上具有一定的扩展性，Macula平台基于JpaRepository定义了MaculaJpaRepository接口，并增加了getEntityManager等方法，用来提高JpaRepository的可操作性。
 
