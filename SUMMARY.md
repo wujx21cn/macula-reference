@@ -7,7 +7,6 @@
    * [项目构建](chapter1/03_Project_Building.md)
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
-       * [4.1. Macula配置](chapter2/4-1.md)
    * [领域模型层](chapter2/02_Domain.md)
        * [5.1. 主键策略](chapter2/5-1.md)
        * [5.2. 数据审计](chapter2/5-2.md)
