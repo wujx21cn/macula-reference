@@ -9,7 +9,6 @@
    * [配置文件](chapter2/01_Configuration.md)
        * [4.1. Macula配置](chapter2/4-1.md)
        * [4.2. Spring配置](chapter2/4-2.md)
-       * [4.3. JPA配置](chapter2/4-3.md)
    * [领域模型层](chapter2/02_Domain.md)
        * [5.1. 主键策略](chapter2/5-1.md)
        * [5.2. 数据审计](chapter2/5-2.md)
