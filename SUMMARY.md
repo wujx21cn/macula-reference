@@ -7,7 +7,6 @@
    * [项目构建](chapter1/03_Project_Building.md)
        * [3.4. 自定义目录](chapter1/3-4.md)
        * [3.5. 配置文件](chapter1/3-5.md)
-       * [3.6. 依赖包及版本](chapter1/3-6.md)
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
        * [4.1. Macula配置](chapter2/4-1.md)
