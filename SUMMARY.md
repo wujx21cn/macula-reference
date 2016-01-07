@@ -4,7 +4,6 @@
 * [Macula介绍](chapter1/chapter1.md)
    * [概述](chapter1/01_Introduction.md)
    * [快速开始](chapter1/02_Quick_Start.md)
-       * [2.8. 打包](chapter1/2-8.md)
        * [2.9. 程序开发](chapter1/2-9.md)
            * [2.9.1. 概要介绍](chapter1/2-9-1.md)
            * [2.9.2. Domain 和 DAO 层](chapter1/2-9-2.md)
