@@ -3,7 +3,6 @@
 * [序言](README.md)
 * [Macula介绍](chapter1/chapter1.md)
    * [概述](chapter1/01_Introduction.md)
-       * [1.4. 数据层划分]
    * [快速开始](chapter1/02_Quick_Start.md)
        * [2.1. 环境准备](chapter1/2-1.md)
        * [2.2. 环境配置](chapter1/2-2.md)
