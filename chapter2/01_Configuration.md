@@ -9,7 +9,7 @@
 * Log4J配置
 
 
-### 4.1. Macula配置
+### Macula配置
 
 1.  **macula.properties**
     
@@ -161,7 +161,7 @@
     如org.macula.core.config.PropertyConfigurationProvider就是通过读取macula.properties来读取macula平台Configuration信息的处理（即上一节的实现方式）。
 
 
-### 4.2. Spring配置
+### Spring配置
 
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
@@ -310,7 +310,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     子模块Spring配置信息必须放置在src/main/resources/META-INF/spring目录下，并按照macula-*-app.xml定义，每个模块可定义多个Spring配置文件。但需要注意不要与其他模块命名相同。   
     
 
-### 4.3. JPA配置
+### JPA配置
 
 在Macula平台中，对数据存取的访问要求采用符合J2EE标准的JPA的方式，默认情况下使用JPA的Hibernate实现。
 
@@ -364,7 +364,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     *上面2个参数，如果使用默认的applicationContext-app.xml中的配置，将会读取macula框架的Configuration配置的参数值进行设定。*    
 
-### 4.4. Freemarker配置
+### Freemarker配置
 
 
 在Macula平台中，Freemarker作为界面显示层的重要组成部分，在界面的显示上，均可采用Freemarker模板作为显示界面。对于Freemarker的设置，主要有2个部分：
@@ -408,7 +408,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     
     同样，这里定义的一个主要属性是preferFileSystemAccess属性，该属性标识是否采用文件系统加载的方式加载freemarker模版，在开发模式下可设置为true，它标识能侦查到文件的变化，并自动重新加载模板。 
     
-### 4.5. Log4j配置
+### Log4j配置
 
 作为都已树枝的log4j配置文件log4j.properties文件，但这里需要说明的是，在程序中引入log时，需要引入的是org.slf4j包。
 
