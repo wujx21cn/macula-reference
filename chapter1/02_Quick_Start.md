@@ -2,7 +2,7 @@
 
 本章将通过macula-samples的创建过程介绍通过Macula平台开发业务系统的整个过程，对于其中的部分代码内容，将不做过多介绍。
 
-## 2.1. 环境准备
+## 环境准备
 
 “工欲善其事，必先利其器”，在开始介绍之前，我们需要准备相应的环境。
 
@@ -34,7 +34,7 @@
     
 另外，为了方便开发Freemarker模版等，可加入Freemarker IDE插件等，为了增强代码的健壮性，可加入FindBugs、CheckStyle等Eclipse插件。
 
-## 2.2. 环境配置
+## 环境配置
 
 * **文件编码设置**
 
@@ -53,7 +53,7 @@
     ![tutorials-eclipse-tomcat.jpg](../images/chapter1/tutorials-eclipse-tomcat.jpg "tutorials-eclipse-tomcat.jpg")
     
     
-## 2.3. 项目的导入
+## 项目的导入
 
 以macula-samples为例，macula-samples采用svn+maven进行基础的代码管理与开发，下面通过maven平台自身的项目导入，来介绍已有项目的导入。
 
@@ -68,7 +68,7 @@
 通过这种方式，可导入macula平台的所有子模块。   
 
 
-## 2.4. 新建业务项目
+## 新建业务项目
 
 通过Eclipse的新建Maven向导来创建新的业务工程项目。
 
@@ -83,7 +83,7 @@
 从而可以得到一个项目的根目录，在这个项目根目录中，用来处理打包、发布等，均写在该pom.xml中，具体可参考macula工程根下的pom.xml文件。
 
 
-## 2.5. 创建业务父模块
+## 创建业务父模块
 
 在创建了项目根后，我们并没有创建任何的项目模块，为了保证项目能使用一致的设置，需要创建项目业务模块的父模块，用XX-parent来命名，比如macula开发平台下的macula-parent，就是用来定义项目模块的父模块设置的。
 
@@ -94,7 +94,7 @@
 基于Macula平台开发中，只需要依赖macula-base即可。
 
 
-## 2.6. 创建业务子模块
+## 创建业务子模块
 
 设置了项目一致性的依赖、项目版本以及编译环境后，可通过maven插件打开跟目录下的pom.xml，在该界面中增加业务子模块。
 
@@ -108,7 +108,7 @@
 
 ![tutorials-maven-newmodule.jpg](../images/chapter1/tutorials-maven-newmodule.jpg "tutorials-maven-newmodule.jpg")
 
-## 2.7. Webapp模块修改
+## Webapp模块修改
 
 最终部署运行的模块是创建的war模块，在当前开发下，可通过拷贝macula-webapp下的src/resources和src/webapp目录下的所有文件，然后对相关文件进行修改的方式进行。
 
@@ -125,12 +125,12 @@
     该文件主要修改连接数据库的信息。
 通过修改上述文件后，即可完成项目的发布与部署。
 
-## 2.8. 打包
+## 打包
 
 通过maven命令，mvn package可实现打包，如果需要发布到仓库中，可使用mvn install命令。
 
-## 2.9. 程序开发
-### 2.9.1. 概要介绍
+## 程序开发
+### 概要介绍
 
 Macula 框架使用了 Spring，JPA（Hibernate），JQuery和KnockoutJS 等关键技术，所以要想熟练掌握框架，需要对这些技术很熟悉。一般做过 Java 开发的对 Spring 和 JPA（Hibernate） 都会有些了解，但对 JQuery 和 KnockoutJS 可能了解不多，特别是 KnockoutJS。所以有必要加强对 JQuery 和 KnockoutJS 的学习。 下面列举了 JQuery 和 KnockoutJS 的教程的链接，希望能帮助开发人员快速掌握这两种技术。
 
@@ -144,11 +144,11 @@ http://learn.knockoutjs.com/
 
 该教程是假设开发人员已经获取到 Macula 平台的代码，并且配置好了 Eclipse 开发环境。教程从实际开发角度出发，一步步详细解释了整个开发过程。
 
-### 2.9.2. Domain 和 DAO 层
+### Domain 和 DAO 层
 
 Macula 平台的 DAO 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
 
-#### 2.9.2.1 Domain 定义
+#### Domain 定义
 
 Domain 的定义也是采用接口类和实现类的方式（业务系统中，可以接口与实现使用相同的类，简化开发的工作量），在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 接口类放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
 
@@ -209,7 +209,7 @@ public class JpaUIMUser extends AbstractAuditable<Long> implements User {
 
 从实现类我们可以看到通过 annotation 加了数据库表和字段的定义，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如果指定了自动生成数据库表结构，那么可以自动生成对应的数据库表。
 
-#### 2.9.2.2 Repository 类定义
+#### Repository 类定义
 
 Repository 相当于 DAO 层，通过操作 Domain 存取数据。
 
@@ -222,7 +222,7 @@ public interface SyncSendLogRepository extends MaculaJpaRepository<JpaSyncSendLo
 ```
 如果常用的 DAO 操作不够用，可以定义特殊的 Repository 接口类，增加我们需要的方法，并增加相应的实现类。（这里涉及到一个Repository扫描的定义）
 
-### 2.9.3. Service 层
+### Service 层
 
 我们需要在 Service 层提供常用的方法，比如 list、save、delete 等。
 
@@ -252,7 +252,7 @@ private UIMUserRepository uimUserRepository;
 
 增加 Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。
 
-### 2.9.4. Controller 层
+### Controller 层
 
 
 要选择专门存放 controller 类的 package 下，比如 org.macula.admin.base.controller 下。在 Controller 中一般需要调用 Service 层，Macula 框架使用Spring的注入annotation 来处理 Service 层的注入，示例如下：
@@ -279,7 +279,7 @@ src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 ```
 是用来设置需要扫描哪些 package。
 
-#### 2.9.4.1 Spring MVC 方式
+#### Spring MVC 方式
 
 方法声明里需要有 org.springframework.ui.Model 参数，方法上面需要加上 annotation @RequestMapping，映射到 URL 请求，示例：
 
@@ -310,7 +310,7 @@ public String getVmName() {
 }
 ```
 
-#### 2.9.4.2 AJAX JSON 方式
+#### AJAX JSON 方式
 
 对于需要支持 AJAX JSON 的 controller 方法不需要 org.springframework.ui.Model 参数，需要增加 annotation @OpenApi，controller 方法可以直接返回 pojo bean。方法声明格式示例：
 
@@ -351,11 +351,11 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 这个方法是获取到一页数据，并把数据返回，是直接返回 bean list 结果，到 AJAX 客户端会转成 JSON 格式。
 
 
-### 2.9.5. 页面层
+### 页面层
 
 页面部分有两个文件，一个是 .ftl 文件，另一个是 .js 文件，.ftl 文件是定义页面显示界面，.js 文件是 JavaScript 逻辑，用于实现数据的存取处理。在ftl文件中，通过scriptJs把javascript逻辑包含进来。
 
-#### 2.9.5.1 Spring MVC 方式
+#### Spring MVC 方式
 
 只需要增加 .ftl 页面，在 .ftl 页面里采用 FreeMarker 的方式访问返回的数据。
 
@@ -364,7 +364,7 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 ${runtime.name}
 ${runtime.vmName}
 ```
-#### 2.9.5.2 AJAX JSON 方式
+#### AJAX JSON 方式
 
 需要增加 .ftl 页面和对应的 .js 文件，在 .js 文件里实现数据的读取和绑定处理，采用了 KnockoutJS 的技术。
 
@@ -390,7 +390,7 @@ $(function() {
 	});
 });
 ```
-#### 2.9.5.3 List 页面
+#### List 页面
 
 List 页面主要分为3个部分，第一部分是上面的功能按钮部分，第二部分是数据列表显示部分。
 
@@ -485,7 +485,7 @@ var _onEditAction = function() {
 
 
 
-#### 2.9.5.4 新增及修改页面
+#### 新增及修改页面
 
 新增和修改页面一般使用相同的 .ftl 和 .js 文件，通过逻辑判断当前处理的操作是新增还是修改操作。如果新增和修改功能差别很大，就需要考虑分开两个页面。我们下面以相同页面做示例讲解一下。
 
@@ -600,7 +600,7 @@ data-bind="value: name"
 ```
 上面代码说明在点击取消按钮的时候，会调用 popBreadcrumb 方法，处理面包屑并返回List 页面。
 
-#### 2.9.5.5 删除功能
+#### 删除功能
 
 删除功能一般是直接在 list 页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。
 
@@ -642,9 +642,9 @@ var _oDeleteAction = function() {
 
 我们可以看到，该功能会先提示用户是否确认要删除，确认后会调用服务器端对应的处理。
 
-### 2.9.6. 开发技巧汇总
+### 开发技巧汇总
 
-#### 2.9.6.1 通过 jQuery 提交表单并获得返回结果
+#### 通过 jQuery 提交表单并获得返回结果
 
 做 Web 程序开发经常遇到的一个问题是提交表单后显示操作结果，按照传统做法是额外增加一个显示结果的 Web 页面，这个方法增加了开发工作量，而且额外增加了一个以后需要维护的文件。
 
@@ -793,7 +793,7 @@ public Long changePassword(String username, String oldPassword, String newPasswo
 
 页面端会以 JSON 的方式获取到服务器端返回的对象，然后进行结果判断，并且显示对应的信息。
 
-#### 2.9.6.2 如何做下拉框输入功能
+#### 如何做下拉框输入功能
 
 下拉框是我们开发Web应用经常需要用到的，下面我讲解一下 Macula 框架中如何实现下拉框功能。
 
@@ -835,7 +835,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 </script>
 ```
 
-#### 2.9.6.3 如何做 Checkbox 输入功能
+#### 如何做 Checkbox 输入功能
 
 用我们框架实现Checkbox 功能有点小技巧，需要用到额外的一个 hidden 字段用于保存 Checkbox 的值。实现示例如下：
 
@@ -848,7 +848,7 @@ VALUE：select name as label, id as code from ma_base_data_source
 
 如果没有那个 hidden 字段那我们选择 Checkbox 的值就无法保存到服务器端，主要是因为我们在 Domain 层定义的 enabled 属性是 Boolean 类型，而页面里的 Checkbox 可以是任意值，所以需要一点额外的转换处理。
 
-#### 2.9.6.4 如何做 Radio 输入功能
+#### 如何做 Radio 输入功能
 
 Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应的数据值是直接保存到数据库中的，不需要做额外的转换处理。示例如下：
 
@@ -859,7 +859,7 @@ Radio 输入功能相对 Checkbox 就很容易实现，因为 Radio 控件对应
 
 上面就实现了两个 Radio，都绑定页面 Model 上的 sex 属性，每个 Radio 对应的 Value 是不同的，根据选择不同在服务器端保存的值也不同。
 
-#### 2.9.6.5 使用日期输入控件
+#### 使用日期输入控件
 
 日期时间输入控件具体可以参考 Macula UI 的官方文档：
 
