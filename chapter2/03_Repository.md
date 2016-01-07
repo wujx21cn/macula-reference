@@ -247,4 +247,33 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 针对Java的特殊性，实现类必须实现完整的接口定义，所以对于自定义方法的部分，需要将自定义方法独立定义成一个接口类，然后将最终需要使用的接口继承该接口即可。
 
 对于接口的实现类名，有一定的规则，默认情况下，使用接口类名+Impl的方式命名实现类，才可以通过定义自动检测到，在macula平台开发下，强制要求按这个命名规则命名。
+
+### 6.6. 自定义接口中的EntityManager和TransactionManager
+
+为了保证repositories命名空间定义的spring自动扫描能准确的将EntityManager和TransactionManager注入到自定义的实现中，对自定义实现类需要做下列规范：
+
+* 自定义实现类不能标记@Service、@Repository、@Component等注解
+
+* 自定义实现类可通过@Autowire在注入需要的bean实例
+
+* 自定义实现需要使用EntityManager时，不可通过@PersistentContext注入entityManager，只能通过实现JpaEntityManagerAware接口中的setEntityManager来获取entityManager的注入。
+    
+    其中JpaEntityManagerAware的接口标记如下为：
+    
+    ```java
+    public interface JpaEntityManagerAware {
+    
+        public void setEntityManager(EntityManager entityManager);
+    
+    }
+    ```
+
+    ***注意***
+    
+    *该接口由macula平台提供，并由repositories中定义的factory-class：org.macula.core.repository.MaculaJpaRepositoryFactoryBean来正确处理，为了保证自定义实现能灵活的替换EntityManager而做出的扩展。*
+    
+* 自定义实现中的@Transactional，可直接定义在接口中，但在@Transactional的定义中，不要指定transactional使用的TrasactionManager的名称，道理和使用EntityManager相同，都由Macula平台的factory-class来统一处理。
+
+对于Repository层的开发，这里主要介绍了macula平台在Spring-Data下做出的扩展，更多的示例可参考macula平台提供的插件模块和示例模块，对于Spring-Data自身提供的功能，可以查看Spring-Data的官方文档。
+
  
