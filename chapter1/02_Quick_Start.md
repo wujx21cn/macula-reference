@@ -349,3 +349,295 @@ public Page<JpaUIMUser> getUsers(Pageable pageable) {
 ```
 
 这个方法是获取到一页数据，并把数据返回，是直接返回 bean list 结果，到 AJAX 客户端会转成 JSON 格式。
+
+
+### 2.9.5. 页面层
+
+页面部分有两个文件，一个是 .ftl 文件，另一个是 .js 文件，.ftl 文件是定义页面显示界面，.js 文件是 JavaScript 逻辑，用于实现数据的存取处理。在ftl文件中，通过scriptJs把javascript逻辑包含进来。
+
+#### 2.9.5.1 Spring MVC 方式
+
+只需要增加 .ftl 页面，在 .ftl 页面里采用 FreeMarker 的方式访问返回的数据。
+
+示例：
+```
+${runtime.name}
+${runtime.vmName}
+```
+#### 2.9.5.2 AJAX JSON 方式
+
+需要增加 .ftl 页面和对应的 .js 文件，在 .js 文件里实现数据的读取和绑定处理，采用了 KnockoutJS 的技术。
+
+.ftl 页面示例：
+```html
+<span data-bind="text: name"></span>
+<span data-bind="text: vmName"><span>
+```
+.js 文件示例：
+```javascript
+$(function() {
+	var code = 'system-runtime';
+
+	var viewModel = ko.mapping.fromJS({
+		name : '',
+		vmName : '',
+	});
+
+	ko.applyBindings(viewModel);
+			
+	$.getJSON(base + '/admin/macula-base/system/runtime/get', function(data) {
+		ko.mapping.updateFromJS(viewModel, data.returnObject);
+	});
+});
+```
+#### 2.9.5.3 List 页面
+
+List 页面主要分为3个部分，第一部分是上面的功能按钮部分，第二部分是数据列表显示部分。
+
+整个页面的结构是这样的：
+
+```html
+<@layout.mower_admin title="数据源列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="datasource-list" />
+	<@ui.panel>
+		<@ui.panel_head>
+			<div class="col-xs-12 col-md-12">
+				功能按钮部分
+			</div>
+		</@ui.panel_head>
+		<@ui.panel_body>
+				数据列表显示部分(包括分页处理)
+		</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
+```
+
+页面部分用到了 JQuery 和 KnockoutJS 技术，两种技术结合到一起使用，看起来不太容易理解。下面从功能按钮部分开始，详细讲解一下相关内容。
+
+**功能按钮部分**
+
+看一下新增按钮在页面中的定义：
+
+```html
+<a id="add-action-${code}" class="btn btn-default" data-toggle="pushBreadcrumb" data-label="新增" data-page="admin/macula-base/datasource/create">
+	<i class="fa fa-plus-circle fa-lg"></i>
+	新增
+</a>
+```
+
+这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑。`data-page`用于指定要显示的新页面的 url。
+
+再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
+
+```html
+<a id="edit-action-${code}" class="btn btn-default" data-label="编辑">
+	<i class="fa fa-pencil fa-lg"></i>
+	编辑
+</a>
+```
+
+这里我们直接用JQuery为这个按钮的click事件绑定了方法。这个方法里先获取被选取记录的行id，然后触发pushBreadcrumb事件，并转到编辑页面。对应绑定方法的定义是在.js文件中，代码如下：
+
+```javascript
+// 编辑按钮
+var _onEditAction = function() {
+	$('#edit-action-' + code).click(function(e) {
+	   var ids = $(table).DataTable().selectedRowIds();
+	   if (ids.length > 0) {
+		    $(this).trigger({
+		    	type :'push.mu.breadcrumb',
+		    	page : base + '/admin/macula-base/datasource/edit/' + ids[0]
+		    })
+	   } else {
+	       MessageBox.error('请选择一条记录编辑.');
+	   }
+    });
+};
+```
+
+**数据列表显示部分**
+
+这部分主要是定义表格结构和要显示的数据内容，采用了datatables 插件。定义表格结构示例如下：
+
+```html
+<table id="list-${code}" class="table table-striped table-bordered table-hover" 
+    width="100%"
+    data-serverSide="true" 
+    data-paging="false" 
+    data-ordering="false" 
+    data-ajax-url="${base}/admin/macula-base/datasource/cons"
+    data-ajax-type="get"
+    data-select="true"
+    data-row-id="id"
+    rel="datatables">
+	<thead>
+		<tr>
+			<th data-name="code">数据源编码</th>
+			<th data-name="name">数据源名称</th>
+			<th data-name="dataSourceType">数据源类型</th>
+		</tr>
+	</thead>
+</table>
+```
+其中，`data-serverSide`指明数据是否从服务器端获取；`data-paging`指明数据是否分页显示；`data-ordering`指明是否对数据排序；`data-ajax-url`指明从服务器端获取数据的URL；`data-ajax-type`指明从服务器端获取数据的请求方式，get或post；`data-select`指明表格中的行是否能被选中；`data-row-id`指明数据中的哪一列做为表格中的行的id;`rel="datatables"`指明使用datatables插件。余下是表格表头的定义，表头中`data-name`的定义需要和服务器端返回的属性名一致。
+
+对于datatables的具体使用方法请参考 Macula UI 官方文档的相关部分：[Macula UI 官方文档 datatables 部分](http://macula.top/mower/view.html#datatables)。
+
+
+
+#### 2.9.5.4 新增及修改页面
+
+新增和修改页面一般使用相同的 .ftl 和 .js 文件，通过逻辑判断当前处理的操作是新增还是修改操作。如果新增和修改功能差别很大，就需要考虑分开两个页面。我们下面以相同页面做示例讲解一下。
+
+首先在 src/main/resources/views 目录下，根据 URL 建立相应的子目录，然后增加2个文件 edit.ftl 和 edit.js。比如在 macula-plugin-admin 资源包中，对应 /datasource/edit URL 需要在 src/main/resources/views/admin/macula-base/datasource/ 目录下增加 edit.ftl 和 edit.js。
+
+/admin/macula-base 目录是由 macula-plugin-admin 资源包里的基本 Controller 类 AdminMaculaBaseController 定义的，其他的 Controller 类都是继承了 AdminMaculaBaseController，对应的定义代码如下：
+
+```java
+@RequestMapping("/admin/macula-base")
+public abstract class AdminMaculaBaseController extends BaseController {
+```
+
+而在其他 Controller 类中，只需要定义 /datasource/create 下面的 URL 部分就可以，示例代码如下：
+
+```java
+@RequestMapping(value = "/datasource/create", method = RequestMethod.GET)
+public String create() {
+	return super.getRelativePath("/datasource/edit");
+}
+```
+
+上面的示例是对应 URL 请求 admin/macula-base/datasource/create 到目录 src/main/resources/views/admin/macula-base/datasource/ 下的 edit.ftl 文件。
+
+**edit.ftl 文件**
+
+这个文件定义了页面显示结构，主要分为下面几个部分：
+
+```html
+<@layout.mower_admin title=title scripts="admin/macula-base/datasource/edit_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="edit-datasource" />
+		<@ui.panel>
+			<@ui.panel_head>
+				功能按钮部分
+			</@ui.panel_head>
+			<@ui.panel_body>
+                页面内容
+			</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
+```
+
+这个文件是比较容易理解的，首先是定义页面的 title，通过判断一个 id 参数，使用了 freemarker 的标签处理。然后是页面内容，一般都是一个表格，对应着 label 和输入框，示例如下：
+
+```html
+<form id="form-${code}" item-id="${id?if_exists}" action="${base}/admin/macula-base/datasource/save" method="post" class="form-horizontal" rel="validate-form" data-bv-container="tooltip">
+    <input type="hidden" name="datasource.id" data-bind="value: id" />
+    <div class="form-body">
+		<h3 class="form-section">数据源信息</h3>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">		
+		            <label class="control-label col-md-3">数据源编码：</label>
+		            <div class="col-md-9">
+		                <input type="text"  name="datasource.code" data-bind="value: code" class="form-control input-sm" required maxlength="50"/>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+		<div class="row">
+	        <div class="col-md-12">
+	            <div class="form-group">
+	                <label class="control-label col-md-3">数据源名称：</label>
+	                    <div class="col-md-9">
+	                        <input type="text"  name="datasource.name" data-bind="value: name" class="form-control input-sm" required maxlength="50"/>
+	                    </div>
+	                </div>
+	            </div>
+	         </div>
+	    </div>
+        //此处省略 ...
+	</div>
+</form>
+```
+
+里面要注意的是对于输入框的定义，有个数据绑定（data-bind）的处理，我们在下面 edit.js 里会说明。
+
+**edit.js 文件**
+
+这个文件主要是完成2项工作：
+
+1. 通过 Ajax 读取服务器端的数据,构造跟 edit.ftl 页面里对应的 model
+2. 绑定 edit.ftl 页面里对应的按钮操作
+
+绑定model示例代码
+
+```javascript
+	var viewModel = function(data) {
+		var self = this;
+		ko.mapping.fromJS(data, {}, self);
+		//...
+	};
+	//...
+	$.getJSON(base + '/admin/macula-base/datasource/datasrc/' + currentId, function(data) {
+		vm = new viewModel(data.returnObject);
+		ko.applyBindings(vm, $form[0]);
+	});	
+```
+
+Ajax返回的数据中包含了被编辑对象的信息，如本例中就是code, name等信息，页面里输入框通过这个方式跟 model 绑定起来。上面代码使用了 JQuery 技术向服务器端发起请求，并以 JSON 的方式接收服务器端返回的数据，服务器端一般以 bean 或者 bean list 的方式返回数据，JQuery 会自动转成 JSON 格式，方便页面上使用。
+
+data-bind="value: name"
+
+绑定后我们在 JavaScript 代码中修改 name 值的时候，页面中输入框的值也会跟着变化（这是使用了 KnockoutJS 的技术）。
+
+绑定页面按钮操作示例代码
+
+```javascript
+<a id="cancel-action-${code}" class="btn btn-default" data-toggle="popBreadcrumb">
+	<i class="fa fa-reply fa-lg"></i>
+	取消
+</a>
+```
+上面代码说明在点击取消按钮的时候，会调用 popBreadcrumb 方法，处理面包屑并返回List 页面。
+
+## 2.9.5.5 删除功能
+
+删除功能一般是直接在 list 页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。
+
+我们先看一下 list 页面上对于删除功能按钮的定义
+
+```html
+<a id="delete-action-${code}" class="btn btn-danger">
+    <i class="fa fa-trash-o fa-lg"></i>
+	删除
+</a>
+```
+
+上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下
+
+```javascript
+// 删除按钮
+var _oDeleteAction = function() {
+    $('#delete-action-' + code).click(function(e) {
+	    var row = $(table).DataTable().selectedRows();
+	
+	    if (row && row.length > 0) {
+	       ModalBox.confirm('您确定要删除数据源' + '【' + row[0].code + '】吗？', function(result) {
+	            if (result) {
+	                $.post(base + '/admin/macula-base/datasource/delete/' + row[0].id, function(data) {
+        	            if (data.success) {
+        	               $(table).DataTable().ajax.reload();
+        	            } else {
+        	               MessageBox.error(data.exceptionMessage);
+        	            }
+	                });
+	           }
+	       });
+	    } else {
+	       MessageBox.info('请选择一条记录删除.');
+	    }
+    });
+};
+```
+
+我们可以看到，该功能会先提示用户是否确认要删除，确认后会调用服务器端对应的处理。
