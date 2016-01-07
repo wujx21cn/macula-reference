@@ -18,7 +18,7 @@ Macula开发平台使用的开源技术有：
 ## 功能规划
 
 当前Macula平台包含Framework、Plugins、Mobile、UI、App SDK等部分。如下图：
-![Macula平台功能规划图](img/macula_arch.png "Macula平台功能规划图")
+![Macula平台功能规划图](../images/chapter1/macula_arch.png "Macula平台功能规划图")
 
 ### Macula Framework：
 
