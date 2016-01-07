@@ -17,23 +17,32 @@ Macula开发平台使用的开源技术有：
 
 ## 功能规划
 
-当前Macula平台包含框架和插件两个部分，框架的模块有：
+当前Macula平台包含Framework、Plugins、Mobile、UI、App SDK等部分。如下图：
+![Macula平台功能规划图](img/macula_arch.png "Macula平台功能规划图")
 
+### Macula Framework：
 
 *   **macula-core**：用来解决开发过程中，各层的开发基础以及部分基础代码，包括Repository基类、Domain基类、异常处理、校验、国际化等。
+*   **macula-utils**：助手模块，提供常用助手类，如excel导入导出、加解密、数字证书管理等功能。
 *   **macula-base**：包括三个子模块，分别是dataset、security和app，dataset用来提供数据源、数据集、参数和枚举等数据来源的定义；security用来解决用户身份的认证、用户角色授权、用户权限系统、菜单资源授权、用户在线信息、系统信息、强制用户登出、用户Session控制等。app将系统中所有的实例管理起来，为监控等进一步的应用做准备。
-*   **macula-admin**：用来管理用户权限、菜单资源管理、Action资源管理、资源注册、用户组注册等与界面相关的功能。
 
-针对统一认证的需求，在对用户集中管理方面，引入用户统一管理平台，相关模块有（这部分将通过独立的UIM工程提供）：
+### Macula Plugins:
+除了上述介绍的部分模块外，Macula平台还引入插件的机制，通过在项目开发中提炼出一些有用的插件，加入了Macula平台中来，从而使得Macula平台更具有生命力:
 
-*   **macula-uim-admin**：统一用户管理模块，包括用户信息管理、组织机构管理、统一认证平台的在线用户管理、在线用户强制登出等管理。
-*   **macula-uim-webapp**：统一用户管理发布模块，包括集成定制的CAS-Server，以及用户管理模块的启动设置等。
+*   **macula-plugins-admin**：用来管理用户权限、菜单资源管理、Action资源管理、资源注册、用户组注册等与界面相关的功能；
+*   **macula-plugins-mda**：模型驱动的快速开发插件，可以基于模型快速生成CRUD应用，解决大部分的重复工作；
+*   **macula-plugins-webapp**：该模块是WEB系统的入口点，处理主界面的显示，包括登录界面、菜单展现等，所有WEB系统的相关资源，如javascript库、FreeMarker的布局模板，全局的配置文件等也包含在这个模块中；
+*   **macula-plugins-dubbo**：如果需要基于Dubbo，则依赖该模块即可；
+*   **macula-plugins-integration**：集成模块，主要定位和其他系统的集成交互，比如log发送、事件送出等。
 
-针对统一运维的需求，框架还引入了统一运维管理平台，通过外挂的方式给各个基于macula开发的系统提供HTTP请求、方法调用、SQL语句等方面的监控功能。
+### Macula Mobile
+Macula Mobile模块主要提供App开发过程中后端的通用服务，比如推送、登录、版本管理、设备管理等功能。
 
-除了上述介绍的部分模块外，Macula平台还引入插件的机制，通过在项目开发中提炼出一些有用的插件，加入了Macula平台中来，从而使得Macula平台更具有生命力。
+### Macula UI
+基于jQuery和Bootstrap，我们开发了WEB应用的HTML5开发框架，该框架定义了CSS和Javascript组件，制定了Macula项目标准的前后端界面。
 
-![Macula平台功能规划图](../images/chapter1/case-architecture.jpg "Macula平台功能规划图")
+### 通用服务能力
+同时，基于Macula开发平台，也会引入相应的通用服务，比如统一认证、统一消息、统一规则引擎、统一流程引擎、统一调度平台等服务。
 
 
 ## 部署运行
