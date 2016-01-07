@@ -8,7 +8,7 @@ Macula开发平台的缓存基于Spring-Cache模块，通过EhCache与Memcached�
 
 *缓存中的数据是不可靠的，即缓存中的数据总是有生命周期的，所以通过缓存获取到的数据，并不总是能得到期望中的值，所以程序要考虑在缓存中没有获取到正确数据的情况下，需要能通过其他方式获取，在有需要的情况下，更新缓存数据。*
 
-## 11.1 Cache作用域
+## Cache作用域
 
 **表 11.1. Cache作用域说明**
 
@@ -59,7 +59,7 @@ Macula开发平台的缓存基于Spring-Cache模块，通过EhCache与Memcached�
 	</tbody>
 </table>
 
-## 11.2 Session级Cache
+## Session级Cache
 
 Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下，HttpSession未做集群下的复制，所以理论上可存放任意数据，但在保证每个用户尽量少的占用系统资源的要求，尽量减少Session级的Cache数据。
 
@@ -72,7 +72,7 @@ Session级的Cache依赖于Web容器的HttpSession，在当前的部署情况下
 	</bean>
 ```
 
-## 11.3 Instance级Cache
+## Instance级Cache
 
 Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域，缓存数据通过EhCache实现。
 
@@ -114,7 +114,7 @@ Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域�
 	</bean>
 ```
 
-## 11.4 Application级Cache
+## Application级Cache
 
 Instance级表示的是独立于服务实例的Cache，用于多应用实例间的数据共享缓存。
 
@@ -135,11 +135,11 @@ Instance级表示的是独立于服务实例的Cache，用于多应用实例间�
     </bean>
 ```
 
-## 11.5 Cache接口
+## Cache接口
 
 Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springframework.cache.Cache接口。
 
-## 11.6 Cache的总体配置
+## Cache的总体配置
 
 ```xml
   <bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
@@ -173,7 +173,7 @@ Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springfr
     </bean>
 ```
 
-## 11.7 Cache的其他用途
+## Cache的其他用途
 
 由于该Cache最终为Spring-Cache实现，所以对于Spring-Cache的其他用途，如通过annotation标识方法的缓存等，请具体参见Spring文档。
 
