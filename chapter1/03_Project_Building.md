@@ -159,6 +159,13 @@
 
 ## 3.5 配置文件
 
+macula平台下涉及的文件包括：
+
+* macula.properties：开发平台配置文件
+* Spring配置文件，将在配置文件章节介绍
+* log4j.properties：log4j的配置文件
+* freemarker.properties：freemarker模版的配置文件
+
 
 ## 3.6 依赖包及版本
 
