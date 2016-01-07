@@ -1,8 +1,8 @@
 # 表结构
 
-## 23.1 应用管理
+## 应用管理
 
-### 23.1.1. MA_BASE_APPLICATION
+### MA_BASE_APPLICATION
 
 **表 23.1. MA_BASE_APPLICATION**
 
