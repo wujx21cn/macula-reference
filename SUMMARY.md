@@ -11,7 +11,6 @@
        * [5.1. 主键策略](chapter2/5-1.md)
        * [5.2. 数据审计](chapter2/5-2.md)
        * [5.3. 变化日志](chapter2/5-3.md)
-       * [5.4. 领域模型接口](chapter2/5-4.md)
    * [数据存取层](chapter2/03_Repository.md)
        * [6.1. JPA数据存取接口](chapter2/6-1.md)
        * [6.2. MaculaJpaRepository接口](chapter2/6-2.md)
