@@ -89,7 +89,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
  * *接口扩展了JpaRepository，即extends JpaRepository。*
  * *接口如果通过注解@NoRepositoryBean，则标识不用扫描该接口*
- * 
+ *
  
 ### 6.5. 自定义接口与实现
 
