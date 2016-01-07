@@ -2,7 +2,7 @@
 
 说明：本规范分为不同的级别，默认级别为必须遵循级别，而(II)为建议级别，非强制执行。
 
-## 18.1 格式与命名规范(Formating and Naming Conventions)
+## 格式与命名规范(Formating and Naming Conventions)
 
 1. 最重要:不用死记硬背，直接使用Eclipse的自动格式化功能。
 2. 换行:每行120字符以上--因为现在屏幕已大为宽广。
@@ -13,7 +13,7 @@
     * 接口尽量采用"able", "ible", or "er"，如Runnable命名
     * 尽量不采用首字母为I或加上IF后缀的命名方式，如IBookDao,BookDaoIF。(II)
 
-## 18.2 注释规范(Document Convertions)
+## 注释规范(Document Convertions)
 
 1. 注释类型
 
@@ -54,7 +54,7 @@
     
     Null规约:  如果方法允许Null作为参数，或者允许返回值为Null，必须在JavaDoc中说明。否则方法的调用者不允许使用Null作为参数，并认为返回值是Null Safe(不会返回NULL)。
 
-## 18.3 编程规范(Programming Conventions)    
+## 编程规范(Programming Conventions)    
 
 1. 基本规范
 
