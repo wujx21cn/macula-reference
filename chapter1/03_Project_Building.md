@@ -122,7 +122,26 @@
 
 ## 3.3. 文件命名
 
+为了规范项目的开发，在文件命名方面有一定的规则：
 
+1. java包（文件夹）的命名
+    
+    java包（文件夹）必须以小写字母命名，同时按照模块名称建立父包，并按照用途可创建controller、domain、repository、service、util、support、vo子包，避免创建晦涩难懂的包名，加大系统的复杂度。
+
+2. 国际化文件
+
+    国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-core的国际化文件必须放置在rseources/i18n/macula-core目录下，这样可避免文件的重名。
+    
+3. Spring配置文件
+
+    对Spring的配置文件，必须放置在resources/META-INF/spring目录下，并在命名上按下列要求命名：
+    
+    * 应用层的命名：按照macula-模块名称-app.xml的方式命名。
+    * Servlet层的命名：按照macula-模块名-servlet.xml的方式命名。
+
+4. Freemarker文件
+    
+    Freemarker文件放置在resources/views目录下，并按模块名称创建子目录。
 
 ## 3.4 自定义目录
 
