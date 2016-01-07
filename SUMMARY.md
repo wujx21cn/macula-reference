@@ -4,7 +4,6 @@
 * [Macula介绍](chapter1/chapter1.md)
    * [概述](chapter1/01_Introduction.md)
    * [快速开始](chapter1/02_Quick_Start.md)
-       * [2.1. 环境准备](chapter1/2-1.md)
        * [2.2. 环境配置](chapter1/2-2.md)
        * [2.3. 项目的导入](chapter1/2-3.md)
        * [2.4. 新建业务项目](chapter1/2-4.md)
