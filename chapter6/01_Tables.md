@@ -43,9 +43,9 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-## 23.2 数据管理
+## 数据管理
 
-### 23.2.1 MA_BASE_DATA_SOURCE
+### MA_BASE_DATA_SOURCE
 
 **表 23.3. MA_BASE_DATA_SOURCE**
 
@@ -70,7 +70,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.2.2 MA_BASE_DATA_ENUM
+### MA_BASE_DATA_ENUM
 
 **表 23.4. MA_BASE_DATA_ENUM**
 
@@ -92,7 +92,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.2.3 MA_BASE_DATA_PARAM
+### MA_BASE_DATA_PARAM
 
 **表 23.5. MA_BASE_DATA_PARAM**
 
@@ -117,7 +117,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.2.4 MA_BASE_DATA_SET
+### MA_BASE_DATA_SET
 
 **表 23.6. MA_BASE_DATA_SET**
 
@@ -138,7 +138,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL|  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  |  |
 
-### 23.2.5 MA_BASE_DATA_ARG
+### MA_BASE_DATA_ARG
 
 **表 23.7. MA_BASE_DATA_ARG**
 
@@ -158,9 +158,9 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-## 23.3. 资源和分组
+## 资源和分组
 
-### 23.3.1. MA_BASE_ACL_MENU
+### MA_BASE_ACL_MENU
 
 **表 23.8. MA_BASE_ACL_MENU**
 
@@ -185,7 +185,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 	最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.3.3 MA_BASE_ACL_ORG
+### MA_BASE_ACL_ORG
 
 **表 23.10. MA_BASE_ACL_ORG**
 
@@ -212,7 +212,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.3.4 MA_BASE_ACL_PROVIDER_DEF
+### MA_BASE_ACL_PROVIDER_DEF
 
 **表 23.11. MA_BASE_ACL_PROVIDER_DEF**
 
@@ -231,9 +231,9 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-## 23.4 业务策略
+## 业务策略
 
-### 23.4.1 MA_BASE_ACL_BIZ_RULE
+### MA_BASE_ACL_BIZ_RULE
 
 **表 23.12. MA_BASE_ACL_BIZ_RULE**\\
 
@@ -251,7 +251,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.4.2 MA_BASE_ACL_USER_RULE
+### MA_BASE_ACL_USER_RULE
 
 **表 23.13. MA_BASE_ACL_USER_RULE**
 
@@ -269,7 +269,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.4.3 MA_BASE_ACL_POLICY
+### MA_BASE_ACL_POLICY
 
 **表 23.14. MA_BASE_ACL_POLICY**
 
@@ -287,7 +287,7 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-### 23.4.4 MA_BASE_ACL_POLICY_ENTRY
+### MA_BASE_ACL_POLICY_ENTRY
 
 **表 23.15. MA_BASE_ACL_POLICY_ENTRY**
 
@@ -305,9 +305,9 @@
 | LAST_UPDATED_BY | 最后更新人 | VARCHAR2(50) | NOT NULL |  |  |
 | LAST_UPDATED_TIME | 最后更新时间 | TIMESTAMP | NOT NULL |  | &nbsp; |
 
-## 23.5. 用户授权
+## 用户授权
 
-### 23.5.1 MA_BASE_ACL_ROLE
+### MA_BASE_ACL_ROLE
 
 **表 23.16. MA_BASE_ACL_ROLE**
 
