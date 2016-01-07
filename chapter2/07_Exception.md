@@ -1,6 +1,6 @@
 # 异常处理
 
-## 10.1 异常定义
+## 异常定义
 
 Macula框架将异常分为系统类异常、业务类异常和校验类异常，校验类异常与业务类异常处理方式相同，下面不再单独说明，业务类异常为业务模块自行抛出的异常，并且由Macula框架统一处理，该异常必须继承自org.macula.exception.MaculaException，业务类异常在返回时仍然是正常的HTTP 200响应。其他类型的异常统称为系统类异常，系统类异常系统产生，由ExceptionNegotiateFilter处理。
 
@@ -16,7 +16,7 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
     
     系统类异常的错误码一般由父错误码+“两位数字”标识。
 
-## 10.2 Controller异常处理
+## Controller异常处理
 
 1. 校验类异常
 
@@ -47,7 +47,7 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 *为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  *
 
-## 10.3 Ajax请求下HttpServletResponse返回CODE处理
+## Ajax请求下HttpServletResponse返回CODE处理
 
 在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
 
@@ -100,7 +100,7 @@ public void setStatus(int sc) {
 
 这个包装主要实现的是在于Ajax请求时，如果程序代码调用了response.sendError或sendRedirect时，能正确返回给Ajax调用的客户端出错的信息以及重定向的地址。
 
-## 10.4 客户端异常信息的处理
+## 客户端异常信息的处理
 
 对异常信息的处理，主要在于在Ajax请求下的异常处理，对于非Ajax请求，可通过定义服务端各错误代码的错误页面来直接实现，对于Ajax请求，由于返回信息由脚本代理而不是浏览器处理，需要作出一定的调整。
 
