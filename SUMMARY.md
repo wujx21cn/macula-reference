@@ -9,7 +9,6 @@
    * [配置文件](chapter2/01_Configuration.md)
    * [领域模型层](chapter2/02_Domain.md)
        * [5.1. 主键策略](chapter2/5-1.md)
-       * [5.2. 数据审计](chapter2/5-2.md)
    * [数据存取层](chapter2/03_Repository.md)
        * [6.1. JPA数据存取接口](chapter2/6-1.md)
        * [6.2. MaculaJpaRepository接口](chapter2/6-2.md)
