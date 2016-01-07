@@ -3,7 +3,7 @@
 在数据存取层，与传统的DAO层的实现不同，这里引入Spring-Data开源框架，可实现部分接口只定义接口，而不用编写实现，可减少编码的工作量。
 
 
-### 6.1. JPA数据存取接口
+### JPA数据存取接口
 
 
 JPA数据存取接口JpaRepository默认可实现下列功能：
@@ -48,7 +48,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 
 对于增加的findByAppId接口定义，将在下一节介绍。
 
-### 6.2. MaculaJpaRepository接口
+### MaculaJpaRepository接口
 
 为了能在Spring-Data的基础上具有一定的扩展性，Macula平台基于JpaRepository定义了MaculaJpaRepository接口，并增加了getEntityManager等方法，用来提高JpaRepository的可操作性。
 
@@ -57,7 +57,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
 *为了适应Macula平台的扩展性，在编写Repository时，需要继承MaculaJpaRepository，而不是JpaRepository。*
 
 
-### 6.3. Spring自动扫描
+### Spring自动扫描
 
 通过Spring-Data的自定义命名空间，可将上述的JpaRepository定义的接口直接转化为spring bean，而不需要编写实际的实现类。
 
@@ -90,7 +90,7 @@ public interface ApplicationRepository extends JpaRepository<JpaApplication, Lon
  * *接口扩展了JpaRepository，即extends JpaRepository。*
  * *接口如果通过注解@NoRepositoryBean，则标识不用扫描该接口*
 
-### 6.4. 接口方法
+### 接口方法
 
 除开已有的JpaRepository中已有的接口定义不需要再编写实现类外，对于查询部分接口，也同样不需要编写实现，但需要查询方法定义名称定义符合一定的规范。
 
@@ -205,7 +205,7 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 关于扩展JpaRepository接口中可定义的方法而不用编写实现代码的部分，可查看Spring-Data中JPA部分（data-jpa）的文档。
 
  
-### 6.5. 自定义接口与实现
+### 自定义接口与实现
 
 对于一些业务需求在以上介绍的在接口定义即可完成的，不需要编写自定义接口，否则需要编写自定义的接口并实现自定义接口。
 
@@ -248,7 +248,7 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
 对于接口的实现类名，有一定的规则，默认情况下，使用接口类名+Impl的方式命名实现类，才可以通过定义自动检测到，在macula平台开发下，强制要求按这个命名规则命名。
 
-### 6.6. 自定义接口中的EntityManager和TransactionManager
+### 自定义接口中的EntityManager和TransactionManager
 
 为了保证repositories命名空间定义的spring自动扫描能准确的将EntityManager和TransactionManager注入到自定义的实现中，对自定义实现类需要做下列规范：
 

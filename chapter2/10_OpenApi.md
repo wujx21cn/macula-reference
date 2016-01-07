@@ -2,7 +2,7 @@
 
 为了更好的提供集成功能，Macula框架可以很方便的提供给第三方调用的接口API，在展示层一章我们已经介绍了怎样将一个普通的Controller方法变成一个开放平台可以调用的API。本章主要介绍第三方调用开放平台API时需要注意的事项。
 
-## 13.1 Open API的调用
+## Open API的调用
 
 Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调用参数分为系统级参数和应用级参数。
 
@@ -261,7 +261,7 @@ Open API接口调用注意事项：
 * 签名方式为 md5(appsecret + key + value .... key + value+appsecret)然后转大写字母,其中key,value对是除签名和图片外的所有请求参数按key做的升序排列, value无需编码。appsecret是应用注册时系统给出的密钥。hmac的签名方式是hmac(key+value...+key+value, appsecret)
 * 请注意API的请求方式，非指定方式API不响应。
 
-## 13.2 Open API的返回
+## Open API的返回
 
 Open API的返回分为正常返回和异常返回。
 
@@ -336,7 +336,7 @@ Open API的返回分为正常返回和异常返回。
     
 在正常返回数据时，如果有警告或提示信息，则上述正常返回的数据中也会含有类似异常返回的数据字段。
 
-## 13.3 Open API的配置
+## Open API的配置
 
 Open API在调用服务端的验证过程与用户登录方式类似。所以服务端需要做如下配置：
 1. 在应用管理界面中，增加appKey为应用编码的应用配置，并设置密钥为调用时的密钥值；
