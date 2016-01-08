@@ -8,66 +8,51 @@
 
 例如macula平台的svn库目录为：
 
-![macula-svn-path.jpg](../images/chapter1/macula-svn-path.jpg "macula-svn-path.jpg")
+![macula-svn-path.jpg](../images/chapter1/macula-svn-path.jpg)
 
 对项目的开发代码，主要在trunk中开发，在项目开发发布版本后，将通过标签以及branches的方式，记录历史版本，具体的svn操作信息请查看svn的使用指南，这里仅介绍基本的代码结构规划。
 
 ## Maven及目录结构
 
-当前Macula平台中的模块，包括三类，普通的java包jar、可发布到J2EE容器中的war以及用于项目管理的pom定义模块。
+当前Macula平台中的模块，包括三类，普通的jar包、可发布到J2EE容器中的war以及用于项目管理的pom定义模块。
 
 在一个工程中，通常定义项目所使用的各第三方包以及包的版本，在一个工程内，这些依赖包在所有的模块中必须是一致的，这就需要为所有的子模块创建一个父maven pom模块，用来集中定义这些信息。
 
-在Macula开发平台中，macula-parent就是用来定义这些信息的，整个模块已有一个文件，即maven需要的pom.xml，在该文件中，定义了所使用的所有第三方包的信息，编译信息，模块发布信息等等。
+比如在macula-samples项目中，macula-samples-parent就是用来定义这些信息的，整个模块只有一个文件，即maven需要的pom.xml，在该文件中，定义了所使用的所有第三方包的信息，编译信息，模块发布信息等等。
 
-**例 3.1. macula-parent中唯一的文件pom.xml**
+**例 3.1. macula-samples-parent中唯一的文件pom.xml**
 
 ```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.macula.samples</groupId>
+	<artifactId>macula-samples-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>macula-samples-parent</name>
 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.macula</groupId>
-
-    <artifactId>macula-parent</artifactId>
-
-    <version>0.0.1-SNAPSHOT</version>
-
-    <packaging>pom</packaging>
-
-    <name>Macula Framework Parent</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <jdkLevel>1.6</jdkLevel>
-
-        <jvmargs>-XX:MaxPermSize=384m -Xms512m -Xmx1024m</jvmargs>
-
-        <hibernate.version>3.6.0.Final</hibernate.version>
-
-        <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
-
-        <spring.version>3.0.5.RELEASE</spring.version>
-
-        <spring-data-jpa.version>1.0.0.M1</spring-data-jpa.version>
-
-        <spring-security.version>3.1.0.RC1</spring-security.version>
-
-        <casclient.version>3.2.1-SNAPSHOT</casclient.version>
-
-        <slf4j.version>1.6.1</slf4j.version>
-
-    </properties>
-
-    ...
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdkLevel>1.7</jdkLevel>
+		<jvmargs>-XX:MaxPermSize=384m -Xms512m -Xmx1024m</jvmargs>
+		<macula.version>3.0.0-SNAPSHOT</macula.version>
+		<macula.plugins.version>3.0.0-SNAPSHOT</macula.plugins.version>
+		<mockito.version>1.9.5</mockito.version>
+		<junit.version>4.12</junit.version>
+		<hsql.version>2.3.2</hsql.version>
+		<spring.version>4.1.7.RELEASE</spring.version>
+		<servlet.version>3.0.1</servlet.version>
+		<jta.version>1.1</jta.version>
+		<oracle.version>11.2.0.3.0</oracle.version>
+		<mysql.version>5.1.35</mysql.version>
+		<liquibase.version>3.0.8</liquibase.version>
+	</properties>
+    .....
 </project>
 ```
 
-在macula-parent的maven设置中，指定了maven第三方包获取点：
+在macula-samples-parent的maven设置中，指定了maven第三方包获取点：
 
 ```xml
 <repositories>
