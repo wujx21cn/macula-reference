@@ -69,19 +69,7 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 ![tutorials-project-samples.png](../images/chapter1/tutorials-project-samples.png)
 
-后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven->Update Project，整个项目结构如下图：
-
-![tutorials-project-tree.png](../images/chapter1/tutorials-project-tree.png)
-
-macula tools默认创建的项目结构是典型的三层架构，包含了如下模块：
-
-* **macula-samples**：项目最外层的模块，主要用于打包分发项目；
-* **macula-samples-parent**：所有模块的父模块，提供了公共依赖项的配置和其它子模块依赖项的版本设置；
-* **macula-samples-repository**：该模块包含domain和repository两个package，domain package存放与数据库表的映射类，repository存放数据库的存取操作类，domain是基于JPA和Hibernate的，repository主要采用spring-data；
-* **macula-samples-service**：该模块主要包含业务逻辑层，通过调用repository来完成数据库的读写；
-* **macula-samples-admin/front/mobile**：界面层模块，包含所有的Controller、Freemarker模块、Javascript文件，Controller主要基于Spring MVC，freemarker和javascript基于Macula UI(Mower)的规范编写页面；
-* **macula-samples-webapp**：war包的打包模块，该模块包含了全局配置文件，javascript、css、image等静态资源文件，web.xml等J2EE WEB模块的标准文件，并负责将上述模块打包成一个war发布。
-
+后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven->Update Project。
 
 ## 运行
 

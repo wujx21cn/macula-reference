@@ -1,24 +1,18 @@
 # 项目构建
-
-## SVN项目创建
-
-在项目启动后，需按项目情况，构建svn版本库，并按系统架构分析出的业务模块，构建项目子业务模块。
-
-在项目命名后，在svn中构建路径trunk，tags，branches，用来进行版本控制。
-
-例如macula平台的svn库目录为：
-
-![macula-svn-path.jpg](../images/chapter1/macula-svn-path.jpg)
-
-对项目的开发代码，主要在trunk中开发，在项目开发发布版本后，将通过标签以及branches的方式，记录历史版本，具体的svn操作信息请查看svn的使用指南，这里仅介绍基本的代码结构规划。
-
 ## Maven及目录结构
 
-当前Macula平台中的模块，包括三类，普通的jar包、可发布到J2EE容器中的war以及用于项目管理的pom定义模块。
+通过macula-tools-archtype可以自动生成如下项目结构：
 
-在一个工程中，通常定义项目所使用的各第三方包以及包的版本，在一个工程内，这些依赖包在所有的模块中必须是一致的，这就需要为所有的子模块创建一个父maven pom模块，用来集中定义这些信息。
+![tutorials-project-tree.png](../images/chapter1/tutorials-project-tree.png)
 
-比如在macula-samples项目中，macula-samples-parent就是用来定义这些信息的，整个模块只有一个文件，即maven需要的pom.xml，在该文件中，定义了所使用的所有第三方包的信息，编译信息，模块发布信息等等。
+macula tools默认创建的项目结构是典型的三层架构，包含了如下模块：
+
+* **macula-samples**：项目最外层的模块，主要用于打包分发项目；
+* **macula-samples-parent**：所有模块的父模块，提供了公共依赖项的配置和其它子模块依赖项的版本设置；
+* **macula-samples-repository**：该模块包含domain和repository两个package，domain package存放与数据库表的映射类，repository存放数据库的存取操作类，domain是基于JPA和Hibernate的，repository主要采用spring-data；
+* **macula-samples-service**：该模块主要包含业务逻辑层，通过调用repository来完成数据库的读写；
+* **macula-samples-admin/front/mobile**：界面层模块，包含所有的Controller、Freemarker模块、Javascript文件，Controller主要基于Spring MVC，freemarker和javascript基于Macula UI(Mower)的规范编写页面；
+* **macula-samples-webapp**：war包的打包模块，该模块包含了全局配置文件，javascript、css、image等静态资源文件，web.xml等J2EE WEB模块的标准文件，并负责将上述模块打包成一个war发布。
 
 **例 3.1. macula-samples-parent中唯一的文件pom.xml**
 
@@ -56,37 +50,25 @@
 
 ```xml
 <repositories>
-
     <repository>
-
         <id>macula-repo</id>
-
         <name>macula-repo</name>
-
         <url>http://maven.infinitus.com.cn:8081/nexus/content/groups/public</url>
-
     </repository>
-
 </repositories>
-
 ```
 
 当前所有macula平台所需要使用的第三方包均可以在上述获取点获得，为了规范第三方包的使用以及避免版本冲突，在进行依赖macula平台开发的业务系统中，只允许依赖macula平台的模块，对于需要依赖第三方包的，需要提交审批，审批通过后，将在上述maven获取点能获取到该第三方报，业务系统方能使用，否则不允许使用。
 
-下面以macula开发平台下的包为例，介绍其他包内容的创建。
-
-除macula-webapp为war项目和macula-docs为文档说明构建项目定义为pom外，其他项目均定义成jar模块格式，通过Eclipse的maven向导可创建jar格式的maven模块。
+下面以macula-samples下的包为例，介绍其目录及文件的含义。
 
 1. jar模块目录结构
 
     在maven创建项目后，将创建目录：
     
     * src/main/java ：该目录放置java的主要开发代码，即最终运行需要的java类，这个目录的内容最终将打包到jar中。
-    
     * src/main/resources ：该目录放置除java带的其他资源文件，如xml、properties文件等，这个目录的内容最终也将被打包到jar中。
-    
     * src/test/java ：该目录主要存放JUnit测试的java代码，用于测试阶段的代码，这个目录的内容将不打包到jar中。
-    
     * src/test/resources ：该目录存放测试下需要使用的资源文件，如xml、properties文件等，这个目录的内容也不会打包到jar文件中。
     
     **重要**
@@ -96,37 +78,40 @@
     
 2. war模块目录结构
 
-    war模块可通过maven-wtp插件，将war模块直接发布到Eclipse定义的Server中，对于war模块，除了具备jar模块的文档结构外，另外增加了src/main/webapp目录，该目录按标准的J2EE应用的目录格式和命名方式。特别的，对于main/webapp下的目录结构，也需要严格按照下列命名：
-    
+    war模块可通过maven-wtp插件，将war模块直接发布到Eclipse定义的Server中，对于war模块，除了具备jar模块的文档结构外，另外增加了src/main/webapp目录，该目录按标准的J2EE应用的目录格式和命名方式。特别的，对于src/main/webapp下的目录结构，也需要严格按照下列命名：
     * webapp/META-INF ：下面放置该模块的一些自描述信息。
-    
     * webapp/resources ：该目录下放置静态内容信息，包括图片文件、javascript文件等。
-    
     * webapp/WEB-INF ：该目录为标准的J2EE要求目录。
     
+    **另外，我们还定义了src/main/deploy目录，该目录主要用于定义与运行环境相关的配置文件，包含dev、sit、uat、prd等各种运行环境的配置文件，并需要和pom.xml中相应的profile结合决定采用什么样的运行环境打包。**
 
 ## 文件命名
 
 为了规范项目的开发，在文件命名方面有一定的规则：
 
-1. java包（文件夹）的命名
+1. Java包（文件夹）的命名
+    Java包（文件夹）必须以小写字母命名，同时按照模块名称建立父包，并按照用途可创建controller、domain、repository、service、util、support、vo子包，避免创建晦涩难懂的包名，加大系统的复杂度。
     
-    java包（文件夹）必须以小写字母命名，同时按照模块名称建立父包，并按照用途可创建controller、domain、repository、service、util、support、vo子包，避免创建晦涩难懂的包名，加大系统的复杂度。
+    * 在macula-samples-repository模块中，包名不包含业务模块名称：
+        *domain：org.macula.samples.domain*
+        *repository：org.macula.samples.repository*
+        
+    * 在macula-samples-service和admin/front/mobile模块中，包名最好包含业务模块的名称：
+        *service：org.macula.samples.service.demo1.service*
+        *controller：org.macula.samples.admin.demo1.controller*
 
 2. 国际化文件
-
-    国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-core的国际化文件必须放置在rseources/i18n/macula-core目录下，这样可避免文件的重名。
+    国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-samples-admin的国际化文件必须放置在resources/i18n/macula-samples-admin目录下，这样可避免文件的重名。
     
 3. Spring配置文件
-
     对Spring的配置文件，必须放置在resources/META-INF/spring目录下，并在命名上按下列要求命名：
     
     * 应用层的命名：按照macula-模块名称-app.xml的方式命名。
-    * Servlet层的命名：按照macula-模块名-servlet.xml的方式命名。
+    * WEB层的命名：按照macula-模块名称-servlet.xml的方式命名。
 
 4. Freemarker文件
-    
     Freemarker文件放置在resources/views目录下，并按模块名称创建子目录。
+    如resources/views/admin/demo1/xxx/edit.ftl
 
 ## 自定义目录
 
@@ -136,7 +121,7 @@
 
 * 为多种环境创建不同的配置
     
-    这种情况下，主要使用custom目录创建同名文件，并 在pom.xml中通过定义不同的打包方式，产生如生产环境发布包、测试环境发布包等。
+    这种情况下，主要使用src/main/deploy目录创建同名文件，并在pom.xml中通过定义不同的打包方式，产生如生产环境发布包、测试环境发布包等。
 
 * webapp目录下增加其他静态文件
     
