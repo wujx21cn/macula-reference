@@ -12,7 +12,7 @@ Macula开发平台使用的开源技术有：
 *   **JSON**：当前数据的传输标准，除XML外，JSON以其轻巧、易读以及传输量小的优点，在Macula平台中，在Ajax领域，使用JSON作为数据交换格式。
 *   **jQuery/Bootstrap**: 前端界面采用了标准的HTML5，使用jQuery和Bootstrap开发前端。
 
-![技术架构图](../images/chapter1/tech-architecture.jpg "技术架构图")
+![技术架构图](../images/chapter1/overview-tech.jpg "技术架构图")
 
 
 ## 功能规划
