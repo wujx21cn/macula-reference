@@ -40,7 +40,7 @@
 
     Macula平台要求使用UTF-8的文件编码格式，可通过Eclipse -> Preference -> General -> Workspace 中，设定Text file encoding的方式设置项目环境为UTF-8编码。
     
-    ![tutorials-eclipse-workspace.jpg](../images/chapter1/tutorials-eclipse-workspace.jpg "tutorials-eclipse-workspace.jpg")
+    ![tutorials-eclipse-workspace.jpg](../images/chapter1/tutorials-eclipse-workspace.jpg)
     
 * **服务器设置**
 
@@ -63,17 +63,15 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 点击下一步后按照下面界面安装macula-tools-archetype插件（如果已经存在无需再次安装）
 
-![使用Macula插件创建项目](../images/chapter1/tutorials-tools-archtype.png "tutorials-tools-archtype.png")
+![使用Macula插件创建项目](../images/chapter1/tutorials-tools-archtype.png)
 
 继续点击下一步如下图输入你项目的Group Id、Artifact Id、Version和Package:
 
-![
-](../images/chapter1/tutorials-project-samples.png)
+![tutorials-project-samples.png](../images/chapter1/tutorials-project-samples.png)
 
 后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven->Update Project，整个项目结构如下图：
 
-![
-](../images/chapter1/tutorials-project-tree.png)
+![tutorials-project-tree.png](../images/chapter1/tutorials-project-tree.png)
 
 macula tools默认创建的项目结构包含了如下模块：
 
@@ -95,15 +93,20 @@ macula tools默认创建的项目结构包含了如下模块：
 * 删除macula-samples-parent/pom.xml文件中parent的部分
 * 启动运行
 
-本程序中的演示程序URL是<br/>
-http://localhost:8080/macula-samples-webapp/admin/demo/application/list<br/>
+本程序中的演示程序URL是
+
+http://localhost:8080/macula-samples-webapp/admin/demo/application/list
+
 为了可以访问上述地址，你需要配置菜单、功能并做相应的授权
 
-默认登录地址是 <br/>
+默认登录地址是
+
 http://localhost:8080/macula-samples-webapp/login?form=true
 
-默认登录用户是 admin,密码是infi123*<br/>
-后端应用地址：http://localhost:8080/macula-samples-webapp/admin<br/>
+默认登录用户是 admin,密码是infi123*
+
+后端应用地址：http://localhost:8080/macula-samples-webapp/admin
+
 前端应用地址：http://localhost:8080/macula-samples-webapp/front
 
 ## 打包
