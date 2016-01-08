@@ -72,7 +72,8 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven->Update Project，整个项目结构如下图：
 
-
+![
+](../images/chapter1/tutorials-project-tree.png)
 
 
 ## 打包
