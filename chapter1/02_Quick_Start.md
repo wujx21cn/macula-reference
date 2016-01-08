@@ -79,7 +79,7 @@ macula tools默认创建的项目结构包含了如下模块：
 
 * **macula-samples**：项目最外层的模块，主要用于打包分发项目；
 * **macula-samples-parent**：所有模块的父模块，提供了公共依赖项的配置和其它子模块依赖项的版本设置；
-* **macula-sample
+* **macula-samples**
 
 
 ## 运行
