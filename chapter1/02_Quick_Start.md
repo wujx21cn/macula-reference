@@ -53,8 +53,15 @@
     ![tutorials-eclipse-tomcat.jpg](../images/chapter1/tutorials-eclipse-tomcat.jpg "tutorials-eclipse-tomcat.jpg")
     
     
-## 项目的
+## 项目的创建
 
+Macula框架现在提供了一个创建我们所定义项目的maven插件，具体使用方式如下：
+ 
+在eclipse中选择创建Maven Project，按照下面界面安装macula-tools-archetype插件
+
+![使用Macula插件创建项目](../images/chapter1/macula-tools-archtype.png "macula-tools-archtype.png")
+
+后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中邮件选择Maven->Update Project
 
 
 
