@@ -57,7 +57,11 @@
 
 Macula框架现在提供了一个创建我们所定义项目的maven插件，具体使用方式如下：
  
-在eclipse中选择创建Maven Project，按照下面界面安装macula-tools-archetype插件
+在eclipse中选择创建Maven Project
+
+![tutorials-new-project.png](../images/chapter1/tutorials-new-project.png)
+
+按照下面界面安装macula-tools-archetype插件
 
 ![使用Macula插件创建项目](../images/chapter1/tutorials-tools-archtype.png "tutorials-tools-archtype.png")
 
