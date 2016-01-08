@@ -75,6 +75,12 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 ![
 ](../images/chapter1/tutorials-project-tree.png)
 
+macula tools默认创建的项目结构包含了如下模块：
+
+* **macula-samples**：项目最外层的模块，主要用于打包分发项目
+* **macula-samples-parent**：
+
+
 ## 运行
 
 运行上述项目需要按照以下步骤准备：
