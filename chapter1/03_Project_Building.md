@@ -99,14 +99,17 @@ macula tools默认创建的项目结构是典型的三层架构，包含了如�
         * service：org.macula.samples.service.demo1.service
         * controller：org.macula.samples.admin.demo1.controller
 
+
 2. 国际化文件
     国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-samples-admin的国际化文件必须放置在resources/i18n/macula-samples-admin目录下，这样可避免文件的重名。
+    
     
 3. Spring配置文件
     对Spring的配置文件，必须放置在resources/META-INF/spring目录下，并在命名上按下列要求命名：
     
     * 应用层的命名：按照macula-模块名称-app.xml的方式命名。
     * WEB层的命名：按照macula-模块名称-servlet.xml的方式命名。
+
 
 4. Freemarker文件
     Freemarker文件放置在resources/views目录下，并按模块名称创建子目录。
