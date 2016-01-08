@@ -73,8 +73,7 @@ macula tools默认创建的项目结构是典型的三层架构，包含了如�
     
     **重要**
     
-    *需要特别强调的是，测试文件必须放在test目录下，以降低打包jar文件的大小以及代码结构的清晰度，对于编写的JUnit用例，必须放在测试目录。
-另外对于src/main/resources中存放文件的目录结构（包括Spring配置文件的放置、Freemarker模块文档的放置等），将在其他相应章节中介绍，这里主要介绍大方向的目录结构。*
+    *需要特别强调的是，测试文件必须放在test目录下，以降低打包jar文件的大小以及代码结构的清晰度，对于编写的JUnit用例，必须放在测试目录。另外对于src/main/resources中存放文件的目录结构（包括Spring配置文件的放置、Freemarker模块文档的放置等），将在其他相应章节中介绍，这里主要介绍大方向的目录结构。*
     
 2. war模块目录结构
 
@@ -93,12 +92,12 @@ macula tools默认创建的项目结构是典型的三层架构，包含了如�
     Java包（文件夹）必须以小写字母命名，同时按照模块名称建立父包，并按照用途可创建controller、domain、repository、service、util、support、vo子包，避免创建晦涩难懂的包名，加大系统的复杂度。
     
     * 在macula-samples-repository模块中，包名不包含业务模块名称：
-        *domain：org.macula.samples.domain*
-        *repository：org.macula.samples.repository*
+        * domain：org.macula.samples.domain
+        * repository：org.macula.samples.repository
         
     * 在macula-samples-service和admin/front/mobile模块中，包名最好包含业务模块的名称：
-        *service：org.macula.samples.service.demo1.service*
-        *controller：org.macula.samples.admin.demo1.controller*
+        * service：org.macula.samples.service.demo1.service
+        * controller：org.macula.samples.admin.demo1.controller
 
 2. 国际化文件
     国际化的properties文件，统一放置在resources/i18n目录下，并按模块名称建立子目录，如macula-samples-admin的国际化文件必须放置在resources/i18n/macula-samples-admin目录下，这样可避免文件的重名。
@@ -111,6 +110,7 @@ macula tools默认创建的项目结构是典型的三层架构，包含了如�
 
 4. Freemarker文件
     Freemarker文件放置在resources/views目录下，并按模块名称创建子目录。
+    
     如resources/views/admin/demo1/xxx/edit.ftl
 
 ## 自定义目录
@@ -120,11 +120,9 @@ macula tools默认创建的项目结构是典型的三层架构，包含了如�
 对于自定义目录的情况大致有：
 
 * 为多种环境创建不同的配置
-    
     这种情况下，主要使用src/main/deploy目录创建同名文件，并在pom.xml中通过定义不同的打包方式，产生如生产环境发布包、测试环境发布包等。
 
 * webapp目录下增加其他静态文件
-    
     对war模块，对于webapp下需要载入的大量的静态文件以及脚本文件，可能会加入自定义目录。
 
 ## 配置文件
