@@ -87,12 +87,16 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 * 如果你要改变登录、菜单等信息，可以关注CustomMyAppController类
 * 删除macula-samples-parent/pom.xml文件中parent的部分
 * 启动运行
-* 本程序中的演示程序URL是http://localhost:8080/macula-samples-webapp/admin/demo/application/list
-* 为了可以访问上述地址，你需要配置菜单、功能并做相应的授权
 
-默认登录地址是 http://localhost:8080/macula-samples-webapp/login?form=true
-默认登录用户是 admin,密码是infi123*
-后端应用地址：http://localhost:8080/macula-samples-webapp/admin
+本程序中的演示程序URL是<br/>
+http://localhost:8080/macula-samples-webapp/admin/demo/application/list<br/>
+为了可以访问上述地址，你需要配置菜单、功能并做相应的授权
+
+默认登录地址是 <br/>
+http://localhost:8080/macula-samples-webapp/login?form=true
+
+默认登录用户是 admin,密码是infi123*<br/>
+后端应用地址：http://localhost:8080/macula-samples-webapp/admin<br/>
 前端应用地址：http://localhost:8080/macula-samples-webapp/front
 
 ## 打包
