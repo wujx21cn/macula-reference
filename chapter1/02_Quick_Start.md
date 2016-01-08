@@ -61,70 +61,18 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 ![tutorials-new-project.png](../images/chapter1/tutorials-new-project.png)
 
-按照下面界面安装macula-tools-archetype插件
+点击下一步后按照下面界面安装macula-tools-archetype插件（如果已经存在无需再次安装）
 
 ![使用Macula插件创建项目](../images/chapter1/tutorials-tools-archtype.png "tutorials-tools-archtype.png")
 
-后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中选择Maven->Update Project
+继续点击下一步如下图输入你项目的Group Id、Artifact Id、Version和Package:
+
+![
+](../images/chapter1/tutorials-project-samples.png)
+
+后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven->Update Project
 
 
-
-## 新建业务项目
-
-通过Eclipse的新建Maven向导来创建新的业务工程项目。
-
-![tutorials-maven-newwizard.jpg](../images/chapter1/tutorials-maven-newwizard.jpg "tutorials-maven-newwizard.jpg")
-
-在下一步中，可选择pom模块、jar模块或war，在新项目创建时，请选择pom模块的方式，创建项目根，其他模块以子模块的方式存在。
-
-为创建一个pom模块的pom.xml，可以在向导中选择maven-archetype-site来创建。
-
-![tutorials-maven-newwizard2.jpg](../images/chapter1/tutorials-maven-newwizard2.jpg "tutorials-maven-newwizard2.jpg")
-
-从而可以得到一个项目的根目录，在这个项目根目录中，用来处理打包、发布等，均写在该pom.xml中，具体可参考macula工程根下的pom.xml文件。
-
-
-## 创建业务父模块
-
-在创建了项目根后，我们并没有创建任何的项目模块，为了保证项目能使用一致的设置，需要创建项目业务模块的父模块，用XX-parent来命名，比如macula开发平台下的macula-parent，就是用来定义项目模块的父模块设置的。
-
-创建的父模块作为根模块的子模块存在，与下一节介绍的业务子模块一样，都是通过打开根pom.xml，然后在图形化界面中，选择modules下的Create按钮来创建的。
-
-在该父模块中，主要设置maven仓库地址，编译的jdk级别，使用的第三方库以及版本等，相关的信息可以参考macula-parent中的配置信息。
-
-基于Macula平台开发中，只需要依赖macula-base即可。
-
-
-## 创建业务子模块
-
-设置了项目一致性的依赖、项目版本以及编译环境后，可通过maven插件打开跟目录下的pom.xml，在该界面中增加业务子模块。
-
-以macula-samples为例，可以看出最终创建的子模块如下图所示：
-
-![tutorials-maven-modules.jpg](../images/chapter1/tutorials-maven-modules.jpg "tutorials-maven-modules.jpg")
-
-其创建过程为通过点击Modules下的Create按钮，逐一创建子模块。
-
-在创建子模块时，选择Parent-Project为上面创建的父模块。如创建macula-samples下的子模块macula-samples-demo时，需要选择macula-samples-parent作为Parent Project。
-
-![tutorials-maven-newmodule.jpg](../images/chapter1/tutorials-maven-newmodule.jpg "tutorials-maven-newmodule.jpg")
-
-## Webapp模块修改
-
-最终部署运行的模块是创建的war模块，在当前开发下，可通过拷贝macula-webapp下的src/resources和src/webapp目录下的所有文件，然后对相关文件进行修改的方式进行。
-
-* **web.xml修改**
-
-    可将web显示的名称修改为需要的业务系统名称
-    
-* **macula.properties修改**
-
-    需要修改应用的名称、应用实例的名称、CAS验证地址等信息。
-    
-* **applicationContext-root.xml修改**
-
-    该文件主要修改连接数据库的信息。
-通过修改上述文件后，即可完成项目的发布与部署。
 
 ## 打包
 
