@@ -508,8 +508,62 @@ Controller要选择专门存放 controller 类的 package 下，比如 org.macul
 
 先来看我们的示例：
 
-```
+```java
+@Controller
+public class DempApplicationController extends DemoBaseController {
+	@Autowired
+	private DemoApplicationService demoApplicationService;
 
+	@RequestMapping(value = "/application/list", method = RequestMethod.GET)
+	public String list(HttpServletRequest request) {
+		return super.getRelativePath("/application/list");
+	}
+
+	@RequestMapping(value = "/application/apps", method = RequestMethod.GET)
+	@OpenApi
+	public Page<DemoApplication> getApplications() {
+		return new PageImpl<DemoApplication>(demoApplicationService.getAllApplications());
+	}
+
+	@RequestMapping(value = "/application/edit/{id}", method = RequestMethod.GET)
+	public String edit(@PathVariable("id") Long id, Model model, HttpServletRequest request) {
+		model.addAttribute("id", id);
+		return super.getRelativePath("/application/edit");
+	}
+
+	@RequestMapping(value = "/application/create", method = RequestMethod.GET)
+	public String create() {
+		return super.getRelativePath("/application/edit");
+	}
+
+	@RequestMapping(value = "/application/app/{id}", method = RequestMethod.GET)
+	@OpenApi
+	public DemoApplication getApplication(@PathVariable("id") DemoApplication application) {
+		if (application == null) {
+			application = new DemoApplication();
+			application.setSingleSignOn(true);
+			application.setAppInstances(new ArrayList<DemoApplicationInstance>());
+		}
+		return application;
+	}
+
+	@RequestMapping(value = "/application/save", method = RequestMethod.POST)
+	@OpenApi
+	public Long save(@FormBean("application") @Valid DemoApplication application) {
+		if (hasErrors()) {
+			throw new FormBindException(getMergedBindingResults());
+		}
+		return demoApplicationService.saveApplication(application);
+	}
+
+	@RequestMapping(value = "/application/delete/{id}", method = RequestMethod.POST)
+	@OpenApi
+	public Long delete(@PathVariable("id") DemoApplication application) {
+		demoApplicationService.deleteApplication(application);
+		return application.getId();
+	}
+
+}
 ```
 
 
