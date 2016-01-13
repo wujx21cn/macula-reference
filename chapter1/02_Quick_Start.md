@@ -195,10 +195,6 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	@Column(name = "ALLOWED_ATTRS")
 	private String allowedAttributes;
 
-    //①
-	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = DemoApplicationInstance.class, fetch = FetchType.EAGER)
-	private List<DemoApplicationInstance> appInstances;
-
     //②
 	public static DemoApplication createApplication(String appId) {
 		if (appId == null) {
@@ -219,25 +215,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 		tmpApp.setId(id);
 		return tmpApp;
 	}
-	
-	//④
-	public void updateApplicationInstances() {
-		if (appInstances != null) {
-			List<DemoApplicationInstance> removed = new ArrayList<DemoApplicationInstance>();
-			for (DemoApplicationInstance instance : appInstances) {
-				if (instance.isDeleted()) {
-					removed.add(instance);
-				} else if (instance.getApplication() == null) {
-					instance.setApplication(this);
-				}
-			}
-			for (DemoApplicationInstance instance : removed) {
-				instance.setApplication(null);
-				appInstances.remove(instance);
-			}
-		}
-	}
-	
+
 	//getters and setters
 ```
 
