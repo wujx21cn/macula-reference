@@ -509,11 +509,13 @@ Controller要选择专门存放 controller 类的 package 下，比如 org.macul
 先来看我们的示例：
 
 ```java
-@Controller
+@Controller //①
 public class DempApplicationController extends DemoBaseController {
+	//②
 	@Autowired
 	private DemoApplicationService demoApplicationService;
 
+    //③
 	@RequestMapping(value = "/application/list", method = RequestMethod.GET)
 	public String list(HttpServletRequest request) {
 		return super.getRelativePath("/application/list");
