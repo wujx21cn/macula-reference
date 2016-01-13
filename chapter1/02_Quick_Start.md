@@ -471,6 +471,7 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 	private DemoApplicationRepository demoApplicationRepository;
 
 	@Override
+	//①
 	public List<DemoApplication> getAllApplications() {
 		List<DemoApplication> result = new ArrayList<DemoApplication>(demoApplicationRepository.findAll());
 		return result;
