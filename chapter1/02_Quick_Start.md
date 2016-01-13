@@ -238,7 +238,11 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	//getters and setters
 ```
 
-在实现类通过 annotation 加了数据库表和字段的定义，
+关于上面的代码，有几点需要说明一下：
+1. 在Macula平台中，我们使用annotation 定义数据库表和字段；
+2. 
+
+
 
 最后，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
 
@@ -261,7 +265,6 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	</bean>
 ```
 
-由于本示例中的一个应用信息可能关联数个应用实例信息，因此
 
 #### Repository 类定义
 
