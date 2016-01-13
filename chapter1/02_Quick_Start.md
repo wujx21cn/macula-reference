@@ -357,4 +357,15 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑。`data-page`用于指定要显示的新页面的 url。
 
+再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
+
+```html
+<a id="edit-action-${code}" class="btn btn-default" data-label="编辑">
+	<i class="fa fa-pencil fa-lg"></i>
+	编辑
+</a>
+```
+
+这里我们直接用JQuery为这个按钮的click事件绑定了方法。这个方法里先获取被选取记录的行id，然后触发pushBreadcrumb事件，并转到编辑页面。对应绑定方法的定义是在.js文件中，代码如下：
+
 
