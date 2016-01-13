@@ -457,7 +457,7 @@ public interface DemoApplicationService {
 
 }
 ```
-在列表功能中我们需要 Service 提供一个方法用于获取所有的应用列表。
+在列表功能中我们需要 Service 层提供一个方法用于获取所有的应用列表。我们先在接口中声明这个方法，如代码中。
 
 实现类示例
 
