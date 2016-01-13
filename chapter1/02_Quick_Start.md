@@ -237,7 +237,24 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	//getters and setters
 ```
 
-从实现类我们可以看到通过 annotation 加了数据库表和字段的定义，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如果指定了自动生成数据库表结构，那么可以自动生成对应的数据库表。
+从实现类我们可以看到通过 annotation 加了数据库表和字段的定义，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下例。
+
+```xml
+	<bean id="entityManagerFactory_macula-samples" parent="abstractEntityManagerFactory">
+		<property name="persistenceUnitManager">
+			<bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+				<property name="defaultPersistenceUnitName">
+					<value>macula-samples</value>
+				</property>
+				<property name="defaultDataSource" ref="macula-samples_dataSource" />
+				<property name="packagesToScan">
+					<array>	<value>org.macula.samples.macula_samples.domain</value>
+					</array>
+				</property>
+			</bean>
+		</property>
+	</bean>
+```
 
 #### Repository 类定义
 
