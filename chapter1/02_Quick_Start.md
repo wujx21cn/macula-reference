@@ -470,14 +470,6 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 	@Override
 	public List<DemoApplication> getAllApplications() {
 		List<DemoApplication> result = new ArrayList<DemoApplication>(demoApplicationRepository.findAll());
-		Collections.sort(result, new Comparator<DemoApplication>() {
-
-			@Override
-			public int compare(DemoApplication o1, DemoApplication o2) {
-				int result = o1.getAppGroup().compareTo(o2.getAppGroup());
-				return result != 0 ? result : o1.getAppId().compareToIgnoreCase(o2.getAppId());
-			}
-		});
 		return result;
 	}
 
