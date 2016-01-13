@@ -195,6 +195,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	@Column(name = "ALLOWED_ATTRS")
 	private String allowedAttributes;
 
+    //①
 	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = DemoApplicationInstance.class, fetch = FetchType.EAGER)
 	private List<DemoApplicationInstance> appInstances;
 
@@ -257,7 +258,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	</bean>
 ```
 
-由于
+由于本示例中的一个应用信息可能关联数个应用实例信息，因此
 
 #### Repository 类定义
 
