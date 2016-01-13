@@ -419,11 +419,43 @@ var _onEditAction = function() {
 
 #### Service 层
 
-Service 类放在 macula-xxx-service 资源包里（如macula-samples-service）。Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。示例如下：
+下面我们来看Service层的实现。Service 类放在 macula-xxx-service 资源包里（如macula-samples-service）。Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。示例如下：
 
 接口示例
-```
+```java
+public interface DemoApplicationService {
 
+	/**
+	 * 获取所有的应用列表
+	 * 
+	 * @return
+	 */
+	List<DemoApplication> getAllApplications();
+
+	/**
+	 * 按应用名称获取指定的Application
+	 * 
+	 * @param name
+	 * @return
+	 */
+	DemoApplication findApplicationByAppId(String appId);
+
+	/**
+	 * 保存应用
+	 * 
+	 * @param application
+	 * @return
+	 */
+	Long saveApplication(DemoApplication application);
+
+	/**
+	 * 删除应用
+	 * 
+	 * @param application
+	 */
+	void deleteApplication(DemoApplication application);
+
+}
 ```
 
 
