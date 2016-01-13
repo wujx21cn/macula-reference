@@ -390,7 +390,7 @@ var _onEditAction = function() {
 
 这部分主要是定义表格结构和要显示的数据内容，采用了datatables 插件。定义表格结构示例如下：
 
-```
+```html
 <table id="list-${code}" class="table table-striped table-bordered table-hover" width="100%"
 	data-serverSide="true" 
 	data-paging="false" 
