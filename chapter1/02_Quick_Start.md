@@ -345,7 +345,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 页面部分用到了 JQuery 和 KnockoutJS 技术。下面从功能按钮部分开始，详细讲解一下相关内容。
 
-**功能按钮部分**
+功能按钮部分
 
 看一下新增按钮在页面中的定义：
 
