@@ -125,35 +125,13 @@ http://learn.knockoutjs.com/
 
 #### Domain 定义
 
-Domain 的定义也是采用接口类和实现类的方式（业务系统中，可以接口与实现使用相同的类，简化开发的工作量），在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 接口类放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
+业务系统中，Domain可以接口与实现使用相同的类，简化开发的工作量，在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 接口类放在 macula-xxx-repository 资源包里，对应的 package 是类似这样：
 
 ```
-package org.macula.uim.base.domain;
+org.macula.samples.macula_samples.domain;
 ```
 
-接口类示例：
-
-```java
-public interface User {
-
-	/** 用户名 */
-	String getUserName();
-
-	/** 密码 */
-	String getPassword();
-
-	/** 用户类型 */
-	String getUserType();
-}
-```
-
-Domain 的实现类也是放在 macula-xxx-base 资源包里，对应的 package 是类似这样：
-
-```java
-package org.macula.uim.base.domain.impl;
-```
-
-实现类的示例：
+类的示例：
 
 ```java
 @Entity
