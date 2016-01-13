@@ -390,3 +390,26 @@ var _onEditAction = function() {
 
 这部分主要是定义表格结构和要显示的数据内容，采用了datatables 插件。定义表格结构示例如下：
 
+```
+<table id="list-${code}" class="table table-striped table-bordered table-hover" width="100%"
+	data-serverSide="true" 
+	data-paging="false" 
+	data-ordering="false" 
+	data-ajax-url="${base}/admin/demo/application/apps"
+	data-ajax-type="get"
+	data-select="true"
+	data-row-id="id"
+	rel="datatables">
+	 <thead>
+		<tr>
+			<th data-name="appGroup">应用分组</th>
+			<th data-name="appId">应用编号</th>
+			<th data-name="name">应用名称</th>
+			<th data-name="supervisor">负责人</th>
+			<th data-name="contact">联系方式</th>
+			<th data-name="singleSignOn">支持单点登陆</th>
+			<th data-name="singleSignOut">支持单点登出</th>
+		</tr>
+	</thead>
+</table>
+```
