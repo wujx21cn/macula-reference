@@ -506,5 +506,8 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 
 Controller要选择专门存放 controller 类的 package 下，比如 org.macula.samples.macula_samples.admin.demo.controller 下。
 
+先来看我们的示例：
+
+
 
 
