@@ -240,7 +240,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 
 关于上面的代码，有几点需要说明一下：
 1. 在Macula平台中，我们使用annotation 定义数据库表和字段；
-2. 
+2. 由于我们这个例子中的一个应用
 
 
 
