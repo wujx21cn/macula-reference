@@ -273,4 +273,22 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 下面我们来说明这个功能的实现。
 
+列表页面主要分为3个部分，第一部分是上面的功能按钮部分，第二部分是数据列表显示部分。
 
+整个页面的结构是这样的：
+
+```html
+<@layout.mower_admin title="数据源列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="datasource-list" />
+	<@ui.panel>
+		<@ui.panel_head>
+			<div class="col-xs-12 col-md-12">
+				功能按钮部分
+			</div>
+		</@ui.panel_head>
+		<@ui.panel_body>
+				数据列表显示部分(包括分页处理)
+		</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
+```
