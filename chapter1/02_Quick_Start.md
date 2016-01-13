@@ -583,3 +583,5 @@ public class DempApplicationController extends DemoBaseController {
     <context:component-scan base-package="org.macula.samples.macula_samples.admin.**.controller" />
     ```
     用来设置需要扫描哪些 package。
+    
+2.     
