@@ -295,7 +295,52 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 示例如下：
 
-
+```html
+<@layout.mower_admin title="应用列表" scripts="admin/demo/application/list.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="application-list" />
+	<@ui.panel>
+		<@ui.panel_head>
+			<div class="col-xs-12 col-md-12">
+				<a id="add-action-${code}" class="btn btn-default" data-toggle="pushBreadcrumb" data-label="新增" data-page="admin/demo/application/create">
+				    <i class="fa fa-plus-circle fa-lg"></i>
+				    新增
+				</a>
+				<a id="edit-action-${code}" class="btn btn-default" data-label="编辑">
+				    <i class="fa fa-pencil fa-lg"></i>
+				    编辑
+				</a>
+				<a id="delete-action-${code}" class="btn btn-danger">
+				    <i class="fa fa-trash-o fa-lg"></i>
+				    删除
+				</a>
+			</div>
+		</@ui.panel_head>
+		<@ui.panel_body>
+			<table id="list-${code}" class="table table-striped table-bordered table-hover" width="100%"
+			 data-serverSide="true" 
+			 data-paging="false" 
+			 data-ordering="false" 
+			 data-ajax-url="${base}/admin/demo/application/apps"
+			 data-ajax-type="get"
+			 data-select="true"
+			 data-row-id="id"
+			 rel="datatables">
+			    <thead>
+			        <tr>
+			            <th data-name="appGroup">应用分组</th>
+			            <th data-name="appId">应用编号</th>
+			            <th data-name="name">应用名称</th>
+			            <th data-name="supervisor">负责人</th>
+			            <th data-name="contact">联系方式</th>
+			            <th data-name="singleSignOn">支持单点登陆</th>
+			            <th data-name="singleSignOut">支持单点登出</th>
+			        </tr>
+			    </thead>
+			</table>
+		</@ui.panel_body>
+	</@ui.panel>
+</@layout.mower_admin>
+```
 
 页面部分用到了 JQuery 和 KnockoutJS 技术。下面从功能按钮部分开始，详细讲解一下相关内容。
 
