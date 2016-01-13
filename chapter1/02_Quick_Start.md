@@ -220,6 +220,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 		return tmpApp;
 	}
 	
+	//
 	public void updateApplicationInstances() {
 		if (appInstances != null) {
 			List<DemoApplicationInstance> removed = new ArrayList<DemoApplicationInstance>();
