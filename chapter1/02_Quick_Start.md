@@ -248,7 +248,8 @@ public class DemoApplication extends AbstractAuditable<Long> {
 				</property>
 				<property name="defaultDataSource" ref="macula-samples_dataSource" />
 				<property name="packagesToScan">
-					<array>	<value>org.macula.samples.macula_samples.domain</value>
+					<array>
+					    <value>org.macula.samples.macula_samples.domain</value>
 					</array>
 				</property>
 			</bean>
