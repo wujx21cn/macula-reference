@@ -288,4 +288,8 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 }
 ```
 
-### 列表页面
+### 列表功能
+
+列表页面如下图所示： 
+
+![list-page.jpg](../images/chapter1/list-page.jpg)
