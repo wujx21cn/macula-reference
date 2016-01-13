@@ -458,7 +458,7 @@ public interface DemoApplicationService {
 }
 ```
 
-实现类示例： 
+实现类示例
 
 ```java
 @Service
