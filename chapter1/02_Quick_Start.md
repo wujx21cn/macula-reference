@@ -292,4 +292,4 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 列表页面如下图所示： 
 
-![list-page.jpg](../images/chapter1/list-page.jpg)
+![list-page.png](../images/chapter1/list-page.png)
