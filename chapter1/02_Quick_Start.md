@@ -243,7 +243,8 @@ public class DemoApplication extends AbstractAuditable<Long> {
 关于上面的代码，有几点需要说明一下：
 1. 在Macula平台中，我们使用 annotation 定义数据库表和字段；
 2. 由于我们这个例子中的一个应用信息可能关联零至多个应用实例的信息，因此我们使用了 @OneToMany 注解，如①处所示。
-3. 代码中的 #createApplication() 方法用于初始化一个 DemoApplication，这个将在新增应用信息时使用，后面会详述。如②、
+3. 代码中的 #createApplication() 方法用于初始化一个 DemoApplication，这个将在新增应用信息时使用，后面会详述。如②、③处所示。
+4. 
 
 
 最后，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
