@@ -369,6 +369,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 这里我们直接用JQuery为这个按钮的click事件绑定了方法。这个方法里先获取被选取记录的行id，然后触发pushBreadcrumb事件，并转到编辑页面。对应绑定方法的定义是在.js文件中，代码如下：
 
 ```javascript
+// 编辑按钮
 var _onEditAction = function() {
 	$('#edit-action-' + code).click(function(e) {
 	    var ids = $(table).DataTable().selectedRowIds();
