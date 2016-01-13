@@ -419,8 +419,4 @@ var _onEditAction = function() {
 
 #### Service 层
 
-Service 类放在 macula-xxx-service 资源包里（如macula-samples-service），对应的 package 是类似这样：
-
-```
-org.macula.samples.macula_samples.domain;
-```
+Service 类放在 macula-xxx-service 资源包里（如macula-samples-service）。Service 类一般是先定义 Service 接口类，然后定义 Service 实现类，注意要在 Service 实现类声明上面加上 annotation @Service，对于涉及到数据库修改的实现，需要加上@Transactional。
