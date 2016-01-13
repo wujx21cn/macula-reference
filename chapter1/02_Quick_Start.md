@@ -287,7 +287,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 			</div>
 		</@ui.panel_head>
 		<@ui.panel_body>
-				数据列表显示部分(包括分页处理)
+				列表显示部分
 		</@ui.panel_body>
 	</@ui.panel>
 </@layout.mower_admin>
