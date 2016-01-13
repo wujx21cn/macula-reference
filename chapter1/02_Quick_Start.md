@@ -135,29 +135,106 @@ org.macula.samples.macula_samples.domain;
 
 ```java
 @Entity
-@org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
-@Table(name = "MA_UIM_USER")
-public class JpaUIMUser extends AbstractAuditable<Long> implements User {
+@DynamicInsert
+@DynamicUpdate
+@Table(name = "DEMO_APPLICATION")
+@Auditable
+public class DemoApplication extends AbstractAuditable<Long> {
 
-	private static final long serialVersionUID = Version.value();
+	private static final long serialVersionUID = 1L;
 
-	/** 用户名 */
-	@Column(name = "USER_NAME", length = 50, nullable = false, unique = true)
-	@Size(min = 3, max = 50)
-	private String userName;
-
-	/** 密码 */
-	@Column(name = "PASSWORD", length = 50, nullable = false)
-	@Size(min = 3, max = 50)
-	@JsonIgnore
-	@XStreamOmitField
-	private String password;
-
-	/** 用户类型 */
-	@Column(name = "USER_TYPE", length = 3, nullable = false)
+	@Column(name = "APP_ID", nullable = false, unique = true, length = 50)
 	@NotNull
-	private String userType;
-}
+	@Length2(min = 1, max = 50)
+	private String appId;
+	@Column(name = "APP_NAME", nullable = false, length = 50)
+	@NotNull
+	@Length2(min = 1, max = 50)
+	private String name;
+	@Column(name = "APP_GROUP", nullable = false, length = 50)
+	@NotNull
+	@Length2(min = 1, max = 50)
+	private String appGroup;
+	@Column(name = "SECURE_KEY", nullable = false, length = 1024)
+	@NotNull
+	@Length2(min = 1, max = 1024)
+	private String secureKey;
+	@Column(name = "PRIVATE_KEY", nullable = false, length = 1024)
+	@NotNull
+	@Length2(min = 1, max = 1024)
+	private String privateKey;
+	@Column(name = "HOME_PAGE", nullable = false, length = 255)
+	@NotNull
+	@Length2(min = 1, max = 255)
+	private String homepage;
+
+	@Column(name = "SUPERVISOR", length = 255)
+	@Length2(min = 0, max = 255)
+	private String supervisor;
+
+	@Column(name = "CONTACT", length = 255)
+	@Length2(min = 0, max = 255)
+	private String contact;
+
+	@Column(name = "COMMENTS", length = 255)
+	@Length2(min = 0, max = 255)
+	private String comments;
+
+	@Column(name = "THEME", length = 50)
+	@Length2(min = 0, max = 50)
+	private String theme;
+
+	@Column(name = "IS_SSIN", nullable = false)
+	private boolean singleSignOn;
+	@Column(name = "IS_SSOUT", nullable = false)
+	private boolean singleSignOut;
+
+	@Column(name = "USE_ATTRS", nullable = false)
+	private boolean useAttributes;
+
+	@Column(name = "ALLOWED_ATTRS")
+	private String allowedAttributes;
+
+	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = DemoApplicationInstance.class, fetch = FetchType.EAGER)
+	private List<DemoApplicationInstance> appInstances;
+
+	public static DemoApplication createApplication(String appId) {
+		if (appId == null) {
+			return null;
+		}
+		DemoApplication tmpApp = new DemoApplication();
+		tmpApp.setAppId(appId);
+		tmpApp.setId(0L);
+		return tmpApp;
+	}
+
+	public static DemoApplication createApplication(Long id) {
+		if (id == null) {
+			return null;
+		}
+		DemoApplication tmpApp = new DemoApplication();
+		tmpApp.setId(id);
+		return tmpApp;
+	}
+	
+	public void updateApplicationInstances() {
+		if (appInstances != null) {
+			List<DemoApplicationInstance> removed = new ArrayList<DemoApplicationInstance>();
+			for (DemoApplicationInstance instance : appInstances) {
+				if (instance.isDeleted()) {
+					removed.add(instance);
+				} else if (instance.getApplication() == null) {
+					instance.setApplication(this);
+				}
+			}
+			for (DemoApplicationInstance instance : removed) {
+				instance.setApplication(null);
+				appInstances.remove(instance);
+			}
+		}
+	}
+	
+	//getters and setters
 ```
 
 从实现类我们可以看到通过 annotation 加了数据库表和字段的定义，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如果指定了自动生成数据库表结构，那么可以自动生成对应的数据库表。
