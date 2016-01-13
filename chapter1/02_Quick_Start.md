@@ -521,6 +521,7 @@ public class DempApplicationController extends DemoBaseController {
 		return super.getRelativePath("/application/list");
 	}
 
+    //④
 	@RequestMapping(value = "/application/apps", method = RequestMethod.GET)
 	@OpenApi
 	public Page<DemoApplication> getApplications() {
