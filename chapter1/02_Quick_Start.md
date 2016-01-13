@@ -458,7 +458,7 @@ public interface DemoApplicationService {
 
 }
 ```
-在列表功能中我们需要 Service 层提供一个方法用于获取所有的应用列表。我们先在接口中声明这个方法 #getAllApplications()，如代码中①处所示。
+在列表功能中我们需要 Service 层提供一个方法用于获取所有的应用列表。我们先在DemoApplicationService这个接口中声明这个方法 #getAllApplications()，如代码中①处所示。
 
 
 实现类示例
@@ -499,6 +499,7 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 }
 
 ```
+我们在 DemoApplicationServiceImpl 实现类中提供了 #getAllApplications() 方法的实现。
 
 注意要在 Service 实现类声明上面加上 annotation @Service，我们使用@Autowired完成 Repository 实例的注入，对于涉及到数据库修改的实现，需要加上@Transactional。
 
