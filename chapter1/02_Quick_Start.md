@@ -288,4 +288,4 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 }
 ```
 
-### List 列表页面
+### 列表页面
