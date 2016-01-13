@@ -195,7 +195,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	@Column(name = "ALLOWED_ATTRS")
 	private String allowedAttributes;
 
-    //②
+    //①
 	public static DemoApplication createApplication(String appId) {
 		if (appId == null) {
 			return null;
@@ -206,7 +206,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 		return tmpApp;
 	}
 
-    //③
+    //②
 	public static DemoApplication createApplication(Long id) {
 		if (id == null) {
 			return null;
@@ -221,7 +221,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 
 关于上面的代码，有几点需要说明一下：
 1. 在Macula平台中，我们使用 annotation 定义数据库表和字段；
-2. 代码中的 #createApplication() 方法用于初始化一个 DemoApplication，这个将在新增应用信息时使用，后面会详述。如②、③处所示。
+2. 代码中的 #createApplication() 方法用于初始化一个 DemoApplication，这个将在新增应用信息时使用，后面会详述。如①、②处所示。
 
 
 
