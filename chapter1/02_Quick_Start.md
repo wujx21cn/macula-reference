@@ -344,4 +344,17 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 页面部分用到了 JQuery 和 KnockoutJS 技术。下面从功能按钮部分开始，详细讲解一下相关内容。
 
+**功能按钮部分**
+
+看一下新增按钮在页面中的定义：
+
+```html
+<a id="add-action-${code}" class="btn btn-default" data-toggle="pushBreadcrumb" data-label="新增" data-page="admin/demo/application/create">
+	<i class="fa fa-plus-circle fa-lg"></i>
+	新增
+</a>
+```
+
+这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑。`data-page`用于指定要显示的新页面的 url。
+
 
