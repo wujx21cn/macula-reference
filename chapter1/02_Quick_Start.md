@@ -388,3 +388,5 @@ var _onEditAction = function() {
 
 数据列表显示部分
 
+这部分主要是定义表格结构和要显示的数据内容，采用了datatables 插件。定义表格结构示例如下：
+
