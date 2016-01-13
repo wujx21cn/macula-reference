@@ -419,4 +419,8 @@ var _onEditAction = function() {
 
 #### Service 层
 
+Service 类放在 macula-xxx-service 资源包里（如macula-samples-service），对应的 package 是类似这样：
 
+```
+org.macula.samples.macula_samples.domain;
+```
