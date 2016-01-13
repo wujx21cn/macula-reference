@@ -500,7 +500,7 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 }
 
 ```
-我们在 DemoApplicationServiceImpl 实现类中提供了 #getAllApplications() 方法的实现。
+我们在 DemoApplicationServiceImpl 实现类中提供了 #getAllApplications() 方法的实现，如代码中①处所示。
 
 
 
