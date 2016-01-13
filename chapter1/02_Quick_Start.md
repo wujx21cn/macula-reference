@@ -278,7 +278,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 整个页面的结构是这样的：
 
 ```html
-<@layout.mower_admin title="数据源列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
+<@layout.mower_admin title="应用列表" scripts="admin/macula-base/datasource/list_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="datasource-list" />
 	<@ui.panel>
 		<@ui.panel_head>
