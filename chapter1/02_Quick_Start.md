@@ -952,6 +952,8 @@ public class DempApplicationController extends DemoBaseController {
 
 ### 删除功能
 
+删除功能在列表页面中完成，例如：
+
 
 
 
