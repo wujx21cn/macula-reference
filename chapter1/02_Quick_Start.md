@@ -928,7 +928,7 @@ public class DempApplicationController extends DemoBaseController {
 以上代码，我们有几点需要说明一下：
 
 1. 在列表页面中，当点击新增按钮时，返回的也是 /application/edit 页面。如代码①处所示。
-2. 在②处我们返回应用的信息或一个新的空白对象，用于应答页面发出的 AJAX 请求。
+2. 在②处我们返回应用的信息或一个新的空白对象。
 3. ③处用于保存应用信息。
 
 ### 删除功能
