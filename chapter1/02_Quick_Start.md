@@ -808,7 +808,7 @@ var ApplicationForm = (function($) {
 				currentId = -1;
 			}
 			
-			//
+			//①
 			$.getJSON(base + '/admin/demo/application/app/' + currentId, function(data) {
 				ko.applyBindings(new viewModel(data.returnObject), $form[0]);
 				$form.trigger('updateValidate');
