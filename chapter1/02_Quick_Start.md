@@ -196,6 +196,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	private String allowedAttributes;
 
 	//getters and setters
+}
 ```
 
 然后，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
