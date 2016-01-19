@@ -563,7 +563,6 @@ public class DempApplicationController extends DemoBaseController {
     <context:component-scan base-package="org.macula.samples.macula_samples.admin.**.controller" />
     ```
     
-    
 2.  代码中②处，我们通过 @Autowired 注解来实现 DemoApplicationService 的自动注入。
 3.  如代码中③处所示,我们使用 @RequestMapping 注解来实现URL映射。在这个功能中，我们需要获得所有应用实例的信息，我们的相对URL为 /application/apps ，因此调用到的方法为 #getApplications()。
 4.  你可能已经留意到在 #getApplications() 方法上有一个 @OpenApi 的注解。由于我们的列表页面中表格的内容是通过 AJAX JSON 方式获取的，因此我们使用 @OpenApi 直接返回 pojo bean。有关 @OpenApi 的详细介绍，请参阅核心技术中的相关介绍。  
