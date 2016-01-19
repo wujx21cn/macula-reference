@@ -1041,3 +1041,4 @@ public class DempApplicationController extends DemoBaseController {
 
 }
 ```
+到此，删除功能已经完成。
