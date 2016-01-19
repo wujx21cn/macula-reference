@@ -850,6 +850,31 @@ $(function() {
 
 这部分内容在前面的列表功能中已经解析过，这里我们直接给出相关代码。
 
+接口示例：
+```
+public interface DemoApplicationService {
+
+	/**
+	 * 按应用名称获取指定的Application
+	 * 
+	 * @param name
+	 * @return
+	 */
+	DemoApplication findApplicationByAppId(String appId);
+
+	/**
+	 * 保存应用
+	 * 
+	 * @param application
+	 * @return
+	 */
+	Long saveApplication(DemoApplication application);
+
+	//... 其它部分省略
+}
+```
+
+实现类示例：
 
 
 
