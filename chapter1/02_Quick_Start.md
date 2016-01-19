@@ -954,7 +954,7 @@ public class DempApplicationController extends DemoBaseController {
 
 删除功能在列表页面中完成，例如：
 
-
+![delete-page.png](../images/chapter1/delete-page.png)
 
 
 
