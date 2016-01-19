@@ -606,7 +606,6 @@ public class DempApplicationController extends DemoBaseController {
 <#assign title>
 	<#if id?exists>编辑应用<#else>新增应用</#if>
 </#assign>
-
 <@layout.mower_admin title=title scripts="admin/demo/application/edit.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="edit-application" />
 		<@ui.panel>
