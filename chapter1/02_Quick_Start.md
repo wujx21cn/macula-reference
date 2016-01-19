@@ -825,10 +825,7 @@ var ApplicationForm = (function($) {
 					}
 				});
 			});
-			
-			$('#gen-key-action').click(function(e) {
-				// TODO 产生公钥和私钥
-			});
+
 		}
 	};
 }(jQuery));
