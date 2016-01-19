@@ -212,7 +212,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 				<property name="packagesToScan">
 					<array>
 					   <!-- ① -->
-					   <value>org.macula.samples.macula_samples.domain</value>
+                     <value>org.macula.samples.macula_samples.domain</value>
 					</array>
 				</property>
 			</bean>
