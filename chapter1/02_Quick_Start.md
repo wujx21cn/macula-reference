@@ -596,3 +596,7 @@ public class DempApplicationController extends DemoBaseController {
 
 ![edit-page.png](../images/chapter1/edit-page.png)
 
+新增和修改页面一般使用相同的 .ftl 和 .js 文件，通过逻辑判断当前处理的操作是新增还是修改操作。如果新增和修改功能差别很大，就需要考虑分开两个页面。在本例中，我们使用的是同一个页面。
+
+#### 页面部分
+
