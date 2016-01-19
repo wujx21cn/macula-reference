@@ -556,12 +556,14 @@ public class DempApplicationController extends DemoBaseController {
 
     src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 
-    里面有一行：
+    里面有一行用来设置需要扫描哪些 package。
+    
+    例如：
 
     ```java
     <context:component-scan base-package="org.macula.samples.macula_samples.admin.**.controller" />
     ```
-    用来设置需要扫描哪些 package。
+    
     
 2.  代码中②处我们看到，我们通过 @Autowired 注解来实现 DemoApplicationService 的自动注入。
 3.  我们使用 @RequestMapping 注解来实现URL映射。在页面示例中，我们需要获得所有应用实例的信息，我们的相对URL为 /application/apps ，因此调用到的方法为 #getApplications()。如代码中④中所示。
