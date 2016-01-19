@@ -766,7 +766,7 @@ public class DempApplicationController extends DemoBaseController {
 
 edit.js 主要是完成2项工作：
 
-1. 通过 Ajax 读取服务器端的数据,构造跟 edit.ftl 页面里对应的 model
+1. 通过 Ajax 读取服务器端的数据，构造跟 edit.ftl 页面里对应的 model
 2. 绑定 edit.ftl 页面里对应的按钮操作
 
 代码如下：
