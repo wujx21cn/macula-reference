@@ -812,7 +812,6 @@ var ApplicationForm = (function($) {
 			//②
 			$.getJSON(base + '/admin/demo/application/app/' + currentId, function(data) {
 				ko.applyBindings(new viewModel(data.returnObject), $form[0]);
-				$form.trigger('updateValidate');
 			});
 			
 			// 绑定按钮事件
@@ -842,6 +841,7 @@ $(function() {
 关于以上代码，我们有几点要说明一下：
 
 1. 在①处，我们先判断 item-id 在页面中是否存在。如果存在，我们认为是编辑页面，我们会根据这个item-id 通过 AJAX 方式从后台获得这个应用的相关信息在页面进行填充；否则，我们认为这是个新增页面，令 item-id 等于-1, 这样从后台返回一个新的空白对象对页面进行填充。
+2. 
 
 
 
