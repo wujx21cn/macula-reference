@@ -1002,11 +1002,18 @@ var _oDeleteAction = function() {
 接口示例：
 
 ```java
+public interface DemoApplicationService {
+
 	/**
 	 * 删除应用
 	 * 
 	 * @param application
 	 */
 	void deleteApplication(DemoApplication application);
+}
 ```
+
+实现类示例：
+
+
 
