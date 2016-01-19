@@ -968,6 +968,8 @@ public class DempApplicationController extends DemoBaseController {
 </a>
 ```
 
+上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下:
+
 
 
 
