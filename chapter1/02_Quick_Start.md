@@ -564,7 +564,7 @@ public class DempApplicationController extends DemoBaseController {
     ```
     
 2.  代码中②处，我们通过 @Autowired 注解来实现 DemoApplicationService 的自动注入。
-3.  如代码中③处所示,我们使用 @RequestMapping 注解来实现URL映射。在这个功能中，我们需要获得所有应用实例的信息，我们的相对URL为 /application/apps ，因此调用到的方法为 #getApplications()。
+3.  如代码中③处所示,我们使用 @RequestMapping 注解来实现URL映射。在这个功能中，我们需要获得所有应用的信息，我们的相对URL为 /application/apps ，因此调用到的方法为 #getApplications()。
 4.  你可能已经留意到在 #getApplications() 方法上有一个 @OpenApi 的注解。由于我们的列表页面中表格的内容是通过 AJAX JSON 方式获取的，因此我们使用 @OpenApi 直接返回 pojo bean。有关 @OpenApi 的详细介绍，请参阅核心技术中的相关介绍。  
 
 到此，我们的列表功能就完成了。大致上就是我们在页面上使用了 datatables 插件通过 AJAX JSON 的方式从后台获取表格内容， Controller 接收到请求后调用 Serivce 中相应的方法， 而 Serivce 通过 Repository 从数据库中获取相关数据。
