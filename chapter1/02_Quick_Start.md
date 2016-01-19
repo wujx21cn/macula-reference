@@ -905,7 +905,7 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 
 Controller 层相关代码如下：
 
-```
+```java
 @Controller
 public class DempApplicationController extends DemoBaseController {
 	@Autowired
