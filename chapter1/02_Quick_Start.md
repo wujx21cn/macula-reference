@@ -199,7 +199,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 }
 ```
 
-然后，通过在 EntityManagerFactory 的定义中加入 Domain 所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
+然后，通过在 EntityManagerFactory 的定义中加入 Domain 所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例代码①处所示。
 
 ```xml
 	<bean id="entityManagerFactory_macula-samples" parent="abstractEntityManagerFactory">
