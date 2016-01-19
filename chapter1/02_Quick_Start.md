@@ -1017,7 +1017,7 @@ public interface DemoApplicationService {
 
 实现类示例：
 
-```
+```java
 @Service
 public class DemoApplicationServiceImpl implements DemoApplicationService {
 
