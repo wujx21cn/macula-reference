@@ -851,7 +851,7 @@ $(function() {
 这部分内容在前面的列表功能中已经解析过，这里我们直接给出相关代码。
 
 接口示例：
-```
+```java 
 public interface DemoApplicationService {
 
 	/**
