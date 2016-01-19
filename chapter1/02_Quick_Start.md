@@ -1010,6 +1010,8 @@ public interface DemoApplicationService {
 	 * @param application
 	 */
 	void deleteApplication(DemoApplication application);
+	
+	//... 其它部分省略
 }
 ```
 
