@@ -917,7 +917,7 @@ public class DempApplicationController extends DemoBaseController {
 		return super.getRelativePath("/application/edit");
 	}
 
-    //
+    //②
 	@RequestMapping(value = "/application/app/{id}", method = RequestMethod.GET)
 	@OpenApi
 	public DemoApplication getApplication(@PathVariable("id") DemoApplication application) {
@@ -929,6 +929,7 @@ public class DempApplicationController extends DemoBaseController {
 		return application;
 	}
 
+    //③
 	@RequestMapping(value = "/application/save", method = RequestMethod.POST)
 	@OpenApi
 	public Long save(@FormBean("application") @Valid DemoApplication application) {
