@@ -494,13 +494,12 @@ public class DempApplicationController extends DemoBaseController {
 	@Autowired
 	private DemoApplicationService demoApplicationService;
 
-    //③
 	@RequestMapping(value = "/application/list", method = RequestMethod.GET)
 	public String list(HttpServletRequest request) {
 		return super.getRelativePath("/application/list");
 	}
 
-    //④
+    //③
 	@RequestMapping(value = "/application/apps", method = RequestMethod.GET)
 	@OpenApi
 	public Page<DemoApplication> getApplications() {
