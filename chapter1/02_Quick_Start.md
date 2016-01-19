@@ -1017,7 +1017,24 @@ public interface DemoApplicationService {
 
 实现类示例：
 
+```
+@Service
+public class DemoApplicationServiceImpl implements DemoApplicationService {
 
+	@Autowired
+	private DemoApplicationRepository demoApplicationRepository;
+
+	@Override
+	@Transactional
+	public void deleteApplication(DemoApplication application) {
+		demoApplicationRepository.delete(application);
+	}
+
+
+	//... 其它部分省略
+
+}
+```
 
 
 
