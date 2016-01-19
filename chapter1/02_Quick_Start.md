@@ -560,7 +560,7 @@ public class DempApplicationController extends DemoBaseController {
     
     例如：
 
-    ```java
+    ```xml
     <context:component-scan base-package="org.macula.samples.macula_samples.admin.**.controller" />
     ```
     
