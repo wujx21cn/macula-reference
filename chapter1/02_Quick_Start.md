@@ -241,6 +241,8 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 ### 列表功能
 
+下面我们先来实现列表功能。
+
 列表页面如下图所示： 
 
 ![list-page.png](../images/chapter1/list-page.png)
