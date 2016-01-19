@@ -815,6 +815,7 @@ var ApplicationForm = (function($) {
 				ko.applyBindings(new viewModel(data.returnObject), $form[0]);
 			});
 			
+		    //③
 			// 绑定按钮事件
 			$('#save-action-' + code).click(function(e) {
 				var that = $(this);
