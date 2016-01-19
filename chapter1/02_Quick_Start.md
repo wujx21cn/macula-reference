@@ -959,8 +959,6 @@ public class DempApplicationController extends DemoBaseController {
 
 #### 页面部分
 
-
-
 我们先看一下 list 页面上对于删除功能按钮的定义
 
 ```html
