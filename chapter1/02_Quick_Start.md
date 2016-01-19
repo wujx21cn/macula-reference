@@ -911,12 +911,13 @@ public class DempApplicationController extends DemoBaseController {
 	@Autowired
 	private DemoApplicationService demoApplicationService;
 
-    
+    //①
 	@RequestMapping(value = "/application/create", method = RequestMethod.GET)
 	public String create() {
 		return super.getRelativePath("/application/edit");
 	}
 
+    //
 	@RequestMapping(value = "/application/app/{id}", method = RequestMethod.GET)
 	@OpenApi
 	public DemoApplication getApplication(@PathVariable("id") DemoApplication application) {
