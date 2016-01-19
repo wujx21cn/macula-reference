@@ -970,8 +970,29 @@ public class DempApplicationController extends DemoBaseController {
 
 上面代码就定义了点击按钮会触发 onDeleteAction 方法，这个方法是在 list.js 里定义的，代码如下:
 
-```
-
+```javascript
+    // 删除按钮
+    var _oDeleteAction = function() {
+    	$('#delete-action-' + code).click(function(e) {
+	        var row = $(table).DataTable().selectedRows();
+	
+	        if (row && row.length > 0) {
+	            ModalBox.confirm('您确定要删除应用' + '【' + row[0].appId + '】吗？', function(result) {
+	                if (result) {
+	                    $.post(base + '/admin/demo/application/delete/' + row[0].id, function(data) {
+	                    	if (data.success) {
+	                    		$(table).DataTable().ajax.reload();
+	                    	} else {
+	                    		AlertBox.error(data.exceptionMessage);
+	                    	}
+	                    });
+	                }
+	            });
+	        } else {
+	            MessageBox.info('请选择一条记录删除.');
+	        }
+    	});
+    };
 ```
 
 
