@@ -552,7 +552,7 @@ public class DempApplicationController extends DemoBaseController {
 
 1. Controller 类声明上面加上 annotation          @Controller，如代码中①处所示，这个很重要，是让我们框架能自动识别这个类是 Controller     类，如果不加就会出问题。
 
-    这部分自动扫描 Controller 的配置是在各资源包的这个文件中
+    自动扫描 Controller 的配置是在各资源包的这个文件中
 
     src/main/resources/META-INF/spring/macula-xxx-servlet.xml
 
