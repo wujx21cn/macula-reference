@@ -946,7 +946,8 @@ public class DempApplicationController extends DemoBaseController {
 
 以上代码，我们有几点需要说明一下：
 
-1. 在列表页面中，
+1. 在列表页面中，无论我们点击新增或编辑按钮，发出的请求皆为 /application/create ，在Controller处，返回 /application/edit 页面。如代码①处所示。
+2. 
 
 
 
