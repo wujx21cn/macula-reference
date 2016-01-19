@@ -221,7 +221,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 ```
 
 
-#### Repository 类定义
+#### Repository 定义
 
 Repository 相当于 DAO 层，通过操作 Domain 存取数据。
 
