@@ -583,7 +583,7 @@ public class DempApplicationController extends DemoBaseController {
 
 整个页面的结构是这样的：
 
-```
+```html
 <@layout.mower_admin title=title scripts="admin/demo/application/edit.js" version="[$Revision: 4511 $]" require="knockoutjs">
 	<#assign code="edit-application" />
 		<@ui.panel>
