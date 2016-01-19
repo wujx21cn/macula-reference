@@ -876,7 +876,30 @@ public interface DemoApplicationService {
 
 实现类示例：
 
+```java 
+@Service
+public class DemoApplicationServiceImpl implements DemoApplicationService {
 
+	@Autowired
+	private DemoApplicationRepository demoApplicationRepository;
+
+	@Override
+	public DemoApplication findApplicationByAppId(String appId) {
+		return demoApplicationRepository.findByAppId(appId);
+	}
+
+	@Override
+	@Transactional
+	public Long saveApplication(DemoApplication application) {
+		application.updateApplicationInstances();
+		Long id = demoApplicationRepository.save(application).getId();
+		return id;
+	}
+
+	//... 其它部分省略
+
+}
+```
 
 
 
