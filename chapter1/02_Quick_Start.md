@@ -600,3 +600,6 @@ public class DempApplicationController extends DemoBaseController {
 
 #### 页面部分
 
+新增/修改页面主要分为2个部分，第一部分是上面的功能按钮部分，第二部分是页面内容部分。
+
+
