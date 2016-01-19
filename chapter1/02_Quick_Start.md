@@ -590,3 +590,5 @@ public class DempApplicationController extends DemoBaseController {
 
 到此，我们的列表功能就完成了。大致上就是我们在页面上使用了 datatables 插件通过 AJAX JSON 的方式从后台获取表格内容， Controller 接收到请求后调用 Serivce 中相应的方法， 而 Serivce 通过 Repository 从数据库中获取相关数据。
 
+### 新增及修改功能
+
