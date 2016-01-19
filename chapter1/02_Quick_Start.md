@@ -650,7 +650,7 @@ public class DempApplicationController extends DemoBaseController {
 	                            <div class="form-group">
 	                                <label class="control-label col-md-3">应用编号：</label>
 	                                <div class="col-md-9">
-	                                    <!---->
+	                                    <!-- ① -->
 	                                    <input type="text"  name="application.appId" data-bind="value: appId" class="form-control input-sm" required maxlength="50" <#if id?exists>readOnly</#if> />
 	                                </div>
 	                            </div>
