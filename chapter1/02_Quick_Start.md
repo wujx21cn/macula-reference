@@ -905,7 +905,41 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 
 Controller 层相关代码如下：
 
+```
+@Controller
+public class DempApplicationController extends DemoBaseController {
+	@Autowired
+	private DemoApplicationService demoApplicationService;
 
+	@RequestMapping(value = "/application/create", method = RequestMethod.GET)
+	public String create() {
+		return super.getRelativePath("/application/edit");
+	}
+
+	@RequestMapping(value = "/application/app/{id}", method = RequestMethod.GET)
+	@OpenApi
+	public DemoApplication getApplication(@PathVariable("id") DemoApplication application) {
+		if (application == null) {
+			application = new DemoApplication();
+			application.setSingleSignOn(true);
+			application.setAppInstances(new ArrayList<DemoApplicationInstance>());
+		}
+		return application;
+	}
+
+	@RequestMapping(value = "/application/save", method = RequestMethod.POST)
+	@OpenApi
+	public Long save(@FormBean("application") @Valid DemoApplication application) {
+		if (hasErrors()) {
+			throw new FormBindException(getMergedBindingResults());
+		}
+		return demoApplicationService.saveApplication(application);
+	}
+
+	//... 其它部分省略
+
+}
+```
 
 
 
