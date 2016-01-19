@@ -931,6 +931,8 @@ public class DempApplicationController extends DemoBaseController {
 2. 在②处我们返回应用的信息或一个新的空白对象。
 3. ③处用于保存应用信息。
 
+到此，新增/修改功能已经完成。
+
 ### 删除功能
 
 删除功能一般是直接在列表 页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。例如：
