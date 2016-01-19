@@ -605,8 +605,8 @@ public class DempApplicationController extends DemoBaseController {
 整个页面的结构是这样的：
 
 ```
-<@layout.mower_admin title=title scripts="admin/macula-base/datasource/edit_mower.js" version="[$Revision: 4511 $]" require="knockoutjs">
-	<#assign code="edit-datasource" />
+<@layout.mower_admin title=title scripts="admin/demo/application/edit.js" version="[$Revision: 4511 $]" require="knockoutjs">
+	<#assign code="edit-application" />
 		<@ui.panel>
 			<@ui.panel_head>
 				功能按钮部分
