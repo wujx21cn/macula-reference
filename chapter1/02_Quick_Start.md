@@ -807,6 +807,8 @@ var ApplicationForm = (function($) {
 				// -1 means server return add object struct
 				currentId = -1;
 			}
+			
+			//
 			$.getJSON(base + '/admin/demo/application/app/' + currentId, function(data) {
 				ko.applyBindings(new viewModel(data.returnObject), $form[0]);
 				$form.trigger('updateValidate');
