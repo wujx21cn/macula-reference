@@ -780,6 +780,8 @@ public class DempApplicationController extends DemoBaseController {
 </@layout.mower_admin>
 ```
 
+里面要注意的是对于输入框的定义，有个数据绑定（data-bind）的处理，我们在下面 edit.js 里会说明。
+
 
 
 
