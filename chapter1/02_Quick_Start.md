@@ -195,37 +195,10 @@ public class DemoApplication extends AbstractAuditable<Long> {
 	@Column(name = "ALLOWED_ATTRS")
 	private String allowedAttributes;
 
-    //①
-	public static DemoApplication createApplication(String appId) {
-		if (appId == null) {
-			return null;
-		}
-		DemoApplication tmpApp = new DemoApplication();
-		tmpApp.setAppId(appId);
-		tmpApp.setId(0L);
-		return tmpApp;
-	}
-
-    //②
-	public static DemoApplication createApplication(Long id) {
-		if (id == null) {
-			return null;
-		}
-		DemoApplication tmpApp = new DemoApplication();
-		tmpApp.setId(id);
-		return tmpApp;
-	}
-
 	//getters and setters
 ```
 
-关于上面的代码，有几点需要说明一下：
-1. 在Macula平台中，我们使用 annotation 定义数据库表和字段；
-2. 代码中的 #createApplication() 方法用于初始化一个 DemoApplication，这个将在新增应用信息时使用，后面会详述。如①、②处所示。
-
-
-
-最后，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
+然后，通过在EntityManagerFactory的定义中加入Domain所在的包后，Macula 平台可以自动扫描这些 Domain 定义，如下面示例①处代码所示。
 
 ```xml
 	<bean id="entityManagerFactory_macula-samples" parent="abstractEntityManagerFactory">
