@@ -950,7 +950,7 @@ public class DempApplicationController extends DemoBaseController {
 2. 在②处我们返回应用的信息或一个新的空白对象，用于应答页面发出的 AJAX 请求以填充页面。
 3. ③处用于保存应用信息。
 
-
+### 新增及修改功能
 
 
 
