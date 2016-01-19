@@ -802,13 +802,14 @@ var ApplicationForm = (function($) {
 	return {
 		init : function() {
 			// 初始化界面数据
+			//①
 			var currentId = $form.attr('item-id');
 			if (!currentId) {
 				// -1 means server return add object struct
 				currentId = -1;
 			}
 			
-			//①
+			//②
 			$.getJSON(base + '/admin/demo/application/app/' + currentId, function(data) {
 				ko.applyBindings(new viewModel(data.returnObject), $form[0]);
 				$form.trigger('updateValidate');
@@ -840,7 +841,7 @@ $(function() {
 
 关于以上代码，我们有几点要说明一下：
 
-1. 
+1. 在①处，我们先判断 item-id 在页面中是否存在，如果存在，我们认为是编辑页面，我们会根据这个 item-id 通过　AJAX 方式从后台获得这个应用的xianggua
 
 
 
