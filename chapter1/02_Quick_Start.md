@@ -1041,4 +1041,21 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 
 Contoller 层相关代码如下：
 
+```java
+@Controller
+public class DempApplicationController extends DemoBaseController {
+	@Autowired
+	private DemoApplicationService demoApplicationService;
 
+	@RequestMapping(value = "/application/delete/{id}", method = RequestMethod.POST)
+	@OpenApi
+	public Long delete(@PathVariable("id") DemoApplication application) {
+		demoApplicationService.deleteApplication(application);
+		return application.getId();
+	}
+
+	//... 其它部分省略
+
+}
+
+```
