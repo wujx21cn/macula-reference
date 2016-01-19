@@ -911,6 +911,7 @@ public class DempApplicationController extends DemoBaseController {
 	@Autowired
 	private DemoApplicationService demoApplicationService;
 
+    
 	@RequestMapping(value = "/application/create", method = RequestMethod.GET)
 	public String create() {
 		return super.getRelativePath("/application/edit");
