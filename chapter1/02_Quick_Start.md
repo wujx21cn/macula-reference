@@ -595,3 +595,4 @@ public class DempApplicationController extends DemoBaseController {
 新增/修改页面如下：
 
 ![edit-page.png](../images/chapter1/edit-page.png)
+
