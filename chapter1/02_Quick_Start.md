@@ -327,7 +327,9 @@ version="[$Revision: 4511 $]" require="knockoutjs">
 看一下新增按钮在页面中的定义：
 
 ```html
-<a id="add-action-${code}" class="btn btn-default" data-toggle="pushBreadcrumb" data-label="新增" data-page="admin/demo/application/create">
+<a id="add-action-${code}" class="btn btn-default"
+data-toggle="pushBreadcrumb" data-label="新增"
+data-page="admin/demo/application/create">
 	<i class="fa fa-plus-circle fa-lg"></i>
 	新增
 </a>
