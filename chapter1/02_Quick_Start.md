@@ -549,7 +549,7 @@ public class DempApplicationController extends DemoBaseController {
 
 关于上面的示例，有几点需要说明：
 
-1. Controller 类声明上面加上 annotation          @Controller，如代码中①处所示，这个很重要，是让我们框架能自动识别这个类是 Controller     类，如果不加就会出问题。
+1. Controller 类声明上面加上 annotation          @Controller，如代码中①处所示，这个很重要，让我们框架能自动识别这个类是 Controller 类。
 
     自动扫描 Controller 的配置是在各资源包的这个文件中
 
