@@ -928,7 +928,7 @@ public class DempApplicationController extends DemoBaseController {
 以上代码，我们有几点需要说明一下：
 
 1. 在列表页面中，当点击新增按钮时，返回的也是 /application/edit 页面，如代码①处所示。
-2. 在②处我们返回应用的信息或一个新的空白对象。
+2. 在②处我们返回应用的信息或一个新的空白对象。在这里我们通过 annotation @PathVariable 平台实现了对主键到相应Domain实例的转换
 3. ③处用于保存应用信息。
 
 到此，新增/修改功能已经完成。
