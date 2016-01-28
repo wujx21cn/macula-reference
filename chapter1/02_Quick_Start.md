@@ -483,7 +483,7 @@ public class DemoApplicationServiceImpl implements DemoApplicationService {
 
 #### Controller 层
 
-Controller 要选择专门存放 Controller 类的 package 下，比如 org.macula.samples.macula_samples.admin.demo.controller。
+Controller 要放在专门存放 Controller 类的 package 下，比如 org.macula.samples.macula_samples.admin.demo.controller。
 
 先来看我们的示例：
 
