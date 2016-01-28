@@ -121,7 +121,7 @@ http://learn.knockoutjs.com/
 
 ### Domain 和 Repository 层
 
-首先，我们需要一个 Domain 类用于存放应用信息，然后还需要相对应的 Repository 来对应用信息进行增删改查等操作。Macula 平台的 Repository 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 Domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
+首先，我们需要一个 Domain model 用于存放应用信息，然后还需要相对应的 Repository 来对应用信息进行增删改查等操作。Macula 平台的 Repository 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 Domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
 
 #### Domain 定义
 
