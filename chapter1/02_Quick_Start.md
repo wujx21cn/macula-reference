@@ -225,7 +225,7 @@ public class DemoApplication extends AbstractAuditable<Long> {
 
 Repository 相当于 DAO 层，通过操作 Domain 存取数据。
 
-Repository 一般只需要增加一个接口类，并且继承 MaculaJpaRepository 就可以，Macula 平台可以在运行环境中自动产生实现类，并实现常用的 DAO 操作。
+Repository 一般只需要增加一个接口，并且继承 MaculaJpaRepository 就可以，Macula 平台可以在运行环境中自动产生实现类，并实现常用的 DAO 操作。
 
 Repository 接口的示例如下：
 
