@@ -392,7 +392,7 @@ var _onEditAction = function() {
 	</thead>
 </table>
 ```
-其中，`data-serverSide`指明数据是否从服务器端获取；`data-paging`指明数据是否分页显示；`data-ordering`指明是否对数据进行排序；`data-ajax-url`指明从服务器端获取数据的 URL；`data-ajax-type`指明从服务器端请求数据的方式，get 或 post；`data-select`指明表格中的行是否能被选中；`data-row-id`指明使用数据中的哪一列做为表格中的行的 id;`rel="datatables"`指明使用 datatables 插件。余下是表格表头的定义，表头中`data-name`的定义需要和服务器端返回的字段名一致。
+其中，`data-serverSide`指明数据是否从服务器端获取；`data-paging`指明数据是否分页显示；`data-ordering`指明是否对数据进行排序；`data-ajax-url`指明从服务器端获取数据的 URL；`data-ajax-type`指明向服务器端请求数据的方式，get 或 post；`data-select`指明表格中的行是否能被选中；`data-row-id`指明使用数据中的哪一列做为表格中的行的 id;`rel="datatables"`指明使用 datatables 插件。余下是表格表头的定义，表头中`data-name`的定义需要和服务器端返回的字段名一致。
 
 对于 datatables 的具体使用方法请参考 Macula UI 官方文档的相关部分：[Macula UI 官方文档 datatables 部分](http://macula.top/mower/view.html#datatables)。
 
