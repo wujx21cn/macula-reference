@@ -250,7 +250,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 下面我们来说明这个功能的实现。
 
 #### 展示层
-列表页面主要分为2个部分，第一部分是上面的功能按钮部分，第二部分是数据列表显示部分。
+列表页面主要分为2个部分，第一部分是上面的功能按钮部分，第二部分是数据列表部分。
 
 整个页面的结构是这样的：
 
@@ -365,7 +365,7 @@ var _onEditAction = function() {
 };
 ```
 
-数据列表显示部分
+数据列表部分
 
 数据列表部分采用了 datatables 插件。我们只要定义表格结构和要显示的数据内容，以及做一些简单的配置就可以了。定义表格结构示例如下：
 
