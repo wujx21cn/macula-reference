@@ -324,7 +324,7 @@ version="[$Revision: 4511 $]" require="knockoutjs">
 
 功能按钮部分
 
-看一下新增按钮在页面中的定义：
+先来看一下新增按钮在页面中的定义：
 
 ```html
 <a id="add-action-${code}" class="btn btn-default"
