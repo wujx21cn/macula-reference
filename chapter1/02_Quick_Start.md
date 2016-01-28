@@ -441,7 +441,7 @@ public interface DemoApplicationService {
 在列表功能中我们需要 Service 层提供一个方法用于获取所有的应用列表。我们先在 DemoApplicationService 接口中声明这个方法 #getAllApplications()，如代码中①处所示。
 
 
-实现类示例:
+Service 实现类示例:
 
 ```java
 @Service
