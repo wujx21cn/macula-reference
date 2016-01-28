@@ -335,7 +335,7 @@ data-page="admin/demo/application/create">
 </a>
 ```
 
-这个按钮显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑；`data-page`用于指定要显示的新页面的 url。
+这个按钮用于显示“新增应用”的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑；`data-page`用于指定要显示的新页面的 url。
 
 再来看一下编辑按钮，用户可以通过单击选中列表中的一条记录，然后点击编辑按钮来修改记录。
 
