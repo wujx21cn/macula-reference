@@ -942,7 +942,7 @@ public class DempApplicationController extends DemoBaseController {
 
 #### 展示层
 
-我们先看一下列表页面上对于删除功能按钮的定义
+我们先看一下列表页面上对于删除功能按钮的定义。
 
 ```html
 <a id="delete-action-${code}" class="btn btn-danger">
