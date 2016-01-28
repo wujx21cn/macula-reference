@@ -125,7 +125,7 @@ http://learn.knockoutjs.com/
 
 #### Domain 定义
 
-业务系统中，Domain可以接口与实现使用相同的类，简化开发的工作量，在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 类放在 macula-xxx-repository 资源包里（如macula-samples-repository），对应的 package 是类似这样：
+业务系统中，Domain 可以接口与实现使用相同的类，简化开发的工作量，在实现类中通过 annotation 加上数据库表和字段的定义。 Domain 类放在 macula-xxx-repository 资源包里（如macula-samples-repository），对应的 package 是类似这样：
 
 ```
 org.macula.samples.macula_samples.domain;
