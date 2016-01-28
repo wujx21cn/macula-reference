@@ -117,11 +117,11 @@ KnockoutJS 教程
 
 http://learn.knockoutjs.com/
 
-该教程是假设开发人员已经获取到 Macula 平台的代码，并且配置好了 Eclipse 开发环境。下面我们以一个示例一步步详细解释整个开发过程。我们要实现一个“应用管理”的功能，用于在我们的系统中保存应用的相关信息。我们需要提供新增、编辑、删除功能，以及一个列表功能来显示当前所有的应用信息。
+下面我们以一个示例一步步详细解释整个开发过程。我们要实现一个“应用管理”的功能，用于在我们的系统中保存应用的相关信息。我们需要提供新增、编辑、删除功能，以及一个列表功能来显示当前所有的应用信息。
 
 ### Domain 和 Repository 层
 
-首先，我们需要一个 Domain 类用于存放应用信息，然后还需要相对应的Repository类来对应用信息进行增删改查等操作。Macula 平台的 Repository 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
+首先，我们需要一个 Domain 类用于存放应用信息，然后还需要相对应的 Repository 来对应用信息进行增删改查等操作。Macula 平台的 Repository 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
 
 #### Domain 定义
 
