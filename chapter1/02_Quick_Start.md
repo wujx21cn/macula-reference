@@ -399,7 +399,7 @@ var _onEditAction = function() {
 #### Service 层
 
 下面我们来看 Service 层的实现。Service 类放在 macula-xxx-service 资源包里（如 macula-samples-service）。Service 类一般是先定义 Service 接口类，然后定义 Service 实现类。
-注意要在 Service 实现类声明上面加上 annotation @Service，我们使用 @Autowired 完成 Repository 实例的自动注入，对于涉及到数据库修改的实现，需要加上 @Transactional。示例如下：
+注意要在 Service 实现类声明上面加上 annotation @Service。我们使用 @Autowired 完成 Repository 实例的自动注入，对于涉及到数据库修改的实现，需要加上 @Transactional。示例如下：
 
 接口示例:
 ```java
