@@ -367,7 +367,7 @@ var _onEditAction = function() {
 
 数据列表显示部分
 
-数据列表显示部分采用了 datatables 插件。我们只要定义表格结构和要显示的数据内容，以及做一些简单的配置就可以了。定义表格结构示例如下：
+数据列表部分采用了 datatables 插件。我们只要定义表格结构和要显示的数据内容，以及做一些简单的配置就可以了。定义表格结构示例如下：
 
 ```html
 <table id="list-${code}" class="table table-striped table-bordered table-hover" width="100%"
