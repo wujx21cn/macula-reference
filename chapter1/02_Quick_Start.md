@@ -249,7 +249,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 
 下面我们来说明这个功能的实现。
 
-#### 页面部分
+#### 展示层
 列表页面主要分为2个部分，第一部分是上面的功能按钮部分，第二部分是数据列表显示部分。
 
 整个页面的结构是这样的：
