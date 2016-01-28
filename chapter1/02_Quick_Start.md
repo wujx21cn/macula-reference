@@ -567,7 +567,7 @@ public class DempApplicationController extends DemoBaseController {
 3.  我们使用 annotation @RequestMapping 来实现URL映射。在这个功能中，我们需要获得所有应用的信息，相对的 URL 为 /application/apps ，因此调用到的方法为 #getApplications()，如代码中③处所示。
 4.  你可能已经留意到在 #getApplications() 方法上有一个 @OpenApi 的注解。由于我们的列表页面中数据表格的内容是通过 AJAX JSON 方式获取的，因此我们使用 @OpenApi 直接返回 pojo bean。有关 @OpenApi 的详细介绍，请参阅核心技术中的相关介绍。  
 
-至此，我们的列表功能就完成了。大致上就是我们在页面上使用了 datatables 插件通过 AJAX JSON 的方式从后台获取表格内容， Controller 接收到请求后调用 Serivce 中相应的方法， 而 Serivce 通过 Repository 从数据库中获取相关数据。
+至此，我们的列表功能就完成了。大致上就是在页面上使用了 datatables 插件通过 AJAX JSON 的方式从后台获取表格内容， Controller 接收到请求后调用 Serivce 中相应的方法， 而 Serivce 通过 Repository 从数据库中获取相关数据。
 
 ### 新增及修改功能
 
