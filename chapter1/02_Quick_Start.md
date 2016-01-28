@@ -337,7 +337,7 @@ data-page="admin/demo/application/create">
 
 这个按钮是显示新增的界面，里面没有太多处理，主要需要注意 `data-toggle` 和 `data-page`的定义。`data-toggle="pushBreadcrumb"` 用于更新面包屑；`data-page`用于指定要显示的新页面的 url。
 
-再看一下编辑按钮，编辑按钮是在列表中选中一条记录后点击来修改记录。
+再看一下编辑按钮，用户可以通过单击选中列表中的一条记录，然后点击编辑按钮来修改记录。
 
 ```html
 <a id="edit-action-${code}" class="btn btn-default" data-label="编辑">
