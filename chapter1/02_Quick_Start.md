@@ -320,7 +320,7 @@ version="[$Revision: 4511 $]" require="knockoutjs">
 </@layout.mower_admin>
 ```
 
-页面部分用到了 JQuery 和 KnockoutJS 技术。下面从功能按钮部分开始，详细讲解一下相关内容。
+展示层用到了 JQuery 和 KnockoutJS 技术。下面从功能按钮部分开始，详细讲解一下相关内容。
 
 功能按钮部分
 
