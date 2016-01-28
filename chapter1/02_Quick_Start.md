@@ -982,7 +982,7 @@ var _oDeleteAction = function() {
 
 Service 层的要点在列表功能中已经解析过，这里我们直接给出相关代码。
 
-接口示例：
+Service 接口示例：
 
 ```java
 public interface DemoApplicationService {
@@ -998,7 +998,7 @@ public interface DemoApplicationService {
 }
 ```
 
-实现类示例：
+Service 实现类示例：
 
 ```java
 @Service
