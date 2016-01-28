@@ -346,7 +346,7 @@ data-page="admin/demo/application/create">
 </a>
 ```
 
-这里我们直接用 JQuery 为这个按钮的 click 事件绑定了方法。在这个方法里，先获取被选中的记录得行 id，然后触发 pushBreadcrumb 事件，并转到编辑页面。对应绑定方法的定义在 .js 文件中，代码如下：
+这里我们直接用 JQuery 为这个按钮的 click 事件绑定了方法。在这个方法里，先获取被选中的记录的行 id，然后触发 pushBreadcrumb 事件，并转到编辑页面。对应绑定方法的定义在 .js 文件中，代码如下：
 
 ```javascript
 // 编辑按钮
