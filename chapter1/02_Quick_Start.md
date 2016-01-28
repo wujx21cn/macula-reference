@@ -940,7 +940,7 @@ public class DempApplicationController extends DemoBaseController {
 ![delete-page.png](../images/chapter1/delete-page.png)
 
 
-#### 页面部分
+#### 展示层
 
 我们先看一下列表页面上对于删除功能按钮的定义
 
