@@ -591,7 +591,7 @@ public class DempApplicationController extends DemoBaseController {
 	<#assign code="edit-application" />
 		<@ui.panel>
 			<@ui.panel_head>
-				功能按钮部分
+				功能按钮
 			</@ui.panel_head>
 			<@ui.panel_body>
                 页面内容
