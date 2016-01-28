@@ -579,7 +579,7 @@ public class DempApplicationController extends DemoBaseController {
 
 #### 展示层
 
-新增/修改页面主要分为2个部分，第一部分是上面的功能按钮部分，第二部分是页面内容部分。
+新增/修改页面主要分为2个部分，第一部分是上面的功能按钮，第二部分是页面内容。
 
 整个页面的结构是这样的：
 
