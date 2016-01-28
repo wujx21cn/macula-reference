@@ -935,7 +935,7 @@ public class DempApplicationController extends DemoBaseController {
 
 ### 删除功能
 
-删除功能一般是直接在列表 页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。例如：
+删除功能一般是直接在列表页面里做的，选中某条记录，然后点击删除按钮，会使用 JQuery 的方式调用服务器端相应的处理，然后根据返回值做结果提示。例如：
 
 ![delete-page.png](../images/chapter1/delete-page.png)
 
