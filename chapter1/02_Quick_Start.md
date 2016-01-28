@@ -600,7 +600,7 @@ public class DempApplicationController extends DemoBaseController {
 </@layout.mower_admin>
 ```
 
-这个文件是比较容易理解的，首先是定义页面的 title，通过判断数据的 id 是否存在来决定显示“编辑应用”还是“新增应用”，这里使用了 freemarker 的 exists 标签；然后功能按钮；最后是页面内容，一般都是一个表单，对应着 label 和输入框，示例如下：
+这个文件是比较容易理解的，首先是定义页面的 title，通过判断数据的 id 是否存在来决定显示“编辑应用”还是“新增应用”，这里使用了 freemarker 的 exists 标签；然后是功能按钮；最后是页面内容，一般都是一个表单，对应着 label 和输入框，示例如下：
 
 ```html
 <#assign title>
