@@ -53,7 +53,7 @@
         data-chapter-title="快速开始"
         data-filepath="chapter1/02_Quick_Start.md"
         data-basepath=".."
-        data-revision="Thu Jan 14 2016 14:50:39 GMT+0800 (CST)"
+        data-revision="Fri Jan 29 2016 09:35:41 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -734,178 +734,117 @@
 <p><a href="http://docs.jquery.com/Tutorials" target="_blank">http://docs.jquery.com/Tutorials</a></p>
 <p>KnockoutJS &#x6559;&#x7A0B;</p>
 <p><a href="http://learn.knockoutjs.com/" target="_blank">http://learn.knockoutjs.com/</a></p>
-<p>&#x8BE5;&#x6559;&#x7A0B;&#x662F;&#x5047;&#x8BBE;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5DF2;&#x7ECF;&#x83B7;&#x53D6;&#x5230; Macula &#x5E73;&#x53F0;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x914D;&#x7F6E;&#x597D;&#x4E86; Eclipse &#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;&#x6559;&#x7A0B;&#x4ECE;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#xFF0C;&#x4E00;&#x6B65;&#x6B65;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x4E86;&#x6574;&#x4E2A;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x3002;</p>
-<h3 id="domain-&#x548C;-dao-&#x5C42;">Domain &#x548C; DAO &#x5C42;</h3>
-<p>Macula &#x5E73;&#x53F0;&#x7684; DAO &#x5C42;&#x57FA;&#x4E8E; Spring-Data-JPA&#xFF08;hibernate&#xFF09; &#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x5C01;&#x88C5;&#xFF0C;&#x529F;&#x80FD;&#x5F88;&#x5168;&#x9762;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6307;&#x5B9A; package &#x4E0B;&#x5B9A;&#x4E49;&#x597D; domain model &#x548C; Repository &#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5F88;&#x5B8C;&#x5584;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4EE5;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x4E00;&#x6B65;&#x6B65;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x6574;&#x4E2A;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x201C;&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x201D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x65B0;&#x589E;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x5220;&#x9664;&#x529F;&#x80FD;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x529F;&#x80FD;&#x6765;&#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#x3002;</p>
+<h3 id="domain-&#x548C;-repository-&#x5C42;">Domain &#x548C; Repository &#x5C42;</h3>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A; Domain model &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x76F8;&#x5BF9;&#x5E94;&#x7684; Repository &#x6765;&#x5BF9;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x7B49;&#x64CD;&#x4F5C;&#x3002;Macula &#x5E73;&#x53F0;&#x7684; Repository &#x5C42;&#x57FA;&#x4E8E; Spring-Data-JPA&#xFF08;hibernate&#xFF09; &#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x5C01;&#x88C5;&#xFF0C;&#x529F;&#x80FD;&#x5F88;&#x5168;&#x9762;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6307;&#x5B9A; package &#x4E0B;&#x5B9A;&#x4E49;&#x597D; Domain model &#x548C; Repository &#x63A5;&#x53E3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5F88;&#x5B8C;&#x5584;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x529F;&#x80FD;&#x3002;</p>
 <h4 id="domain-&#x5B9A;&#x4E49;">Domain &#x5B9A;&#x4E49;</h4>
-<p>Domain &#x7684;&#x5B9A;&#x4E49;&#x4E5F;&#x662F;&#x91C7;&#x7528;&#x63A5;&#x53E3;&#x7C7B;&#x548C;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#xFF08;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x53E3;&#x4E0E;&#x5B9E;&#x73B0;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#xFF0C;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#xFF09;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x4E2D;&#x901A;&#x8FC7; annotation &#x52A0;&#x4E0A;&#x6570;&#x636E;&#x5E93;&#x8868;&#x548C;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x3002; Domain &#x63A5;&#x53E3;&#x7C7B;&#x653E;&#x5728; macula-xxx-base &#x8D44;&#x6E90;&#x5305;&#x91CC;&#xFF0C;&#x5BF9;&#x5E94;&#x7684; package &#x662F;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#xFF1A;</p>
-<pre><code>package org.macula.uim.base.domain;
-</code></pre><p>&#x63A5;&#x53E3;&#x7C7B;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">User</span> </span>{
-
-    <span class="hljs-comment">/** &#x7528;&#x6237;&#x540D; */</span>
-    <span class="hljs-function">String <span class="hljs-title">getUserName</span><span class="hljs-params">()</span></span>;
-
-    <span class="hljs-comment">/** &#x5BC6;&#x7801; */</span>
-    <span class="hljs-function">String <span class="hljs-title">getPassword</span><span class="hljs-params">()</span></span>;
-
-    <span class="hljs-comment">/** &#x7528;&#x6237;&#x7C7B;&#x578B; */</span>
-    <span class="hljs-function">String <span class="hljs-title">getUserType</span><span class="hljs-params">()</span></span>;
-}
-</code></pre>
-<p>Domain &#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E5F;&#x662F;&#x653E;&#x5728; macula-xxx-base &#x8D44;&#x6E90;&#x5305;&#x91CC;&#xFF0C;&#x5BF9;&#x5E94;&#x7684; package &#x662F;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.macula.uim.base.domain.impl;
-</code></pre>
-<p>&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>&#x5728;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;Domain &#x53EF;&#x4EE5;&#x63A5;&#x53E3;&#x4E0E;&#x5B9E;&#x73B0;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#xFF0C;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x4E2D;&#x901A;&#x8FC7; annotation &#x52A0;&#x4E0A;&#x6570;&#x636E;&#x5E93;&#x8868;&#x548C;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#x3002; Domain &#x7C7B;&#x653E;&#x5728; macula-xxx-repository &#x8D44;&#x6E90;&#x5305;&#x91CC;&#xFF08;&#x5982; macula-samples-repository&#xFF09;&#xFF0C;&#x5BF9;&#x5E94;&#x7684; package &#x662F;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>org.macula.samples.macula_samples.domain;
+</code></pre><p>&#x7C7B;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-annotation">@Entity</span>
-<span class="hljs-annotation">@org</span>.hibernate.annotations.Entity(dynamicInsert = <span class="hljs-keyword">true</span>, dynamicUpdate = <span class="hljs-keyword">true</span>)
-<span class="hljs-annotation">@Table</span>(name = <span class="hljs-string">&quot;MA_UIM_USER&quot;</span>)
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JpaUIMUser</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractAuditable</span>&lt;<span class="hljs-title">Long</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">User</span> </span>{
+<span class="hljs-annotation">@DynamicInsert</span>
+<span class="hljs-annotation">@DynamicUpdate</span>
+<span class="hljs-annotation">@Table</span>(name = <span class="hljs-string">&quot;DEMO_APPLICATION&quot;</span>)
+<span class="hljs-annotation">@Auditable</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoApplication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractAuditable</span>&lt;<span class="hljs-title">Long</span>&gt; </span>{
 
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = Version.value();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">1L</span>;
 
-    <span class="hljs-comment">/** &#x7528;&#x6237;&#x540D; */</span>
-    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;USER_NAME&quot;</span>, length = <span class="hljs-number">50</span>, nullable = <span class="hljs-keyword">false</span>, unique = <span class="hljs-keyword">true</span>)
-    <span class="hljs-annotation">@Size</span>(min = <span class="hljs-number">3</span>, max = <span class="hljs-number">50</span>)
-    <span class="hljs-keyword">private</span> String userName;
-
-    <span class="hljs-comment">/** &#x5BC6;&#x7801; */</span>
-    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;PASSWORD&quot;</span>, length = <span class="hljs-number">50</span>, nullable = <span class="hljs-keyword">false</span>)
-    <span class="hljs-annotation">@Size</span>(min = <span class="hljs-number">3</span>, max = <span class="hljs-number">50</span>)
-    <span class="hljs-annotation">@JsonIgnore</span>
-    <span class="hljs-annotation">@XStreamOmitField</span>
-    <span class="hljs-keyword">private</span> String password;
-
-    <span class="hljs-comment">/** &#x7528;&#x6237;&#x7C7B;&#x578B; */</span>
-    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;USER_TYPE&quot;</span>, length = <span class="hljs-number">3</span>, nullable = <span class="hljs-keyword">false</span>)
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;APP_ID&quot;</span>, nullable = <span class="hljs-keyword">false</span>, unique = <span class="hljs-keyword">true</span>, length = <span class="hljs-number">50</span>)
     <span class="hljs-annotation">@NotNull</span>
-    <span class="hljs-keyword">private</span> String userType;
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">50</span>)
+    <span class="hljs-keyword">private</span> String appId;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;APP_NAME&quot;</span>, nullable = <span class="hljs-keyword">false</span>, length = <span class="hljs-number">50</span>)
+    <span class="hljs-annotation">@NotNull</span>
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">50</span>)
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;APP_GROUP&quot;</span>, nullable = <span class="hljs-keyword">false</span>, length = <span class="hljs-number">50</span>)
+    <span class="hljs-annotation">@NotNull</span>
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">50</span>)
+    <span class="hljs-keyword">private</span> String appGroup;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;SECURE_KEY&quot;</span>, nullable = <span class="hljs-keyword">false</span>, length = <span class="hljs-number">1024</span>)
+    <span class="hljs-annotation">@NotNull</span>
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">1024</span>)
+    <span class="hljs-keyword">private</span> String secureKey;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;PRIVATE_KEY&quot;</span>, nullable = <span class="hljs-keyword">false</span>, length = <span class="hljs-number">1024</span>)
+    <span class="hljs-annotation">@NotNull</span>
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">1024</span>)
+    <span class="hljs-keyword">private</span> String privateKey;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;HOME_PAGE&quot;</span>, nullable = <span class="hljs-keyword">false</span>, length = <span class="hljs-number">255</span>)
+    <span class="hljs-annotation">@NotNull</span>
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">1</span>, max = <span class="hljs-number">255</span>)
+    <span class="hljs-keyword">private</span> String homepage;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;SUPERVISOR&quot;</span>, length = <span class="hljs-number">255</span>)
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">0</span>, max = <span class="hljs-number">255</span>)
+    <span class="hljs-keyword">private</span> String supervisor;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;CONTACT&quot;</span>, length = <span class="hljs-number">255</span>)
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">0</span>, max = <span class="hljs-number">255</span>)
+    <span class="hljs-keyword">private</span> String contact;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;COMMENTS&quot;</span>, length = <span class="hljs-number">255</span>)
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">0</span>, max = <span class="hljs-number">255</span>)
+    <span class="hljs-keyword">private</span> String comments;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;THEME&quot;</span>, length = <span class="hljs-number">50</span>)
+    <span class="hljs-annotation">@Length</span>2(min = <span class="hljs-number">0</span>, max = <span class="hljs-number">50</span>)
+    <span class="hljs-keyword">private</span> String theme;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;IS_SSIN&quot;</span>, nullable = <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> singleSignOn;
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;IS_SSOUT&quot;</span>, nullable = <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> singleSignOut;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;USE_ATTRS&quot;</span>, nullable = <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> useAttributes;
+
+    <span class="hljs-annotation">@Column</span>(name = <span class="hljs-string">&quot;ALLOWED_ATTRS&quot;</span>)
+    <span class="hljs-keyword">private</span> String allowedAttributes;
+
+    <span class="hljs-comment">//getters and setters</span>
 }
 </code></pre>
-<p>&#x4ECE;&#x5B9E;&#x73B0;&#x7C7B;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x901A;&#x8FC7; annotation &#x52A0;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x8868;&#x548C;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x901A;&#x8FC7;&#x5728;EntityManagerFactory&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x52A0;&#x5165;Domain&#x6240;&#x5728;&#x7684;&#x5305;&#x540E;&#xFF0C;Macula &#x5E73;&#x53F0;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x626B;&#x63CF;&#x8FD9;&#x4E9B; Domain &#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x6570;&#x636E;&#x5E93;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;&#x3002;</p>
-<h4 id="repository-&#x7C7B;&#x5B9A;&#x4E49;">Repository &#x7C7B;&#x5B9A;&#x4E49;</h4>
+<p>&#x7136;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x5728; EntityManagerFactory &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x52A0;&#x5165; Domain &#x6240;&#x5728;&#x7684;&#x5305;&#x540E;&#xFF0C;Macula &#x5E73;&#x53F0;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x626B;&#x63CF;&#x8FD9;&#x4E9B; Domain &#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x2460;&#x5904;&#x6240;&#x793A;&#x3002;</p>
+<pre><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;entityManagerFactory_macula-samples&quot;</span> <span class="hljs-attribute">parent</span>=<span class="hljs-value">&quot;abstractEntityManagerFactory&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;persistenceUnitManager&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;defaultPersistenceUnitName&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>macula-samples<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;defaultDataSource&quot;</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">&quot;macula-samples_dataSource&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;packagesToScan&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">array</span>&gt;</span>
+                       <span class="hljs-comment">&lt;!-- &#x2460; --&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>org.macula.samples.macula_samples.domain<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">array</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre>
+<h4 id="repository-&#x5B9A;&#x4E49;">Repository &#x5B9A;&#x4E49;</h4>
 <p>Repository &#x76F8;&#x5F53;&#x4E8E; DAO &#x5C42;&#xFF0C;&#x901A;&#x8FC7;&#x64CD;&#x4F5C; Domain &#x5B58;&#x53D6;&#x6570;&#x636E;&#x3002;</p>
-<p>Repository &#x4E00;&#x822C;&#x53EA;&#x9700;&#x8981;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x7EE7;&#x627F; MaculaJpaRepository &#x5C31;&#x53EF;&#x4EE5;&#xFF0C;Macula &#x5E73;&#x53F0;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x81EA;&#x52A8;&#x4EA7;&#x751F;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x5E38;&#x7528;&#x7684; DAO &#x64CD;&#x4F5C;&#x3002;</p>
+<p>Repository &#x4E00;&#x822C;&#x53EA;&#x9700;&#x8981;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x7EE7;&#x627F; MaculaJpaRepository &#x5C31;&#x53EF;&#x4EE5;&#xFF0C;Macula &#x5E73;&#x53F0;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x81EA;&#x52A8;&#x4EA7;&#x751F;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x5E38;&#x7528;&#x7684; DAO &#x64CD;&#x4F5C;&#x3002;</p>
 <p>Repository &#x63A5;&#x53E3;&#x7684;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">SyncSendLogRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MaculaJpaRepository</span>&lt;<span class="hljs-title">JpaSyncSendLog</span>, <span class="hljs-title">Long</span>&gt; </span>{
-</code></pre>
-<p>&#x5982;&#x679C;&#x5E38;&#x7528;&#x7684; DAO &#x64CD;&#x4F5C;&#x4E0D;&#x591F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x7279;&#x6B8A;&#x7684; Repository &#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x589E;&#x52A0;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x589E;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;Repository&#x626B;&#x63CF;&#x7684;&#x5B9A;&#x4E49;&#xFF09;</p>
-<h3 id="service-&#x5C42;">Service &#x5C42;</h3>
-<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728; Service &#x5C42;&#x63D0;&#x4F9B;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982; list&#x3001;save&#x3001;delete &#x7B49;&#x3002;</p>
-<p>&#x9996;&#x5148;&#x5728; Service &#x63A5;&#x53E3;&#x7C7B;&#x4E2D;&#x589E;&#x52A0;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-function">Page&lt;JpaUIMUser&gt; <span class="hljs-title">getAllUsers</span><span class="hljs-params">(Pageable pageable)</span></span>;
-</code></pre>
-<p>&#x7136;&#x540E;&#x5728; Service &#x5B9E;&#x73B0;&#x7C7B;&#x4E2D;&#x589E;&#x52A0;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@Override</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;JpaUIMUser&gt; <span class="hljs-title">getAllUsers</span><span class="hljs-params">(Pageable pageable)</span> </span>{
-    <span class="hljs-keyword">return</span> uimUserRepository.findAll(pageable);
-}
-</code></pre>
-<p>&#x4E0A;&#x9762;&#x793A;&#x4F8B;&#x5B9E;&#x73B0;&#x7684;&#x662F;list&#x65B9;&#x6CD5;&#xFF0C;list&#x4E00;&#x822C;&#x9700;&#x8981;&#x652F;&#x6301;&#x5206;&#x9875;&#x529F;&#x80FD;&#x3002;</p>
-<p>&#x8BE5;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E86; DAO &#x5C42;&#x7684;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x53EA;&#x8981; UIMUserRepository &#x662F;&#x6309;&#x7167; Macula &#x6846;&#x67B6;&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x7684;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</p>
-<p>DAO &#x5C42;&#x7684;&#x6CE8;&#x5165;&#x4F7F;&#x7528;Spring&#x7684;&#x6CE8;&#x5165;annotation&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@Autowired</span>
-<span class="hljs-keyword">private</span> UIMUserRepository uimUserRepository;
-</code></pre>
-<p>&#x6839;&#x636E;&#x4E00;&#x5B9A;&#x7684;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF0C;Macula &#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5B8C;&#x6210; Repository &#x5B9E;&#x4F8B;&#x7684;&#x6CE8;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5904;&#x7406;&#x3002;</p>
-<p><strong>&#x65B0;&#x589E;&#x52A0; Service &#x7C7B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</strong></p>
-<p>&#x589E;&#x52A0; Service &#x7C7B;&#x4E00;&#x822C;&#x662F;&#x5148;&#x5B9A;&#x4E49; Service &#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5B9A;&#x4E49; Service &#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x6CE8;&#x610F;&#x8981;&#x5728; Service &#x5B9E;&#x73B0;&#x7C7B;&#x58F0;&#x660E;&#x4E0A;&#x9762;&#x52A0;&#x4E0A; annotation @Service&#xFF0C;&#x5BF9;&#x4E8E;&#x6D89;&#x53CA;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4FEE;&#x6539;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x4E0A;@Transactional&#x3002;</p>
-<h3 id="controller-&#x5C42;">Controller &#x5C42;</h3>
-<p>&#x8981;&#x9009;&#x62E9;&#x4E13;&#x95E8;&#x5B58;&#x653E; controller &#x7C7B;&#x7684; package &#x4E0B;&#xFF0C;&#x6BD4;&#x5982; org.macula.admin.base.controller &#x4E0B;&#x3002;&#x5728; Controller &#x4E2D;&#x4E00;&#x822C;&#x9700;&#x8981;&#x8C03;&#x7528; Service &#x5C42;&#xFF0C;Macula &#x6846;&#x67B6;&#x4F7F;&#x7528;Spring&#x7684;&#x6CE8;&#x5165;annotation &#x6765;&#x5904;&#x7406; Service &#x5C42;&#x7684;&#x6CE8;&#x5165;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@Autowired</span>
-<span class="hljs-keyword">private</span> UserManagerService userManagerService;
-</code></pre>
-<p>Autowired &#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x628A; Service &#x6CE8;&#x5165;&#x5230; Controller &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728; Controller &#x76F4;&#x63A5;&#x4F7F;&#x7528; Service &#x7684;&#x5404;&#x79CD;&#x63A5;&#x53E3;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5904;&#x7406;&#x3002;</p>
-<p><strong>&#x65B0;&#x589E;&#x52A0;&#x7684; Controller &#x7C7B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</strong></p>
-<p>&#x8981;&#x5728;&#x7C7B;&#x58F0;&#x660E;&#x4E0A;&#x9762;&#x52A0;&#x4E0A; annotation @Controller&#xFF0C;&#x8FD9;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x662F;&#x8BA9;&#x6211;&#x4EEC;&#x6846;&#x67B6;&#x80FD;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F; Controller &#x7C7B;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x5C31;&#x4F1A;&#x51FA;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x8FD9;&#x90E8;&#x5206;&#x81EA;&#x52A8;&#x626B;&#x63CF; Controller &#x7684;&#x914D;&#x7F6E;&#x662F;&#x5728;&#x5404;&#x8D44;&#x6E90;&#x5305;&#x7684;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;</p>
-<p>src/main/resources/META-INF/spring/macula-xxx-servlet.xml</p>
-<p>&#x91CC;&#x9762;&#x6709;&#x4E00;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-java">&lt;context:component-scan base-<span class="hljs-keyword">package</span>=<span class="hljs-string">&quot;org.macula.admin.**.controller&quot;</span> /&gt;
-</code></pre>
-<p>&#x662F;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x626B;&#x63CF;&#x54EA;&#x4E9B; package&#x3002;</p>
-<h4 id="spring-mvc-&#x65B9;&#x5F0F;">Spring MVC &#x65B9;&#x5F0F;</h4>
-<p>&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x91CC;&#x9700;&#x8981;&#x6709; org.springframework.ui.Model &#x53C2;&#x6570;&#xFF0C;&#x65B9;&#x6CD5;&#x4E0A;&#x9762;&#x9700;&#x8981;&#x52A0;&#x4E0A; annotation @RequestMapping&#xFF0C;&#x6620;&#x5C04;&#x5230; URL &#x8BF7;&#x6C42;&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/system/runtime&quot;</span>, method = RequestMethod.GET)
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">showSnapshot</span><span class="hljs-params">(Model model)</span> </span>{
-  &#x2026;
-}
-</code></pre>
-<p>&#x9700;&#x8981;&#x4F20;&#x9012;&#x7ED9;&#x9875;&#x9762;&#x7684;&#x6570;&#x636E;&#x91C7;&#x7528; model.addAttribute(&#x201C;attributeName&#x201D;, attributeObject); &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;FreeMarker &#x9875;&#x9762;&#x4E0A;&#x91C7;&#x7528; ${attributeName.propertyName} &#x7684;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;&#x3002;</p>
-<p>&#x9644;&#xFF1A;&#x793A;&#x4F8B;&#x7528;&#x5230;&#x7684; Java Bean &#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x6D89;&#x53CA;&#x8FD9;&#x4E2A; Bean&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@return</span> the name
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> name;
-}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoApplicationRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MaculaJpaRepository</span>&lt;<span class="hljs-title">DemoApplication</span>, <span class="hljs-title">Long</span>&gt; </span>{
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@return</span> the vmName
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getVmName</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> vmName;
-}
-</code></pre>
-<h4 id="ajax-json-&#x65B9;&#x5F0F;">AJAX JSON &#x65B9;&#x5F0F;</h4>
-<p>&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x652F;&#x6301; AJAX JSON &#x7684; controller &#x65B9;&#x6CD5;&#x4E0D;&#x9700;&#x8981; org.springframework.ui.Model &#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x589E;&#x52A0; annotation @OpenApi&#xFF0C;controller &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; pojo bean&#x3002;&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x683C;&#x5F0F;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value=<span class="hljs-string">&quot;/system/runtime/get&quot;</span>,method=RequestMethod.GET)
-<span class="hljs-annotation">@OpenApi</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> RuntimeSnapshot <span class="hljs-title">getRuntimeSnapshot</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> RuntimeSnapshot.take();
-}
-</code></pre>
-<p>&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x4F1A;&#x901A;&#x8FC7; AJAX &#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x3002;</p>
-<p>&#x56E0;&#x4E3A;&#x5927;&#x90E8;&#x5206;&#x5217;&#x8868;&#x529F;&#x80FD;&#x90FD;&#x662F;&#x652F;&#x6301;&#x5206;&#x9875;&#x529F;&#x80FD;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x600E;&#x6837;&#x505A;&#x652F;&#x6301;&#x5206;&#x9875;&#x7684;&#x5217;&#x8868;&#x529F;&#x80FD;&#x3002;</p>
-<p>&#x56E0;&#x4E3A;Macula&#x7684;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x662F;&#x91C7;&#x7528; AJAX &#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x529F;&#x80FD;&#x8981;&#x589E;&#x52A0;&#x4E24;&#x4E2A; controller &#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x7528;&#x6765;&#x663E;&#x793A;&#x9875;&#x9762;&#xFF0C;&#x91C7;&#x7528;&#x4E86; Spring MVC &#x7684;&#x65B9;&#x5F0F;&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x7528;&#x6765;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7ED9; AJAX &#x8BF7;&#x6C42;&#x3002;</p>
-<p>&#x65B9;&#x6CD5;&#x4E00;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/user/list&quot;</span>, method = RequestMethod.GET)
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">list</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/user/list&quot;</span>);
-}
-</code></pre>
-<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x6765;&#x663E;&#x793A;&#x9875;&#x9762;&#xFF0C;&#x9875;&#x9762;&#x6587;&#x4EF6;&#x662F; src/main/resources &#x5BF9;&#x5E94; /user/ &#x76EE;&#x5F55;&#x4E0B;&#x7684; list.ftl &#x6587;&#x4EF6;&#x3002;</p>
-<p>&#x65B9;&#x6CD5;&#x4E8C;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/user/users&quot;</span>, method = RequestMethod.POST)
-<span class="hljs-annotation">@OpenApi</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;JpaUIMUser&gt; <span class="hljs-title">getUsers</span><span class="hljs-params">(Pageable pageable)</span> </span>{
-    <span class="hljs-keyword">return</span> userManagerService.getAllUsers(pageable);
-}
-</code></pre>
-<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x83B7;&#x53D6;&#x5230;&#x4E00;&#x9875;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x628A;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; bean list &#x7ED3;&#x679C;&#xFF0C;&#x5230; AJAX &#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x8F6C;&#x6210; JSON &#x683C;&#x5F0F;&#x3002;</p>
-<h3 id="&#x9875;&#x9762;&#x5C42;">&#x9875;&#x9762;&#x5C42;</h3>
-<p>&#x9875;&#x9762;&#x90E8;&#x5206;&#x6709;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x4E2A;&#x662F; .ftl &#x6587;&#x4EF6;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F; .js &#x6587;&#x4EF6;&#xFF0C;.ftl &#x6587;&#x4EF6;&#x662F;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x663E;&#x793A;&#x754C;&#x9762;&#xFF0C;.js &#x6587;&#x4EF6;&#x662F; JavaScript &#x903B;&#x8F91;&#xFF0C;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x5B58;&#x53D6;&#x5904;&#x7406;&#x3002;&#x5728;ftl&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;scriptJs&#x628A;javascript&#x903B;&#x8F91;&#x5305;&#x542B;&#x8FDB;&#x6765;&#x3002;</p>
-<h4 id="spring-mvc-&#x65B9;&#x5F0F;">Spring MVC &#x65B9;&#x5F0F;</h4>
-<p>&#x53EA;&#x9700;&#x8981;&#x589E;&#x52A0; .ftl &#x9875;&#x9762;&#xFF0C;&#x5728; .ftl &#x9875;&#x9762;&#x91CC;&#x91C7;&#x7528; FreeMarker &#x7684;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x3002;</p>
-<p>&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code>${runtime.name}
-${runtime.vmName}
-</code></pre><h4 id="ajax-json-&#x65B9;&#x5F0F;">AJAX JSON &#x65B9;&#x5F0F;</h4>
-<p>&#x9700;&#x8981;&#x589E;&#x52A0; .ftl &#x9875;&#x9762;&#x548C;&#x5BF9;&#x5E94;&#x7684; .js &#x6587;&#x4EF6;&#xFF0C;&#x5728; .js &#x6587;&#x4EF6;&#x91CC;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x7ED1;&#x5B9A;&#x5904;&#x7406;&#xFF0C;&#x91C7;&#x7528;&#x4E86; KnockoutJS &#x7684;&#x6280;&#x672F;&#x3002;</p>
-<p>.ftl &#x9875;&#x9762;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;text: name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;text: vmName&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
-</code></pre>
-<p>.js &#x6587;&#x4EF6;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> code = <span class="hljs-string">&apos;system-runtime&apos;</span>;
+    <span class="hljs-function">DemoApplication <span class="hljs-title">findByAppId</span><span class="hljs-params">(String appId)</span></span>;
 
-    <span class="hljs-keyword">var</span> viewModel = ko.mapping.fromJS({
-        name : <span class="hljs-string">&apos;&apos;</span>,
-        vmName : <span class="hljs-string">&apos;&apos;</span>,
-    });
+    <span class="hljs-function">List&lt;DemoApplication&gt; <span class="hljs-title">findByAppGroup</span><span class="hljs-params">(String appGroup)</span></span>;
 
-    ko.applyBindings(viewModel);
-
-    $.getJSON(base + <span class="hljs-string">&apos;/admin/macula-base/system/runtime/get&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-        ko.mapping.updateFromJS(viewModel, data.returnObject);
-    });
-});
+}
 </code></pre>
-<h4 id="list-&#x9875;&#x9762;">List &#x9875;&#x9762;</h4>
-<p>List &#x9875;&#x9762;&#x4E3B;&#x8981;&#x5206;&#x4E3A;3&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x6570;&#x636E;&#x5217;&#x8868;&#x663E;&#x793A;&#x90E8;&#x5206;&#x3002;</p>
+<h3 id="&#x5217;&#x8868;&#x529F;&#x80FD;">&#x5217;&#x8868;&#x529F;&#x80FD;</h3>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x5B9E;&#x73B0;&#x5217;&#x8868;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5217;&#x8868;&#x9875;&#x9762;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A; </p>
+<p><img src="../images/chapter1/list-page.png" alt="list-page.png"></p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<h4 id="&#x5C55;&#x793A;&#x5C42;">&#x5C55;&#x793A;&#x5C42;</h4>
+<p>&#x5217;&#x8868;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x5206;&#x4E3A;2&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x529F;&#x80FD;&#x6309;&#x94AE;&#xFF0C;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x6570;&#x636E;&#x5217;&#x8868;&#x90E8;&#x5206;&#x3002;</p>
 <p>&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x7ED3;&#x6784;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;&#x6570;&#x636E;&#x6E90;&#x5217;&#x8868;&quot;</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/macula-base/datasource/list_mower.js&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;&#x5E94;&#x7528;&#x5217;&#x8868;&quot;</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/macula-base/datasource/list_mower.js&quot;</span>
+<span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">code</span>=<span class="hljs-value">&quot;datasource-list&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_head</span>&gt;</span>
@@ -914,86 +853,284 @@ ${runtime.vmName}
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_body</span>&gt;</span>
-                &#x6570;&#x636E;&#x5217;&#x8868;&#x663E;&#x793A;&#x90E8;&#x5206;(&#x5305;&#x62EC;&#x5206;&#x9875;&#x5904;&#x7406;)
+                &#x5217;&#x8868;&#x663E;&#x793A;&#x90E8;&#x5206;
         <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_body</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">@layout.mower_admin</span>&gt;</span>
 </code></pre>
-<p>&#x9875;&#x9762;&#x90E8;&#x5206;&#x7528;&#x5230;&#x4E86; JQuery &#x548C; KnockoutJS &#x6280;&#x672F;&#xFF0C;&#x4E24;&#x79CD;&#x6280;&#x672F;&#x7ED3;&#x5408;&#x5230;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x4E0B;&#x9762;&#x4ECE;&#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;&#x5F00;&#x59CB;&#xFF0C;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x3002;</p>
-<p><strong>&#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;</strong></p>
-<p>&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x589E;&#x6309;&#x94AE;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;add-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;pushBreadcrumb&quot;</span> <span class="hljs-attribute">data-label</span>=<span class="hljs-value">&quot;&#x65B0;&#x589E;&quot;</span> <span class="hljs-attribute">data-page</span>=<span class="hljs-value">&quot;admin/macula-base/datasource/create&quot;</span>&gt;</span>
+<p>&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;&#x5E94;&#x7528;&#x5217;&#x8868;&quot;</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/demo/application/list.js&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">code</span>=<span class="hljs-value">&quot;application-list&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-xs-12 col-md-12&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;add-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;pushBreadcrumb&quot;</span> <span class="hljs-attribute">data-label</span>=<span class="hljs-value">&quot;&#x65B0;&#x589E;&quot;</span> <span class="hljs-attribute">data-page</span>=<span class="hljs-value">&quot;admin/demo/application/create&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-plus-circle fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                    &#x65B0;&#x589E;
+                <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;edit-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-label</span>=<span class="hljs-value">&quot;&#x7F16;&#x8F91;&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-pencil fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                    &#x7F16;&#x8F91;
+                <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;delete-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-danger&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-trash-o fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                    &#x5220;&#x9664;
+                <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;list-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table table-striped table-bordered table-hover&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100%&quot;</span>
+             <span class="hljs-attribute">data-serverSide</span>=<span class="hljs-value">&quot;true&quot;</span> 
+             <span class="hljs-attribute">data-paging</span>=<span class="hljs-value">&quot;false&quot;</span> 
+             <span class="hljs-attribute">data-ordering</span>=<span class="hljs-value">&quot;false&quot;</span> 
+             <span class="hljs-attribute">data-ajax-url</span>=<span class="hljs-value">&quot;${base}/admin/demo/application/apps&quot;</span>
+             <span class="hljs-attribute">data-ajax-type</span>=<span class="hljs-value">&quot;get&quot;</span>
+             <span class="hljs-attribute">data-select</span>=<span class="hljs-value">&quot;true&quot;</span>
+             <span class="hljs-attribute">data-row-id</span>=<span class="hljs-value">&quot;id&quot;</span>
+             <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;datatables&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;appGroup&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x5206;&#x7EC4;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;appId&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x7F16;&#x53F7;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;name&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x540D;&#x79F0;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;supervisor&quot;</span>&gt;</span>&#x8D1F;&#x8D23;&#x4EBA;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;contact&quot;</span>&gt;</span>&#x8054;&#x7CFB;&#x65B9;&#x5F0F;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;singleSignOn&quot;</span>&gt;</span>&#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x9646;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;singleSignOut&quot;</span>&gt;</span>&#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x51FA;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">@layout.mower_admin</span>&gt;</span>
+</code></pre>
+<p>&#x5C55;&#x793A;&#x5C42;&#x7528;&#x5230;&#x4E86; JQuery &#x548C; KnockoutJS &#x6280;&#x672F;&#x3002;&#x4E0B;&#x9762;&#x4ECE;&#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;&#x5F00;&#x59CB;&#xFF0C;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x65B0;&#x589E;&#x6309;&#x94AE;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;add-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span>
+<span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;pushBreadcrumb&quot;</span> <span class="hljs-attribute">data-label</span>=<span class="hljs-value">&quot;&#x65B0;&#x589E;&quot;</span>
+<span class="hljs-attribute">data-page</span>=<span class="hljs-value">&quot;admin/demo/application/create&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-plus-circle fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     &#x65B0;&#x589E;
 <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 </code></pre>
-<p>&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x662F;&#x663E;&#x793A;&#x65B0;&#x589E;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x5904;&#x7406;&#xFF0C;&#x4E3B;&#x8981;&#x9700;&#x8981;&#x6CE8;&#x610F; <code>data-toggle</code> &#x548C; <code>data-page</code>&#x7684;&#x5B9A;&#x4E49;&#x3002;<code>data-toggle=&quot;pushBreadcrumb&quot;</code> &#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x9762;&#x5305;&#x5C51;&#x3002;<code>data-page</code>&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8981;&#x663E;&#x793A;&#x7684;&#x65B0;&#x9875;&#x9762;&#x7684; url&#x3002;</p>
-<p>&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#xFF0C;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#x662F;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x9009;&#x4E2D;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x540E;&#x70B9;&#x51FB;&#x6765;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x201C;&#x65B0;&#x589E;&#x5E94;&#x7528;&#x201D;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x5904;&#x7406;&#xFF0C;&#x4E3B;&#x8981;&#x9700;&#x8981;&#x6CE8;&#x610F; <code>data-toggle</code> &#x548C; <code>data-page</code>&#x7684;&#x5B9A;&#x4E49;&#x3002;<code>data-toggle=&quot;pushBreadcrumb&quot;</code> &#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x9762;&#x5305;&#x5C51;&#xFF1B;<code>data-page</code>&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8981;&#x663E;&#x793A;&#x7684;&#x65B0;&#x9875;&#x9762;&#x7684; url&#x3002;</p>
+<p>&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5355;&#x51FB;&#x9009;&#x4E2D;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#x6765;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;edit-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-label</span>=<span class="hljs-value">&quot;&#x7F16;&#x8F91;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-pencil fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     &#x7F16;&#x8F91;
 <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 </code></pre>
-<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x7528;JQuery&#x4E3A;&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x7684;click&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x4E86;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#x5148;&#x83B7;&#x53D6;&#x88AB;&#x9009;&#x53D6;&#x8BB0;&#x5F55;&#x7684;&#x884C;id&#xFF0C;&#x7136;&#x540E;&#x89E6;&#x53D1;pushBreadcrumb&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x8F6C;&#x5230;&#x7F16;&#x8F91;&#x9875;&#x9762;&#x3002;&#x5BF9;&#x5E94;&#x7ED1;&#x5B9A;&#x65B9;&#x6CD5;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x5728;.js&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x7528; JQuery &#x4E3A;&#x8FD9;&#x4E2A;&#x6309;&#x94AE;&#x7684; click &#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x4E86;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#xFF0C;&#x5148;&#x83B7;&#x53D6;&#x88AB;&#x9009;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x7684;&#x884C; id&#xFF0C;&#x7136;&#x540E;&#x89E6;&#x53D1; pushBreadcrumb &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x8F6C;&#x5230;&#x7F16;&#x8F91;&#x9875;&#x9762;&#x3002;&#x5BF9;&#x5E94;&#x7ED1;&#x5B9A;&#x65B9;&#x6CD5;&#x7684;&#x5B9A;&#x4E49;&#x5728; .js &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x7F16;&#x8F91;&#x6309;&#x94AE;</span>
 <span class="hljs-keyword">var</span> _onEditAction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     $(<span class="hljs-string">&apos;#edit-action-&apos;</span> + code).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-       <span class="hljs-keyword">var</span> ids = $(table).DataTable().selectedRowIds();
-       <span class="hljs-keyword">if</span> (ids.length &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">var</span> ids = $(table).DataTable().selectedRowIds();
+        <span class="hljs-keyword">if</span> (ids.length &gt; <span class="hljs-number">0</span>) {
             $(<span class="hljs-keyword">this</span>).trigger({
                 type :<span class="hljs-string">&apos;push.mu.breadcrumb&apos;</span>,
-                page : base + <span class="hljs-string">&apos;/admin/macula-base/datasource/edit/&apos;</span> + ids[<span class="hljs-number">0</span>]
+                page : base + <span class="hljs-string">&apos;/admin/demo/application/edit/&apos;</span> + ids[<span class="hljs-number">0</span>]
             })
-       } <span class="hljs-keyword">else</span> {
+        } <span class="hljs-keyword">else</span> {
            MessageBox.error(<span class="hljs-string">&apos;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7F16;&#x8F91;.&apos;</span>);
-       }
+        }
     });
 };
 </code></pre>
-<p><strong>&#x6570;&#x636E;&#x5217;&#x8868;&#x663E;&#x793A;&#x90E8;&#x5206;</strong></p>
-<p>&#x8FD9;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x662F;&#x5B9A;&#x4E49;&#x8868;&#x683C;&#x7ED3;&#x6784;&#x548C;&#x8981;&#x663E;&#x793A;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#xFF0C;&#x91C7;&#x7528;&#x4E86;datatables &#x63D2;&#x4EF6;&#x3002;&#x5B9A;&#x4E49;&#x8868;&#x683C;&#x7ED3;&#x6784;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;list-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table table-striped table-bordered table-hover&quot;</span> 
-    <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100%&quot;</span>
+<p>&#x6570;&#x636E;&#x5217;&#x8868;&#x90E8;&#x5206;</p>
+<p>&#x6570;&#x636E;&#x5217;&#x8868;&#x90E8;&#x5206;&#x91C7;&#x7528;&#x4E86; datatables &#x63D2;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5B9A;&#x4E49;&#x8868;&#x683C;&#x7ED3;&#x6784;&#x548C;&#x8981;&#x663E;&#x793A;&#x7684;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#xFF0C;&#x4EE5;&#x53CA;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x914D;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x5B9A;&#x4E49;&#x8868;&#x683C;&#x7ED3;&#x6784;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;list-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table table-striped table-bordered table-hover&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100%&quot;</span>
     <span class="hljs-attribute">data-serverSide</span>=<span class="hljs-value">&quot;true&quot;</span> 
     <span class="hljs-attribute">data-paging</span>=<span class="hljs-value">&quot;false&quot;</span> 
     <span class="hljs-attribute">data-ordering</span>=<span class="hljs-value">&quot;false&quot;</span> 
-    <span class="hljs-attribute">data-ajax-url</span>=<span class="hljs-value">&quot;${base}/admin/macula-base/datasource/cons&quot;</span>
+    <span class="hljs-attribute">data-ajax-url</span>=<span class="hljs-value">&quot;${base}/admin/demo/application/apps&quot;</span>
     <span class="hljs-attribute">data-ajax-type</span>=<span class="hljs-value">&quot;get&quot;</span>
     <span class="hljs-attribute">data-select</span>=<span class="hljs-value">&quot;true&quot;</span>
     <span class="hljs-attribute">data-row-id</span>=<span class="hljs-value">&quot;id&quot;</span>
     <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;datatables&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;code&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x7F16;&#x7801;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;name&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x540D;&#x79F0;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;dataSourceType&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x7C7B;&#x578B;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;appGroup&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x5206;&#x7EC4;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;appId&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x7F16;&#x53F7;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;name&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x540D;&#x79F0;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;supervisor&quot;</span>&gt;</span>&#x8D1F;&#x8D23;&#x4EBA;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;contact&quot;</span>&gt;</span>&#x8054;&#x7CFB;&#x65B9;&#x5F0F;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;singleSignOn&quot;</span>&gt;</span>&#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x9646;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-name</span>=<span class="hljs-value">&quot;singleSignOut&quot;</span>&gt;</span>&#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x51FA;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF0C;<code>data-serverSide</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x662F;&#x5426;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#xFF1B;<code>data-paging</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x662F;&#x5426;&#x5206;&#x9875;&#x663E;&#x793A;&#xFF1B;<code>data-ordering</code>&#x6307;&#x660E;&#x662F;&#x5426;&#x5BF9;&#x6570;&#x636E;&#x6392;&#x5E8F;&#xFF1B;<code>data-ajax-url</code>&#x6307;&#x660E;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;URL&#xFF1B;<code>data-ajax-type</code>&#x6307;&#x660E;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;get&#x6216;post&#xFF1B;<code>data-select</code>&#x6307;&#x660E;&#x8868;&#x683C;&#x4E2D;&#x7684;&#x884C;&#x662F;&#x5426;&#x80FD;&#x88AB;&#x9009;&#x4E2D;&#xFF1B;<code>data-row-id</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x5217;&#x505A;&#x4E3A;&#x8868;&#x683C;&#x4E2D;&#x7684;&#x884C;&#x7684;id;<code>rel=&quot;datatables&quot;</code>&#x6307;&#x660E;&#x4F7F;&#x7528;datatables&#x63D2;&#x4EF6;&#x3002;&#x4F59;&#x4E0B;&#x662F;&#x8868;&#x683C;&#x8868;&#x5934;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x8868;&#x5934;&#x4E2D;<code>data-name</code>&#x7684;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x4E00;&#x81F4;&#x3002;</p>
-<p>&#x5BF9;&#x4E8E;datatables&#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003; Macula UI &#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#xFF1A;<a href="http://macula.top/mower/view.html#datatables" target="_blank">Macula UI &#x5B98;&#x65B9;&#x6587;&#x6863; datatables &#x90E8;&#x5206;</a>&#x3002;</p>
-<h4 id="&#x65B0;&#x589E;&#x53CA;&#x4FEE;&#x6539;&#x9875;&#x9762;">&#x65B0;&#x589E;&#x53CA;&#x4FEE;&#x6539;&#x9875;&#x9762;</h4>
-<p>&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x9875;&#x9762;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; .ftl &#x548C; .js &#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x903B;&#x8F91;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x65B0;&#x589E;&#x8FD8;&#x662F;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x529F;&#x80FD;&#x5DEE;&#x522B;&#x5F88;&#x5927;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x8003;&#x8651;&#x5206;&#x5F00;&#x4E24;&#x4E2A;&#x9875;&#x9762;&#x3002;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4EE5;&#x76F8;&#x540C;&#x9875;&#x9762;&#x505A;&#x793A;&#x4F8B;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x3002;</p>
-<p>&#x9996;&#x5148;&#x5728; src/main/resources/views &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6839;&#x636E; URL &#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x589E;&#x52A0;2&#x4E2A;&#x6587;&#x4EF6; edit.ftl &#x548C; edit.js&#x3002;&#x6BD4;&#x5982;&#x5728; macula-plugin-admin &#x8D44;&#x6E90;&#x5305;&#x4E2D;&#xFF0C;&#x5BF9;&#x5E94; /datasource/edit URL &#x9700;&#x8981;&#x5728; src/main/resources/views/admin/macula-base/datasource/ &#x76EE;&#x5F55;&#x4E0B;&#x589E;&#x52A0; edit.ftl &#x548C; edit.js&#x3002;</p>
-<p>/admin/macula-base &#x76EE;&#x5F55;&#x662F;&#x7531; macula-plugin-admin &#x8D44;&#x6E90;&#x5305;&#x91CC;&#x7684;&#x57FA;&#x672C; Controller &#x7C7B; AdminMaculaBaseController &#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5176;&#x4ED6;&#x7684; Controller &#x7C7B;&#x90FD;&#x662F;&#x7EE7;&#x627F;&#x4E86; AdminMaculaBaseController&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x5B9A;&#x4E49;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(<span class="hljs-string">&quot;/admin/macula-base&quot;</span>)
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AdminMaculaBaseController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseController</span> </span>{
-</code></pre>
-<p>&#x800C;&#x5728;&#x5176;&#x4ED6; Controller &#x7C7B;&#x4E2D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x4E49; /datasource/create &#x4E0B;&#x9762;&#x7684; URL &#x90E8;&#x5206;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/datasource/create&quot;</span>, method = RequestMethod.GET)
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/datasource/edit&quot;</span>);
+<p>&#x5176;&#x4E2D;&#xFF0C;<code>data-serverSide</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x662F;&#x5426;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#xFF1B;<code>data-paging</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x662F;&#x5426;&#x5206;&#x9875;&#x663E;&#x793A;&#xFF1B;<code>data-ordering</code>&#x6307;&#x660E;&#x662F;&#x5426;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1B;<code>data-ajax-url</code>&#x6307;&#x660E;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684; URL&#xFF1B;<code>data-ajax-type</code>&#x6307;&#x660E;&#x5411;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;get &#x6216; post&#xFF1B;<code>data-select</code>&#x6307;&#x660E;&#x6570;&#x636E;&#x8868;&#x683C;&#x4E2D;&#x7684;&#x884C;&#x662F;&#x5426;&#x80FD;&#x88AB;&#x9009;&#x4E2D;&#xFF1B;<code>data-row-id</code>&#x6307;&#x660E;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x5217;&#x505A;&#x4E3A;&#x8868;&#x683C;&#x4E2D;&#x7684;&#x884C;&#x7684; id;<code>rel=&quot;datatables&quot;</code>&#x6307;&#x660E;&#x4F7F;&#x7528; datatables &#x63D2;&#x4EF6;&#x3002;&#x4F59;&#x4E0B;&#x662F;&#x8868;&#x683C;&#x8868;&#x5934;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x8868;&#x5934;&#x4E2D;<code>data-name</code>&#x7684;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; datatables &#x7684;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x8BF7;&#x53C2;&#x8003; Macula UI &#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#xFF1A;<a href="http://macula.top/mower/view.html#datatables" target="_blank">Macula UI &#x5B98;&#x65B9;&#x6587;&#x6863; datatables &#x90E8;&#x5206;</a>&#x3002;</p>
+<h4 id="service-&#x5C42;">Service &#x5C42;</h4>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x770B; Service &#x5C42;&#x7684;&#x5B9E;&#x73B0;&#x3002;Service &#x7C7B;&#x653E;&#x5728; macula-xxx-service &#x8D44;&#x6E90;&#x5305;&#x91CC;&#xFF08;&#x5982; macula-samples-service&#xFF09;&#x3002;Service &#x4E00;&#x822C;&#x662F;&#x5148;&#x5B9A;&#x4E49; Service &#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5B9A;&#x4E49; Service &#x5B9E;&#x73B0;&#x7C7B;&#x3002;
+&#x6CE8;&#x610F;&#x8981;&#x5728; Service &#x5B9E;&#x73B0;&#x7C7B;&#x58F0;&#x660E;&#x4E0A;&#x9762;&#x52A0;&#x4E0A; annotation @Service&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528; @Autowired &#x5B8C;&#x6210; Repository &#x5B9E;&#x4F8B;&#x7684;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D89;&#x53CA;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4FEE;&#x6539;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x4E0A; @Transactional&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>Service &#x63A5;&#x53E3;&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoApplicationService</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x5217;&#x8868;
+     * 
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-comment">//&#x2460;</span>
+    <span class="hljs-function">List&lt;DemoApplication&gt; <span class="hljs-title">getAllApplications</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6309;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;Application
+     * 
+     * <span class="hljs-doctag">@param</span> name
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function">DemoApplication <span class="hljs-title">findApplicationByAppId</span><span class="hljs-params">(String appId)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x4FDD;&#x5B58;&#x5E94;&#x7528;
+     * 
+     * <span class="hljs-doctag">@param</span> application
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function">Long <span class="hljs-title">saveApplication</span><span class="hljs-params">(DemoApplication application)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x5220;&#x9664;&#x5E94;&#x7528;
+     * 
+     * <span class="hljs-doctag">@param</span> application
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteApplication</span><span class="hljs-params">(DemoApplication application)</span></span>;
+
 }
 </code></pre>
-<p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x662F;&#x5BF9;&#x5E94; URL &#x8BF7;&#x6C42; admin/macula-base/datasource/create &#x5230;&#x76EE;&#x5F55; src/main/resources/views/admin/macula-base/datasource/ &#x4E0B;&#x7684; edit.ftl &#x6587;&#x4EF6;&#x3002;</p>
-<p><strong>edit.ftl &#x6587;&#x4EF6;</strong></p>
-<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;&#x9875;&#x9762;&#x663E;&#x793A;&#x7ED3;&#x6784;&#xFF0C;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">title</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/macula-base/datasource/edit_mower.js&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">code</span>=<span class="hljs-value">&quot;edit-datasource&quot;</span> /&gt;</span>
+<p>&#x5728;&#x5217;&#x8868;&#x529F;&#x80FD;&#x4E2D;&#x6211;&#x4EEC;&#x9700;&#x8981; Service &#x5C42;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x5217;&#x8868;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x5728; DemoApplicationService &#x63A5;&#x53E3;&#x4E2D;&#x58F0;&#x660E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5; #getAllApplications()&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x2460;&#x5904;&#x6240;&#x793A;&#x3002;</p>
+<p>Service &#x5B9E;&#x73B0;&#x7C7B;&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoApplicationServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DemoApplicationService</span> </span>{
+
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationRepository demoApplicationRepository;
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-comment">//&#x2460;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;DemoApplication&gt; <span class="hljs-title">getAllApplications</span><span class="hljs-params">()</span> </span>{
+        List&lt;DemoApplication&gt; result = <span class="hljs-keyword">new</span> ArrayList&lt;DemoApplication&gt;(demoApplicationRepository.findAll());
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DemoApplication <span class="hljs-title">findApplicationByAppId</span><span class="hljs-params">(String appId)</span> </span>{
+        <span class="hljs-keyword">return</span> demoApplicationRepository.findByAppId(appId);
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-annotation">@Transactional</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">saveApplication</span><span class="hljs-params">(DemoApplication application)</span> </span>{
+        application.updateApplicationInstances();
+        Long id = demoApplicationRepository.save(application).getId();
+        <span class="hljs-keyword">return</span> id;
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-annotation">@Transactional</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteApplication</span><span class="hljs-params">(DemoApplication application)</span> </span>{
+        demoApplicationRepository.delete(application);
+    }
+
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5728; DemoApplicationServiceImpl &#x5B9E;&#x73B0;&#x7C7B;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86; #getAllApplications() &#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x2460;&#x5904;&#x6240;&#x793A;&#x3002;</p>
+<h4 id="controller-&#x5C42;">Controller &#x5C42;</h4>
+<p>Controller &#x8981;&#x653E;&#x5728;&#x4E13;&#x95E8;&#x5B58;&#x653E; Controller &#x7C7B;&#x7684; package &#x4E0B;&#xFF0C;&#x6BD4;&#x5982; org.macula.samples.macula_samples.admin.demo.controller&#x3002;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Controller</span> <span class="hljs-comment">//&#x2460;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DempApplicationController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DemoBaseController</span> </span>{
+    <span class="hljs-comment">//&#x2461;</span>
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationService demoApplicationService;
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/list&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">list</span><span class="hljs-params">(HttpServletRequest request)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/application/list&quot;</span>);
+    }
+
+    <span class="hljs-comment">//&#x2462;</span>
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/apps&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;DemoApplication&gt; <span class="hljs-title">getApplications</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PageImpl&lt;DemoApplication&gt;(demoApplicationService.getAllApplications());
+    }
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/edit/{id}&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">edit</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> Long id, Model model, HttpServletRequest request) </span>{
+        model.addAttribute(<span class="hljs-string">&quot;id&quot;</span>, id);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/application/edit&quot;</span>);
+    }
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/create&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/application/edit&quot;</span>);
+    }
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/app/{id}&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DemoApplication <span class="hljs-title">getApplication</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> DemoApplication application) </span>{
+        <span class="hljs-keyword">if</span> (application == <span class="hljs-keyword">null</span>) {
+            application = <span class="hljs-keyword">new</span> DemoApplication();
+            application.setSingleSignOn(<span class="hljs-keyword">true</span>);
+            application.setAppInstances(<span class="hljs-keyword">new</span> ArrayList&lt;DemoApplicationInstance&gt;());
+        }
+        <span class="hljs-keyword">return</span> application;
+    }
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/save&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">save</span><span class="hljs-params">(@FormBean(<span class="hljs-string">&quot;application&quot;</span>)</span> @Valid DemoApplication application) </span>{
+        <span class="hljs-keyword">if</span> (hasErrors()) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> FormBindException(getMergedBindingResults());
+        }
+        <span class="hljs-keyword">return</span> demoApplicationService.saveApplication(application);
+    }
+
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/delete/{id}&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">delete</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> DemoApplication application) </span>{
+        demoApplicationService.deleteApplication(application);
+        <span class="hljs-keyword">return</span> application.getId();
+    }
+
+}
+</code></pre>
+<p>&#x5173;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6709;&#x51E0;&#x70B9;&#x9700;&#x8981;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ol>
+<li><p>Controller &#x7C7B;&#x58F0;&#x660E;&#x4E0A;&#x9762;&#x52A0;&#x4E0A; annotation          @Controller&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x2460;&#x5904;&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x6846;&#x67B6;&#x80FD;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F; Controller &#x7C7B;&#x3002;</p>
+<p> &#x81EA;&#x52A8;&#x626B;&#x63CF; Controller &#x7684;&#x914D;&#x7F6E;&#x662F;&#x5728;&#x5404;&#x8D44;&#x6E90;&#x5305;&#x7684;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;</p>
+<p> src/main/resources/META-INF/spring/macula-xxx-servlet.xml</p>
+<p> &#x91CC;&#x9762;&#x6709;&#x4E00;&#x884C;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x626B;&#x63CF;&#x54EA;&#x4E9B; package&#x3002;</p>
+<p> &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-xml"> <span class="hljs-tag">&lt;<span class="hljs-title">context:component-scan</span> <span class="hljs-attribute">base-package</span>=<span class="hljs-value">&quot;org.macula.samples.macula_samples.admin.**.controller&quot;</span> /&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x6211;&#x4EEC;&#x901A;&#x8FC7; annotation @Autowired &#x6765;&#x5B9E;&#x73B0; DemoApplicationService &#x7684;&#x81EA;&#x52A8;&#x6CE8;&#x5165;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x2461;&#x5904;&#x6240;&#x793A;&#x3002;</p>
+</li>
+<li>&#x6211;&#x4EEC;&#x4F7F;&#x7528; annotation @RequestMapping &#x6765;&#x5B9E;&#x73B0;URL&#x6620;&#x5C04;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x83B7;&#x5F97;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x76F8;&#x5BF9;&#x7684; URL &#x4E3A; /application/apps &#xFF0C;&#x56E0;&#x6B64;&#x8C03;&#x7528;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x4E3A; #getApplications()&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x2462;&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x7559;&#x610F;&#x5230;&#x5728; #getApplications() &#x65B9;&#x6CD5;&#x4E0A;&#x6709;&#x4E00;&#x4E2A; @OpenApi &#x7684;&#x6CE8;&#x89E3;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x5217;&#x8868;&#x9875;&#x9762;&#x4E2D;&#x6570;&#x636E;&#x8868;&#x683C;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x901A;&#x8FC7; AJAX JSON &#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4F7F;&#x7528; @OpenApi &#x76F4;&#x63A5;&#x8FD4;&#x56DE; pojo bean&#x3002;&#x6709;&#x5173; @OpenApi &#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x6838;&#x5FC3;&#x6280;&#x672F;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x4ECB;&#x7ECD;&#x3002;  </li>
+</ol>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5217;&#x8868;&#x529F;&#x80FD;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x5927;&#x81F4;&#x4E0A;&#x5C31;&#x662F;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x4F7F;&#x7528;&#x4E86; datatables &#x63D2;&#x4EF6;&#x901A;&#x8FC7; AJAX JSON &#x7684;&#x65B9;&#x5F0F;&#x5411;&#x540E;&#x53F0;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x8868;&#x683C;&#x5185;&#x5BB9;&#xFF0C; Controller &#x63A5;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#x8C03;&#x7528; Serivce &#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C; &#x800C; Serivce &#x901A;&#x8FC7; Repository &#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x65B0;&#x589E;&#x53CA;&#x4FEE;&#x6539;&#x529F;&#x80FD;">&#x65B0;&#x589E;&#x53CA;&#x4FEE;&#x6539;&#x529F;&#x80FD;</h3>
+<p>&#x65B0;&#x589E;/&#x4FEE;&#x6539;&#x9875;&#x9762;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../images/chapter1/edit-page.png" alt="edit-page.png"></p>
+<p>&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x9875;&#x9762;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; .ftl &#x548C; .js &#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x903B;&#x8F91;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x65B0;&#x589E;&#x8FD8;&#x662F;&#x4FEE;&#x6539;&#x3002;&#x5982;&#x679C;&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x529F;&#x80FD;&#x5DEE;&#x522B;&#x5F88;&#x5927;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x8003;&#x8651;&#x5206;&#x5F00;&#x4E24;&#x4E2A;&#x9875;&#x9762;&#x3002;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x3002;</p>
+<h4 id="&#x5C55;&#x793A;&#x5C42;">&#x5C55;&#x793A;&#x5C42;</h4>
+<p>&#x65B0;&#x589E;/&#x4FEE;&#x6539;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x5206;&#x4E3A;2&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x529F;&#x80FD;&#x6309;&#x94AE;&#xFF0C;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x7ED3;&#x6784;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">#if</span> <span class="hljs-attribute">id</span>?<span class="hljs-attribute">exists</span>&gt;</span>&#x7F16;&#x8F91;&#x5E94;&#x7528;<span class="hljs-tag">&lt;<span class="hljs-title">#else</span>&gt;</span>&#x65B0;&#x589E;&#x5E94;&#x7528;<span class="hljs-tag">&lt;/<span class="hljs-title">#if</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">#assign</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">title</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/demo/application/edit.js&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">code</span>=<span class="hljs-value">&quot;edit-application&quot;</span> /&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_head</span>&gt;</span>
-                &#x529F;&#x80FD;&#x6309;&#x94AE;&#x90E8;&#x5206;
+                &#x529F;&#x80FD;&#x6309;&#x94AE;
             <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_head</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_body</span>&gt;</span>
                 &#x9875;&#x9762;&#x5185;&#x5BB9;
@@ -1001,286 +1138,406 @@ ${runtime.vmName}
     <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">@layout.mower_admin</span>&gt;</span>
 </code></pre>
-<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x7684;&#xFF0C;&#x9996;&#x5148;&#x662F;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x7684; title&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x4E00;&#x4E2A; id &#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x4E86; freemarker &#x7684;&#x6807;&#x7B7E;&#x5904;&#x7406;&#x3002;&#x7136;&#x540E;&#x662F;&#x9875;&#x9762;&#x5185;&#x5BB9;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x683C;&#xFF0C;&#x5BF9;&#x5E94;&#x7740; label &#x548C;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;form-${code}&quot;</span> <span class="hljs-attribute">item-id</span>=<span class="hljs-value">&quot;${id?if_exists}&quot;</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">&quot;${base}/admin/macula-base/datasource/save&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;post&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-horizontal&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;validate-form&quot;</span> <span class="hljs-attribute">data-bv-container</span>=<span class="hljs-value">&quot;tooltip&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;datasource.id&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: id&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-body&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-section&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x4FE1;&#x606F;<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>        
-                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x7F16;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;datasource.code&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: code&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x7684;&#x3002;&#x9996;&#x5148;&#x662F;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x7684; title&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x6570;&#x636E;&#x7684; id &#x662F;&#x5426;&#x5B58;&#x5728;&#x6765;&#x51B3;&#x5B9A;&#x663E;&#x793A;&#x201C;&#x7F16;&#x8F91;&#x5E94;&#x7528;&#x201D;&#x8FD8;&#x662F;&#x201C;&#x65B0;&#x589E;&#x5E94;&#x7528;&#x201D;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86; freemarker &#x7684; exists &#x6807;&#x7B7E;&#xFF1B;&#x7136;&#x540E;&#x662F;&#x529F;&#x80FD;&#x6309;&#x94AE;&#xFF1B;&#x6700;&#x540E;&#x662F;&#x9875;&#x9762;&#x5185;&#x5BB9;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x5355;&#xFF0C;&#x5BF9;&#x5E94;&#x7740; label &#x548C;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">#if</span> <span class="hljs-attribute">id</span>?<span class="hljs-attribute">exists</span>&gt;</span>&#x7F16;&#x8F91;&#x5E94;&#x7528;<span class="hljs-tag">&lt;<span class="hljs-title">#else</span>&gt;</span>&#x65B0;&#x589E;&#x5E94;&#x7528;<span class="hljs-tag">&lt;/<span class="hljs-title">#if</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">#assign</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">@layout.mower_admin</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">title</span> <span class="hljs-attribute">scripts</span>=<span class="hljs-value">&quot;admin/demo/application/edit.js&quot;</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">&quot;[$Revision: 4511 $]&quot;</span> <span class="hljs-attribute">require</span>=<span class="hljs-value">&quot;knockoutjs&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">#assign</span> <span class="hljs-attribute">code</span>=<span class="hljs-value">&quot;edit-application&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_head</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-xs-12 col-md-12&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;save-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-primary&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                        &#x4FDD;&#x5B58;
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;cancel-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;popBreadcrumb&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-reply fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                        &#x53D6;&#x6D88;
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x6570;&#x636E;&#x6E90;&#x540D;&#x79F0;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;datasource.name&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: name&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;form-${code}&quot;</span> <span class="hljs-attribute">item-id</span>=<span class="hljs-value">&quot;${id?if_exists}&quot;</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">&quot;${base}/admin/demo/application/save&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;post&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-horizontal&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;validate-form&quot;</span> <span class="hljs-attribute">data-bv-container</span>=<span class="hljs-value">&quot;tooltip&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.id&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: id&quot;</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-body&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-section&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x4FE1;&#x606F;<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x7F16;&#x53F7;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-comment">&lt;!-- &#x2460; --&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.appId&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: appId&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x540D;&#x79F0;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.name&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: name&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x5206;&#x7EC4;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.appGroup&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: appGroup&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x98CE;&#x683C;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.theme&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: theme&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x5BC6;&#x94A5;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-group input-group-sm&quot;</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-group-btn&quot;</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;gen-key-action&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Go!<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                                        
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.secureKey&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: secureKey&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;1024&quot;</span>/&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>                        
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x79C1;&#x94A5;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.privateKey&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: privateKey&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span>  <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;1024&quot;</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5E94;&#x7528;&#x5165;&#x53E3;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.homepage&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: homepage&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span>  <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;1024&quot;</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x8D1F;&#x8D23;&#x4EBA;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.supervisor&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: supervisor&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span>  <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;255&quot;</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.contact&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: contact&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;255&quot;</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox-inline&quot;</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.singleSignOn&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: singleSignOn, type: &apos;boolean&apos; &quot;</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: singleSignOn&quot;</span> /&gt;</span>
+                                            &#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x5F55;
+                                        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox-inline&quot;</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.singleSignOut&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: singleSignOut, type: &apos;boolean&apos; &quot;</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: singleSignOut&quot;</span> /&gt;</span>
+                                            &#x652F;&#x6301;&#x5355;&#x70B9;&#x767B;&#x51FA;
+                                        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox-inline&quot;</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.useAttributes&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: useAttributes, type: &apos;boolean&apos; &quot;</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: useAttributes&quot;</span> /&gt;</span>
+                                            &#x56DE;&#x4F20;&#x5C5E;&#x6027;
+                                        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5C5E;&#x6027;&#x5217;&#x8868;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.allowedAttributes&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: allowedAttributes&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;1024&quot;</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x5907;&#x6CE8;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;application.comments&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: comments&quot;</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">&quot;2&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        //&#x6B64;&#x5904;&#x7701;&#x7565; ...
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">@layout.mower_admin</span>&gt;</span>
 </code></pre>
-<p>&#x91CC;&#x9762;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5BF9;&#x4E8E;&#x8F93;&#x5165;&#x6846;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x6709;&#x4E2A;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF08;data-bind&#xFF09;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4E0B;&#x9762; edit.js &#x91CC;&#x4F1A;&#x8BF4;&#x660E;&#x3002;</p>
-<p><strong>edit.js &#x6587;&#x4EF6;</strong></p>
-<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E3B;&#x8981;&#x662F;&#x5B8C;&#x6210;2&#x9879;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<p>&#x91CC;&#x9762;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5BF9;&#x4E8E;&#x8F93;&#x5165;&#x6846;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x6709;&#x4E2A;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF08;data-bind&#xFF09;&#x7684;&#x5904;&#x7406;&#xFF0C; &#x5982;&#x2460;&#x5904;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4E0B;&#x9762; edit.js &#x91CC;&#x4F1A;&#x8BF4;&#x660E;&#x3002;</p>
+<p>edit.js &#x4E3B;&#x8981;&#x662F;&#x5B8C;&#x6210;2&#x9879;&#x5DE5;&#x4F5C;&#xFF1A;</p>
 <ol>
-<li>&#x901A;&#x8FC7; Ajax &#x8BFB;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x6570;&#x636E;,&#x6784;&#x9020;&#x8DDF; edit.ftl &#x9875;&#x9762;&#x91CC;&#x5BF9;&#x5E94;&#x7684; model</li>
-<li>&#x7ED1;&#x5B9A; edit.ftl &#x9875;&#x9762;&#x91CC;&#x5BF9;&#x5E94;&#x7684;&#x6309;&#x94AE;&#x64CD;&#x4F5C;</li>
+<li>&#x901A;&#x8FC7; Ajax &#x8BFB;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6784;&#x9020;&#x8DDF; edit.ftl &#x9875;&#x9762;&#x5BF9;&#x5E94;&#x7684; model&#xFF0C;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x548C;&#x9875;&#x9762;&#x8F93;&#x5165;&#x5143;&#x7D20;&#x7684;&#x7ED1;&#x5B9A;&#xFF1B;</li>
+<li>&#x7ED1;&#x5B9A; edit.ftl &#x9875;&#x9762;&#x91CC;&#x5BF9;&#x5E94;&#x7684;&#x6309;&#x94AE;&#x64CD;&#x4F5C;&#x3002;</li>
 </ol>
-<p>&#x7ED1;&#x5B9A;model&#x793A;&#x4F8B;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> viewModel = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+<p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> ApplicationForm = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$</span>) </span>{
+    <span class="hljs-keyword">var</span> code = <span class="hljs-string">&apos;edit-application&apos;</span>, parentCode = <span class="hljs-string">&apos;application-list&apos;</span>, $form = $(<span class="hljs-string">&apos;#form-&apos;</span> + code);
+
+    <span class="hljs-keyword">var</span> viewModel = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
         <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
         ko.mapping.fromJS(data, {}, self);
-        <span class="hljs-comment">//...</span>
     };
-    <span class="hljs-comment">//...</span>
-    $.getJSON(base + <span class="hljs-string">&apos;/admin/macula-base/datasource/datasrc/&apos;</span> + currentId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-        vm = <span class="hljs-keyword">new</span> viewModel(data.returnObject);
-        ko.applyBindings(vm, $form[<span class="hljs-number">0</span>]);
-    });
+
+    <span class="hljs-keyword">return</span> {
+        init : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x754C;&#x9762;&#x6570;&#x636E;</span>
+            <span class="hljs-comment">//&#x2460;</span>
+            <span class="hljs-keyword">var</span> currentId = $form.attr(<span class="hljs-string">&apos;item-id&apos;</span>);
+            <span class="hljs-keyword">if</span> (!currentId) {
+                <span class="hljs-comment">// -1 means server return add object struct</span>
+                currentId = -<span class="hljs-number">1</span>;
+            }
+
+            <span class="hljs-comment">//&#x2461;</span>
+            $.getJSON(base + <span class="hljs-string">&apos;/admin/demo/application/app/&apos;</span> + currentId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+                ko.applyBindings(<span class="hljs-keyword">new</span> viewModel(data.returnObject), $form[<span class="hljs-number">0</span>]);
+            });
+
+            <span class="hljs-comment">//&#x2462;</span>
+            <span class="hljs-comment">// &#x7ED1;&#x5B9A;&#x6309;&#x94AE;&#x4E8B;&#x4EF6;</span>
+            $(<span class="hljs-string">&apos;#save-action-&apos;</span> + code).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+                <span class="hljs-keyword">var</span> that = $(<span class="hljs-keyword">this</span>);
+                $form.ajaxValidSubmit({
+                    success : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+                        MessageBox.success(<span class="hljs-string">&apos;&#x4FDD;&#x5B58;&#x6210;&#x529F;&apos;</span>);
+                        that.trigger(<span class="hljs-string">&apos;pop.mu.breadcrumb&apos;</span>);
+                        $(<span class="hljs-string">&apos;#list-&apos;</span> + parentCode).DataTable().ajax.reload();
+                    },
+                    error : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                    }
+                });
+            });
+
+        }
+    };
+}(jQuery));
+
+$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    ApplicationForm.init();
+});
 </code></pre>
-<p>Ajax&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x88AB;&#x7F16;&#x8F91;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x672C;&#x4F8B;&#x4E2D;&#x5C31;&#x662F;code, name&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x9875;&#x9762;&#x91CC;&#x8F93;&#x5165;&#x6846;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x5F0F;&#x8DDF; model &#x7ED1;&#x5B9A;&#x8D77;&#x6765;&#x3002;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x4E86; JQuery &#x6280;&#x672F;&#x5411;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF0C;&#x5E76;&#x4EE5; JSON &#x7684;&#x65B9;&#x5F0F;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E00;&#x822C;&#x4EE5; bean &#x6216;&#x8005; bean list &#x7684;&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#xFF0C;JQuery &#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6210; JSON &#x683C;&#x5F0F;&#xFF0C;&#x65B9;&#x4FBF;&#x9875;&#x9762;&#x4E0A;&#x4F7F;&#x7528;&#x3002;</p>
-<p>data-bind=&quot;value: name&quot;</p>
-<p>&#x7ED1;&#x5B9A;&#x540E;&#x6211;&#x4EEC;&#x5728; JavaScript &#x4EE3;&#x7801;&#x4E2D;&#x4FEE;&#x6539; name &#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9875;&#x9762;&#x4E2D;&#x8F93;&#x5165;&#x6846;&#x7684;&#x503C;&#x4E5F;&#x4F1A;&#x8DDF;&#x7740;&#x53D8;&#x5316;&#xFF08;&#x8FD9;&#x662F;&#x4F7F;&#x7528;&#x4E86; KnockoutJS &#x7684;&#x6280;&#x672F;&#xFF09;&#x3002;</p>
-<p>&#x7ED1;&#x5B9A;&#x9875;&#x9762;&#x6309;&#x94AE;&#x64CD;&#x4F5C;&#x793A;&#x4F8B;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-javascript">&lt;a id=<span class="hljs-string">&quot;cancel-action-${code}&quot;</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;btn btn-default&quot;</span> data-toggle=<span class="hljs-string">&quot;popBreadcrumb&quot;</span>&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-reply fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    &#x53D6;&#x6D88;
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-</span></code></pre>
-<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8BF4;&#x660E;&#x5728;&#x70B9;&#x51FB;&#x53D6;&#x6D88;&#x6309;&#x94AE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; popBreadcrumb &#x65B9;&#x6CD5;&#xFF0C;&#x5904;&#x7406;&#x9762;&#x5305;&#x5C51;&#x5E76;&#x8FD4;&#x56DE;List &#x9875;&#x9762;&#x3002;</p>
-<h4 id="&#x5220;&#x9664;&#x529F;&#x80FD;">&#x5220;&#x9664;&#x529F;&#x80FD;</h4>
-<p>&#x5220;&#x9664;&#x529F;&#x80FD;&#x4E00;&#x822C;&#x662F;&#x76F4;&#x63A5;&#x5728; list &#x9875;&#x9762;&#x91CC;&#x505A;&#x7684;&#xFF0C;&#x9009;&#x4E2D;&#x67D0;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x5220;&#x9664;&#x6309;&#x94AE;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528; JQuery &#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x503C;&#x505A;&#x7ED3;&#x679C;&#x63D0;&#x793A;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B; list &#x9875;&#x9762;&#x4E0A;&#x5BF9;&#x4E8E;&#x5220;&#x9664;&#x529F;&#x80FD;&#x6309;&#x94AE;&#x7684;&#x5B9A;&#x4E49;</p>
+<p>&#x5173;&#x4E8E;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x51E0;&#x70B9;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x5728;&#x2460;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5224;&#x65AD; item-id &#x5728;&#x9875;&#x9762;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x662F;&#x7F16;&#x8F91;&#x9875;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E2A;item-id &#x901A;&#x8FC7; AJAX &#x65B9;&#x5F0F;&#x4ECE;&#x540E;&#x53F0;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x8FD9;&#x662F;&#x4E2A;&#x65B0;&#x589E;&#x9875;&#x9762;&#xFF0C;&#x4EE4; item-id &#x7B49;&#x4E8E;-1, &#x4ECE;&#x540E;&#x53F0;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7A7A;&#x767D;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5728;&#x2461;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7; knockoutJS &#x5C06;&#x7528; AJAX &#x65B9;&#x5F0F;&#x4ECE;&#x540E;&#x53F0;&#x83B7;&#x5F97;&#x7684;&#x5E94;&#x7528;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x6216;&#x65B0;&#x7684;&#x7A7A;&#x767D;&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;&#x5230;&#x9875;&#x9762;&#x7684;&#x8F93;&#x5165;&#x5143;&#x7D20;&#x4E2D;&#x3002;</li>
+<li>&#x5728;&#x2462;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;&#x4FDD;&#x5B58;&#x6309;&#x94AE;&#x7ED1;&#x5B9A; click &#x4E8B;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7; AJAX &#x63D0;&#x4EA4;&#x8868;&#x5355;&#x3002;&#x4FDD;&#x5B58;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x9875;&#x9762;&#x5E76;&#x5237;&#x6027;&#x5217;&#x8868;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8868;&#x683C;&#x3002;</li>
+</ol>
+<h4 id="service-&#x5C42;">Service &#x5C42;</h4>
+<p>Service &#x5C42;&#x7684;&#x8981;&#x70B9;&#x5728;&#x5217;&#x8868;&#x529F;&#x80FD;&#x4E2D;&#x5DF2;&#x7ECF;&#x89E3;&#x6790;&#x8FC7;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x7ED9;&#x51FA;&#x65B0;&#x589E;/&#x4FEE;&#x6539;&#x529F;&#x80FD;&#x7684;&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Service &#x63A5;&#x53E3;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoApplicationService</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x6309;&#x5E94;&#x7528;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;Application
+     * 
+     * <span class="hljs-doctag">@param</span> name
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function">DemoApplication <span class="hljs-title">findApplicationByAppId</span><span class="hljs-params">(String appId)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x4FDD;&#x5B58;&#x5E94;&#x7528;
+     * 
+     * <span class="hljs-doctag">@param</span> application
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function">Long <span class="hljs-title">saveApplication</span><span class="hljs-params">(DemoApplication application)</span></span>;
+
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
+}
+</code></pre>
+<p>Service &#x5B9E;&#x73B0;&#x7C7B;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoApplicationServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DemoApplicationService</span> </span>{
+
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationRepository demoApplicationRepository;
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DemoApplication <span class="hljs-title">findApplicationByAppId</span><span class="hljs-params">(String appId)</span> </span>{
+        <span class="hljs-keyword">return</span> demoApplicationRepository.findByAppId(appId);
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-annotation">@Transactional</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">saveApplication</span><span class="hljs-params">(DemoApplication application)</span> </span>{
+        application.updateApplicationInstances();
+        Long id = demoApplicationRepository.save(application).getId();
+        <span class="hljs-keyword">return</span> id;
+    }
+
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
+
+}
+</code></pre>
+<h4 id="controller-&#x5C42;">Controller &#x5C42;</h4>
+<p>Controller &#x5C42;&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DempApplicationController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DemoBaseController</span> </span>{
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationService demoApplicationService;
+
+    <span class="hljs-comment">//&#x2460;</span>
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/create&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getRelativePath(<span class="hljs-string">&quot;/application/edit&quot;</span>);
+    }
+
+    <span class="hljs-comment">//&#x2461;</span>
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/app/{id}&quot;</span>, method = RequestMethod.GET)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DemoApplication <span class="hljs-title">getApplication</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> DemoApplication application) </span>{
+        <span class="hljs-keyword">if</span> (application == <span class="hljs-keyword">null</span>) {
+            application = <span class="hljs-keyword">new</span> DemoApplication();
+            application.setSingleSignOn(<span class="hljs-keyword">true</span>);
+            application.setAppInstances(<span class="hljs-keyword">new</span> ArrayList&lt;DemoApplicationInstance&gt;());
+        }
+        <span class="hljs-keyword">return</span> application;
+    }
+
+    <span class="hljs-comment">//&#x2462;</span>
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/save&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">save</span><span class="hljs-params">(@FormBean(<span class="hljs-string">&quot;application&quot;</span>)</span> @Valid DemoApplication application) </span>{
+        <span class="hljs-keyword">if</span> (hasErrors()) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> FormBindException(getMergedBindingResults());
+        }
+        <span class="hljs-keyword">return</span> demoApplicationService.saveApplication(application);
+    }
+
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
+
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x51E0;&#x70B9;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x5728;&#x5217;&#x8868;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x5F53;&#x70B9;&#x51FB;&#x65B0;&#x589E;&#x6309;&#x94AE;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x4E5F;&#x662F; /application/edit &#x9875;&#x9762;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x2460;&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>&#x5728;&#x2461;&#x5904;&#x6211;&#x4EEC;&#x8FD4;&#x56DE;&#x5E94;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x6216;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7A7A;&#x767D;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x901A;&#x8FC7; annotation @PathVariable &#x6765;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;&#x4E3B;&#x952E;&#x5230;&#x76F8;&#x5E94; Domain &#x5B9E;&#x4F8B;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x6709;&#x5173;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6838;&#x5FC3;&#x6280;&#x672F;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x2462;&#x5904;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x4FE1;&#x606F;&#x3002;&#x6709;&#x5173;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x548C;&#x6821;&#x9A8C;&#x7684;&#x5185;&#x5BB9;&#x8BF7;&#x53C2;&#x8003;&#x6838;&#x5FC3;&#x6280;&#x672F;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;</li>
+</ol>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x65B0;&#x589E;/&#x4FEE;&#x6539;&#x529F;&#x80FD;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x529F;&#x80FD;">&#x5220;&#x9664;&#x529F;&#x80FD;</h3>
+<p>&#x5220;&#x9664;&#x529F;&#x80FD;&#x4E00;&#x822C;&#x662F;&#x76F4;&#x63A5;&#x5728;&#x5217;&#x8868;&#x9875;&#x9762;&#x91CC;&#x505A;&#x7684;&#x3002;&#x7528;&#x6237;&#x9009;&#x4E2D;&#x67D0;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x5220;&#x9664;&#x6309;&#x94AE;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x503C;&#x505A;&#x7ED3;&#x679C;&#x63D0;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><img src="../images/chapter1/delete-page.png" alt="delete-page.png"></p>
+<h4 id="&#x5C55;&#x793A;&#x5C42;">&#x5C55;&#x793A;&#x5C42;</h4>
+<p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x5217;&#x8868;&#x9875;&#x9762;&#x4E0A;&#x5BF9;&#x4E8E;&#x5220;&#x9664;&#x529F;&#x80FD;&#x6309;&#x94AE;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;delete-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-danger&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-trash-o fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     &#x5220;&#x9664;
 <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 </code></pre>
-<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5C31;&#x5B9A;&#x4E49;&#x4E86;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x4F1A;&#x89E6;&#x53D1; onDeleteAction &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x5728; list.js &#x91CC;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x540E;&#x4F1A;&#x89E6;&#x53D1; onDeleteAction &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x5728; list.js &#x91CC;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x5220;&#x9664;&#x6309;&#x94AE;</span>
 <span class="hljs-keyword">var</span> _oDeleteAction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     $(<span class="hljs-string">&apos;#delete-action-&apos;</span> + code).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
         <span class="hljs-keyword">var</span> row = $(table).DataTable().selectedRows();
 
         <span class="hljs-keyword">if</span> (row &amp;&amp; row.length &gt; <span class="hljs-number">0</span>) {
-           ModalBox.confirm(<span class="hljs-string">&apos;&#x60A8;&#x786E;&#x5B9A;&#x8981;&#x5220;&#x9664;&#x6570;&#x636E;&#x6E90;&apos;</span> + <span class="hljs-string">&apos;&#x3010;&apos;</span> + row[<span class="hljs-number">0</span>].code + <span class="hljs-string">&apos;&#x3011;&#x5417;&#xFF1F;&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
-                <span class="hljs-keyword">if</span> (result) {
-                    $.post(base + <span class="hljs-string">&apos;/admin/macula-base/datasource/delete/&apos;</span> + row[<span class="hljs-number">0</span>].id, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-                        <span class="hljs-keyword">if</span> (data.success) {
-                           $(table).DataTable().ajax.reload();
-                        } <span class="hljs-keyword">else</span> {
-                           MessageBox.error(data.exceptionMessage);
-                        }
-                    });
-               }
+            ModalBox.confirm(<span class="hljs-string">&apos;&#x60A8;&#x786E;&#x5B9A;&#x8981;&#x5220;&#x9664;&#x5E94;&#x7528;&apos;</span> + <span class="hljs-string">&apos;&#x3010;&apos;</span> + row[<span class="hljs-number">0</span>].appId + <span class="hljs-string">&apos;&#x3011;&#x5417;&#xFF1F;&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+            <span class="hljs-keyword">if</span> (result) {
+                $.post(base + <span class="hljs-string">&apos;/admin/demo/application/delete/&apos;</span> + row[<span class="hljs-number">0</span>].id, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+                    <span class="hljs-keyword">if</span> (data.success) {
+                        $(table).DataTable().ajax.reload();
+                    } <span class="hljs-keyword">else</span> {
+                        AlertBox.error(data.exceptionMessage);
+                    }
+               });
+                }
            });
-        } <span class="hljs-keyword">else</span> {
+       } <span class="hljs-keyword">else</span> {
            MessageBox.info(<span class="hljs-string">&apos;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x5220;&#x9664;.&apos;</span>);
-        }
+       }
     });
 };
 </code></pre>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8BE5;&#x529F;&#x80FD;&#x4F1A;&#x5148;&#x63D0;&#x793A;&#x7528;&#x6237;&#x662F;&#x5426;&#x786E;&#x8BA4;&#x8981;&#x5220;&#x9664;&#xFF0C;&#x786E;&#x8BA4;&#x540E;&#x4F1A;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5BF9;&#x5E94;&#x7684;&#x5904;&#x7406;&#x3002;</p>
-<h3 id="&#x5F00;&#x53D1;&#x6280;&#x5DE7;&#x6C47;&#x603B;">&#x5F00;&#x53D1;&#x6280;&#x5DE7;&#x6C47;&#x603B;</h3>
-<h4 id="&#x901A;&#x8FC7;-jquery-&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x5E76;&#x83B7;&#x5F97;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;">&#x901A;&#x8FC7; jQuery &#x63D0;&#x4EA4;&#x8868;&#x5355;&#x5E76;&#x83B7;&#x5F97;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</h4>
-<p>&#x505A; Web &#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x7ECF;&#x5E38;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x540E;&#x663E;&#x793A;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#xFF0C;&#x6309;&#x7167;&#x4F20;&#x7EDF;&#x505A;&#x6CD5;&#x662F;&#x989D;&#x5916;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x7684; Web &#x9875;&#x9762;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x589E;&#x52A0;&#x4E86;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x91CF;&#xFF0C;&#x800C;&#x4E14;&#x989D;&#x5916;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x4EE5;&#x540E;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
-<p>&#x8FD8;&#x6709;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x628A;&#x8FD4;&#x56DE;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x5728;&#x5F53;&#x524D;&#x9875;&#x9762;&#x8868;&#x5355;&#x7684;&#x4E0A;&#x65B9;&#x3002;&#x4F46;&#x8FD9;&#x6837;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x5237;&#x65B0;&#x5F53;&#x524D;&#x9875;&#x9762;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x8981;&#x628A;&#x5DF2;&#x7ECF;&#x8F93;&#x5165;&#x7684;&#x5404;&#x4E2A;&#x6570;&#x636E;&#x91CD;&#x65B0;&#x653E;&#x7F6E;&#x5230;&#x5404;&#x8F93;&#x5165;&#x6846;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x50CF;&#x4E0B;&#x62C9;&#x6846;&#x8F93;&#x5165;&#xFF0C;&#x8FD8;&#x8981;&#x6D89;&#x53CA;&#x91CD;&#x65B0;&#x53D6;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#xFF0C;&#x5B9E;&#x73B0;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x800C;&#x4E14;&#x5BF9;&#x6027;&#x80FD;&#x6709;&#x5F71;&#x54CD;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; jQuery &#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x5904;&#x7406;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x63D0;&#x4EA4;&#x7684;&#x8FD4;&#x56DE;&#x4FE1;&#x606F;&#x76F4;&#x63A5;&#x5728;&#x9875;&#x9762;&#x7AEF;&#x7528; JavaScript &#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5237;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x589E;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5F88;&#x65B9;&#x4FBF;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x5C31;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x65E7;&#x5BC6;&#x7801;&#x548C;&#x65B0;&#x5BC6;&#x7801;&#x540E;&#x63D0;&#x4EA4;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8981;&#x5224;&#x65AD;&#x65E7;&#x5BC6;&#x7801;&#x662F;&#x5426;&#x8DDF;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x81F4;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#x5C31;&#x663E;&#x793A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x8FD4;&#x56DE;&#x5C31;&#x8BF4;&#x660E;&#x4FEE;&#x6539;&#x6210;&#x529F;&#xFF0C;&#x9875;&#x9762;&#x5C31;&#x663E;&#x793A;&#x4FEE;&#x6539;&#x6210;&#x529F;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x5148;&#x770B; .ftl &#x9875;&#x9762;&#x6587;&#x4EF6;&#x5BF9;&#x8868;&#x5355;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-xs-12 col-md-12&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;save-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-primary&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-            &#x4FDD;&#x5B58;
-        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;cancel-action-${code}&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-default&quot;</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">&quot;popBreadcrumb&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-reply fa-lg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-            &#x5173;&#x95ED;
-        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">@ui.panel_body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;form-${code}&quot;</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">&quot;${base}/admin/macula-uim/user/savepassword&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;post&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-horizontal&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;validate-form&quot;</span> <span class="hljs-attribute">data-bv-container</span>=<span class="hljs-value">&quot;tooltip&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-body&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                           <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;username&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
-                       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x65E7;&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                           <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;oldpassword&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
-                       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>    
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x65B0;&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                           <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;newpassword&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
-                       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-12&quot;</span>&gt;</span>
-                   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;control-label col-md-3&quot;</span>&gt;</span>&#x518D;&#x6B21;&#x8F93;&#x5165;&#x65B0;&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-9&quot;</span>&gt;</span>
-                           <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span>  <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;reNewpassword&quot;</span>  <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control input-sm&quot;</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">&quot;50&quot;</span>/&gt;</span>
-                       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">@ui.panel_body</span>&gt;</span>
-</code></pre>
-<p>&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x8868;&#x683C;&#x6837;&#x5B50;&#x7684; form&#x3002;</p>
-<p>&#x7136;&#x540E;&#x770B;&#x4E00;&#x4E0B; .js &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
-<pre><code class="lang-javascript">$(<span class="hljs-string">&apos;#save-action-&apos;</span> + code).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-    $form.ajaxValidSubmit({
-        success : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-            <span class="hljs-keyword">if</span> (data.success) {
-                MessageBox.success(<span class="hljs-string">&apos;&#x4FDD;&#x5B58;&#x6210;&#x529F;&apos;</span>);
-            }<span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">if</span>( data.exceptionMessage ) {
-                    AlertBox.error(data.exceptionMessage);
-                }
-            }
-        },
-        error : <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
-        }
-    });
-});
-</code></pre>
-<p>&#x4E0A;&#x9762;&#x662F;&#x628A;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x7684;&#x5904;&#x7406;&#x7ED1;&#x5B9A;&#x5230;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x5F0F;&#x662F;&#x91C7;&#x7528; AJAX &#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x63D0;&#x4EA4;&#x7ED3;&#x679C;&#x663E;&#x793A;&#x4E0D;&#x540C;&#x4FE1;&#x606F;&#x3002;&#x8FD4;&#x56DE;&#x7ED3;&#x679C; data &#x662F;&#x4E00;&#x4E2A; JSON &#x5BF9;&#x8C61;&#xFF0C;&#x5C5E;&#x6027; data.success &#x662F;&#x5224;&#x65AD;&#x64CD;&#x4F5C;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF0C;&#x8BF4;&#x660E;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;&#x5982;&#x679C;&#x6709;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;&#x90A3; data.success &#x5C31;&#x662F; false&#xFF0C;&#x901A;&#x8FC7; data.exceptionMessage &#x5C31;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x5904;&#x7406;&#x3002;</p>
-<p>Controller &#x7684;&#x4EE3;&#x7801;&#x662F;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/user/savepassword&quot;</span>, method = RequestMethod.POST)
-<span class="hljs-annotation">@OpenApi</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">savePassword</span><span class="hljs-params">(@RequestParam(<span class="hljs-string">&quot;username&quot;</span>)</span> String username, 
-                         @<span class="hljs-title">RequestParam</span><span class="hljs-params">(<span class="hljs-string">&quot;oldpassword&quot;</span>)</span> String oldPassword,
-                         @<span class="hljs-title">RequestParam</span><span class="hljs-params">(<span class="hljs-string">&quot;newpassword&quot;</span>)</span> String newPassword) </span>{
+<h4 id="service-&#x5C42;">Service &#x5C42;</h4>
+<p>Service &#x5C42;&#x7684;&#x8981;&#x70B9;&#x5728;&#x5217;&#x8868;&#x529F;&#x80FD;&#x4E2D;&#x5DF2;&#x7ECF;&#x89E3;&#x6790;&#x8FC7;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x7ED9;&#x51FA;&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Service &#x63A5;&#x53E3;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoApplicationService</span> </span>{
 
-    <span class="hljs-keyword">return</span> userManagerService.changePassword(username, oldPassword, newPassword);
+    <span class="hljs-comment">/**
+     * &#x5220;&#x9664;&#x5E94;&#x7528;
+     * 
+     * <span class="hljs-doctag">@param</span> application
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteApplication</span><span class="hljs-params">(DemoApplication application)</span></span>;
+
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
 }
 </code></pre>
-<p>&#x8FD9;&#x4E2A;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x8C03;&#x7528;&#x4E86; Service &#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x518D;&#x770B; Service &#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@Override</span>
-<span class="hljs-annotation">@Transactional</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">changePassword</span><span class="hljs-params">(String username, String oldPassword, String newPassword)</span>
-</span>{
-    JpaUIMUser user = uimUserRepository.findByUserName(username);
+<p>Service &#x5B9E;&#x73B0;&#x7C7B;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoApplicationServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DemoApplicationService</span> </span>{
 
-    <span class="hljs-keyword">if</span> (user == <span class="hljs-keyword">null</span>)
-    {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UIMException(<span class="hljs-string">&quot;macula.uim.user.changePwds.invalidUserName&quot;</span>);
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationRepository demoApplicationRepository;
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-annotation">@Transactional</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteApplication</span><span class="hljs-params">(DemoApplication application)</span> </span>{
+        demoApplicationRepository.delete(application);
     }
 
-    <span class="hljs-comment">//if the old password is different from the submitted password, will throw an exception</span>
-    <span class="hljs-keyword">if</span> ( !user.getPassword().equals(getPasswordEncoder().encodePassword(oldPassword,<span class="hljs-keyword">null</span>)) )
-    {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UIMException(<span class="hljs-string">&quot;macula.uim.user.changePwds.invalidOldPassword&quot;</span>);
-    }
 
-    user.setPassword(getPasswordEncoder().encodePassword(newPassword, <span class="hljs-keyword">null</span>));
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
 
-    uimUserRepository.save(user);
-
-    <span class="hljs-keyword">return</span> user.getId();
 }
 </code></pre>
-<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5728;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x629B;&#x51FA;&#x5F02;&#x5E38; UIMException&#xFF0C;&#x5F02;&#x5E38;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A; Message &#x7684; Code&#xFF0C;&#x6BD4;&#x5982; macula.uim.user.changePwds.invalidUserName &#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x6240;&#x5728;&#x8D44;&#x6E90;&#x5305;&#x7684; src/main/resources/i18n &#x4E0B;&#x5BF9;&#x5E94;&#x7684;&#x51E0;&#x4E2A; messages.properties &#x6587;&#x4EF6;&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x9488;&#x5BF9;&#x6BCF;&#x79CD;&#x8BED;&#x8A00;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; Message Code&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x5728;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x65F6;&#x5019; Macula &#x6846;&#x67B6;&#x4F1A;&#x6355;&#x83B7;&#x5E76;&#x4E14;&#x8BFB;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x4F1A;&#x5305;&#x88F9;&#x8FD4;&#x56DE;&#x503C;&#x548C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x9875;&#x9762;&#x7AEF;&#x4F1A;&#x4EE5; JSON &#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x7ED3;&#x679C;&#x5224;&#x65AD;&#xFF0C;&#x5E76;&#x4E14;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
-<h4 id="&#x5982;&#x4F55;&#x505A;&#x4E0B;&#x62C9;&#x6846;&#x8F93;&#x5165;&#x529F;&#x80FD;">&#x5982;&#x4F55;&#x505A;&#x4E0B;&#x62C9;&#x6846;&#x8F93;&#x5165;&#x529F;&#x80FD;</h4>
-<p>&#x4E0B;&#x62C9;&#x6846;&#x662F;&#x6211;&#x4EEC;&#x5F00;&#x53D1;Web&#x5E94;&#x7528;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B; Macula &#x6846;&#x67B6;&#x4E2D;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E0B;&#x62C9;&#x6846;&#x529F;&#x80FD;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x8868;&#x4E2D;&#x5B9A;&#x4E49;&#x597D;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6709; Value &#x548C; Label&#x3002;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x662F;&#x5E38;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4ECE;&#x5176;&#x4ED6;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x7684;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x8868;&#x7684;&#x540D;&#x5B57;&#x662F;&#xFF1A;MA_BASE_DATA_PARAM&#xFF0C;&#x91CC;&#x9762;&#x5173;&#x952E;&#x7684;&#x51E0;&#x4E2A;&#x5B57;&#x6BB5;&#x662F; CODE&#x3001;NAME&#x548C;VALUE&#xFF0C;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#x5DF2;&#x6709;&#x8BB0;&#x5F55;&#x3002;</p>
-<p>&#x793A;&#x4F8B;&#x5206;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><strong>1.&#x5E38;&#x91CF;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#x5B9A;&#x4E49;</strong></p>
-<pre><code>CODE&#xFF1A;language
-NAME&#xFF1A;&#x8BED;&#x8A00;
-VALUE&#xFF1A;1:&#x4E2D;&#x6587;|2:&#x82F1;&#x6587;
-</code></pre><p>&#x4E0A;&#x9762;&#x5C31;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x8BED;&#x8A00;&#x9009;&#x62E9;&#x7684;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x4E2D;&#x6587;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x82F1;&#x6587;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x503C;&#x5206;&#x522B;&#x662F; 1 &#x548C; 2&#x3002;</p>
-<p><strong>2.&#x52A8;&#x6001;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#x5B9A;&#x4E49;</strong></p>
-<pre><code>CODE&#xFF1A;datasource_list
-NAME&#xFF1A;&#x6570;&#x636E;&#x6E90;&#x5217;&#x8868;
-VALUE&#xFF1A;select name as label, id as code from ma_base_data_source
-</code></pre><p>&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#xFF0C;&#x5173;&#x952E;&#x662F; VALUE &#x5B57;&#x6BB5;&#x7684; SQL &#x8BED;&#x53E5;&#xFF0C;&#x9700;&#x8981;&#x6709; code &#x548C; label &#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x4EE5; as &#x7684;&#x65B9;&#x5F0F;&#x628A;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x540D;&#x8F6C;&#x4E3A; code &#x548C; label&#x3002;</p>
-<p>&#x5728;&#x9875;&#x9762;&#x4E0A;&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;dataParam.dataSourceId&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;options: dataSourceIdParams.datasource_list, optionsText: &apos;label&apos;, optionsValue:&apos;id&apos;, optionsCaption: &apos;&#x65E0;&apos;,value: &apos;NONE&apos;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;chosen-select form-control&quot;</span>/&gt;</span>
-</code></pre>
-<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7531; Macula &#x6846;&#x67B6;&#x5B9A;&#x4E49;&#x7684; freemarker &#x5B8F; writeDataParamsJs &#x4ECE;&#x540E;&#x53F0;&#x83B7;&#x5F97;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#xFF0C;&#x8D4B;&#x7ED9;javscript&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x91C7;&#x7528; data-bind &#x7684;&#x65B9;&#x5F0F;&#x628A;&#x4E0B;&#x62C9;&#x6846;&#x6570;&#x636E;&#x586B;&#x5145;&#x5230;&#x4E0B;&#x62C9;&#x6846;&#x91CC;&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728; .ftl &#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x3002;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="actionscript">
-    <span class="hljs-keyword">var</span> dataSourceIdParams={&lt;@macula.writeDataParamsJs <span class="hljs-string">&apos;datasource_list&apos;</span> /&gt;};
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-</code></pre>
-<h4 id="&#x5982;&#x4F55;&#x505A;-checkbox-&#x8F93;&#x5165;&#x529F;&#x80FD;">&#x5982;&#x4F55;&#x505A; Checkbox &#x8F93;&#x5165;&#x529F;&#x80FD;</h4>
-<p>&#x7528;&#x6211;&#x4EEC;&#x6846;&#x67B6;&#x5B9E;&#x73B0;Checkbox &#x529F;&#x80FD;&#x6709;&#x70B9;&#x5C0F;&#x6280;&#x5DE7;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x5230;&#x989D;&#x5916;&#x7684;&#x4E00;&#x4E2A; hidden &#x5B57;&#x6BB5;&#x7528;&#x4E8E;&#x4FDD;&#x5B58; Checkbox &#x7684;&#x503C;&#x3002;&#x5B9E;&#x73B0;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;hidden&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;user.enabled&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;value: enabled, type: &apos;boolean&apos; &quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: enabled&quot;</span> /&gt;</span>
-</code></pre>
-<p>&#x9875;&#x9762;&#x4E0A;&#x663E;&#x793A;&#x7684;&#x662F; Checkbox&#xFF0C;&#x5B83;&#x8DDF;&#x9875;&#x9762; model &#x4E2D;&#x7684; enabled &#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A; hidden &#x5B57;&#x6BB5;&#x4E5F;&#x662F;&#x8DDF; enabled &#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#xFF0C;&#x800C;&#x4E14;&#x5B9A;&#x4E49;&#x5B83;&#x7684; type &#x662F; boolean&#x3002;</p>
-<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x90A3;&#x4E2A; hidden &#x5B57;&#x6BB5;&#x90A3;&#x6211;&#x4EEC;&#x9009;&#x62E9; Checkbox &#x7684;&#x503C;&#x5C31;&#x65E0;&#x6CD5;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728; Domain &#x5C42;&#x5B9A;&#x4E49;&#x7684; enabled &#x5C5E;&#x6027;&#x662F; Boolean &#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x9875;&#x9762;&#x91CC;&#x7684; Checkbox &#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x4E00;&#x70B9;&#x989D;&#x5916;&#x7684;&#x8F6C;&#x6362;&#x5904;&#x7406;&#x3002;</p>
-<h4 id="&#x5982;&#x4F55;&#x505A;-radio-&#x8F93;&#x5165;&#x529F;&#x80FD;">&#x5982;&#x4F55;&#x505A; Radio &#x8F93;&#x5165;&#x529F;&#x80FD;</h4>
-<p>Radio &#x8F93;&#x5165;&#x529F;&#x80FD;&#x76F8;&#x5BF9; Checkbox &#x5C31;&#x5F88;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A; Radio &#x63A7;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x503C;&#x662F;&#x76F4;&#x63A5;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x989D;&#x5916;&#x7684;&#x8F6C;&#x6362;&#x5904;&#x7406;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;user.sex&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;M&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: sex&quot;</span>/&gt;</span>&#x7537;
-<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;user.sex&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;F&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;checked: sex&quot;</span>/&gt;</span>&#x5973;
-</code></pre>
-<p>&#x4E0A;&#x9762;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x4E24;&#x4E2A; Radio&#xFF0C;&#x90FD;&#x7ED1;&#x5B9A;&#x9875;&#x9762; Model &#x4E0A;&#x7684; sex &#x5C5E;&#x6027;&#xFF0C;&#x6BCF;&#x4E2A; Radio &#x5BF9;&#x5E94;&#x7684; Value &#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x6839;&#x636E;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4FDD;&#x5B58;&#x7684;&#x503C;&#x4E5F;&#x4E0D;&#x540C;&#x3002;</p>
-<h4 id="&#x4F7F;&#x7528;&#x65E5;&#x671F;&#x8F93;&#x5165;&#x63A7;&#x4EF6;">&#x4F7F;&#x7528;&#x65E5;&#x671F;&#x8F93;&#x5165;&#x63A7;&#x4EF6;</h4>
-<p>&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x8F93;&#x5165;&#x63A7;&#x4EF6;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x53C2;&#x8003; Macula UI &#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;</p>
-<p><a href="http://macula.top/mower/javascript.html#datetimepicker" target="_blank">Macula UI &#x65E5;&#x671F;&#x65F6;&#x95F4;&#x63A7;&#x4EF6;&#x90E8;&#x5206;</a></p>
-<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x65E5;&#x671F;+&#x65F6;&#x95F4;&#x9009;&#x62E9;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&apos;input-group date datetimepicker-all&apos;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&apos;text&apos;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-group-addon&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;glyphicon glyphicon-time&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<h4 id="contoller-&#x5C42;">Contoller &#x5C42;</h4>
+<p>Contoller &#x5C42;&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DempApplicationController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DemoBaseController</span> </span>{
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> DemoApplicationService demoApplicationService;
 
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
-<span class="hljs-comment">// &#x9009;&#x62E9;&#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;</span>
-$(<span class="hljs-string">&quot;.datetimepicker-all&quot;</span>).datetimepicker(
-{
-    weekStart: <span class="hljs-number">1</span>,
-    todayBtn:  <span class="hljs-number">1</span>,
-    autoclose: <span class="hljs-number">1</span>,
-    todayHighlight: <span class="hljs-number">1</span>,
-    startView: <span class="hljs-number">2</span>,
-    forceParse: <span class="hljs-number">0</span>,
-    showMeridian: <span class="hljs-number">1</span>,
-    format: <span class="hljs-string">&quot;yyyy-mm-dd hh:ii&quot;</span>
-});
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/application/delete/{id}&quot;</span>, method = RequestMethod.POST)
+    <span class="hljs-annotation">@OpenApi</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">delete</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span> DemoApplication application) </span>{
+        demoApplicationService.deleteApplication(application);
+        <span class="hljs-keyword">return</span> application.getId();
+    }
+
+    <span class="hljs-comment">//... &#x5176;&#x5B83;&#x90E8;&#x5206;&#x7701;&#x7565;</span>
+
+}
 </code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5220;&#x9664;&#x529F;&#x80FD;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;&#x529F;&#x80FD;&#x3002;</p>
 
                     
                     </section>
