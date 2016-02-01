@@ -20,7 +20,7 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 ![layout_mower](../images/chapter2/layout_mower.png)
 
-我们来看一下里面的内容：
+我们来看一下这个文件里面的内容：
 
 ```
 <#--
