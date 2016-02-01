@@ -4,7 +4,7 @@
 
 同时对于Ajax部分，在javascript框架中建议使用jquery框架。
 
-## 页面Layout
+## 页面 Layout
 
 Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面为例进行讲解。后台管理页面 Layout 结构如下图所示：
 
