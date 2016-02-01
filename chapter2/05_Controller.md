@@ -6,7 +6,7 @@
 
 ## 页面Layout
 
-Macula 使用 FreeMarker 页面模板技术。页面 Layout 结构如下图所示：
+Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面为例进行讲解。后台管理页面 Layout 结构如下图所示：
 
 ![macula-layout](../images/chapter2/macula-layout.png)
 
@@ -14,7 +14,9 @@ Macula 使用 FreeMarker 页面模板技术。页面 Layout 结构如下图所�
 
 为了方便大家理解，我们以一个实际的页面为例子说明各个部分。
 
+![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
 
+页面 Layout 由 Macual 中的 layout_mower.ftl 中的宏定义。开发者可以通过覆盖这个内容来
 
 ## 地址规划
 
