@@ -8,7 +8,7 @@
 
 Macula 使用 FreeMarker 页面模板技术。页面Layout结构如下图所示：
 
-
+![macula-layout](../images/chapter2/macula-layout.png)
 
 ## 地址规划
 
