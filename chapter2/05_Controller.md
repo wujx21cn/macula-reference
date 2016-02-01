@@ -10,7 +10,7 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 ![macula-layout](../images/chapter2/macula-layout.png)
 
-由上图可见，Macula 页面由 header，main container 和 footer 三部分组成。其中，header 包括 logo，menu，login 组成；main container 主要包括 sidebar 和 content 两大部分；footer 构成比较简单。
+由上图可见，Macula 页面由 header，main container 和 footer 三部分组成。其中，header 包括 logo，menu 和 login 组成；main container 主要包括 sidebar 和 content 两大部分；footer 构成比较简单。
 
 为了方便大家理解，我们以一个实际的页面为例子说明各个部分。
 
