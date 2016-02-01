@@ -16,7 +16,9 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 ![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
 
-页面 Layout 由 Macual 中的 layout_mower.ftl 中的宏定义。开发者可以通过覆盖这个内容来
+页面 Layout 由 Macual 中的 layout_mower.ftl 中的宏定义。开发者可以通过覆盖这个来自定义自己的 header logo，header menu，header login 和footer。要覆盖默认的配置，可以修改自己xi如下这个文件：
+
+
 
 ## 地址规划
 
