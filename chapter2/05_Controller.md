@@ -22,10 +22,38 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 我们来看一下里面的内容：
 
-```html
+```
+<#--
+使用者可以通过覆盖这个文件实现对一些宏的重新定义包括：
+-- html head中的内容，包括meta css等
+<#macro mower_admin_head title = ''>
+-- LOGO
+<#macro mower_admin_header_logo>
+-- 菜单栏
+<#macro mower_admin_header_menu>
+-- 登录后提示信息
+<#macro mower_admin_header_login>
+-- 页脚
+<#macro mower_admin_footer>
+包含的Javascript(angularjs,knockoutjs,datagrid)
+<#macro mower_admin_scripts require = ''>
+-->
 
+<#--
+局部替换：如果以下变量定义在具体业务模板中，则会覆盖你的layout模板中的定义
+
+<#global mower_admin_scripts_addition>
+	加入你自己的javascript库文件
+</#global>
+
+<#global mower_admin_head_addition>
+	加入你自己的css文件
+</#global>
+-->
 
 ```
+
+由上面的代码可见，我们可以通过修改宏 mower_admin_header_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower_admin_header_menu，mower_admin_header_login，以及 mower_admin_footer 来分别定义自己的 header menu，header login 和 footer。
 
 ## 地址规划
 
