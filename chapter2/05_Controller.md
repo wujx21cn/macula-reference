@@ -16,7 +16,7 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 ![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
 
-页面布局由 Macula 指定 。开发者通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和footer。开发者可以来达到目的。
+开发者通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和footer。开发者可以来达到目的。
 
 ![layout_mower](../images/chapter2/layout_mower.png)
 
