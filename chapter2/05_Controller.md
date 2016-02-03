@@ -107,7 +107,9 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
 上面的例子中用到了 knockoutJs 的 data-bind，通过 options 属性将一个名为 appIdParams.application_list 的 js 变量绑定到下拉框的选项中，而 appIdParams.application_list 中的内容正式来自于预先定义好的数据参数。在同一个 ftl 中我们使用 Macula 框架提供的宏获取这个数据参数的内容。如下：
 
 ```
-
+<script type="text/javascript">
+	var appIdParams={<@macula.writeDataParamsJs 'application_list' />};
+</script>
 ```
 
 ## 地址规划
