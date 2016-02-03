@@ -96,7 +96,14 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
 
 下面我们来看下如何在 ftl 中定义下拉框：
 
-
+```
+<div class="form-group">
+    <label class="control-label col-md-3">所属应用：</label>
+    <div class="col-md-9">
+        <select name="dataParam.appId" data-bind="options: appIdParams.application_list, optionsText: 'label', optionsValue:'code', optionsCaption: '请选择', value: appId "  class="chosen-select form-control"/>
+    </div>
+</div>
+```
 
 ## 地址规划
 
