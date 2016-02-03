@@ -65,7 +65,7 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
 
 ### 下拉框
 
-![select](../images/chapter2/select.png)
+![select](../images/chapter2/macula_select.png)
 
 
 
