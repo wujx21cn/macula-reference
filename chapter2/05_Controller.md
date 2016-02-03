@@ -55,7 +55,7 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 由上面的代码可见，我们可以通过修改宏 mower_admin_header_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower_admin_header_menu，mower_admin_header_login，以及 mower_admin_footer 来分别定义自己的 header menu，header login 和 footer。
 
-## UI开发框架
+## 前端开发框架
 
 
 
