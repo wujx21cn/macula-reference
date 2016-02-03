@@ -59,13 +59,13 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
 
 Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访问 [Mower 官方网站](http://macula.top/mower/)。
 
-## 前端开发
+## 前端开发疑难点
 
 下面我们来谈谈 Macula 前端开发中的一些经常遇到的疑点或难点。
 
 ### 下拉框
 
-![select](../images/chapter2/select.png)
+
 
 
 
