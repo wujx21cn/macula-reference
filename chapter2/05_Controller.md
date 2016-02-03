@@ -113,7 +113,9 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
 ```
 数据参数 application_list 的定义如下：
 
-
+```
+ select app_name as label, app_id as code from ma_base_application
+```
 
 
 ## 地址规划
