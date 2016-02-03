@@ -111,6 +111,10 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
 	var appIdParams={<@macula.writeDataParamsJs 'application_list' />};
 </script>
 ```
+数据参数 application_list 的定义如下：
+
+
+
 
 ## 地址规划
 
