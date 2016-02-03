@@ -104,6 +104,7 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
     </div>
 </div>
 ```
+上面的例子中的选项用到了 knockoutJs 的 data-bind
 
 ## 地址规划
 
