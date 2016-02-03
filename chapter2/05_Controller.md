@@ -77,8 +77,22 @@ Macula 使用 Mower作为前端开发框架。有关 Mower 的详细介绍请访
     ```
     例如：
     ```
-    
+    NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
     ```
+2. 如果选项的 name 和 value 相同，还可以简化成以下的形式：
+    ```
+    name1|name2|...
+    ```
+    例如：
+    ```
+    String|Integer|Long|Double|Boolean|Timestamp|Date|Word
+    ``` 
+3. 当然还可以用 SQL 的形式从数据库中获取。例如：
+    ```
+    select app_name as label, app_id as code from ma_base_application
+    ```
+
+有关数据参数的详细介绍，请参阅“基础插件”中的“数据提供”一节。
 
 
 
