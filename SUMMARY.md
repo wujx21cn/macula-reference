@@ -7,7 +7,6 @@
    * [项目构建](chapter1/03_Project_Building.md)
 * [核心技术](chapter2/chapter2.md)
    * [配置文件](chapter2/01_Configuration.md)
-   * [项目集成](xiang_mu_ji_cheng.md)
    * [领域模型层](chapter2/02_Domain.md)
    * [数据存取层](chapter2/03_Repository.md)
    * [业务服务层](chapter2/04_Service.md)
