@@ -16,7 +16,7 @@
    * [缓存服务](chapter2/08_Cache.md)
    * [单元测试](chapter2/09_JUnit.md)
    * [开放API](chapter2/10_OpenApi.md)
-   * 项目集成
+   * [项目集成](chapter2/02_Project_Start.md)
 * [基础插件](chapter3/chapter3.md)
    * [基础设施](chapter3/01_Plugins-Infrastructure.md)
    * [数据提供](chapter3/02_Plugins_Data.md)
