@@ -73,6 +73,7 @@
 </property>
 		
 ```
+上述设置后，当产生实体变更时系统会发出AuditChangedEvent事件，我们可以通过继承AbstractAuditChangedListener来监听AuditChangedEvent事件，并对变更数据做后续的进一步处理。
 
 ### 领域模型接口
 
