@@ -21,8 +21,8 @@
    * [基础设施](chapter3/01_Plugins-Infrastructure.md)
    * [数据提供](chapter3/02_Plugins_Data.md)
    * [数据集](chapter3/03_Plugins_DataSet.md)
-   * [权限管理](chapter3/04_Plugins_Security.md)
    * 安全管理
+   * [权限管理](chapter3/04_Plugins_Security.md)
 * [扩展插件](chapter4/chapter4.md)
    * 登录与主界面
    * 后台管理
