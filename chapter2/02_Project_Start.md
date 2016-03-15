@@ -53,6 +53,10 @@ public class CustomMyUserLoginRepository implements CustomUserLoginRepository {
 	}
  ```
  
+ ### 通过UIM验证表单登录集成
+ 
+ 如果你的项目不愿意跳转到uim实现统一登录，只是需要UIM帮你验证表单上的用户名和密码，则可以通过
+ 
  ###日志集成
 
 
