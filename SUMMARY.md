@@ -24,7 +24,7 @@
    * [安全认证](chapter3/05_Plugins_Authentication.md)
    * [权限管理](chapter3/04_Plugins_Authority2.md)
 * [扩展插件](chapter4/chapter4.md)
-   * 登录与主界面
+   * [登录与主界面](chapter4/01_Webapp.md)
    * 后台管理
    * 表单与查询
    * Dubbo
