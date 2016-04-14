@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>基础插件 | Macula Reference</title>
+        <title>APM | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter3/01_Plugins-Infrastructure.html" />
+    <link rel="next" href="../chapter5/chapter5.html" />
     
     
-    <link rel="prev" href="../chapter2/10_OpenApi.html" />
+    <link rel="prev" href="../chapter4/08_MQ.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="3"
-        data-chapter-title="基础插件"
-        data-filepath="chapter3/chapter3.md"
+        data-level="4.9"
+        data-chapter-title="APM"
+        data-filepath="chapter4/09_Monitor.md"
         data-basepath=".."
         data-revision="Thu Apr 14 2016 12:58:15 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -341,7 +341,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="chapter3/chapter3.html">
+        <li class="chapter " data-level="3" data-path="chapter3/chapter3.html">
             
                 
                     <a href="../chapter3/chapter3.html">
@@ -573,7 +573,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.9" data-path="chapter4/09_Monitor.html">
+        <li class="chapter active" data-level="4.9" data-path="chapter4/09_Monitor.html">
             
                 
                     <a href="../chapter4/09_Monitor.html">
@@ -773,7 +773,80 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x57FA;&#x7840;&#x63D2;&#x4EF6;">&#x57FA;&#x7840;&#x63D2;&#x4EF6;</h1>
+                        <h1 id="&#x7CFB;&#x7EDF;&#x76D1;&#x63A7;">&#x7CFB;&#x7EDF;&#x76D1;&#x63A7;</h1>
+<h3 id="&#x5E94;&#x7528;&#x76D1;&#x63A7;">&#x5E94;&#x7528;&#x76D1;&#x63A7;</h3>
+<p>Macula&#x662F;&#x7528;&#x5927;&#x4F17;&#x70B9;&#x8BC4;&#x5F00;&#x6E90;&#x7684;<a href="https://github.com/dianping/cat" target="_blank">CAT</a>&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x76D1;&#x63A7;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;macula-plugins-cat&#x63D2;&#x4EF6;&#x96C6;&#x6210;&#xFF0C;&#x5177;&#x4F53;&#x5F00;&#x542F;&#x5E94;&#x7528;&#x76D1;&#x63A7;&#x7684;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h4 id="&#x9996;&#x5148;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x4F9D;&#x8D56;maculapluginscat&#x63D2;&#x4EF6;">&#x9996;&#x5148;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x9700;&#x8981;&#x4F9D;&#x8D56;macula-plugins-cat&#x63D2;&#x4EF6;</h4>
+<h4 id="&#x521B;&#x5EFA;clientxml">&#x521B;&#x5EFA;client.xml</h4>
+<p>/data/appdatas/cat/&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;client.xml&#x6587;&#x4EF6;(&#x7EBF;&#x4E0A;&#x73AF;&#x5883;&#x662F;OP&#x914D;&#x7F6E;)
+&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x662F;windows&#x73AF;&#x5883;&#xFF0C;&#x5219;&#x5728;eclipse&#x8FD0;&#x884C;&#x7684;&#x76D8;&#xFF0C;&#x6BD4;&#x5982;D&#x76D8;&#xFF0C;&#x65B0;&#x5EFA;/data/appdatas/cat/&#x76EE;&#x5F55;&#xFF0C;&#x65B0;&#x5EFA;client.xml&#x6587;&#x4EF6;
+/data/appdatas/cat/client.xml,&#x6B64;&#x6587;&#x4EF6;&#x6709;OP&#x63A7;&#x5236;,&#x8FD9;&#x91CC;&#x7684;Domain&#x540D;&#x5B57;&#x7528;&#x6765;&#x505A;&#x5F00;&#x5173;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x4E86;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x628A;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x76D1;&#x63A7;&#x5173;&#x95ED;&#x3002;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">config</span> <span class="hljs-attribute">mode</span>=<span class="hljs-value">&quot;client&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">servers</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">server</span> <span class="hljs-attribute">ip</span>=<span class="hljs-value">&quot;10.66.13.115&quot;</span> <span class="hljs-attribute">port</span>=<span class="hljs-value">&quot;2280&quot;</span> /&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-title">servers</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">config</span>&gt;</span>
+</code></pre>
+<p> alpha&#x3001;beta&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5728;&#x6B64;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;
+&#x9884;&#x53D1;&#x4EE5;&#x53CA;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x9700;&#x8981;&#x901A;&#x77E5;&#x5230;&#x5BF9;&#x5E94;OP&#x56E2;&#x961F;&#xFF0C;&#x8BA9;&#x4ED6;&#x4EEC;&#x7EDF;&#x4E00;&#x6DFB;&#x52A0;&#xFF0C;&#x81EA;&#x5DF1;&#x4E0A;&#x7EBF;&#x65F6;&#x5019;&#x505A;&#x4E0B;&#x68C0;&#x67E5;&#x5373;&#x53EF;
+a&#x3001;10.66.13.115:2280&#x7AEF;&#x53E3;&#x662F;&#x6307;&#x5411;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x7684;cat&#x5730;&#x5740;
+b&#x3001;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x52A0;&#x5165;CAT&#x7684;&#x5F00;&#x5173;&#xFF0C;&#x7528;&#x4E8E;&#x5173;&#x95ED;CAT&#x6D88;&#x606F;&#x53D1;&#x9001;,&#x5C06;enabled&#x6539;&#x4E3A;false&#xFF0C;&#x5982;&#x4E0B;&#x8868;&#x793A;&#x5C06;mobile-api&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x5173;&#x95ED;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">config</span> <span class="hljs-attribute">mode</span>=<span class="hljs-value">&quot;client&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">servers</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">server</span> <span class="hljs-attribute">ip</span>=<span class="hljs-value">&quot;10.66.13.115&quot;</span> <span class="hljs-attribute">port</span>=<span class="hljs-value">&quot;2280&quot;</span> /&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-title">servers</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-title">domain</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;mobile-api&quot;</span> <span class="hljs-attribute">enabled</span>=<span class="hljs-value">&quot;false&quot;</span>/&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">config</span>&gt;</span>
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h4>
+<p>1) macula.properties</p>
+<pre><code>#&#x76D1;&#x63A7;&#x5F00;&#x542F;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;true&#xFF0C;&#x4E0D;&#x5F00;&#x542F;&#x76D1;&#x63A7;
+monitor.disabled = false
+</code></pre><p>2) web.xml&#xFF0C;&#x5C06;&#x4E0B;&#x9762;&#x7684;Filter&#x52A0;&#x5728;&#x6700;&#x524D;&#x9762;&#x7684;filter&#x4E2D;</p>
+<pre><code class="lang-xml">    <span class="hljs-comment">&lt;!-- Cat Filter --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">filter-name</span>&gt;</span>maculaPluginsCat<span class="hljs-tag">&lt;/<span class="hljs-title">filter-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">filter-class</span>&gt;</span>org.springframework.web.filter.DelegatingFilterProxy<span class="hljs-tag">&lt;/<span class="hljs-title">filter-class</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">init-param</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">param-name</span>&gt;</span>targetFilterLifecycle<span class="hljs-tag">&lt;/<span class="hljs-title">param-name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">param-value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">param-value</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">init-param</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">filter</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Cat Filter Mapping --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">filter-mapping</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">filter-name</span>&gt;</span>maculaPluginsCat<span class="hljs-tag">&lt;/<span class="hljs-title">filter-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">servlet-name</span>&gt;</span>appServlet<span class="hljs-tag">&lt;/<span class="hljs-title">servlet-name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dispatcher</span>&gt;</span>REQUEST<span class="hljs-tag">&lt;/<span class="hljs-title">dispatcher</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dispatcher</span>&gt;</span>FORWARD<span class="hljs-tag">&lt;/<span class="hljs-title">dispatcher</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">filter-mapping</span>&gt;</span>
+</code></pre>
+<pre><code>&#x8FD9;&#x5C06;&#x5F00;&#x542F;&#x5BF9;&#x6240;&#x6709;URL&#x8BF7;&#x6C42;&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x4F46;&#x662F;&#x9ED8;&#x8BA4;&#x6392;&#x9664;&#x4E86;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;
+</code></pre><p>3) log4j.properties</p>
+<pre><code>### cat appender ###
+log4j.appender.cat=org.macula.plugins.cat.log4j.CatAppender
+
+### set log levels - for more verbose logging change &apos;info&apos; to &apos;debug&apos; ###
+log4j.rootLogger=WARN, stdout, fileout, cat
+</code></pre><p>&#x5F00;&#x542F;log4j&#x53D1;&#x9001;&#x5230;Cat&#xFF0C;&#x53EA;&#x6709;Error&#x6216;&#x4EE5;&#x4E0A;&#x7EA7;&#x522B;&#x7684;&#x65E5;&#x5FD7;&#x4F1A;&#x53D1;&#x9001;</p>
+<p>4) Druid DataSource&#x914D;&#x7F6E;</p>
+<pre><code class="lang-xml">        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;proxyFilters&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.plugins.cat.druid.CatFilter&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+</code></pre>
+<p>druid&#x6570;&#x636E;&#x6E90;&#x4E2D;&#x6DFB;&#x52A0;&#x4E0A;&#x8FF0;&#x914D;&#x7F6E;&#x5F00;&#x542F;&#x5BF9;SQL&#x7684;&#x76D1;&#x63A7;&#x3002;</p>
+<p>5) Spring Service&#x76D1;&#x63A7;
+&#x4F9D;&#x8D56;macula-plugins-cat&#x63D2;&#x4EF6;&#x9ED8;&#x8BA4;&#x4F1A;&#x5F00;&#x542F;&#x5BF9;@Service&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x76D1;&#x63A7;</p>
+<p>6) Dubbo&#x76D1;&#x63A7;
+&#x7ED9;dubbo&#x914D;&#x7F6E;&#x4E0A;CatFilter&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x5BF9;dubbo&#x5206;&#x5E03;&#x5F0F;&#x8BBF;&#x95EE;&#x7684;&#x76D1;&#x63A7;</p>
+<p>7) &#x57CB;&#x70B9;&#x76D1;&#x63A7;
+&#x8BF7;&#x67E5;&#x770B;Cat&#x6587;&#x6863;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E1A;&#x52A1;&#x6307;&#x6807;&#x76D1;&#x63A7;&#xFF0C;&#x9700;&#x8981;&#x5728;Cat&#x540E;&#x53F0;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x6307;&#x6807;&#x540D;&#x79F0;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x591F;&#x663E;&#x793A;&#x3002;</p>
+<h3 id="&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;">&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;</h3>
+<p>TODO</p>
+<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x76D1;&#x63A7;">&#x6D4F;&#x89C8;&#x5668;&#x76D1;&#x63A7;</h3>
+<p>TODO</p>
 
                     
                     </section>
@@ -784,10 +857,10 @@
         </div>
 
         
-        <a href="../chapter2/10_OpenApi.html" class="navigation navigation-prev " aria-label="Previous page: 开放API"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter4/08_MQ.html" class="navigation navigation-prev " aria-label="Previous page: MQ"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter3/01_Plugins-Infrastructure.html" class="navigation navigation-next " aria-label="Next page: 基础设施"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter5/chapter5.html" class="navigation navigation-next " aria-label="Next page: 技术标准"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

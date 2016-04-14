@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>基础插件 | Macula Reference</title>
+        <title>项目集成 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter3/01_Plugins-Infrastructure.html" />
+    <link rel="next" href="../chapter2/02_Domain.html" />
     
     
-    <link rel="prev" href="../chapter2/10_OpenApi.html" />
+    <link rel="prev" href="../chapter2/01_Configuration.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="3"
-        data-chapter-title="基础插件"
-        data-filepath="chapter3/chapter3.md"
+        data-level="2.2"
+        data-chapter-title="项目集成"
+        data-filepath="chapter2/02_Project_Start.md"
         data-basepath=".."
         data-revision="Thu Apr 14 2016 12:58:15 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -186,7 +186,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="chapter2/02_Project_Start.html">
+        <li class="chapter active" data-level="2.2" data-path="chapter2/02_Project_Start.html">
             
                 
                     <a href="../chapter2/02_Project_Start.html">
@@ -341,7 +341,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="chapter3/chapter3.html">
+        <li class="chapter " data-level="3" data-path="chapter3/chapter3.html">
             
                 
                     <a href="../chapter3/chapter3.html">
@@ -773,7 +773,33 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x57FA;&#x7840;&#x63D2;&#x4EF6;">&#x57FA;&#x7840;&#x63D2;&#x4EF6;</h1>
+                        <h1 id="&#x9879;&#x76EE;&#x96C6;&#x6210;">&#x9879;&#x76EE;&#x96C6;&#x6210;</h1>
+<h3 id="&#x767B;&#x5F55;&#x96C6;&#x6210;">&#x767B;&#x5F55;&#x96C6;&#x6210;</h3>
+<p>&#x9879;&#x76EE;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x89E3;&#x51B3;&#x767B;&#x5F55;&#x7684;&#x9A8C;&#x8BC1;&#x95EE;&#x9898;&#xFF0C;&#x901A;&#x8FC7;&#x5B9E;&#x73B0;CustomUserLoginRepository&#x63A5;&#x53E3;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomMyUserLoginRepository</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CustomUserLoginRepository</span> </span>{
+    <span class="hljs-annotation">@Autowired</span>
+    <span class="hljs-keyword">private</span> PasswordEncoder passwordEncoder;
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> UserPrincipal <span class="hljs-title">loadUserByUsername</span><span class="hljs-params">(String username)</span> <span class="hljs-keyword">throws</span> UsernameNotFoundException </span>{
+      <span class="hljs-comment">// &#x53C2;&#x8003;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x5B8C;&#x6210;</span>
+      JpaUIMUser user = uimUserRepository.findByUserName(username);
+      <span class="hljs-keyword">if</span> (user != <span class="hljs-keyword">null</span>) {
+          UserPrincipalImpl principal = <span class="hljs-keyword">new</span> UserPrincipalImpl(user.getUserName());
+          principal.setPassword(user.getPassword());
+          <span class="hljs-keyword">return</span> principal;
+      }
+      <span class="hljs-comment">// throw new UsernameNotFoundException(&quot;AbstractUserDetailsAuthenticationProvider.badCredentials&quot;);</span>
+          }
+
+          <span class="hljs-annotation">@Override</span>
+          <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postValidateUserPrincipal</span><span class="hljs-params">(UserPrincipal principal)</span> <span class="hljs-keyword">throws</span> AuthenticationException </span>{
+              <span class="hljs-comment">// TODO &#x53EF;&#x4EE5;&#x6821;&#x9A8C;&#x51ED;&#x636E;&#x7684;&#x5408;&#x6CD5;&#x6027;&#xFF0C;&#x975E;&#x6CD5;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+          }
+}
+</code></pre>
+<h3 id="&#x65E5;&#x5FD7;&#x96C6;&#x6210;">&#x65E5;&#x5FD7;&#x96C6;&#x6210;</h3>
 
                     
                     </section>
@@ -784,10 +810,10 @@
         </div>
 
         
-        <a href="../chapter2/10_OpenApi.html" class="navigation navigation-prev " aria-label="Previous page: 开放API"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter2/01_Configuration.html" class="navigation navigation-prev " aria-label="Previous page: 配置文件"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter3/01_Plugins-Infrastructure.html" class="navigation navigation-next " aria-label="Next page: 基础设施"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter2/02_Domain.html" class="navigation navigation-next " aria-label="Next page: 领域模型层"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>基础插件 | Macula Reference</title>
+        <title>安全认证 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter3/01_Plugins-Infrastructure.html" />
+    <link rel="next" href="../chapter3/04_Plugins_Authority2.html" />
     
     
-    <link rel="prev" href="../chapter2/10_OpenApi.html" />
+    <link rel="prev" href="../chapter3/03_Plugins_DataSet.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="3"
-        data-chapter-title="基础插件"
-        data-filepath="chapter3/chapter3.md"
+        data-level="3.4"
+        data-chapter-title="安全认证"
+        data-filepath="chapter3/05_Plugins_Authentication.md"
         data-basepath=".."
         data-revision="Thu Apr 14 2016 12:58:15 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -341,7 +341,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="chapter3/chapter3.html">
+        <li class="chapter " data-level="3" data-path="chapter3/chapter3.html">
             
                 
                     <a href="../chapter3/chapter3.html">
@@ -402,7 +402,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="chapter3/05_Plugins_Authentication.html">
+        <li class="chapter active" data-level="3.4" data-path="chapter3/05_Plugins_Authentication.html">
             
                 
                     <a href="../chapter3/05_Plugins_Authentication.html">
@@ -773,7 +773,32 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x57FA;&#x7840;&#x63D2;&#x4EF6;">&#x57FA;&#x7840;&#x63D2;&#x4EF6;</h1>
+                        <h1 id="&#x5B89;&#x5168;&#x8BA4;&#x8BC1;">&#x5B89;&#x5168;&#x8BA4;&#x8BC1;</h1>
+<h3 id="&#x8868;&#x5355;&#x767B;&#x5F55;">&#x8868;&#x5355;&#x767B;&#x5F55;</h3>
+<h3 id="&#x7EDF;&#x4E00;&#x767B;&#x5F55;">&#x7EDF;&#x4E00;&#x767B;&#x5F55;</h3>
+<h3 id="&#x9884;&#x9A8C;&#x8BC1;&#x767B;&#x5F55;">&#x9884;&#x9A8C;&#x8BC1;&#x767B;&#x5F55;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x65B9;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;&#x8BA4;&#x8BC1;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9E;&#x73B0;PreAuthenticationHandler&#x63A5;&#x53E3;&#xFF0C;&#x5C06;&#x7B2C;&#x4E09;&#x65B9;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x9A8C;&#x8BC1;&#x597D;&#x7684;&#x7528;&#x6237;&#x540D;&#x4F20;&#x9012;&#x7ED9;Macula&#x7684;&#x8BA4;&#x8BC1;&#x6846;&#x67B6;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">  <span class="hljs-comment">/**
+     * &#x8FD4;&#x56DE;&#x9A8C;&#x8BC1;&#x597D;&#x7684;&#x51ED;&#x636E;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x901A;&#x8FC7;&#x7B2C;&#x4E09;&#x65B9;&#x8BA4;&#x8BC1;&#x7CFB;&#x7EDF;&#x6765;&#x9A8C;&#x8BC1;&#x51ED;&#x636E;
+     * <span class="hljs-doctag">@param</span> request
+     * <span class="hljs-doctag">@return</span> UserPrincipal
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">getPreAuthenticatedPrincipal</span><span class="hljs-params">(HttpServletRequest request)</span> </span>{
+        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x5411;&#x7EDF;&#x4E00;&#x8BA4;&#x8BC1;&#x9A8C;&#x8BC1;&#x4F60;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;</span>
+        <span class="hljs-comment">// &#x6210;&#x529F;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;null;</span>
+    }
+
+    <span class="hljs-comment">/**
+     * &#x901A;&#x5E38;&#x662F;&#x5BC6;&#x7801;
+     * <span class="hljs-doctag">@param</span> request
+     * <span class="hljs-doctag">@return</span> Credentials
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">getPreAuthenticatedCredentials</span><span class="hljs-params">(HttpServletRequest request)</span> </span>{
+        <span class="hljs-keyword">return</span> &#x201C;N/A&#x201D;;
+    }
+</code></pre>
+<h3 id="&#x79FB;&#x52A8;&#x7AEF;&#x767B;&#x5F55;">&#x79FB;&#x52A8;&#x7AEF;&#x767B;&#x5F55;</h3>
+<p> &#x5982;&#x679C;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E0D;&#x613F;&#x610F;&#x8DF3;&#x8F6C;&#x5230;uim&#x5B9E;&#x73B0;&#x7EDF;&#x4E00;&#x767B;&#x5F55;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;UIM&#x5E2E;&#x4F60;&#x9A8C;&#x8BC1;&#x8868;&#x5355;&#x4E0A;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;</p>
 
                     
                     </section>
@@ -784,10 +809,10 @@
         </div>
 
         
-        <a href="../chapter2/10_OpenApi.html" class="navigation navigation-prev " aria-label="Previous page: 开放API"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter3/03_Plugins_DataSet.html" class="navigation navigation-prev " aria-label="Previous page: 数据集"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter3/01_Plugins-Infrastructure.html" class="navigation navigation-next " aria-label="Next page: 基础设施"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter3/04_Plugins_Authority2.html" class="navigation navigation-next " aria-label="Next page: 权限管理"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
