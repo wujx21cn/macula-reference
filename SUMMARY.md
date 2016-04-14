@@ -27,10 +27,12 @@
    * [WEB应用基础](chapter4/01_Webapp.md)
    * [后台管理](chapter4/02_Admin.md)
    * [表单与查询](chapter4/03_MDA.md)
-   * [Dubbo](chapter4/04_Dubbo.md)
-   * [ESB Client](chapter4/05_esb_client.md)
-   * [消息总线](chapter4/08_MQ.md)
-   * [系统监控](chapter4/09_Monitor.md)
+   * 规则引擎
+   * 工作流
+   * [Dubbo](chapter4/06_Dubbo.md)
+   * [ESB](chapter4/07_ESB.md)
+   * [MQ](chapter4/08_MQ.md)
+   * [APM](chapter4/09_Monitor.md)
 * [技术标准](chapter5/chapter5.md)
    * [Java代码规范](chapter5/01_Standard_Code.md)
    * [代码审计规范](chapter5/02_Standard_Check.md)
