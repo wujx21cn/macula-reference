@@ -70,7 +70,6 @@ log4j.rootLogger=WARN, stdout, fileout, cat
 开启log4j发送到Cat，只有Error或以上级别的日志会发送
 
 4) Druid DataSource配置
-
 ```xml
 		<property name="proxyFilters">
 			<list>
@@ -79,6 +78,16 @@ log4j.rootLogger=WARN, stdout, fileout, cat
 		</property>
 ```
 druid数据源中添加上述配置开启对SQL的监控。
+
+5) Spring Service监控
+依赖macula-plugins-cat插件默认会开启对@Service注解的方法的监控
+
+6) Dubbo监控
+给dubbo配置上CatFilter即可完成对dubbo分布式访问的监控
+
+
+
+
       
       
 
