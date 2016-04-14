@@ -53,6 +53,10 @@ b、配置可以加入CAT的开关，用于关闭CAT消息发送,将enabled改�
 	</filter-mapping>
     ```
 2) macula.properties
+```
+#监控开启，默认是false
+monitor.disabled = false
+```
 3) log4j.properties
 4) dataSource配置
 
