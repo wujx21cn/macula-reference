@@ -27,7 +27,7 @@
    * [WEB应用基础](chapter4/01_Webapp.md)
    * 后台管理
    * [表单与查询](chapter4/03_MDA.md)
-   * Dubbo
+   * [Dubbo](chapter4/04_Dubbo.md)
    * ESB Client
    * [消息总线](chapter4/MQ.md)
    * [系统监控](chapter4/Monitor.md)
