@@ -32,7 +32,12 @@ b、配置可以加入CAT的开关，用于关闭CAT消息发送,将enabled改�
  ```
       
 ####配置
-1) web.xml，将下面的Filter加在最前面的filter中
+1) macula.properties
+```
+#监控开启，默认是true，不开启监控
+monitor.disabled = false
+```
+2) web.xml，将下面的Filter加在最前面的filter中
 ```xml
 	<!-- Cat Filter -->
 	<filter>
@@ -52,12 +57,18 @@ b、配置可以加入CAT的开关，用于关闭CAT消息发送,将enabled改�
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
     ```
-2) macula.properties
-```
-#监控开启，默认是true，不开启监控
-monitor.disabled = false
-```
+    这将开启对所有URL请求的监控，但是默认排除了资源文件。
+    
 3) log4j.properties
+```
+### cat appender ###
+log4j.appender.cat=org.macula.plugins.cat.log4j.CatAppender
+
+### set log levels - for more verbose logging change 'info' to 'debug' ###
+log4j.rootLogger=WARN, stdout, fileout, cat
+```
+开启log4j发送到Cat，只有Error或以上级别的日志会发送
+
 4) dataSource配置
 
 
