@@ -28,7 +28,7 @@
    * 后台管理
    * [表单与查询](chapter4/03_MDA.md)
    * [Dubbo](chapter4/04_Dubbo.md)
-   * ESB Client
+   * [ESB Client](chapter4/05_esb_client.md)
    * [消息总线](chapter4/MQ.md)
    * [系统监控](chapter4/Monitor.md)
 * [技术标准](chapter5/chapter5.md)
