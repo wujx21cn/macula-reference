@@ -28,7 +28,7 @@
    * [后台管理](chapter4/02_Admin.md)
    * [表单与查询](chapter4/03_MDA.md)
    * [规则引擎](chapter4/04_Rule.md)
-   * 工作流
+   * [工作流](chapter4/05_Workflow.md)
    * [Dubbo](chapter4/06_Dubbo.md)
    * [ESB](chapter4/07_ESB.md)
    * [MQ](chapter4/08_MQ.md)
