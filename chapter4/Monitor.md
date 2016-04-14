@@ -85,6 +85,9 @@ druid数据源中添加上述配置开启对SQL的监控。
 6) Dubbo监控
 给dubbo配置上CatFilter即可完成对dubbo分布式访问的监控
 
+7) 埋点监控
+请查看Cat文档
+
 
 
 
