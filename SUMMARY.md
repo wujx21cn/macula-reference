@@ -24,12 +24,12 @@
    * [安全认证](chapter3/05_Plugins_Authentication.md)
    * [权限管理](chapter3/04_Plugins_Authority2.md)
 * [扩展插件](chapter4/chapter4.md)
-   * [登录与主界面](chapter4/01_Webapp.md)
-   * [后台管理](chapter4/02_Admin.md)
+   * [WEB应用基础](chapter4/01_Webapp.md)
+   * 后台管理
    * 表单与查询
    * Dubbo
    * ESB Client
-   * [系统集成](chapter4/MQ.md)
+   * [消息总线](chapter4/MQ.md)
    * [系统监控](chapter4/Monitor.md)
 * [技术标准](chapter5/chapter5.md)
    * [Java代码规范](chapter5/01_Standard_Code.md)
