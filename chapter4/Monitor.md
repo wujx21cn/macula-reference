@@ -69,9 +69,16 @@ log4j.rootLogger=WARN, stdout, fileout, cat
 ```
 开启log4j发送到Cat，只有Error或以上级别的日志会发送
 
-4) dataSource配置
+4) Druid DataSource配置
 
-
+```xml
+		<property name="proxyFilters">
+			<list>
+				<bean class="org.macula.plugins.cat.druid.CatFilter" />
+			</list>
+		</property>
+```
+druid数据源中添加上述配置开启对SQL的监控。
       
       
 
