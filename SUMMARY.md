@@ -27,7 +27,7 @@
    * [WEB应用基础](chapter4/01_Webapp.md)
    * [后台管理](chapter4/02_Admin.md)
    * [表单与查询](chapter4/03_MDA.md)
-   * 规则引擎
+   * [规则引擎](chapter4/04_Rule.md)
    * 工作流
    * [Dubbo](chapter4/06_Dubbo.md)
    * [ESB](chapter4/07_ESB.md)
