@@ -2,9 +2,11 @@
 
 ###应用监控
 Macula是用大众点评开源的[CAT](https://github.com/dianping/cat)作为应用监控的服务器端，并通过macula-plugins-cat插件集成，具体开启应用监控的步骤如下：
-1. 首先你的应用需要依赖macula-plugins-cat插件
 
-2. /data/appdatas/cat/目录下，新建一个client.xml文件(线上环境是OP配置)
+####首先你的应用需要依赖macula-plugins-cat插件
+
+####创建client.xml
+/data/appdatas/cat/目录下，新建一个client.xml文件(线上环境是OP配置)
 如果系统是windows环境，则在eclipse运行的盘，比如D盘，新建/data/appdatas/cat/目录，新建client.xml文件
 /data/appdatas/cat/client.xml,此文件有OP控制,这里的Domain名字用来做开关，如果一台机器上部署了多个应用，可以指定把一个应用的监控关闭。
 
@@ -29,7 +31,30 @@ b、配置可以加入CAT的开关，用于关闭CAT消息发送,将enabled改�
  </config>
  ```
       
-3. 
+####配置
+1) web.xml，将下面的Filter加在最前面的filter中
+```xml
+	<!-- Cat Filter -->
+	<filter>
+		<filter-name>maculaPluginsCat</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+    
+    <!-- Cat Filter Mapping -->
+	<filter-mapping>
+		<filter-name>maculaPluginsCat</filter-name>
+		<servlet-name>appServlet</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+    ```
+2) macula.properties
+3) log4j.properties
+4) dataSource配置
 
 
       
