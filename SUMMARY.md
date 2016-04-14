@@ -25,7 +25,7 @@
    * [权限管理](chapter3/04_Plugins_Authority2.md)
 * [扩展插件](chapter4/chapter4.md)
    * [登录与主界面](chapter4/01_Webapp.md)
-   * 后台管理
+   * [后台管理](chapter4/02_Admin.md)
    * 表单与查询
    * Dubbo
    * ESB Client
