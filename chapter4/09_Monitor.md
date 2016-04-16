@@ -83,7 +83,7 @@ druid数据源中添加上述配置开启对SQL的监控。
 依赖macula-plugins-cat插件默认会开启对@Service注解的方法的监控
 
 6) Dubbo监控
-给dubbo配置上CatFilter即可完成对dubbo分布式访问的监控
+给dubbo配置上CatConsumerFilter和CatProviderFilter即可完成对dubbo分布式访问的监控
 
 7) 埋点监控
 请查看Cat文档，特别是业务指标监控，需要在Cat后台添加相应的指标名称，然后才能够显示。
