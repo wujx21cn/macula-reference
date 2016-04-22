@@ -89,7 +89,13 @@ druid数据源中添加上述配置开启对SQL的监控。
 ```xml
 <dubbo:reference id="registryService" interface="com.alibaba.dubbo.registry.RegistryService" check="false" />
 ```
-
+如果是直接连接没有注册中心的，不能配置上述registryService，通过给reference添加provider参数来配置。
+```xml
+<dubbo:reference id="demoService" interface="org.macula.plugins.dubbo.test.api.DemoService" >
+	<dubbo:parameter key="provider" value="hello-app"/>
+</dubbo:reference>
+```
+上述配置的主要目的就是让消费方知道调用的Service的Application Name是什么，这样CAT监控的时候就可以相互关联起来。
 7) 埋点监控
 请查看Cat文档，特别是业务指标监控，需要在Cat后台添加相应的指标名称，然后才能够显示。
 
