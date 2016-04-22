@@ -85,6 +85,11 @@ druid数据源中添加上述配置开启对SQL的监控。
 6) Dubbo监控
 给dubbo配置上CatConsumerFilter和CatProviderFilter即可完成对dubbo分布式访问的监控，默认已经开启了这两个Filter。
 
+同时，在消费端需要配置：
+```xml
+<dubbo:reference id="registryService" interface="com.alibaba.dubbo.registry.RegistryService" check="false" />
+```
+
 7) 埋点监控
 请查看Cat文档，特别是业务指标监控，需要在Cat后台添加相应的指标名称，然后才能够显示。
 
