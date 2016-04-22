@@ -53,7 +53,7 @@
         data-chapter-title="APM"
         data-filepath="chapter4/09_Monitor.md"
         data-basepath=".."
-        data-revision="Thu Apr 14 2016 12:58:15 GMT+0800 (CST)"
+        data-revision="Fri Apr 22 2016 11:05:27 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -840,8 +840,17 @@ log4j.rootLogger=WARN, stdout, fileout, cat
 <p>5) Spring Service&#x76D1;&#x63A7;
 &#x4F9D;&#x8D56;macula-plugins-cat&#x63D2;&#x4EF6;&#x9ED8;&#x8BA4;&#x4F1A;&#x5F00;&#x542F;&#x5BF9;@Service&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x76D1;&#x63A7;</p>
 <p>6) Dubbo&#x76D1;&#x63A7;
-&#x7ED9;dubbo&#x914D;&#x7F6E;&#x4E0A;CatFilter&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x5BF9;dubbo&#x5206;&#x5E03;&#x5F0F;&#x8BBF;&#x95EE;&#x7684;&#x76D1;&#x63A7;</p>
-<p>7) &#x57CB;&#x70B9;&#x76D1;&#x63A7;
+&#x7ED9;dubbo&#x914D;&#x7F6E;&#x4E0A;CatConsumerFilter&#x548C;CatProviderFilter&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x5BF9;dubbo&#x5206;&#x5E03;&#x5F0F;&#x8BBF;&#x95EE;&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x9ED8;&#x8BA4;&#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x4E86;&#x8FD9;&#x4E24;&#x4E2A;Filter&#x3002;</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x5728;&#x6D88;&#x8D39;&#x7AEF;&#x9700;&#x8981;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dubbo:reference</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;registryService&quot;</span> <span class="hljs-attribute">interface</span>=<span class="hljs-value">&quot;com.alibaba.dubbo.registry.RegistryService&quot;</span> <span class="hljs-attribute">check</span>=<span class="hljs-value">&quot;false&quot;</span> /&gt;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x662F;&#x76F4;&#x63A5;&#x8FDE;&#x63A5;&#x6CA1;&#x6709;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x914D;&#x7F6E;&#x4E0A;&#x8FF0;registryService&#xFF0C;&#x901A;&#x8FC7;&#x7ED9;reference&#x6DFB;&#x52A0;provider&#x53C2;&#x6570;&#x6765;&#x914D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dubbo:reference</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;demoService&quot;</span> <span class="hljs-attribute">interface</span>=<span class="hljs-value">&quot;org.macula.plugins.dubbo.test.api.DemoService&quot;</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dubbo:parameter</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;provider&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;hello-app&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dubbo:reference</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x914D;&#x7F6E;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x8BA9;&#x6D88;&#x8D39;&#x65B9;&#x77E5;&#x9053;&#x8C03;&#x7528;&#x7684;Service&#x7684;Application Name&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x8FD9;&#x6837;CAT&#x76D1;&#x63A7;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x8D77;&#x6765;&#x3002;
+7) &#x57CB;&#x70B9;&#x76D1;&#x63A7;
 &#x8BF7;&#x67E5;&#x770B;Cat&#x6587;&#x6863;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E1A;&#x52A1;&#x6307;&#x6807;&#x76D1;&#x63A7;&#xFF0C;&#x9700;&#x8981;&#x5728;Cat&#x540E;&#x53F0;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x6307;&#x6807;&#x540D;&#x79F0;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x591F;&#x663E;&#x793A;&#x3002;</p>
 <h3 id="&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;">&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;</h3>
 <p>TODO</p>
