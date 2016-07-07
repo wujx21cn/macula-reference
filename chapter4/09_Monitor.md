@@ -100,7 +100,41 @@ druid数据源中添加上述配置开启对SQL的监控。
 请查看Cat文档，特别是业务指标监控，需要在Cat后台添加相应的指标名称，然后才能够显示。
 
 ####从macula-plugins-monitor迁移到CAT监控
-如果之前有使用
+如果之前有使用macula-plugins-monitor监控，需要现在web.xml中注释掉如下配置
+```xml
+  <!-- Monitor HTTP -->
+	<!-- 
+	<filter>
+		<filter-name>maculaPluginsMonitoring</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	-->
+ 	<!--
+	<filter-mapping>
+		<filter-name>maculaPluginsMonitoring</filter-name>
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
+	-->
+	<!-- 
+	<listener>
+		<listener-class>org.macula.plugins.monitor.SessionListener</listener-class>
+	</listener>
+	 -->    
+```
+
+在你的webapp的pom.xml中，取消对macula-plugins-monitor的依赖
+```xml
+    <!-- 
+    <dependency>
+        <groupId>org.macula.plugins</groupId>
+        <artifactId>macula-plugins-monitor</artifactId>
+    </dependency>
+    -->
+```
 ###移动应用监控
 TODO
 
