@@ -53,7 +53,7 @@
         data-chapter-title="APM"
         data-filepath="chapter4/09_Monitor.md"
         data-basepath=".."
-        data-revision="Fri Apr 22 2016 11:05:27 GMT+0800 (CST)"
+        data-revision="Sat Jul 09 2016 22:12:39 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -852,6 +852,39 @@ log4j.rootLogger=WARN, stdout, fileout, cat
 <p>&#x4E0A;&#x8FF0;&#x914D;&#x7F6E;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x8BA9;&#x6D88;&#x8D39;&#x65B9;&#x77E5;&#x9053;&#x8C03;&#x7528;&#x7684;Service&#x7684;Application Name&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x8FD9;&#x6837;CAT&#x76D1;&#x63A7;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x8D77;&#x6765;&#x3002;
 7) &#x57CB;&#x70B9;&#x76D1;&#x63A7;
 &#x8BF7;&#x67E5;&#x770B;Cat&#x6587;&#x6863;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E1A;&#x52A1;&#x6307;&#x6807;&#x76D1;&#x63A7;&#xFF0C;&#x9700;&#x8981;&#x5728;Cat&#x540E;&#x53F0;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x6307;&#x6807;&#x540D;&#x79F0;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x591F;&#x663E;&#x793A;&#x3002;</p>
+<h4 id="&#x4ECE;maculapluginsmonitor&#x8FC1;&#x79FB;&#x5230;cat&#x76D1;&#x63A7;">&#x4ECE;macula-plugins-monitor&#x8FC1;&#x79FB;&#x5230;CAT&#x76D1;&#x63A7;</h4>
+<p>&#x5982;&#x679C;&#x4E4B;&#x524D;&#x6709;&#x4F7F;&#x7528;macula-plugins-monitor&#x76D1;&#x63A7;&#xFF0C;&#x9700;&#x8981;&#x73B0;&#x5728;web.xml&#x4E2D;&#x6CE8;&#x91CA;&#x6389;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-xml">  <span class="hljs-comment">&lt;!-- Monitor HTTP --&gt;</span>
+    <span class="hljs-comment">&lt;!-- 
+    &lt;filter&gt;
+        &lt;filter-name&gt;maculaPluginsMonitoring&lt;/filter-name&gt;
+        &lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;targetFilterLifecycle&lt;/param-name&gt;
+            &lt;param-value&gt;true&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/filter&gt;
+    --&gt;</span>
+     <span class="hljs-comment">&lt;!--
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;maculaPluginsMonitoring&lt;/filter-name&gt;
+        &lt;servlet-name&gt;appServlet&lt;/servlet-name&gt;
+    &lt;/filter-mapping&gt;
+    --&gt;</span>
+    <span class="hljs-comment">&lt;!-- 
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.macula.plugins.monitor.SessionListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+     --&gt;</span>
+</code></pre>
+<p>&#x5728;&#x4F60;&#x7684;webapp&#x7684;pom.xml&#x4E2D;&#xFF0C;&#x53D6;&#x6D88;&#x5BF9;macula-plugins-monitor&#x7684;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-xml">    <span class="hljs-comment">&lt;!-- 
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.macula.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;macula-plugins-monitor&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    --&gt;</span>
+</code></pre>
 <h3 id="&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;">&#x79FB;&#x52A8;&#x5E94;&#x7528;&#x76D1;&#x63A7;</h3>
 <p>TODO</p>
 <h3 id="&#x6D4F;&#x89C8;&#x5668;&#x76D1;&#x63A7;">&#x6D4F;&#x89C8;&#x5668;&#x76D1;&#x63A7;</h3>
