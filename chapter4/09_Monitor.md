@@ -135,6 +135,10 @@ druid数据源中添加上述配置开启对SQL的监控。
     </dependency>
     -->
 ```
+
+搜寻DefaultRequestToNameImpl和RequestToNameBridge，将这两个bean定义拿掉。
+
+
 ###移动应用监控
 TODO
 
