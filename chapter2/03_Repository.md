@@ -330,3 +330,4 @@ TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法
 
 * 方法中的参数都需要@Param标识参数名称，以便和SQL语句中的参数占位符对应，如果参数类型是Map或者Bean，则SQL语句中的参数名称需要是 参数名称.属性名称，比如data.lastName；
 
+* FreeMarker的语法全部可以用在SQL语句中，可以解析的参数都是来源于方法中的参数值，所有参数值都会放到一个Map中传递给FreeMarker，同样，Bean或者Map参数需要加上他们的名字，比如data.lastName
