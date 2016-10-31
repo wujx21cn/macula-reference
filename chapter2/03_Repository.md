@@ -280,19 +280,19 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 Macula扩展了spring-data-jpa的功能，除了原先可以支持的@Query、@NamedQuery等方法上的注解，但是这些注解的SQL语句不支持动态条件，不能写if等表达式。
 TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
 
-    ```java
-    public UserRepository extends MaculaJpaRepository<User> {
-        ...
-        @TemplateQuery
-        public User findByLastName1(@Param("lastName") String lastName, Pageable page);
+```java
+public UserRepository extends MaculaJpaRepository<User> {
+    ...
+    @TemplateQuery
+    public User findByLastName1(@Param("lastName") String lastName, Pageable page);
         
-        @TemplateQuery
-        public UserVo findByLastName2(@Param("lastName") String lastName, Pageable page);
+    @TemplateQuery
+    public UserVo findByLastName2(@Param("lastName") String lastName, Pageable page);
 
-        @TemplateQuery
-        public UserVo findByLastName3(@Param("data") Map<String, Object> data, Pageable page);
-    }
-    ```
+    @TemplateQuery
+    public UserVo findByLastName3(@Param("data") Map<String, Object> data, Pageable page);
+}
+```
 
 同时，需要在resources/sqls/module-name/User.xml中编写SQL
     
