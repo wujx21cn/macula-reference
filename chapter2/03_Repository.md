@@ -277,8 +277,8 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 对于Repository层的开发，这里主要介绍了macula平台在Spring-Data下做出的扩展，更多的示例可参考macula平台提供的插件模块和示例模块，对于Spring-Data自身提供的功能，可以查看Spring-Data的官方文档。
 
 ### 使用TemplateQuery注解
-Macula扩展了spring-data-jpa的功能，除了原先可以支持的@Query、@NamedQuery等方法上的注解，但是这些注解的SQL语句不支持动态条件，不能写if等表达式。
-TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
+Macula扩展了spring-data-jpa的功能，除了原先可以支持的@Query、@NamedQuery等方法上的注解，Macula提供了TemplateQuery注解。
+原先的注解SQL语句不支持动态条件，不能写if等表达式。TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
 
 ```java
 public UserRepository extends MaculaJpaRepository<User> {
@@ -310,7 +310,10 @@ public UserRepository extends MaculaJpaRepository<User> {
 
 <sql name="findByLastName2">
  <![CDATA[
- select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+ select u.first_name, u.last_name from MY_USER u where  u.last_name = :lastName
+    <#if firstName??>
+      and u.first_name = :firstName
+    </#if>
  ]]>
 
 <sql name="findByLastName3">
