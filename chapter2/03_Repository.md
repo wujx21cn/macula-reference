@@ -294,4 +294,30 @@ TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法
     }
     ```
 
+    同时，需要在resources/sqls/module-name/User.xml中编写SQL
+    
+```xml
+<?xml version="1.0" encoding="utf-8" ?> 
+<sqls xmlns="http://www.maculaframework.org/schema/repository"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.maculaframework.org/schema/repository http://macula.top/schema/repository/macula-repository-1.0.xsd">
+ 
+<sql name="findByLastName1">
+ <![CDATA[
+ select * from MY_USER u where u.last_name = :lastName
+ ]]>
+</sql>
+
+<sql name="findByLastName2">
+ <![CDATA[
+ select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+ ]]>
+
+<sql name="findByLastName3">
+ <![CDATA[
+ select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+ ]]>
+</sql>
+</sqls>
+```
  
