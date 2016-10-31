@@ -324,6 +324,9 @@ TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法
 
 * findByLastName1演示了通过DomainClass返回数据；
 * findByLastName2演示了通过Vo返回数据；
-* findByLastName3演示了通过Map传递参数给SQL语句。
+* findByLastName3演示了通过Map传递参数给SQL语句；
 
-TemplateQuery的查询结果会自动转换到你要返回的类型，但是返回类型中的属性名称与数据库列名称必须对应起来，默认会将返回类型的属性名称的大写字母转换为_加小写，比如firstName会转换为first_name与数据库列对应，数据库的列也会统一转换为小写。
+* TemplateQuery的查询结果会自动转换到你要返回的类型，但是返回类型中的属性名称与数据库列名称必须对应起来，默认会将返回类型的属性名称的大写字母转换为_加小写，比如firstName会转换为first_name与数据库列对应，数据库的列也会统一转换为小写；
+
+* 方法中的参数都需要@Param标识参数名称，以便和SQL语句中的参数占位符对应，如果参数类型是Map或者Bean，则SQL语句中的参数名称需要是 参数名称.属性名称，比如data.lastName；
+
