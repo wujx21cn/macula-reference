@@ -276,4 +276,6 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
 对于Repository层的开发，这里主要介绍了macula平台在Spring-Data下做出的扩展，更多的示例可参考macula平台提供的插件模块和示例模块，对于Spring-Data自身提供的功能，可以查看Spring-Data的官方文档。
 
+### TemplateQuery注解
+
  
