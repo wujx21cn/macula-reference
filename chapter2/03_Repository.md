@@ -270,7 +270,7 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
     ***注意***
     
-    *该接口由macula平台提供，并由repositories中定义的factory-class：org.macula.core.repository.MaculaJpaRepositoryFactoryBean来正确处理，为了保证自定义实现能灵活的替换EntityManager而做出的扩展。*
+* 该接口由macula平台提供，并由repositories中定义的factory-class：org.macula.core.repository.MaculaJpaRepositoryFactoryBean来正确处理，为了保证自定义实现能灵活的替换EntityManager而做出的扩展。*
     
 * 自定义实现中的@Transactional，可直接定义在接口中，但在@Transactional的定义中，不要指定transactional使用的TrasactionManager的名称，道理和使用EntityManager相同，都由Macula平台的factory-class来统一处理。
 
@@ -294,7 +294,7 @@ TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法
     }
     ```
 
-    同时，需要在resources/sqls/module-name/User.xml中编写SQL
+同时，需要在resources/sqls/module-name/User.xml中编写SQL
     
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
@@ -315,9 +315,15 @@ TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法
 
 <sql name="findByLastName3">
  <![CDATA[
- select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+ select u.first_name, u.last_name from MY_USER u where u.last_name = :data.lastName
  ]]>
 </sql>
 </sqls>
 ```
- 
+***注意***
+
+* findByLastName1演示了通过DomainClass返回数据；
+* findByLastName2演示了通过Vo返回数据；
+* findByLastName3演示了通过Map传递参数给SQL语句。
+
+TemplateQuery的查询结果会自动转换到你要返回的类型，但是返回类型中的属性名称与数据库列名称必须对应起来，默认会将返回类型的属性名称的大写字母转换为_加小写，比如firstName会转换为first_name与数据库列对应，数据库的列也会统一转换为小写。
