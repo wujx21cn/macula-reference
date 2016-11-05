@@ -294,7 +294,7 @@ public UserRepository extends MaculaJpaRepository<User> {
 }
 ```
 
-同时，需要在resources/sqls/module-name/User.xml中编写SQL
+同时，需要在resources/sqls/module-name/org.macula.core.test.domain.User.xml中编写SQL，文件命名是Domain类的全名称加上.xml：
     
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
