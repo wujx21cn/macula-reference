@@ -67,7 +67,7 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 登录用户信息在登录时，我们已经通过实现 CustomUserLoginRepository 接口放到了UserPincipal的atrribute中，可以在Freemarker中通过如下获取：
 
-```java
+```
 <#if userPrincipal.getAttributeValue("userInfo")?exists>
   <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
 </#if>
