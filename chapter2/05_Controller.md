@@ -67,17 +67,17 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 登录用户信息在登录时，我们已经通过实现 CustomUserLoginRepository 接口放到了UserPincipal的atrribute中，可以在Freemarker中通过如下获取：
 
-&lt;\#if userPrincipal.getAttributeValue\("userInfo"\)?exists&gt;
+```
+<#if userPrincipal.getAttributeValue("userInfo")?exists>
+  <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
+</#if>
 
-      &lt;\#assign userInfo = userPrincipal.getAttributeValue\("userInfo"\)&gt;
+<#if userInfo?exists>
 
-&lt;\/\#if&gt;
+<#else>
 
-&lt;\#if userInfo?exists&gt;
-
-&lt;\#else&gt;
-
-&lt;\/\#if&gt;
+</#if>
+```
 
 ### 下拉框
 
@@ -88,28 +88,33 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 要实现下拉框首先需要有下拉框选项。下拉框的选项是静态的情形很简单，在这里我们讨论的是下拉框中的选项是从数据库中获取的。我们知道下拉框的选项由 name 和 value两项组成。在这里，我们需要用到 Macula 的数据参数功能。我们可以在数据参数中定义这些选项。数据参数中定义的选项有三种形式。
 
 1. 典型的形式如下：
+
   ```
-   name1:value1|name2:value2|...
+  name1:value1|name2:value2|...
   ```
 
-   例如：
+  例如：
+
   ```
-   NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
+  NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
   ```
 
 2. 如果选项的 name 和 value 相同，还可以简化成以下的形式：
+
   ```
-   name1|name2|...
+  name1|name2|...
   ```
 
-   例如：
+  例如：
+
   ```
-   String|Integer|Long|Double|Boolean|Timestamp|Date|Word
+  String|Integer|Long|Double|Boolean|Timestamp|Date|Word
   ```
 
 3. 当然还可以用 SQL 的形式从数据库中获取。例如：
+
   ```
-   select app_name as label, app_id as code from ma_base_application
+  select app_name as label, app_id as code from ma_base_application
   ```
 
 
@@ -296,7 +301,7 @@ public class PageResponse extends Response {
 
 上述代码中，Response类是基类，出现异常时会构造Response类型返回，ExecuteResponse主要用在单记录数据的返回，PageResponse则用于需要返回列表数据的情况。
 
-_**重要**_
+**_重要_**
 
 _为了减少对编程的干扰，正常情况下，Controller中的方法可以仍然按照Service接口中的方法的返回值正常返回数据，对于原使用@ResponseBody注解的方法，如果需要，则通过使用@OpenApi注解来自动处理对应的返回值，默认情况下，采用@OpenApi 注解后，非Response、Map、Model等类型的返回值，会被包裹成ExecuteResponse，而Page&lt;?&gt;返回值会被包裹成PageResponse。_
 
@@ -353,7 +358,7 @@ public class AdminMaculaBaseController extends BaseController {
   默认情况下，String MVC对参数的绑定方式，采用直接属性名与给定POJO属性名相同的方式实现绑定，为了更好的区分具体的参数信息，Macula平台扩展了这类绑定，允许
 
   ```
-   pojo名+ . + 属性名
+  pojo名+ . + 属性名
   ```
 
   的方式绑定。
@@ -363,59 +368,59 @@ public class AdminMaculaBaseController extends BaseController {
   比如在Controller中，会返回的用户信息保存，其Controller原型为：
 
   ```java
-   public User save(User user){
+  public User save(User user){
 
-   // something
+  // something
 
-   return user;
+  return user;
 
-   }
+  }
   ```
 
   此时客户端提交的参数信息为：
 
   ```
-   ?userName=Wilson&password=123456
+  ?userName=Wilson&password=123456
   ```
 
   此时Spring将自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
 
   ```java
-   public User save(@Valid @FormBean("user") User user){
+  public User save(@Valid @FormBean("user") User user){
 
-   if (hasErrors()) {
-       throw new FormBindException(getMergedBindingResults());
-   }
+  if (hasErrors()) {
+      throw new FormBindException(getMergedBindingResults());
+  }
 
-   // something
-   return user;
+  // something
+  return user;
 
-   }
+  }
   ```
 
   通过Macula平台扩展后的提交的数据格式，将可以通过下面提交方式绑定：
 
   ```
-   ?user.userName=Wilson&user.password=123456
+  ?user.userName=Wilson&user.password=123456
   ```
 
   为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
 
   ```xml
-   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-       <property name="customArgumentResolvers">
-           <list>
-               <bean class="org.macula.core.mvc.FormBeanArgumentResolver">
-                   <property name="webBindingInitializer" ref="webBindingInitializer" />
-               </bean>
-           </list>
-       </property>
-   </bean>
+  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+      <property name="customArgumentResolvers">
+          <list>
+              <bean class="org.macula.core.mvc.FormBeanArgumentResolver">
+                  <property name="webBindingInitializer" ref="webBindingInitializer" />
+              </bean>
+          </list>
+      </property>
+  </bean>
   ```
 
   通过对自定义参数的解析，可以实现上述的变化。
 
-  _**重要**_
+  **_重要_**
 
   _需要注意的是，使用Macula平台的绑定方式的前提是：必须使用@FormBean前缀，并且不能使用诸如@ModelAttribute、@RequestBody等Spring的绑定注解。_
 
@@ -443,10 +448,10 @@ public class AdminMaculaBaseController extends BaseController {
 
   具体的实现可参考macula.ftl文件。
 
-  _**重要**_
+  **_重要_**
 
   _主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。
-   特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
+  特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
 
 3. Pageable参数绑定
 
@@ -455,47 +460,47 @@ public class AdminMaculaBaseController extends BaseController {
   对于Pageable参数的绑定，比如Controller中编写：
 
   ```java
-   @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
+  @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
 
-   public Page<User> list(Pageable pageable) {
+  public Page<User> list(Pageable pageable) {
 
-   Page<User> page = userRespository.findAll(pageable);
+  Page<User> page = userRespository.findAll(pageable);
 
-   // other coding...
+  // other coding...
 
-   return page;
+  return page;
 
-   }
+  }
 
   ```
 
   为了实现这个扩展，主要在applicationContext-mvc.xml文件中的PageableArgumentResolver定义：
 
   ```xml
-   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 
-   <property name="messageConverters" ref="messageConverters" />
+  <property name="messageConverters" ref="messageConverters" />
 
-   <property name="webBindingInitializer" ref="webBindingInitializer" />
+  <property name="webBindingInitializer" ref="webBindingInitializer" />
 
-   <property name="customArgumentResolvers">
+  <property name="customArgumentResolvers">
 
-       <list>
+      <list>
 
-           <bean class="org.macula.core.mvc.PageableArgumentResolver" />           
+          <bean class="org.macula.core.mvc.PageableArgumentResolver" />           
 
-       </list>
+      </list>
 
-   </property>
+  </property>
 
-   </bean>
+  </bean>
   ```
 
   Pageable参数绑定时，将直接重Request中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-  _**重要**_
+  **_重要_**
 
-  _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\_" +属性名。_
+  _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\_" +属性名。\_
 
 4. 类型转换
 
@@ -504,32 +509,32 @@ public class AdminMaculaBaseController extends BaseController {
   对应的applicationContext-mvc.xml中配置如下：
 
   ```xml
-   <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-       <property name="converters">
-           <list>
-               <bean class="org.macula.core.mvc.RepositoryConverter" />
-           </list>
-       </property>
-   </bean>    
+  <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+      <property name="converters">
+          <list>
+              <bean class="org.macula.core.mvc.RepositoryConverter" />
+          </list>
+      </property>
+  </bean>    
   ```
 
   配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
 
-  _**重要**_
-   _除了加入该ConversionService外，还需要注意：_
+  **_重要_**
+  _除了加入该ConversionService外，还需要注意：_
 
   * _普通的VO对象不要实现Persistable接口，即不能使用该转换_
   * _待转化类必须实现Persistable接口_
   * _该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值_
 
-    _**例 8.2. 通过传入主键，直接转化为相应的对象**_
+    **_例 8.2. 通过传入主键，直接转化为相应的对象_**
 
     ```java
     @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
 
     public User edit(@PathVariable("userId") User user) {
 
-      return user;
+     return user;
 
     }    
     ```
