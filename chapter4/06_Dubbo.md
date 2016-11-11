@@ -8,6 +8,8 @@
 ###macula-cart-api-impl
 接口实现，这里可以调用repository做数据库的操作
 
-macula-cart-repository
+###macula-cart-repository
+数据存取层
 
-macula-cart-result
+###macula-cart-result
+数据返回结果VO
