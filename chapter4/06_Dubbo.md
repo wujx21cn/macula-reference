@@ -24,6 +24,16 @@
 ```
 用于定义dubbo服务
 
+* src/main/resources/configs/applicationContext-app.xml
+
+    *与webapp中的作用相同*
+* src/main/resources/包含
+    1. applicationContext-root.xml
+    2. macula.properties
+    3. log4j.properties
+    4. ehcache.xml
+作用基本与webapp中的相同，只是需要注意数据源的配置
+
 ###macula-cart-repository
 数据存取层
 
