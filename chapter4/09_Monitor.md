@@ -2,9 +2,9 @@
 
 ### 应用监控
 
-Macula是用大众点评开源的[CAT](https://github.com/dianping/cat)作为应用监控的服务器端，并通过macula-plugins-cat插件集成，具体开启应用监控的步骤如下：
+Macula是用大众点评开源的[CAT](https://github.com/dianping/cat)作为应用监控的服务器端，并通过macula-plugins-catex插件集成，具体开启应用监控的步骤如下：
 
-#### 首先你的应用需要依赖macula-plugins-cat插件
+#### 首先你的应用需要依赖macula-plugins-catex插件
 
 #### 创建client.xml
 
