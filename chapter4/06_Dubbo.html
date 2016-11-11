@@ -8,7 +8,7 @@
         <title>Dubbo | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.6.6">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,7 +48,13 @@
     <body>
         
         
-    <div class="book" data-level="4.6" data-chapter-title="Dubbo" data-filepath="chapter4/06_Dubbo.md" data-basepath=".." data-revision="Sat Nov 05 2016 19:54:46 GMT+0800 (CST)">
+    <div class="book"
+        data-level="4.6"
+        data-chapter-title="Dubbo"
+        data-filepath="chapter4/06_Dubbo.md"
+        data-basepath=".."
+        data-revision="Fri Nov 11 2016 21:55:25 GMT+0800 (CST)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
@@ -576,7 +582,7 @@
                         
                             <b>4.9.</b>
                         
-                        APM
+                        CAT
                     </a>
             
             
@@ -768,6 +774,40 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="dubbo">Dubbo</h1>
+<p>&#x5982;&#x679C;&#x4F60;&#x8981;&#x7F16;&#x5199;dubbo&#x670D;&#x52A1;&#xFF0C;&#x5EFA;&#x8BAE;&#x5982;&#x4E0B;&#x5206;&#x5305;&#xFF1A;</p>
+<h3 id="maculacartapi">macula-cart-api</h3>
+<p>&#x5BF9;&#x5916;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#xFF0C;&#x9700;&#x8981;&#x5728;src/main/resources/META-INF/macula-cart-api-consumer.xml&#x4E2D;&#xFF0C;&#x5F15;&#x5165;</p>
+<pre><code>&lt;dubbo:reference id=&quot;demoApi&quot; interface=&quot;org.macula.cart.api.DemoApi&quot; version=&quot;2.0.0&quot; check=&quot;false&quot; /&gt;
+</code></pre><p>&#x8FD9;&#x6837;&#x7B2C;&#x4E09;&#x65B9;&#x5F15;&#x7528;&#x8FD9;&#x4E2A;API&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x52A0;&#x8F7D;xml&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x83B7;&#x53D6;&#x5230;dubbo&#x7684;reference</p>
+<h3 id="maculacartapiimpl">macula-cart-api-impl</h3>
+<p>&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x8C03;&#x7528;repository&#x505A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li><p>src/main/resources/META-INF/macula-cart-api-impl-app.xml</p>
+<pre><code>&lt;context:component-scan base-package=&quot;org.macula.cart.api.impl&quot; /&gt;
+</code></pre><p>&#x7528;&#x4E8E;&#x626B;&#x63CF;&#x6CE8;&#x89E3;&#x3002;</p>
+</li>
+<li><p>src/main/resources/META-INF/macula-cart-api-impl-provider.xml</p>
+<pre><code>&lt;dubbo:service interface=&quot;org.macula.cart.api.DemoApi&quot; ref=&quot;demoApiImpl&quot; version=&quot;2.0.0&quot; /&gt;
+</code></pre><p>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;dubbo&#x670D;&#x52A1;</p>
+</li>
+<li><p>src/main/resources/configs/applicationContext-app.xml</p>
+<p>  <em>&#x4E0E;webapp&#x4E2D;&#x7684;&#x4F5C;&#x7528;&#x76F8;&#x540C;</em></p>
+</li>
+<li>src/main/resources/&#x5305;&#x542B;<ol>
+<li>applicationContext-root.xml</li>
+<li>macula.properties</li>
+<li>log4j.properties</li>
+<li>ehcache.xml</li>
+</ol>
+</li>
+</ul>
+<p>&#x4F5C;&#x7528;&#x57FA;&#x672C;&#x4E0E;webapp&#x4E2D;&#x7684;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x6570;&#x636E;&#x6E90;&#x7684;&#x914D;&#x7F6E;</p>
+<h3 id="maculacartrepository">macula-cart-repository</h3>
+<p>&#x6570;&#x636E;&#x5B58;&#x53D6;&#x5C42;</p>
+<h3 id="maculacartresult">macula-cart-result</h3>
+<p>&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;VO</p>
+<h3 id="&#x6CE8;&#x610F;"><em>&#x6CE8;&#x610F;</em></h3>
+<p>&#x5EFA;&#x8BAE;dubbo&#x670D;&#x52A1;&#x4E0D;&#x8981;&#x4F9D;&#x8D56;macula-base&#x5305;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;macula&#x6570;&#x636E;&#x6E90;&#x5230;dubbo&#x4E2D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;dubbo&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8BBF;&#x95EE;macula&#x6570;&#x636E;&#x5E93;&#x3002;</p>
 
                     
                     </section>
@@ -807,7 +847,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

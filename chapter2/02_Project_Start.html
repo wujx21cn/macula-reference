@@ -8,7 +8,7 @@
         <title>项目集成 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.6.6">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,7 +48,13 @@
     <body>
         
         
-    <div class="book" data-level="2.2" data-chapter-title="项目集成" data-filepath="chapter2/02_Project_Start.md" data-basepath=".." data-revision="Sat Nov 05 2016 19:54:46 GMT+0800 (CST)">
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="项目集成"
+        data-filepath="chapter2/02_Project_Start.md"
+        data-basepath=".."
+        data-revision="Fri Nov 11 2016 21:55:25 GMT+0800 (CST)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
@@ -576,7 +582,7 @@
                         
                             <b>4.9.</b>
                         
-                        APM
+                        CAT
                     </a>
             
             
@@ -780,8 +786,10 @@
       <span class="hljs-comment">// &#x53C2;&#x8003;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x5B8C;&#x6210;</span>
       JpaUIMUser user = uimUserRepository.findByUserName(username);
       <span class="hljs-keyword">if</span> (user != <span class="hljs-keyword">null</span>) {
-          UserPrincipalImpl principal = <span class="hljs-keyword">new</span> UserPrincipalImpl(user.getUserName());
-          principal.setPassword(user.getPassword());
+          UserPrincipalImpl principal = <span class="hljs-keyword">new</span> UserPrincipalImpl(user.getUserName(), user.getPassword());
+          <span class="hljs-comment">// &#x6839;&#x636E;&#x9700;&#x8981;&#xFF0C;&#x5C06;&#x989D;&#x5916;&#x7684;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x653E;&#x5230;Attributes&#x4E2D;</span>
+          <span class="hljs-comment">// UserInfo userInfo = xxxx.getUserInfo(username);</span>
+          <span class="hljs-comment">// principal.addAttribute(&quot;userInfo&quot;, userInfo);</span>
           <span class="hljs-keyword">return</span> principal;
       }
       <span class="hljs-comment">// throw new UsernameNotFoundException(&quot;AbstractUserDetailsAuthenticationProvider.badCredentials&quot;);</span>
@@ -833,7 +841,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
