@@ -41,3 +41,6 @@
 ###macula-cart-result
 数据返回结果VO
 
+###*注意*
+建议dubbo服务不要依赖macula-base包，这样的话，就不需要定义macula数据源到dubbo中，也就是说dubbo服务可以不用访问macula数据库。
+
