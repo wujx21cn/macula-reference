@@ -32,6 +32,7 @@
     2. macula.properties
     3. log4j.properties
     4. ehcache.xml
+
 作用基本与webapp中的相同，只是需要注意数据源的配置
 
 ###macula-cart-repository
