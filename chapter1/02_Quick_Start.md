@@ -61,7 +61,7 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 ![tutorials-new-project.png](../images/chapter1/tutorials-new-project.png)
 
-点击下一步后按照下面界面安装macula-tools-archetype插件（目前最新版本为1.0.4.RELEASE。如果已经存在无需再次安装）
+点击下一步后按照下面界面安装macula-tools-archetype插件（目前最新版本为1.0.5.RELEASE。如果已经存在无需再次安装）
 
 ![使用Macula插件创建项目](../images/chapter1/tutorials-tools-archtype.png)
 
