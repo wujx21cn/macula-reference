@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>业务服务层 | Macula Reference</title>
+        <title>Release Nodes | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter2/05_Controller.html" />
+    <link rel="next" href="../chapter2/chapter2.html" />
     
     
-    <link rel="prev" href="../chapter2/03_Repository.html" />
+    <link rel="prev" href="../chapter1/03_Project_Building.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="2.5"
-        data-chapter-title="业务服务层"
-        data-filepath="chapter2/04_Service.md"
+        data-level="1.4"
+        data-chapter-title="Release Nodes"
+        data-filepath="chapter1/04_Release_Nodes.md"
         data-basepath=".."
         data-revision="Wed Nov 23 2016 17:05:32 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -150,7 +150,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="chapter1/04_Release_Nodes.html">
+        <li class="chapter active" data-level="1.4" data-path="chapter1/04_Release_Nodes.html">
             
                 
                     <a href="../chapter1/04_Release_Nodes.html">
@@ -246,7 +246,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.5" data-path="chapter2/04_Service.html">
+        <li class="chapter " data-level="2.5" data-path="chapter2/04_Service.html">
             
                 
                     <a href="../chapter2/04_Service.html">
@@ -788,17 +788,20 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;">&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;</h1>
-<p>Macula&#x5F00;&#x53D1;&#x5E73;&#x53F0;&#x81EA;&#x8EAB;&#x662F;&#x57FA;&#x4E8E;Spring&#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x57FA;&#x7840;&#xFF0C;&#x5728;Spring Framework&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;&#x7684;&#x4E00;&#x4E9B;&#x89C4;&#x5219;&#x548C;CoC&#x7684;&#x6807;&#x51C6;&#x4E0E;&#x89C4;&#x8303;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5C42;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x9700;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x662F;&#x670D;&#x52A1;&#x5C42;&#x7684;&#x5F00;&#x53D1;&#x89C4;&#x8303;&#x3002;</p>
-<p>&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x901A;&#x8FC7;Spring Bean&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x5176;&#x5F00;&#x53D1;&#x672C;&#x8EAB;&#x4E0E;&#x4E00;&#x822C;&#x7684;&#x57FA;&#x4E8E;Spring&#x7684;J2EE&#x5F00;&#x53D1;&#x4E00;&#x81F4;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;Macula&#x5E73;&#x53F0;&#x6240;&#x505A;&#x51FA;&#x7684;&#x4E00;&#x4E9B;&#x8981;&#x6C42;&#x505A;&#x4E00;&#x4E9B;&#x4ECB;&#x7ECD;&#x3002;</p>
-<h2 id="&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x6613;&#x8BFB;&#x6027;&#x63A5;&#x53E3;">&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x5FC5;&#x987B;&#x5177;&#x5907;&#x6613;&#x8BFB;&#x6027;&#x63A5;&#x53E3;</h2>
-<p>&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x6D89;&#x53CA;&#x7684;&#x4EE3;&#x7801;&#x91CF;&#x5728;&#x6574;&#x4E2A;&#x5F00;&#x53D1;&#x4E2D;&#x5360;&#x636E;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6BD4;&#x4F8B;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x7684;&#x6574;&#x6D01;&#x548C;&#x6613;&#x8BFB;&#x6027;&#xFF0C;&#x5BF9;&#x670D;&#x52A1;&#x5C42;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x5FC5;&#x987B;&#x6309;&#x529F;&#x80FD;&#x3001;&#x7528;&#x9014;&#x3001;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x60C5;&#x51B5;&#x7B49;&#x65B9;&#x5F0F;&#xFF0C;&#x5206;&#x89E3;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x4E2D;&#xFF0C;&#x5E76;&#x5728;&#x547D;&#x540D;&#x4E0A;&#x5177;&#x5907;&#x76F8;&#x5F53;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x4F7F;&#x4EE3;&#x7801;&#x9605;&#x8BFB;&#x8005;&#x80FD;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x540D;&#x79F0;&#x4EE5;&#x53CA;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x76F4;&#x89C2;&#x7684;&#x4E86;&#x89E3;&#x5230;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
-<h2 id="&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x5FC5;&#x987B;&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6821;&#x9A8C;">&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x5FC5;&#x987B;&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6821;&#x9A8C;</h2>
-<p>&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5C42;&#x6700;&#x603B;&#x7684;&#x8C03;&#x7528;&#x8005;&#x53EF;&#x80FD;&#x6765;&#x81EA;Controller&#x5C42;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x6765;&#x81EA;WebService&#x5C42;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5C42;&#x65B9;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5408;&#x6CD5;&#x6027;&#x68C0;&#x67E5;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;assert(boolean, message)&#x7B49;&#x52A9;&#x624B;&#x65B9;&#x6CD5;&#xFF0C;&#x5C3D;&#x5FEB;&#x5C06;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x4EE5;&#x5F02;&#x5E38;&#x7684;&#x65B9;&#x5F0F;&#x629B;&#x51FA;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x8FB9;&#x8FD0;&#x884C;&#x8FB9;&#x68C0;&#x67E5;&#xFF0C;&#x8FD9;&#x6837;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x5F00;&#x9500;&#x7684;&#x589E;&#x5927;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5931;&#x53BB;&#x4E86;&#x7ED3;&#x6784;&#x7684;&#x4E25;&#x8C28;&#x6027;&#x4EE5;&#x53CA;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;</p>
-<h2 id="&#x670D;&#x52A1;&#x5C42;&#x7684;&#x4E8B;&#x52A1;&#x914D;&#x7F6E;">&#x670D;&#x52A1;&#x5C42;&#x7684;&#x4E8B;&#x52A1;&#x914D;&#x7F6E;</h2>
-<p>&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5C42;&#x7684;&#x4E8B;&#x52A1;&#x6CE8;&#x89E3;&#xFF0C;&#x5C06;&#x653E;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x4E0A;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x9700;&#x8981;&#x4E8B;&#x52A1;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x80FD;&#x662F;&#x63A5;&#x53E3;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x786E;&#x5B9A;&#x4E8B;&#x52A1;&#x7684;&#x53EA;&#x8BFB;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x67E5;&#x8BE2;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x589E;&#x52A0;&#x4E8B;&#x52A1;&#x7684;readOnly=true&#x6807;&#x8BB0;&#xFF0C;&#x4EE5;&#x589E;&#x5F3A;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x3002;</p>
-<h2 id="&#x670D;&#x52A1;&#x5C42;&#x7684;spring-bean&#x5B9A;&#x4E49;">&#x670D;&#x52A1;&#x5C42;&#x7684;Spring Bean&#x5B9A;&#x4E49;</h2>
-<p>&#x5982;&#x65E0;&#x7279;&#x6B8A;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;@Service&#x6765;&#x5B9A;&#x4E49;&#x4E1A;&#x52A1;&#x5C42;&#x7684;Bean&#xFF0C;&#x5BF9;&#x4E8E;&#x4E3B;&#x8981;&#x6CE8;&#x5165;&#x7684;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;&#x7684;Bean&#xFF0C;&#x5219;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#xFF0C;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#x662F;Spring 3.0&#x540E;&#x63A8;&#x5D07;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x53C2;&#x8003;Spring Framework&#x76F8;&#x5173;&#x6587;&#x6863;&#x3002;</p>
+                        <h1 id="release-nodes">Release Nodes</h1>
+<h2 id="macula-30-releae-nodes">Macula 3.0 Releae Nodes</h2>
+<ul>
+<li><h3 id="spring-4">Spring 4</h3>
+Macula 3 &#x5C06;&#x5E95;&#x5C42;&#x4F9D;&#x8D56;&#x7684;Spring &#x5347;&#x7EA7;&#x5230;Spring 4&#xFF0C;&#x4EE5;&#x63D0;&#x4F9B;&#x5BF9;Spring &#x65B0;&#x7279;&#x6027;&#x7684;&#x652F;&#x6301;&#x3002;Spring 4 &#x652F;&#x6301;Java 8&#xFF0C; &#x5728;&#x6838;&#x5FC3;&#x5BB9;&#x5668;&#x3001;Web&#x3001;WebSocket&#x7F16;&#x7A0B;&#x3001;&#x6D4B;&#x8BD5;&#x7B49;&#x65B9;&#x9762;&#x90FD;&#x6709;&#x6240;&#x63D0;&#x9AD8;&#x3002;</li>
+<li><h3 id="&#x5168;&#x65B0;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;">&#x5168;&#x65B0;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;</h3>
+Macula 3 &#x57FA;&#x4E8E;jQuery&#x548C;Bootstrap&#x6784;&#x5EFA;&#x4E86;&#x4E00;&#x5957;UI&#x5F00;&#x53D1;&#x6846;&#x67B6;Mower&#xFF0C;&#x5E76;&#x4E14;&#x5236;&#x5B9A;&#x4E86;&#x540E;&#x7AEF;&#x4E0E; &#x524D;&#x7AEF;&#x7684;&#x6807;&#x51C6;&#x5E03;&#x5C40;&#x6A21;&#x677F;&#xFF0C;&#x51CF;&#x8F7B;&#x4E86;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6784;&#x5EFA;&#x7528;&#x6237;&#x754C;&#x9762;&#x7684;&#x6210;&#x672C;&#xFF0C;&#x6709;&#x5229;&#x4E8E;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x7684;&#x63D0;&#x5347;&#x3002;</li>
+<li><h3 id="&#x57FA;&#x4E8E;redis&#x7684;&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;">&#x57FA;&#x4E8E;Redis&#x7684;&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;</h3>
+&#x7531;&#x4E8E;&#x73B0;&#x5728;&#x7684;&#x5E94;&#x7528;&#x7CFB;&#x7EDF;&#x5927;&#x591A;&#x6709;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;J2EE&#x5E94;&#x7528;&#x5927;&#x591A;&#x57FA;&#x4E8E;&#x672C;JVM&#x7BA1;&#x7406;HTTP&#x4F1A;&#x8BDD;&#xFF0C;&#x4F46;&#x662F;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4; &#x4F1A;&#x8BDD;&#x7684;&#x540C;&#x6B65;&#x4E0E;&#x7BA1;&#x7406;&#x975E;&#x5E38;&#x9EBB;&#x70E6;&#xFF0C;Macula 3 &#x57FA;&#x4E8E;Redis&#x5171;&#x4EAB;&#x4F1A;&#x8BDD;&#xFF0C;&#x5927;&#x5927;&#x7B80;&#x5316;&#x4E86;&#x96C6;&#x7FA4;&#x95F4;&#x7528;&#x6237;&#x4F1A;&#x8BDD;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x4F5C;&#x3002;</li>
+<li><h3 id="&#x5FAE;&#x670D;&#x52A1;&#x6846;&#x67B6;">&#x5FAE;&#x670D;&#x52A1;&#x6846;&#x67B6;</h3>
+Macula 3 &#x5F15;&#x5165;&#x5F00;&#x6E90;&#x5206;&#x5E03;&#x5F0F;&#x670D;&#x52A1;&#x6846;&#x67B6;Dubbo&#x4F5C;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x4EE5;&#x63D2;&#x4EF6;&#x5316;&#x5F62;&#x5F0F;&#x63D0;&#x4F9B;&#x5BF9;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x7B80;&#x5355;&#x6613;&#x7528;&#x3002;</li>
+<li><h3 id="cat&#x63D2;&#x4EF6;">CAT&#x63D2;&#x4EF6;</h3>
+CAT &#x662F;&#x4E00;&#x5957;&#x57FA;&#x4E8E;Java&#x7684;&#x5F00;&#x6E90;&#x5B9E;&#x65F6;&#x5E94;&#x7528;&#x76D1;&#x63A7;&#x5E73;&#x53F0;&#xFF0C;&#x4E3B;&#x8981;&#x5E94;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x4E2D;&#x95F4;&#x4EF6;&#x6846;&#x67B6;&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x4E3A;&#x5F00;&#x53D1;&#x548C;&#x8FD0;&#x7EF4;&#x63D0;&#x4F9B;&#x5404;&#x9879;&#x6027;&#x80FD;&#x6307;&#x6807;&#x3001;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x3001;&#x81EA;&#x52A8;&#x62A5;&#x8B66;&#x7B49;&#x53EF;&#x89C6;&#x5316;&#x670D;&#x52A1;&#x3002;Macula&#x63D0;&#x4F9B;CAT&#x63D2;&#x4EF6;&#x4EE5;&#x51CF;&#x5C11;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x57CB;&#x70B9;&#x5DE5;&#x4F5C;&#x91CF;&#x3002;</li>
+</ul>
 
                     
                     </section>
@@ -809,10 +812,10 @@
         </div>
 
         
-        <a href="../chapter2/03_Repository.html" class="navigation navigation-prev " aria-label="Previous page: 数据存取层"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter1/03_Project_Building.html" class="navigation navigation-prev " aria-label="Previous page: 项目构建"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter2/05_Controller.html" class="navigation navigation-next " aria-label="Next page: 展示层"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter2/chapter2.html" class="navigation navigation-next " aria-label="Next page: 核心技术"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
