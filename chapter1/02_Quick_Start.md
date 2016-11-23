@@ -81,7 +81,7 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 * 以上配置保存在applicationContext-root.xml中，可以根据需要修改
 * CustomMyUserLoginRepopsitory类需要关注，根据你的用户表获取用户信息构造凭据
 * 如果你要改变登录、菜单等信息，可以关注CustomMyAppController类
-* 删除macula-samples-parent/pom.xml文件中parent的部分
+* 删除macula-samples-parent/pom.xml, macula-samples-api/pom.xml文件中parent的部分
 * 启动运行
 
 本程序中的演示程序URL是
