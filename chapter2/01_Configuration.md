@@ -447,8 +447,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
     ```
 * 数据源同样也是配置在applicationContext-root.xml中
     ```xml
-     <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
- init-method="init" destroy-method="close">
+     <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
          <!-- 配置监控统计拦截的filters -->
          <property name="filters" value="stat,config" />
          <!-- 配置CAT拦截 -->
