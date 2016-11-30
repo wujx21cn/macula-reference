@@ -413,3 +413,51 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 作为都已树枝的log4j配置文件log4j.properties文件，但这里需要说明的是，在程序中引入log时，需要引入的是org.slf4j包。
 
 log4j.properties文件可在开发和生产两个环境下，使用不同的日志输出级别配置，以达到不同的需求的目的。
+
+### 多环境配置问题
+
+一般应用程序在开发、测试、生产的配置都是不一样的，框架支持在启动时添加参数来选择不同的环境参数，具体如下：
+
+* 启动时在命令行添加-Dmacula.profile=xxx，其中xxx表示环境路径
+* 在您的webapp或者api-impl包的configs目录下根据xxx建立相应的目录，系统会自动从该目录中加载
+    * macula.properties
+    * freemarker.properties(不依赖macula-base的应用不加载这个文件)
+    * log4j.properties
+* 在applicationContext-root.xml中，可以通过Spring的Profile来区分环境配置，如：
+    ```xml
+     <beans profile="local"> 
+         <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+             <property name="hostName" value="localhost" />
+         </bean>
+     </beans>
+    ```
+则上段配置只有当环境是local时才会加载，profile可以写入多个环境，用逗号隔开，如果profile中有default，则没有配置环境属性时也会加载，如
+    ```xml
+    <beans profile="default,dev"> 
+        <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+             <constructor-arg index="0" value="mymaster" />
+             <constructor-arg index="1">
+                 <set>
+                     <value>soa-dev01.infinitus.com.cn:26379</value>
+                     <value>soa-dev01.infinitus.com.cn:26479</value>
+                 </set>
+             </constructor-arg>
+         </bean>
+    </beans>
+    ```
+* 数据源同样也是配置在applicationContext-root.xml中
+    ```xml
+     <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+ init-method="init" destroy-method="close">
+         <!-- 配置监控统计拦截的filters -->
+         <property name="filters" value="stat,config" />
+         <!-- 配置CAT拦截 -->
+         <property name="proxyFilters">
+             <list>
+                 <bean class="org.macula.plugins.cat.druid.CatFilter" />
+             </list>
+         </property>
+         <!-- 配置数据源连接 -->
+         <property name="connectionProperties" value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
+     </bean>
+    ```
