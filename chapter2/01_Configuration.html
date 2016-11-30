@@ -53,7 +53,7 @@
         data-chapter-title="配置文件"
         data-filepath="chapter2/01_Configuration.md"
         data-basepath=".."
-        data-revision="Wed Nov 23 2016 17:05:32 GMT+0800 (CST)"
+        data-revision="Wed Nov 30 2016 20:32:23 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -1145,6 +1145,51 @@
 <h3 id="log4j&#x914D;&#x7F6E;">Log4j&#x914D;&#x7F6E;</h3>
 <p>&#x4F5C;&#x4E3A;&#x90FD;&#x5DF2;&#x6811;&#x679D;&#x7684;log4j&#x914D;&#x7F6E;&#x6587;&#x4EF6;log4j.properties&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F15;&#x5165;log&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5F15;&#x5165;&#x7684;&#x662F;org.slf4j&#x5305;&#x3002;</p>
 <p>log4j.properties&#x6587;&#x4EF6;&#x53EF;&#x5728;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x4E24;&#x4E2A;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x7EA7;&#x522B;&#x914D;&#x7F6E;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x9700;&#x6C42;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<h3 id="&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x95EE;&#x9898;">&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x95EE;&#x9898;</h3>
+<p>&#x4E00;&#x822C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x5F00;&#x53D1;&#x3001;&#x6D4B;&#x8BD5;&#x3001;&#x751F;&#x4EA7;&#x7684;&#x914D;&#x7F6E;&#x90FD;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x6846;&#x67B6;&#x652F;&#x6301;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x6DFB;&#x52A0;&#x53C2;&#x6570;&#x6765;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#x53C2;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x542F;&#x52A8;&#x65F6;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6DFB;&#x52A0;-Dmacula.profile=xxx&#xFF0C;&#x5176;&#x4E2D;xxx&#x8868;&#x793A;&#x73AF;&#x5883;&#x8DEF;&#x5F84;</li>
+<li>&#x5728;&#x60A8;&#x7684;webapp&#x6216;&#x8005;api-impl&#x5305;&#x7684;configs&#x76EE;&#x5F55;&#x4E0B;&#x6839;&#x636E;xxx&#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x4ECE;&#x8BE5;&#x76EE;&#x5F55;&#x4E2D;&#x52A0;&#x8F7D;<ul>
+<li>macula.properties</li>
+<li>freemarker.properties(&#x4E0D;&#x4F9D;&#x8D56;macula-base&#x7684;&#x5E94;&#x7528;&#x4E0D;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;)</li>
+<li>log4j.properties</li>
+</ul>
+</li>
+<li>&#x5728;applicationContext-root.xml&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Spring&#x7684;Profile&#x6765;&#x533A;&#x5206;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#xFF1A;<pre><code class="lang-xml">   <span class="hljs-tag">&lt;<span class="hljs-title">beans</span> <span class="hljs-attribute">profile</span>=<span class="hljs-value">&quot;local&quot;</span>&gt;</span> 
+       <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;redisConnectionFactory&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;hostName&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;localhost&quot;</span> /&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">beans</span>&gt;</span>
+</code></pre>
+&#x5219;&#x4E0A;&#x6BB5;&#x914D;&#x7F6E;&#x53EA;&#x6709;&#x5F53;&#x73AF;&#x5883;&#x662F;local&#x65F6;&#x624D;&#x4F1A;&#x52A0;&#x8F7D;&#xFF0C;profile&#x53EF;&#x4EE5;&#x5199;&#x5165;&#x591A;&#x4E2A;&#x73AF;&#x5883;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#xFF0C;&#x5982;&#x679C;profile&#x4E2D;&#x6709;default&#xFF0C;&#x5219;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x5C5E;&#x6027;&#x65F6;&#x4E5F;&#x4F1A;&#x52A0;&#x8F7D;&#xFF0C;&#x5982;<pre><code class="lang-xml">  <span class="hljs-tag">&lt;<span class="hljs-title">beans</span> <span class="hljs-attribute">profile</span>=<span class="hljs-value">&quot;default,dev&quot;</span>&gt;</span> 
+      <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;redisConfig&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.data.redis.connection.RedisSentinelConfiguration&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">index</span>=<span class="hljs-value">&quot;0&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;mymaster&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">index</span>=<span class="hljs-value">&quot;1&quot;</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-title">set</span>&gt;</span>
+                   <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>soa-dev01.infinitus.com.cn:26379<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+                   <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>soa-dev01.infinitus.com.cn:26479<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span>
+               <span class="hljs-tag">&lt;/<span class="hljs-title">set</span>&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-title">constructor-arg</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">beans</span>&gt;</span>
+</code></pre>
+</li>
+<li>&#x6570;&#x636E;&#x6E90;&#x540C;&#x6837;&#x4E5F;&#x662F;&#x914D;&#x7F6E;&#x5728;applicationContext-root.xml&#x4E2D;<pre><code class="lang-xml">   <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;macula_dataSource&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span> <span class="hljs-attribute">init-method</span>=<span class="hljs-value">&quot;init&quot;</span> <span class="hljs-attribute">destroy-method</span>=<span class="hljs-value">&quot;close&quot;</span>&gt;</span>
+       <span class="hljs-comment">&lt;!-- &#x914D;&#x7F6E;&#x76D1;&#x63A7;&#x7EDF;&#x8BA1;&#x62E6;&#x622A;&#x7684;filters --&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;filters&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;stat,config&quot;</span> /&gt;</span>
+       <span class="hljs-comment">&lt;!-- &#x914D;&#x7F6E;CAT&#x62E6;&#x622A; --&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;proxyFilters&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.plugins.cat.druid.CatFilter&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+       <span class="hljs-comment">&lt;!-- &#x914D;&#x7F6E;&#x6570;&#x636E;&#x6E90;&#x8FDE;&#x63A5; --&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;connectionProperties&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties&quot;</span> /&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+</code></pre>
+</li>
+<li>&#x5176;&#x4ED6;&#x5982;MongoDB&#x7B49;&#x914D;&#x7F6E;&#x91C7;&#x7528;&#x7C7B;&#x4F3C;&#x65B9;&#x5F0F;&#x5373;&#x53EF;&#x3002;&#x5982;&#x679C;&#x542F;&#x52A8;&#x65F6;&#x6CA1;&#x6709;&#x52A0;&#x5165;-Dmacula.profile&#xFF0C;&#x5219;&#x7CFB;&#x7EDF;&#x4F1A;&#x5728;classpath&#x7684;&#x6839;&#x8DEF;&#x5F84;&#x4E0B;&#x5BFB;&#x627E;&#x4E0A;&#x8FF0;properties&#x6587;&#x4EF6;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;Configuration.getProfile()&#x548C;Configuration.getProfilePath()&#x8FD4;&#x56DE;&#x7A7A;&#x4E32;&#x3002;</li>
+</ul>
 
                     
                     </section>
