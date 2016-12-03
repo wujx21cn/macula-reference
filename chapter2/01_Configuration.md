@@ -2,12 +2,21 @@
 
 基于Macula开发的项目，涉及到的配置文件有：
 
-* 属性配置文件
-  * Macula框架配置      **macula.properties**  
-  * FreeMarker配置       **freemarker.properties** 
-  * Log4j配置                 **log4j.properties** 
+* **属性配置文件**
 
-* Spring相关配置
+  * **macula.properties**  Macula框架配置
+  * **freemarker.properties** FreeMarker配置
+  * **log4j.properties**  Log4j配置
+
+* **Spring相关配置**
+
+  * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
+
+  * configs/applicationContext-app.xml
+
+
+* web.xml配置
+
 
 ### Macula配置
 
@@ -17,11 +26,6 @@
 
 
 **表 4.1. macula.properties可配置属性**
-
-| 属性名称 | 说明 | 数据类型 | 默认值 |
-| :--- | :---: | :--- | :--- |
-| daa | bbb |  | cc |
-| test | ddd | ddd |  |
 
 _**提示**_
 
