@@ -5,7 +5,7 @@
   * [概述](chapter1/01_Introduction.md)
   * [快速开始](chapter1/02_Quick_Start.md)
   * [项目构建](chapter1/03_Project_Building.md)
-  * 发布说明
+  * [发布说明](chapter1/04_Release_Nodes.md)
 
 * [核心技术](chapter2/chapter2.md)
   * [配置文件](chapter2/01_Configuration.md)
