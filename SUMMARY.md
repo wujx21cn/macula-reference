@@ -22,7 +22,7 @@
    * [基础设施](chapter3/01_Plugins-Infrastructure.md)
    * [数据提供](chapter3/02_Plugins_Data.md)
    * [数据集](chapter3/03_Plugins_DataSet.md)
-   * [安全认证](chapter3/05_Plugins_Authentication.md)
+   * [安全管理](chapter3/05_Plugins_Authentication.md)
    * [权限管理](chapter3/04_Plugins_Authority2.md)
 * [扩展插件](chapter4/chapter4.md)
    * [WEB应用基础](chapter4/01_Webapp.md)
