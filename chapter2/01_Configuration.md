@@ -2,11 +2,14 @@
 
 基于Macula开发的项目，涉及到的配置文件有：
 
-* Macula配置
-* Spring配置
-* JPA配置
-* Freemarker配置
-* Log4J配置
+* 属性配置文件
+  * Macula框架配置      **macula.properties**  
+  * FreeMarker配置       **freemarker.properties** 
+
+
+* * Log4j配置                 **log4j.properties** 
+
+* Spring相关配置
 
 ### Macula配置
 
