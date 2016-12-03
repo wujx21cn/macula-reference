@@ -418,7 +418,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
 
 一般应用程序在开发、测试、生产的配置都是不一样的，框架支持在启动时添加参数来选择不同的环境参数，具体如下：
 
-* 修改web.xml中的配置，将ContextLoaderListener改为MaculaContextLoaderListener，原来的MaculaConextListener删除
+* 修改web.xml中的配置，将ContextLoaderListener改为MaculaContextLoaderListener，原来的MaculaConextListener删除，最终变成如下：
 ```xml
 	<listener>
 		<listener-class>org.macula.core.listener.MaculaContextLoaderListener</listener-class>
