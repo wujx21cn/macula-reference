@@ -5,9 +5,7 @@
 * 属性配置文件
   * Macula框架配置      **macula.properties**  
   * FreeMarker配置       **freemarker.properties** 
-
-
-* * Log4j配置                 **log4j.properties** 
+  * Log4j配置                 **log4j.properties** 
 
 * Spring相关配置
 
