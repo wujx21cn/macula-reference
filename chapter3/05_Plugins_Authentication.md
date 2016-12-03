@@ -33,3 +33,8 @@
  
  如果你的项目不愿意跳转到uim实现统一登录，只是需要UIM帮你验证表单上的用户名和密码，则可以通过
  
+ ### 跨站脚本攻击防护(CSRF)
+ 
+ macula框架由于采用了spring-security作为安全框架，所以直接采用了spring-security提供的CsrfFilter，可以通过macula.enableCsrf=true开启。
+ * 
+ 
