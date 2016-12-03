@@ -8,15 +8,13 @@
   * **freemarker.properties** FreeMarker配置
   * **log4j.properties**  Log4j配置
 
-* **Spring相关配置**
+* **Spring配置**
 
   * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
-
   * configs/applicationContext-app.xml
 
 
-* web.xml配置
-
+* **web.xml配置**
 
 ### Macula配置
 
