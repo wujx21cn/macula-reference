@@ -8,7 +8,7 @@
         <title>配置文件 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.6">
+        <meta name="generator" content="GitBook 2.5.1">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,13 +48,7 @@
     <body>
         
         
-    <div class="book"
-        data-level="2.1"
-        data-chapter-title="配置文件"
-        data-filepath="chapter2/01_Configuration.md"
-        data-basepath=".."
-        data-revision="Wed Nov 30 2016 20:32:23 GMT+0800 (CST)"
-        data-innerlanguage="">
+    <div class="book" data-level="2.1" data-chapter-title="配置文件" data-filepath="chapter2/01_Configuration.md" data-basepath=".." data-revision="Sat Dec 03 2016 19:06:24 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -426,7 +420,7 @@
                         
                             <b>3.4.</b>
                         
-                        安全认证
+                        安全管理
                     </a>
             
             
@@ -1148,6 +1142,20 @@
 <h3 id="&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x95EE;&#x9898;">&#x591A;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x95EE;&#x9898;</h3>
 <p>&#x4E00;&#x822C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x5F00;&#x53D1;&#x3001;&#x6D4B;&#x8BD5;&#x3001;&#x751F;&#x4EA7;&#x7684;&#x914D;&#x7F6E;&#x90FD;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x6846;&#x67B6;&#x652F;&#x6301;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x6DFB;&#x52A0;&#x53C2;&#x6570;&#x6765;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#x53C2;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
+<li><p>&#x4FEE;&#x6539;web.xml&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;ContextLoaderListener&#x6539;&#x4E3A;MaculaContextLoaderListener&#xFF0C;&#x539F;&#x6765;&#x7684;MaculaConextListener&#x5220;&#x9664;&#xFF0C;&#x6700;&#x7EC8;&#x53D8;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml">  <span class="hljs-tag">&lt;<span class="hljs-title">listener</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">listener-class</span>&gt;</span>org.macula.core.listener.MaculaContextLoaderListener<span class="hljs-tag">&lt;/<span class="hljs-title">listener-class</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">listener</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">listener</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">listener-class</span>&gt;</span>org.springframework.security.web.session.HttpSessionEventPublisher<span class="hljs-tag">&lt;/<span class="hljs-title">listener-class</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">listener</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">listener</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">listener-class</span>&gt;</span>org.springframework.web.context.request.RequestContextListener<span class="hljs-tag">&lt;/<span class="hljs-title">listener-class</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">listener</span>&gt;</span>
+</code></pre>
+</li>
 <li>&#x542F;&#x52A8;&#x65F6;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6DFB;&#x52A0;-Dmacula.profile=xxx&#xFF0C;&#x5176;&#x4E2D;xxx&#x8868;&#x793A;&#x73AF;&#x5883;&#x8DEF;&#x5F84;</li>
 <li>&#x5728;&#x60A8;&#x7684;webapp&#x6216;&#x8005;api-impl&#x5305;&#x7684;configs&#x76EE;&#x5F55;&#x4E0B;&#x6839;&#x636E;xxx&#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x4ECE;&#x8BE5;&#x76EE;&#x5F55;&#x4E2D;&#x52A0;&#x8F7D;<ul>
 <li>macula.properties</li>
@@ -1229,7 +1237,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
