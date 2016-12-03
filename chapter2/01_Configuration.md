@@ -14,14 +14,16 @@
 
    Macula配置文件 macula.properties位于Maven项目的src/main/resources目录下，实现macula平台自身的可配置信息。
 
+
 **表 4.1. macula.properties可配置属性**
 
-  |属性名称|说明|数据类型|默认值|
-  |----|:-----------:|-----:|
-  |daa |bbb   |       |cc    | 
- 
+| 属性名称 | 说明 | 数据类型 | 默认值 |
+| :--- | :--- | :--- | :--- |
+| daa | bbb |  | cc |
+| test | ddd | ddd |  |
 
-***提示***
+_**提示**_
+
 ```
 只有war型的模块才可能需要macula.properties文件，并放在在src/main/resources目录下，以实现运行期能通过classpath:/macula.properties访问。
 对于非war的jar型模块，依据所需的情况定制，绝大多数情况下，macula.properties文件不是必须的，更多的使用在测试场合，此时，可将macula.properties放置在src/test/resources下，使该配置在测试周期下可用。
@@ -317,12 +319,15 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
   ```
 
 * 启动时在命令行添加-Dmacula.profile=xxx，其中xxx表示环境路径
+
 * 在您的webapp或者api-impl包的configs目录下根据xxx建立相应的目录，系统会自动从该目录中加载
+
   * macula.properties
   * freemarker.properties\(不依赖macula-base的应用不加载这个文件\)
   * log4j.properties
 
 * 在applicationContext-root.xml中，可以通过Spring的Profile来区分环境配置，如：
+
   ```xml
   <beans profile="local"> 
          <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
@@ -332,6 +337,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
   ```
 
   则上段配置只有当环境是local时才会加载，profile可以写入多个环境，用逗号隔开，如果profile中有default，则没有配置环境属性时也会加载，如
+
   ```xml
   <beans profile="default,dev"> 
         <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
@@ -347,6 +353,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
   ```
 
 * 数据源同样也是配置在applicationContext-root.xml中
+
   ```xml
   <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
          <!-- 配置监控统计拦截的filters -->
@@ -363,6 +370,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
   ```
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
+
 
 
 
