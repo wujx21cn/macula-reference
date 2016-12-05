@@ -11,7 +11,8 @@
 * **Spring配置**
 
   * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
-  * configs/applicationContext-app.xml
+  * configs/applicationContext-app.xml 事务、JPA等相关配置，与环境无关
+  * configs/servletContext-app.xml MVC层面自定义配置
 
 
 * **web.xml配置**
