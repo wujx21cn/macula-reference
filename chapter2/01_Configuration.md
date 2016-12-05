@@ -436,6 +436,29 @@ maxPoolPreparedStatementPerConnectionSize=20
 config.decrypt=false
 ```
 
+## EHCACHE配置
+
+```
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+        />
+        
+    <cache name="instanceCache" 
+        maxElementsInMemory="3000"
+        eternal="false"
+        timeToIdleSeconds="1800"
+        timeToLiveSeconds="3600"
+        overflowToDisk="false"
+        statistics="true"
+        />
+```
+
+上述instanceCache是给Spring Cache使用的，注入到cacheManager中的，一般情况下不要再添加任何配置，可能需要根据应用的需要修改缓存大小、时间等。
+
 ## 多环境配置问题
 
 一般应用程序在开发、测试、生产的配置都是不一样的，框架支持在启动时添加参数来选择不同的环境参数，具体如下：
