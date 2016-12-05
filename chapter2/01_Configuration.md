@@ -124,146 +124,147 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 2. **configs/applicationContext-app.xml**
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
-
    对于引入的子模块的Spring信息，必须如下定义：
 
 ```xml
- 
-       <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
-   	<context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
-   		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
-   		<context:include-filter type="assignable" expression="org.macula.core.config.MaculaAppConfig"/>
-   	</context:component-scan>
+<import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
+       <context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
+           <context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
+           <context:include-filter type="assignable" expression="org.macula.core.config.MaculaAppConfig"/>
+       </context:component-scan>
 
-   	<bean id="abstractEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-   		abstract="true">
-   		<property name="jpaVendorAdapter">
-   			<bean class="org.macula.core.hibernate.HibernateJpaVendorAdapter">
-   				<property name="database" value="#{T(org.macula.Configuration).getDatabase()}" />
-   				<property name="showSql" value="#{T(org.macula.Configuration).getShowSql()}" />
-   				<property name="generateDdl" value="#{T(org.macula.Configuration).getGenerateDdl()}" />
-   			</bean>
-   		</property>
-   		<property name="jpaProperties">
-   			<props>
-   				<prop key="hibernate.ejb.event.post-update">org.macula.core.hibernate.audit.AuditedEventListener</prop>
-   				<prop key="hibernate.ejb.event.post-delete">org.macula.core.hibernate.audit.AuditedEventListener</prop>
-   			</props>
-   		</property>
-   	</bean>
+       <bean id="abstractEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+           abstract="true">
+           <property name="jpaVendorAdapter">
+               <bean class="org.macula.core.hibernate.HibernateJpaVendorAdapter">
+                   <property name="database" value="#{T(org.macula.Configuration).getDatabase()}" />
+                   <property name="showSql" value="#{T(org.macula.Configuration).getShowSql()}" />
+                   <property name="generateDdl" value="#{T(org.macula.Configuration).getGenerateDdl()}" />
+               </bean>
+           </property>
+           <property name="jpaProperties">
+               <props>
+                   <prop key="hibernate.ejb.event.post-update">org.macula.core.hibernate.audit.AuditedEventListener</prop>
+                   <prop key="hibernate.ejb.event.post-delete">org.macula.core.hibernate.audit.AuditedEventListener</prop>
+               </props>
+           </property>
+       </bean>
 
-   	<!-- Macual Schema -->
-   	<!-- Macula Entity Manager -->
-   	<bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
-   		<property name="persistenceUnitManager">
-   			<bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
-   				<property name="defaultPersistenceUnitName">
-   					<value>macula</value>
-   				</property>
-   				<property name="defaultDataSource" ref="macula_dataSource" />
-   				<property name="packagesToScan">
-   					<array>
-   						<value>org.macula.base.app.domain</value>
-   						<value>org.macula.base.data.domain</value>
-   						<value>org.macula.base.acl.domain</value>
-   						<value>org.macula.plugins.rule.domain</value>
-   					</array>
-   				</property>
-   			</bean>
-   		</property>
-   	</bean>
+       <!-- Macual Schema -->
+       <!-- Macula Entity Manager -->
+       <bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
+           <property name="persistenceUnitManager">
+               <bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+                   <property name="defaultPersistenceUnitName">
+                       <value>macula</value>
+                   </property>
+                   <property name="defaultDataSource" ref="macula_dataSource" />
+                   <property name="packagesToScan">
+                       <array>
+                           <value>org.macula.base.app.domain</value>
+                           <value>org.macula.base.data.domain</value>
+                           <value>org.macula.base.acl.domain</value>
+                           <value>org.macula.plugins.rule.domain</value>
+                       </array>
+                   </property>
+               </bean>
+           </property>
+       </bean>
 
-   	<bean id="transactionManager_macula" class="org.springframework.orm.jpa.JpaTransactionManager">
-   		<property name="entityManagerFactory" ref="#{T(org.macula.Configuration).getEntityManagerFactoryName()}" />
-   	</bean>
-   	
-   	<!-- @Transaction -->
-   	<tx:advice id="maculaTxAdvise" transaction-manager="transactionManager_macula" />
-   	<aop:config>
-   		<aop:pointcut id="maculaPointcut"
-   			expression="execution(* org.macula..*.*(..)) and !execution(* org.macula.samples..*.*(..)) and @within(org.springframework.stereotype.Service)" />
-   		<aop:advisor advice-ref="maculaTxAdvise" pointcut-ref="maculaPointcut" />
-   		<aop:aspect id="exceptionAspect" ref="exceptionHandler">
-   			<aop:after-throwing pointcut-ref="maculaPointcut" method="doAfterThrowing" throwing="ex" />
-   		</aop:aspect>
-   	</aop:config>
+       <bean id="transactionManager_macula" class="org.springframework.orm.jpa.JpaTransactionManager">
+           <property name="entityManagerFactory" ref="#{T(org.macula.Configuration).getEntityManagerFactoryName()}" />
+       </bean>
+
+       <!-- @Transaction -->
+       <tx:advice id="maculaTxAdvise" transaction-manager="transactionManager_macula" />
+       <aop:config>
+           <aop:pointcut id="maculaPointcut"
+               expression="execution(* org.macula..*.*(..)) and !execution(* org.macula.samples..*.*(..)) and @within(org.springframework.stereotype.Service)" />
+           <aop:advisor advice-ref="maculaTxAdvise" pointcut-ref="maculaPointcut" />
+           <aop:aspect id="exceptionAspect" ref="exceptionHandler">
+               <aop:after-throwing pointcut-ref="maculaPointcut" method="doAfterThrowing" throwing="ex" />
+           </aop:aspect>
+       </aop:config>
 
 
-   	<bean id="jdbcTemplate_macula" class="org.springframework.jdbc.core.JdbcTemplate">
-   		<constructor-arg index="0" ref="macula_dataSource" />
-   	</bean>
+       <bean id="jdbcTemplate_macula" class="org.springframework.jdbc.core.JdbcTemplate">
+           <constructor-arg index="0" ref="macula_dataSource" />
+       </bean>
 
-   	<!-- macula-cart Schema -->
-   	<!-- macula-cart Entity Manager -->
-   	<bean id="entityManagerFactory_macula-cart" parent="abstractEntityManagerFactory">
-   		<property name="persistenceUnitManager">
-   			<bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
-   				<property name="defaultPersistenceUnitName">
-   					<value>macula-cart</value>
-   				</property>
-   				<property name="defaultDataSource" ref="macula-cart_dataSource" />
-   				<property name="packagesToScan">
-   					<array>
-   						<value>org.macula.cart.domain</value>
-   					</array>
-   				</property>
-   			</bean>
-   		</property>
-   	</bean>
+       <!-- macula-cart Schema -->
+       <!-- macula-cart Entity Manager -->
+       <bean id="entityManagerFactory_macula-cart" parent="abstractEntityManagerFactory">
+           <property name="persistenceUnitManager">
+               <bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+                   <property name="defaultPersistenceUnitName">
+                       <value>macula-cart</value>
+                   </property>
+                   <property name="defaultDataSource" ref="macula-cart_dataSource" />
+                   <property name="packagesToScan">
+                       <array>
+                           <value>org.macula.cart.domain</value>
+                       </array>
+                   </property>
+               </bean>
+           </property>
+       </bean>
 
-   	<bean id="transactionManager_macula-cart" class="org.springframework.orm.jpa.JpaTransactionManager">
-   		<property name="entityManagerFactory" ref="entityManagerFactory_macula-cart" />
-   	</bean>	
+       <bean id="transactionManager_macula-cart" class="org.springframework.orm.jpa.JpaTransactionManager">
+           <property name="entityManagerFactory" ref="entityManagerFactory_macula-cart" />
+       </bean>    
 
-   	<!-- @Transaction -->
-   	<tx:advice id="macula-cartTxAdvise" transaction-manager="transactionManager_macula-cart" />
-   	<aop:config>
-   		<aop:pointcut id="macula-cartPointcut"
-   			expression="execution(* org.macula.cart..*.*(..)) and @within(org.springframework.stereotype.Service)" />
-   		<aop:advisor advice-ref="macula-cartTxAdvise" pointcut-ref="macula-cartPointcut" />
-   		<aop:aspect id="exceptionAspect" ref="exceptionHandler">
-   			<aop:after-throwing pointcut-ref="macula-cartPointcut" method="doAfterThrowing" throwing="ex" />
-   		</aop:aspect>
-   	</aop:config>
+       <!-- @Transaction -->
+       <tx:advice id="macula-cartTxAdvise" transaction-manager="transactionManager_macula-cart" />
+       <aop:config>
+           <aop:pointcut id="macula-cartPointcut"
+               expression="execution(* org.macula.cart..*.*(..)) and @within(org.springframework.stereotype.Service)" />
+           <aop:advisor advice-ref="macula-cartTxAdvise" pointcut-ref="macula-cartPointcut" />
+           <aop:aspect id="exceptionAspect" ref="exceptionHandler">
+               <aop:after-throwing pointcut-ref="macula-cartPointcut" method="doAfterThrowing" throwing="ex" />
+           </aop:aspect>
+       </aop:config>
 
-   	<bean id="jdbcTemplate_macula-cart" class="org.springframework.jdbc.core.JdbcTemplate">
-   		<constructor-arg index="0" ref="macula-cart_dataSource" />
-   	</bean>
+       <bean id="jdbcTemplate_macula-cart" class="org.springframework.jdbc.core.JdbcTemplate">
+           <constructor-arg index="0" ref="macula-cart_dataSource" />
+       </bean>
 
-   	<!-- i18n resources -->
-   	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-   		<property name="basenames">
-   			<list>
+       <!-- i18n resources -->
+       <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+           <property name="basenames">
+               <list>
                          ...
-   			</list>
-   		</property>
-   		<property name="defaultEncoding" value="utf-8" />
-   		<property name="fallbackToSystemLocale" value="false" />
-   	</bean>
+               </list>
+           </property>
+           <property name="defaultEncoding" value="utf-8" />
+           <property name="fallbackToSystemLocale" value="false" />
+       </bean>
 
-   	<aop:aspectj-autoproxy />
+       <aop:aspectj-autoproxy />
 </beans>
 ```
-   * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
-   * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
-   * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
+
+    * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
+    * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
+    * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
 3. **configs/servletContext-app.xml**
 
-在configs/servletContext-mvc.xml定义：
-
 ```xml
-<import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
-
-    <!-- Enables the Spring MVC @Controller programming model -->
-    <mvc:annotation-driven />
-
-    <!-- Forwards requests to the "/" resource to the "welcome" view -->
-    <mvc:view-controller path="/" view-name="main" />
-    <mvc:view-controller path="/admin" view-name="admin/main" />
-
-    ...
+<beans>
+	<import resource="classpath*:/META-INF/spring/macula-*-servlet.xml" />
+	<context:component-scan base-package="org.macula.core.config, org.macula.base.config, org.macula.cart.**.config">
+		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
+		<context:include-filter type="assignable" expression="org.macula.core.config.MaculaServletConfig"/>
+	</context:component-scan>
+	
+	<!-- 这里需要根据系统是admin、front、mobile作出修改 -->
+	<!-- 
+	<mvc:view-controller path="/" view-name="redirect:/admin" />
+	-->
+</beans>
 ```
+    * 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-*-servlet.xml中
+
 
 _**重要**_
 
