@@ -20,42 +20,42 @@
   * **freemarker.properties** FreeMarker配置
   * **log4j.properties**  Log4j配置
 
-
-### Spring配置
-
-Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
+### web.xml配置
 
 1. J2EE项目下，web.xml中的Spring通过Listener载入
 
    ```xml
-   <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+	<listener>
+		<listener-class>org.macula.core.listener.MaculaContextLoaderListener</listener-class>
+	</listener>
    ```
 
 2. Listener需要设置的参数
 
    ```xml
-   <context-param>
-        <param-name>locatorFactorySelector</param-name>
-        <param-value>classpath:/configs/applicationContext-ref.xml</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>parentContextKey</param-name>
-        <param-value>MaculaContextRoot</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml</param-value>
-
-    </context-param>
+	<context-param>
+		<param-name>locatorFactorySelector</param-name>
+		<param-value>classpath:/configs/applicationContext-ref.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>parentContextKey</param-name>
+		<param-value>MaculaContextRoot</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml,classpath:/configs/applicationContext-security.xml</param-value>
+	</context-param>
    ```
 
    _**重要**_
 
    _应用系统开发中，通过web.xml设置的Spring加载的参数值，必须按照上面的代码执行，即：文件名、目录名必须按指定的代码定义。_
+
+### Spring配置
+
+Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
+
+
 
 3. configs/applicationContext-ref.xml
 
