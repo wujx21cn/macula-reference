@@ -491,10 +491,10 @@ config.decrypt=false
 
   ```xml
   <beans profile="local"> 
-         <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-             <property name="hostName" value="localhost" />
-         </bean>
-     </beans>
+      <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+          <property name="hostName" value="localhost" />
+      </bean>
+  </beans>
   ```
 
   则上段配置只有当环境是local时才会加载，profile可以写入多个环境，用逗号隔开，如果profile中有default，则没有配置环境属性时也会加载，如
