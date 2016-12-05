@@ -165,11 +165,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    ```
 
    * 上述配置文件首先配置了框架的Configuration扫描，这里不需要修改，同时，如果需要放在根环境预先加载的spring配置可以放在/src/main/resources/macula-\*-root.xml文件中。
-
    * 定义了两个数据源，一个指向框架，一个指向业务，具体可以根据需要修改
-
    * 配置了redis等其他和环境相关的配置
-
 
 2. **configs/applicationContext-app.xml**
 
@@ -177,9 +174,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    对于引入的子模块的Spring信息，必须如下定义：
 
-   ```xml
-   	<import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
-   	
+```xml   
+       <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
    	<context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
    		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
    		<context:include-filter type="assignable" expression="org.macula.core.config.MaculaAppConfig"/>
