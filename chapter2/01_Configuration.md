@@ -51,7 +51,7 @@
 
    _应用系统开发中，通过web.xml设置的Spring加载的参数值，必须按照上面的代码执行，即：文件名、目录名必须按指定的代码定义。_
 
-web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml
+    _web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml_
 
 ### Spring配置
 
