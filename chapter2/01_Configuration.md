@@ -400,6 +400,42 @@ template_update_delay=86400
 auto_import="/spring.ftl" as spring, "macula.ftl" as macula, "/layout.ftl" as layout, "/ui.ftl" as ui
 ```
 
+### 4\) druid-macula.properties
+
+druid数据源的配置文件，配合applicationContext-root.xml中dataSource,不同环境应该有不同的配置
+
+```
+# 基本属性 url、user、password
+url=jdbc:mysql://127.0.0.1:3306/macula3?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull
+username=root
+password=mysql
+
+# 配置初始化大小、最小、最大
+initialSize=10
+minIdle=10
+maxActive=100
+
+# 配置获取连接等待超时的时间
+maxWait=60000
+
+# 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+timeBetweenEvictionRunsMillis=60000
+
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+minEvictableIdleTimeMillis=300000
+validationQuery=SELECT 1 from dual
+testWhileIdle=true
+testOnBorrow=false
+testOnReturn=false
+
+# 打开PSCache，并且指定每个连接上PSCache的大小
+poolPreparedStatements=true
+maxPoolPreparedStatementPerConnectionSize=20
+
+# 不加密密码
+config.decrypt=false
+```
+
 ## 多环境配置问题
 
 一般应用程序在开发、测试、生产的配置都是不一样的，框架支持在启动时添加参数来选择不同的环境参数，具体如下：
