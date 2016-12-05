@@ -86,7 +86,7 @@ _web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml_
 
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
-### applicationContext-root.xml
+### 1\) applicationContext-root.xml
 
 该文件放置路径与applicationContext-ref.xml中配置的classpath:applicationContext-root.xml一致，即必须放在src/main/resources目录。
 
@@ -118,7 +118,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 * 定义了两个数据源，一个指向框架，一个指向业务，具体可以根据需要修改
 * 配置了redis等其他和环境相关的配置
 
-### configs/applicationContext-app.xml\*\*
+### 2\) configs/applicationContext-app.xml
 
 该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。  
    对于引入的子模块的Spring信息，必须如下定义：
@@ -246,7 +246,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
 * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
-### configs/servletContext-app.xml
+### 3\) configs/servletContext-app.xml
 
 ```
 <beans>
@@ -266,7 +266,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 * 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-\*-servlet.xml中
 * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.\*\*.config；
 
-### 各模块配置文件
+### 4\) 各模块配置文件
 
 按照前面的叙述，您可以在src/main/resources/META-INF/spring/macula-_-app.xml或则macula-_-servelt.xml中配置Spring。
 
@@ -277,6 +277,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 * app部分的配置类需要继承MaculaAppConfig类；
 * servlet部分的配置类需要继承MaculaServletConfig类。    
+
+## 属性配置文件
 
 ### Log4j配置
 
