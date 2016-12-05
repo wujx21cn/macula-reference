@@ -2,11 +2,9 @@
 
 基于Macula开发的项目，您需要关注的配置文件位于您的webapp工程下，包括：
 
-* **属性配置文件**
+* **web.xml配置**
+  * 
 
-  * **macula.properties**  Macula框架配置
-  * **freemarker.properties** FreeMarker配置
-  * **log4j.properties**  Log4j配置
 
 * **Spring配置**
 
@@ -15,7 +13,15 @@
   * configs/servletContext-app.xml MVC层面自定义配置
 
 
-* **web.xml配置**
+* **属性配置文件**
+
+  * * **macula.properties**  Macula框架配置
+    * **freemarker.properties** FreeMarker配置
+    * **log4j.properties**  Log4j配置
+
+  * 
+
+
 
 ### Macula配置
 
