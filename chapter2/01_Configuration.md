@@ -384,6 +384,22 @@ macula.frontRootMenu = FRONT_GROUP
 
 没有什么特殊的，需要提醒的是生产环境不要设置为DEBUG级别，防止日志文件太大。
 
+### 3\) freemarker.properties
+
+```
+default_encoding=UTF-8
+#template_exception_handler=ignore
+#template_exception_handler=debug
+#template_exception_handler=html_debug
+#template_exception_handler=rethrow
+
+#开发环境可以注释掉下面两行，这样修改ftl文件可以立即生效，不用重启tomcat
+cache_storage=strong:5000, soft
+template_update_delay=86400
+
+auto_import="/spring.ftl" as spring, "macula.ftl" as macula, "/layout.ftl" as layout, "/ui.ftl" as ui
+```
+
 ## 多环境配置问题
 
 一般应用程序在开发、测试、生产的配置都是不一样的，框架支持在启动时添加参数来选择不同的环境参数，具体如下：
