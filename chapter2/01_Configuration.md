@@ -527,7 +527,7 @@ config.decrypt=false
          </property>
          <!-- 配置数据源连接 -->
          <property name="connectionProperties" value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
-     </bean>
+   </bean>
   ```
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
