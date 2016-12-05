@@ -170,30 +170,155 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    * 配置了redis等其他和环境相关的配置
 
-1. **configs/applicationContext-app.xml**
+
+2. **configs/applicationContext-app.xml**
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
 
    对于引入的子模块的Spring信息，必须如下定义：
 
    ```xml
-   <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
+   	<import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
+   	
+   	<context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
+   		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
+   		<context:include-filter type="assignable" expression="org.macula.core.config.MaculaAppConfig"/>
+   	</context:component-scan>
+
+   	<bean id="abstractEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+   		abstract="true">
+   		<property name="jpaVendorAdapter">
+   			<bean class="org.macula.core.hibernate.HibernateJpaVendorAdapter">
+   				<property name="database" value="#{T(org.macula.Configuration).getDatabase()}" />
+   				<property name="showSql" value="#{T(org.macula.Configuration).getShowSql()}" />
+   				<property name="generateDdl" value="#{T(org.macula.Configuration).getGenerateDdl()}" />
+   			</bean>
+   		</property>
+   		<property name="jpaProperties">
+   			<props>
+   				<prop key="hibernate.ejb.event.post-update">org.macula.core.hibernate.audit.AuditedEventListener</prop>
+   				<prop key="hibernate.ejb.event.post-delete">org.macula.core.hibernate.audit.AuditedEventListener</prop>
+   			</props>
+   		</property>
+   	</bean>
+
+   	<!-- ===========================Macual Schema======================================================================== -->
+   	<!-- Macula Entity Manager -->
+   	<bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
+   		<property name="persistenceUnitManager">
+   			<bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+   				<property name="defaultPersistenceUnitName">
+   					<value>macula</value>
+   				</property>
+   				<property name="defaultDataSource" ref="macula_dataSource" />
+   				<property name="packagesToScan">
+   					<array>
+   						<value>org.macula.base.app.domain</value>
+   						<value>org.macula.base.data.domain</value>
+   						<value>org.macula.base.acl.domain</value>
+   						<value>org.macula.plugins.rule.domain</value>
+   					</array>
+   				</property>
+   			</bean>
+   		</property>
+   	</bean>
+
+   	<bean id="transactionManager_macula" class="org.springframework.orm.jpa.JpaTransactionManager">
+   		<property name="entityManagerFactory" ref="#{T(org.macula.Configuration).getEntityManagerFactoryName()}" />
+   	</bean>
+   	
+   	<!-- @Transaction -->
+   	<tx:advice id="maculaTxAdvise" transaction-manager="transactionManager_macula" />
+   	<aop:config>
+   		<aop:pointcut id="maculaPointcut"
+   			expression="execution(* org.macula..*.*(..)) and !execution(* org.macula.samples..*.*(..)) and @within(org.springframework.stereotype.Service)" />
+   		<aop:advisor advice-ref="maculaTxAdvise" pointcut-ref="maculaPointcut" />
+   		<aop:aspect id="exceptionAspect" ref="exceptionHandler">
+   			<aop:after-throwing pointcut-ref="maculaPointcut" method="doAfterThrowing" throwing="ex" />
+   		</aop:aspect>
+   	</aop:config>
+
+
+   	<bean id="jdbcTemplate_macula" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<constructor-arg index="0" ref="macula_dataSource" />
+   	</bean>
+
+   	<!-- ===========================macula-cart Schema======================================================================== -->
+   	<!-- macula-cart Entity Manager -->
+   	<bean id="entityManagerFactory_macula-cart" parent="abstractEntityManagerFactory">
+   		<property name="persistenceUnitManager">
+   			<bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+   				<property name="defaultPersistenceUnitName">
+   					<value>macula-cart</value>
+   				</property>
+   				<property name="defaultDataSource" ref="macula-cart_dataSource" />
+   				<property name="packagesToScan">
+   					<array>
+   						<value>org.macula.cart.domain</value>
+   					</array>
+   				</property>
+   			</bean>
+   		</property>
+   	</bean>
+
+   	<bean id="transactionManager_macula-cart" class="org.springframework.orm.jpa.JpaTransactionManager">
+   		<property name="entityManagerFactory" ref="entityManagerFactory_macula-cart" />
+   	</bean>	
+
+   	<!-- @Transaction -->
+   	<tx:advice id="macula-cartTxAdvise" transaction-manager="transactionManager_macula-cart" />
+   	<aop:config>
+   		<aop:pointcut id="macula-cartPointcut"
+   			expression="execution(* org.macula.cart..*.*(..)) and @within(org.springframework.stereotype.Service)" />
+   		<aop:advisor advice-ref="macula-cartTxAdvise" pointcut-ref="macula-cartPointcut" />
+   		<aop:aspect id="exceptionAspect" ref="exceptionHandler">
+   			<aop:after-throwing pointcut-ref="macula-cartPointcut" method="doAfterThrowing" throwing="ex" />
+   		</aop:aspect>
+   	</aop:config>
+
+   	<bean id="jdbcTemplate_macula-cart" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<constructor-arg index="0" ref="macula-cart_dataSource" />
+   	</bean>
+
+   	<!-- i18n resources -->
+   	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+   		<property name="basenames">
+   			<list>
+   				<!-- Macula Messages -->
+   				<value>classpath:i18n/macula-core/validation</value>
+   				<value>classpath:i18n/macula-core/messages</value>
+   				<value>classpath:i18n/macula-base/messages</value>
+   				<value>classpath:i18n/macula-plugins-admin/messages</value>
+   				<value>classpath:i18n/macula-plugins-esb/messages</value>
+   				<value>classpath:i18n/macula-plugins-mda/messages</value>
+   				<value>classpath:i18n/macula-plugins-flow/messages</value>
+   				<value>classpath:i18n/macula-plugins-webapp/messages</value>
+   				
+   				<!-- macula-cart Messages -->
+   				<value>classpath:i18n/macula-cart-admin/messages</value>
+   				<value>classpath:i18n/macula-cart-front/messages</value>
+   				<value>classpath:i18n/macula-cart-mobile/messages</value>
+   				<value>classpath:i18n/macula-cart-repository/messages</value>
+   				<value>classpath:i18n/macula-cart-service/messages</value>
+   				<value>classpath:i18n/macula-cart-webapp/messages</value>
+   			</list>
+   		</property>
+   		<property name="defaultEncoding" value="utf-8" />
+   		<property name="fallbackToSystemLocale" value="false" />
+   	</bean>
+
+   	<aop:aspectj-autoproxy />
    ```
 
-   即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
+   * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
 
-2. configs/servletContext-app.xml
+   * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
 
-   sdfdfsdf
-
-3. 
-
-4. 
+   * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
 
-_**重要**_
+3. **configs/servletContext-app.xml**
 
-_应用必须严格按照上述代码定义。_
 
 在configs/servletContext-mvc.xml定义：
 
@@ -219,62 +344,7 @@ _应用代码必须严格按照上述代码定义。_
    子模块Spring配置信息必须放置在src/main/resources/META-INF/spring目录下，并按照macula-\*-app.xml定义，每个模块可定义多个Spring配置文件。但需要注意不要与其他模块命名相同。
 
 
-### JPA配置
-
-在Macula平台中，对数据存取的访问要求采用符合J2EE标准的JPA的方式，默认情况下使用JPA的Hibernate实现。
-
-1. JPA的persistence.xml文件配置
-
-   在基于macula的项目中，可以不需要配置persistence.xml文件
-
-2. JPA中Spring的配置
-
-   应用可创建多个JPA的EntityManagerFactory，但要求macula平台自身插件所需要的entityManagerFactory必须已在Spring配置文件中配置（配置在configs/applicationContext-app.xml）文件中，并配置了相应的Transaction处理。
-
-   ```xml
-   <!-- App Entity Manager -->
-    <bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
-        <property name="persistenceUnitManager">
-            <bean class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
-                <property name="defaultPersistenceUnitName">
-                    <value>macula</value>
-                </property>
-                <property name="defaultDataSource" ref="macula_dataSource" />
-                <property name="packagesToScan">
-                    <array>
-                        <value>org.macula.base.app.domain</value>
-                        <value>org.macula.base.security.domain</value>
-                        <value>org.macula.base.data.domain</value>
-                    </array>
-                </property>
-            </bean>
-        </property>
-    </bean>
-
-    <!-- @Transaction -->
-    <tx:advice id="maculaTxAdvise" transaction-manager="transactionManager_macula" />
-    <aop:config>
-        <aop:pointcut id="maculaPointcut" expression="execution(* org.macula..*.*(..)) and execution(!* org.macula.samples..*.*(..)) and @within(org.springframework.stereotype.Service)" />
-        <aop:advisor advice-ref="maculaTxAdvise" pointcut-ref="maculaPointcut" />
-    </aop:config>
-   ```
-
-   _**重要**_
-
-   _在上述配置中，entityManagerFactory\_macula和transactionManager\_macula命名不能修改，一般情况下，强烈建议您按照上述代码配置，不需要做出修改。对于业务模块来说，使用的数据库通常与macula自身的数据库不一样，这就需要配置不同的数据源、entityManagerFactory以及transactionManager。为了降低系统整体的复杂度，在同一个Request/Response周期中，尽量不要使用多个transactionManager。_
-
-3. JPA部分参数设置
-
-   在JPA的运行中有多个参数可以配置，一般情况下，采用的Hibernate的JPA实现，那么Hibernate中可用的参数，都可以通过配置的方式，配置在EntityManagerFactoryBean的配置中，这里主要介绍2个有用的配置：
-
-   * showSql：是否输出SQL语句
-   * generateDdl：是否输出建表语句（更新表结构语句）
-
-     _**重要**_
-
-     _上面2个参数，如果使用默认的applicationContext-app.xml中的配置，将会读取macula框架的Configuration配置的参数值进行设定。_
-
-
+### 
 
 ### Freemarker配置
 
