@@ -127,7 +127,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    对于引入的子模块的Spring信息，必须如下定义：
 
-```xml   
+```xml
+ 
        <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
    	<context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
    		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
@@ -233,23 +234,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
    		<property name="basenames">
    			<list>
-   				<!-- Macula Messages -->
-   				<value>classpath:i18n/macula-core/validation</value>
-   				<value>classpath:i18n/macula-core/messages</value>
-   				<value>classpath:i18n/macula-base/messages</value>
-   				<value>classpath:i18n/macula-plugins-admin/messages</value>
-   				<value>classpath:i18n/macula-plugins-esb/messages</value>
-   				<value>classpath:i18n/macula-plugins-mda/messages</value>
-   				<value>classpath:i18n/macula-plugins-flow/messages</value>
-   				<value>classpath:i18n/macula-plugins-webapp/messages</value>
-   				
-   				<!-- macula-cart Messages -->
-   				<value>classpath:i18n/macula-cart-admin/messages</value>
-   				<value>classpath:i18n/macula-cart-front/messages</value>
-   				<value>classpath:i18n/macula-cart-mobile/messages</value>
-   				<value>classpath:i18n/macula-cart-repository/messages</value>
-   				<value>classpath:i18n/macula-cart-service/messages</value>
-   				<value>classpath:i18n/macula-cart-webapp/messages</value>
+                         ...
    			</list>
    		</property>
    		<property name="defaultEncoding" value="utf-8" />
@@ -257,6 +242,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    	</bean>
 
    	<aop:aspectj-autoproxy />
+</beans>
 ```
    * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
    * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
