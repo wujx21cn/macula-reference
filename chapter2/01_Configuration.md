@@ -51,6 +51,8 @@
 
    _应用系统开发中，通过web.xml设置的Spring加载的参数值，必须按照上面的代码执行，即：文件名、目录名必须按指定的代码定义。_
 
+web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml
+
 ### Spring配置
 
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
