@@ -30,7 +30,7 @@
 	</listener>
    ```
 
-2. Listener需要设置的参数
+  Listener需要设置的参数
 
    ```xml
 	<context-param>
@@ -47,6 +47,27 @@
 	</context-param>
    ```
 
+1. Spring MVC包括web.xml中对Spring Filter的定义以及对应的Spring配置信息定义。
+
+   在web.xml中定义：
+
+   ```xml
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.macula.core.mvc.MaculaDispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/configs/servletContext-mvc.xml, classpath:/configs/servletContext-app.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+   ```
+
    _**重要**_
 
    _应用系统开发中，通过web.xml设置的Spring加载的参数值，必须按照上面的代码执行，即：文件名、目录名必须按指定的代码定义。_
@@ -57,21 +78,7 @@
 
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
-
-
-3. configs/applicationContext-ref.xml
-
-   ```xml
-   <bean id="MaculaContextRoot" class="org.springframework.context.support.ClassPathXmlApplicationContext">
-        <constructor-arg index="0" value="classpath:applicationContext-root.xml" />
-    </bean>
-   ```
-
-   _**重要**_
-
-   _对于该文件的内容，必须与上述指定代码内容一致_
-
-4. applicationContext-root.xml
+1. applicationContext-root.xml
 
    该文件放置路径与applicationContext-ref.xml中配置的classpath:applicationContext-root.xml一致，即必须放在src/main/resources目录。
 
@@ -109,7 +116,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    _该扫描Configuraion配置信息Bean的配置不允许修改。_
 
-5. configs/applicationContext-app.xml
+1. configs/applicationContext-app.xml
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
 
@@ -121,28 +128,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
 
-6. Sping MVC定义
+1. Sping MVC定义
 
-   Spring MVC包括web.xml中对Spring Filter的定义以及对应的Spring配置信息定义。
-
-   在web.xml中定义：
-
-   ```xml
-   <servlet>
-        <servlet-name>appServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:/configs/servletContext-mvc.xml,classpath:/configs/servletContext-app.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>appServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-   ```
+   
 
    _**重要**_
 
