@@ -31,5 +31,32 @@ public class CustomMyUserLoginRepository implements CustomUserLoginRepository {
 }
 ```
 
-### 日志集成
+### 登录日志集成
+
+框架默认会把登录日志记录到框架的表中，但是高并发的生产环境建议实现下面的接口，可以把登录日志记录到您要存放的地方。
+
+```java
+public interface CustomUserSessionHistoryPersistance {
+
+	/**
+	 * 保存用户登录、修改密码的历史
+	 * @param userSessionHistory
+	 */
+	void saveUserSessionHistory(UserSessionHistory userSessionHistory);
+}
+```
+
+### 访问日志集成
+
+框架默认会把访问日志记录到框架的表中，但是高并发的生产环境建议实现下面的接口，可以把登录日志记录到您要存放的地方。
+
+```
+public interface CustomAccessLogPersistance {
+
+	void saveAccessLog(AccessLog accessLog);
+
+}
+```
+
+
 
