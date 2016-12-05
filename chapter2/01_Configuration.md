@@ -170,8 +170,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    * 配置了redis等其他和环境相关的配置
 
-
-2. **configs/applicationContext-app.xml**
+1. **configs/applicationContext-app.xml**
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
 
@@ -183,13 +182,13 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
 
-3. configs/servletContext-app.xml
+2. configs/servletContext-app.xml
 
    sdfdfsdf
 
-4. 
+3. 
 
-5. 
+4. 
 
 
 _**重要**_
