@@ -439,14 +439,14 @@ config.decrypt=false
 ## EHCACHE配置
 
 ```
-    <defaultCache
+<defaultCache
         maxElementsInMemory="10000"
         eternal="false"
         timeToIdleSeconds="120"
         timeToLiveSeconds="120"
         overflowToDisk="true"
         />
-        
+
     <cache name="instanceCache" 
         maxElementsInMemory="3000"
         eternal="false"
