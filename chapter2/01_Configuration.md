@@ -35,7 +35,7 @@
 ```
 <listener>
         <listener-class>org.macula.core.listener.MaculaContextLoaderListener</listener-class>
-    </listener>
+</listener>
 ```
 
 Listener需要设置的参数
