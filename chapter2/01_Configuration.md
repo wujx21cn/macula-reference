@@ -99,31 +99,11 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
        <!-- 数据源的配置 -->
        <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
-           <!-- 配置监控统计拦截的filters -->
-           <property name="filters" value="stat,config" />
-           <!-- 配置CAT拦截 -->
-           <property name="proxyFilters">
-               <list>
-                   <bean class="org.macula.plugins.cat.druid.CatFilter" />
-               </list>
-           </property>
-           <!-- 配置数据源连接 -->
-           <property name="connectionProperties"
-               value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
+        ...
        </bean>    
 
        <bean id="macula-cart_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
-           <!-- 配置监控统计拦截的filters -->
-           <property name="filters" value="stat,config" />
-           <!-- 配置CAT拦截 -->
-           <property name="proxyFilters">
-               <list>
-                   <bean class="org.macula.plugins.cat.druid.CatFilter" />
-               </list>
-           </property>
-           <!-- 配置数据源连接 -->
-           <property name="connectionProperties"
-               value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-cart.properties" />
+       ...
        </bean>        
 
        <!-- REDIS配置 -->
@@ -134,33 +114,6 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
        <alias name="redisTemplate" alias="cacheRedisTemplate"/>
 
        <alias name="redisTemplate" alias="transportRedisTemplate"/>
-
-       <!-- 根据各个模块下的db/module/changelog.xml文件自动更新数据库 -->
-       <bean id="macula_liquibase" class="liquibase.integration.spring.SpringLiquibase" depends-on="macula_dataSource">
-           <property name="dataSource" ref="macula_dataSource" />
-           <property name="defaultSchema" value="macula3" />
-           <property name="changeLog" value="classpath:db/changelog-macula.xml" />
-           <property name="contexts" value="dev, test" />
-       </bean>
-
-       <bean id="macula-cart_liquibase" class="liquibase.integration.spring.SpringLiquibase" depends-on="macula-cart_dataSource">
-           <property name="dataSource" ref="macula-cart_dataSource" />
-           <property name="defaultSchema" value="macula-cart" />
-           <property name="changeLog" value="classpath:db/changelog-macula-cart.xml" />
-           <property name="contexts" value="dev, test" />
-       </bean>    
-
-       <beans profile="dev,default">
-           <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-               <property name="hostName" value="127.0.0.1" />
-           </bean>
-       </beans>
-
-       <beans profile="local">
-           <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-               <property name="hostName" value="localhost" />
-           </bean>
-       </beans>
    </beans>
    ```
 
@@ -304,17 +257,12 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    	</bean>
 
    	<aop:aspectj-autoproxy />
-   ```
-
+```
    * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
-
    * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
-
    * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
-
 3. **configs/servletContext-app.xml**
-
 
 在configs/servletContext-mvc.xml定义：
 
