@@ -12,7 +12,8 @@
   * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
   * configs/applicationContext-app.xml 事务、JPA等相关配置，与环境无关
   * configs/servletContext-app.xml MVC层面自定义配置
-
+  * src/resources/META/spring/macula-*-app.xml 非MVC层的各自模块配置文件
+  * src/resources/META/spring/servlet-*-mvc.xml MVC层的各自模块配置文件 
 
 * **属性配置文件**
 
@@ -78,7 +79,7 @@
 
 Macula开发平台基于Spring框架开发，使用者需要了解Spring的基本原理以及使用方法（参见附录Spring Framework），本章介绍在Macula开发平台中，所需要配置/修改的Spring相关配置信息。
 
-1. applicationContext-root.xml
+1. **applicationContext-root.xml**
 
    该文件放置路径与applicationContext-ref.xml中配置的classpath:applicationContext-root.xml一致，即必须放在src/main/resources目录。
 
@@ -170,7 +171,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    _该扫描Configuraion配置信息Bean的配置不允许修改。_
 
-1. configs/applicationContext-app.xml
+1. **configs/applicationContext-app.xml**
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
 
@@ -208,10 +209,6 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    _**重要**_
 
    _应用代码必须严格按照上述代码定义。_
-
-7. configs/applicationContext-macula.xml
-
-   该Spring定义为macula平台的相关配置信息，该文件可从实例代码中拷贝，并不允许修改。
 
 8. 子模块Spring配置信息
 
