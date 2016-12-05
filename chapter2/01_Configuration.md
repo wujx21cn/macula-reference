@@ -264,7 +264,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 </beans>
 ```
     * 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-*-servlet.xml中
-
+    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包
 
 _**重要**_
 
