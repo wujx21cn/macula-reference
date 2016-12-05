@@ -380,6 +380,8 @@ macula.frontRootMenu = FRONT_GROUP
 #java xxx -Dmacula.profile = xxxx
 ```
 
+上述所有配置都可以通过启动命令行设置来覆盖上述默认配置。
+
 ### 2\) log4j.properties
 
 没有什么特殊的，需要提醒的是生产环境不要设置为DEBUG级别，防止日志文件太大。
@@ -531,5 +533,7 @@ config.decrypt=false
   ```
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
+
+
 
 
