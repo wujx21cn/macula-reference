@@ -280,7 +280,103 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 ## 属性配置文件
 
-### macula.properties
+### 1\) macula.properties
+
+```
+#应用所属分组(根据需要修改，同一个appGroup的应用会共享会话，广播事件也可以相互传递)
+macula.appGroup = macula-cart
+#应用名称
+macula.appName = macula-cart
+#应用终端类型(用户在这里设置类型，这样可以在同一个AppGroup中实现不同类型的登录互不影响，否则同一个appGroup登录时会踢出另一个同名用户，从而无法实现手机端登录不影响PC）
+#macula.terminalType = PC,MT(移动终端),MOBILE(手机)
+
+#cas统一认证配置项
+macula.casServerService = https://testuim.infinitus.com.cn
+macula.casClientService = http://localhost:8080/macula-cart-webapp
+
+#静态文件在浏览器的缓存时间，单位毫秒，生产环境可以设置为1年
+macula.resourceCachePeriod = 60000
+
+#静态文件服务器地址，默认是本应用下的目录，适用CDN加速，分离静态文件
+#macula.resourceHost = http://img-cdn.infinitus.com.cn
+
+#cache manager的名字，默认使用系统定义的cacheManger，用户可以自己定义cacheManager，在这里指定名称
+#macula.cacheManagerName = cacheManager
+
+#macula框架的entityManagerFactory，默认使用系统定义的entityManagerFactory_macula，用户可以自己定义entityManagerFactory，在这里指定名称
+#macula.entityManagerFactoryName = entityManagerFactory_macula
+
+#macula框架的transactionManager，默认使用系统定义的transactionManager_macula，用户可以自己定义transactionManager，在这里指定名称
+#macula.transactionManagerName = transactionManager_macula
+
+#在启动命令中添加该配置，可以作为macula.properties中加密串的密钥
+#java xxx -Dmacula.secretKey = xxxx
+
+#功能是否作为角色
+macula.actionAsRole = false
+
+#每个用户的最大会话数
+macula.maximumSessions = 1
+
+#验证码出现的条件
+macula.captchaFailedTimes = 3
+
+#会话过期时间
+macula.sessionTime = 600
+
+#系统运行模式 dev/test/prd
+macula.runMode = dev
+
+#是否记录登录日志，默认是false
+macula.loginLog = true
+
+#是否记录访问日志，默认是false
+macula.accessLog = true
+
+#访问日志记录队列深度，默认是2000
+#macula.logQueueCapacity = 2000
+
+#是否关闭事件广播
+#macula.disableBroadcast = true
+
+#事件广播方式，默认是http，可以配置http、redis、zookeeper(采用spring-integration广播)
+macula.events.transport = redis
+
+#配置需要保护的地址
+macula.securityUrlPattern = /.*
+#macula.securityUrlRole = ROLE_SECURITY
+
+#可以匿名访问的地址（白名单）
+macula.publicUrlPattern = /|/index.*|/login.*|/logout.*|/resources.*|/views.*|/.*public.*|/error/.*|/.*/blank.*|/.*/ajaxforward.*
+
+#设置网站流量统计功能开关，页面根据这个设置决定是否加载统计代码
+#macula.statsMode = baidu,google,none
+
+#设置系统使用的界面库，默认是macula 1.0提供的界面库。如果用逗号隔开，则freemarker会按照顺序加载指定ui后缀的ftl文件
+#比如如下设置，则freemarker会加载xxx_mower.ftl，如果找不到xxx_mower.ftl则加载xxx.ftl
+macula.uiList = mower
+
+#日期时间格式
+pattern.datetime = yyyy-MM-dd HH:mm:ss
+pattern.date = yyyy-MM-dd
+pattern.time = HH:mm:ss
+pattern.number = #
+
+jpa.showSql = true
+jpa.generateDdl = false
+
+#######环境设置########################
+jpa.database = MYSQL
+#macula.disableBroadcast = true
+#####################################
+
+#初始菜单起始设置
+macula.adminRootMenu = ADMIN_GROUP
+macula.frontRootMenu = FRONT_GROUP
+#macula.mobileRootMenu = MOBILE_GROUP
+```
+
+
 
 ### log4j.properties
 
