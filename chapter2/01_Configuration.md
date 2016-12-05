@@ -309,10 +309,7 @@ macula.resourceCachePeriod = 60000
 #macula框架的transactionManager，默认使用系统定义的transactionManager_macula，用户可以自己定义transactionManager，在这里指定名称
 #macula.transactionManagerName = transactionManager_macula
 
-#在启动命令中添加该配置，可以作为macula.properties中加密串的密钥
-#java xxx -Dmacula.secretKey = xxxx
-
-#功能是否作为角色
+#功能是否作为角色，用在需要对单个功能授权的地方
 macula.actionAsRole = false
 
 #每个用户的最大会话数
@@ -321,7 +318,7 @@ macula.maximumSessions = 1
 #验证码出现的条件
 macula.captchaFailedTimes = 3
 
-#会话过期时间
+#会话过期时间，单位秒
 macula.sessionTime = 600
 
 #系统运行模式 dev/test/prd
@@ -375,8 +372,6 @@ macula.adminRootMenu = ADMIN_GROUP
 macula.frontRootMenu = FRONT_GROUP
 #macula.mobileRootMenu = MOBILE_GROUP
 ```
-
-
 
 ### log4j.properties
 
