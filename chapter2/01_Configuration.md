@@ -371,6 +371,13 @@ jpa.database = MYSQL
 macula.adminRootMenu = ADMIN_GROUP
 macula.frontRootMenu = FRONT_GROUP
 #macula.mobileRootMenu = MOBILE_GROUP
+
+#在启动命令中添加该配置，可以作为macula.properties中加密串的密钥
+#java xxx -Dmacula.secretKey = xxxx
+#在启动命令添加该配置，设置macula.appInstance
+#java xxx -Dmacula.appInstance = xxxx
+#在启动命令添加该配置，可以设置启动时加载的环境文件
+#java xxx -Dmacula.profile = xxxx
 ```
 
 ### log4j.properties
