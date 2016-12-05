@@ -380,7 +380,9 @@ macula.frontRootMenu = FRONT_GROUP
 #java xxx -Dmacula.profile = xxxx
 ```
 
-上述所有配置都可以通过启动命令行设置来覆盖上述默认配置。
+_**重要**_
+
+_**`上述所有配置都可以通过启动命令行设置来覆盖上述默认配置。`**_
 
 ### 2\) log4j.properties
 
