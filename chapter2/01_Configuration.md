@@ -380,11 +380,9 @@ macula.frontRootMenu = FRONT_GROUP
 #java xxx -Dmacula.profile = xxxx
 ```
 
-### log4j.properties
+### 2\) log4j.properties
 
-作为都已树枝的log4j配置文件log4j.properties文件，但这里需要说明的是，在程序中引入log时，需要引入的是org.slf4j包。
-
-log4j.properties文件可在开发和生产两个环境下，使用不同的日志输出级别配置，以达到不同的需求的目的。
+没有什么特殊的，需要提醒的是生产环境不要设置为DEBUG级别，防止日志文件太大。
 
 ## 多环境配置问题
 
