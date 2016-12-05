@@ -12,8 +12,8 @@
   * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
   * configs/applicationContext-app.xml 事务、JPA等相关配置，与环境无关
   * configs/servletContext-app.xml MVC层面自定义配置
-  * src/resources/META/spring/macula-*-app.xml 非MVC层的各自模块配置文件
-  * src/resources/META/spring/servlet-*-mvc.xml MVC层的各自模块配置文件 
+  * src/main/resources/META/spring/macula-\*-app.xml 非MVC层的各自模块配置文件
+  * src/main/resources/META/spring/macula-\*-servlet.xml MVC层的各自模块配置文件 
 
 * **属性配置文件**
 
@@ -21,59 +21,61 @@
   * **freemarker.properties** FreeMarker配置
   * **log4j.properties**  Log4j配置
 
+
 ### web.xml配置
 
 1. J2EE项目下，web.xml中的Spring通过Listener载入
 
    ```xml
-	<listener>
-		<listener-class>org.macula.core.listener.MaculaContextLoaderListener</listener-class>
-	</listener>
+   <listener>
+        <listener-class>org.macula.core.listener.MaculaContextLoaderListener</listener-class>
+    </listener>
    ```
 
-  Listener需要设置的参数
+   Listener需要设置的参数
 
    ```xml
-	<context-param>
-		<param-name>locatorFactorySelector</param-name>
-		<param-value>classpath:/configs/applicationContext-ref.xml</param-value>
-	</context-param>
-	<context-param>
-		<param-name>parentContextKey</param-name>
-		<param-value>MaculaContextRoot</param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml,classpath:/configs/applicationContext-security.xml</param-value>
-	</context-param>
+   <context-param>
+        <param-name>locatorFactorySelector</param-name>
+        <param-value>classpath:/configs/applicationContext-ref.xml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>parentContextKey</param-name>
+        <param-value>MaculaContextRoot</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/configs/applicationContext-app.xml,classpath:/configs/applicationContext-macula.xml,classpath:/configs/applicationContext-security.xml</param-value>
+    </context-param>
    ```
 
-1. Spring MVC包括web.xml中对Spring Filter的定义以及对应的Spring配置信息定义。
+2. Spring MVC包括web.xml中对Spring Filter的定义以及对应的Spring配置信息定义。
 
    在web.xml中定义：
 
    ```xml
-	<servlet>
-		<servlet-name>appServlet</servlet-name>
-		<servlet-class>org.macula.core.mvc.MaculaDispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:/configs/servletContext-mvc.xml, classpath:/configs/servletContext-app.xml</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
+   <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.macula.core.mvc.MaculaDispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/configs/servletContext-mvc.xml, classpath:/configs/servletContext-app.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-	<servlet-mapping>
-		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
    ```
 
    _**重要**_
 
    _应用系统开发中，通过web.xml设置的Spring加载的参数值，必须按照上面的代码执行，即：文件名、目录名必须按指定的代码定义。_
 
-    _web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml_
+   _web.xml的其他配置请参考macula-plugins-webapp.war中的web.xml_
+
 
 ### Spring配置
 
@@ -86,79 +88,78 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
 
    ```xml
-	<context:annotation-config />
+   <context:annotation-config />
 
-	<context:component-scan base-package="org.macula.core.configuration" />
+    <context:component-scan base-package="org.macula.core.configuration" />
 
-	<import resource="classpath*:/META-INF/spring/macula-*-root.xml" />
+    <import resource="classpath*:/META-INF/spring/macula-*-root.xml" />
 
-	<bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource"
-		init-method="init" destroy-method="close">
-		<!-- 配置监控统计拦截的filters -->
-		<property name="filters" value="stat,config" />
-		<!-- 配置CAT拦截 -->
-		<property name="proxyFilters">
-			<list>
-				<bean class="org.macula.plugins.cat.druid.CatFilter" />
-			</list>
-		</property>
-		<!-- 配置数据源连接 -->
-		<property name="connectionProperties"
-			value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
-	</bean>
+    <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+        init-method="init" destroy-method="close">
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat,config" />
+        <!-- 配置CAT拦截 -->
+        <property name="proxyFilters">
+            <list>
+                <bean class="org.macula.plugins.cat.druid.CatFilter" />
+            </list>
+        </property>
+        <!-- 配置数据源连接 -->
+        <property name="connectionProperties"
+            value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
+    </bean>
 
-	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
-		<property name="connectionFactory" ref="redisConnectionFactory" />
-	</bean>
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="redisConnectionFactory" />
+    </bean>
 
-	<alias name="redisTemplate" alias="cacheRedisTemplate" />
+    <alias name="redisTemplate" alias="cacheRedisTemplate" />
 
-	<alias name="redisTemplate" alias="transportRedisTemplate" />
-		
-	<beans profile="local">
-		<bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-			<property name="hostName" value="localhost" />
-		</bean>
-	</beans>
-	
-	<beans profile="default,dev">
-		<bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
-			<constructor-arg index="0" value="mymaster" />
-			<constructor-arg index="1">
-				<set>
-					<value>soa-dev01.infinitus.com.cn:26379</value>
-					<value>soa-dev01.infinitus.com.cn:26479</value>
-				</set>
-			</constructor-arg>
-		</bean>
-	</beans>
-	
-	<beans profile="test">
-		<bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
-			<constructor-arg index="0" value="mymaster" />
-			<constructor-arg index="1">
-				<set>
-					<value>soa-test01.infinitus.com.cn:26379</value>
-					<value>soa-test01.infinitus.com.cn:26479</value>
-				</set>
-			</constructor-arg>
-		</bean>
-	</beans>	
+    <alias name="redisTemplate" alias="transportRedisTemplate" />
 
-	<beans profile="default,dev,test">
-		<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-			<property name="maxTotal" value="100" />
-			<property name="maxIdle" value="10" />
-			<property name="minIdle" value="1" />
-			<property name="maxWaitMillis" value="30000" />
-		</bean>
-	
-		<bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-			<constructor-arg index="0" ref="redisConfig" />
-			<constructor-arg index="1" ref="jedisPoolConfig" />
-		</bean>
-	</beans>
-  
+    <beans profile="local">
+        <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+            <property name="hostName" value="localhost" />
+        </bean>
+    </beans>
+
+    <beans profile="default,dev">
+        <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+            <constructor-arg index="0" value="mymaster" />
+            <constructor-arg index="1">
+                <set>
+                    <value>soa-dev01.infinitus.com.cn:26379</value>
+                    <value>soa-dev01.infinitus.com.cn:26479</value>
+                </set>
+            </constructor-arg>
+        </bean>
+    </beans>
+
+    <beans profile="test">
+        <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+            <constructor-arg index="0" value="mymaster" />
+            <constructor-arg index="1">
+                <set>
+                    <value>soa-test01.infinitus.com.cn:26379</value>
+                    <value>soa-test01.infinitus.com.cn:26479</value>
+                </set>
+            </constructor-arg>
+        </bean>
+    </beans>    
+
+    <beans profile="default,dev,test">
+        <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+            <property name="maxTotal" value="100" />
+            <property name="maxIdle" value="10" />
+            <property name="minIdle" value="1" />
+            <property name="maxWaitMillis" value="30000" />
+        </bean>
+
+        <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+            <constructor-arg index="0" ref="redisConfig" />
+            <constructor-arg index="1" ref="jedisPoolConfig" />
+        </bean>
+    </beans>
    ```
 
    同时，该文件也是定义配置信息（即Macula平台的Configuration信息的修改Bean）读取的设置，默认情况下，通过扫描org.macula.core.configuration目录下的所有Bean，在更新Configuration信息，代码如下：
@@ -171,7 +172,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    _该扫描Configuraion配置信息Bean的配置不允许修改。_
 
-1. **configs/applicationContext-app.xml**
+2. **configs/applicationContext-app.xml**
 
    该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
 
@@ -183,18 +184,17 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
 
-1. Sping MVC定义
+3. Sping MVC定义
 
-   
 
-   _**重要**_
+_**重要**_
 
-   _应用必须严格按照上述代码定义。_
+_应用必须严格按照上述代码定义。_
 
-   在configs/servletContext-mvc.xml定义：
+在configs/servletContext-mvc.xml定义：
 
-   ```xml
-   <import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
+```xml
+<import resource="classpath*:/META-INF/spring/macula-*-servlet.xml">
 
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
@@ -204,13 +204,13 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
     <mvc:view-controller path="/admin" view-name="admin/main" />
 
     ...
-   ```
+```
 
-   _**重要**_
+_**重要**_
 
-   _应用代码必须严格按照上述代码定义。_
+_应用代码必须严格按照上述代码定义。_
 
-8. 子模块Spring配置信息
+1. 子模块Spring配置信息
 
    子模块Spring配置信息必须放置在src/main/resources/META-INF/spring目录下，并按照macula-\*-app.xml定义，每个模块可定义多个Spring配置文件。但需要注意不要与其他模块命名相同。
 
@@ -397,6 +397,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
 
+
 ### Macula配置
 
 1. **macula.properties**
@@ -414,5 +415,7 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
    应用加载时，将通过扫描classpath路径：org.macula.core.config目录，并实现了ConfigurationProvider接口的Bean，来修改Configuration信息。
 
    如org.macula.core.config.PropertyConfigurationProvider就是通过读取macula.properties来读取macula平台Configuration信息的处理（即上一节的实现方式）。
+
+
 
 
