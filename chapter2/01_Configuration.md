@@ -23,6 +23,9 @@
   * druid-macula.properties Druid数据源相关的配置
   * druid-xxx.properties
 
+* ehcache.xml
+  * ehcache配置
+
 
 ### web.xml配置
 
@@ -123,8 +126,9 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
 2. **configs/applicationContext-app.xml**
 
-   该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。
+   该文件设置应用所需要包含的其他Spring配置文件，以及对系统所涉及到的公共信息Bean的定义，如：Jpa定义、Transaction定义等，该文件严禁定义更为复杂的模块信息的Bean，应有import方式导入。  
    对于引入的子模块的Spring信息，必须如下定义：
+
 
 ```xml
 <beans>
@@ -244,86 +248,32 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 </beans>
 ```
 
-    * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
-    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.**.config；
-    * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
-    * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
+* 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
+* 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.\*\*.config；
+* 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
+* 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
-3. **configs/servletContext-app.xml**
+1. **configs/servletContext-app.xml**
 
 ```xml
 <beans>
-	<import resource="classpath*:/META-INF/spring/macula-*-servlet.xml" />
-	<context:component-scan base-package="org.macula.core.config, org.macula.base.config, org.macula.cart.**.config">
-		<context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
-		<context:include-filter type="assignable" expression="org.macula.core.config.MaculaServletConfig"/>
-	</context:component-scan>
-	
-	<!-- 这里需要根据系统是admin、front、mobile作出修改 -->
-	<!-- 
-	<mvc:view-controller path="/" view-name="redirect:/admin" />
-	-->
+    <import resource="classpath*:/META-INF/spring/macula-*-servlet.xml" />
+    <context:component-scan base-package="org.macula.core.config, org.macula.base.config, org.macula.cart.**.config">
+        <context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
+        <context:include-filter type="assignable" expression="org.macula.core.config.MaculaServletConfig"/>
+    </context:component-scan>
+
+    <!-- 这里需要根据系统是admin、front、mobile作出修改 -->
+    <!-- 
+    <mvc:view-controller path="/" view-name="redirect:/admin" />
+    -->
 </beans>
 ```
-    * 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-*-servlet.xml中
-    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.**.config；
+
+* 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-\*-servlet.xml中
+* 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.\*\*.config；
 
 _**重要**_
-
-_应用代码必须严格按照上述代码定义。_
-
-1. 子模块Spring配置信息
-
-   子模块Spring配置信息必须放置在src/main/resources/META-INF/spring目录下，并按照macula-\*-app.xml定义，每个模块可定义多个Spring配置文件。但需要注意不要与其他模块命名相同。
-
-
-### 
-
-### Freemarker配置
-
-在Macula平台中，Freemarker作为界面显示层的重要组成部分，在界面的显示上，均可采用Freemarker模板作为显示界面。对于Freemarker的设置，主要有2个部分：
-
-* freemarker.properties
-
-  该文件位于war模块的resources根目录，文件内容包括了可配置的Freemarker的属性。（具体的可配置属性，请参考Freemarker文档）
-
-  freemarker.properties文件在演示的模块中，定义了：
-
-  ```
-  auto_import="/spring.ftl" as spring, "/macula.ftl" as macula, "/layout.ftl" as layout
-  ```
-
-  即可以载入spring.ftl，macula.ftl，layout.ftl三个freemarker macro，这样，在其他freemarker文件中，需要使用它们定义的宏的时候，可以不用再在模块中声明导入，freemarker管理器可自动导入这三个宏并按指定的别名使用。
-
-* Spring View中的设置
-
-  ```xml
-  <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <!-- preferFileSystemAccess can make hot file detection, use true for development -->
-        <property name="preferFileSystemAccess" value="false" />
-        <property name="templateLoaderPaths">
-            <list>
-                <value>classpath:views/</value>
-            </list>
-        </property>
-        <property name="freemarkerSettings">
-            <util:properties location="classpath:freemarker.properties" />
-        </property>
-
-        <property name="freemarkerVariables">
-            <map>
-                <entry key="appVersion">
-                    <value>#{T(org.macula.Configuration).getAppVersion()}</value>
-                </entry>
-            </map>
-        </property>
-    </bean>
-  ```
-
-  通过上述配置可看出，除了freemarker.properties的配置外，主要定义了Freemarker最终模板的访问路径为基于classpath:views/的路径访问，由于该路径是一个classpath路径，所以实际上，在所有的业务模块（包括war模块和jar模块）中，都可以编写freemarker文档，并能在部署后正常访问。
-
-  同样，这里定义的一个主要属性是preferFileSystemAccess属性，该属性标识是否采用文件系统加载的方式加载freemarker模版，在开发模式下可设置为true，它标识能侦查到文件的变化，并自动重新加载模板。
-
 
 ### Log4j配置
 
