@@ -202,7 +202,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    		</property>
    	</bean>
 
-   	<!-- ===========================Macual Schema======================================================================== -->
+   	<!-- Macual Schema -->
    	<!-- Macula Entity Manager -->
    	<bean id="entityManagerFactory_macula" parent="abstractEntityManagerFactory">
    		<property name="persistenceUnitManager">
@@ -243,7 +243,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    		<constructor-arg index="0" ref="macula_dataSource" />
    	</bean>
 
-   	<!-- ===========================macula-cart Schema======================================================================== -->
+   	<!-- macula-cart Schema -->
    	<!-- macula-cart Entity Manager -->
    	<bean id="entityManagerFactory_macula-cart" parent="abstractEntityManagerFactory">
    		<property name="persistenceUnitManager">
