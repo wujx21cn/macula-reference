@@ -127,7 +127,8 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    对于引入的子模块的Spring信息，必须如下定义：
 
 ```xml
-<import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
+<beans>
+       <import resource="classpath*:/META-INF/spring/macula-*-app.xml" />
        <context:component-scan base-package="org.macula.core.config,org.macula.core.config,org.macula.cart.**.config">
            <context:include-filter type="annotation" expression="org.springframework.context.annotation.Configuration"/>
            <context:include-filter type="assignable" expression="org.macula.core.config.MaculaAppConfig"/>
@@ -244,6 +245,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 ```
 
     * 对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
+    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.**.config；
     * 原则上只需要修改上述示例中的macula-cart相关的配置部分，macula框架相关部分禁止修改，当然如果框架的表和业务的表在一个库，上述配置可以合并。
     * 另外，国际化的资源文件需要记得添加在mesageSource这个bean中。
 
@@ -264,7 +266,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 </beans>
 ```
     * 子模块MVC层面的配置全部放在/src/main/resources/META-INF/spring/macula-*-servlet.xml中
-    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包
+    * 如果需要子模块支持@Configuration配置，注意要修改上述第三行，扫描放配置类的包，只修改org.macula.cart.**.config；
 
 _**重要**_
 
