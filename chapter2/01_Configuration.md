@@ -88,89 +88,80 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
    应用系统所使用的数据库设置必须在此文件中定义。下面是参考的代码信息：
 
    ```xml
-   <context:annotation-config />
+   <beans>	
+   	<context:annotation-config />
+   	
+   	<context:component-scan base-package="org.macula.core.configuration" />
 
-    <context:component-scan base-package="org.macula.core.configuration" />
+   	<import resource="classpath*:/META-INF/spring/macula-*-root.xml" />
+   	
+   	<!-- 数据源的配置 -->
+   	<bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+   		<!-- 配置监控统计拦截的filters -->
+   		<property name="filters" value="stat,config" />
+   		<!-- 配置CAT拦截 -->
+   		<property name="proxyFilters">
+   			<list>
+   				<bean class="org.macula.plugins.cat.druid.CatFilter" />
+   			</list>
+   		</property>
+   		<!-- 配置数据源连接 -->
+   		<property name="connectionProperties"
+   			value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
+   	</bean>	
+   	
+   	<bean id="macula-cart_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+   		<!-- 配置监控统计拦截的filters -->
+   		<property name="filters" value="stat,config" />
+   		<!-- 配置CAT拦截 -->
+   		<property name="proxyFilters">
+   			<list>
+   				<bean class="org.macula.plugins.cat.druid.CatFilter" />
+   			</list>
+   		</property>
+   		<!-- 配置数据源连接 -->
+   		<property name="connectionProperties"
+   			value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-cart.properties" />
+   	</bean>		
+   	
+   	<!-- REDIS配置 -->
+   	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+   		<property name="connectionFactory" ref="redisConnectionFactory" />
+   	</bean>
+   	
+   	<alias name="redisTemplate" alias="cacheRedisTemplate"/>
+   	
+   	<alias name="redisTemplate" alias="transportRedisTemplate"/>
 
-    <import resource="classpath*:/META-INF/spring/macula-*-root.xml" />
+   	<!-- 根据各个模块下的db/module/changelog.xml文件自动更新数据库 -->
+   	<bean id="macula_liquibase" class="liquibase.integration.spring.SpringLiquibase" depends-on="macula_dataSource">
+   		<property name="dataSource" ref="macula_dataSource" />
+   		<property name="defaultSchema" value="macula3" />
+   		<property name="changeLog" value="classpath:db/changelog-macula.xml" />
+   		<property name="contexts" value="dev, test" />
+   	</bean>
+   	
+   	<bean id="macula-cart_liquibase" class="liquibase.integration.spring.SpringLiquibase" depends-on="macula-cart_dataSource">
+   		<property name="dataSource" ref="macula-cart_dataSource" />
+   		<property name="defaultSchema" value="macula-cart" />
+   		<property name="changeLog" value="classpath:db/changelog-macula-cart.xml" />
+   		<property name="contexts" value="dev, test" />
+   	</bean>	
+   	
+   	<beans profile="dev,default">
+   		<bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+   			<property name="hostName" value="127.0.0.1" />
+   		</bean>
+   	</beans>
 
-    <bean id="macula_dataSource" class="com.alibaba.druid.pool.DruidDataSource"
-        init-method="init" destroy-method="close">
-        <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat,config" />
-        <!-- 配置CAT拦截 -->
-        <property name="proxyFilters">
-            <list>
-                <bean class="org.macula.plugins.cat.druid.CatFilter" />
-            </list>
-        </property>
-        <!-- 配置数据源连接 -->
-        <property name="connectionProperties"
-            value="config.file=classpath:#{T(org.macula.Configuration).getProfilePath()}druid-macula.properties" />
-    </bean>
-
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
-        <property name="connectionFactory" ref="redisConnectionFactory" />
-    </bean>
-
-    <alias name="redisTemplate" alias="cacheRedisTemplate" />
-
-    <alias name="redisTemplate" alias="transportRedisTemplate" />
-
-    <beans profile="local">
-        <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-            <property name="hostName" value="localhost" />
-        </bean>
-    </beans>
-
-    <beans profile="default,dev">
-        <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
-            <constructor-arg index="0" value="mymaster" />
-            <constructor-arg index="1">
-                <set>
-                    <value>soa-dev01.infinitus.com.cn:26379</value>
-                    <value>soa-dev01.infinitus.com.cn:26479</value>
-                </set>
-            </constructor-arg>
-        </bean>
-    </beans>
-
-    <beans profile="test">
-        <bean id="redisConfig" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
-            <constructor-arg index="0" value="mymaster" />
-            <constructor-arg index="1">
-                <set>
-                    <value>soa-test01.infinitus.com.cn:26379</value>
-                    <value>soa-test01.infinitus.com.cn:26479</value>
-                </set>
-            </constructor-arg>
-        </bean>
-    </beans>    
-
-    <beans profile="default,dev,test">
-        <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-            <property name="maxTotal" value="100" />
-            <property name="maxIdle" value="10" />
-            <property name="minIdle" value="1" />
-            <property name="maxWaitMillis" value="30000" />
-        </bean>
-
-        <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-            <constructor-arg index="0" ref="redisConfig" />
-            <constructor-arg index="1" ref="jedisPoolConfig" />
-        </bean>
-    </beans>
+   	<beans profile="local">
+   		<bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+   			<property name="hostName" value="localhost" />
+   		</bean>
+   	</beans>
+   </beans>	
    ```
-
-   同时，该文件也是定义配置信息（即Macula平台的Configuration信息的修改Bean）读取的设置，默认情况下，通过扫描org.macula.core.configuration目录下的所有Bean，在更新Configuration信息，代码如下：
-
-   ```xml
-   <context:component-scan base-package="org.macula.core.configuration" />
-   ```
-
-   _**重要**_
-
-   _该扫描Configuraion配置信息Bean的配置不允许修改。_
+ 
 
 2. **configs/applicationContext-app.xml**
 
@@ -184,7 +175,13 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
 
    即对于子模块的Spring信息，必须放置在src/main/resources/META-INF/spring目录下，并严格按照macula-\*-app.xml命名配置文件。
 
-3. Sping MVC定义
+6. configs/servletContext-app.xml
+
+   sdfdfsdf
+
+7. 
+
+8. 
 
 
 _**重要**_
