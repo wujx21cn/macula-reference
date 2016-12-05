@@ -3,6 +3,7 @@
 基于Macula开发的项目，您需要关注的配置文件位于您的webapp工程下，包括：
 
 * **web.xml配置**
+
   * 一般情况下参考框架的配置，或者你的项目不添加这个文件，直接使用框架的。
 
 
@@ -15,35 +16,9 @@
 
 * **属性配置文件**
 
-  * * **macula.properties**  Macula框架配置
-    * **freemarker.properties** FreeMarker配置
-    * **log4j.properties**  Log4j配置
-
-  * 
-
-
-
-### Macula配置
-
-1. **macula.properties**
-
-   Macula配置文件 macula.properties位于Maven项目的src/main/resources目录下，实现macula平台自身的可配置信息。
-
-
-**表 4.1. macula.properties可配置属性**
-
-_**提示**_
-
-```
-只有war型的模块才可能需要macula.properties文件，并放在在src/main/resources目录下，以实现运行期能通过classpath:/macula.properties访问。
-对于非war的jar型模块，依据所需的情况定制，绝大多数情况下，macula.properties文件不是必须的，更多的使用在测试场合，此时，可将macula.properties放置在src/test/resources下，使该配置在测试周期下可用。
-```
-
-1. 通过Bean修改Configuration
-
-   应用加载时，将通过扫描classpath路径：org.macula.core.config目录，并实现了ConfigurationProvider接口的Bean，来修改Configuration信息。
-
-   如org.macula.core.config.PropertyConfigurationProvider就是通过读取macula.properties来读取macula平台Configuration信息的处理（即上一节的实现方式）。
+  * **macula.properties**  Macula框架配置
+  * **freemarker.properties** FreeMarker配置
+  * **log4j.properties**  Log4j配置
 
 
 ### Spring配置
@@ -381,6 +356,22 @@ log4j.properties文件可在开发和生产两个环境下，使用不同的日�
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
 
+### Macula配置
 
+1. **macula.properties**
+
+   Macula配置文件 macula.properties位于Maven项目的src/main/resources目录下，实现macula平台自身的可配置信息。
+
+
+```
+只有war型的模块才可能需要macula.properties文件，并放在在src/main/resources目录下，以实现运行期能通过classpath:/macula.properties访问。
+对于非war的jar型模块，依据所需的情况定制，绝大多数情况下，macula.properties文件不是必须的，更多的使用在测试场合，此时，可将macula.properties放置在src/test/resources下，使该配置在测试周期下可用。
+```
+
+1. 通过Bean修改Configuration
+
+   应用加载时，将通过扫描classpath路径：org.macula.core.config目录，并实现了ConfigurationProvider接口的Bean，来修改Configuration信息。
+
+   如org.macula.core.config.PropertyConfigurationProvider就是通过读取macula.properties来读取macula平台Configuration信息的处理（即上一节的实现方式）。
 
 
