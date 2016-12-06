@@ -74,7 +74,7 @@ public abstract class MaculaException extends I18nException {
 
 3. 系统类异常
 
-   除了上述两类异常由BaseController统一处理外，其他异常会导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。
+   除了上述两类异常由BaseController统一处理外，这类异常会由ExceptionNegotiateFilter统一拦截处理，导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回
 
 
 _**重要**_
