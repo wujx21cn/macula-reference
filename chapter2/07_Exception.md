@@ -118,7 +118,7 @@ _**重要**_
 
 _为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  _
 
-## Ajax请求下HttpServletResponse返回CODE处理
+## 系统级异常处理
 
 在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
 
