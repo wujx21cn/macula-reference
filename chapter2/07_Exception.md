@@ -33,15 +33,15 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
    }
    ```
 
-   FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
+   FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。
 
 2. 业务类异常
 
-   业务类异常是指继承自MaculaException的异常类型，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
+   业务类异常是指继承自MaculaException的异常类型，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。
 
 3. 系统类异常
 
-   除了上述两类异常由BaseController统一处理外，其他异常会导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。如果是非AJAX的请求，则不会对这类异常做任何处理。
+   除了上述两类异常由BaseController统一处理外，其他异常会导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。
 
    对于这种类型的异常，在AJAX调用的客户端应该需要统一拦截错误的响应，并且根据Response中的success标志来决定下一步动作。
 
