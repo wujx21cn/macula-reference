@@ -766,6 +766,14 @@ _**提示：**_
 
 _**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。**_
 
+### 避免重复提交的Token
+
+```
+<@macula.formToken captcha="true/false" />
+```
+
+上述代码放入表单中，则会自动生成防止重复提交的token，如果要显示验证码，captcha输入true。
+
 ## 国际化
 
 国际化 可分为页面国际化和提示信息国际化。
