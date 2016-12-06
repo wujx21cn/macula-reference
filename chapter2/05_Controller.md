@@ -245,9 +245,9 @@ Macula 使用 FreeMarker 宏来规范ftl页面模板的开发：
 </@layout.mower_front>
 ```
 
-  _**重要**_
+_**重要**_
 
-    _**布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本**_
+   布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本
 
 ### 页面布局定制
 
