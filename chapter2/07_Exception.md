@@ -54,7 +54,6 @@ public abstract class MaculaException extends I18nException {
 
 1. 校验类异常
 
-
     在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
 
 1. ```java
