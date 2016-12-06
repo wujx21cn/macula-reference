@@ -10,7 +10,7 @@ _缓存中的数据是不可靠的，即缓存中的数据总是有生命周期�
 
 ## CacheManager
 
-根据spring cache框架，需要定义CacheManager，以便启用Spring Cache
+根据spring cache框架，需要定义CacheManager，以便启用Spring Cache，使用@Cacheable注解时，需要指定具体使用哪个缓存名称，具体名称见下节。
 
 ```
 <bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
