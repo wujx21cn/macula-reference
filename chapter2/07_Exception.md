@@ -132,7 +132,9 @@ public User save(@Valid @FormBean("user") User user){
 }
 ```
 
-先看框架提供的BaseController类的定义：
+还有异常是调用其他服务类产生的异常，默认情况下，BaseController会通过@ExceptionHandler处理MaculaException和校验类的异常，这时客户端收到的是HTTP 200的响应。
+
+框架提供的BaseController类的定义：
 
 ```java
 public abstract class BaseController {
