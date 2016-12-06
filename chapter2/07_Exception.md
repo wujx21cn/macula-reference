@@ -174,27 +174,6 @@ public abstract class BaseController {
     public Response hangdlerFormBindException(IllegalArgumentException ex, HttpServletRequest req) {
         return new Response(new MaculaArgumentException(ex));
     }
-
-    /**
-     * 相对于Controller中的RequestMapping所指定的路径
-     * 
-     * @param path URL路径
-     */
-    protected String getRelativePath(String path) {
-              ...
-    }
-
-    /**
-     * 将对象转为JSON格式的数据
-     * 
-     * @param value
-     * @return String
-     */
-    protected String toJson(Object value) {
-             ...
-    }
-
-    private static final Map<Class<?>, String> controllerPathMapping = new ConcurrentHashMap<Class<?>, String>();
 }
 ```
 
