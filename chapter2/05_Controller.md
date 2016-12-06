@@ -157,11 +157,13 @@ public class AdminMaculaBaseController extends BaseController {
 
    Pageable参数绑定时，将直接从Request参数中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-   _**重要**_
+   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序\)、order（ASC，DESC\)
+
+4. _**重要**_
 
    _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\__" +属性名。
 
-4. 类型转换
+5. 类型转换
 
    很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
