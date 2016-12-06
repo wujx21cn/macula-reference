@@ -247,7 +247,7 @@ Macula 使用 FreeMarker 宏来规范ftl页面模板的开发：
 
 _**重要**_
 
-   布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本
+布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本
 
 ### 页面布局定制
 
@@ -263,9 +263,9 @@ _**重要**_
 
 开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
 
-![layout_mower](../images/chapter2/layout_mower.png)
+![](/images/chapter2/layout_mower.png)
 
-我们来看一下这个文件里面的内容：
+app目录中的layout\_mower.ftl文件可以覆盖，我们来看一下admin/app目录下的这个文件里面的内容：
 
 ```
 <#--
@@ -298,6 +298,8 @@ _**重要**_
 ```
 
 由上面的代码可见，我们可以通过修改宏 mower\_admin\_header\_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower\_admin\_header\_menu，mower\_admin\_header\_login，以及 mower\_admin\_footer 来分别定义自己的 header menu，header login 和 footer。
+
+
 
 ## 前端开发框架
 
