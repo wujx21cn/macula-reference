@@ -8,6 +8,41 @@ _**重要**_
 
 _缓存中的数据是不可靠的，即缓存中的数据总是有生命周期的，所以通过缓存获取到的数据，并不总是能得到期望中的值，所以程序要考虑在缓存中没有获取到正确数据的情况下，需要能通过其他方式获取，在有需要的情况下，更新缓存数据。_
 
+## CacheManager
+
+```
+	<bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
+		<property name="cacheManagers">
+			<list>
+				<!-- Instance Cache -->
+				<bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
+					<constructor-arg index="0">
+						<bean
+							class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+					</constructor-arg>
+				</bean>
+				<!-- Session Cache -->
+				<bean class="org.springframework.cache.support.SimpleCacheManager">
+					<property name="caches">
+						<set>
+							<!-- Session Cache -->
+							<bean class="org.macula.core.cache.session.SessionCacheFactoryBean">
+								<property name="name" value="sessionCache" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<!-- Application Cache -->
+				<bean class="org.macula.core.cache.redis.RedisCacheManager">
+					<constructor-arg index="0" ref="cacheRedisTemplate" />
+					<property name="cacheName" value="applicationCache" />
+					<property name="usePrefix" value="true" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+```
+
 ## Cache作用域
 
 **Cache作用域说明**
