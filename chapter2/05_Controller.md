@@ -1,4 +1,4 @@
-# 展示层
+### 展示层
 
 在Macula开发平台下，建议使用Spring MVC + Freemarker的方式来实现展现层。
 
@@ -22,7 +22,7 @@ public class AdminMaculaBaseController extends BaseController {
 
 在BaseController中处理了大量的异常处理方式以及数据返回要求的设定。
 
-## 表单校验
+### 表单校验
 
 在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
 
@@ -32,7 +32,7 @@ public class AdminMaculaBaseController extends BaseController {
 
 ## 
 
-## 参数绑定校验
+### 参数绑定校验
 
 在Spring MVC默认的基础上，Macula开发平台在参数绑定上做了适当扩展，以适应与Struts（Webwork）等相同的对参数处理的一致性，具体来说，有如下的变化：
 
@@ -227,7 +227,7 @@ public class AdminMaculaBaseController extends BaseController {
 
 
 
-## ExcelView
+### ExcelView
 
 为了更好的支持Excel的导出功能，系统提供了ExcelView类结合ExcelUtils的Excel模板方式导出Excel。只要按照ExcelUtils的语法制作Excel模板，然后放在FreeMarker模板文件放置的目录中，在Controller中如下使用：
 
