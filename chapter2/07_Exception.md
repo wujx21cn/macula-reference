@@ -212,13 +212,48 @@ exceptionMessage: ${(errors.exceptionMessage)!''} <BR/>
 
 ### AJAX请求异常
 
-对异常信息的处理，主要在于在Ajax请求下的异常处理，对于非Ajax请求，可通过定义服务端各错误代码的错误页面来直接实现，对于Ajax请求，由于返回信息由脚本代理而不是浏览器处理，需要作出一定的调整。
+如果BaseController拦截异常，则会返回HTTP 200的Response类的JSON数据，此时，前端应该如下处理：
 
-上面已经介绍了，当Ajax请求时，即使服务端返回了异常信息、重定向信息或发送错误代码头信息，均由macula的过滤器，将其转换为客户端可处理的org.macula.core.vo.Response对象，来交由客户端脚本处理。
+```js
+success : function(data) {
+	if (data.success) {
+		// ajax请求成功
+	} else {
+		// ajax请求失败
+	}
+}	
+```
 
-对于出现异常的情况，按Macula平台的定义，将异常分为可预见异常与不可异常，对于不可预见异常，由macula框架统一处理，对于可预见异常，则交由具体的业务代码处理。
+如果不是BaseController拦截的异常，则返回HTTP 500的Response类的JSON数据，此时，ajax的全局错误机制会触发，具体可以看config.js中的配置：
 
-对于已经获取到Response对象的情况下， 服务端出现状态信息在Response.errorCode中标识。
+```js
+	$(document).ajaxError(function(e, xhr, settings, exception) {
+		var data = null, lastException = exception;
+		try {
+			data = $.parseJSON(xhr.responseText);
+		} catch (e) {
+			lastException = e;
+		}
+
+		if (lastException != null && data == null) {
+			var exceptionMessage = null;
+			if (typeof lastException == 'string') {
+				exceptionMessage = lastException;
+			} else {
+				exceptionMessage = lastException.message;
+			}
+			if (exceptionMessage != null) {
+				data = {
+					errorMessage : '',
+					exceptionMessage : exceptionMessage
+				};
+			}
+		}
+		if (xhr.status || data) {
+			Config.onAjaxResponseError(xhr.status, data, settings || {}, lastException);
+		}
+	});
+```
 
 下面介绍不可遇见异常情况下的处理原则：
 
