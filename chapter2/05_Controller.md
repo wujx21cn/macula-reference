@@ -78,6 +78,16 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 </#if>
 ```
 
+### 权限判断
+
+在freemarker中
+
+```
+<@macula.preAuthorized>
+
+</@macula.preAuthorized>
+```
+
 ### 下拉框
 
 我们先来看看Macula中下拉框的样子，如下图绿色方框中所示：
@@ -147,177 +157,6 @@ select app_name as label, app_id as code from ma_base_application
 _**提示：**_
 
 _**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。**_
-
-## 地址规划
-
-对于当前大部分的业务系统，存在终端使用和后台管理的情况以及未来对于F5在地址分发方面的合理性布局，在地址规划上，需要按一定的规则进行：
-
-* \/admin\/ ：如果该功能是一个后台管理功能，则需要在地址前端加入\/admin\/
-* \/front\/：如果该功能是一个用户使用功能，则需要在地址前端加入\/front\/
-* \/模块名\/：针对macula平台开发的需要，每个模块都必须有自己的地址命名空间，对于该部分的命名，需要在模块定义规划时指定（具体的模块命名可能需要进行流程方面的审批）。
-* \/功能名称\/：针对模块下的某一功能，需要给出功能的名称。
-* \/操作名称\/：针对某一功能下具体的操作，需要给出操作的名称，如index,new,edit,save,read,delete,query等动词。
-
-所以最终的地址命名为：
-
-* 管理功能：\/admin\/模块名\/功能名\/操作名称\/参数\/其他
-* 用户功能：\/front\/模块名\/功能名\/操作名称\/参数\/其他
-
-## 请求方式规划
-
-为了保证业务系统不被重复的请求以及不正确的请求干扰，对于请求方式做如下规划：
-
-* 对于获取单条数据或显示新增与编辑页面的方式可以使用GET请求
-* 对于删除数据、保存数据或提交多条数据给后台的应该使用POST方式
-* 有多个查询条件的查询功能应该使用POST方式
-
-## REST
-
-在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
-
-在Macula平台开发中，将不通过地址中的参数来传递参数值，而直接通过地址信息来传递参数值。
-
-如请求的地址：\/admin\/macula-uim\/user\/delete\/user1 可通过Controller中定义
-
-```java
-@RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
-
-@OpenApi
-
-public ExecuteResponse delete(@PathVariable String userName) {
-
-    //do something
-
-}
-```
-
-## REST数据返回格式
-
-为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
-
-```java
-public class Response {
-
-    /** 是否成功标识 */
-    private boolean success;
-
-    /** 系统级错误代码 */
-    private String errorCode;
-    /** 系统级错误信息 */
-    private String errorMessage;
-
-    /** 业务级错误代码 */
-    private String exceptionCode;
-    /** 业务级错误信息 */
-    private String exceptionMessage;
-
-    /** 异常详细信息 */
-    private String exceptionStack;
-    /** 服务端重定向信息 */
-    private String redirection;
-
-    /** 校验结果信息 */
-    private List<FieldError> validateErrors;
-
-    public Response() {
-        this.success = true;
-    }
-
-    public Response(MaculaException exception) {
-        this.success = false;
-        this.errorCode = exception.getParentCode();
-        this.errorMessage = ApplicationContext.getMessage(errorMessage);
-        this.exceptionCode = exception.getMessage();
-        this.exceptionMessage = exception.getLocalizedMessage();
-        this.exceptionStack = exception.getFullStackMessage();
-
-        if (exception instanceof FormBindException) {
-            List<FieldError> fieldErrors = ((FormBindException) exception).getFieldErrors();
-            for (FieldError fieldError : fieldErrors) {
-                this.addValidateError(fieldError);
-            }
-        }
-    }
-}
-```
-
-```java
-public class ExecuteResponse<T> extends Response {
-
-    /** 结果信息 */
-    private final T returnObject;
-
-    public ExecuteResponse(T result) {
-        this.returnObject = result;
-    }
-
-    /**
-     * @return the result
-     */
-    public T getReturnObject() {
-        return returnObject;
-    }
-
-}
-```
-
-```java
-public class PageResponse extends Response {
-
-    /** 本次请求的记录数 */
-    private final int size;
-
-    /** 当前页码，从零开始 */
-    private final int number;
-
-    /** 总记录数 */
-    private final long totalElements;
-
-    /** 总页数 */
-    private final int totalPages;
-
-    /** 本页的总记录数 */
-    private final int numberOfElements;
-
-    /** 是否首页 */
-    private final boolean firstPage;
-
-    /** 是否最后页 */
-    private final boolean lastPage;
-
-    /** 内容列表 */
-    private final List<?> content;
-
-    public PageResponse(Page<?> page) {
-        this.size = page.getSize();
-        this.number = page.getNumber();
-        this.totalElements = page.getTotalElements();
-        this.totalPages = page.getTotalPages();
-        this.numberOfElements = page.getNumberOfElements();
-        this.firstPage = page.isFirstPage();
-        this.lastPage = page.isLastPage();
-        this.content = page.getContent();
-    }
-}
-```
-
-上述代码中，Response类是基类，出现异常时会构造Response类型返回，ExecuteResponse主要用在单记录数据的返回，PageResponse则用于需要返回列表数据的情况。
-
-_**重要**_
-
-_为了减少对编程的干扰，正常情况下，Controller中的方法可以仍然按照Service接口中的方法的返回值正常返回数据，对于原使用@ResponseBody注解的方法，如果需要，则通过使用@OpenApi注解来自动处理对应的返回值，默认情况下，采用@OpenApi 注解后，非Response、Map、Model等类型的返回值，会被包裹成ExecuteResponse，而Page&lt;?&gt;返回值会被包裹成PageResponse。_
-
-@OpenApi注解的启用需要配置RequestMappingHandlerAdapter的customReturnValueHandlers属性：
-
-```xml
-<property name="customReturnValueHandlers">
-    <list>
-        <bean class="org.macula.core.mvc.OpenApiReturnValueHandler">
-            <constructor-arg ref="messageConverters"/>              
-        </bean>
-    </list>
-</property>
-```
 
 ## 国际化
 
@@ -559,4 +398,177 @@ public ModelAndView excel2() {
 ```
 
 上述代码将会去views\/admin\[front\]\/xxxx\/so\_master\/目录下寻找excel.xls的Excel模板文件，然后通过ExcelUtils解析该模板文件生成需要的Excel文件。
+
+## 地址规划
+
+对于当前大部分的业务系统，存在终端使用和后台管理的情况以及未来对于F5在地址分发方面的合理性布局，在地址规划上，需要按一定的规则进行：
+
+* \/admin\/ ：如果该功能是一个后台管理功能，则需要在地址前端加入\/admin\/
+* \/front\/：如果该功能是一个用户使用功能，则需要在地址前端加入\/front\/
+* \/模块名\/：针对macula平台开发的需要，每个模块都必须有自己的地址命名空间，对于该部分的命名，需要在模块定义规划时指定（具体的模块命名可能需要进行流程方面的审批）。
+* \/功能名称\/：针对模块下的某一功能，需要给出功能的名称。
+* \/操作名称\/：针对某一功能下具体的操作，需要给出操作的名称，如index,new,edit,save,read,delete,query等动词。
+
+所以最终的地址命名为：
+
+* 管理功能：\/admin\/模块名\/功能名\/操作名称\/参数\/其他
+* 用户功能：\/front\/模块名\/功能名\/操作名称\/参数\/其他
+
+## 请求方式规划
+
+为了保证业务系统不被重复的请求以及不正确的请求干扰，对于请求方式做如下规划：
+
+* 对于获取单条数据或显示新增与编辑页面的方式可以使用GET请求
+* 对于删除数据、保存数据或提交多条数据给后台的应该使用POST方式
+* 有多个查询条件的查询功能应该使用POST方式
+
+## REST
+
+在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
+
+在Macula平台开发中，将不通过地址中的参数来传递参数值，而直接通过地址信息来传递参数值。
+
+如请求的地址：\/admin\/macula-uim\/user\/delete\/user1 可通过Controller中定义
+
+```java
+@RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
+
+@OpenApi
+
+public ExecuteResponse delete(@PathVariable String userName) {
+
+    //do something
+
+}
+```
+
+## REST数据返回格式
+
+为了未来能够将目前的Controller请求方法开放给其他终端使用，有必要对Controller的返回值做一个统一的规划，如下：
+
+```java
+public class Response {
+
+    /** 是否成功标识 */
+    private boolean success;
+
+    /** 系统级错误代码 */
+    private String errorCode;
+    /** 系统级错误信息 */
+    private String errorMessage;
+
+    /** 业务级错误代码 */
+    private String exceptionCode;
+    /** 业务级错误信息 */
+    private String exceptionMessage;
+
+    /** 异常详细信息 */
+    private String exceptionStack;
+    /** 服务端重定向信息 */
+    private String redirection;
+
+    /** 校验结果信息 */
+    private List<FieldError> validateErrors;
+
+    public Response() {
+        this.success = true;
+    }
+
+    public Response(MaculaException exception) {
+        this.success = false;
+        this.errorCode = exception.getParentCode();
+        this.errorMessage = ApplicationContext.getMessage(errorMessage);
+        this.exceptionCode = exception.getMessage();
+        this.exceptionMessage = exception.getLocalizedMessage();
+        this.exceptionStack = exception.getFullStackMessage();
+
+        if (exception instanceof FormBindException) {
+            List<FieldError> fieldErrors = ((FormBindException) exception).getFieldErrors();
+            for (FieldError fieldError : fieldErrors) {
+                this.addValidateError(fieldError);
+            }
+        }
+    }
+}
+```
+
+```java
+public class ExecuteResponse<T> extends Response {
+
+    /** 结果信息 */
+    private final T returnObject;
+
+    public ExecuteResponse(T result) {
+        this.returnObject = result;
+    }
+
+    /**
+     * @return the result
+     */
+    public T getReturnObject() {
+        return returnObject;
+    }
+
+}
+```
+
+```java
+public class PageResponse extends Response {
+
+    /** 本次请求的记录数 */
+    private final int size;
+
+    /** 当前页码，从零开始 */
+    private final int number;
+
+    /** 总记录数 */
+    private final long totalElements;
+
+    /** 总页数 */
+    private final int totalPages;
+
+    /** 本页的总记录数 */
+    private final int numberOfElements;
+
+    /** 是否首页 */
+    private final boolean firstPage;
+
+    /** 是否最后页 */
+    private final boolean lastPage;
+
+    /** 内容列表 */
+    private final List<?> content;
+
+    public PageResponse(Page<?> page) {
+        this.size = page.getSize();
+        this.number = page.getNumber();
+        this.totalElements = page.getTotalElements();
+        this.totalPages = page.getTotalPages();
+        this.numberOfElements = page.getNumberOfElements();
+        this.firstPage = page.isFirstPage();
+        this.lastPage = page.isLastPage();
+        this.content = page.getContent();
+    }
+}
+```
+
+上述代码中，Response类是基类，出现异常时会构造Response类型返回，ExecuteResponse主要用在单记录数据的返回，PageResponse则用于需要返回列表数据的情况。
+
+_**重要**_
+
+_为了减少对编程的干扰，正常情况下，Controller中的方法可以仍然按照Service接口中的方法的返回值正常返回数据，对于原使用@ResponseBody注解的方法，如果需要，则通过使用@OpenApi注解来自动处理对应的返回值，默认情况下，采用@OpenApi 注解后，非Response、Map、Model等类型的返回值，会被包裹成ExecuteResponse，而Page&lt;?&gt;返回值会被包裹成PageResponse。_
+
+@OpenApi注解的启用需要配置RequestMappingHandlerAdapter的customReturnValueHandlers属性：
+
+```xml
+<property name="customReturnValueHandlers">
+    <list>
+        <bean class="org.macula.core.mvc.OpenApiReturnValueHandler">
+            <constructor-arg ref="messageConverters"/>              
+        </bean>
+    </list>
+</property>
+```
+
+## 
 
