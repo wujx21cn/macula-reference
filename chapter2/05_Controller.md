@@ -648,12 +648,12 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 
 ```
 <@layout.mower_front title="Dashboard">
-	<@ui.main_breadcrumb rootType='front' menuCode="FRONT_TEST_MENU1" />
-	<@ui.main_wrapper>
-		<@ui.main_content>
-			Dashborad
-		</@ui.main_content>
-	</@ui.main_wrapper>
+    <@ui.main_breadcrumb rootType='front' menuCode="FRONT_TEST_MENU1" />
+    <@ui.main_wrapper>
+        <@ui.main_content>
+            Dashborad
+        </@ui.main_content>
+    </@ui.main_wrapper>
 </@layout.mower_front>
 ```
 
@@ -689,8 +689,11 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 ```
 <@macula.preAuthorized>
-
+有权限的显示
 </@macula.preAuthorized>
+<@macula.notAuthorized>
+没有权限的显示
+</@macula.notAuthorized>
 ```
 
 ### 下拉框
