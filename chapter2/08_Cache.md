@@ -68,11 +68,11 @@ Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域�
 
 ```xml
 <!-- Instance Cache -->
-    <bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager">
-            <bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
-        </property>
-    </bean>
+<bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
+     <property name="cacheManager">
+         <bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+     </property>
+</bean>
 ```
 
 ## Application级Cache
