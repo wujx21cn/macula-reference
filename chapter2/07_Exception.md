@@ -177,8 +177,6 @@ public abstract class BaseController {
 }
 ```
 
-通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在request.setAttribute\("errors", errors\)中。error.ftl模板位于webapp模块的src/main/resources/views/error.ftl中。
-
 ### 系统级异常处理
 
 在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
