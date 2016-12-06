@@ -441,7 +441,19 @@ admin目录下，layout.ftl是macula2.0版本的界面布局，layout\_mower.ftl
 ```
 
 _**提示**_  
-&lt;\#macro mower\_admin title scripts = '' version = '' require = ''&gt;  
+&lt;@layout.mower\_admin title scripts = '页面脚本' version = '' require = 'angularjs/knockoutjs/vue'&gt;
+
+&lt;/@layout.mower\_admin&gt;
+
+* scripts是您的页面对应的脚本，路径以views下面的目录为准
+
+* title 页面标题
+
+* version 页面版本
+
+* require 要引入的MVC JS文件，支持angularjs、knockoutjs、vue
+
+
 这个宏是业务页面的主要的宏，一般情况下，不要脱离这个宏做页面，这样未来修改时可以整体替换。
 
 ### 页面布局定制
