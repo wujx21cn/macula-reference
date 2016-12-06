@@ -835,7 +835,7 @@ macula框架在Freemarker中默认有如下变量：
 
 ## RESTful API
 
-在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
+在对REST的支持方面，使用Spring的REST解决方案，macula平台提供@OpenApi注解替换@ResponseBody注解，这里说明在能使用REST的方式下，尽量使用REST方式。
 
 在Macula平台开发中，将不通过地址中的参数来传递参数值，而直接通过地址信息来传递参数值。
 
