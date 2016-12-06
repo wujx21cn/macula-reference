@@ -62,14 +62,12 @@ public class AdminMaculaBaseController extends BaseController {
 
    ```java
    public User save(@Valid @FormBean("user") User user){
+      if (hasErrors()) {
+         throw new FormBindException(getMergedBindingResults());
+      }
 
-   if (hasErrors()) {
-      throw new FormBindException(getMergedBindingResults());
-   }
-
-   // something
-   return user;
-
+      // something
+      return user;
    }
    ```
 
