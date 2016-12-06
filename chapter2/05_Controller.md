@@ -274,7 +274,7 @@ _**重要**_
 <#include "/mobile/layout_mower.ftl" />
 ```
 
-以上图admin目录为例，layout.ftl是macula2.0版本的界面布局，layout\_mower.ftl是macula 3.0的布局宏定义，下面讲讲这个文件：
+admin目录下，layout.ftl是macula2.0版本的界面布局，layout\_mower.ftl是macula 3.0的布局宏定义，下面讲讲这个文件：
 
 ```
 <#global resources_admin="${resourceHost!''}/resources/mower/${appVersion!''}/admin" />
@@ -439,6 +439,10 @@ _**重要**_
 </#if>
 </#macro>
 ```
+
+_**提示**_  
+&lt;\#macro mower\_admin title scripts = '' version = '' require = ''&gt;  
+这个宏是业务页面的主要的宏，一般情况下，不要脱离这个宏做页面，这样未来修改时可以整体替换。
 
 ### 页面布局定制
 
