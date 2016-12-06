@@ -253,51 +253,6 @@ $(document).ajaxError(function(e, xhr, settings, exception) {
             Config.onAjaxResponseError(xhr.status, data, settings || {}, lastException);
         }
     });
-    
-		onAjaxResponseError : function(c, data, settings, exception) {
-			var code = data.exceptionCode || c;
-			switch (code) {
-			case 'http.301':
-			case 'http.302':
-			case 301:
-			case 302:
-				onAjaxRedirect(data, settings);
-				break;
-			case 'http.403':
-			case 403:
-				onAjaxForbidden(data);
-				break;
-			case 'http.404':
-			case 404:
-				onAjaxNotFound(data);
-				break;
-			case 'http.500':
-			case 500:
-				onAjaxServerError(data);
-				break;
-			default:
-				if (data.redirection) {
-					onAjaxRedirect(data, settings);
-				} else if (data.exceptionMessage) {
-					if (data.exceptionMessage == 'timeout') {
-						ModalBox.alert('请求超时，请重试！');
-					} else if (data.exceptionMessage != 'abort') {
-						ModalBox.alert(data.exceptionMessage);
-					}
-				} else if (data.exceptionStack) {
-					ModalBox.dialog({
-						title : '严重错误',
-						message : '<div style="width:100%;height:200px;scroll: auto">' + data.exceptionStack + '</div>',
-						buttons : {
-							ok : {
-								label : '确定'
-							}
-						}
-					});
-				}
-				break;
-			}
-		}    
 ```
 
 下面介绍不可遇见异常情况下的处理原则：
