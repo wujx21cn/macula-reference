@@ -144,9 +144,9 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 select app_name as label, app_id as code from ma_base_application
 ```
 
-提示：
+_**提示：**_
 
-&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。
+_**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。**_
 
 ## 地址规划
 
