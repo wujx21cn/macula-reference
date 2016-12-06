@@ -163,56 +163,7 @@ _为了能使自定义异常正确的处理，这里也要求我们编写的业�
 
 ### 系统级异常处理
 
-Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilter接管处理，此时客户端收到的是HTTP 500的响应。
-
-例 10.1. ExceptionNegotiateFilter中对HttpServletResponse的部分包装：
-
-```java
-@Override
-
-public void sendError(int sc, String msg) throws IOException {
-
-    this.message = msg;
-
-    setStatus(sc); // super.sendError(sc, msg);
-
-}
-
-
-@Override
-
-public void sendError(int sc) throws IOException {
-
-    setStatus(sc); // super.sendError(sc);
-
-}
-
-
-@Override
-
-public void sendRedirect(String location) throws IOException {
-
-    this.redirection = location;
-
-    setStatus(SC_MOVED_TEMPORARILY); // super.sendRedirect(location);
-
-}
-
-
-@Override
-
-public void setStatus(int sc) {
-
-    this.status = sc;
-
-    this.alarm = (sc != SC_OK);
-
-    super.setStatus(sc != SC_OK ? SC_EXPECTATION_FAILED : SC_OK);
-
-}
-```
-
-这个包装主要实现的是在于Ajax请求时，如果程序代码调用了response.sendError或sendRedirect时，能正确返回给Ajax调用的客户端出错的信息以及重定向的地址。
+Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilter接管处理，所有异常会统一用Response类封装，此时客户端收到的是HTTP 500的响应。
 
 ## 异常展示
 
