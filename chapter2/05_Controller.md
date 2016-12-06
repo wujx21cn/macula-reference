@@ -224,7 +224,7 @@ public ModelAndView excel2() {
 
 Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
 
-* **后端界面编写**
+* **后端默认布局界面编写**
 
 ```
 <@layout.mower_admin title="Dashboard">
@@ -232,16 +232,16 @@ Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
 </@layout.mower_admin>
 ```
 
-* **前端默认定义的宏如下：**
+* **前端默认界面布局编写：**
 
 ```
 <@layout.mower_front title="Dashboard">
-	<@ui.main_breadcrumb rootType='front' menuCode="FRONT_TEST_MENU1" />
-	<@ui.main_wrapper>
-		<@ui.main_content>
-			Dashborad
-		</@ui.main_content>
-	</@ui.main_wrapper>
+    <@ui.main_breadcrumb rootType='front' menuCode="FRONT_TEST_MENU1" />
+    <@ui.main_wrapper>
+        <@ui.main_content>
+            Dashborad
+        </@ui.main_content>
+    </@ui.main_wrapper>
 </@layout.mower_front>
 ```
 
