@@ -785,11 +785,13 @@ macula框架在Freemarker中默认有如下变量：
   * adminMainMenu：父亲是根的二级菜单
 
 
+
 * 前端
 
   * frontRootMenu：前端根菜单
 
   * frontMainMenu：父亲是根的二级菜单
+
 
 
 * 移动端
@@ -806,9 +808,7 @@ macula框架在Freemarker中默认有如下变量：
 
 页面国际化可以通过多个Freemarker文件解决，通过不同的国际化后缀来区分不同地区的页面；比如：index.ftl，如果要添加一个英文页面，可以添加index\_en\_US.ftl，这样当英文国家的用户访问系统时，将最先使用index\_en\_US.ftl文件。
 
-提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n\/xxxx\/messages\_xx\_XX.properties等众多资源文件，同时添加到applicationContext-macula.xml配置文件中。
-
-## 
+提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n/xxxx/messages\_xx\_XX.properties等众多资源文件，同时添加到applicationContext-app.xml配置文件中。
 
 ## 地址规划
 
