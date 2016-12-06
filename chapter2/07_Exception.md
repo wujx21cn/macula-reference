@@ -2,15 +2,48 @@
 
 ## 异常定义
 
-Macula框架异常继承自org.macula.exception.MaculaException，定义如下：。
+Macula框架异常继承自org.macula.exception.MaculaException，定义如下：
 
-1. 父错误码
+```java
+public abstract class MaculaException extends I18nException {
+
+	private static final long serialVersionUID = 1L;
+
+	public MaculaException(String message) {
+		super(message);
+	}
+
+	public MaculaException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public MaculaException(String message, Object[] args) {
+		super(message, args);
+	}
+
+	public MaculaException(String message, Object[] args, Throwable cause) {
+		super(message, args, cause);
+	}
+
+	public String getFullStackMessage() {
+		return ExceptionUtils.getStackTrace(this);
+	}
+
+	/**
+	 * 父错误码
+	 */
+	abstract public String getParentCode();
+
+}
+```
+
+1. **父错误码**
 
    对于业务异常，父错误码由各个业务异常类中getParentCode定义，规则是“项目英文简称”+“.”+模块名称，该错误码用于标识该异常是属于哪个模块。并且在资源文件中定义相关信息。
 
    对于系统类异常，由ExceptionNegotiateFilter或者OpenApiAuthenticationFilter产生，HTTP请求类的错误的父错误码为“http”，对于OpenApiAuthenticationFilter会根据规则产生“param”的错误码，标识调用OpenApi时参数的出错情况。
 
-2. 子错误码
+2. **子错误码**
 
    对于业务类异常，该错误码标识由业务类异常的getMessage定义，规则是“模块名称”+“.”+“功能名称”+“.”+“错误描述”，并且在资源文件中定义相关国际化信息。
 
