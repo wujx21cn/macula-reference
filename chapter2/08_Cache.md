@@ -128,8 +128,9 @@ Instance级表示的是独立于服务实例的Cache，用于多应用实例间�
 
 <!-- Application Cache -->
 <bean class="org.macula.core.cache.redis.RedisCacheManager">
-      <constructor-arg index="0" ref="cacheRedisTemplate" />
-      <property name="cacheName" value="applicationCache" />
+	<constructor-arg index="0" ref="cacheRedisTemplate" />
+       <property name="cacheName" value="applicationCache" />
+	<property name="usePrefix" value="true" />
 </bean>
 ```
 
