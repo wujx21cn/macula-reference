@@ -6,14 +6,6 @@
 
 ## Controller编写
 
-## 表单校验
-
-在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
-
-在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Domain中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
-
-失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
-
 ## 使用基类Controller
 
 在展示层编写的Controller实现，需要直接或间接扩展至BaseController
@@ -29,6 +21,16 @@ public class AdminMaculaBaseController extends BaseController {
 ```
 
 在BaseController中处理了大量的异常处理方式以及数据返回要求的设定。
+
+## 表单校验
+
+在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
+
+在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Domain中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
+
+失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
+
+## 
 
 ## 参数绑定校验
 
