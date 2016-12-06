@@ -249,6 +249,14 @@ _**重要**_
 
 布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本
 
+### 页面布局宏的定义
+
+我们先看看freemarker整个宏文件的定义逻辑：
+
+![](/images/chapter2/layout_mower.png)
+
+以admin目录为例，admin/layout.ftl是整个布局宏的入口：
+
 ### 页面布局定制
 
 下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
@@ -263,7 +271,7 @@ _**重要**_
 
 开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
 
-![](/images/chapter2/layout_mower.png)
+
 
 app目录中的layout\_mower.ftl文件可以覆盖，我们来看一下admin/app目录下的这个文件里面的内容：
 
@@ -298,8 +306,6 @@ app目录中的layout\_mower.ftl文件可以覆盖，我们来看一下admin/app
 ```
 
 由上面的代码可见，我们可以通过修改宏 mower\_admin\_header\_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower\_admin\_header\_menu，mower\_admin\_header\_login，以及 mower\_admin\_footer 来分别定义自己的 header menu，header login 和 footer。
-
-
 
 ## 前端开发框架
 
