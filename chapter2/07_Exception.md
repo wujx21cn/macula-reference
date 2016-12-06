@@ -163,7 +163,7 @@ _为了能使自定义异常正确的处理，这里也要求我们编写的业�
 
 ### 系统级异常处理
 
-在macula-base中，通过异常处理拦截器，将HttpServletResponse进行了包装，并重写了HttpServletResponse的部分方法。
+Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilter接管处理，此时客户端收到的是HTTP 500的响应。
 
 例 10.1. ExceptionNegotiateFilter中对HttpServletResponse的部分包装：
 
