@@ -8,7 +8,7 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
    对于业务异常，父错误码由各个业务异常类中getParentCode定义，规则是“项目英文简称”+“.”+模块名称，该错误码用于标识该异常是属于哪个模块。并且在资源文件中定义相关信息。
 
-   对于系统类异常，ExceptionNegotiateFilter或者OpenApiSecurityFilter产生，HTTP请求类的错误的父错误码为“http”，对于OpenApiSecurityFilter会根据规则产生“param”的错误码，标识在调用OpenApi时参数的出错情况。
+   对于系统类异常，ExceptionNegotiateFilter或者OpenApiAuthenticationFilter产生，HTTP请求类的错误的父错误码为“http”，对于OpenApiAuthenticationFilter会根据规则产生“param”的错误码，标识在调用OpenApi时参数的出错情况。
 
 2. 子错误码
 
@@ -18,8 +18,6 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 
 ## Service异常处理
-
-
 
 ## Controller异常处理
 
@@ -88,8 +86,6 @@ public abstract class BaseController {
 ```
 
 通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在errors中。
-
-
 
 1. 校验类异常
 
