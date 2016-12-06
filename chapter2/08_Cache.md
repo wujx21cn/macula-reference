@@ -51,9 +51,9 @@ _缓存中的数据是不可靠的，即缓存中的数据总是有生命周期�
 
 | 作用域 | 说明 | 获取方式 |
 | :--- | :--- | :--- |
-| SESSION | 基于Web容器Session的作用范围，在Session失效后，所缓存的数据将失效 | CacheUtils.getSessionCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.SESSION\)获取 |
-| INSTANCE | 实例级作用范围，在以JVM为周期的缓存。数据缓存有效期的时间通过EhCache配置文件设定 | CacheUtils.getInstanceCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.INSTANCE\)获取 |
-| APPLICATION | 集群级作用范围，独立于运行中的各实例，当前使用Redis来作为缓存服务器。数据缓存有效期为24小时 | CacheUtils.getApplicationCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.APPLICATION\)获取 |
+| CacheScope.SESSION | 基于Web容器Session的作用范围，在Session失效后，所缓存的数据将失效 | CacheUtils.getSessionCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.SESSION\)获取 |
+| CacheScope.INSTANCE | 实例级作用范围，在以JVM为周期的缓存。数据缓存有效期的时间通过EhCache配置文件设定 | CacheUtils.getInstanceCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.INSTANCE\)获取 |
+| CacheScope.APPLICATION | 集群级作用范围，独立于运行中的各实例，当前使用Redis来作为缓存服务器。数据缓存有效期为24小时 | CacheUtils.getApplicationCache\(\)，或通过注入CacheManager cacheManager然后通过cacheManager.getCache\(CacheScope.APPLICATION\)获取 |
 
 ## Session级Cache
 
