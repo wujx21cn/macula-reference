@@ -56,15 +56,7 @@ public abstract class MaculaException extends I18nException {
 
    在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
 
-   ```java
-   public User save(@Valid @FormBean("user") User user){
-    if (hasErrors()) {
-        throw new FormBindException(getMergedBindingResults());
-    }
-    // something
-    return user;
-   }
-   ```
+
 
    FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。
 
@@ -87,47 +79,59 @@ Service层通过ServiceExceptionHandler拦截Service层抛出的异常，并且�
 
 ```java
 public class ServiceExceptionHandler {
-	
-	@Autowired(required = false)
-	private List<MaculaExceptionTranslator> exceptionTranslators;
-	
-	static Logger log = LoggerFactory.getLogger(ServiceExceptionHandler.class);
-	
-	public void doAfterThrowing(JoinPoint joinPoint, Throwable ex) {
-		if (!(ex instanceof MaculaException)) {
-			MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-			Method method = methodSignature.getMethod();
 
-			try {
-				method = joinPoint.getTarget().getClass().getMethod(method.getName(), method.getParameterTypes());
-			} catch (Exception e) {
-			}
+    @Autowired(required = false)
+    private List<MaculaExceptionTranslator> exceptionTranslators;
 
-			ErrorMessage errorMessage = method.getAnnotation(ErrorMessage.class);
+    static Logger log = LoggerFactory.getLogger(ServiceExceptionHandler.class);
 
-			String message = errorMessage == null ? ex.getMessage() : errorMessage.value();
+    public void doAfterThrowing(JoinPoint joinPoint, Throwable ex) {
+        if (!(ex instanceof MaculaException)) {
+            MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+            Method method = methodSignature.getMethod();
 
-			log.error(message, ex);
+            try {
+                method = joinPoint.getTarget().getClass().getMethod(method.getName(), method.getParameterTypes());
+            } catch (Exception e) {
+            }
 
-			throw translate(message, ex);
-		}
-	}
-	
-	private MaculaException translate(String message, Throwable ex) {
-		if (exceptionTranslators != null) {
-			for (MaculaExceptionTranslator translator : exceptionTranslators) {
-				MaculaException coreException = translator.translateExceptionIfPossible(ex);
-				if (coreException != null) {
-					return new ServiceException(message, coreException);
-				}
-			}
-		}
-		return new ServiceException(message, ex);
-	}
+            ErrorMessage errorMessage = method.getAnnotation(ErrorMessage.class);
+
+            String message = errorMessage == null ? ex.getMessage() : errorMessage.value();
+
+            log.error(message, ex);
+
+            throw translate(message, ex);
+        }
+    }
+
+    private MaculaException translate(String message, Throwable ex) {
+        if (exceptionTranslators != null) {
+            for (MaculaExceptionTranslator translator : exceptionTranslators) {
+                MaculaException coreException = translator.translateExceptionIfPossible(ex);
+                if (coreException != null) {
+                    return new ServiceException(message, coreException);
+                }
+            }
+        }
+        return new ServiceException(message, ex);
+    }
 }
 ```
 
 ### Controller异常处理
+
+Controller层自己会抛出校验类异常：
+
+```java
+public User save(@Valid @FormBean("user") User user){
+if (hasErrors()) {
+throw new FormBindException(getMergedBindingResults());
+}
+// something
+return user;
+}
+```
 
 先看框架提供的BaseController类的定义：
 
