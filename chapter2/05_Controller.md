@@ -629,6 +629,20 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 <#include "/ui/app/ui.ftl" />
 ```
 
+典型的后端页面是：
+
+```
+<@layout.mower_admin title='' scripts=''>
+<@ui.panel>
+    <@ui.panel_head>
+    工具条
+    </@ui.panel_head>
+    <@ui.panel_body>
+    </@ui.panel_body>
+</@ui.panel>
+</@layout.mower_admin>
+```
+
 你可以覆盖ui/app/ui.ftl和ui.js来定义你的UI宏。
 
 ## 前端开发框架
