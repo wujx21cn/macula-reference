@@ -57,14 +57,13 @@ public abstract class MaculaException extends I18nException {
    在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
 
 
+FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。
 
-   FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。
-
-2. 业务类异常
+1. 业务类异常
 
    在Service层抛出的异常会经过ServiceExceptionHandler统一拦截转换为MaculaException，如果在Service层主动抛出MaculaException异常则不再转换，不能转换的异常会变成系统类异常，MaculaException异常在BaseController中会统一处理，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。
 
-3. 系统类异常
+2. 系统类异常
 
    除了上述两类异常由BaseController统一处理外，这类异常会由ExceptionNegotiateFilter统一拦截处理，导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。
 
@@ -125,11 +124,11 @@ Controller层自己会抛出校验类异常：
 
 ```java
 public User save(@Valid @FormBean("user") User user){
-if (hasErrors()) {
-throw new FormBindException(getMergedBindingResults());
-}
-// something
-return user;
+    if (hasErrors()) {
+        throw new FormBindException(getMergedBindingResults());
+    }
+    // something
+    return user;
 }
 ```
 
