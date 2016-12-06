@@ -774,6 +774,32 @@ _**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数�
 
 上述代码放入表单中，则会自动生成防止重复提交的token，如果要显示验证码，captcha输入true。
 
+### 菜单
+
+macula框架在Freemarker中默认有如下变量：
+
+* 后端
+
+  * adminRootMenu ：后端根菜单
+
+  * adminMainMenu：父亲是根的二级菜单
+
+
+* 前端
+
+  * frontRootMenu：前端根菜单
+
+  * frontMainMenu：父亲是根的二级菜单
+
+
+* 移动端
+
+  * mobileRootMenu：移动端根菜单
+
+  * mobileMainMenu：父亲是根的二级菜单
+
+
+
 ## 国际化
 
 国际化 可分为页面国际化和提示信息国际化。
