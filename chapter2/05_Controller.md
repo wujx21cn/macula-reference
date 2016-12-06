@@ -159,7 +159,7 @@ public class AdminMaculaBaseController extends BaseController {
 
    _**重要**_
 
-   _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\_" +属性名。\_
+   _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\__" +属性名。
 
 4. 类型转换
 
