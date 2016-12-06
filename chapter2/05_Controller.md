@@ -222,7 +222,7 @@ public ModelAndView excel2() {
 
 ### 页面布局
 
-Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
+Macula 使用 FreeMarker 宏来规范ftl页面模板的开发：
 
 * **后端默认布局界面编写**
 
@@ -244,6 +244,12 @@ Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
     </@ui.main_wrapper>
 </@layout.mower_front>
 ```
+
+  _**重要**_
+
+    _**布局可以根据是否AJAX请求自动判断是否输出javascript和css的脚本**_
+
+### 页面布局定制
 
 下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
 
