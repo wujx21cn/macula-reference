@@ -175,6 +175,8 @@ Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilt
 
 ### 普通请求异常
 
+如果是BaseController拦截返回的HTTP 200类的错误信息，出现异常的Controller方法会加载webapp/src/main/resources/views/error.ftl模板，你需要根据项目自定义该模板，以符合整体UI风格。
+
 ### AJAX请求异常
 
 对异常信息的处理，主要在于在Ajax请求下的异常处理，对于非Ajax请求，可通过定义服务端各错误代码的错误页面来直接实现，对于Ajax请求，由于返回信息由脚本代理而不是浏览器处理，需要作出一定的调整。
