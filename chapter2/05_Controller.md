@@ -4,167 +4,7 @@
 
 同时对于Ajax部分，在javascript框架中建议使用jquery框架。
 
-## 页面布局
-
-Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
-
-![macula-layout](../images/chapter2/macula-layout.png)
-
-由上图可见，Macula 页面由 header，main container 和 footer 三部分组成。其中，header 由 logo，menu 和 login 组成；main container 主要包括 sidebar 和 content 两大部分；footer 构成比较简单。
-
-为了方便大家理解，我们以一个实际的页面为例子说明各个部分。
-
-![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
-
-开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
-
-![layout_mower](../images/chapter2/layout_mower.png)
-
-我们来看一下这个文件里面的内容：
-
-```
-<#--
-使用者可以通过覆盖这个文件实现对一些宏的重新定义包括：
--- html head中的内容，包括meta css等
-<#macro mower_admin_head title = ''>
--- LOGO
-<#macro mower_admin_header_logo>
--- 菜单栏
-<#macro mower_admin_header_menu>
--- 登录后提示信息
-<#macro mower_admin_header_login>
--- 页脚
-<#macro mower_admin_footer>
-包含的Javascript(angularjs,knockoutjs,datagrid)
-<#macro mower_admin_scripts require = ''>
--->
-
-<#--
-局部替换：如果以下变量定义在具体业务模板中，则会覆盖你的layout模板中的定义
-
-<#global mower_admin_scripts_addition>
-    加入你自己的javascript库文件
-</#global>
-
-<#global mower_admin_head_addition>
-    加入你自己的css文件
-</#global>
--->
-```
-
-由上面的代码可见，我们可以通过修改宏 mower\_admin\_header\_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower\_admin\_header\_menu，mower\_admin\_header\_login，以及 mower\_admin\_footer 来分别定义自己的 header menu，header login 和 footer。
-
-## 前端开发框架
-
-Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请访问 [Mower 官方网站](http://macula.top/mower/)。
-
-## 前端开发疑难点
-
-下面我们来谈谈 Macula 前端开发中的一些经常遇到的疑点或难点。
-
-### 登录用户信息
-
-登录用户信息在登录时，我们可以通过实现 CustomUserLoginRepository 接口把用户信息放到UserPincipal的atrribute中，可以在Freemarker中通过如下获取，Freemaker中的userPrincipal对应UserPrincipal类：
-
-```
-<#if userPrincipal.getAttributeValue("userInfo")?exists>
-  <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
-</#if>
-
-<#if userInfo?exists>
-
-<#else>
-
-</#if>
-```
-
-### 权限判断
-
-在freemarker中
-
-```
-<@macula.preAuthorized>
-
-</@macula.preAuthorized>
-```
-
-### 下拉框
-
-我们先来看看Macula中下拉框的样子，如下图绿色方框中所示：
-
-![macula_select](../images/chapter2/macula_select.png)
-
-要实现下拉框首先需要有下拉框选项。下拉框的选项是静态的情形很简单，在这里我们讨论的是下拉框中的选项是从数据库中获取的。我们知道下拉框的选项由 name 和 value两项组成。在这里，我们需要用到 Macula 的数据参数功能。我们可以在数据参数中定义这些选项。数据参数中定义的选项有三种形式。
-
-1. 典型的形式如下：
-
-   ```
-   name1:value1|name2:value2|...
-   ```
-
-   例如：
-
-   ```
-   NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
-   ```
-
-2. 如果选项的 name 和 value 相同，还可以简化成以下的形式：
-
-   ```
-   name1|name2|...
-   ```
-
-   例如：
-
-   ```
-   String|Integer|Long|Double|Boolean|Timestamp|Date|Word
-   ```
-
-3. 当然还可以用 SQL 的形式从数据库中获取。例如：
-
-   ```
-   select app_name as label, app_id as code from ma_base_application
-   ```
-
-
-有关数据参数的详细介绍，请参阅“基础插件”中的“数据提供”一节。
-
-下面我们来看下如何在 ftl 中定义下拉框：
-
-```
-<div class="form-group">
-    <label class="control-label col-md-3">所属应用：</label>
-    <div class="col-md-9">
-        <select name="dataParam.appId" data-bind="options: appIdParams.application_list, optionsText: 'label', optionsValue:'code', optionsCaption: '请选择', value: appId "  class="chosen-select form-control"/>
-    </div>
-</div>
-```
-
-上面的例子中用到了 knockoutJs 的 data-bind，通过 options 属性将一个名为 appIdParams.application\_list 的 js 变量绑定到下拉框的选项中，而 appIdParams.application\_list 中的内容正是来自于预先定义好的数据参数 application\_list。在同一个 ftl 中我们使用 Macula 框架提供的宏 writeDataParamsJs 获取数据参数 application\_list 的内容。如下：
-
-```
-<script type="text/javascript">
-    var appIdParams={<@macula.writeDataParamsJs 'application_list' />};
-</script>
-```
-
-数据参数 application\_list 的定义如下：
-
-```
-select app_name as label, app_id as code from ma_base_application
-```
-
-_**提示：**_
-
-_**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。**_
-
-## 国际化
-
-国际化 可分为页面国际化和提示信息国际化。
-
-页面国际化可以通过多个Freemarker文件解决，通过不同的国际化后缀来区分不同地区的页面；比如：index.ftl，如果要添加一个英文页面，可以添加index\_en\_US.ftl，这样当英文国家的用户访问系统时，将最先使用index\_en\_US.ftl文件。
-
-提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n\/xxxx\/messages\_xx\_XX.properties等众多资源文件，同时添加到applicationContext-macula.xml配置文件中。
+## Controller编写
 
 ## 表单校验
 
@@ -399,6 +239,172 @@ public ModelAndView excel2() {
 
 上述代码将会去views\/admin\[front\]\/xxxx\/so\_master\/目录下寻找excel.xls的Excel模板文件，然后通过ExcelUtils解析该模板文件生成需要的Excel文件。
 
+## Freemarker编写
+
+### 页面布局
+
+Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
+
+![macula-layout](../images/chapter2/macula-layout.png)
+
+由上图可见，Macula 页面由 header，main container 和 footer 三部分组成。其中，header 由 logo，menu 和 login 组成；main container 主要包括 sidebar 和 content 两大部分；footer 构成比较简单。
+
+为了方便大家理解，我们以一个实际的页面为例子说明各个部分。
+
+![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
+
+开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
+
+![layout_mower](../images/chapter2/layout_mower.png)
+
+我们来看一下这个文件里面的内容：
+
+```
+<#--
+使用者可以通过覆盖这个文件实现对一些宏的重新定义包括：
+-- html head中的内容，包括meta css等
+<#macro mower_admin_head title = ''>
+-- LOGO
+<#macro mower_admin_header_logo>
+-- 菜单栏
+<#macro mower_admin_header_menu>
+-- 登录后提示信息
+<#macro mower_admin_header_login>
+-- 页脚
+<#macro mower_admin_footer>
+包含的Javascript(angularjs,knockoutjs,datagrid)
+<#macro mower_admin_scripts require = ''>
+-->
+
+<#--
+局部替换：如果以下变量定义在具体业务模板中，则会覆盖你的layout模板中的定义
+
+<#global mower_admin_scripts_addition>
+    加入你自己的javascript库文件
+</#global>
+
+<#global mower_admin_head_addition>
+    加入你自己的css文件
+</#global>
+-->
+```
+
+由上面的代码可见，我们可以通过修改宏 mower\_admin\_header\_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower\_admin\_header\_menu，mower\_admin\_header\_login，以及 mower\_admin\_footer 来分别定义自己的 header menu，header login 和 footer。
+
+## 前端开发框架
+
+Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请访问 [Mower 官方网站](http://macula.top/mower/)。
+
+## 前端开发疑难点
+
+下面我们来谈谈 Macula 前端开发中的一些经常遇到的疑点或难点。
+
+### 登录用户信息
+
+登录用户信息在登录时，我们可以通过实现 CustomUserLoginRepository 接口把用户信息放到UserPincipal的atrribute中，可以在Freemarker中通过如下获取，Freemaker中的userPrincipal对应UserPrincipal类：
+
+```
+<#if userPrincipal.getAttributeValue("userInfo")?exists>
+  <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
+</#if>
+
+<#if userInfo?exists>
+
+<#else>
+
+</#if>
+```
+
+### 权限判断
+
+在freemarker中
+
+```
+<@macula.preAuthorized>
+
+</@macula.preAuthorized>
+```
+
+### 下拉框
+
+我们先来看看Macula中下拉框的样子，如下图绿色方框中所示：
+
+![macula_select](../images/chapter2/macula_select.png)
+
+要实现下拉框首先需要有下拉框选项。下拉框的选项是静态的情形很简单，在这里我们讨论的是下拉框中的选项是从数据库中获取的。我们知道下拉框的选项由 name 和 value两项组成。在这里，我们需要用到 Macula 的数据参数功能。我们可以在数据参数中定义这些选项。数据参数中定义的选项有三种形式。
+
+1. 典型的形式如下：
+
+   ```
+   name1:value1|name2:value2|...
+   ```
+
+   例如：
+
+   ```
+   NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
+   ```
+
+2. 如果选项的 name 和 value 相同，还可以简化成以下的形式：
+
+   ```
+   name1|name2|...
+   ```
+
+   例如：
+
+   ```
+   String|Integer|Long|Double|Boolean|Timestamp|Date|Word
+   ```
+
+3. 当然还可以用 SQL 的形式从数据库中获取。例如：
+
+   ```
+   select app_name as label, app_id as code from ma_base_application
+   ```
+
+
+有关数据参数的详细介绍，请参阅“基础插件”中的“数据提供”一节。
+
+下面我们来看下如何在 ftl 中定义下拉框：
+
+```
+<div class="form-group">
+    <label class="control-label col-md-3">所属应用：</label>
+    <div class="col-md-9">
+        <select name="dataParam.appId" data-bind="options: appIdParams.application_list, optionsText: 'label', optionsValue:'code', optionsCaption: '请选择', value: appId "  class="chosen-select form-control"/>
+    </div>
+</div>
+```
+
+上面的例子中用到了 knockoutJs 的 data-bind，通过 options 属性将一个名为 appIdParams.application\_list 的 js 变量绑定到下拉框的选项中，而 appIdParams.application\_list 中的内容正是来自于预先定义好的数据参数 application\_list。在同一个 ftl 中我们使用 Macula 框架提供的宏 writeDataParamsJs 获取数据参数 application\_list 的内容。如下：
+
+```
+<script type="text/javascript">
+    var appIdParams={<@macula.writeDataParamsJs 'application_list' />};
+</script>
+```
+
+数据参数 application\_list 的定义如下：
+
+```
+select app_name as label, app_id as code from ma_base_application
+```
+
+_**提示：**_
+
+_**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数，如果同一个界面有多个参数可以通过这种方式一次获取参数。**_
+
+## 国际化
+
+国际化 可分为页面国际化和提示信息国际化。
+
+页面国际化可以通过多个Freemarker文件解决，通过不同的国际化后缀来区分不同地区的页面；比如：index.ftl，如果要添加一个英文页面，可以添加index\_en\_US.ftl，这样当英文国家的用户访问系统时，将最先使用index\_en\_US.ftl文件。
+
+提示信息国际化使用资源文件处理，在每个模块的资源文件目录下，都有i18n\/xxxx\/messages\_xx\_XX.properties等众多资源文件，同时添加到applicationContext-macula.xml配置文件中。
+
+## 
+
 ## 地址规划
 
 对于当前大部分的业务系统，存在终端使用和后台管理的情况以及未来对于F5在地址分发方面的合理性布局，在地址规划上，需要按一定的规则进行：
@@ -571,4 +577,6 @@ _为了减少对编程的干扰，正常情况下，Controller中的方法可以
 ```
 
 ## 
+
+
 
