@@ -833,13 +833,13 @@ macula框架在Freemarker中默认有如下变量：
 * 对于删除数据、保存数据或提交多条数据给后台的应该使用POST方式
 * 有多个查询条件的查询功能应该使用POST方式
 
-## REST
+## RESTful API
 
 在对REST的支持方面，使用Spring的REST解决方案，macula平台未做相关变动，这里说明在能使用REST的方式下，尽量使用REST方式。
 
 在Macula平台开发中，将不通过地址中的参数来传递参数值，而直接通过地址信息来传递参数值。
 
-如请求的地址：\/admin\/macula-uim\/user\/delete\/user1 可通过Controller中定义
+如请求的地址：/admin/macula-uim/user/delete/user1 可通过Controller中定义
 
 ```java
 @RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
