@@ -255,7 +255,24 @@ _**重要**_
 
 ![](/images/chapter2/layout_mower.png)
 
-以admin目录为例，admin/layout.ftl是整个布局宏的入口：
+在views根目录下，有个layout.ftl是整个布局宏的入口：
+
+```
+<#macro includeScripts scripts>
+	<#if scripts?exists && scripts != ''>
+		<#list scripts?split(",") as jsItem>
+			<script id="${jsItem?trim?replace('.', '_')?replace('/', '_')}" type="text/javascript">
+				<#include "/${jsItem?trim?replace('.js', minVersion+'.js')}" parse=false />
+			</script>
+		</#list>
+	</#if>
+</#macro>
+
+<#include "/admin/layout.ftl" />
+<#include "/admin/layout_mower.ftl" />
+<#include "/front/layout_mower.ftl" />
+<#include "/mobile/layout_mower.ftl" />
+```
 
 ### 页面布局定制
 
@@ -270,8 +287,6 @@ _**重要**_
 ![macula-layout-demo](../images/chapter2/macula-layout-demo.png)
 
 开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
-
-
 
 app目录中的layout\_mower.ftl文件可以覆盖，我们来看一下admin/app目录下的这个文件里面的内容：
 
