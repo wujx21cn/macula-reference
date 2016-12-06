@@ -17,7 +17,6 @@
   * [时间与格式](chapter2/06_Timezone.md)
   * [异常处理](chapter2/07_Exception.md)
   * [缓存服务](chapter2/08_Cache.md)
-  * [开放API](chapter2/10_OpenApi.md)
   * [单元与集成测试](chapter2/09_JUnit.md)
 
 * [基础插件](chapter3/chapter3.md)
@@ -26,6 +25,7 @@
   * [数据集](chapter3/03_Plugins_DataSet.md)
   * [安全管理](chapter3/05_Plugins_Authentication.md)
   * [权限管理](chapter3/04_Plugins_Authority2.md)
+  * [开放API](chapter3/10_OpenApi.md)
 
 * [扩展插件](chapter4/chapter4.md)
   * [WEB应用基础](chapter4/01_Webapp.md)
