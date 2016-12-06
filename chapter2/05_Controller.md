@@ -226,19 +226,24 @@ Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
 
 * **后端界面编写**
 
-
 ```
 <@layout.mower_admin title="Dashboard">
     具体业务内容
 </@layout.mower_admin>
 ```
 
-
-
 * **前端默认定义的宏如下：**
 
-
-
+```
+<@layout.mower_front title="Dashboard">
+	<@ui.main_breadcrumb rootType='front' menuCode="FRONT_TEST_MENU1" />
+	<@ui.main_wrapper>
+		<@ui.main_content>
+			Dashborad
+		</@ui.main_content>
+	</@ui.main_wrapper>
+</@layout.mower_front>
+```
 
 下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
 
