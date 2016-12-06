@@ -2,7 +2,7 @@
 
 ## 异常定义
 
-Macula框架将异常分为系统类异常、业务类异常和校验类异常，校验类异常与业务类异常处理方式相同，下面不再单独说明，业务类异常为业务模块自行抛出的异常，并且由Macula框架统一处理，该异常必须继承自org.macula.exception.MaculaException，业务类异常在返回时仍然是正常的HTTP 200响应。其他类型的异常统称为系统类异常，系统类异常系统产生，由ExceptionNegotiateFilter处理。
+Macula框架异常继承自org.macula.exception.MaculaException，定义如下：。
 
 1. 父错误码
 
@@ -37,7 +37,7 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 2. 业务类异常
 
-   业务类异常是指继承自MaculaException的异常类型，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。
+   业务类异常是指继承自MaculaException的异常类型，在Service层抛出的异常会经过ServiceExceptionHandler统一拦截转换，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。
 
 3. 系统类异常
 
