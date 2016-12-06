@@ -7,32 +7,32 @@ Macula框架异常继承自org.macula.exception.MaculaException，定义如下�
 ```java
 public abstract class MaculaException extends I18nException {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public MaculaException(String message) {
-		super(message);
-	}
+    public MaculaException(String message) {
+        super(message);
+    }
 
-	public MaculaException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    public MaculaException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-	public MaculaException(String message, Object[] args) {
-		super(message, args);
-	}
+    public MaculaException(String message, Object[] args) {
+        super(message, args);
+    }
 
-	public MaculaException(String message, Object[] args, Throwable cause) {
-		super(message, args, cause);
-	}
+    public MaculaException(String message, Object[] args, Throwable cause) {
+        super(message, args, cause);
+    }
 
-	public String getFullStackMessage() {
-		return ExceptionUtils.getStackTrace(this);
-	}
+    public String getFullStackMessage() {
+        return ExceptionUtils.getStackTrace(this);
+    }
 
-	/**
-	 * 父错误码
-	 */
-	abstract public String getParentCode();
+    /**
+     * 父错误码
+     */
+    abstract public String getParentCode();
 
 }
 ```
@@ -52,11 +52,12 @@ public abstract class MaculaException extends I18nException {
 
 ## 异常处理方式
 
-校验类异常
+1. 校验类异常
 
-1. 在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
 
-   ```java
+    在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
+
+1. ```java
    public User save(@Valid @FormBean("user") User user){
     if (hasErrors()) {
         throw new FormBindException(getMergedBindingResults());
