@@ -58,7 +58,7 @@ public class AdminMaculaBaseController extends BaseController {
    ?userName=Wilson&password=123456
    ```
 
-   此时Spring将自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
+   此时Spring自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
 
    ```java
    public User save(@Valid @FormBean("user") User user){
