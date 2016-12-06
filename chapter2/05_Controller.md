@@ -535,14 +535,14 @@ app目录中的layout\_mower.ftl文件可以覆盖，同时会重新定义admin/
 
 -- 定义最顶的登录状态条最左边显示的文字内容
 <#global mower_front_header_login_custom_left>
-	文字
+    文字
 </#global>
 
 -- 定义最顶的登录状态条最右边显示的文字内容
 <#global mower_front_header_login_custom_right>
-	<li>
-		<a target="_blank" href="#"><i class="fa fa-sitemap"></i>网站导航</a>
-	</li>
+    <li>
+        <a target="_blank" href="#"><i class="fa fa-sitemap"></i>网站导航</a>
+    </li>
 </#global>
 
 定制广告头
@@ -571,15 +571,65 @@ ddddadf
 </#global>
 
 <#global mower_front_scripts_addition>
-	加入你自己的javascript库文件
+    加入你自己的javascript库文件
 </#global>
 
 <#global mower_front_head_addition>
-	加入你自己的css文件
+    加入你自己的css文件
 </#global>
 -->
+```
+
+### UI宏
+
+u目录的ui.ftl提供了框架默认的UI宏，包括：
 
 ```
+<#-- UI的自定义宏 -->
+<#---------------------------------------ADMIN--------------------------------------->
+<#macro panel id='panel-list' class='panel panel-widget unboxed'>
+
+</#macro>
+
+<#macro panel_head>
+
+</#macro>
+
+<#macro panel_body>
+
+</#macro>
+
+<#macro panel_footer>
+
+</#macro>
+
+<#macro panel_toolbar_query>
+
+</#macro>
+
+<#------------------------------FRONT------------------------------------->
+<#macro main_breadcrumb rootType = 'admin' menuCode = ''>
+<!-- BEGIN BREADCRUMB -->
+
+<!-- END BREADCRUMB-->
+</#macro>
+
+<#macro main_sidebar>
+
+</#macro>
+
+<#macro main_content>
+
+</#macro>
+
+<#macro main_wrapper>
+
+</#macro>
+<#----------------------------------------COMMON--------------------------------->
+<#include "/ui/app/ui.ftl" />
+```
+
+你可以覆盖ui/app/ui.ftl和ui.js来定义你的UI宏。
 
 ## 前端开发框架
 
