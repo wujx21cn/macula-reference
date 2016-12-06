@@ -157,7 +157,7 @@ public class AdminMaculaBaseController extends BaseController {
 
    Pageable参数绑定时，将直接从Request参数中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序\)、order（ASC，DESC\)
+   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序\)、order（ASC升序，DESC降序\)
 
 4. _**重要**_
 
