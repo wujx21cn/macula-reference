@@ -222,7 +222,25 @@ public ModelAndView excel2() {
 
 ### 页面布局
 
-Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
+Macula 使用 FreeMarker 宏来规范ftl页面模板的开发，
+
+* **后端界面编写**
+
+
+```
+<@layout.mower_admin title="Dashboard">
+    具体业务内容
+</@layout.mower_admin>
+```
+
+
+
+* **前端默认定义的宏如下：**
+
+
+
+
+下面我们以后台管理页面为例进行讲解。后台管理页面布局如下图所示：
 
 ![macula-layout](../images/chapter2/macula-layout.png)
 
