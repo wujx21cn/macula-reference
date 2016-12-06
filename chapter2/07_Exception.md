@@ -17,6 +17,39 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
    系统类异常的错误码一般由父错误码+“两位数字”标识。
 
 
+### 异常处理方式
+
+校验类异常
+
+1. 在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
+
+   ```java
+   public User save(@Valid @FormBean("user") User user){
+    if (hasErrors()) {
+        throw new FormBindException(getMergedBindingResults());
+    }
+    // something
+    return user;
+   }
+   ```
+
+   FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
+
+2. 业务类异常
+
+   业务类异常是指继承自MaculaException的异常类型，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
+
+3. 系统类异常
+
+   除了上述两类异常由BaseController统一处理外，其他异常会导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。如果是非AJAX的请求，则不会对这类异常做任何处理。
+
+   对于这种类型的异常，在AJAX调用的客户端应该需要统一拦截错误的响应，并且根据Response中的success标志来决定下一步动作。
+
+
+_**重要**_
+
+_为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  _
+
 ## Service异常处理
 
 ## Controller异常处理
@@ -86,37 +119,6 @@ public abstract class BaseController {
 ```
 
 通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在errors中。
-
-1. 校验类异常
-
-   在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
-
-   ```java
-   public User save(@Valid @FormBean("user") User user){
-    if (hasErrors()) {
-        throw new FormBindException(getMergedBindingResults());
-    }
-    // something
-    return user;
-   }
-   ```
-
-   FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
-
-2. 业务类异常
-
-   业务类异常是指继承自MaculaException的异常类型，在BaseController中会统一处理该类型的异常，并且创建一个Response类型的结果返回给访问端。这种类型异常的HTTP响应状态为正常的200。根据是否AJAX请求会主动序列化为JSON/XML格式数据。
-
-3. 系统类异常
-
-   除了上述两类异常由BaseController统一处理外，其他类型的异常会导致系统返回HTTP状态为500的响应，并且同样构造成Response类型的结果返回。如果是非AJAX的请求，则不会对这类异常做任何处理。
-
-   对于这种类型的异常，在AJAX调用的客户端应该需要统一拦截错误的响应，并且根据Response中的success标志来决定下一步动作。
-
-
-_**重要**_
-
-_为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  _
 
 ## 系统级异常处理
 
