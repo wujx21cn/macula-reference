@@ -85,7 +85,7 @@ Instance级表示的是独立于服务实例的Cache，用于多应用实例间�
 <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
       <property name="hostName" value="localhost" />
 </bean>
-<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+<bean id="cacheRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
       <property name="connectionFactory" ref="redisConnectionFactory" />
 </bean>
 
