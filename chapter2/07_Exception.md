@@ -177,7 +177,7 @@ Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilt
 
 如果是BaseController拦截返回的HTTP 200类的错误信息，出现异常的Controller方法会加载webapp/src/main/resources/views/error.ftl模板，你需要根据项目自定义该模板，以符合整体UI风格。
 
-error.ftl
+error.ftl默认内容
 
 ```
 有错误，${errors?if_exists} <BR/>
