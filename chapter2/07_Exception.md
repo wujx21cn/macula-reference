@@ -216,43 +216,88 @@ exceptionMessage: ${(errors.exceptionMessage)!''} <BR/>
 
 ```js
 success : function(data) {
-	if (data.success) {
-		// ajax请求成功
-	} else {
-		// ajax请求失败
-	}
-}	
+    if (data.success) {
+        // ajax请求成功
+    } else {
+        // ajax请求失败
+    }
+}
 ```
 
 如果不是BaseController拦截的异常，则返回HTTP 500的Response类的JSON数据，此时，ajax的全局错误机制会触发，具体可以看config.js中的配置：
 
 ```js
-	$(document).ajaxError(function(e, xhr, settings, exception) {
-		var data = null, lastException = exception;
-		try {
-			data = $.parseJSON(xhr.responseText);
-		} catch (e) {
-			lastException = e;
-		}
+$(document).ajaxError(function(e, xhr, settings, exception) {
+        var data = null, lastException = exception;
+        try {
+            data = $.parseJSON(xhr.responseText);
+        } catch (e) {
+            lastException = e;
+        }
 
-		if (lastException != null && data == null) {
-			var exceptionMessage = null;
-			if (typeof lastException == 'string') {
-				exceptionMessage = lastException;
-			} else {
-				exceptionMessage = lastException.message;
+        if (lastException != null && data == null) {
+            var exceptionMessage = null;
+            if (typeof lastException == 'string') {
+                exceptionMessage = lastException;
+            } else {
+                exceptionMessage = lastException.message;
+            }
+            if (exceptionMessage != null) {
+                data = {
+                    errorMessage : '',
+                    exceptionMessage : exceptionMessage
+                };
+            }
+        }
+        if (xhr.status || data) {
+            Config.onAjaxResponseError(xhr.status, data, settings || {}, lastException);
+        }
+    });
+    
+		onAjaxResponseError : function(c, data, settings, exception) {
+			var code = data.exceptionCode || c;
+			switch (code) {
+			case 'http.301':
+			case 'http.302':
+			case 301:
+			case 302:
+				onAjaxRedirect(data, settings);
+				break;
+			case 'http.403':
+			case 403:
+				onAjaxForbidden(data);
+				break;
+			case 'http.404':
+			case 404:
+				onAjaxNotFound(data);
+				break;
+			case 'http.500':
+			case 500:
+				onAjaxServerError(data);
+				break;
+			default:
+				if (data.redirection) {
+					onAjaxRedirect(data, settings);
+				} else if (data.exceptionMessage) {
+					if (data.exceptionMessage == 'timeout') {
+						ModalBox.alert('请求超时，请重试！');
+					} else if (data.exceptionMessage != 'abort') {
+						ModalBox.alert(data.exceptionMessage);
+					}
+				} else if (data.exceptionStack) {
+					ModalBox.dialog({
+						title : '严重错误',
+						message : '<div style="width:100%;height:200px;scroll: auto">' + data.exceptionStack + '</div>',
+						buttons : {
+							ok : {
+								label : '确定'
+							}
+						}
+					});
+				}
+				break;
 			}
-			if (exceptionMessage != null) {
-				data = {
-					errorMessage : '',
-					exceptionMessage : exceptionMessage
-				};
-			}
-		}
-		if (xhr.status || data) {
-			Config.onAjaxResponseError(xhr.status, data, settings || {}, lastException);
-		}
-	});
+		}    
 ```
 
 下面介绍不可遇见异常情况下的处理原则：
