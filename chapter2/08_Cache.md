@@ -140,5 +140,7 @@ Cache接口直接采用Spring-Cache的接口方式。具体可参考org.springfr
 
 由于该Cache最终为Spring-Cache实现，所以对于Spring-Cache的其他用途，如通过annotation标识方法的缓存等，请具体参见Spring文档。
 
+_**重要**_
+
 使用@Cacheable注解时记得要指明作用域。
 

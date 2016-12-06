@@ -50,7 +50,6 @@ Macula 使用 FreeMarker 页面模板技术，下面我们以后台管理页面�
     加入你自己的css文件
 </#global>
 -->
-
 ```
 
 由上面的代码可见，我们可以通过修改宏 mower\_admin\_header\_logo 来自定义自己的 header logo；同样道理我们可以通过修改宏 mower\_admin\_header\_menu，mower\_admin\_header\_login，以及 mower\_admin\_footer 来分别定义自己的 header menu，header login 和 footer。
@@ -89,33 +88,33 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 1. 典型的形式如下：
 
-  ```
-  name1:value1|name2:value2|...
-  ```
+   ```
+   name1:value1|name2:value2|...
+   ```
 
-  例如：
+   例如：
 
-  ```
-  NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
-  ```
+   ```
+   NONE:不缓存|SESSION:整个用户Session作用域|INSTANCE:实例级作用域|APPLICATION:全局级别作用域
+   ```
 
 2. 如果选项的 name 和 value 相同，还可以简化成以下的形式：
 
-  ```
-  name1|name2|...
-  ```
+   ```
+   name1|name2|...
+   ```
 
-  例如：
+   例如：
 
-  ```
-  String|Integer|Long|Double|Boolean|Timestamp|Date|Word
-  ```
+   ```
+   String|Integer|Long|Double|Boolean|Timestamp|Date|Word
+   ```
 
 3. 当然还可以用 SQL 的形式从数据库中获取。例如：
 
-  ```
-  select app_name as label, app_id as code from ma_base_application
-  ```
+   ```
+   select app_name as label, app_id as code from ma_base_application
+   ```
 
 
 有关数据参数的详细介绍，请参阅“基础插件”中的“数据提供”一节。
@@ -142,7 +141,7 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 数据参数 application\_list 的定义如下：
 
 ```
- select app_name as label, app_id as code from ma_base_application
+select app_name as label, app_id as code from ma_base_application
 ```
 
 ## 地址规划
@@ -186,7 +185,6 @@ public ExecuteResponse delete(@PathVariable String userName) {
     //do something
 
 }
-
 ```
 
 ## REST数据返回格式
@@ -236,7 +234,7 @@ public class Response {
             }
         }
     }
-}         
+}
 ```
 
 ```java
@@ -301,7 +299,7 @@ public class PageResponse extends Response {
 
 上述代码中，Response类是基类，出现异常时会构造Response类型返回，ExecuteResponse主要用在单记录数据的返回，PageResponse则用于需要返回列表数据的情况。
 
-**_重要_**
+_**重要**_
 
 _为了减少对编程的干扰，正常情况下，Controller中的方法可以仍然按照Service接口中的方法的返回值正常返回数据，对于原使用@ResponseBody注解的方法，如果需要，则通过使用@OpenApi注解来自动处理对应的返回值，默认情况下，采用@OpenApi 注解后，非Response、Map、Model等类型的返回值，会被包裹成ExecuteResponse，而Page&lt;?&gt;返回值会被包裹成PageResponse。_
 
@@ -355,59 +353,59 @@ public class AdminMaculaBaseController extends BaseController {
 
 1. Bean参数绑定
 
-  默认情况下，String MVC对参数的绑定方式，采用直接属性名与给定POJO属性名相同的方式实现绑定，为了更好的区分具体的参数信息，Macula平台扩展了这类绑定，允许
+   默认情况下，String MVC对参数的绑定方式，采用直接属性名与给定POJO属性名相同的方式实现绑定，为了更好的区分具体的参数信息，Macula平台扩展了这类绑定，允许
 
-  ```
-  pojo名+ . + 属性名
-  ```
+   ```
+   pojo名+ . + 属性名
+   ```
 
-  的方式绑定。
+   的方式绑定。
 
-  **例 8.1. 两种绑定的区别**
+   **例 8.1. 两种绑定的区别**
 
-  比如在Controller中，会返回的用户信息保存，其Controller原型为：
+   比如在Controller中，会返回的用户信息保存，其Controller原型为：
 
-  ```java
-  public User save(User user){
+   ```java
+   public User save(User user){
 
-  // something
+   // something
 
-  return user;
+   return user;
 
-  }
-  ```
+   }
+   ```
 
-  此时客户端提交的参数信息为：
+   此时客户端提交的参数信息为：
 
-  ```
-  ?userName=Wilson&password=123456
-  ```
+   ```
+   ?userName=Wilson&password=123456
+   ```
 
-  此时Spring将自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
+   此时Spring将自动将userName和password绑定生成User对象。但这种方式在返回多个对象时不太适用，所以Macula平台通过扩展，可通过修改Controller中的原型为：
 
-  ```java
-  public User save(@Valid @FormBean("user") User user){
+   ```java
+   public User save(@Valid @FormBean("user") User user){
 
-  if (hasErrors()) {
+   if (hasErrors()) {
       throw new FormBindException(getMergedBindingResults());
-  }
+   }
 
-  // something
-  return user;
+   // something
+   return user;
 
-  }
-  ```
+   }
+   ```
 
-  通过Macula平台扩展后的提交的数据格式，将可以通过下面提交方式绑定：
+   通过Macula平台扩展后的提交的数据格式，将可以通过下面提交方式绑定：
 
-  ```
-  ?user.userName=Wilson&user.password=123456
-  ```
+   ```
+   ?user.userName=Wilson&user.password=123456
+   ```
 
-  为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
+   为实现这个扩展，主要在于applicationContext-mvc.xml文件中的BeanArgumentResolver定义：
 
-  ```xml
-  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+   ```xml
+   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
       <property name="customArgumentResolvers">
           <list>
               <bean class="org.macula.core.mvc.FormBeanArgumentResolver">
@@ -415,75 +413,74 @@ public class AdminMaculaBaseController extends BaseController {
               </bean>
           </list>
       </property>
-  </bean>
-  ```
+   </bean>
+   ```
 
-  通过对自定义参数的解析，可以实现上述的变化。
+   通过对自定义参数的解析，可以实现上述的变化。
 
-  **_重要_**
+   _**重要**_
 
-  _需要注意的是，使用Macula平台的绑定方式的前提是：必须使用@FormBean前缀，并且不能使用诸如@ModelAttribute、@RequestBody等Spring的绑定注解。_
+   _需要注意的是，使用Macula平台的绑定方式的前提是：必须使用@FormBean前缀，并且不能使用诸如@ModelAttribute、@RequestBody等Spring的绑定注解。_
 
 2. FormBean的表单防重复提交
 
-  在Form提交时，为了防止用户对表单的重复提交，除了使用客户端脚本控制按钮的状态外，平台提供了防重复提交的解决方案。
+   在Form提交时，为了防止用户对表单的重复提交，除了使用客户端脚本控制按钮的状态外，平台提供了防重复提交的解决方案。
 
-  一般情况下，防重复提交有2个应用场景：1\)防止用户无意识的重复提交；2\)防止用户恶意的重复提交。
+   一般情况下，防重复提交有2个应用场景：1\)防止用户无意识的重复提交；2\)防止用户恶意的重复提交。
 
-  对于无意识的提交，只需要在页面隐藏一个唯一性的Token，在表单提交时返回，在服务端校验并销毁即可完成对Token的验证而阻止该提交。
+   对于无意识的提交，只需要在页面隐藏一个唯一性的Token，在表单提交时返回，在服务端校验并销毁即可完成对Token的验证而阻止该提交。
 
-  对于用户可能存在的恶意提交，可通过在表单提交时，插入验证码的方式来进行，用户必须正确输入了验证码，并在服务端校验成功后，才能进行业务逻辑的处理。
+   对于用户可能存在的恶意提交，可通过在表单提交时，插入验证码的方式来进行，用户必须正确输入了验证码，并在服务端校验成功后，才能进行业务逻辑的处理。
 
-  在平台实现的方式上，采用在FormBean注解中加入属性：
+   在平台实现的方式上，采用在FormBean注解中加入属性：
 
-  valid：\(boolean\)是否需要检测重复提交；
+   valid：\(boolean\)是否需要检测重复提交；
 
-  token：\(String\)在表单页面中提交的参数名称，默认值为ftoken，除非与业务中的字段冲突，否则不需要设置为其他值；
+   token：\(String\)在表单页面中提交的参数名称，默认值为ftoken，除非与业务中的字段冲突，否则不需要设置为其他值；
 
-  captcha：\(boolean\)是否检测验证码，来防止恶意提交
+   captcha：\(boolean\)是否检测验证码，来防止恶意提交
 
-  整个校验过程由FormBeanArgumentResolver完成。
+   整个校验过程由FormBeanArgumentResolver完成。
 
-  相应的，在界面层面，需要配合在表单中加入防重复提交信息，在macula.ftl中提供了freemarker宏的默认实现。在该默认实现情况下，可通过在表单位置加入&lt;@macula.formToken \/&gt;即可，对于需要加入校验码的情况下，使用&lt;@macula.formToken captcha=true \/&gt;
+   相应的，在界面层面，需要配合在表单中加入防重复提交信息，在macula.ftl中提供了freemarker宏的默认实现。在该默认实现情况下，可通过在表单位置加入&lt;@macula.formToken \/&gt;即可，对于需要加入校验码的情况下，使用&lt;@macula.formToken captcha=true \/&gt;
 
-  具体的实现可参考macula.ftl文件。
+   具体的实现可参考macula.ftl文件。
 
-  **_重要_**
+   _**重要**_
 
-  _主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。
-  特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
+   _主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。  
+   特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
 
 3. Pageable参数绑定
 
-  在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
+   在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
 
-  对于Pageable参数的绑定，比如Controller中编写：
+   对于Pageable参数的绑定，比如Controller中编写：
 
-  ```java
-  @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
+   ```java
+   @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
 
-  public Page<User> list(Pageable pageable) {
+   public Page<User> list(Pageable pageable) {
 
-  Page<User> page = userRespository.findAll(pageable);
+   Page<User> page = userRespository.findAll(pageable);
 
-  // other coding...
+   // other coding...
 
-  return page;
+   return page;
 
-  }
+   }
+   ```
 
-  ```
+   为了实现这个扩展，主要在applicationContext-mvc.xml文件中的PageableArgumentResolver定义：
 
-  为了实现这个扩展，主要在applicationContext-mvc.xml文件中的PageableArgumentResolver定义：
+   ```xml
+   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 
-  ```xml
-  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+   <property name="messageConverters" ref="messageConverters" />
 
-  <property name="messageConverters" ref="messageConverters" />
+   <property name="webBindingInitializer" ref="webBindingInitializer" />
 
-  <property name="webBindingInitializer" ref="webBindingInitializer" />
-
-  <property name="customArgumentResolvers">
+   <property name="customArgumentResolvers">
 
       <list>
 
@@ -491,57 +488,57 @@ public class AdminMaculaBaseController extends BaseController {
 
       </list>
 
-  </property>
+   </property>
 
-  </bean>
-  ```
+   </bean>
+   ```
 
-  Pageable参数绑定时，将直接重Request中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
+   Pageable参数绑定时，将直接重Request中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-  **_重要_**
+   _**重要**_
 
-  _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\_" +属性名。\_
+   _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\_" +属性名。\_
 
 4. 类型转换
 
-  很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
+   很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
-  对应的applicationContext-mvc.xml中配置如下：
+   对应的applicationContext-mvc.xml中配置如下：
 
-  ```xml
-  <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+   ```xml
+   <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
       <property name="converters">
           <list>
               <bean class="org.macula.core.mvc.RepositoryConverter" />
           </list>
       </property>
-  </bean>    
-  ```
+   </bean>
+   ```
 
-  配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
+   配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
 
-  **_重要_**
-  _除了加入该ConversionService外，还需要注意：_
+   _**重要**_  
+   _除了加入该ConversionService外，还需要注意：_
 
-  * _普通的VO对象不要实现Persistable接口，即不能使用该转换_
-  * _待转化类必须实现Persistable接口_
-  * _该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值_
+   * _普通的VO对象不要实现Persistable接口，即不能使用该转换_
+   * _待转化类必须实现Persistable接口_
+   * _该带转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值_
 
-    **_例 8.2. 通过传入主键，直接转化为相应的对象_**
+     _**例 8.2. 通过传入主键，直接转化为相应的对象**_
 
-    ```java
-    @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
+     ```java
+     @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
 
-    public User edit(@PathVariable("userId") User user) {
+     public User edit(@PathVariable("userId") User user) {
 
      return user;
 
-    }    
-    ```
+     }
+     ```
 
-    如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
+     如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
 
-    当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>`的实现。
+     当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>的实现。`
 
 
 
