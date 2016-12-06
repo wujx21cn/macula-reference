@@ -6,23 +6,21 @@
 
 除此之外，macula开发平台对领域模型层的实现，有如下的建议：
 
-
-
 ### 主键策略
 
 领域模型层的主键，如无特别的需求，主键策略按照数据库的情况（当前情况下，我们可认为数据库已定为Oracle），那么对于Oracle的数据库，可定义成序列的自增长方式。
 
 * 逻辑主键要求
 
-    macula开发平台要求领域模型以逻辑主键的方式定义主键，这样能保证JPA能正常处理数据，以及在数据发生关联时，不至于修改了业务主键后，更新大量的关联表。
-    
+  macula开发平台要求领域模型以逻辑主键的方式定义主键，这样能保证JPA能正常处理数据，以及在数据发生关联时，不至于修改了业务主键后，更新大量的关联表。
+
 * 主键类型定义为Long
-    
-    在无特殊要求的情况下，尽量将主键定义为Long型，并继承AbstractPersistable
+
+  在无特殊要求的情况下，尽量将主键定义为Long型，并继承AbstractPersistable
 
 * 主键关联与映射
 
-    在领域模型中，需要使用关联时，使用主键关联，并将主键映射为相应的数据库字段（例如Oracle可影射为NUMBER(15)），注意保证主键的长度，以适应业务需求量的变化。
+  在领域模型中，需要使用关联时，使用主键关联，并将主键映射为相应的数据库字段（例如Oracle可影射为NUMBER\(15\)），注意保证主键的长度，以适应业务需求量的变化。
 
 
 ### 数据审计
@@ -31,18 +29,18 @@
 
 在使用AbstractAuditable是，需要注意映射表字段的关系：
 
-* createdBy：创建人，通常只在数据新增时写入，映射字段为CREATED_BY，该字段一般情况下不能修改，记录数据创建人。
+* createdBy：创建人，通常只在数据新增时写入，映射字段为CREATED\_BY，该字段一般情况下不能修改，记录数据创建人。
 
-* createdDate：创建时间，与createBy相同，映射字段为CREATED_DATE，记录数据创建时间。
+* createdDate：创建时间，与createBy相同，映射字段为CREATED\_DATE，记录数据创建时间。
 
-* lastModifiedBy：最后更新人，通常在数据新增和修改时变化，映射字段为LAST_MODIFIED_BY，记录数据最后更新人。
+* lastModifiedBy：最后更新人，通常在数据新增和修改时变化，映射字段为LAST\_MODIFIED\_BY，记录数据最后更新人。
 
-* lastModifiedDate：最后更新时间，与lastModifiedBy相同，映射字段为LAST_MODIFIED_DATE，用来记录数据最后更新时间。
+* lastModifiedDate：最后更新时间，与lastModifiedBy相同，映射字段为LAST\_MODIFIED\_DATE，用来记录数据最后更新时间。
 
-***重要***
 
-*以上四个字段，均不能为空。*
+_**重要**_
 
+_以上四个字段，均不能为空。_
 
 ### 变化日志
 
@@ -57,22 +55,22 @@
 
 用户操作所产生的一次数据变化，可能导致一各实体的多个字段值变化，则记录多条变化日志，分别对应变化的字段，但对于该次变化的批次，将是一样的。
 
-***重要***
+_**重要**_
 
-*批次的值可以是用户输入的数据，也可以是程序自动生成的值，默认情况下，采用系统生成的值，它用来标识单次变化时，所变化的数据范围，便于变化日志的展示和查看等。*
+_批次的值可以是用户输入的数据，也可以是程序自动生成的值，默认情况下，采用系统生成的值，它用来标识单次变化时，所变化的数据范围，便于变化日志的展示和查看等。_
 
 对于需要记录变化日志的实体，需要在实体的类上添加@Auditable注解，然后对于需要记录变更日志的字段添加@Auditable注解。同时，EntityManagerFactory需要添加相应的监听器：
 
 ```xml
 <property name="jpaProperties">
-	<props>
-		<prop key="hibernate.ejb.event.post-update">
-			org.macula.core.hibernate.audit.AuditedEventListener
-		</prop>
-	</props>
+    <props>
+        <prop key="hibernate.ejb.event.post-update">
+            org.macula.core.hibernate.audit.AuditedEventListener
+        </prop>
+    </props>
 </property>
-		
 ```
+
 上述设置后，当产生实体变更时系统会发出AuditChangedEvent事件，我们可以通过继承AbstractAuditChangedListener来监听AuditChangedEvent事件，并对变更数据做后续的进一步处理。
 
 ### 领域模型接口
@@ -92,16 +90,66 @@
 
 * 减少Blob与Clob类型字段
 
-    应尽量减少领域模型中Blob与Clob字段的定义，如果不可避免，应提供不含该Blob/Clob字段的构造，以方便在列表查询时，不用查询出该字段列，减少构建领域模型所需的内存，特别是当所载入的字段列数据并不关心时。
-    
-    如当列表显示时，可不查询出该字段，而在单个数据查看时，可查询出该字段，以方便展示给用户。
-    
+  应尽量减少领域模型中Blob与Clob字段的定义，如果不可避免，应提供不含该Blob/Clob字段的构造，以方便在列表查询时，不用查询出该字段列，减少构建领域模型所需的内存，特别是当所载入的字段列数据并不关心时。
+
+  如当列表显示时，可不查询出该字段，而在单个数据查看时，可查询出该字段，以方便展示给用户。
+
 * 子表数据量较少时，可使用一对多关联
 
-    在业务数据的定义中，会存在大量的父子关系的表，如销售单和销售单明细等，在定义的过程中，可定义成一对多的关联关系。
+  在业务数据的定义中，会存在大量的父子关系的表，如销售单和销售单明细等，在定义的过程中，可定义成一对多的关联关系。
 
-    而对于业务分组与分组内的数据，则不宜定义成一对多的关系，而直接定义成简单类型数据，因为这类情况下，子表中数据量较大，定义成一对多的关系也不能解决数据批量查询的问题，以及在父表加载时，大量载入子表内容，容易造成内存的浪费。
+  而对于业务分组与分组内的数据，则不宜定义成一对多的关系，而直接定义成简单类型数据，因为这类情况下，子表中数据量较大，定义成一对多的关系也不能解决数据批量查询的问题，以及在父表加载时，大量载入子表内容，容易造成内存的浪费。
 
+
+### 典型Domain类
+
+```java
+@Entity
+@DynamicInsert
+@DynamicUpdate
+@Table(name = "MY_USER")
+@Auditable
+@TypeDefs({ @TypeDef(name = "binary", typeClass = RelationDbBinaryType.class),
+		@TypeDef(name = "text", typeClass = RelationDbTextType.class) })
+public class User extends AbstractAuditable<Long> {
+
+	private static final long serialVersionUID = 1L;
+
+	@javax.validation.constraints.Size(min = 1, max = 10)
+	@Auditable
+	@Column(name = "FIRST_NAME")
+	private String firstName;
+	@javax.validation.constraints.Size(max = 10)
+	@Auditable
+	@Column(name = "LAST_NAME")
+	private String lastName;
+	@Auditable
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "PHOTO", columnDefinition = "LONGVARBINARY")
+	@Type(type = "binary", parameters = {
+			@Parameter(name = "columnName", value = "PHOTO"),
+			@Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
+			@Parameter(name = "tableName", value = "MY_USER") })
+	@Audited
+	private Binary photo;
+	@Column(name = "PROFILE", columnDefinition = "CLOB")
+	@Type(type = "text", parameters = {
+			@Parameter(name = "columnName", value = "PROFILE"),
+			@Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
+			@Parameter(name = "tableName", value = "MY_USER") })
+	@Audited
+	private Text profile;
+
+	@Embedded
+	@AttributeOverrides({
+			@AttributeOverride(name = "homeTel", column = @Column(name = "HOME_TEL")),
+			@AttributeOverride(name = "officeTel", column = @Column(name = "OFFICE_TEL")) })
+	private EmbbedContactInfo contactInfo;
+
+	... 省略get set
+}
+```
 
 
 
