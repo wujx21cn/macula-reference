@@ -110,44 +110,42 @@ _批次的值可以是用户输入的数据，也可以是程序自动生成的�
 @Table(name = "MY_USER")
 @Auditable
 @TypeDefs({ @TypeDef(name = "binary", typeClass = RelationDbBinaryType.class),
-		@TypeDef(name = "text", typeClass = RelationDbTextType.class) })
+        @TypeDef(name = "text", typeClass = RelationDbTextType.class) })
 public class User extends AbstractAuditable<Long> {
+    private static final long serialVersionUID = 1L;
+    @javax.validation.constraints.Size(min = 1, max = 10)
+    @Auditable
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+    @javax.validation.constraints.Size(max = 10)
+    @Auditable
+    @Column(name = "LAST_NAME")
+    private String lastName;
+    @Auditable
+    @Column(name = "EMAIL")
+    private String email;
+    @Column(name = "PHOTO", columnDefinition = "LONGVARBINARY")
+    @Type(type = "binary", parameters = {
+            @Parameter(name = "columnName", value = "PHOTO"),
+            @Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
+            @Parameter(name = "tableName", value = "MY_USER") })
+    @Audited
+    private Binary photo;
+    @Column(name = "PROFILE", columnDefinition = "CLOB")
+    @Type(type = "text", parameters = {
+            @Parameter(name = "columnName", value = "PROFILE"),
+            @Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
+            @Parameter(name = "tableName", value = "MY_USER") })
+    @Audited
+    private Text profile;
 
-	private static final long serialVersionUID = 1L;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "homeTel", column = @Column(name = "HOME_TEL")),
+            @AttributeOverride(name = "officeTel", column = @Column(name = "OFFICE_TEL")) })
+    private EmbbedContactInfo contactInfo;
 
-	@javax.validation.constraints.Size(min = 1, max = 10)
-	@Auditable
-	@Column(name = "FIRST_NAME")
-	private String firstName;
-	@javax.validation.constraints.Size(max = 10)
-	@Auditable
-	@Column(name = "LAST_NAME")
-	private String lastName;
-	@Auditable
-	@Column(name = "EMAIL")
-	private String email;
-	@Column(name = "PHOTO", columnDefinition = "LONGVARBINARY")
-	@Type(type = "binary", parameters = {
-			@Parameter(name = "columnName", value = "PHOTO"),
-			@Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
-			@Parameter(name = "tableName", value = "MY_USER") })
-	@Audited
-	private Binary photo;
-	@Column(name = "PROFILE", columnDefinition = "CLOB")
-	@Type(type = "text", parameters = {
-			@Parameter(name = "columnName", value = "PROFILE"),
-			@Parameter(name = "jdbcTemplate", value = MaculaConstants.JDBC_TEMPLATE_NAME),
-			@Parameter(name = "tableName", value = "MY_USER") })
-	@Audited
-	private Text profile;
-
-	@Embedded
-	@AttributeOverrides({
-			@AttributeOverride(name = "homeTel", column = @Column(name = "HOME_TEL")),
-			@AttributeOverride(name = "officeTel", column = @Column(name = "OFFICE_TEL")) })
-	private EmbbedContactInfo contactInfo;
-
-	... 省略get set
+    ... 省略get set
 }
 ```
 
