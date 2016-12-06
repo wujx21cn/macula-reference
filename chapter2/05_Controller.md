@@ -638,6 +638,7 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
     工具条
     </@ui.panel_head>
     <@ui.panel_body>
+    内容
     </@ui.panel_body>
 </@ui.panel>
 </@layout.mower_admin>
