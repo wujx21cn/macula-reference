@@ -10,54 +10,10 @@ Macula开发平台的缓存基于Spring-Cache模块，通过EhCache与Memcached�
 
 ## Cache作用域
 
-**表 11.1. Cache作用域说明**
+**Cache作用域说明**
 
-<table summary="Cache作用域说明" border="1">
-	<colgroup>
-		<col />
-		<col />
-		<col />
-	</colgroup>
-	<thead>
-		<tr>
-			<th>作用域</th>
-			<th>说明</th>
-			<th>获取方式</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>SESSION</td>
-			<td>基于Web容器Session的作用范围，在Session失效后，所缓存的数据将失效。</td>
-			<td>
-				<p>CacheUtils.getSessionCache()</p>
-				<p>或通过注入CacheManager cacheManager</p>
-				<p>然后通过cacheManager.getCache(CacheScope.SESSION)</p>
-				<p>获取。</p>
-			</td>
-		</tr>
-		<tr>
-			<td>INSTANCE</td>
-			<td>实例级作用范围，在以JVM为周期的缓存。数据缓存有效期的时间通过EhCache配置文件设定。</td>
-			<td>
-				<p>CacheUtils.getInstanceCache()</p>
-				<p>或通过注入CacheManager cacheManager</p>
-				<p>然后通过cacheManager.getCache(CacheScope.INSTANCE)</p>
-				<p>获取。</p>
-			</td>
-		</tr>
-		<tr>
-			<td>APPLICATION</td>
-			<td>集群级作用范围，独立于运行中的各实例，当前使用Redis来作为缓存服务器。数据缓存有效期为24小时。</td>
-			<td>
-				<p>CacheUtils.getApplicationCache()</p>
-				<p>或通过注入CacheManager cacheManager</p>
-				<p>然后通过cacheManager.getCache(CacheScope.APPLICATION)</p>
-				<p>获取。</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+
+
 
 ## Session级Cache
 
