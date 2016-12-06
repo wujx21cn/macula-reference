@@ -8,7 +8,7 @@
         <title>项目集成 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.6.6">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -48,7 +48,13 @@
     <body>
         
         
-    <div class="book" data-level="2.2" data-chapter-title="项目集成" data-filepath="chapter2/02_Project_Start.md" data-basepath=".." data-revision="Sat Dec 03 2016 19:06:24 GMT+0800 (CST)">
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="项目集成"
+        data-filepath="chapter2/02_Project_Start.md"
+        data-basepath=".."
+        data-revision="Tue Dec 06 2016 18:01:03 GMT+0800 (CST)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
@@ -153,7 +159,7 @@
                         
                             <b>1.4.</b>
                         
-                        Release Nodes
+                        发布说明
                     </a>
             
             
@@ -729,21 +735,6 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="chapter6/Upgrade.html">
-            
-                
-                    <a href="../chapter6/Upgrade.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.2.</b>
-                        
-                        版本变更说明
-                    </a>
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -810,8 +801,25 @@
           }
 }
 </code></pre>
-<h3 id="&#x65E5;&#x5FD7;&#x96C6;&#x6210;">&#x65E5;&#x5FD7;&#x96C6;&#x6210;</h3>
+<h3 id="&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x96C6;&#x6210;">&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x96C6;&#x6210;</h3>
+<p>&#x6846;&#x67B6;&#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5230;&#x6846;&#x67B6;&#x7684;&#x8868;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5EFA;&#x8BAE;&#x5B9E;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5230;&#x60A8;&#x8981;&#x5B58;&#x653E;&#x7684;&#x5730;&#x65B9;&#x3002;&#x5B9E;&#x73B0;&#x7C7B;&#x4E0D;&#x53D7;macula.properties&#x7684;&#x662F;&#x5426;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;&#x7684;&#x5F71;&#x54CD;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CustomUserSessionHistoryPersistance</span> </span>{
 
+    <span class="hljs-comment">/**
+     * &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x767B;&#x5F55;&#x3001;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x5386;&#x53F2;
+     * <span class="hljs-doctag">@param</span> userSessionHistory
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">saveUserSessionHistory</span><span class="hljs-params">(UserSessionHistory userSessionHistory)</span></span>;
+}
+</code></pre>
+<h3 id="&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x96C6;&#x6210;">&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x96C6;&#x6210;</h3>
+<p>&#x6846;&#x67B6;&#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5230;&#x6846;&#x67B6;&#x7684;&#x8868;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5EFA;&#x8BAE;&#x5B9E;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5230;&#x60A8;&#x8981;&#x5B58;&#x653E;&#x7684;&#x5730;&#x65B9;&#x3002;&#x5B9E;&#x73B0;&#x7C7B;&#x4E0D;&#x53D7;macula.properties&#x7684;&#x662F;&#x5426;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;&#x7684;&#x5F71;&#x54CD;</p>
+<pre><code>public interface CustomAccessLogPersistance {
+
+    void saveAccessLog(AccessLog accessLog);
+
+}
+</code></pre>
                     
                     </section>
                 
@@ -850,7 +858,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
