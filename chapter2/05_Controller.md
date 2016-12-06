@@ -843,13 +843,9 @@ macula框架在Freemarker中默认有如下变量：
 
 ```java
 @RequestMapping(value = "/admin/macula-uim/user/delete/{userName}", method = RequestMethod.DELETE)
-
 @OpenApi
-
 public ExecuteResponse delete(@PathVariable String userName) {
-
     //do something
-
 }
 ```
 
