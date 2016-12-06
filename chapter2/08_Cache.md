@@ -11,36 +11,36 @@ _缓存中的数据是不可靠的，即缓存中的数据总是有生命周期�
 ## CacheManager
 
 ```
-	<bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
-		<property name="cacheManagers">
-			<list>
-				<!-- Instance Cache -->
-				<bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
-					<constructor-arg index="0">
-						<bean
-							class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
-					</constructor-arg>
-				</bean>
-				<!-- Session Cache -->
-				<bean class="org.springframework.cache.support.SimpleCacheManager">
-					<property name="caches">
-						<set>
-							<!-- Session Cache -->
-							<bean class="org.macula.core.cache.session.SessionCacheFactoryBean">
-								<property name="name" value="sessionCache" />
-							</bean>
-						</set>
-					</property>
-				</bean>
-				<!-- Application Cache -->
-				<bean class="org.macula.core.cache.redis.RedisCacheManager">
-					<constructor-arg index="0" ref="cacheRedisTemplate" />
-					<property name="cacheName" value="applicationCache" />
-					<property name="usePrefix" value="true" />
-				</bean>
-			</list>
-		</property>
-	</bean>
+<bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
+        <property name="cacheManagers">
+            <list>
+                <!-- Instance Cache -->
+                <bean class="org.springframework.cache.ehcache.EhCacheCacheManager">
+                    <constructor-arg index="0">
+                        <bean
+                            class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+                    </constructor-arg>
+                </bean>
+                <!-- Session Cache -->
+                <bean class="org.springframework.cache.support.SimpleCacheManager">
+                    <property name="caches">
+                        <set>
+                            <!-- Session Cache -->
+                            <bean class="org.macula.core.cache.session.SessionCacheFactoryBean">
+                                <property name="name" value="sessionCache" />
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <!-- Application Cache -->
+                <bean class="org.macula.core.cache.redis.RedisCacheManager">
+                    <constructor-arg index="0" ref="cacheRedisTemplate" />
+                    <property name="cacheName" value="applicationCache" />
+                    <property name="usePrefix" value="true" />
+                </bean>
+            </list>
+        </property>
+</bean>
 ```
 
 ## Cache作用域
