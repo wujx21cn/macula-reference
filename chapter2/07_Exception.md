@@ -175,9 +175,10 @@ Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilt
 
 ### 普通请求异常
 
-如果是BaseController拦截返回的HTTP 200类的错误信息，出现异常的Controller方法会加载webapp/src/main/resources/views/error.ftl模板，你需要根据项目自定义该模板，以符合整体UI风格。
+* 如果是BaseController拦截返回的HTTP 200类的错误信息，出现异常的Controller方法会加载webapp/src/main/resources/views/error.ftl模板，你需要根据项目自定义该模板，以符合整体UI风格。
 
-error.ftl默认内容
+
+   error.ftl默认内容
 
 ```
 有错误，${errors?if_exists} <BR/>
@@ -187,6 +188,30 @@ errorMessage: ${(errors.errorMessage)!''} <BR/>
 exceptionCode: ${(errors.exceptionCode)!''} <BR/>
 exceptionMessage: ${(errors.exceptionMessage)!''} <BR/>
 </#if>
+```
+
+* 如果不是BaseController拦截的异常会返回HTTP 500，所以这个时候会跳转到web.xml中定义的jsp页面，默认是webapp中的error.jsp，同样你需要根据项目UI需要作出修改：
+
+
+```java
+<%@ page language="java" contentType="text/html; charset=UTF-8" isErrorPage="true" pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>系统错误</title>
+	</head>
+	<body>
+		程序发生了错误，有可能该页面正在调试或者是设计上的缺陷.
+		<br /> 你可以选择
+		<br />
+		<a href="mailto:admin@infinitus.com.cn">反馈</a>提醒我，或者
+		<br />
+		<a href="javascript:history.go(-1)">返回上一页</a>
+		<br /> 错误信息：<%=((org.macula.core.vo.Response)request.getAttribute("errors")).getExceptionMessage()%>
+	</body>
+</html>
 ```
 
 ### AJAX请求异常
