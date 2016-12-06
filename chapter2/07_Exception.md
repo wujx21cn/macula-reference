@@ -171,6 +171,8 @@ Controller层如果没有拦截到异常，则会全部由ExceptionNegotiateFilt
 
 ## 异常展示
 
+异常的请求通常分为普通的HTTP请求和通过AJAX调用的请求，这两种请求接收异常和提示用户的方式有所不同。
+
 ### 普通请求异常
 
 ### AJAX请求异常
