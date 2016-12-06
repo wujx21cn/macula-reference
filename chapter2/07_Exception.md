@@ -17,6 +17,10 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
    系统类异常的错误码一般由父错误码+“两位数字”标识。
 
 
+## Service异常处理
+
+
+
 ## Controller异常处理
 
 先看框架提供的BaseController类的定义：
@@ -82,6 +86,10 @@ public abstract class BaseController {
     private static final Map<Class<?>, String> controllerPathMapping = new ConcurrentHashMap<Class<?>, String>();
 }
 ```
+
+通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在errors中。
+
+
 
 1. 校验类异常
 
