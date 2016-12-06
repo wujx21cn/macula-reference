@@ -688,10 +688,10 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 在freemarker中
 
 ```
-<@macula.preAuthorized>
+<@macula.preAuthorized url method>
 有权限的显示
 </@macula.preAuthorized>
-<@macula.notAuthorized>
+<@macula.notAuthorized url method>
 没有权限的显示
 </@macula.notAuthorized>
 ```
