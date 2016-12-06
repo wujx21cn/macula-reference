@@ -9,7 +9,7 @@ Spring Data JPA数据存取接口JpaRepository默认可实现下列功能：
 例 6.1. JpaRepository 接口
 
 ```java
-public interface Repository<T, ID extends Serializable> {
+public interface JpaRepository<T, ID extends Serializable> {
 
     T save(T entity); 
 
@@ -122,9 +122,7 @@ public List<Person> findByAddress_ZipCode(ZipCode zipCode);
 
 该方法通过address.zipCode来查询Persion对象列表
 
-**表 6.1. 支持的属性之间的连接关键字**
-
-关于扩展JpaRepository接口中可定义的方法而不用编写实现代码的部分，可查看Spring-Data中JPA部分（data-jpa）的文档。
+_**关于扩展JpaRepository接口中可定义的方法而不用编写实现代码的部分，可查看Spring-Data中JPA部分（data-jpa）的文档。**_
 
 ### 自定义接口与实现
 
