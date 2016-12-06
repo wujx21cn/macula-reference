@@ -54,9 +54,9 @@ public abstract class MaculaException extends I18nException {
 
 1. 校验类异常
 
-    在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
+   在Controller方法中如果需要调用BaseController基类中的hasErrors\(\)方法来判断是否有校验类异常信息，如果有的话，则需要抛出表单绑定异常：
 
- ```java
+   ```java
    public User save(@Valid @FormBean("user") User user){
     if (hasErrors()) {
         throw new FormBindException(getMergedBindingResults());
@@ -64,7 +64,7 @@ public abstract class MaculaException extends I18nException {
     // something
     return user;
    }
- ```
+   ```
 
    FormBindException类型的异常在BaseController中会统一处理。这种类型异常的HTTP响应为200。
 
@@ -82,6 +82,50 @@ _**重要**_
 _为了能使自定义异常正确的处理，这里也要求我们编写的业务模块，其Controller层的驱动必须是Annotation驱动的。  _
 
 ### Service异常处理
+
+Service层通过ServiceExceptionHandler拦截Service层抛出的异常，并且转换为MaculaException。
+
+```java
+public class ServiceExceptionHandler {
+	
+	@Autowired(required = false)
+	private List<MaculaExceptionTranslator> exceptionTranslators;
+	
+	static Logger log = LoggerFactory.getLogger(ServiceExceptionHandler.class);
+	
+	public void doAfterThrowing(JoinPoint joinPoint, Throwable ex) {
+		if (!(ex instanceof MaculaException)) {
+			MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+			Method method = methodSignature.getMethod();
+
+			try {
+				method = joinPoint.getTarget().getClass().getMethod(method.getName(), method.getParameterTypes());
+			} catch (Exception e) {
+			}
+
+			ErrorMessage errorMessage = method.getAnnotation(ErrorMessage.class);
+
+			String message = errorMessage == null ? ex.getMessage() : errorMessage.value();
+
+			log.error(message, ex);
+
+			throw translate(message, ex);
+		}
+	}
+	
+	private MaculaException translate(String message, Throwable ex) {
+		if (exceptionTranslators != null) {
+			for (MaculaExceptionTranslator translator : exceptionTranslators) {
+				MaculaException coreException = translator.translateExceptionIfPossible(ex);
+				if (coreException != null) {
+					return new ServiceException(message, coreException);
+				}
+			}
+		}
+		return new ServiceException(message, ex);
+	}
+}
+```
 
 ### Controller异常处理
 
@@ -149,7 +193,7 @@ public abstract class BaseController {
 }
 ```
 
-通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在request.setAttribute("errors", errors)中。error.ftl模板位于webapp模块的src/main/resources/views/error.ftl中。
+通过@ExceptionHandler注解，我们在Controller层处理校验类异常和业务类异常，并且HTTP响应返回200，如果是AJAX请求，则可以根据Response中的sucess标识提示用户，如果不是AJAX请求，则会跳转到/error.ftl模板，Response会存放在request.setAttribute\("errors", errors\)中。error.ftl模板位于webapp模块的src/main/resources/views/error.ftl中。
 
 ### 系统级异常处理
 
