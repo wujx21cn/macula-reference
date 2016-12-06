@@ -79,21 +79,21 @@ Instance级表示的是服务器实例级别的Cache，即以JVM为其作用域�
 
 Instance级表示的是独立于服务实例的Cache，用于多应用实例间的数据共享缓存。
 
-对实例级Cache的配置可通过memCache的Bean来配置，它包括MemcacheFactoryBean的配置与MemcacheClient的配置。
+对实例级Cache的配置可通过redis的Bean来配置，它包括MemcacheFactoryBean的配置与MemcacheClient的配置。
 
 ```xml
 <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <property name="hostName" value="soa-dev01.infinitus.com.cn" />
-    </bean>
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
-        <property name="connectionFactory" ref="redisConnectionFactory" />
-    </bean>
+      <property name="hostName" value="soa-dev01.infinitus.com.cn" />
+</bean>
+<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+      <property name="connectionFactory" ref="redisConnectionFactory" />
+</bean>
 
-    <!-- Application Cache -->
-    <bean class="org.macula.core.cache.redis.RedisCacheManager">
-        <constructor-arg index="0" ref="redisTemplate" />
-        <property name="cacheName" value="applicationCache" />
-    </bean>
+<!-- Application Cache -->
+<bean class="org.macula.core.cache.redis.RedisCacheManager">
+      <constructor-arg index="0" ref="redisTemplate" />
+      <property name="cacheName" value="applicationCache" />
+</bean>
 ```
 
 ## Cache接口
