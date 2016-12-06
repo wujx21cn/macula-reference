@@ -6,17 +6,14 @@
 
 ## Controller编写
 
-## 使用基类Controller
+### 使用基类Controller
 
 在展示层编写的Controller实现，需要直接或间接扩展至BaseController
 
 ```java
 @RequestMapping("admin/macula-base")
-
 public class AdminMaculaBaseController extends BaseController {
-
     //something
-
 }
 ```
 
@@ -29,8 +26,6 @@ public class AdminMaculaBaseController extends BaseController {
 在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Domain中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
 
 失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
-
-## 
 
 ### 参数绑定校验
 
@@ -46,17 +41,14 @@ public class AdminMaculaBaseController extends BaseController {
 
    的方式绑定。
 
-   **例 8.1. 两种绑定的区别**
+   **例 1. 两种绑定的区别**
 
    比如在Controller中，会返回的用户信息保存，其Controller原型为：
 
    ```java
    public User save(User user){
-
-   // something
-
-   return user;
-
+       // something
+       return user;
    }
    ```
 
