@@ -46,7 +46,7 @@ public class AdminMaculaBaseController extends BaseController {
    比如在Controller中，会返回的用户信息保存，其Controller原型为：
 
    ```java
-   public User save(User user){
+   public User save(User user) {
        // something
        return user;
    }
