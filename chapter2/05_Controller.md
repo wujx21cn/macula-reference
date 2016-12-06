@@ -159,11 +159,11 @@ public class AdminMaculaBaseController extends BaseController {
 
    request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序\)、order（ASC升序，DESC降序\)
 
-    _**重要**_
+   _**重要**_
 
    _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\__" +属性名。
 
-1. 类型转换
+4. 类型转换
 
    很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
@@ -181,8 +181,8 @@ public class AdminMaculaBaseController extends BaseController {
 
    配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
 
-   _**重要**_ 
- 
+   _**重要**_
+
    _除了加入该ConversionService外，还需要注意：_
 
    * _普通的VO对象不要实现Persistable接口，即不能使用该转换_
@@ -193,11 +193,8 @@ public class AdminMaculaBaseController extends BaseController {
 
      ```java
      @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
-
      public User edit(@PathVariable("userId") User user) {
-
-     return user;
-
+         return user;
      }
      ```
 
