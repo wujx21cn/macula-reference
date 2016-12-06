@@ -10,6 +10,8 @@ _缓存中的数据是不可靠的，即缓存中的数据总是有生命周期�
 
 ## CacheManager
 
+根据spring cache框架，需要定义CacheManager，以便启用Spring Cache
+
 ```
 <bean id="cacheManager" class="org.springframework.cache.support.CompositeCacheManager">
         <property name="cacheManagers">
