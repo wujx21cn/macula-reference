@@ -470,7 +470,9 @@ _**提示**_
 
 开发者可以通过修改自己项目中的如下这个文件来自定义自己的 header logo，header menu，header login 和 footer。
 
-app目录中的layout\_mower.ftl文件可以覆盖，我们来看一下admin/app目录下的这个文件里面的内容：
+app目录中的layout\_mower.ftl文件可以覆盖，同时会重新定义admin/layout\_mower.ftl中的相关宏。
+
+我们来看一下admin/app目录下的这个文件里面的内容：
 
 ```
 <#--
