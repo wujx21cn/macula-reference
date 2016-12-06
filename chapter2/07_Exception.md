@@ -19,92 +19,67 @@ Macula框架将异常分为系统类异常、业务类异常和校验类异常�
 
 ## Controller异常处理
 
-   先看框架提供的BaseController类的定义：
+先看框架提供的BaseController类的定义：
 
 ```java
 public abstract class BaseController {
 
-	private final ObjectMapper mapper = new ObjectMapperImpl();
-	
-	/**
-	 * 判断绑定过程中是否出现错误
-	 * 
-	 * @param results
-	 */
-	protected boolean hasErrors(BindingResult... results) {
-		BindingResult[] bindingResults = getMergedBindingResults(results);
-		if (bindingResults != null) {
-			for (BindingResult bindingResult : bindingResults) {
-				if (bindingResult.hasErrors()) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	/**
-	 * 提取{@link FormBeanArgumentResolver}中"BINDING_RESULT_LIST_NAME"指定的BindingResult
-	 * 合并到results中
-	 * @param results BindingResult
-	 */
-	protected BindingResult[] getMergedBindingResults(BindingResult... results) {
-		// 从Request中提取BindingResult
-		HttpServletRequest request = ApplicationContext.getRequest();
-		List<BindingResult> bindingResults = null;
-		if (request != null) {
-			bindingResults = (List<BindingResult>) request
-					.getAttribute(FormBeanArgumentResolver.BINDING_RESULT_LIST_NAME);
-		}
-		if (results != null) {
-			if (bindingResults == null) {
-				bindingResults = new ArrayList<BindingResult>();
-			}
-			for (BindingResult bindingResult : results) {
-				if (!bindingResults.contains(bindingResult)) {
-					bindingResults.add(bindingResult);
-				}
-			}
-		}
-		return bindingResults.toArray(new BindingResult[bindingResults.size()]);
-	}
+    private final ObjectMapper mapper = new ObjectMapperImpl();
 
-	/**
-	 * 处理Controller的异常
-	 */
-	@ExceptionHandler(MaculaException.class)
-	public Response handlerCoreException(MaculaException ex, HttpServletRequest req) {
-		return new Response(ex);
-	}
+    /**
+     * 判断绑定过程中是否出现错误
+     * 
+     * @param results
+     */
+    protected boolean hasErrors(BindingResult... results) {
+        ...
+    }
 
-	/**
-	 * 处理输入参数异常
-	 */
-	@ExceptionHandler(IllegalArgumentException.class)
-	public Response hangdlerFormBindException(IllegalArgumentException ex, HttpServletRequest req) {
-		return new Response(new MaculaArgumentException(ex));
-	}
+    /**
+     * 提取{@link FormBeanArgumentResolver}中"BINDING_RESULT_LIST_NAME"指定的BindingResult
+     * 合并到results中
+     * @param results BindingResult
+     */
+    protected BindingResult[] getMergedBindingResults(BindingResult... results) {
+       ...
+    }
 
-	/**
-	 * 相对于Controller中的RequestMapping所指定的路径
-	 * 
-	 * @param path URL路径
-	 */
-	protected String getRelativePath(String path) {
+    /**
+     * 处理Controller的异常
+     */
+    @ExceptionHandler(MaculaException.class)
+    public Response handlerCoreException(MaculaException ex, HttpServletRequest req) {
+        return new Response(ex);
+    }
+
+    /**
+     * 处理输入参数异常
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public Response hangdlerFormBindException(IllegalArgumentException ex, HttpServletRequest req) {
+        return new Response(new MaculaArgumentException(ex));
+    }
+
+    /**
+     * 相对于Controller中的RequestMapping所指定的路径
+     * 
+     * @param path URL路径
+     */
+    protected String getRelativePath(String path) {
               ...
-	}
+    }
 
-	/**
-	 * 将对象转为JSON格式的数据
-	 * 
-	 * @param value
-	 * @return String
-	 */
-	protected String toJson(Object value) {
+    /**
+     * 将对象转为JSON格式的数据
+     * 
+     * @param value
+     * @return String
+     */
+    protected String toJson(Object value) {
              ...
-	}
+    }
 
-	private static final Map<Class<?>, String> controllerPathMapping = new ConcurrentHashMap<Class<?>, String>();
+    private static final Map<Class<?>, String> controllerPathMapping = new ConcurrentHashMap<Class<?>, String>();
 }
 ```
 
