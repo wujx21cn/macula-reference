@@ -43,7 +43,7 @@ public class AdminMaculaBaseController extends BaseController {
 
    **例 1. 两种绑定的区别**
 
-   比如在Controller中，会返回的用户信息保存，其Controller原型为：
+   比如在Controller中，会返回用户保存的信息，其Controller原型为：
 
    ```java
    public User save(User user) {
