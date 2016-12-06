@@ -685,7 +685,7 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 ### 权限判断
 
-在freemarker中
+在freemarker中，如果需要通过权限控制是否显示内容，如下：
 
 ```
 <@macula.preAuthorized url method>
