@@ -134,15 +134,10 @@ public class AdminMaculaBaseController extends BaseController {
 
    ```java
    @RequestMapping(value = "/test/user/list", method = RequestMethod.GET)
-
    public Page<User> list(Pageable pageable) {
-
-   Page<User> page = userRespository.findAll(pageable);
-
-   // other coding...
-
-   return page;
-
+       Page<User> page = userRespository.findAll(pageable);
+       // other coding...
+       return page;
    }
    ```
 
@@ -150,21 +145,13 @@ public class AdminMaculaBaseController extends BaseController {
 
    ```xml
    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-
-   <property name="messageConverters" ref="messageConverters" />
-
-   <property name="webBindingInitializer" ref="webBindingInitializer" />
-
-   <property name="customArgumentResolvers">
-
-      <list>
-
-          <bean class="org.macula.core.mvc.PageableArgumentResolver" />           
-
-      </list>
-
-   </property>
-
+      <property name="messageConverters" ref="messageConverters" />
+      <property name="webBindingInitializer" ref="webBindingInitializer" />
+      <property name="customArgumentResolvers">
+         <list>
+             <bean class="org.macula.core.mvc.PageableArgumentResolver" />           
+         </list>
+      </property>
    </bean>
    ```
 
