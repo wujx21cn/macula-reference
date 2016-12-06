@@ -304,6 +304,7 @@ _**重要**_
     js引入定义
 </#macro>
 
+<!--给用户自定义宏的机会 -->
 <#include "/admin/app/layout_mower.ftl" />
 
 <#macro mower_admin title scripts = '' version = '' require = ''>
@@ -320,12 +321,7 @@ _**重要**_
     <head>
         <@mower_admin_head title="${title?if_exists}" require = "${require!''}" />
         <script type="text/javascript">
-            var base = '${base}', startTime = (new Date).getTime(), CURRENTUSER = '${(request.getUserPrincipal().getName())!}';
-            var dateTimePattern = '${dateTimePattern}', datePattern = '${datePattern}', timePattern = '${timePattern}'; 
-            var menuUrl = "${base}/admin/menu/${sessionId!'session'}";
-            var mcodeParam = "${(request.getParameter('mcode'))!}",rcodeParam = '${(request.getParameter("rcode"))!}';
-            var _csrf_header = '${_csrf.headerName!"X-CSRF-TOKEN"}';
-            var _csrf = '${_csrf.token!"_csrf"}';            
+            ...         
         </script>
     </head>
 
