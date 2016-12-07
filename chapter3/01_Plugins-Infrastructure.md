@@ -208,6 +208,141 @@
 
      ```java
      UserPrincipal principal = SecurityUtils.getUserDetails();
+
+     public final class SecurityUtils {
+
+     	private SecurityUtils() {
+     		// Noops!
+     	}
+
+     	private static final AuthenticationTrustResolver authenticationTrustResolver = new AuthenticationTrustResolverImpl();
+
+     	public static final List<String> IGNORE_USERS = Arrays.asList("_cas_stateful_", "_cas_stateless_", MaculaConstants.ANONYMOUS_USER);
+
+     	private static final Map<String, UserPrincipal> STATIC_CACHE_USERS = new ConcurrentHashMap<String, UserPrincipal>();
+
+     	/**
+     	 * 获取登录用户信息.
+     	 * 
+     	 * @return 登录用户上下文信息
+     	 */
+     	public static UserPrincipal getUserDetails() {
+     		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+     		if (authentication != null) {
+     			Object principal = authentication.getPrincipal();
+     			if (principal instanceof UserPrincipal) {
+     				return (UserPrincipal) principal;
+     			}
+
+     			HttpServletRequest request = ApplicationContext.getRequest();
+     			Principal requestPrincipal = null;
+     			if (request != null) {
+     				requestPrincipal = request.getUserPrincipal();
+     				if (requestPrincipal instanceof UserPrincipal) {
+     					return (UserPrincipal) principal;
+     				}
+     			}
+
+     			String username = null;
+
+     			if (requestPrincipal != null) {
+     				username = requestPrincipal.getName();
+     			} else if (principal instanceof String) {
+     				username = (String) principal;
+     			}
+
+     			if (username != null) {
+     				UserPrincipal userPrincipal = STATIC_CACHE_USERS.get(username);
+     				if (userPrincipal == null) {
+     					userPrincipal = new UserPrincipalImpl((String) principal, null);
+     					STATIC_CACHE_USERS.put(username, userPrincipal);
+     				}
+     				return userPrincipal;
+     			}
+     		}
+     		// 如果连上下文都没有，则应该是后台运行用户
+     		return getBackgroundUserDetails();
+     	}
+
+     	/**
+     	 * 判断当前用户是否可以访问URL或者method
+     	 * 
+     	 * @param url
+     	 * @param method
+     	 * @return boolean
+     	 */
+     	public static boolean hasAccess(String url, String method) {
+     		return UserContextStaticServiceHolder.getUserPrincipalService().hasAccess(getUserDetails(), url, method);
+     	}
+
+     	public static void clearCachedStaticUserPrincipals() {
+     		STATIC_CACHE_USERS.clear();
+     	}
+
+     	/**
+     	 * 获取一个后端模拟用户
+     	 */
+     	public static UserPrincipal getBackgroundUserDetails() {
+     		return new UserPrincipalImpl(MaculaConstants.BACKGROUND_USER, null);
+     	}
+
+     	/**
+     	 * 获取当前用户上下文，可以用来解析表达式或者规则
+     	 * 
+     	 * @return UserContext
+     	 */
+     	public static UserContext getUserContext() {
+     		UserPrincipal userDetails = getUserDetails();
+     		return userDetails.createUserContext();
+     	}
+
+     	/**
+     	 * 判断当前用户是否是匿名用户
+     	 * 
+     	 * @return boolean
+     	 */
+     	public static boolean isAnonymous() {
+     		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+     		return authentication == null || authenticationTrustResolver.isAnonymous(authentication);
+     	}
+
+     	/**
+     	 * 判断是否是匿名用户凭据
+     	 * 
+     	 * @param authentication 带判断的凭据
+     	 * @return boolean
+     	 */
+     	public static boolean isAnonymous(Authentication authentication) {
+     		return authentication == null || authenticationTrustResolver.isAnonymous(authentication);
+     	}
+     	
+     	/**
+     	 * 判断是否是匿名用户
+     	 * @param userPrincipal
+     	 * @return boolean
+     	 */
+     	public static boolean isAnonymous(UserPrincipal userPrincipal) {
+     		return MaculaConstants.ANONYMOUS_USER.equals(userPrincipal.getUsername());
+     	}
+     	
+     	/**
+     	 * 是否是后台用户
+     	 * @param userPrincipal
+     	 * @return boolean
+     	 */
+     	public static boolean isBackgroudUser(UserPrincipal userPrincipal) {
+     		return MaculaConstants.BACKGROUND_USER.equals(userPrincipal.getUsername());
+     	}
+
+     	/**
+     	 * 是否是合法用户，系统中有些是保留的用户名，不能使用
+     	 * @param userName
+     	 * @return
+     	 */
+     	public static boolean isValidUser(String userName) {
+     		return userName != null && !IGNORE_USERS.contains(userName);
+     	}
+     }
      ```
 
    * 通过UserContext获取
@@ -222,13 +357,14 @@
 
    * 通过HttpServletRequest获取
 
-    对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
+     对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
 
-    ```java
-    UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
-    ```
+     ```java
+     UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
+     ```
 
-1. 用户上下文获取
+
+3. 用户上下文获取
 
    * 用户上下文接口
 
