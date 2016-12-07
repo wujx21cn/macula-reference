@@ -44,13 +44,13 @@
 可以通过管理界面定义在数据库中或者通过XML配置，xml文件放在src/main/resources/xxxx/\*-dataparam.xml中：
 
 ```
-	<dataparam id="TEST_PARAM_XX" name="测试参数">
-		<type>DATAAPP</type>
-		<value>select name as label, code as code from MA_BASE_DATA_SET</value>
-		<valueScope>NONE</valueScope>
-		<dataType>String</dataType>	
-		<dataSource>macula_ds</dataSource>
-	</dataparam>
+<dataparam id="TEST_PARAM_XX" name="测试参数">
+        <type>DATAAPP</type>
+        <value>select name as label, code as code from MA_BASE_DATA_SET</value>
+        <valueScope>NONE</valueScope>
+        <dataType>String</dataType>    
+        <dataSource>macula_ds</dataSource>
+</dataparam>
 ```
 
 ## 数据集（DataSet）
