@@ -18,8 +18,7 @@
 
 2. LDAP
 
-
-      连接LDAP库
+   连接LDAP库
 
 ## 数据集（DataSet）
 
