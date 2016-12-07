@@ -72,23 +72,12 @@ code和label对应着前端下拉框中的code和显示的数据。
 
    表达式可以是一个SQL语句，也可以是包含了Freemarker、Spring EL等表达式的混搭模式的字符串，表达式的内容是任意的，只要下面提到的处理器能处理。需要注意的事DataSet的目的是为了提供一个数据集合，所以表达式往往是一个SQL Select语句。
 
-   在特殊情况下，数据集是静态的Key-Value集合，此时数据集可以不需要引用数据源（详见StaticOptionsDataHandler的介绍）。
+   在特殊情况下，数据集是静态的Key-Value集合，此时数据集可以不需要引用数据源。
+   ```
+   name:Wilson|name:Jokeway
+   ```
 
-2. **处理器链**
-
-   之所以称为处理器链，是因为它是由多个处理器有序的组合在一起形成的。处理器是一个org.macula.base.data.handle.DataHandler接口的实现，可以自定义一些处理器实现，对于Macula已实现的处理器有：
-
-   * StaticOptionsDataHandler：
-
-     最简单的处理器，是将表达按\|分隔，每一部分作为集合中的一个元素从而形成的数据集合。在元素内部，继续按:分隔成Object\[\]数组，从而形成整个数据集。
-
-     例如表达式为：
-
-     ```
-     name:Wilson|name:Jokeway
-     ```
-
-     形成的最终数据集为：
+   形成的最终数据集为：
 
      ```java
      List<Object[]> {
