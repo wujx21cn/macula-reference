@@ -27,7 +27,7 @@ public class AdminMaculaBaseController extends BaseController {
 
 失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
 
-### 参数绑定校验
+### FormBean
 
 在Spring MVC默认的基础上，Macula开发平台在参数绑定上做了适当扩展，以适应与Struts（Webwork）等相同的对参数处理的一致性，具体来说，有如下的变化：
 
@@ -126,9 +126,10 @@ public class AdminMaculaBaseController extends BaseController {
    _主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。  
    特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
 
-3. Pageable参数绑定
 
-   在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
+### Pageable参数绑定
+
+1. 在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
 
    对于Pageable参数的绑定，比如Controller中编写：
 
@@ -163,13 +164,14 @@ public class AdminMaculaBaseController extends BaseController {
 
    _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\__" +属性名。
 
-4. 类型转换
 
-   很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
+### 类型转换
 
-   对应的applicationContext-mvc.xml中配置如下：
+    很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
-   ```xml
+    对应的applicationContext-mvc.xml中配置如下：
+
+1. ```xml
    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
       <property name="converters">
           <list>

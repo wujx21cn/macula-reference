@@ -52,48 +52,6 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 * 请注意API的请求方式，非指定方式API不响应。
 
 
-## 输入参数到表单key的转换规则
-
-OpenApi标准响应应该是如下类型：
-
-
-
-下面举例说明，有如下POJO类
-
-```java
-public class User {
-    private String userName;
-    private String password;
-    private Org org;
-    private List<Org> orgs;
-    private Map<String, String> params;
-    private Map<String, Org> girls;
-    private Date date;
-}
-public class Org {
-    private String code;
-}
-```
-
-User user参数应该转为
-
-```java
-user.userName=xxx
-user.password=xxx
-user.org.code=xxx
-user.orgs[0].code=xxx
-user.orgs[1].code=xxx
-user.params['key1']=xxx
-user.params['key2']=xxx
-user.girls['key1'].code=xxx
-user.girls['key2'].code=xxx
-user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
-```
-
-List&lt;User&gt; users应转为users\[0\].userName=xxx、users\[1\].userName=xxx等的样式；
-
-Map&lt;String, User&gt; maps 应转为maps\['key1'\].userName=xxx、maps\['key2'\].userName=xxx等的样式。
-
 ## Open API的返回
 
 Open API的返回分为正常返回和异常返回。
