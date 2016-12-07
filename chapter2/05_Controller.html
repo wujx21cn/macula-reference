@@ -53,7 +53,7 @@
         data-chapter-title="展示层"
         data-filepath="chapter2/05_Controller.md"
         data-basepath=".."
-        data-revision="Tue Dec 06 2016 21:52:19 GMT+0800 (CST)"
+        data-revision="Wed Dec 07 2016 22:27:56 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -357,76 +357,76 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="chapter3/01_Plugins-Infrastructure.html">
+        <li class="chapter " data-level="3.1" data-path="chapter3/02_Plugins_DataSet.html">
             
                 
-                    <a href="../chapter3/01_Plugins-Infrastructure.html">
+                    <a href="../chapter3/02_Plugins_DataSet.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
                         
-                        基础设施
+                        数据相关
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="chapter3/02_Plugins_Data.html">
+        <li class="chapter " data-level="3.2" data-path="chapter3/04_Plugins-User.html">
             
                 
-                    <a href="../chapter3/02_Plugins_Data.html">
+                    <a href="../chapter3/04_Plugins-User.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.</b>
                         
-                        数据提供
+                        用户信息和上下文
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="chapter3/03_Plugins_DataSet.html">
-            
-                
-                    <a href="../chapter3/03_Plugins_DataSet.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                        数据集
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="chapter3/05_Plugins_Authentication.html">
+        <li class="chapter " data-level="3.3" data-path="chapter3/05_Plugins_Authentication.html">
             
                 
                     <a href="../chapter3/05_Plugins_Authentication.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.4.</b>
+                            <b>3.3.</b>
                         
-                        安全管理
+                        认证管理
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="chapter3/04_Plugins_Authority2.html">
+        <li class="chapter " data-level="3.4" data-path="chapter3/06_Plugins_Authority.html">
             
                 
-                    <a href="../chapter3/04_Plugins_Authority2.html">
+                    <a href="../chapter3/06_Plugins_Authority.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        授权管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter3/08_Plugins_Expr.html">
+            
+                
+                    <a href="../chapter3/08_Plugins_Expr.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.5.</b>
                         
-                        权限管理
+                        表达式解析
                     </a>
             
             
@@ -785,11 +785,11 @@
 }
 </code></pre>
 <p>&#x5728;BaseController&#x4E2D;&#x5904;&#x7406;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x4EE5;&#x53CA;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x8981;&#x6C42;&#x7684;&#x8BBE;&#x5B9A;&#x3002;</p>
-<h3 id="&#x8868;&#x5355;&#x6821;&#x9A8C;">&#x8868;&#x5355;&#x6821;&#x9A8C;</h3>
-<p>&#x5728;Controller&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;@FormBean&#x6CE8;&#x89E3;&#x6765;&#x7ED1;&#x5B9A;&#x9875;&#x9762;&#x6570;&#x636E;&#x5230;Domain&#xFF0C;&#x5982;&#x679C;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x5931;&#x8D25;&#x7ED3;&#x679C;&#x4F1A;&#x51FA;&#x73B0;&#x5728;BindingResult&#x4E2D;</p>
-<p>&#x5728;Controller&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;@Valid&#x6CE8;&#x89E3;&#x6765;&#x68C0;&#x67E5;&#x9875;&#x9762;&#x6570;&#x636E;&#x5230;Domain&#x6570;&#x636E;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#xFF0C;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x5728;Domain&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x91C7;&#x7528;JSR-303&#x7684;Bean Validator&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x3002;&#x6821;&#x9A8C;&#x5931;&#x8D25;&#x7684;&#x7ED3;&#x679C;&#x540C;&#x6837;&#x4FDD;&#x5B58;&#x5728;BindingResult&#x4E2D;</p>
+<h3 id="&#x8868;&#x5355;&#x6821;&#x9A8C;valid">&#x8868;&#x5355;&#x6821;&#x9A8C;@Valid</h3>
+<p>&#x5728;Controller&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;@FormBean&#x6CE8;&#x89E3;&#x6765;&#x7ED1;&#x5B9A;&#x9875;&#x9762;&#x6570;&#x636E;&#x5230;Bean&#xFF0C;&#x5982;&#x679C;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x5931;&#x8D25;&#x7ED3;&#x679C;&#x4F1A;&#x51FA;&#x73B0;&#x5728;BindingResult&#x4E2D;</p>
+<p>&#x5728;Controller&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;@Valid&#x6CE8;&#x89E3;&#x6765;&#x68C0;&#x67E5;&#x9875;&#x9762;&#x6570;&#x636E;&#x5230;Domain&#x6570;&#x636E;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#xFF0C;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x5728;Bean&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x91C7;&#x7528;JSR-303&#x7684;Bean Validator&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x3002;&#x6821;&#x9A8C;&#x5931;&#x8D25;&#x7684;&#x7ED3;&#x679C;&#x540C;&#x6837;&#x4FDD;&#x5B58;&#x5728;BindingResult&#x4E2D;</p>
 <p>&#x5931;&#x8D25;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;BaseController&#x4E2D;&#x7684;getMergedBindingResults&#x65B9;&#x6CD5;&#x5F97;&#x5230;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x8BF7;&#x53C2;&#x8003;BaseController&#x7C7B;&#x7684;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#x3002;</p>
-<h3 id="&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x6821;&#x9A8C;">&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x6821;&#x9A8C;</h3>
+<h3 id="&#x8868;&#x5355;&#x7ED1;&#x5B9A;formbean">&#x8868;&#x5355;&#x7ED1;&#x5B9A;@FormBean</h3>
 <p>&#x5728;Spring MVC&#x9ED8;&#x8BA4;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;Macula&#x5F00;&#x53D1;&#x5E73;&#x53F0;&#x5728;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x4E0A;&#x505A;&#x4E86;&#x9002;&#x5F53;&#x6269;&#x5C55;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x4E0E;Struts&#xFF08;Webwork&#xFF09;&#x7B49;&#x76F8;&#x540C;&#x7684;&#x5BF9;&#x53C2;&#x6570;&#x5904;&#x7406;&#x7684;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x53D8;&#x5316;&#xFF1A;</p>
 <ol>
 <li><p>Bean&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</p>
@@ -847,10 +847,66 @@
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
 <p><em>&#x4E3B;&#x8981;&#x6CE8;&#x610F;&#x5728;&#x540C;&#x4E00;&#x4E2A;RequestMapping&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x901A;&#x8FC7;@FormBean&#x6CE8;&#x91CA;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;FormBean&#x6CE8;&#x91CA;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x52A0;&#x5165;&#x8BE5;&#x7279;&#x6027;&#x5373;&#x53EF;&#xFF0C;&#x5176;&#x4ED6;&#x4E0D;&#x8981;&#x52A0;&#x3002;<br>&#x7279;&#x522B;&#x5730;&#xFF0C;&#x52A0;&#x5165;&#x4E86;&#x81EA;&#x52A8;&#x63A7;&#x5236;&#x9632;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x5BA2;&#x6237;&#x7AEF;token&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x6821;&#x9A8C;&#x5373;&#x5931;&#x6548;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x63D0;&#x4EA4;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x8868;&#x5355;&#x9700;&#x8981;&#x518D;&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x9690;&#x85CF;&#x7684;token&#x7684;&#x503C;&#x3002;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8C03;&#x7528;$(form).trigger(&apos;changeCaptcha&apos;)&#x5373;&#x53EF;&#x66F4;&#x65B0;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B9A;&#x5236;&#xFF0C;&#x53EF;&#x53C2;&#x8003;macula.ftl&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x505A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5B8F;&#x6765;&#x5904;&#x7406;&#x3002;</em></p>
 </li>
-<li><p>Pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</p>
+</ol>
+<h3 id="html&#x8868;&#x5355;input-name&#x4E0E;&#x540E;&#x7AEF;&#x53C2;&#x6570;&#x8F6C;&#x6362;&#x89C4;&#x5219;">HTML&#x8868;&#x5355;input name&#x4E0E;&#x540E;&#x7AEF;&#x53C2;&#x6570;&#x8F6C;&#x6362;&#x89C4;&#x5219;</h3>
+<p>&#x672C;&#x8282;&#x7EE7;&#x7EED;&#x4E0A;&#x7EA7;&#x8BB2;&#x89E3;&#x590D;&#x6742;&#x7684;@FormBean&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x4E0E;HTML&#x8868;&#x5355;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#xFF0C;&#x5047;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@OpenApi</span>
+<span class="hljs-annotation">@RequestMapping</span>(...)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saveUser</span><span class="hljs-params">(@FormBean User user)</span> </span>{
+}
+</code></pre>
+<p>User&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+    <span class="hljs-keyword">private</span> String userName;
+    <span class="hljs-keyword">private</span> String password;
+    <span class="hljs-keyword">private</span> Org org;
+    <span class="hljs-keyword">private</span> List&lt;Org&gt; orgs;
+    <span class="hljs-keyword">private</span> Map&lt;String, String&gt; params;
+    <span class="hljs-keyword">private</span> Map&lt;String, Org&gt; girls;
+    <span class="hljs-keyword">private</span> Date date;
+}
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Org</span> </span>{
+    <span class="hljs-keyword">private</span> String code;
+}
+</code></pre>
+<p>&#x90A3;&#x4E48;HTML&#x8868;&#x5355;&#x4E2D;input&#x6846;&#x7684;name&#x5E94;&#x8BE5;&#x5982;&#x4E0B;&#x547D;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-java">&lt;input name=<span class="hljs-string">&quot;user.userName&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.password&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.org.code&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.orgs[0].code&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.orgs[1].code&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.params[&apos;key1&apos;]&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.params[&apos;key2&apos;]&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.girls[&apos;key1&apos;].code&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.girls[&apos;key2&apos;].code&quot;</span> &gt;
+&lt;input name=<span class="hljs-string">&quot;user.date&quot;</span> &gt;
+</code></pre>
+<ul>
+<li>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#xFF1A;&#x4F8B;&#x5982;long,int,String&#x7B49;&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
+</ul>
+<ul>
+<li>POJO&#x5BF9;&#x8C61;&#xFF1A;&#x5982;User&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;.&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
+</ul>
+<ul>
+<li>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#xFF1A;&#x5982;String[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;0&#x201D;&#x3001;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;1&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
+</ul>
+<ul>
+<li>POJO&#x5BF9;&#x8C61;&#x6570;&#x7EC4;&#xFF1A;&#x5982;User[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[index].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;index&#x4E3A;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#xFF1B;</li>
+</ul>
+<ul>
+<li>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key]=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
+</ul>
+<ul>
+<li>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
+</ul>
+<ul>
+<li>&#x5BF9;&#x4E8E;POJO&#x5BF9;&#x8C61;&#x4E2D;&#x5982;&#x679C;&#x542B;&#x6709;POJO&#x6570;&#x7EC4;&#x3001;Map&#x3001;POJO&#x5219;&#x89C4;&#x5219;&#x540C;&#x4E0A;&#xFF0C;&#x800C;&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#x9700;&#x8981;&#x5199;&#x6210;&#x201C;&#x5C5E;&#x6027;&#x540D;[index]=&#x503C;&#x201D;&#x3002;</li>
+</ul>
+<h3 id="pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;">Pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</h3>
 <p>&#x5728;&#x4F7F;&#x7528;&#x4E86;Spring-Data&#x6846;&#x67B6;&#x591F;&#xFF0C;&#x5BF9;&#x4E8E;&#x591A;&#x6570;&#x5206;&#x9875;&#x5F0F;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x4F20;&#x5165;Pageable&#x53C2;&#x6570;&#x548C;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x6761;&#x4EF6;&#xFF0C;&#x5373;&#x53EF;&#x8FD4;&#x56DE;&#x5305;&#x62EC;&#x603B;&#x8BB0;&#x5F55;&#x6570;&#x3001;&#x5F53;&#x524D;&#x9875;&#x9762;&#x8BB0;&#x5F55;&#x7B49;&#x4FE1;&#x606F;&#x7684;Page&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#xFF0C;&#x5BF9;&#x4E8E;Controller&#x5C42;&#xFF0C;&#x65B9;&#x4FBF;&#x7684;&#x83B7;&#x5F97;&#x9875;&#x9762;&#x4F20;&#x9012;&#x7684;Pageable&#x53C2;&#x6570;&#x5E76;&#x6784;&#x9020;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x503C;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x7B80;&#x6D01;&#x548C;&#x6613;&#x7528;&#x6027;&#x4E0A;&#x7684;&#x63D0;&#x5347;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;Pageable&#x53C2;&#x6570;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x6BD4;&#x5982;Controller&#x4E2D;&#x7F16;&#x5199;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/list&quot;</span>, method = RequestMethod.GET)
+<ol>
+<li><pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/list&quot;</span>, method = RequestMethod.GET)
 <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;User&gt; <span class="hljs-title">list</span><span class="hljs-params">(Pageable pageable)</span> </span>{
     Page&lt;User&gt; page = userRespository.findAll(pageable);
     <span class="hljs-comment">// other coding...</span>
@@ -873,16 +929,17 @@
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
 <p><em>&#x8FD9;&#x91CC;Pageable&#x4E0E;Bean&#x6784;&#x5EFA;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;Pageable&#x76F4;&#x63A5;&#x4ECE;Request&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5728;&#x901A;&#x8FC7;@Qualifier&#x6307;&#x5B9A;&#x522B;&#x540D;&#x65F6;&#xFF0C;Bean&#x7684;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#x89C4;&#x5219;&#x662F; &#x522B;&#x540D;+ &quot;.&quot; + &#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x800C;Pageable&#x7684;&#x89C4;&#x5219;&#x662F; &#x522B;&#x540D;+ &quot;_</em>&quot; +&#x5C5E;&#x6027;&#x540D;&#x3002;</p>
 </li>
-<li><p>&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
+</ol>
+<h3 id="id&#x5230;domain&#x7C7B;&#x578B;&#x8F6C;&#x6362;">ID&#x5230;Domain&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
 <p>&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x7F16;&#x8F91;&#x65F6;&#x6216;&#x8005;&#x5728;&#x67E5;&#x770B;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x503C;&#xFF08;&#x901A;&#x5E38;&#x662F;Long&#x578B;&#xFF09;&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#x5177;&#x4F53;&#x7684;&#x8BB0;&#x5F55;&#x4FE1;&#x606F;&#xFF0C;&#x5728;Macula&#x5E73;&#x53F0;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#xFF0C;&#x5BF9;&#x4E8E;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;Domain&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;ConversionService&#x76F4;&#x63A5;&#x8F6C;&#x6362;&#x3002;</p>
 <p>&#x5BF9;&#x5E94;&#x7684;applicationContext-mvc.xml&#x4E2D;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;conversionService&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;converters&quot;</span>&gt;</span>
-       <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.RepositoryConverter&quot;</span> /&gt;</span>
-       <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;converters&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.RepositoryConverter&quot;</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
 </code></pre>
 <p>&#x914D;&#x7F6E;&#x8BE5;&#x8F6C;&#x5316;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;Persistable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x5B9A;&#x4E49;&#x4E86;&#x76F8;&#x5BF9;&#x5E94;&#x7684;JpaRepository&#xFF0C;&#x5426;&#x5219;&#x4E5F;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x8F6C;&#x6362;&#x3002;</p>
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
@@ -901,8 +958,6 @@
 <p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;User&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x4E86;Persistable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x5DF2;&#x6709;&#x76F8;&#x5E94;&#x7684;UserRepository extends <code>JpaRepository&lt;User&gt;&#x7684;&#x5B9E;&#x73B0;&#x3002;</code></p>
 </li>
 </ul>
-</li>
-</ol>
 <h3 id="excelview">ExcelView</h3>
 <p>&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x652F;&#x6301;Excel&#x7684;&#x5BFC;&#x51FA;&#x529F;&#x80FD;&#xFF0C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E86;ExcelView&#x7C7B;&#x7ED3;&#x5408;ExcelUtils&#x7684;Excel&#x6A21;&#x677F;&#x65B9;&#x5F0F;&#x5BFC;&#x51FA;Excel&#x3002;&#x53EA;&#x8981;&#x6309;&#x7167;ExcelUtils&#x7684;&#x8BED;&#x6CD5;&#x5236;&#x4F5C;Excel&#x6A21;&#x677F;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5728;FreeMarker&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x653E;&#x7F6E;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x5728;Controller&#x4E2D;&#x5982;&#x4E0B;&#x4F7F;&#x7528;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ModelAndView <span class="hljs-title">excel2</span><span class="hljs-params">()</span> </span>{
@@ -912,7 +967,7 @@
 }
 </code></pre>
 <p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x53BB;views/admin[front]/xxxx/so_master/&#x76EE;&#x5F55;&#x4E0B;&#x5BFB;&#x627E;excel.xls&#x7684;Excel&#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;ExcelUtils&#x89E3;&#x6790;&#x8BE5;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x9700;&#x8981;&#x7684;Excel&#x6587;&#x4EF6;&#x3002;</p>
-<h2 id="freemarker&#x7F16;&#x5199;">Freemarker&#x7F16;&#x5199;</h2>
+<h2 id="freemarker&#x6A21;&#x677F;&#x7F16;&#x5199;">Freemarker&#x6A21;&#x677F;&#x7F16;&#x5199;</h2>
 <h3 id="&#x9875;&#x9762;&#x5E03;&#x5C40;">&#x9875;&#x9762;&#x5E03;&#x5C40;</h3>
 <p>Macula &#x4F7F;&#x7528; FreeMarker &#x5B8F;&#x6765;&#x89C4;&#x8303;ftl&#x9875;&#x9762;&#x6A21;&#x677F;&#x7684;&#x5F00;&#x53D1;&#xFF1A;</p>
 <ul>
@@ -1300,20 +1355,9 @@ ddddadf
 </code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x8986;&#x76D6;ui/app/ui.ftl&#x548C;ui.js&#x6765;&#x5B9A;&#x4E49;&#x4F60;&#x7684;UI&#x5B8F;&#x3002;</p>
 <h2 id="&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6846;&#x67B6;">&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6846;&#x67B6;</h2>
 <p>Macula &#x4F7F;&#x7528; Mower &#x4F5C;&#x4E3A;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x3002;&#x6709;&#x5173; Mower &#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x8BF7;&#x8BBF;&#x95EE; <a href="http://macula.top/mower/" target="_blank">Mower &#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>&#x3002;</p>
-<h2 id="&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x7591;&#x96BE;&#x70B9;">&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x7591;&#x96BE;&#x70B9;</h2>
-<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x8C08;&#x8C08; Macula &#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x7ECF;&#x5E38;&#x9047;&#x5230;&#x7684;&#x7591;&#x70B9;&#x6216;&#x96BE;&#x70B9;&#x3002;</p>
-<h3 id="&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;">&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;</h3>
-<p>&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5728;&#x767B;&#x5F55;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9E;&#x73B0; CustomUserLoginRepository &#x63A5;&#x53E3;&#x628A;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x653E;&#x5230;UserPincipal&#x7684;atrribute&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Freemarker&#x4E2D;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x83B7;&#x53D6;&#xFF0C;Freemaker&#x4E2D;&#x7684;userPrincipal&#x5BF9;&#x5E94;UserPrincipal&#x7C7B;&#xFF1A;</p>
-<pre><code>&lt;#if userPrincipal.getAttributeValue(&quot;userInfo&quot;)?exists&gt;
-  &lt;#assign userInfo = userPrincipal.getAttributeValue(&quot;userInfo&quot;)&gt;
-&lt;/#if&gt;
-
-&lt;#if userInfo?exists&gt;
-
-&lt;#else&gt;
-
-&lt;/#if&gt;
-</code></pre><h3 id="&#x6743;&#x9650;&#x5224;&#x65AD;">&#x6743;&#x9650;&#x5224;&#x65AD;</h3>
+<h2 id="macula&#x5B8F;">Macula&#x5B8F;</h2>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#xFF0C;&#x6846;&#x67B6;&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;macula&#x5B8F;&#x7ED9;freemarker&#x4F7F;&#x7528;</p>
+<h3 id="&#x6743;&#x9650;&#x5224;&#x65AD;">&#x6743;&#x9650;&#x5224;&#x65AD;</h3>
 <p>&#x5728;freemarker&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x6743;&#x9650;&#x63A7;&#x5236;&#x662F;&#x5426;&#x663E;&#x793A;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>&lt;@macula.preAuthorized url method&gt;
 &#x6709;&#x6743;&#x9650;&#x7684;&#x663E;&#x793A;
@@ -1337,7 +1381,7 @@ ddddadf
 <pre><code>String|Integer|Long|Double|Boolean|Timestamp|Date|Word
 </code></pre></li>
 <li><p>&#x5F53;&#x7136;&#x8FD8;&#x53EF;&#x4EE5;&#x7528; SQL &#x7684;&#x5F62;&#x5F0F;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code>select app_name as label, app_id as code from ma_base_application
+<pre><code>!select app_name as label, app_id as code from ma_base_application
 </code></pre></li>
 </ol>
 <p>&#x6709;&#x5173;&#x6570;&#x636E;&#x53C2;&#x6570;&#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x201C;&#x57FA;&#x7840;&#x63D2;&#x4EF6;&#x201D;&#x4E2D;&#x7684;&#x201C;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x201D;&#x4E00;&#x8282;&#x3002;</p>
@@ -1359,7 +1403,26 @@ ddddadf
 <h3 id="&#x907F;&#x514D;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#x7684;token">&#x907F;&#x514D;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#x7684;Token</h3>
 <pre><code>&lt;@macula.formToken captcha=&quot;true/false&quot; /&gt;
 </code></pre><p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x653E;&#x5165;&#x8868;&#x5355;&#x4E2D;&#xFF0C;&#x5219;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#x7684;token&#xFF0C;&#x5982;&#x679C;&#x8981;&#x663E;&#x793A;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;captcha&#x8F93;&#x5165;true&#x3002;</p>
-<h3 id="&#x83DC;&#x5355;">&#x83DC;&#x5355;</h3>
+<h2 id="freemarker&#x5185;&#x7F6E;&#x53D8;&#x91CF;">FreeMarker&#x5185;&#x7F6E;&#x53D8;&#x91CF;</h2>
+<p>macula&#x6846;&#x67B6;&#x901A;&#x8FC7;&#x6269;&#x5C55;freemarker&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x7ED9;Freemarker&#x6A21;&#x677F;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;">&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;</h3>
+<p>&#x53D8;&#x91CF;userPrincipal&#xFF1A;&#x4EE3;&#x8868;&#x7528;&#x6237;&#x767B;&#x9646;&#x540E;&#x7684;&#x51ED;&#x636E;&#x3002;</p>
+<p>&#x767B;&#x5F55;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5728;&#x767B;&#x5F55;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9E;&#x73B0; CustomUserLoginRepository &#x63A5;&#x53E3;&#x628A;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x653E;&#x5230;UserPincipal&#x7684;atrribute&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Freemarker&#x4E2D;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x83B7;&#x53D6;&#xFF0C;Freemaker&#x4E2D;&#x7684;userPrincipal&#x5BF9;&#x5E94;UserPrincipal&#x7C7B;&#xFF1A;</p>
+<pre><code>&lt;#if userPrincipal.getAttributeValue(&quot;userInfo&quot;)?exists&gt;
+  &lt;#assign userInfo = userPrincipal.getAttributeValue(&quot;userInfo&quot;)&gt;
+&lt;/#if&gt;
+
+&lt;#if userInfo?exists&gt;
+
+&lt;#else&gt;
+
+&lt;/#if&gt;
+
+&lt;!--&#x5F53;&#x524D;&#x7528;&#x6237;&#x540D;--&gt;
+${userPrincipal.getName()&#xFF01;&quot;&quot;}
+&lt;!--&#x5F53;&#x524D;&#x7528;&#x6237;&#x59D3;&#x540D;--&gt;
+${userPrincipal.getNickname()!&quot;&quot;}
+</code></pre><h3 id="&#x83DC;&#x5355;&#x53D8;&#x91CF;">&#x83DC;&#x5355;&#x53D8;&#x91CF;</h3>
 <p>macula&#x6846;&#x67B6;&#x5728;Freemarker&#x4E2D;&#x9ED8;&#x8BA4;&#x6709;&#x5982;&#x4E0B;&#x53D8;&#x91CF;&#xFF1A;</p>
 <ul>
 <li><p>&#x540E;&#x7AEF;</p>
@@ -1389,6 +1452,18 @@ ddddadf
 <li><p>mobileMainMenu&#xFF1A;&#x7236;&#x4EB2;&#x662F;&#x6839;&#x7684;&#x4E8C;&#x7EA7;&#x83DC;&#x5355;</p>
 </li>
 </ul>
+</li>
+</ul>
+<p>&#x83B7;&#x53D6;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x65B9;&#x6CD5;</p>
+<h3 id="freemarker&#x5185;&#x7F6E;&#x65B9;&#x6CD5;">Freemarker&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</h3>
+<ul>
+<li><p>getDataParams(dataParamCode)  &#x8FD4;&#x56DE;FieldOption&#x7C7B;&#x578B;&#x7684;code/value&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF1B;</p>
+</li>
+<li><p>getMenuBreadcrumb(rootType, menuCode) &#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x83DC;&#x5355;&#x7684;&#x9762;&#x5305;&#x5C51;&#x7ED3;&#x6784;&#x83DC;&#x5355;&#xFF0C;&#x53C2;&#x8003;ui&#x5B8F;</p>
+</li>
+<li><p>hasAccess(url, method) &#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x7684;url&#x548C;method&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+</li>
+<li><p>getAbsoluteUrl(base, url, default) &#x8FD4;&#x56DE;url&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x679C;url&#x4E0D;&#x662F;&#x4EE5;http/https&#x5F00;&#x5934;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x52A0;&#x4E0A;base</p>
 </li>
 </ul>
 <h2 id="&#x56FD;&#x9645;&#x5316;">&#x56FD;&#x9645;&#x5316;</h2>
