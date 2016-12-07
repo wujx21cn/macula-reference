@@ -62,8 +62,6 @@
 
 code和label对应着前端下拉框中的code和显示的数据。
 
-_DataParam也可以通过在表达式中写入\[ref=需要引用的DataParam的Code\]的方式来覆盖设置的Value值。_
-
 ## 数据集（DataSet）
 
 ### 数据集表达式
@@ -219,10 +217,6 @@ _DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替�
    </dataset>
    ```
 
-
-### 表达式引用
-
-可以通过在表达式中写入\[ref=需要引用的其他DataSet的Code\]的方式来进行引用。
 
 ## 数据载入方式
 
