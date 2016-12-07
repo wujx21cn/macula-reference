@@ -61,7 +61,13 @@ public EvaluationContext createEvaluationContext() {
 }
 ```
 
-## 
+EvaluationContext是Spring EL解析表达式的上下文，Spring EL表达式解析过程如下：
+
+```
+ExpressionParser parser = new SpelExpressionParser();
+org.springframework.expression.Expression exp = parser.parseExpression(expressionText());
+return exp.getValue(userContext.createEvaluationContext(), Result.class);
+```
 
 
 
