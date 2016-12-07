@@ -764,6 +764,8 @@ macula框架通过扩展freemarker提供了一些内置变量和方法给Freemar
 
 ### 登录用户信息
 
+变量userPrincipal：代表用户登陆后的凭据。
+
 登录用户信息在登录时，我们可以通过实现 CustomUserLoginRepository 接口把用户信息放到UserPincipal的atrribute中，可以在Freemarker中通过如下获取，Freemaker中的userPrincipal对应UserPrincipal类：
 
 ```
@@ -782,8 +784,6 @@ ${userPrincipal.getName()！""}
 <!--当前用户姓名-->
 ${userPrincipal.getNickname()!""}
 ```
-
-### 
 
 ### 菜单
 
