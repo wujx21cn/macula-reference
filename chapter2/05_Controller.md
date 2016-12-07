@@ -663,7 +663,7 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 
 Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请访问 [Mower 官方网站](http://macula.top/mower/)。
 
-## 前端开发疑难点
+## FreeMarker内置变量
 
 下面我们来谈谈 Macula 前端开发中的一些经常遇到的疑点或难点。
 
