@@ -16,7 +16,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 | timestamp |String  | Y |时间戳，为现在的GMT时间到GMT1970年1月1日0时0分0秒的毫秒数。Open API服务端允许客户端请求时间误差为5分钟。  |
 | sign |String  | Y |对API调用的所有参数签名，包括应用级参数  |
 |session  |String  | N |CAS的PT，如果是后台应用的调用接口，无需该参数，平台会使用appKey作为用户名判定应用的权限。如果有的话，则会根据PT解析出具体操作的用户，按照具体用户的权限评定是否可以访问该Open API。  |
-|  |  |  |  |
+| format | String | N |目前支持xml，json格式，默认是json  |
 |  |  |  |  |
 |  |  |  |  |
 
