@@ -2,245 +2,276 @@
 
 ## 用户上下文
 
-实际上，只需要通过用户名，即可通过UserContextFactory构建出用户上下文信息，对于已登录的用户，可以在HttpServletRequest中直接获取或通过相关助手类获取。通过用户上下文可方便的得到一些用户相关信息。
+实际上，只需要通过用户名，即可通过UserContextFactory构建出用户上下文信息，对于已登录的用户，可以通过SecurityUtils.getUserDetails\(\)获取用户信息。通过用户上下文可方便的得到一些用户相关信息。
 
 1. 用户接口
 
-    用户接口是提供登录用户（或指定用户）信息的主要方式，也可构建出用户上下文信息。
-    
-    ```java
-    public interface UserPrincipal extends UserDetails, Principal {
-    
-    	/**
-    	 * 构建用户的上下文信息
-    	 * 
-    	 * @return 返回构建的用户上下文
-    	 */
-    	UserContext createUserContext();
-    
-    	/**
-    	 * 获取用户分组值（比如传入'ORG'，可获取用户所属的组织机构信息）
-    	 * 
-    	 * @param name
-    	 *            分类的名称（表示对应的CatalogProvider的名称）
-    	 * @return 返回在该分类中的关联信息
-    	 */
-    	Collection<Catalog> getCatalogs(String name);
-    
-    	/**
-    	 * 获取用户分组值（比如传入'ORG'，可获取用户所属的组织机构信息）
-    	 * 
-    	 * @param name
-    	 *            分类的名称（表示对应的CatalogProvider的名称）
-    	 * @return 返回关联的分组信息的编码集合
-    	 */
-    	Collection<String> getCatalogCodes(String name);
-    
-    	/**
-    	 * 获取用户关联角色信息
-    	 * 
-    	 * @return 返回用户的角色编码集合
-    	 */
-    	Collection<String> getRoleCodes();
-    
-    	/**
-    	 * 获取用户关联角色信息
-    	 * 
-    	 * @return 返回用户角色信息集合
-    	 */
-    	Collection<Role> getRoles();
-    
-    	/**
-    	 * 获取用户关联角色信息
-    	 * 
-    	 * @return 返回用户关联角色Id集合
-    	 */
-    	Collection<Long> getRoleIds();
-    
-    	/**
-    	 * 获取用户指定的资源类集合
-    	 * 
-    	 * @param name
-    	 *            资源类型的名称（表示对应的ResourceProvider的名称）
-    	 * @return 返回关联的资源信息列表
-    	 */
-    	Collection<Resource> getResources(String name);
-    
-    	/**
-    	 * 获取资源树型列表
-    	 * 
-    	 * @param name
-    	 *            资源类型的名称（表示对应的ResourceProvider的名称）
-    	 * @param root
-    	 *            资源根节点的Id
-    	 * @param level
-    	 *            获取根节点下的层数
-    	 * @return 返回关联的资源信息列表
-    	 */
-    	Collection<Resource> getResourcesTree(String name, Long root, int level);
-    
-    	/**
-    	 * 获取用户指定的资源类集合
-    	 * 
-    	 * @param name
-    	 *            资源类型的名称（表示对应的ResourceProvider的名称）
-    	 * @return 返回关联的资源编码列表
-    	 */
-    	Collection<String> getResourceCodes(String name);
-    
-    	/**
-    	 * 获取用户名
-    	 * 
-    	 * @return
-    	 */
-    	@Override
-    	String getUsername();
-    
-    	/**
-    	 * 获取显示用户名
-    	 * 
-    	 * @return
-    	 */
-    	String getNickname();
-    
-    	/**
-    	 * 获取用户设置的Locale
-    	 * 
-    	 * @return
-    	 */
-    	Locale getLocale();
-    
-    	/**
-    	 * 检测是否有访问地址的权限
-    	 * 
-    	 * @param url
-    	 * @param method
-    	 * @return
-    	 */
-    	boolean hasAccess(String url, String method);
-    
-    	/**
-    	 * 获取用户额外属性
-    	 * 
-    	 * @return
-    	 */
-    	Map<String, Object> getAttributes();
-    
-    	/**
-    	 * 获取用户额外属性
-    	 * 
-    	 * @param attribute
-    	 * @return
-    	 */
-    	Object getAttributeValue(String attribute);
-    
-    	/**
-    	 * 设置额外属性
-    	 * 
-    	 * @param attributes
-    	 *            *
-    	 */
-    	void setAttributes(Map<String, Object> attributes);
-    
-    	/**
-    	 * 增加额外属性
-    	 * 
-    	 * @param attributes
-    	 */
-    	void addAttributes(Map<String, Object> attributes);
-    
-    	/**
-    	 * 是否需要锁屏
-    	 * 
-    	 * @return
-    	 */
-    	boolean isIllegalRequest();
-    
-    	/**
-    	 * 创建用户在cas登录环境下对其他系统的pt
-    	 */
-    	String createProxyTicket(String service);
-    }    
-    ```
-    
+   用户接口是提供登录用户（或指定用户）信息的主要方式，也可构建出用户上下文信息。
+
+   ```java
+   	/**
+   	 * 获取当前用户名
+   	 */
+   	@Override
+   	public String getName() {
+   		return getUsername();
+   	}
+
+   	@Override
+   	public int hashCode() {
+   		return getUsername().hashCode();
+   	}
+   	
+   	@Override
+   	public String toString() {
+   		return getName();
+   	}
+   	
+   	@Override
+   	public boolean equals(Object rhs) {
+   		if (rhs instanceof UserPrincipalImpl) {
+   			return getUsername().equals(((UserPrincipalImpl) rhs).getUsername());
+   		}
+   		return false;
+   	}
+
+   	//~~~~~~~~~~~~~~~~~~~ for UserDetails ~~~~~~~~~~~~~~~~~~~~~~~~~//
+   	/**
+   	 * 用户的角色集合
+   	 */
+   	@Override
+   	@JsonIgnore
+   	public Collection<? extends GrantedAuthority> getAuthorities() {
+   		if (authorities == null || authorities.isEmpty()) {
+   			Collection<Role> roles = this.getRoles();
+   			Collection<String> roleCodes = new ArrayList<String>();
+   			for (Role role : roles) {
+   				if (!role.isOpposite()) {
+   					roleCodes.add(role.getCode());
+   				} else {
+   					roleCodes.add(InnerSecurityUtils.createOppositeRoleCode(role.getCode()));
+   				}
+   			}
+   			List<GrantedAuthority> tmpAuthorities = AuthorityUtils.createAuthorityList(roleCodes
+   					.toArray(new String[roleCodes.size()]));
+   			authorities = Collections.unmodifiableCollection(tmpAuthorities);
+   		}
+   		return authorities;
+   	}
+   	
+   	/**
+   	 * 当前用户名
+   	 */
+   	@Override
+   	public String getUsername() {
+   		return this.username;
+   	}
+
+   	/**
+   	 * 当前用户密码，不会被JSON序列化
+   	 */
+   	@Override
+   	@JsonIgnore
+   	public String getPassword() {
+   		return password;
+   	}
+
+   	/**
+   	 * 账号是否未过期
+   	 */
+   	@Override
+   	public boolean isAccountNonExpired() {
+   		Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_EXPIRED_ATTR);
+   		return r != null ? r.booleanValue() : true;
+   	}
+
+   	/**
+   	 * 账号是否没有被锁定
+   	 */
+   	@Override
+   	public boolean isAccountNonLocked() {
+   		Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_LOCKED_ATTR);
+   		return r != null ? r.booleanValue() : true;
+   	}
+
+   	/**
+   	 * 凭据是否未过期
+   	 */
+   	@Override
+   	public boolean isCredentialsNonExpired() {
+   		Boolean r = (Boolean) this.getAttributeValue(CREDENTIALS_NON_EXPIRED_ATTR);
+   		return r != null ? r.booleanValue() : true;
+   	}
+
+   	/**
+   	 * 是否有效用户
+   	 */
+   	@Override
+   	public boolean isEnabled() {
+   		Boolean r = (Boolean) this.getAttributeValue(ENABLED_ATTR);
+   		return r != null ? r.booleanValue() : true;
+   	}
+
+   	// ~~~~~~~~~~~~~~~~~~ extend attribute~~~~~~~~~~~~~~~~~~~~~~~~~//
+   	/**
+   	 * 用户姓名
+   	 */
+   	@Override
+   	public String getNickname() {
+   		String nickname = (String) getAttributeValue(NICKNAME_ATTR);
+   		return nickname != null ? nickname : getUsername();
+   	}
+
+   	/**
+   	 * 用户所在地区
+   	 */
+   	@Override
+   	public Locale getLocale() {
+   		String locale = (String) getAttributeValue(LOCALE_ATTR);
+   		if (locale != null) {
+   			return new Locale(locale);
+   		}
+   		return null;
+   	}
+
+   	/**
+   	 * 是否是一个需要锁屏的用户
+   	 */
+   	@Override
+   	public boolean isIllegalRequest() {
+   		String illegalRequest = (String) getAttributeValue(ILLEGAL_REQUEST_ATTR);
+   		if (illegalRequest != null) {
+   			return Boolean.valueOf(illegalRequest);
+   		}
+   		return false;
+   	}
+
+   	/**
+   	 * 用户登录的验证类型（password、dyna_code、service_pass等）
+   	 */
+   	@Override
+   	public String getLoginAuthType() {
+   		String authType = (String) getAttributeValue(AUTH_TYPE);
+   		if (StringUtils.isEmpty(authType)) {
+   			authType = MaculaConstants.AUTH_TYPE_UNKNOWN;
+   		}
+   		return authType;
+   	}
+   	
+   	/**
+   	 * 登录终端类型（PC、MOBILE、KIOSK）
+   	 */
+   	@Override
+   	public String getLoginTerminalType() {
+   		String terminalType = (String) getAttributeValue(TERMINAL_TYPE);
+   		if (StringUtils.isEmpty(terminalType)) {
+   			terminalType = MaculaConstants.TERMINAL_PC;
+   		}
+   		return terminalType;
+   	}
+   	
+   	// ~~~~~~~~~~~~~~~~~~~~~~~~~~ cas attributes ~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+   	
+   	@Override
+   	public Object getAttributeValue(String attribute) {
+   		return this.attributes.get(attribute);
+   	}
+
+   	@Override
+   	public void addAttributes(Map<String, Object> attributes) {
+   		if (attributes != null) {
+   			this.attributes.putAll(attributes);
+   		}
+   	}
+   	
+   	@Override
+   	public void addAttribute(String attribute, Object value) {
+   		this.attributes.put(attribute, value);
+   	}
+   ```
+
 2. 用户信息的获取
 
-    * 通过HttpServletRequest获取
-    
-    对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
-    
-    ```java
-    UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
-    ```
-    * 通过SecurityUtils获取
-    
-    对于已经登录的用户，可通过SecurityUtils来获取
-    
-    ```java
-    UserPrincipal principal = SecurityUtils.getUserDetails();
-    ```
-    
-    * 通过UserContext获取
-    
-    如果仅有用户的用户名信息，也可通过先构建UserContext，然后通过UserContext反向构建UserPrincipal的方式构建用户信息。
-    
-    ```java
-    String userName = "Wilson";
-    UserContext userContext = userContextFactory.createContext(userName);
-    UserPrincipal userPrincipal = userContext.getUser();
-    ```
-    
+   * 通过HttpServletRequest获取
+
+     对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
+
+     ```java
+     UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
+     ```
+
+   * 通过SecurityUtils获取
+
+     对于已经登录的用户，可通过SecurityUtils来获取
+
+     ```java
+     UserPrincipal principal = SecurityUtils.getUserDetails();
+     ```
+
+   * 通过UserContext获取
+
+     如果仅有用户的用户名信息，也可通过先构建UserContext，然后通过UserContext反向构建UserPrincipal的方式构建用户信息。
+
+     ```java
+     String userName = "Wilson";
+     UserContext userContext = userContextFactory.createContext(userName);
+     UserPrincipal userPrincipal = userContext.getUser();
+     ```
+
+
 3. 用户上下文获取
 
-    * 用户上下文接口
-    
-    ```java
-    public interface UserContext {
-    
-        UserPrincipal getUser();
- 
-        String getUsername();
+   * 用户上下文接口
 
-        Object resolve(String property);
-    
-        Object resolve(String property, UserContext userContext);
-  
-        boolean isResolved(String property);
-  
-        EvaluationContext createEvaluationContext();
-  
-        void fireUserChangedEvent();
+     ```java
+     public interface UserContext {
 
-        PolicyResult vote(String code, Object target);
-    
-        PolicyResult vote(String code);
-    
-        void destory();
-    
-    }    
-    ```
-    
-    * 通过UserPrincipal直接获取
-    
-    如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
-    
-    ```java
-    UserContext userContext = userPrincipal.createUserContext();
-    ```
-    
-    * 通过UserContextFactory构建
-    
-    如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
-    
-    ```java
-    String userName = "Wilson";
-    
-    UserContext userContext = userContextFactory.createContext(userName);
-    ```
+       UserPrincipal getUser();
 
-***重要***
+       String getUsername();
 
-*对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。*
+       Object resolve(String property);
+
+       Object resolve(String property, UserContext userContext);
+
+       boolean isResolved(String property);
+
+       EvaluationContext createEvaluationContext();
+
+       void fireUserChangedEvent();
+
+       PolicyResult vote(String code, Object target);
+
+       PolicyResult vote(String code);
+
+       void destory();
+
+     }
+     ```
+
+   * 通过UserPrincipal直接获取
+
+     如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
+
+     ```java
+     UserContext userContext = userPrincipal.createUserContext();
+     ```
+
+   * 通过UserContextFactory构建
+
+     如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
+
+     ```java
+     String userName = "Wilson";
+
+     UserContext userContext = userContextFactory.createContext(userName);
+     ```
+
+
+
+_**重要**_
+
+_对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。_
 
 ## 用户信息解析
 
@@ -254,5 +285,3 @@
 
 具体的表达式写法以及使用方式可参考Spring Expression内容。
 
-
-    
