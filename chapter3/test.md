@@ -16,4 +16,4 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
 
-* POJO对象数组：如User\[\]、List<User>，需要形成“参数名\[index\].属性名=值”
+* POJO对象数组：如User\[\]、List<User>，需要形成“参数名\[index\].属性名=值
