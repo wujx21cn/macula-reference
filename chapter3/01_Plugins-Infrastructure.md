@@ -4,12 +4,15 @@
 
 实际上，只需要通过用户名，即可通过UserContextFactory构建出用户上下文信息，对于已登录的用户，可以通过SecurityUtils.getUserDetails\(\)获取用户信息。通过用户上下文可方便的得到一些用户相关信息。
 
-1. 用户接口
+1. 用户凭据信息
 
    用户接口是提供登录用户（或指定用户）信息的主要方式，也可构建出用户上下文信息。
 
    ```java
-   public class UserPrincipalImpl extends AbstractUserPrincipal {
+   public interface UserPrincipal extends UserDetails, Principal {
+   }
+
+    public class UserPrincipalImpl extends AbstractUserPrincipal {
        /**
         * 获取当前用户名
         */
