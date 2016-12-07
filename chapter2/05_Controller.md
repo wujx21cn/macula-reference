@@ -170,9 +170,9 @@ public class Org {
 <input name="user.date" >
 ```
 
-List&lt;User&gt; users应转为users\[0\].userName=xxx、users\[1\].userName=xxx等的样式；
+List&lt;User&gt; users应转为users\[0\].userName、users\[1\].userName等的样式；
 
-Map&lt;String, User&gt; maps 应转为maps\['key1'\].userName=xxx、maps\['key2'\].userName=xxx等的样式。
+Map&lt;String, User&gt; maps 应转为maps\['key1'\].userName、maps\['key2'\].userName等的样式。
 
 ### Pageable参数绑定
 
