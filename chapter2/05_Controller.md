@@ -129,9 +129,16 @@ public class AdminMaculaBaseController extends BaseController {
 
 ### HTML表单input name与后端参数转换规则
 
-OpenApi标准响应应该是如下类型：
+本节继续上级讲解复杂的@FormBean对象是如何与HTML表单数据绑定的，假如：
 
-下面举例说明，有如下POJO类
+```java
+@OpenApi
+@RequestMapping(...)
+public void saveUser(@FormBean User user) {
+}
+```
+
+User类如下：
 
 ```java
 public class User {
@@ -148,19 +155,19 @@ public class Org {
 }
 ```
 
-User user参数应该转为
+那么HTML表单中input框的name应该如下命名：
 
 ```java
-user.userName=xxx
-user.password=xxx
-user.org.code=xxx
-user.orgs[0].code=xxx
-user.orgs[1].code=xxx
-user.params['key1']=xxx
-user.params['key2']=xxx
-user.girls['key1'].code=xxx
-user.girls['key2'].code=xxx
-user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
+<input name="user.userName" >
+<input name="user.password" >
+<input name="user.org.code" >
+<input name="user.orgs[0].code" >
+<input name="user.orgs[1].code" >
+<input name="user.params['key1']" >
+<input name="user.params['key2']" >
+<input name="user.girls['key1'].code" >
+<input name="user.girls['key2'].code" >
+<input name="user.date" >
 ```
 
 List&lt;User&gt; users应转为users\[0\].userName=xxx、users\[1\].userName=xxx等的样式；
