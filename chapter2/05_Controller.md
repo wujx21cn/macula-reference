@@ -785,7 +785,7 @@ ${userPrincipal.getName()！""}
 ${userPrincipal.getNickname()!""}
 ```
 
-### 菜单
+### 菜单变量
 
 macula框架在Freemarker中默认有如下变量：
 
