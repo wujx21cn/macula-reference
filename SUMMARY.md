@@ -23,7 +23,7 @@
   * []
   * [数据相关](chapter3/02_Plugins_Data.md)
   * [数据集](chapter3/03_Plugins_DataSet.md)
-  * [用户信息](chapter3/01_Plugins-User.md)
+  * [用户信息和上下文](chapter3/01_Plugins-User.md)
   * [认证管理](chapter3/05_Plugins_Authentication.md)
   * [权限管理](chapter3/04_Plugins_Authority2.md)
   * [开放API](chapter3/10_OpenApi.md)
