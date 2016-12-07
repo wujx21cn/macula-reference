@@ -24,18 +24,15 @@
 数据源可以在数据库中定义，或者通过XML配置，xml文件放在src/main/resources/xxxx/\*-datasource.xml中：
 
 ```
-<datasource id="xxx" name="xxx">
-        <dataSourceType>DATABASE</dataSourceType>
-        <jndi>false</jndi>
-        <driver></driver>
-        <url></url>
-        <username></username>
-        <password></password>
-        <maxActive></maxActive>
-        <maxIdle></maxIdle>
-        <maxSize></maxSize>
-        <validationQuery></validationQuery>   
-</datasource>
+	<datasource id="macula_ds" name="MACULA测试">
+		<jndi>false</jndi>
+		<dataSourceType>DATABASE</dataSourceType>
+		<url>jdbc:oracle:thin:@192.168.0.180:1521:dstest</url>
+		<driver>oracle.jdbc.driver.OracleDriver</driver>
+		<username>macula</username>
+		<password>macula</password>
+		<validationQuery>select 1 from dual</validationQuery>
+	</datasource>
 ```
 
 ## 枚举\(DataEnum\)
@@ -45,8 +42,6 @@
 ## 数据参数\(DataParam\)
 
 可以通过管理界面定义在数据库中或者通过XML配置，xml文件放在src/main/resources/xxxx/\*-dataparam.xml中：
-
-
 
 ## 数据集（DataSet）
 
