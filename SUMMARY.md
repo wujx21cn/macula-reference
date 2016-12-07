@@ -20,10 +20,11 @@
   * [单元与集成测试](chapter2/09_JUnit.md)
 
 * [基础插件](chapter3/chapter3.md)
-  * [用户相关](chapter3/01_Plugins-User.md)
-  * [数据提供](chapter3/02_Plugins_Data.md)
+  * []
+  * [数据相关](chapter3/02_Plugins_Data.md)
   * [数据集](chapter3/03_Plugins_DataSet.md)
-  * [安全管理](chapter3/05_Plugins_Authentication.md)
+  * [用户信息](chapter3/01_Plugins-User.md)
+  * [认证管理](chapter3/05_Plugins_Authentication.md)
   * [权限管理](chapter3/04_Plugins_Authority2.md)
   * [开放API](chapter3/10_OpenApi.md)
 
