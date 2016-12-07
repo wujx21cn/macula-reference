@@ -29,7 +29,7 @@
     * [用户信息和上下文](chapter3/04_Plugins-User.md)
     * [认证管理](chapter3/05_Plugins_Authentication.md)
     * [授权管理](chapter3/06_Plugins_Authority2.md)
-    * [用户规则](chapter3/07_Plugins_Policy.md)
+    * [用户规则](chapter3/07_Plugins_Rules.md)
     * [表达式解析](chapter3/08_Plugins_Expr.md)
   * [开放API](chapter3/10_OpenApi.md)
 
