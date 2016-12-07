@@ -55,7 +55,7 @@
 
 数据参数的表达式可以是SQL语句也可以是静态数据:
 
-* SQL：必须返回code和label两个属性见上述示例
+* SQL：必须返回code和label两个属性见上述示例，具体语法可以参考数据集的SQL语句编写
 
 * 静态数据：NONE:不缓存\|SESSION:用户Session作用域，用“\|”隔开不同数据，用“：”隔开code和label。如果没有“：”隔开，则code和label一样。
 
