@@ -24,21 +24,23 @@
 数据源可以在数据库中定义，或者通过XML配置，xml文件放在src/main/resources/xxxx/\*-datasource.xml中：
 
 ```
-    <datasource id="xxx" name="xxx">
-		<dataSourceType>DATABASE</dataSourceType>
-		<jndi>false</jndi>
-		<driver></driver>
-		<url></url>
-		<username></username>
-		<password></password>
-		<maxActive></maxActive>
-		<maxIdle></maxIdle>
-		<maxSize></maxSize>
-		<validationQuery></validationQuery>   
-    </datasource>
+<datasource id="xxx" name="xxx">
+        <dataSourceType>DATABASE</dataSourceType>
+        <jndi>false</jndi>
+        <driver></driver>
+        <url></url>
+        <username></username>
+        <password></password>
+        <maxActive></maxActive>
+        <maxIdle></maxIdle>
+        <maxSize></maxSize>
+        <validationQuery></validationQuery>   
+</datasource>
 ```
 
 ## 枚举\(DataEnum\)
+
+提供统一的枚举数据表，表名为MA\_BASE\_DATA\_ENUM。
 
 ## 数据参数\(DataParam\)
 
