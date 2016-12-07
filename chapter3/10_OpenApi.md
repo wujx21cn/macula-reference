@@ -174,9 +174,9 @@ user.girls['key2'].code=xxx
 user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
 ```
 
-List&lt;User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
+List&lt;User&gt; users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
 
-Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
+Map&lt;String, User&gt; maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
 
 Open API接口调用注意事项：
 * 所有的请求和响应数据编码皆为utf-8格式，url里的所有参数值请做urlencode编码。如果请求的Content-Type是application/x-www-form-urlencoded， http body里的所有参数值也做urlencode编码；如果是multipart/form-data格式，每个表单字段的参数值无需编码,但每个表单字段的charset部分需要指定为utf-8。
@@ -193,7 +193,7 @@ Open API接口调用注意事项：
 
 Open API的返回分为正常返回和异常返回。
 
-* 正常返回ExecuteResponse<User>则JSON格式如下：
+* 正常返回ExecuteResponse&lt;User&gt;则JSON格式如下：
 
 ```
 {
@@ -218,7 +218,7 @@ Open API的返回分为正常返回和异常返回。
 }
 ```
 
-* 正常返回PageResponse<User>则JSON格式如下：
+* 正常返回PageResponse&lt;User&gt;则JSON格式如下：
 
 ```
 {
