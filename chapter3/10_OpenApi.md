@@ -29,6 +29,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
     * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名[index]=值”。
     
  * 常见的输入输出类型：
+
 ```java
 public class Response {
 /** 是否成功标识 */
