@@ -188,7 +188,6 @@ public class Org {
 }
 ```
 
-  
 User user参数应该转为
 
 ```java
@@ -228,7 +227,7 @@ Open API的返回分为正常返回和异常返回。
 * 正常返回ExecuteResponse&lt;User&gt;则JSON格式如下：
 
   ```
-{  
+  {  
     /** 是否成功标识 */  
     "success" : true,  
     /** User对象 */  
@@ -236,42 +235,42 @@ Open API的返回分为正常返回和异常返回。
     "userName" : "xxx",  
     "password" : "xxx",  
     "org" : {  
-    "code" : "xxxx"  
+      "code" : "xxxx"  
     },  
     "orgs" : [{"code" : "xx"},{"code" : "yy"}],  
     "params" : {  
-    "key" : "value"  
+      "key" : "value"  
     },                      
     "girls" : {                      
-    "key" : {"code" : "xx"} },                      
-    "date" : "2011-07-11T18:12:35.900Z"                      
+      "key" : {"code" : "xx"} },                      
+      "date" : "2011-07-11T18:12:35.900Z"                      
     }                      
-}
-```
+  }
+  ```
 
 * 正常返回PageResponse&lt;User&gt;则JSON格式如下：
 
 
 ```
 {
-/** 是否成功标识 */
-"success" : true,
-/** 本次请求的页大小 */
-"size" : 20,
-/** 当前页码，从零开始 */
-"number" : 5,
-/** 总记录数 */
-"totalElements" : 501,
-/** 总页数 */
-"totalPages" : 26,
-/** 本页的总记录数 */
-"numberOfElements" : 20,
-/** 是否首页 */
-"firstPage" : false,
-/** 是否最后页 */
-"lastPage" : false,
-/** 内容列表 */
-"content" : [ {user1 json}, {user2 json}, ... ]
+    /** 是否成功标识 */
+    "success" : true,
+    /** 本次请求的页大小 */
+    "size" : 20,
+    /** 当前页码，从零开始 */
+    "number" : 5,
+    /** 总记录数 */
+    "totalElements" : 501,
+    /** 总页数 */
+    "totalPages" : 26,
+    /** 本页的总记录数 */
+    "numberOfElements" : 20,
+    /** 是否首页 */
+    "firstPage" : false,
+    /** 是否最后页 */
+    "lastPage" : false,
+    /** 内容列表 */
+    "content" : [ {user1 json}, {user2 json}, ... ]
 }
 ```
 
@@ -279,18 +278,18 @@ Open API的返回分为正常返回和异常返回。
 
 ```
 {
-/** 是否成功标识 */
-"success" : false,
-/** 系统级错误代码 */
-"errorCode" : "params.10",
-/** 系统级错误信息 */
-"errorMessage" : "缺少APP KEY参数",
-/** 业务级错误代码(如果存在则指的是具体的业务错误信息) */
-"exceptionCode" : "xxx",
-/** 业务级错误信息(如果存在则指的是具体的业务错误信息) */
-"exceptionMessage" : "中文",
-/** 异常详细信息 */
-"exceptionStack" : "error stack"
+    /** 是否成功标识 */
+    "success" : false,
+    /** 系统级错误代码 */
+    "errorCode" : "params.10",
+    /** 系统级错误信息 */
+    "errorMessage" : "缺少APP KEY参数",
+    /** 业务级错误代码(如果存在则指的是具体的业务错误信息) */
+    "exceptionCode" : "xxx",
+    /** 业务级错误信息(如果存在则指的是具体的业务错误信息) */
+    "exceptionMessage" : "中文",
+    /** 异常详细信息 */
+    "exceptionStack" : "error stack"
 }
 ```
 
