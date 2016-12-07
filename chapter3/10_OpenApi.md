@@ -174,7 +174,7 @@ user.girls['key2'].code=xxx
 user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
 ```
 
-List<User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
+List&lt;User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
 
 Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
 
