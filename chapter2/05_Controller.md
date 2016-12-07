@@ -127,6 +127,46 @@ public class AdminMaculaBaseController extends BaseController {
    特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
 
 
+### HTML表单input name与后端参数转换规则
+
+OpenApi标准响应应该是如下类型：
+
+下面举例说明，有如下POJO类
+
+```java
+public class User {
+    private String userName;
+    private String password;
+    private Org org;
+    private List<Org> orgs;
+    private Map<String, String> params;
+    private Map<String, Org> girls;
+    private Date date;
+}
+public class Org {
+    private String code;
+}
+```
+
+User user参数应该转为
+
+```java
+user.userName=xxx
+user.password=xxx
+user.org.code=xxx
+user.orgs[0].code=xxx
+user.orgs[1].code=xxx
+user.params['key1']=xxx
+user.params['key2']=xxx
+user.girls['key1'].code=xxx
+user.girls['key2'].code=xxx
+user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
+```
+
+List&lt;User&gt; users应转为users\[0\].userName=xxx、users\[1\].userName=xxx等的样式；
+
+Map&lt;String, User&gt; maps 应转为maps\['key1'\].userName=xxx、maps\['key2'\].userName=xxx等的样式。
+
 ### Pageable参数绑定
 
 在使用了Spring-Data框架够，对于多数分页式查询，可通过直接传入Pageable参数和额外的参数条件，即可返回包括总记录数、当前页面记录等信息的Page对象返回，对于Controller层，方便的获得页面传递的Pageable参数并构造成相应的对象值，也是一种代码简洁和易用性上的提升。
