@@ -222,7 +222,8 @@ public interface SecurityResourceProvider extends SecurityProvider {
                 <!-- 自定义检查SESSION中的用户与页面请求的是否是同一个用户 -->
                 <ref bean="userHeaderIdentityFilter" />
             </list>
-        </constructor-arg></bean>
+        </constructor-arg>
+        </bean>
 ```
 
 
