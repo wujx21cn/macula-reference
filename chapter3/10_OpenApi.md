@@ -13,7 +13,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 | 名称 | 类型 | 是否必要 | 说明 |
 | :--- | :--- | :--- | :--- |
 | app\_key | String | Y | 在Macula后台中创建应用时分配的KEY |
-|  |  |  |  |
+| timestamp |String  | Y |时间戳，为现在的GMT时间到GMT1970年1月1日0时0分0秒的毫秒数。Open API服务端允许客户端请求时间误差为5分钟。  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
