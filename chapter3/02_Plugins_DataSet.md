@@ -44,6 +44,10 @@
 
 ## 数据参数\(DataParam\)
 
+可以通过管理界面定义在数据库中或者通过XML配置，xml文件放在src/main/resources/xxxx/\*-dataparam.xml中：
+
+
+
 ## 数据集（DataSet）
 
 ### 数据集定义
