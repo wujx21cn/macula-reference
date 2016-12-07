@@ -66,8 +66,8 @@ EvaluationContext是Spring EL解析表达式的上下文，Spring EL表达式解
 ```
 ExpressionParser parser = new SpelExpressionParser();
 org.springframework.expression.Expression exp = parser.parseExpression(expressionText());
-return exp.getValue(userContext.createEvaluationContext(), Result.class);
+return exp.getValue(EvaluationContext, Result.class);
 ```
 
-
+在需要解析表达式的地方都是如上述代码处理的。所以UserContext中的getXXX\(\)都是可以作为表达式中的变量的，比如getUser\(\)方法可以在表达式中直接写成 user，获取用户名可以写表达式“user.getName\(\)"
 
