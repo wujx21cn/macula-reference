@@ -20,9 +20,9 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 * 原子类型数组：如String[]、List&lt;String&gt;，需要形成“参数名=值0”、“参数名=值1”等的键值对传递；
 
-* POJO对象数组：如User[]、List<User>，需要形成“参数名[index].属性名=值”等的键值对，index为数组下标；
+* POJO对象数组：如User[]、List&lt;User>，需要形成“参数名[index].属性名=值”等的键值对，index为数组下标；
 
-* Map<String, String>：需要形成“参数名[key]=值”的键值对传递；
+* Map&lt;String, String&gt;：需要形成“参数名[key]=值”的键值对传递；
 
 * Map<String, POJO>：需要形成“参数名[key].属性名=值”的键值对传递；
 
