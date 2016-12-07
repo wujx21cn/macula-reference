@@ -44,6 +44,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 OpenApi标准响应应该是如下类型：
 
 响应类型基类：
+
 ```java
 public class Response {
 /** 是否成功标识 */
@@ -71,6 +72,7 @@ private List<FieldError> validateErrors;
 ```
 
 单结果集响应
+
 ```java
 public class ExecuteResponse<T> extends Response {
 /** 结果信息 */
@@ -79,6 +81,7 @@ private T returnObject;
 ```
 
 多行结果集响应
+
 ```java
 public class PageResponse<T> extends Response {
 /** 本次请求的记录数 */
@@ -112,6 +115,7 @@ private String message;
 ```
 
 通用条件输入类型
+
 ```java
 public class CommonCondition {
 /** 要查询的条件字段(或属性)名称 */
@@ -171,20 +175,20 @@ In ;
 
 ```java
 public class User {
-private String userName;
-private String password;
-private Org org;
-private List<Org> orgs;
-private Map<String, String> params;
-private Map<String, Org> girls;
-private Date date;
+    private String userName;
+    private String password;
+    private Org org;
+    private List<Org> orgs;
+    private Map<String, String> params;
+    private Map<String, Org> girls;
+    private Date date;
 }
 public class Org {
-private String code;
+    private String code;
 }
 ```
 
-String\[\] codes参数应转为“codes=value1、codes=value2”；  
+  
 User user参数应该转为
 
 ```java
@@ -223,25 +227,27 @@ Open API的返回分为正常返回和异常返回。
 
 * 正常返回ExecuteResponse&lt;User&gt;则JSON格式如下：
 
-  {  
-    /** 是否成功标识 \*/  
+  ```
+{  
+    /** 是否成功标识 */  
     "success" : true,  
-    /** User对象 \*/  
+    /** User对象 */  
     "returnObject" : {  
     "userName" : "xxx",  
     "password" : "xxx",  
     "org" : {  
     "code" : "xxxx"  
     },  
-    "orgs" : \[{"code" : "xx"},{"code" : "yy"}\],  
+    "orgs" : [{"code" : "xx"},{"code" : "yy"}],  
     "params" : {  
     "key" : "value"  
-    `},                    
-    "girls" : {                    
-    "key" : {"code" : "xx"} },                    
-    "date" : "2011-07-11T18:12:35.900Z"                    
-    }                    
-    }`
+    },                      
+    "girls" : {                      
+    "key" : {"code" : "xx"} },                      
+    "date" : "2011-07-11T18:12:35.900Z"                      
+    }                      
+}
+```
 
 * 正常返回PageResponse&lt;User&gt;则JSON格式如下：
 
