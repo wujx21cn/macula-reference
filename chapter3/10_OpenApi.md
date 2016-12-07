@@ -11,11 +11,12 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 * 系统级参数：附加在Open API的URL之后，作为Query String传递
 
 | 名称 | 类型 | 是否必要 | 说明 |
-| :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :--- |
 | app\_key | String | Y | 在Macula后台中创建应用时分配的KEY |
 | timestamp | String | Y | 时间戳，为现在的GMT时间到GMT1970年1月1日0时0分0秒的毫秒数。Open API服务端允许客户端请求时间误差为5分钟。 |
 | sign | String | Y | 对API调用的所有参数签名，包括应用级参数 |
-| session | String | N，不再建议使用这个参数，请用access\_token代替 | CAS的PT，如果是后台应用的调用接口，无需该参数，平台会使用appKey作为用户名判定应用的权限。如果有的话，则会根据PT解析出具体操作的用户，按照具体用户的权限评定是否可以访问该Open API。 |
+| session不建议使用了，请用access\_token代替 | String | N | CAS的PT，如果是后台应用的调用接口，无需该参数，平台会使用appKey作为用户名判定应用的权限。如果有的话，则会根据PT解析出具体操作的用户，按照具体用户的权限评定是否可以访问该Open API。 |
+|  |  |  |  |
 | format | String | N | 目前支持xml，json格式，默认是json |
 | v | String | N | API协议版本号，默认是1.0 |
 | sign\_method | String | N | 签名算法，默认支持md5和hmac两种，不写就是md5 |
@@ -219,11 +220,11 @@ Open API的返回分为正常返回和异常返回。
     "orgs" : \[{"code" : "xx"},{"code" : "yy"}\],  
     "params" : {  
     "key" : "value"  
-    `},          
-    "girls" : {          
-    "key" : {"code" : "xx"} },          
-    "date" : "2011-07-11T18:12:35.900Z"          
-    }          
+    `},            
+    "girls" : {            
+    "key" : {"code" : "xx"} },            
+    "date" : "2011-07-11T18:12:35.900Z"            
+    }            
     }`
 
 * 正常返回PageResponse&lt;User&gt;则JSON格式如下：
