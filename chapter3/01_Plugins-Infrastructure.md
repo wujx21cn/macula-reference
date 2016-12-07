@@ -370,8 +370,7 @@
 
 1. 用户上下文接口
 
-
-1. * ```java
+     ```java
      public interface UserContext {
 
        UserPrincipal getUser();
@@ -396,8 +395,6 @@
 
      }
      ```
-
-
 2. 通过UserPrincipal直接获取
 
    如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
