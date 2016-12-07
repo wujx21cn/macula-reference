@@ -36,6 +36,7 @@
     对于非系统管理员来说，只能创建继承角色。
 
 
+
 * 资源（Resource）
 
   资源是一类具有时间性的可访问或操作的集合，最有代表的资源就是系统的菜单。
@@ -172,57 +173,56 @@ public interface SecurityResourceProvider extends SecurityProvider {
 在应用Spring Security来保护整个应用地址的大前提下，Macula相应的对整个Filter链进行了改写和定制，具体如下：
 
 ```
-	<bean id="maculaDefaultSecurityFilterChain" class="org.springframework.security.web.DefaultSecurityFilterChain">
-		<constructor-arg index="0">
-			<bean class="org.springframework.security.web.util.matcher.AntPathRequestMatcher">
-				<constructor-arg index="0" value="/**" />
-			</bean>
-		</constructor-arg>
-		<constructor-arg index="1">
-			<list>
-				<ref bean="maculaExceptionNegotiateFilter" />
-				<ref bean="maculaAccessLogFilter" />
-				<ref bean="maculaApplicationInstanceAgentFilter" />
-				
-				<!-- 将认证信息保存到Session中(SecurityContext) -->
-				<ref bean="maculaSecurityContextPersistenceFilter" />
-				<!-- 检查SessionInformation中有无过期会话，有就强制清除 -->
-				<ref bean="maculaConcurrentSessionFilter" />
+<bean id="maculaDefaultSecurityFilterChain" class="org.springframework.security.web.DefaultSecurityFilterChain">
+        <constructor-arg index="0">
+            <bean class="org.springframework.security.web.util.matcher.AntPathRequestMatcher">
+                <constructor-arg index="0" value="/**" />
+            </bean>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="maculaExceptionNegotiateFilter" />
+                <ref bean="maculaAccessLogFilter" />
+                <ref bean="maculaApplicationInstanceAgentFilter" />
 
-				<!-- 启动跨站脚本攻击的防护 -->
-				<ref bean="maculaCsrfFilter" />
+                <!-- 将认证信息保存到Session中(SecurityContext) -->
+                <ref bean="maculaSecurityContextPersistenceFilter" />
+                <!-- 检查SessionInformation中有无过期会话，有就强制清除 -->
+                <ref bean="maculaConcurrentSessionFilter" />
 
-				<!-- 只有登录或者登出才会通过下面的Filter -->
-				<!-- CAS退出后会请求所有授权过的服务，这个Filter就是处理单点登出，把token转为session并失效 -->
-				<ref bean="maculaSingleSignOutFilter"/>				
-				<!-- 退出请求时，SecurityContextLogoutHandler会让session会失效 -->
-				<ref bean="maculaLogoutFilter" />
-				<!-- 预先通过第三方系统认证用户，该Filter会直接认可这个用户并完成后续的登录处理 -->
-				<ref bean="maculaPreAuthenticatedProcessingFilter"/>
-				<ref bean="maculaCasAuthenticationFilter" />
-				<ref bean="maculaFormAuthenticationFilter" />
-				<ref bean="maculaCasRestAuthenticationFilter" />
-				<ref bean="maculaOpenApiAuthenticationFilter" />
+                <!-- 启动跨站脚本攻击的防护 -->
+                <ref bean="maculaCsrfFilter" />
 
-				<!-- Exception Filter会保存request，这里看看能不能恢复之前异常后保存的请求参数 -->
-				<ref bean="maculaRequestCacheAwareFilter" />
-				
-				<!--ref bean="maculaRemembermeAuthenticationFilter" /-->
-				<!-- Wrapper request，方便提取认证信息getUserPrincipal -->
-				<ref bean="maculaSecurityContextHolderAwareFilter" />
-				<ref bean="maculaAnonymousAuthenticationFilter" />
-				
-				<ref bean="maculaSessionManagementFilter" />
-				
-				<!-- Exception配合SecrityFilter，如果通不过安全检查，则通过EntryPoint跳转 -->
-				<ref bean="maculaExceptionTranslationFilter" />
-				<ref bean="maculaSecurityFilter" />
+                <!-- 只有登录或者登出才会通过下面的Filter -->
+                <!-- CAS退出后会请求所有授权过的服务，这个Filter就是处理单点登出，把token转为session并失效 -->
+                <ref bean="maculaSingleSignOutFilter"/>                
+                <!-- 退出请求时，SecurityContextLogoutHandler会让session会失效 -->
+                <ref bean="maculaLogoutFilter" />
+                <!-- 预先通过第三方系统认证用户，该Filter会直接认可这个用户并完成后续的登录处理 -->
+                <ref bean="maculaPreAuthenticatedProcessingFilter"/>
+                <ref bean="maculaCasAuthenticationFilter" />
+                <ref bean="maculaFormAuthenticationFilter" />
+                <ref bean="maculaCasRestAuthenticationFilter" />
+                <ref bean="maculaOpenApiAuthenticationFilter" />
 
-				<!-- 自定义检查SESSION中的用户与页面请求的是否是同一个用户 -->
-				<ref bean="userHeaderIdentityFilter" />
-			</list>
-		</constructor-arg>
-	</bean>
+                <!-- Exception Filter会保存request，这里看看能不能恢复之前异常后保存的请求参数 -->
+                <ref bean="maculaRequestCacheAwareFilter" />
+
+                <!--ref bean="maculaRemembermeAuthenticationFilter" /-->
+                <!-- Wrapper request，方便提取认证信息getUserPrincipal -->
+                <ref bean="maculaSecurityContextHolderAwareFilter" />
+                <ref bean="maculaAnonymousAuthenticationFilter" />
+
+                <ref bean="maculaSessionManagementFilter" />
+
+                <!-- Exception配合SecrityFilter，如果通不过安全检查，则通过EntryPoint跳转 -->
+                <ref bean="maculaExceptionTranslationFilter" />
+                <ref bean="maculaSecurityFilter" />
+
+                <!-- 自定义检查SESSION中的用户与页面请求的是否是同一个用户 -->
+                <ref bean="userHeaderIdentityFilter" />
+            </list>
+        </constructor-arg></bean>
 ```
 
 
