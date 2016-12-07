@@ -19,15 +19,15 @@ public class AdminMaculaBaseController extends BaseController {
 
 在BaseController中处理了大量的异常处理方式以及数据返回要求的设定。
 
-### 表单校验
+### 表单校验@Valid
 
-在Controller中的参数中，使用@FormBean注解来绑定页面数据到Domain，如果转换失败，则失败结果会出现在BindingResult中
+在Controller中的参数中，使用@FormBean注解来绑定页面数据到Bean，如果转换失败，则失败结果会出现在BindingResult中
 
-在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Domain中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
+在Controller中的参数中，使用@Valid注解来检查页面数据到Domain数据是否符合校验规则，校验规则的定义是在Bean中完成的，采用JSR-303的Bean Validator标准定义。校验失败的结果同样保存在BindingResult中
 
 失败结果可以通过BaseController中的getMergedBindingResults方法得到，具体使用请参考BaseController类的使用说明。
 
-### FormBean
+### 表单绑定@FormBean
 
 在Spring MVC默认的基础上，Macula开发平台在参数绑定上做了适当扩展，以适应与Struts（Webwork）等相同的对参数处理的一致性，具体来说，有如下的变化：
 
@@ -167,43 +167,42 @@ public class AdminMaculaBaseController extends BaseController {
 
 ### 类型转换
 
-  很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
+很多情况下，在编辑时或者在查看详细信息时，总是通过传入一个主键值（通常是Long型），来获取具体的记录信息，在Macula平台中，为了简化这种操作，对于已定义的Domain类，可以通过已定义的ConversionService直接转换。
 
- 对应的applicationContext-mvc.xml中配置如下：
+对应的applicationContext-mvc.xml中配置如下：
 
- ```xml
-   <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+```xml
+<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
       <property name="converters">
           <list>
               <bean class="org.macula.core.mvc.RepositoryConverter" />
           </list>
       </property>
    </bean>
-   ```
+```
 
-   配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
+配置该转化后，需要转化的类型必须实现Persistable接口，并且定义了相对应的JpaRepository，否则也不能正常转换。
 
-   _**重要**_
+_**重要**_
 
-   _除了加入该ConversionService外，还需要注意：_
+_除了加入该ConversionService外，还需要注意：_
 
-   * _普通的VO对象不要实现Persistable接口，即不能使用该转换_
-   * _待转化类必须实现Persistable接口_
-   * _该转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值_
+* _普通的VO对象不要实现Persistable接口，即不能使用该转换_
+* _待转化类必须实现Persistable接口_
+* _该转换Domain对象，在Spring上下文中，已经定义了相应的JpaRepository Bean，用来通过主键载入该对象值_
 
-     _**例 2. 通过传入主键，直接转化为相应的对象**_
+  _**例 2. 通过传入主键，直接转化为相应的对象**_
 
-     ```java
-     @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
-     public User edit(@PathVariable("userId") User user) {
-         return user;
-     }
-     ```
+  ```java
+  @RequestMapping(value = "/test/user/{userId}/edit", method = RequestMethod.GET)
+  public User edit(@PathVariable("userId") User user) {
+      return user;
+  }
+  ```
 
-     如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
+  如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
 
-     当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>的实现。`
-
+  当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>的实现。`
 
 
 ### ExcelView
