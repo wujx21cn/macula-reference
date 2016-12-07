@@ -43,7 +43,6 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 * 所有的请求和响应数据编码皆为utf-8格式，url里的所有参数值请做urlencode编码。如果请求的Content-Type是application/x-www-form-urlencoded， http body里的所有参数值也做urlencode编码；如果是multipart/form-data格式，每个表单字段的参数值无需编码,但每个表单字段的charset部分需要指定为utf-8。
 
-
 * 所有api请求内的日期格式都为ISO8601标准，如yyyy-MM-dd'T'HH:mm:ss.SSS'Z'，注意小时格式是24小时制，例如：2008-03-12T18:23:43.233Z。响应内的日期格式和返回格式相同。
 
 * 所有api请求参数内的format\(即返回格式\)可选值为json,xml,默认json。（暂时只支持JSON）
@@ -53,80 +52,11 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 * 请注意API的请求方式，非指定方式API不响应。
 
 
-## 输入输出类型
+## 输入参数到表单key的转换规则
 
 OpenApi标准响应应该是如下类型：
 
-响应类型基类：
 
-```java
-public class Response {
-/** 是否成功标识 */
-private boolean success;
-
-/** 系统级错误代码 */
-private String errorCode;
-/** 系统级错误信息 */
-private String errorMessage;
-
-/** 业务级错误代码 */
-private String exceptionCode;
-/** 业务级错误信息 */
-private String exceptionMessage;
-
-/** 异常详细信息 */
-private String exceptionStack;
-
-/** 服务端重定向信息 */
-private String redirection;
-
-/** 校验结果信息 */
-private List<FieldError> validateErrors;
-}
-```
-
-单结果集响应
-
-```java
-public class ExecuteResponse<T> extends Response {
-/** 结果信息 */
-private T returnObject;
-}
-```
-
-多行结果集响应
-
-```java
-public class PageResponse<T> extends Response {
-/** 本次请求的记录数 */
-private int size;
-/** 当前页码，从零开始 */
-private int number;
-/** 总记录数 */
-private long totalElements;
-/** 总页数 */
-private int totalPages;
-/** 本页的总记录数 */
-private int numberOfElements;
-/** 是否首页 */
-private boolean firstPage;
-/** 是否最后页 */
-private boolean lastPage;
-/** 内容列表 */
-private List<T> content;
-}
-```
-
-字段错误类型
-
-```java
-public class FieldError {
-// 元素名，与页面元素名一致
-private String element;
-// 错误信息
-private String message;
-}
-```
 
 通用条件输入类型
 
@@ -295,6 +225,79 @@ Open API的返回分为正常返回和异常返回。
 ```
 
 在正常返回数据时，如果有警告或提示信息，则上述正常返回的数据中也会含有类似异常返回的数据字段。
+
+对应Java类如下：
+
+响应类型基类：
+
+```java
+public class Response {
+/** 是否成功标识 */
+private boolean success;
+
+/** 系统级错误代码 */
+private String errorCode;
+/** 系统级错误信息 */
+private String errorMessage;
+
+/** 业务级错误代码 */
+private String exceptionCode;
+/** 业务级错误信息 */
+private String exceptionMessage;
+
+/** 异常详细信息 */
+private String exceptionStack;
+
+/** 服务端重定向信息 */
+private String redirection;
+
+/** 校验结果信息 */
+private List<FieldError> validateErrors;
+}
+```
+
+单结果集响应
+
+```java
+public class ExecuteResponse<T> extends Response {
+/** 结果信息 */
+private T returnObject;
+}
+```
+
+多行结果集响应
+
+```java
+public class PageResponse<T> extends Response {
+/** 本次请求的记录数 */
+private int size;
+/** 当前页码，从零开始 */
+private int number;
+/** 总记录数 */
+private long totalElements;
+/** 总页数 */
+private int totalPages;
+/** 本页的总记录数 */
+private int numberOfElements;
+/** 是否首页 */
+private boolean firstPage;
+/** 是否最后页 */
+private boolean lastPage;
+/** 内容列表 */
+private List<T> content;
+}
+```
+
+字段错误类型
+
+```java
+public class FieldError {
+// 元素名，与页面元素名一致
+private String element;
+// 错误信息
+private String message;
+}
+```
 
 ## Open API的配置
 
