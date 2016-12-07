@@ -10,9 +10,14 @@
 
    ```java
    public interface UserPrincipal extends UserDetails, Principal {
+
    }
 
-    public class UserPrincipalImpl extends AbstractUserPrincipal {
+   public abstract class AbstractUserPrincipal implements UserPrincipal {
+
+   }
+
+   public class UserPrincipalImpl extends AbstractUserPrincipal {
        /**
         * 获取当前用户名
         */
@@ -192,7 +197,7 @@
        public void addAttribute(String attribute, Object value) {
            this.attributes.put(attribute, value);
        }
-    }
+   }
    ```
 
 2. 用户信息的获取
