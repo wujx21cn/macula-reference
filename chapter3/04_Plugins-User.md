@@ -1,5 +1,7 @@
 # 用户相关
 
+登录后安全相关的信息基本都可以同通过SecurityUtils获得。
+
 ## 用户凭据UserPrincipal
 
 实际上，只需要通过用户名，即可通过UserContextFactory构建出用户上下文信息，对于已登录的用户，可以通过SecurityUtils.getUserDetails\(\)获取用户信息。通过用户上下文可方便的得到一些用户相关信息。
@@ -418,8 +420,4 @@
 _**重要**_
 
 _对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。_
-
-
-
-
 
