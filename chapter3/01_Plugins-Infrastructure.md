@@ -419,15 +419,7 @@ _**重要**_
 
 _对于登录用户的UserPrincipal来说，其信息是与用户登录Session相关的，在Session失效后，其UserPrincipal将自动失效。_
 
-## 用户信息解析
 
-用户信息通过UserContext.resolve方法获取，它会收集所有的ValueEntryResolver实现，并按照Ordered顺序，逐一进行判断，如果对应的ValueEntryResolver能够解析，那么将返回对应的值。
 
-由于UserContext是所有解析时的根，所以其自带的user属性将可以直接被解析。
 
-## 表达式说明
-
-在用户对资源的决策上，使用的表达式采用直接使用Spring Expression的方式，通过UserContext接口可得到Spring的执行上下文EvaluationContext。对于该执行上下文的数据提供者由UserContext包装，可访问的数据包括：
-
-具体的表达式写法以及使用方式可参考Spring Expression内容。
 
