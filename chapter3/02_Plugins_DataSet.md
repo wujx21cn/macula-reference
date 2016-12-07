@@ -62,6 +62,8 @@
 
 code和label对应着前端下拉框中的code和显示的数据。
 
+_DataParam也可以通过在表达式中写入\[ref=需要引用的DataParam的Code\]的方式来覆盖设置的Value值。_
+
 ## 数据集（DataSet）
 
 ### 数据集表达式
@@ -248,7 +250,7 @@ public interface DataSetLoader extends DataLoader<DataSet> {
 }
 ```
 
-上一节提到的数据库载入以及XML载入就是通过DataSetLoader的两个实现类DbDataSetLoaderImpl和XmlDataSetLoaderImpl完成的。
+上节提到的数据库载入以及XML载入就是通过DataSetLoader的两个实现类DbDataSetLoaderImpl和XmlDataSetLoaderImpl完成的。
 
 _**重要**_
 
@@ -302,5 +304,5 @@ _一个通过XML定义DataParam的例子：_
 ```
 
 _DataParam的XML文件定义的路径为：resources/data/模块名/XXX-dataparam.xml  
-DataParam也可以通过在表达式中写入\[ref=需要引用的DataParam的Code\]的方式来覆盖设置的Value值。_
+_
 
