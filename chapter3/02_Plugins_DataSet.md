@@ -66,103 +66,103 @@ code和label对应着前端下拉框中的code和显示的数据。
 
 ### 数据集表达式
 
-   表达式可以是一个SQL语句，也可以是包含了Freemarker、Spring EL等表达式的混搭模式的字符串，表达式的内容是任意的，只要下面提到的处理器能处理。需要注意的事DataSet的目的是为了提供一个数据集合，所以表达式往往是一个SQL Select语句。
+表达式可以是一个SQL语句，也可以是包含了Freemarker、Spring EL等表达式的混搭模式的字符串，表达式的内容是任意的，只要下面提到的处理器能处理。需要注意的事DataSet的目的是为了提供一个数据集合，所以表达式往往是一个SQL Select语句。
 
-   在特殊情况下，数据集是静态的Key-Value集合，此时数据集可以不需要引用数据源。
-   ```
-   name:Wilson|name:Jokeway
-   ```
+在特殊情况下，数据集是静态的Key-Value集合，此时数据集可以不需要引用数据源。
 
-   形成的最终数据集为：
+```
+name:Wilson|name:Jokeway
+```
 
-     ```java
-     List<Object[]> {
+形成的最终数据集为：
+
+```java
+List<Object[]> {
        Object[] { "name", "Wilson"},
        Object[] { "name", "Jokeway"}
      }
-     ```
+```
 
-  表达式还可以写Freemarker的片段，完全遵循Freemarker的语法。由于在DataSet处理器中，总是传入了UserContext上下文，所以在Freemarker表达式中，默认可以使用的有user变量，以及UserContext中可被解析的变量，均可在Freemarker表达式中解析。
+表达式还可以写Freemarker的片段，完全遵循Freemarker的语法。由于在DataSet处理器中，总是传入了UserContext上下文，所以在Freemarker表达式中，默认可以使用的有user变量，以及UserContext中可被解析的变量，均可在Freemarker表达式中解析。
 
-  例如，UserContext中的user为{name: Jokeway}，并且能够解析Country属性为String\("China"\)，那么下面的表达式：
+例如，UserContext中的user为{name: Jokeway}，并且能够解析Country属性为String\("China"\)，那么下面的表达式：
 
-     ```
-     我的名字是${user.name}
+```
+我的名字是${user.name}
      <#if xyz == 'China'>
       ，你好来自中国的朋友！
      </#if>
-     ```
+```
 
-   将被最终解析为：
+将被最终解析为：
 
-     ```
-     我的名字是Jokeway
+```
+我的名字是Jokeway
      ，你好来自中国的朋友！
-     ```
+```
 
-   Macula的DataSet表达式基于Spring EL，并在Spring EL的基础上加入了自定义部分，具体如下：
+Macula的DataSet表达式基于Spring EL，并在Spring EL的基础上加入了自定义部分，具体如下：
 
-   * \#\(表达式\)\#
+* \#\(表达式\)\#
 
-       这种写法，Macula认为需要将表达式解析为动态的一个变量替换（如：ptoken1\)，并将表达式的结果与该变量名放入到UserContext的Map中，形成{ptoken1: 表达式的值}的方式。
+  这种写法，Macula认为需要将表达式解析为动态的一个变量替换（如：ptoken1\)，并将表达式的结果与该变量名放入到UserContext的Map中，形成{ptoken1: 表达式的值}的方式。
 
-   _**注意**_
+  _**注意**_
 
-   _一般来讲，这类方式用来处理SQL语句中的条件部分，可以通过JDBC的setParameter方式来设置参数值的情况下使用。_
+  _一般来讲，这类方式用来处理SQL语句中的条件部分，可以通过JDBC的setParameter方式来设置参数值的情况下使用。_
 
- * \#\[表达式\]\#
+  * \#\[表达式\]\#
 
-   这种写法，Macula认为需要将表达式解析为一个字符串。
+  这种写法，Macula认为需要将表达式解析为一个字符串。
 
-   例如，假如UserContext中能将China变量解析为"中国"，那么：
+  例如，假如UserContext中能将China变量解析为"中国"，那么：
 
-       ```
-       我是#[China]#人
-       ```
+  ```
+  我是#[China]#人
+  ```
 
-       将被解析为：
+  将被解析为：
 
-       ```
-       我是中国人
-       ```
+  ```
+  我是中国人
+  ```
 
-   如果表达式解析出来是一个集合，则将集合中的元素以逗号分隔的形式展开（主要是基于SQL的特点才这样设计），还是上面的例子，如果China解析出来为`List<Integer>{1,2,3}，那么整个结果将被解析为：`
+  如果表达式解析出来是一个集合，则将集合中的元素以逗号分隔的形式展开（主要是基于SQL的特点才这样设计），还是上面的例子，如果China解析出来为`List<Integer>{1,2,3}，那么整个结果将被解析为：`
 
-       ```
-       我是1,2,3人
-       ```
+  ```
+  我是1,2,3人
+  ```
 
-   * \#\['表达式'\]\#
+* \#\['表达式'\]\#
 
-   Macula之所以提供这个表达式，主要用于SQL语句解析时，使用IN条件下，需要为表达式中的每个数据都增加引号的情况。
+  Macula之所以提供这个表达式，主要用于SQL语句解析时，使用IN条件下，需要为表达式中的每个数据都增加引号的情况。
 
-   还是上面的例子，如果使用：
+  还是上面的例子，如果使用：
 
-       ```
-       我是#['China']#人
-       ```
+  ```
+  我是#['China']#人
+  ```
 
-       将被解析为：
+  将被解析为：
 
-       ```
-       我是'中国'人
-       ```
+  ```
+  我是'中国'人
+  ```
 
-       和
+  和
 
-       ```
-       我是'1','2','3'人
-       ```
+  ```
+  我是'1','2','3'人
+  ```
 
-       _**注意**_
+  _**注意**_
 
-       _这种方式在SQL中IN操作情况下特别有用。_
+  _这种方式在SQL中IN操作情况下特别有用。_
 
 
 _**重要**_
 
 _DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替换为''，以避免SQL注入的风险。当然，为了尽可能的避免SQL注入风险，在可以使用\#\(\)\#的地方，不要使用\#\[\]\#。_
-
 
 ### 数据集参数（DataArg）
 
@@ -189,18 +189,40 @@ _DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替�
 
    考虑到数据集定义的可移植性，以及各系统间同步时的便捷性，增加了DataSet的XML定义方式。其定义模型参考了Spring的Bean定义模型，通过增加Spring的Bean Handler处理以及Schema的限制，实现DataSet的定义。
 
-   在XML中定义的DataSet，其载入方式与Spring ApplicationContext初始化方式一致，即每个DataSet即为一个Spring Bean。由于DataSet的数量众多，以及为了使应用的服务Bean与DataSet分开，DataSet的XML定义将遵循相应的命名规则一致载入。XML文件的命名规则为：
+   在XML中定义的DataSet，其载入方式与Spring ApplicationContext初始化方式一致，即每个DataSet即为一个Spring Bean。由于DataSet的数量众多，以及为了使应用的服务Bean与DataSet分开，DataSet的XML定义将遵循相应的命名规则一致载入。XML文件的命名规则为src/main/resources/data/macula-base/XXX-dataset.xml：
 
    ```
-   src/main/resources/data/macula-base/XXX-dataset.xml
+   	<dataset id="TEST_XML_DATA_SET_CODE" name="XML配置DataSet测试">
+   		<expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
+   		<pagable>true</pagable>
+   		<dataSource>macula_ds</dataSource>
+   		<dataArgs>
+   			<dataArg label="代码" name="code">
+   				<dataType>String</dataType>
+   				<fieldControl>Text</fieldControl>
+   				<dataParam>TEST_PARAM_XX</dataParam>
+   			</dataArg>
+   		</dataArgs>
+   	</dataset>
+
+   	<dataset id="TEST_XML_DATA_SET_CODE2" name="XML配置DataSet测试2">
+   		<expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
+   		<dataSource>macula_ds</dataSource>
+   		<dataArgs>
+   			<dataArg label="代码" name="code">
+   				<dataType>String</dataType>
+   				<fieldControl>Text</fieldControl>
+   			</dataArg>
+   		</dataArgs>
+   	</dataset>
    ```
 
 
+### 
 
-3. 表达式引用
+### 表达式引用
 
-   可以通过在表达式中写入\[ref=需要引用的其他DataSet的Code\]的方式来进行引用。
-
+可以通过在表达式中写入\[ref=需要引用的其他DataSet的Code\]的方式来进行引用。
 
 ### 数据集载入方式
 
