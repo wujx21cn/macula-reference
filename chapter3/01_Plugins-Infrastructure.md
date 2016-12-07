@@ -9,185 +9,187 @@
    用户接口是提供登录用户（或指定用户）信息的主要方式，也可构建出用户上下文信息。
 
    ```java
-   	/**
-   	 * 获取当前用户名
-   	 */
-   	@Override
-   	public String getName() {
-   		return getUsername();
-   	}
+   public class UserPrincipalImpl extends AbstractUserPrincipal {
+       /**
+        * 获取当前用户名
+        */
+       @Override
+       public String getName() {
+           return getUsername();
+       }
 
-   	@Override
-   	public int hashCode() {
-   		return getUsername().hashCode();
-   	}
-   	
-   	@Override
-   	public String toString() {
-   		return getName();
-   	}
-   	
-   	@Override
-   	public boolean equals(Object rhs) {
-   		if (rhs instanceof UserPrincipalImpl) {
-   			return getUsername().equals(((UserPrincipalImpl) rhs).getUsername());
-   		}
-   		return false;
-   	}
+       @Override
+       public int hashCode() {
+           return getUsername().hashCode();
+       }
 
-   	//~~~~~~~~~~~~~~~~~~~ for UserDetails ~~~~~~~~~~~~~~~~~~~~~~~~~//
-   	/**
-   	 * 用户的角色集合
-   	 */
-   	@Override
-   	@JsonIgnore
-   	public Collection<? extends GrantedAuthority> getAuthorities() {
-   		if (authorities == null || authorities.isEmpty()) {
-   			Collection<Role> roles = this.getRoles();
-   			Collection<String> roleCodes = new ArrayList<String>();
-   			for (Role role : roles) {
-   				if (!role.isOpposite()) {
-   					roleCodes.add(role.getCode());
-   				} else {
-   					roleCodes.add(InnerSecurityUtils.createOppositeRoleCode(role.getCode()));
-   				}
-   			}
-   			List<GrantedAuthority> tmpAuthorities = AuthorityUtils.createAuthorityList(roleCodes
-   					.toArray(new String[roleCodes.size()]));
-   			authorities = Collections.unmodifiableCollection(tmpAuthorities);
-   		}
-   		return authorities;
-   	}
-   	
-   	/**
-   	 * 当前用户名
-   	 */
-   	@Override
-   	public String getUsername() {
-   		return this.username;
-   	}
+       @Override
+       public String toString() {
+           return getName();
+       }
 
-   	/**
-   	 * 当前用户密码，不会被JSON序列化
-   	 */
-   	@Override
-   	@JsonIgnore
-   	public String getPassword() {
-   		return password;
-   	}
+       @Override
+       public boolean equals(Object rhs) {
+           if (rhs instanceof UserPrincipalImpl) {
+               return getUsername().equals(((UserPrincipalImpl) rhs).getUsername());
+           }
+           return false;
+       }
 
-   	/**
-   	 * 账号是否未过期
-   	 */
-   	@Override
-   	public boolean isAccountNonExpired() {
-   		Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_EXPIRED_ATTR);
-   		return r != null ? r.booleanValue() : true;
-   	}
+       //~~~~~~~~~~~~~~~~~~~ for UserDetails ~~~~~~~~~~~~~~~~~~~~~~~~~//
+       /**
+        * 用户的角色集合
+        */
+       @Override
+       @JsonIgnore
+       public Collection<? extends GrantedAuthority> getAuthorities() {
+           if (authorities == null || authorities.isEmpty()) {
+               Collection<Role> roles = this.getRoles();
+               Collection<String> roleCodes = new ArrayList<String>();
+               for (Role role : roles) {
+                   if (!role.isOpposite()) {
+                       roleCodes.add(role.getCode());
+                   } else {
+                       roleCodes.add(InnerSecurityUtils.createOppositeRoleCode(role.getCode()));
+                   }
+               }
+               List<GrantedAuthority> tmpAuthorities = AuthorityUtils.createAuthorityList(roleCodes
+                       .toArray(new String[roleCodes.size()]));
+               authorities = Collections.unmodifiableCollection(tmpAuthorities);
+           }
+           return authorities;
+       }
 
-   	/**
-   	 * 账号是否没有被锁定
-   	 */
-   	@Override
-   	public boolean isAccountNonLocked() {
-   		Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_LOCKED_ATTR);
-   		return r != null ? r.booleanValue() : true;
-   	}
+       /**
+        * 当前用户名
+        */
+       @Override
+       public String getUsername() {
+           return this.username;
+       }
 
-   	/**
-   	 * 凭据是否未过期
-   	 */
-   	@Override
-   	public boolean isCredentialsNonExpired() {
-   		Boolean r = (Boolean) this.getAttributeValue(CREDENTIALS_NON_EXPIRED_ATTR);
-   		return r != null ? r.booleanValue() : true;
-   	}
+       /**
+        * 当前用户密码，不会被JSON序列化
+        */
+       @Override
+       @JsonIgnore
+       public String getPassword() {
+           return password;
+       }
 
-   	/**
-   	 * 是否有效用户
-   	 */
-   	@Override
-   	public boolean isEnabled() {
-   		Boolean r = (Boolean) this.getAttributeValue(ENABLED_ATTR);
-   		return r != null ? r.booleanValue() : true;
-   	}
+       /**
+        * 账号是否未过期
+        */
+       @Override
+       public boolean isAccountNonExpired() {
+           Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_EXPIRED_ATTR);
+           return r != null ? r.booleanValue() : true;
+       }
 
-   	// ~~~~~~~~~~~~~~~~~~ extend attribute~~~~~~~~~~~~~~~~~~~~~~~~~//
-   	/**
-   	 * 用户姓名
-   	 */
-   	@Override
-   	public String getNickname() {
-   		String nickname = (String) getAttributeValue(NICKNAME_ATTR);
-   		return nickname != null ? nickname : getUsername();
-   	}
+       /**
+        * 账号是否没有被锁定
+        */
+       @Override
+       public boolean isAccountNonLocked() {
+           Boolean r = (Boolean) this.getAttributeValue(ACCOUNT_NON_LOCKED_ATTR);
+           return r != null ? r.booleanValue() : true;
+       }
 
-   	/**
-   	 * 用户所在地区
-   	 */
-   	@Override
-   	public Locale getLocale() {
-   		String locale = (String) getAttributeValue(LOCALE_ATTR);
-   		if (locale != null) {
-   			return new Locale(locale);
-   		}
-   		return null;
-   	}
+       /**
+        * 凭据是否未过期
+        */
+       @Override
+       public boolean isCredentialsNonExpired() {
+           Boolean r = (Boolean) this.getAttributeValue(CREDENTIALS_NON_EXPIRED_ATTR);
+           return r != null ? r.booleanValue() : true;
+       }
 
-   	/**
-   	 * 是否是一个需要锁屏的用户
-   	 */
-   	@Override
-   	public boolean isIllegalRequest() {
-   		String illegalRequest = (String) getAttributeValue(ILLEGAL_REQUEST_ATTR);
-   		if (illegalRequest != null) {
-   			return Boolean.valueOf(illegalRequest);
-   		}
-   		return false;
-   	}
+       /**
+        * 是否有效用户
+        */
+       @Override
+       public boolean isEnabled() {
+           Boolean r = (Boolean) this.getAttributeValue(ENABLED_ATTR);
+           return r != null ? r.booleanValue() : true;
+       }
 
-   	/**
-   	 * 用户登录的验证类型（password、dyna_code、service_pass等）
-   	 */
-   	@Override
-   	public String getLoginAuthType() {
-   		String authType = (String) getAttributeValue(AUTH_TYPE);
-   		if (StringUtils.isEmpty(authType)) {
-   			authType = MaculaConstants.AUTH_TYPE_UNKNOWN;
-   		}
-   		return authType;
-   	}
-   	
-   	/**
-   	 * 登录终端类型（PC、MOBILE、KIOSK）
-   	 */
-   	@Override
-   	public String getLoginTerminalType() {
-   		String terminalType = (String) getAttributeValue(TERMINAL_TYPE);
-   		if (StringUtils.isEmpty(terminalType)) {
-   			terminalType = MaculaConstants.TERMINAL_PC;
-   		}
-   		return terminalType;
-   	}
-   	
-   	// ~~~~~~~~~~~~~~~~~~~~~~~~~~ cas attributes ~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-   	
-   	@Override
-   	public Object getAttributeValue(String attribute) {
-   		return this.attributes.get(attribute);
-   	}
+       // ~~~~~~~~~~~~~~~~~~ extend attribute~~~~~~~~~~~~~~~~~~~~~~~~~//
+       /**
+        * 用户姓名
+        */
+       @Override
+       public String getNickname() {
+           String nickname = (String) getAttributeValue(NICKNAME_ATTR);
+           return nickname != null ? nickname : getUsername();
+       }
 
-   	@Override
-   	public void addAttributes(Map<String, Object> attributes) {
-   		if (attributes != null) {
-   			this.attributes.putAll(attributes);
-   		}
-   	}
-   	
-   	@Override
-   	public void addAttribute(String attribute, Object value) {
-   		this.attributes.put(attribute, value);
-   	}
+       /**
+        * 用户所在地区
+        */
+       @Override
+       public Locale getLocale() {
+           String locale = (String) getAttributeValue(LOCALE_ATTR);
+           if (locale != null) {
+               return new Locale(locale);
+           }
+           return null;
+       }
+
+       /**
+        * 是否是一个需要锁屏的用户
+        */
+       @Override
+       public boolean isIllegalRequest() {
+           String illegalRequest = (String) getAttributeValue(ILLEGAL_REQUEST_ATTR);
+           if (illegalRequest != null) {
+               return Boolean.valueOf(illegalRequest);
+           }
+           return false;
+       }
+
+       /**
+        * 用户登录的验证类型（password、dyna_code、service_pass等）
+        */
+       @Override
+       public String getLoginAuthType() {
+           String authType = (String) getAttributeValue(AUTH_TYPE);
+           if (StringUtils.isEmpty(authType)) {
+               authType = MaculaConstants.AUTH_TYPE_UNKNOWN;
+           }
+           return authType;
+       }
+
+       /**
+        * 登录终端类型（PC、MOBILE、KIOSK）
+        */
+       @Override
+       public String getLoginTerminalType() {
+           String terminalType = (String) getAttributeValue(TERMINAL_TYPE);
+           if (StringUtils.isEmpty(terminalType)) {
+               terminalType = MaculaConstants.TERMINAL_PC;
+           }
+           return terminalType;
+       }
+
+       // ~~~~~~~~~~~~~~~~~~~~~~~~~~ cas attributes ~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+       @Override
+       public Object getAttributeValue(String attribute) {
+           return this.attributes.get(attribute);
+       }
+
+       @Override
+       public void addAttributes(Map<String, Object> attributes) {
+           if (attributes != null) {
+               this.attributes.putAll(attributes);
+           }
+       }
+
+       @Override
+       public void addAttribute(String attribute, Object value) {
+           this.attributes.put(attribute, value);
+       }
+    }
    ```
 
 2. 用户信息的获取
@@ -219,7 +221,8 @@
      ```
 
 
-3. 用户上下文获取
+
+1. 用户上下文获取
 
    * 用户上下文接口
 
