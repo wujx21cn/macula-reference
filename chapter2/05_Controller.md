@@ -817,13 +817,13 @@ macula框架在Freemarker中默认有如下变量：
 
 ### Freemarker内置方法
 
-* getDataParams
+* getDataParams\(dataParamCode\)  返回FieldOption类型的code/value参数列表；
 
-* getMenuBreadcrumb
+* getMenuBreadcrumb\(rootType, menuCode\) 返回指定菜单的面包屑结构菜单，参考ui宏
 
-* hasAccess
+* hasAccess\(url, method\) 返回指定的url和method是否可以访问
 
-* getAbsoluteUrl
+* getAbsoluteUrl\(base, url, default\) 返回url的绝对路径，如果url不是以http/https开头，会自动加上base
 
 
 ## 国际化
