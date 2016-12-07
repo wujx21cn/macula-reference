@@ -250,3 +250,11 @@ _**重要**_
 
 _与DataSet相同，数据源（DataSource）以及数据参数（DataParam）都采用了类似的定义和加载方式。_
 
+## DataSetUtils
+
+为了在API层面使用DataSet，macula提供了DataSetUtils类，以便可以获取所定义的DataSet数据集
+
+
+
+
+
