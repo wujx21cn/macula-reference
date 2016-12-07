@@ -39,7 +39,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 
 
-## OpenAPI签名
+## OpenAPI调用规则
 
 Open API接口调用注意事项：
 
@@ -221,8 +221,6 @@ user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
 List&lt;User&gt; users应转为users\[0\].userName=xxx、users\[1\].userName=xxx等的样式；
 
 Map&lt;String, User&gt; maps 应转为maps\['key1'\].userName=xxx、maps\['key2'\].userName=xxx等的样式。
-
-
 
 ## Open API的返回
 
