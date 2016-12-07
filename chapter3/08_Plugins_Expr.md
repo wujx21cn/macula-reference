@@ -14,6 +14,7 @@ macula使用标准的Spring EL表达式，具体语法可以参考。macula支�
 * user：代表是当前用户的userPrincipal
 * 系统参数：为参数表中定义的内容，引用时使用DataParam$前缀加DataParamCode的方式。
 * 自定义参数：通过new UserContextWrapper\(userContext, params\)添加自定义参数。
+* 实现ValueEntryResolver接口扩展表达式。
 
 ## 实现ValueEntryResolver接口
 
