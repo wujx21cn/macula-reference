@@ -86,13 +86,7 @@ code和label对应着前端下拉框中的code和显示的数据。
      }
      ```
 
-     _**注意**_
-
-     _如果DataSet没有指定任何处理器链，并且没有指定数据源，将默认使用该处理器来获取数据结果集。_
-
-   * FreemarkerDataHandler
-
-     该处理器将输入的表达式当作Freemarker的片段来处理，完全遵循Freemarker的语法。由于在处理器中，总是传入了UserContext上下文，所以在Freemarker表达式中，默认可以使用的有user变量，以及UserContext中可被解析的变量，均可在Freemarker表达式中解析。
+  表达式还可以写Freemarker的片段，完全遵循Freemarker的语法。由于在DataSet处理器中，总是传入了UserContext上下文，所以在Freemarker表达式中，默认可以使用的有user变量，以及UserContext中可被解析的变量，均可在Freemarker表达式中解析。
 
      例如，UserContext中的user为{name: Jokeway}，并且能够解析Country属性为String\("China"\)，那么下面的表达式：
 
@@ -110,9 +104,7 @@ code和label对应着前端下拉框中的code和显示的数据。
      ，你好来自中国的朋友！
      ```
 
-   * QueryParserDataHandler
-
-     该处理器是基于Macula的语法解析方式进行解析。Macula的表达式基于Spring EL，并在Spring EL的基础上加入了自定义部分，具体如下：
+    Macula的DataSet表达式基于Spring EL，并在Spring EL的基础上加入了自定义部分，具体如下：
 
      * \#\(表达式\)\#
 
