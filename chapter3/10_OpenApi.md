@@ -21,7 +21,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 | v | String | N | API协议版本号，默认是1.0 |
 | sign\_method | String | N | 签名算法，默认支持md5和hmac两种，不写就是md5 |
 
-* 应用级参数：根据规定的请求方式不同，应用级参数传递的方式不同，GET方式应用级参数附加在Open API的URL之后作为Query String传递，POST方式的应用级参数需使用FORM提交的方式传递。根据具体Open API的接口描述，输入参数即为应用级参数，根据输入参数类型的不同，参数名称需要按照下面的规则形成：
+* 应用级参数：根据规定的请求方式不同，应用级参数传递的方式不同，GET方式应用级参数附加在Open API的URL之后作为Query String传递，POST方式的应用级参数需使用FORM提交的方式传递。根据具体Open API的接口描述，输入参数即为应用级参数，根据输入参数类型的不同，参数名称需要按照下面的规则形成，可以参考展示层FormBean的绑定示例：
 
   * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
 
