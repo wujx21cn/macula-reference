@@ -64,7 +64,7 @@ code和label对应着前端下拉框中的code和显示的数据。
 
 ## 数据集（DataSet）
 
-### 数据集定义
+### 数据集表达式
 
 数据集表示通过数据源获取一个数据的集合。它主要由表达式、处理器链、数据源三部分来确定数据集的内容。
 
@@ -167,36 +167,7 @@ code和label对应着前端下拉框中的code和显示的数据。
 
 _**重要**_
 
-_该处理器所处理过的字符串均经过了SQL的过滤处理，即会将'替换为''，以避免SQL注入的风险。当然，为了尽可能的避免SQL注入风险，在可以使用\#\(\)\#的地方，不要使用\#\[\]\#。_
-
-* QueryExecutorHandler
-
-  对SQL语句表达式来说，最核心的处理器，经过该处理器的处理后，将SQL语句变为执行的结果数据集。
-
-
-1. **处理器链的配置**
-
-   在DataSet未明确指定处理器链时，所使用的处理器链为：
-
-   * 没有设置数据源：StaticOptionsDataHandler
-   * 设置了数据源：FreemarkerDataHandler、QueryParserDataHandler、QueryExecutorHandler
-
-     在DataSet的API中，getHandlerChain得到的数据格式如下（基于XStream）：
-
-     ```xml
-     <list>
-     <HandlerEntry>
-       <className>org.macula.base.data.handle.impl.FreemarkerDataHandler</className>
-     </HandlerEntry>
-     <HandlerEntry>
-       <className>org.macula.base.data.handle.impl.QueryParserDataHandler</className>
-     </HandlerEntry>
-     <HandlerEntry>
-       <className>org.macula.base.data.handle.impl.QueryExecutorHandler</className>
-     </HandlerEntry>
-     </list>
-     ```
-
+_DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替换为''，以避免SQL注入的风险。当然，为了尽可能的避免SQL注入风险，在可以使用\#\(\)\#的地方，不要使用\#\[\]\#。_
 
 
 ### 数据集参数（DataArg）
