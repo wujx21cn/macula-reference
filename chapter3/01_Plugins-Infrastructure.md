@@ -365,11 +365,12 @@
 
 
 
-1. 用户上下文获取
+## 用户上下文获取
 
-   * 用户上下文接口
+1. 用户上下文接口
 
-     ```java
+
+1. * ```java
      public interface UserContext {
 
        UserPrincipal getUser();
@@ -395,24 +396,24 @@
      }
      ```
 
-   * 通过UserPrincipal直接获取
 
-     如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
+2. 通过UserPrincipal直接获取
 
-     ```java
-     UserContext userContext = userPrincipal.createUserContext();
-     ```
+   如果已经有了UserPrincipal信息，可通过UserPrincipal信息直接获取。
 
-   * 通过UserContextFactory构建
+   ```java
+   UserContext userContext = userPrincipal.createUserContext();
+   ```
 
-     如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
+3. 通过UserContextFactory构建
 
-     ```java
-     String userName = "Wilson";
+   如果仅有用户的用户名信息，可通过UserContextFactory构建UserContext。
 
-     UserContext userContext = userContextFactory.createContext(userName);
-     ```
+   ```java
+   String userName = "Wilson";
 
+   UserContext userContext = userContextFactory.createContext(userName);
+   ```
 
 
 _**重要**_
