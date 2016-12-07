@@ -71,3 +71,15 @@ return exp.getValue(EvaluationContext, Result.class);
 
 在需要解析表达式的地方都是如上述代码处理的。所以UserContext中的getXXX\(\)都是可以作为表达式中的变量的，比如getUser\(\)方法可以在表达式中直接写成 user，获取用户名可以写表达式“user.name"，user就是UserPrincipal。
 
+上述evaluationContext还注册了：
+
+* user.ORG等价于user.getCatlogCodes\('xxx'\)；
+
+
+* user.MENU等价于user.getResourceCodes\('xxx'\)；
+
+* 不能识别的属性会调用UserContext中的resolve方法，该方法调用ValueEntryResolver接口的实现去解析表达式。
+
+
+
+
