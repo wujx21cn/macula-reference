@@ -14,19 +14,19 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
   根据具体Open API的接口描述，输入参数即为应用级参数，下面详细讲述输入参数怎样组织成应用级参数：
     
-    * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
+   * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
     
-    * POJO对象：如User，需要形成“参数名.属性名=值”的键值对传递；
+   * POJO对象：如User，需要形成“参数名.属性名=值”的键值对传递；
     
-    * 原子类型数组：如String[]、List<String>，需要形成“参数名=值0”、“参数名=值1”等的键值对传递；
+   * 原子类型数组：如String[]、List<String>，需要形成“参数名=值0”、“参数名=值1”等的键值对传递；
     
-    * POJO对象数组：如User[]、List<User>，需要形成“参数名[index].属性名=值”等的键值对，index为数组下标；
+   * POJO对象数组：如User[]、List<User>，需要形成“参数名[index].属性名=值”等的键值对，index为数组下标；
     
-    * Map<String, String>：需要形成“参数名[key]=值”的键值对传递；
+   * Map<String, String>：需要形成“参数名[key]=值”的键值对传递；
     
-    * Map<String, POJO>：需要形成“参数名[key].属性名=值”的键值对传递；
+   * Map<String, POJO>：需要形成“参数名[key].属性名=值”的键值对传递；
     
-    * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名[index]=值”。
+   * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名[index]=值”。
     
 
     
