@@ -84,6 +84,9 @@ private String element;
 // 错误信息
 private String message;
 }
+```
+
+```java
 public class CommonCondition {
 /** 要查询的条件字段(或属性)名称 */
 private String name;
@@ -99,10 +102,12 @@ private Object value;
 /** 另一个条件值 */
 private Object anotherValue;
 }
+
 public enum DataType {
 Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
 Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
 }
+
 public enum CriteriaType {
 // like '%x'
 StartWith,
