@@ -17,7 +17,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 | sign |String  | Y |对API调用的所有参数签名，包括应用级参数  |
 |session  |String  | N |CAS的PT，如果是后台应用的调用接口，无需该参数，平台会使用appKey作为用户名判定应用的权限。如果有的话，则会根据PT解析出具体操作的用户，按照具体用户的权限评定是否可以访问该Open API。  |
 | format | String | N |目前支持xml，json格式，默认是json  |
-|  |  |  |  |
+| v | String |N  |API协议版本号，默认是1.0  |
 |  |  |  |  |
 
 * 应用级参数：根据规定的请求方式不同，应用级参数传递的方式不同，GET方式应用级参数附加在Open API的URL之后作为Query String传递，POST方式的应用级参数需使用FORM提交的方式传递。根据具体Open API的接口描述，输入参数即为应用级参数，下面详细讲述输入参数怎样组织成应用级参数：
