@@ -192,29 +192,29 @@ _DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替�
    在XML中定义的DataSet，其载入方式与Spring ApplicationContext初始化方式一致，即每个DataSet即为一个Spring Bean。由于DataSet的数量众多，以及为了使应用的服务Bean与DataSet分开，DataSet的XML定义将遵循相应的命名规则一致载入。XML文件的命名规则为src/main/resources/data/macula-base/XXX-dataset.xml：
 
    ```
-   	<dataset id="TEST_XML_DATA_SET_CODE" name="XML配置DataSet测试">
-   		<expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
-   		<pagable>true</pagable>
-   		<dataSource>macula_ds</dataSource>
-   		<dataArgs>
-   			<dataArg label="代码" name="code">
-   				<dataType>String</dataType>
-   				<fieldControl>Text</fieldControl>
-   				<dataParam>TEST_PARAM_XX</dataParam>
-   			</dataArg>
-   		</dataArgs>
-   	</dataset>
+   <dataset id="TEST_XML_DATA_SET_CODE" name="XML配置DataSet测试">
+           <expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
+           <pagable>true</pagable>
+           <dataSource>macula_ds</dataSource>
+           <dataArgs>
+               <dataArg label="代码" name="code">
+                   <dataType>String</dataType>
+                   <fieldControl>Text</fieldControl>
+                   <dataParam>TEST_PARAM_XX</dataParam>
+               </dataArg>
+           </dataArgs>
+   </dataset>
 
-   	<dataset id="TEST_XML_DATA_SET_CODE2" name="XML配置DataSet测试2">
-   		<expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
-   		<dataSource>macula_ds</dataSource>
-   		<dataArgs>
-   			<dataArg label="代码" name="code">
-   				<dataType>String</dataType>
-   				<fieldControl>Text</fieldControl>
-   			</dataArg>
-   		</dataArgs>
-   	</dataset>
+   <dataset id="TEST_XML_DATA_SET_CODE2" name="XML配置DataSet测试2">
+           <expressionText>select * from MA_BASE_DATA_SET where code=#(code)#</expressionText>
+           <dataSource>macula_ds</dataSource>
+           <dataArgs>
+               <dataArg label="代码" name="code">
+                   <dataType>String</dataType>
+                   <fieldControl>Text</fieldControl>
+               </dataArg>
+           </dataArgs>
+   </dataset>
    ```
 
 
