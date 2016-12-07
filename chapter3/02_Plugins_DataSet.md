@@ -192,12 +192,10 @@ _DataSet所处理过的字符串均经过了SQL的过滤处理，即会将'替�
    在XML中定义的DataSet，其载入方式与Spring ApplicationContext初始化方式一致，即每个DataSet即为一个Spring Bean。由于DataSet的数量众多，以及为了使应用的服务Bean与DataSet分开，DataSet的XML定义将遵循相应的命名规则一致载入。XML文件的命名规则为：
 
    ```
-   resources/data/macula-base/XXX-dataset.xml
+   src/main/resources/data/macula-base/XXX-dataset.xml
    ```
 
-   \`\`\`xml
 
-   \`\`\`
 
 3. 表达式引用
 
