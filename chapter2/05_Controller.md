@@ -685,7 +685,7 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 <!--当前用户名-->
 ${userPrincipal.getName()！""}
 <!--当前用户姓名-->
-${userPrincipal.getNickName()!""}
+${userPrincipal.getNickname()!""}
 ```
 
 ### 权限判断
