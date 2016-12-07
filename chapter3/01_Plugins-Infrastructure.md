@@ -18,6 +18,7 @@
    }
 
    public class UserPrincipalImpl extends AbstractUserPrincipal {
+      //~~~~~~~~~~~~~~~Principal~~~~~~~~~~~~~~~~~~~//
        /**
         * 获取当前用户名
         */
