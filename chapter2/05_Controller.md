@@ -663,30 +663,9 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 
 Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请访问 [Mower 官方网站](http://macula.top/mower/)。
 
-## FreeMarker内置变量
+## Macula宏
 
-下面我们来谈谈 Macula 前端开发中的一些经常遇到的疑点或难点。
-
-### 登录用户信息
-
-登录用户信息在登录时，我们可以通过实现 CustomUserLoginRepository 接口把用户信息放到UserPincipal的atrribute中，可以在Freemarker中通过如下获取，Freemaker中的userPrincipal对应UserPrincipal类：
-
-```
-<#if userPrincipal.getAttributeValue("userInfo")?exists>
-  <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
-</#if>
-
-<#if userInfo?exists>
-
-<#else>
-
-</#if>
-
-<!--当前用户名-->
-${userPrincipal.getName()！""}
-<!--当前用户姓名-->
-${userPrincipal.getNickname()!""}
-```
+为了方便开发，框架内置了一些常用的macula宏给freemarker使用
 
 ### 权限判断
 
@@ -778,6 +757,33 @@ _**&lt;@macula.writeDataParamsJs 'xxx'/&gt;可以通过逗号分隔多个参数�
 ```
 
 上述代码放入表单中，则会自动生成防止重复提交的token，如果要显示验证码，captcha输入true。
+
+## FreeMarker内置变量
+
+macula框架通过扩展freemarker提供了一些内置变量和方法给Freemarker模板使用。
+
+### 登录用户信息
+
+登录用户信息在登录时，我们可以通过实现 CustomUserLoginRepository 接口把用户信息放到UserPincipal的atrribute中，可以在Freemarker中通过如下获取，Freemaker中的userPrincipal对应UserPrincipal类：
+
+```
+<#if userPrincipal.getAttributeValue("userInfo")?exists>
+  <#assign userInfo = userPrincipal.getAttributeValue("userInfo")>
+</#if>
+
+<#if userInfo?exists>
+
+<#else>
+
+</#if>
+
+<!--当前用户名-->
+${userPrincipal.getName()！""}
+<!--当前用户姓名-->
+${userPrincipal.getNickname()!""}
+```
+
+### 
 
 ### 菜单
 
