@@ -6,6 +6,8 @@
 
 Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调用参数分为系统级参数和应用级参数。
 
+## Open API参数
+
 * 系统级参数：附加在Open API的URL之后，作为Query String传递
 
 **表 13.1. Open API请求系统级参数**
@@ -26,6 +28,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名[index]=值”。
 
+## 输入输出类型
 常见的输入输出类型：
 
 ```java
