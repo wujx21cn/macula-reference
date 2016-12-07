@@ -38,6 +38,29 @@ public interface ValueEntryResolver extends Ordered, Comparable<ValueEntryResolv
 
 需要注意的是，为了提高resolve接口对数据的解析速度，可以在resolve的实现中，对返回的ValueEntry设置合理的缓存级别。
 
+## 表达式解析
+
+表达式的解析都是通过UserContextImpl中的如下方法：
+
+```
+	@Override
+	public EvaluationContext createEvaluationContext() {
+		EvaluationContext evalutionContext = new StandardEvaluationContext(this);
+		// 可以通过user.ORG等获取数据，具体是调用user.getCatlogCodes('xxx')
+		evalutionContext.getPropertyAccessors().add(
+				new CustomMethodPropertyAccessor(UserPrincipal.class, "getCatalogCodes", UserContextStaticServiceHolder
+						.getSecurityCatalogService().getAvaliableProviderNames()));
+		// 可以通过user.MENU等获取数据，具体是调用user.getResourceCodes('xxx')
+		evalutionContext.getPropertyAccessors().add(
+				new CustomMethodPropertyAccessor(UserPrincipal.class, "getResourceCodes",
+						UserContextStaticServiceHolder.getSecurityResourceService().getAvaliableProviderNames()));
+		// 不能识别的属性会调用resolve
+		evalutionContext.getPropertyAccessors().add(
+				new CustomMethodPropertyAccessor(UserContext.class, "resolve", null));
+		return evalutionContext;
+	}
+```
+
 ## 
 
 
