@@ -204,7 +204,7 @@ Open API的返回分为正常返回和异常返回。
 
 * 正常返回ExecuteResponse<User>则JSON格式如下：
 
-    ```json
+    ```
     {
         /** 是否成功标识 */
     	"success" : true,
@@ -229,7 +229,7 @@ Open API的返回分为正常返回和异常返回。
 
 * 正常返回PageResponse<User>则JSON格式如下：
 
-    ```json
+    ```
     {
         /** 是否成功标识 */
         "success" : true,
@@ -254,7 +254,7 @@ Open API的返回分为正常返回和异常返回。
     
 * 异常返回时的JSON格式如下：
 
-    ```json
+    ```
     {
     	/** 是否成功标识 */
     	"success" : false,
