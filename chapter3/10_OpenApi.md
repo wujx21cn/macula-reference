@@ -39,11 +39,10 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 
 
-## OpenAPI调用规则
-
-Open API接口调用注意事项：
+## OpenAPI参数及签名规则
 
 * 所有的请求和响应数据编码皆为utf-8格式，url里的所有参数值请做urlencode编码。如果请求的Content-Type是application/x-www-form-urlencoded， http body里的所有参数值也做urlencode编码；如果是multipart/form-data格式，每个表单字段的参数值无需编码,但每个表单字段的charset部分需要指定为utf-8。
+
 
 * 所有api请求内的日期格式都为ISO8601标准，如yyyy-MM-dd'T'HH:mm:ss.SSS'Z'，注意小时格式是24小时制，例如：2008-03-12T18:23:43.233Z。响应内的日期格式和返回格式相同。
 
