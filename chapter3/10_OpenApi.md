@@ -127,7 +127,9 @@ Open API的返回分为正常返回和异常返回。
 
 在正常返回数据时，如果有警告或提示信息，则上述正常返回的数据中也会含有类似异常返回的数据字段。
 
-## OpenApiTemplate输入输出类型
+## OpenApiTemplate
+
+### 返回值
 
 响应类型基类：
 
@@ -199,6 +201,8 @@ private String element;
 private String message;
 }
 ```
+
+### 输入
 
 通用条件输入类型
 
