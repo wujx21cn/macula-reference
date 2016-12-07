@@ -202,14 +202,6 @@
 
 2. 用户信息的获取
 
-   * 通过HttpServletRequest获取
-
-     对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
-
-     ```java
-     UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
-     ```
-
    * 通过SecurityUtils获取
 
      对于已经登录的用户，可通过SecurityUtils来获取
@@ -228,7 +220,13 @@
      UserPrincipal userPrincipal = userContext.getUser();
      ```
 
+   * 通过HttpServletRequest获取
 
+    对于已经登录的用户，可以通过HttpServletRequest来直接获取用户上下文，如：
+
+    ```java
+    UserPrincipal principal = (UserPrincipal) request.getUserPrincipal();
+    ```
 
 1. 用户上下文获取
 
