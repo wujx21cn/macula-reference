@@ -421,7 +421,7 @@ _对于登录用户的UserPrincipal来说，其信息是与用户登录Session�
 
 ## 用户信息解析
 
-用户信息通过UserContext.resove方法获取，它会收集所有的ValueEntryResolver实现，并按照Ordered顺序，逐一进行判断，如果对应的ValueEntryResolver能够解析，那么将返回对应的值。
+用户信息通过UserContext.resolve方法获取，它会收集所有的ValueEntryResolver实现，并按照Ordered顺序，逐一进行判断，如果对应的ValueEntryResolver能够解析，那么将返回对应的值。
 
 由于UserContext是所有解析时的根，所以其自带的user属性将可以直接被解析。
 
