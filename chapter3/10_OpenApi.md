@@ -10,6 +10,255 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 **表 13.1. Open API请求系统级参数**
     
+* 应用级参数：根据规定的请求方式不同，应用级参数传递的方式不同，GET方式应用级参数附加在Open API的URL之后作为Query String传递，POST方式的应用级参数需使用FORM提交的方式传递。
 
+  根据具体Open API的接口描述，输入参数即为应用级参数，下面详细讲述输入参数怎样组织成应用级参数：
     
+   * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
     
+   * POJO对象：如User，需要形成“参数名.属性名=值”的键值对传递；
+    
+   * 原子类型数组：如String[]、List<String>，需要形成“参数名=值0”、“参数名=值1”等的键值对传递；
+    
+   * POJO对象数组：如User[]、List<User>，需要形成“参数名[index].属性名=值”等的键值对，index为数组下标；
+    
+   * Map<String, String>：需要形成“参数名[key]=值”的键值对传递；
+    
+   * Map<String, POJO>：需要形成“参数名[key].属性名=值”的键值对传递；
+    
+   * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名[index]=值”。
+    
+* 常见的输入输出类型：
+
+```java
+public class Response {
+/** 是否成功标识 */
+private boolean success;
+
+/** 系统级错误代码 */
+private String errorCode;
+/** 系统级错误信息 */
+private String errorMessage;
+
+/** 业务级错误代码 */
+private String exceptionCode;
+/** 业务级错误信息 */
+private String exceptionMessage;
+
+/** 异常详细信息 */
+private String exceptionStack;
+
+/** 服务端重定向信息 */
+private String redirection;
+
+/** 校验结果信息 */
+private List<FieldError> validateErrors;
+}
+public class ExecuteResponse<T> extends Response {
+/** 结果信息 */
+private T returnObject;
+}
+public class PageResponse<T> extends Response {
+/** 本次请求的记录数 */
+private int size;
+/** 当前页码，从零开始 */
+private int number;
+/** 总记录数 */
+private long totalElements;
+/** 总页数 */
+private int totalPages;
+/** 本页的总记录数 */
+private int numberOfElements;
+/** 是否首页 */
+private boolean firstPage;
+/** 是否最后页 */
+private boolean lastPage;
+/** 内容列表 */
+private List<T> content;
+}
+public class FieldError {
+// 元素名，与页面元素名一致
+private String element;
+// 错误信息
+private String message;
+}
+public class CommonCondition {
+/** 要查询的条件字段(或属性)名称 */
+private String name;
+/** 字段数据类型：Boolean, Integer, Long, Double, String, Timestamp, Date */
+private DataType dataType;
+/**
+* 比较符：StartWith, EndWith, Contains, NotContains, Equals, GreaterThan, GreaterOrEqual
+* LessThan, LessOrEqual, NotEqual, BeforeThan, AfterThan, Between, Is, In
+**/
+private CriteriaType criteriaType;
+/** 条件值 */
+private Object value;
+/** 另一个条件值 */
+private Object anotherValue;
+}
+public enum DataType {
+Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
+Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
+}
+public enum CriteriaType {
+// like '%x'
+StartWith,
+// like 'x%'
+EndWith,
+// like '%x%'
+Contains,
+// not like '%x%'
+NotContains,
+// = x
+Equals,
+// > x
+GreaterThan,
+// >= x
+GreaterOrEqual,
+// < x
+LessThan,
+// <= x
+LessOrEqual,
+// <> x
+NotEqual,
+// < x 早于
+BeforeThan,
+// > x 晚于
+AfterThan,
+// >= x1 and < x2
+Between,
+Is,
+// in ( x1, x2 )
+In ;
+}
+```
+
+下面举例说明，有如下POJO类
+
+```java
+public class User {
+private String userName;
+private String password;
+private Org org;
+private List<Org> orgs;
+private Map<String, String> params;
+private Map<String, Org> girls;
+private Date date;
+}
+public class Org {
+private String code;
+}
+```
+
+String[] codes参数应转为“codes=value1、codes=value2”；
+User user参数应该转为
+
+```java
+user.userName=xxx
+user.password=xxx
+user.org.code=xxx
+user.orgs[0].code=xxx
+user.orgs[1].code=xxx
+user.params['key1']=xxx
+user.params['key2']=xxx
+user.girls['key1'].code=xxx
+user.girls['key2'].code=xxx
+user.date=2011-07-11T18:34:55.001Z // 注意这个是零时区的时间
+```
+
+List<User> users应转为users[0].userName=xxx、users[1].userName=xxx等的样式；
+
+Map<String, User> maps 应转为maps['key1'].userName=xxx、maps['key2'].userName=xxx等的样式。
+
+Open API接口调用注意事项：
+* 所有的请求和响应数据编码皆为utf-8格式，url里的所有参数值请做urlencode编码。如果请求的Content-Type是application/x-www-form-urlencoded， http body里的所有参数值也做urlencode编码；如果是multipart/form-data格式，每个表单字段的参数值无需编码,但每个表单字段的charset部分需要指定为utf-8。
+
+* 所有api请求内的日期格式都为ISO8601标准，如yyyy-MM-dd'T'HH:mm:ss.SSS'Z'，注意小时格式是24小时制，例如：2008-03-12T18:23:43.233Z。响应内的日期格式和返回格式相同。
+
+* 所有api请求参数内的format(即返回格式)可选值为json,xml,默认json。（暂时只支持JSON）
+
+* 签名方式为 md5(appsecret + key + value .... key + value+appsecret)然后转大写字母,其中key,value对是除签名和图片外的所有请求参数按key做的升序排列, value无需编码。appsecret是应用注册时系统给出的密钥。hmac的签名方式是hmac(key+value...+key+value, appsecret)
+
+* 请注意API的请求方式，非指定方式API不响应。
+
+## Open API的返回
+
+Open API的返回分为正常返回和异常返回。
+
+* 正常返回ExecuteResponse<User>则JSON格式如下：
+
+```
+{
+/** 是否成功标识 */
+"success" : true,
+/** User对象 */
+"returnObject" : {
+"userName" : "xxx",
+"password" : "xxx",
+"org" : {
+"code" : "xxxx"
+},
+"orgs" : [{"code" : "xx"},{"code" : "yy"}],
+"params" : {
+"key" : "value"
+` },
+"girls" : {
+"key" : {"code" : "xx"}
+` },
+"date" : "2011-07-11T18:12:35.900Z"
+}
+}
+```
+
+* 正常返回PageResponse<User>则JSON格式如下：
+
+```
+{
+/** 是否成功标识 */
+"success" : true,
+/** 本次请求的页大小 */
+"size" : 20,
+/** 当前页码，从零开始 */
+"number" : 5,
+/** 总记录数 */
+"totalElements" : 501,
+/** 总页数 */
+"totalPages" : 26,
+/** 本页的总记录数 */
+"numberOfElements" : 20,
+/** 是否首页 */
+"firstPage" : false,
+/** 是否最后页 */
+"lastPage" : false,
+/** 内容列表 */
+"content" : [ {user1 json}, {user2 json}, ... ]
+}
+```
+* 异常返回时的JSON格式如下：
+
+```
+{
+/** 是否成功标识 */
+"success" : false,
+/** 系统级错误代码 */
+"errorCode" : "params.10",
+/** 系统级错误信息 */
+"errorMessage" : "缺少APP KEY参数",
+/** 业务级错误代码(如果存在则指的是具体的业务错误信息) */
+"exceptionCode" : "xxx",
+/** 业务级错误信息(如果存在则指的是具体的业务错误信息) */
+"exceptionMessage" : "中文",
+/** 异常详细信息 */
+"exceptionStack" : "error stack"
+}
+```
+在正常返回数据时，如果有警告或提示信息，则上述正常返回的数据中也会含有类似异常返回的数据字段。
+
+## Open API的配置
+
+Open API在调用服务端的验证过程与用户登录方式类似。所以服务端需要做如下配置：
+1. 在应用管理界面中，增加appKey为应用编码的应用配置，并设置密钥为调用时的密钥值；
+2. 在用户表中创建appKey为登录用户名的用户；
+3. 授权该用户具备访问对应地址的权限。 
+   
