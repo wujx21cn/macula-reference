@@ -58,63 +58,6 @@ OpenApi标准响应应该是如下类型：
 
 
 
-通用条件输入类型
-
-```java
-public class CommonCondition {
-/** 要查询的条件字段(或属性)名称 */
-private String name;
-/** 字段数据类型：Boolean, Integer, Long, Double, String, Timestamp, Date */
-private DataType dataType;
-/**
-* 比较符：StartWith, EndWith, Contains, NotContains, Equals, GreaterThan, GreaterOrEqual
-* LessThan, LessOrEqual, NotEqual, BeforeThan, AfterThan, Between, Is, In
-**/
-private CriteriaType criteriaType;
-/** 条件值 */
-private Object value;
-/** 另一个条件值 */
-private Object anotherValue;
-}
-
-public enum DataType {
-  Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
-  Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
-}
-
-public enum CriteriaType {
-// like '%x'
-StartWith,
-// like 'x%'
-EndWith,
-// like '%x%'
-Contains,
-// not like '%x%'
-NotContains,
-// = x
-Equals,
-// > x
-GreaterThan,
-// >= x
-GreaterOrEqual,
-// < x
-LessThan,
-// <= x
-LessOrEqual,
-// <> x
-NotEqual,
-// < x 早于
-BeforeThan,
-// > x 晚于
-AfterThan,
-// >= x1 and < x2
-Between,
-Is,
-// in ( x1, x2 )
-In ;
-}
-```
-
 下面举例说明，有如下POJO类
 
 ```java
@@ -226,7 +169,7 @@ Open API的返回分为正常返回和异常返回。
 
 在正常返回数据时，如果有警告或提示信息，则上述正常返回的数据中也会含有类似异常返回的数据字段。
 
-对应Java类如下：
+## OpenApiTemplate输入输出类型
 
 响应类型基类：
 
@@ -296,6 +239,63 @@ public class FieldError {
 private String element;
 // 错误信息
 private String message;
+}
+```
+
+通用条件输入类型
+
+```java
+public class CommonCondition {
+/** 要查询的条件字段(或属性)名称 */
+private String name;
+/** 字段数据类型：Boolean, Integer, Long, Double, String, Timestamp, Date */
+private DataType dataType;
+/**
+* 比较符：StartWith, EndWith, Contains, NotContains, Equals, GreaterThan, GreaterOrEqual
+* LessThan, LessOrEqual, NotEqual, BeforeThan, AfterThan, Between, Is, In
+**/
+private CriteriaType criteriaType;
+/** 条件值 */
+private Object value;
+/** 另一个条件值 */
+private Object anotherValue;
+}
+
+public enum DataType {
+  Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
+  Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
+}
+
+public enum CriteriaType {
+// like '%x'
+StartWith,
+// like 'x%'
+EndWith,
+// like '%x%'
+Contains,
+// not like '%x%'
+NotContains,
+// = x
+Equals,
+// > x
+GreaterThan,
+// >= x
+GreaterOrEqual,
+// < x
+LessThan,
+// <= x
+LessOrEqual,
+// <> x
+NotEqual,
+// < x 早于
+BeforeThan,
+// > x 晚于
+AfterThan,
+// >= x1 and < x2
+Between,
+Is,
+// in ( x1, x2 )
+In ;
 }
 ```
 
