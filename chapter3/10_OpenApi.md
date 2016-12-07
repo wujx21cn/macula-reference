@@ -43,6 +43,7 @@ Open API采用JAX-RS标准，所有访问基于HTTP请求进行，Open API的调
 
 OpenApi标准响应应该是如下类型：
 
+响应类型基类：
 ```java
 public class Response {
 /** 是否成功标识 */
@@ -69,6 +70,7 @@ private List<FieldError> validateErrors;
 }
 ```
 
+单结果集响应
 ```java
 public class ExecuteResponse<T> extends Response {
 /** 结果信息 */
@@ -76,6 +78,7 @@ private T returnObject;
 }
 ```
 
+多行结果集响应
 ```java
 public class PageResponse<T> extends Response {
 /** 本次请求的记录数 */
@@ -97,6 +100,8 @@ private List<T> content;
 }
 ```
 
+字段错误类型
+
 ```java
 public class FieldError {
 // 元素名，与页面元素名一致
@@ -106,6 +111,7 @@ private String message;
 }
 ```
 
+通用条件输入类型
 ```java
 public class CommonCondition {
 /** 要查询的条件字段(或属性)名称 */
@@ -124,8 +130,8 @@ private Object anotherValue;
 }
 
 public enum DataType {
-Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
-Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
+  Boolean(Boolean.class), Integer(Integer.class), Long(Long.class),
+  Double(Double.class), String(String.class), Timestamp(Timestamp.class), Date(Date.class);
 }
 
 public enum CriteriaType {
