@@ -223,7 +223,7 @@ public interface SecurityResourceProvider extends SecurityProvider {
                 <ref bean="userHeaderIdentityFilter" />
             </list>
         </constructor-arg>
-        </bean>
+</bean>
 ```
 
 
