@@ -813,6 +813,19 @@ macula框架在Freemarker中默认有如下变量：
 
 
 
+获取绝对地址方法
+
+### Freemarker内置方法
+
+* getDataParams
+
+* getMenuBreadcrumb
+
+* hasAccess
+
+* getAbsoluteUrl
+
+
 ## 国际化
 
 国际化 可分为页面国际化和提示信息国际化。
