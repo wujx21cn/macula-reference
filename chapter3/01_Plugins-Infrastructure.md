@@ -1,6 +1,6 @@
 # 基础设施
 
-## 用户凭据
+## 用户凭据UserPrincipal
 
 实际上，只需要通过用户名，即可通过UserContextFactory构建出用户上下文信息，对于已登录的用户，可以通过SecurityUtils.getUserDetails\(\)获取用户信息。通过用户上下文可方便的得到一些用户相关信息。
 
