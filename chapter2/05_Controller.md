@@ -683,9 +683,9 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 </#if>
 
 <!--当前用户名-->
-${userPrincipal.getName()}
+${userPrincipal.getName()！""}
 <!--当前用户姓名-->
-${userPrincipal.getNickName()}
+${userPrincipal.getNickName()!""}
 ```
 
 ### 权限判断
@@ -736,7 +736,7 @@ ${userPrincipal.getNickName()}
 3. 当然还可以用 SQL 的形式从数据库中获取。例如：
 
    ```
-   select app_name as label, app_id as code from ma_base_application
+   !select app_name as label, app_id as code from ma_base_application
    ```
 
 
