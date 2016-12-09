@@ -1,8 +1,8 @@
-# 2 快速开始
+# 快速开始
 
 本章将通过macula-samples的创建过程介绍通过Macula平台开发业务系统的整个过程，对于其中的部分代码内容，将不做过多介绍。
 
-## 2.1 环境准备
+## 环境准备
 
 “工欲善其事，必先利其器”，在开始介绍之前，我们需要准备相应的环境。
 
@@ -35,15 +35,15 @@
 
 另外，为了方便开发Freemarker模版等，可加入Freemarker IDE插件等，为了增强代码的健壮性，可加入FindBugs、CheckStyle等Eclipse插件。
 
-## 2.2 环境配置
+## 环境配置
 
-### 2.2.1 **文件编码设置**
+### **文件编码设置**
 
 Macula平台要求使用UTF-8的文件编码格式，可通过Eclipse -&gt; Preference -&gt; General -&gt; Workspace 中，设定Text file encoding的方式设置项目环境为UTF-8编码。
 
 ![tutorials-eclipse-workspace.jpg](../images/chapter1/tutorials-eclipse-workspace.jpg)
 
-### 2.2.2 **服务器设置**
+### **服务器设置**
 
 业务系统最终需要在J2EE容器中运行，这里选择Tomcat6.0作为服务器容器，在Eclipse中，需要进行相关配置。
 
@@ -53,7 +53,7 @@ Macula平台要求使用UTF-8的文件编码格式，可通过Eclipse -&gt; Pref
 
 ![tutorials-eclipse-tomcat.jpg](../images/chapter1/tutorials-eclipse-tomcat.jpg)
 
-## 2.3 项目的创建
+## 项目的创建
 
 Macula框架现在提供了一个创建我们所定义项目的maven插件，具体使用方式如下：
 
@@ -71,7 +71,7 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 后面按照界面提示操作，即可生成整个项目的结构。然后在eclipse中右键选择Maven-&gt;Update Project。
 
-## 2.4 运行
+## 运行
 
 运行上述项目需要按照以下步骤准备：
 
@@ -100,13 +100,13 @@ Macula框架现在提供了一个创建我们所定义项目的maven插件，具
 
 前端应用地址：[http://localhost:8080/macula-samples-webapp/front](http://localhost:8080/macula-samples-webapp/front)
 
-## 2.5 打包
+## 打包
 
 通过maven命令，mvn package可实现打包，如果需要发布到仓库中，可使用mvn install命令。
 
-## 2.6 程序开发
+## 程序开发
 
-### 2.6.1 概要介绍
+### 概要介绍
 
 Macula 框架使用了 Spring，JPA（Hibernate），JQuery和KnockoutJS 等关键技术，所以要想熟练掌握框架，需要对这些技术很熟悉。一般做过 Java 开发的对 Spring 和 JPA（Hibernate） 都会有些了解，但对 JQuery 和 KnockoutJS 可能了解不多，特别是 KnockoutJS。所以有必要加强对 JQuery 和 KnockoutJS 的学习。 下面列举了 JQuery 和 KnockoutJS 的教程的链接，希望能帮助开发人员快速掌握这两种技术。
 
@@ -120,7 +120,7 @@ KnockoutJS 教程
 
 下面我们以一个示例一步步详细解释整个开发过程。我们将要实现一个“应用管理”的功能，用于在我们的系统中保存应用的相关信息。我们需要提供新增、编辑、删除功能，以及一个列表功能来显示当前所有的应用信息。
 
-### 2.6.2 Domain 和 Repository 层
+### Domain 和 Repository 层
 
 首先，我们需要一个 Domain model 用于存放应用信息，然后还需要相对应的 Repository 来对应用信息进行增删改查等操作。Macula 平台的 Repository 层基于 Spring-Data-JPA（hibernate） 做了一些封装，功能很全面，只要在指定 package 下定义好 Domain model 和 Repository 接口，就可以实现很完善的数据存储功能。
 
@@ -239,7 +239,7 @@ public interface DemoApplicationRepository extends MaculaJpaRepository<DemoAppli
 }
 ```
 
-### 2.6.3 列表功能
+### 列表功能
 
 下面我们先来实现列表功能。
 
@@ -570,11 +570,12 @@ public class DempApplicationController extends DemoBaseController {
 
 3. 我们使用 annotation @RequestMapping 来实现URL映射。在这个功能中，我们需要获得所有应用的信息，相对的 URL 为 /application/apps ，因此调用到的方法为 \#getApplications\(\)，如代码中③处所示。
 
-4. 你可能已经留意到在 \#getApplications\(\) 方法上有一个 @OpenApi 的注解。由于我们的列表页面中数据表格的内容是通过 AJAX JSON 方式获取的，因此我们使用 @OpenApi 直接返回 pojo bean。有关 @OpenApi 的详细介绍，请参阅核心技术中的相关介绍。  
+4. 你可能已经留意到在 \#getApplications\(\) 方法上有一个 @OpenApi 的注解。由于我们的列表页面中数据表格的内容是通过 AJAX JSON 方式获取的，因此我们使用 @OpenApi 直接返回 pojo bean。有关 @OpenApi 的详细介绍，请参阅核心技术中的相关介绍。
+
 
 至此，我们的列表功能就完成了。大致上就是在页面上使用了 datatables 插件通过 AJAX JSON 的方式向后台请求数据表格内容， Controller 接收到请求后调用 Serivce 中相应的方法， 而 Serivce 通过 Repository 从数据库中获取相关数据。
 
-### 2.6.4 新增及修改功能
+### 新增及修改功能
 
 新增/修改页面如下：
 
@@ -937,7 +938,7 @@ public class DempApplicationController extends DemoBaseController {
 
 至此，新增/修改功能已经完成。
 
-### 2.6.5 删除功能
+### 删除功能
 
 删除功能一般是直接在列表页面里做的。用户选中某条记录，然后点击删除按钮，程序会调用服务器端相应的处理，然后根据返回值做结果提示。例如：
 
