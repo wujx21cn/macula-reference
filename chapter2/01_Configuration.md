@@ -22,10 +22,12 @@
   * **log4j.properties**  Log4j配置
   * druid-macula.properties Druid数据源相关的配置
   * druid-xxx.properties
+  * app.properties 该文件用于独立的模块中，用来覆盖macula.properties中的值，比如front和mobile分开打包，并且appName可能不一样，则分别在front和mobile包中引入app.properties。
 
 * ehcache.xml
 
   * ehcache配置
+
 
 
 ## web.xml配置
