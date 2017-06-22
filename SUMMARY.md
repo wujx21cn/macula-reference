@@ -22,7 +22,7 @@
   * [用户信息和上下文](chapter3/04_Plugins-User.md)
   * [认证管理](chapter3/05_Plugins_Authentication.md)
   * [授权管理](chapter3/06_Plugins_Authority.md)
-  * [安全控制](chapter3/an-quan-kong-zhi.md)
+  * [安全控制](chapter3/05_Plugins_Security.md)
   * [表达式解析](chapter3/08_Plugins_Expr.md)
   * [开放API](chapter3/10_OpenApi.md)
 * [扩展插件](chapter4/chapter4.md)
