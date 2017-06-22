@@ -13,6 +13,8 @@ macula框架由于采用了spring-security作为安全框架，所以直接采�
 
   具体可以参考[Spring Security Reference](http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#csrf)
 
+### 跨站脚本攻击防护\(XSS\)
+
 
 
 
