@@ -15,9 +15,33 @@ macula框架由于采用了spring-security作为安全框架，所以直接采�
 
 ### 跨站脚本攻击防护\(XSS\)
 
-
-
 ### 越权访问防护
+
+#### **需要进行防止越权访问的Controller方法改造:**
+
+在需要进行校验的Controller方法上添加@PassKey注解，@PassKey可以支持@PathVariable和@RequestParam。
+
+@PathVariable例子：
+
+```java
+@RequestMapping(value ="/deal/edit/{dealId}", method = RequestMethod.GET)
+@OpenApi
+@PassKey("dealId")
+public Long editDealId(@PathVariable("dealId") LongdealId) {
+        …
+}
+```
+
+@RequestParam例子：
+
+```java
+@RequestMapping(value ="/deal/edit", method = RequestMethod.GET)
+@OpenApi
+@PassKey({"dealId"})
+public Long editDealId(@RequestParam("dealId") LongdealId) {
+…
+}
+```
 
 
 
