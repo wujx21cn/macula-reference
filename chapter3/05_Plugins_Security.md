@@ -28,7 +28,7 @@ macula框架由于采用了spring-security作为安全框架，所以直接采�
 @OpenApi
 @PassKey("dealId")
 public Long editDealId(@PathVariable("dealId") LongdealId) {
-        …
+        …
 }
 ```
 
@@ -43,7 +43,9 @@ public Long editDealId(@RequestParam("dealId") LongdealId) {
 }
 ```
 
+如果需要对多个参数值进行校验，可以传入参数名数组，例如：
 
+@PassKey\({"dealId", "storeId"}\)
 
 
 
