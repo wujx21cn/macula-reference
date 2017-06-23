@@ -49,5 +49,46 @@ public Long editDealId(@RequestParam("dealId") LongdealId) {
 
 #### **产生访问链接的方法改造**
 
+Controller从Service获取domain list后，需要调用PassKeyHelper. generatePassKeyMap方法。方法详情如下：
 
+```java
+/**
+  *根据传入参数生成passKey map
+  *@paramlist-从数据库获取的domain list
+  *@paramparams-需要校验的参数的参数名
+  *@paramuserName-用户名
+  *@returnMap<String, String>-<passKeyId(由params拼接，例如需要校验的参数名为id和name，id值为1，name值为abc,
+                                                                则passKeyId就为1abc), passkey)
+*/
+public static Map<String, String> generatePassKeyMap(List<?extendsObject>list, String[]params, StringuserName)
+                                                                throws MaculaException
+```
+
+
+
+例如：
+
+    Map&lt;String, String&gt;map= PassKeyHelper.generatePassKeyMap\(dataSourceManagerService.getAllDataSources\(\),**new**String\[\]{"id", “code”}, SecurityUtils.getUserDetails\(\).getName\(\)\);
+
+（亦可不传入userName，不传入则交由generatePassKeyMap方法调用SecurityUtils.getUserDetails\(\).getName\(\)获取）
+
+
+
+**ftl改造：**
+
+然后在freemarker遍历list的时候，用相应的字段值拼接出passKeyId\(例如需要校验的参数名为id和name，id值为1，name值为abc,则passKeyId就为1abc\)，然后在passKeyMap中取出相应的passKey拼接在URL的后面。
+
+
+
+例如：
+
+@PathVariable例子：
+
+/deal/edit/123?passKey=255A626422674E0765F51E9C8826B1A3
+
+
+
+@RequestParam例子：
+
+/deal/edit?dealId=123&passKey=255A626422674E0765F51E9C8826B1A3
 
