@@ -94,12 +94,22 @@ Map<String, String> map = PassKeyHelper.generatePassKeyMap(dataSourceManagerServ
 /deal/edit?dealId=123&passKey=255A626422674E0765F51E9C8826B1A3
 ```
 
-
+#### 密钥配置
 
 可以在macula.properties:指定加密串，如不指定，将使用macula指定的默认值，例如：
 
 ```
 pass.key.secret=djij*7dLjdKs20Kds
+```
+
+#### **错误提示**
+
+当有人对参数进行篡改，如果是Ajax请求将会返回以下错误：
+
+```
+{"success":false,"httpStatus":null,"errorCode":"passkey",
+    "errorMessage":"passkey","exceptionCode":"passkey.invalid",
+    "exceptionMessage":"不允许平行越权访问","exceptionStack":"…}
 ```
 
 
