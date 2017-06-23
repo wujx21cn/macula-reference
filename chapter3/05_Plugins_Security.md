@@ -112,5 +112,64 @@ pass.key.secret=djij*7dLjdKs20Kds
     "exceptionMessage":"不允许平行越权访问","exceptionStack":"…}
 ```
 
+非Ajax请求抛出异常，由error.ftl处理，默认将会得到以下页面：
+
+#### ![](/images/chapter3/passkey_error.png)
+
+#### **例子**
+
+* 产生domain list的controller方法（这里为了展示多个参数的使用方法，用了id和code两个参数）：
+
+```java
+@RequestMapping(value ="/datasource/list", method = RequestMethod.GET)
+public String list(Model model) {
+    model.addAttribute("datasourceList",dataSourceManagerService.getAllDataSources());
+    Map<String, String>passKeyMap= PassKeyHelper.generatePassKeyMap(dataSourceManagerService.getAllDataSources(),
+                                                                        newString[] {"id","code"});
+    model.addAttribute("passKeyMap",passKeyMap);
+
+    return super.getRelativePath("/datasource/list");
+}
+```
+
+* 模板页面ftl
+
+```freemarker
+<div id="list-${code}" style="width: 100%;">
+    <table class="treeTable gridlist">
+        <thead>
+            <th>数据源编码</th>
+            <th>数据源名称</th>
+            <th>数据源类型</th>
+            <th>访问地址</th>
+        </thead>
+        <tbody>
+            <#list datasourceList as ds>
+                <#assign passKeyId=ds.id+ds.code />
+                <tr>
+                    <td>${ds.code}</td>
+                    <td>${ds.name}</td>
+                    <td>${ds.dataSourceType}</td>
+                    <td><a href="${base}/admin/macula-base/datasource/edit?id=${ds.id}&code=${ds.code}&passKey=${passKeyMap[passKeyId]}">点击访问</a>
+                </tr>
+            </#list>
+        </tbody>
+    </table>
+</div>
+```
+
+* 需要防止越权访问的controller方法：
+
+```java
+@RequestMapping(value ="/datasource/edit", method = RequestMethod.GET)
+@PassKey({"id","code"})
+public String edit(@RequestParam("id") Long id, @RequestParam("code") String code, Model model) {
+    model.addAttribute("id", id);
+    return super.getRelativePath("/datasource/edit");
+}
+```
+
+
+
 
 
