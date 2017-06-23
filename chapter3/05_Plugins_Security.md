@@ -47,3 +47,7 @@ public Long editDealId(@RequestParam("dealId") LongdealId) {
 
 `@PassKey({"dealId", "storeId"})`
 
+#### **产生访问链接的方法改造**
+
+
+
