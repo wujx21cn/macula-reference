@@ -45,7 +45,5 @@ public Long editDealId(@RequestParam("dealId") LongdealId) {
 
 如果需要对多个参数值进行校验，可以传入参数名数组，例如：
 
-@PassKey\({"dealId", "storeId"}\)
-
-
+`@PassKey({"dealId", "storeId"})`
 
