@@ -15,6 +15,8 @@ macula框架由于采用了spring-security作为安全框架，所以直接采�
 
 ### 跨站脚本攻击防护\(XSS\)
 
+TODO
+
 ### 越权访问防护
 
 #### **需要进行防止越权访问的Controller方法改造:**
@@ -124,7 +126,7 @@ pass.key.secret=djij*7dLjdKs20Kds
 @RequestMapping(value ="/datasource/list", method = RequestMethod.GET)
 public String list(Model model) {
     model.addAttribute("datasourceList",dataSourceManagerService.getAllDataSources());
-    Map<String, String>passKeyMap= PassKeyHelper.generatePassKeyMap(dataSourceManagerService.getAllDataSources(),
+    Map<String, String>passKeyMap= PassKeyHelper.generatePassKeyMap(dataSourceManagerService.getAllDataSources(),
                                                                         newString[] {"id","code"});
     model.addAttribute("passKeyMap",passKeyMap);
 
@@ -134,7 +136,7 @@ public String list(Model model) {
 
 * 模板页面ftl
 
-```freemarker
+```html
 <div id="list-${code}" style="width: 100%;">
     <table class="treeTable gridlist">
         <thead>
@@ -168,8 +170,6 @@ public String edit(@RequestParam("id") Long id, @RequestParam("code") String cod
     return super.getRelativePath("/datasource/edit");
 }
 ```
-
-
 
 
 
