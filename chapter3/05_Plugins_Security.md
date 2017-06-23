@@ -45,7 +45,9 @@ public Long editDealId(@RequestParam("dealId") LongdealId) {
 
 如果需要对多个参数值进行校验，可以传入参数名数组，例如：
 
-`@PassKey({"dealId", "storeId"})`
+```
+@PassKey({"dealId", "storeId"})
+```
 
 #### **产生访问链接的方法改造**
 
@@ -53,42 +55,52 @@ Controller从Service获取domain list后，需要调用PassKeyHelper. generatePa
 
 ```java
 /**
-  *根据传入参数生成passKey map
-  *@paramlist-从数据库获取的domain list
-  *@paramparams-需要校验的参数的参数名
-  *@paramuserName-用户名
-  *@returnMap<String, String>-<passKeyId(由params拼接，例如需要校验的参数名为id和name，id值为1，name值为abc,
+  *根据传入参数生成passKey map
+  *@param list-从数据库获取的domain list
+  *@param params-需要校验的参数的参数名
+  *@param userName-用户名
+  *@return Map<String, String>-<passKeyId(由params拼接，例如需要校验的参数名为id和name，id值为1，name值为abc,
                                                                 则passKeyId就为1abc), passkey)
 */
-public static Map<String, String> generatePassKeyMap(List<?extendsObject>list, String[]params, StringuserName)
+public static Map<String, String> generatePassKeyMap(List<?extendsObject> list, String[] params, String userName)
                                                                 throws MaculaException
 ```
 
-
-
 例如：
 
-    Map&lt;String, String&gt;map= PassKeyHelper.generatePassKeyMap\(dataSourceManagerService.getAllDataSources\(\),**new**String\[\]{"id", “code”}, SecurityUtils.getUserDetails\(\).getName\(\)\);
+```java
+Map<String, String> map = PassKeyHelper.generatePassKeyMap(dataSourceManagerService.getAllDataSources(), 
+                                new String[]{"id", “code”}, 
+                                SecurityUtils.getUserDetails().getName());
+```
 
 （亦可不传入userName，不传入则交由generatePassKeyMap方法调用SecurityUtils.getUserDetails\(\).getName\(\)获取）
-
-
 
 **ftl改造：**
 
 然后在freemarker遍历list的时候，用相应的字段值拼接出passKeyId\(例如需要校验的参数名为id和name，id值为1，name值为abc,则passKeyId就为1abc\)，然后在passKeyMap中取出相应的passKey拼接在URL的后面。
 
-
-
 例如：
 
 @PathVariable例子：
 
+```
 /deal/edit/123?passKey=255A626422674E0765F51E9C8826B1A3
-
-
+```
 
 @RequestParam例子：
 
+```
 /deal/edit?dealId=123&passKey=255A626422674E0765F51E9C8826B1A3
+```
+
+
+
+可以在macula.properties:指定加密串，如不指定，将使用macula指定的默认值，例如：
+
+```
+pass.key.secret=djij*7dLjdKs20Kds
+```
+
+
 
