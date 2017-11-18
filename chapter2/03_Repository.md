@@ -273,9 +273,8 @@ public UserRepository extends MaculaJpaRepository<User> {
 
 _**注意**_
 
-* findByLastName1演示了通过DomainClass返回数据；
-* findByLastName2演示了通过Vo返回数据；
-* findByLastName3演示了通过Map传递参数给SQL语句；
+* findByLastNameVo演示了通过Vo返回数据；
+* findByLastNameMap演示了通过Map传递参数给SQL语句，通过DomainClass返回数据；
 
 * TemplateQuery的查询结果会自动转换到你要返回的类型，但是返回类型中的属性名称与数据库列名称必须对应起来，默认会将返回类型的属性名称的大写字母转换为\_加小写，比如firstName会转换为first\_name与数据库列对应，数据库的列也会统一转换为小写；
 
