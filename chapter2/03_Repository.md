@@ -284,3 +284,21 @@ _**注意**_
 
 
 
+除了支持XML格式模板外，还支持sftl模板，格式如下：
+
+```
+--findByLastNameMapy
+	select * from MY_USER u where u.last_name = :data.lastName
+
+--findByLastNameMapAndListy
+	select * from MY_USER u where 1=1
+	<#if (data.lastName)??>
+	  and u.last_name = :data.lastName 
+	</#if>
+	<#if firstNames??>
+	  and u.first_name in (:firstNames)
+	</#if>
+```
+
+
+
