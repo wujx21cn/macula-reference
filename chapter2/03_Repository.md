@@ -200,72 +200,74 @@ Macula扩展了spring-data-jpa的功能，除了原先可以支持的@Query、@N
 原先的注解SQL语句不支持动态条件，不能写if等表达式。TemplateQuery注解支持在注解中或者模板文件中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
 
 ```java
+package org.macula.core.test.repository;
+...
 public UserRepository extends MaculaJpaRepository<User> {
     ...
-	@TemplateQuery
-	public Page<UserVo> findByLastNameVo(@Param("lastName") String lastName, Pageable pageable);
+    @TemplateQuery
+    public Page<UserVo> findByLastNameVo(@Param("lastName") String lastName, Pageable pageable);
 
-	@TemplateQuery
-	public Page<User> findByLastNameMap(@Param("data") Map<String, Object> data, Pageable pageable);
-	
-	@TemplateQuery("select * from MY_USER u where 1=1" +
-	       "<#if (data.lastName)??>" +
-	      "	and u.last_name = :data.lastName" + 
-	      "</#if>" +
-	      "<#if firstNames??>" +
-	      "	and u.first_name in (:firstNames)" +
-	      "</#if>")
-	public Page<User> findByLastNameMapAndList(@Param("data") Map<String, Object> data, 
-					@Param("firstNames") List<String> firstNames, Pageable pageable);
-	
-	@TemplateQuery
-	public Page<User> findByLastNameMapAndListx(@Param("data") Map<String, Object> data, 
-					@Param("firstNames") List<String> firstNames, Pageable pageable);
-	
-	@TemplateQuery
-	public Page<User> findByLastNameMapy(@Param("data") Map<String, Object> data, Pageable pageable);
-	
-	@TemplateQuery
-	public Page<User> findByLastNameMapAndListy(@Param("data") Map<String, Object> data, 
-					@Param("firstNames") List<String> firstNames, Pageable pageable);
+    @TemplateQuery
+    public Page<User> findByLastNameMap(@Param("data") Map<String, Object> data, Pageable pageable);
+
+    @TemplateQuery("select * from MY_USER u where 1=1" +
+           "<#if (data.lastName)??>" +
+          "    and u.last_name = :data.lastName" + 
+          "</#if>" +
+          "<#if firstNames??>" +
+          "    and u.first_name in (:firstNames)" +
+          "</#if>")
+    public Page<User> findByLastNameMapAndList(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
+
+    @TemplateQuery
+    public Page<User> findByLastNameMapAndListx(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
+
+    @TemplateQuery
+    public Page<User> findByLastNameMapy(@Param("data") Map<String, Object> data, Pageable pageable);
+
+    @TemplateQuery
+    public Page<User> findByLastNameMapAndListy(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
 }
 ```
 
 同时，没有在@TemplateQuery value中写的SQL需要在文件中编写对应的SQL模板，支持在两个位置编写SQL模板：
 
-1）src/resources/sqls/module-name/{domainName}.xml中编写SQL，文件命名是Domain类的全名称加上.xml
+1）src/resources/sqls/module-name/{domainName}.xml中编写SQL，文件命名是Domain类的全名称加上.xml（3.1有可能废弃）
 
-2）src/java/{repositoryPackage}/{repositoryName}.xml中编写SQL，文件放在该TemplateQuery方法所属的Repository类路径下，和Repository类名称一致，以xml结尾。
+2）src/java/{repositoryPackage}/{repositoryName}.xml中编写SQL，文件放在该TemplateQuery方法所属的Repository类路径下，和Repository类名称一致，以xml结尾。例如：src/java/org/macula/core/test/repository/UserRepository.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <sqls xmlns="http://www.maculaframework.org/schema/repository"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.maculaframework.org/schema/repository http://macula.top/schema/repository/macula-repository-1.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.maculaframework.org/schema/repository http://macula.top/schema/repository/macula-repository-1.0.xsd">
 
-	<sql name="findByLastNameVo">
-	    <![CDATA[
-	      select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
-	    ]]>
-	</sql>
+    <sql name="findByLastNameVo">
+        <![CDATA[
+          select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+        ]]>
+    </sql>
 
-	<sql name="findByLastNameMap">
-	    <![CDATA[
-	      select * from MY_USER u where u.last_name = :data.lastName
-	    ]]>
-	</sql>
-	
-	<sql name="findByLastNameMapAndListx">
-	    <![CDATA[
-	      select * from MY_USER u where 1=1
-	       <#if (data.lastName)??>
-	      	and u.last_name = :data.lastName 
-	      </#if>
-	      <#if firstNames??>
-	      	and u.first_name in (:firstNames)
-	      </#if>
-	    ]]>
-	</sql>
+    <sql name="findByLastNameMap">
+        <![CDATA[
+          select * from MY_USER u where u.last_name = :data.lastName
+        ]]>
+    </sql>
+
+    <sql name="findByLastNameMapAndListx">
+        <![CDATA[
+          select * from MY_USER u where 1=1
+           <#if (data.lastName)??>
+              and u.last_name = :data.lastName 
+          </#if>
+          <#if firstNames??>
+              and u.first_name in (:firstNames)
+          </#if>
+        ]]>
+    </sql>
 </sqls>
 ```
 
