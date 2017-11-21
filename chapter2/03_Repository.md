@@ -80,7 +80,6 @@ _请注意这里的配置与Spring-Data中介绍的一样，但factory-class请�
 
 * factory-class：可以看到，这里我们只定义了需要的接口，而不需要编写实现，而通过接口转化为Spring可识别的Bean，采用了Spring的FactoryBean（Bean工厂）的模式，所以需要定义一个用来生成Bean实例的工厂Class，这里，已经由Macula框架完成了该Bean工厂的实现，即org.macula.core.repository.MaculaJpaRepositoryFactoryBean，该Bean扩展自Spring-Data对应的Bean工厂，如有兴趣可继续查看Spring-Data的实现。
 
-
 _**重要**_
 
 _这里只定义了Repository的接口，即可通过Spring-Data的一个扫描即可生成对应的Bean的实例，看似非常神奇，实际上使用了Spring的FactoryBean的构建方式，通过工厂来返回了一个JpaRepository的实现来作为我们定义的接口的实现，而自定义的接口，则通过命名上查找对应的Class Implement来构建custom的实现。  
@@ -193,63 +192,89 @@ public interface UserRepository extends MaculaJpaRepository<User, Long>, UserRep
 
 * 自定义实现中的@Transactional，可直接定义在接口中，但在@Transactional的定义中，不要指定transactional使用的TrasactionManager的名称，道理和使用EntityManager相同，都由Macula平台的factory-class来统一处理。
 
-
 对于Repository层的开发，这里主要介绍了macula平台在Spring-Data下做出的扩展，更多的示例可参考macula平台提供的插件模块和示例模块，对于Spring-Data自身提供的功能，可以查看Spring-Data的官方文档。
 
 ### 使用TemplateQuery注解
 
 Macula扩展了spring-data-jpa的功能，除了原先可以支持的@Query、@NamedQuery等方法上的注解，Macula提供了TemplateQuery注解。  
-原先的注解SQL语句不支持动态条件，不能写if等表达式。TemplateQuery注解支持在XML中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
+原先的注解SQL语句不支持动态条件，不能写if等表达式。TemplateQuery注解支持在注解中或者模板文件中编写SQL语句，可以使用freemarker语法编写，具体使用方式如下：
 
 ```java
+package org.macula.core.test.repository;
+...
 public UserRepository extends MaculaJpaRepository<User> {
     ...
     @TemplateQuery
-    public User findByLastName1(@Param("lastName") String lastName, Pageable page);
+    public Page<UserVo> findByLastNameVo(@Param("lastName") String lastName, Pageable pageable);
 
     @TemplateQuery
-    public UserVo findByLastName2(@Param("lastName") String lastName, Pageable page);
+    public Page<User> findByLastNameMap(@Param("data") Map<String, Object> data, Pageable pageable);
+
+    @TemplateQuery("select * from MY_USER u where 1=1" +
+           "<#if (data.lastName)??>" +
+          "    and u.last_name = :data.lastName" + 
+          "</#if>" +
+          "<#if firstNames??>" +
+          "    and u.first_name in (:firstNames)" +
+          "</#if>")
+    public Page<User> findByLastNameMapAndList(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
 
     @TemplateQuery
-    public UserVo findByLastName3(@Param("data") Map<String, Object> data, Pageable page);
+    public Page<User> findByLastNameMapAndListx(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
+
+    @TemplateQuery
+    public Page<User> findByLastNameMapy(@Param("data") Map<String, Object> data, Pageable pageable);
+
+    @TemplateQuery
+    public Page<User> findByLastNameMapAndListy(@Param("data") Map<String, Object> data, 
+                    @Param("firstNames") List<String> firstNames, Pageable pageable);
 }
 ```
 
-同时，需要在resources/sqls/module-name/org.macula.core.test.domain.User.xml中编写SQL，文件命名是Domain类的全名称加上.xml：
+同时，没有在@TemplateQuery value中写的SQL需要在文件中编写对应的SQL模板，支持在两个位置编写SQL模板：
+
+1）src/resources/sqls/module-name/{domainName}.xml中编写SQL，文件命名是Domain类的全名称加上.xml（3.1有可能废弃）
+
+2）src/java/{repositoryPackage}/{repositoryName}.xml中编写SQL，文件放在该TemplateQuery方法所属的Repository类路径下，和Repository类名称一致，以xml结尾。例如：src/java/org/macula/core/test/repository/UserRepository.xml
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0" encoding="utf-8" ?>
 <sqls xmlns="http://www.maculaframework.org/schema/repository"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.maculaframework.org/schema/repository http://macula.top/schema/repository/macula-repository-1.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.maculaframework.org/schema/repository http://macula.top/schema/repository/macula-repository-1.0.xsd">
 
-<sql name="findByLastName1">
- <![CDATA[
- select * from MY_USER u where u.last_name = :lastName
- ]]>
-</sql>
+    <sql name="findByLastNameVo">
+        <![CDATA[
+          select u.first_name, u.last_name from MY_USER u where u.last_name = :lastName
+        ]]>
+    </sql>
 
-<sql name="findByLastName2">
- <![CDATA[
- select u.first_name, u.last_name from MY_USER u where  u.last_name = :lastName
-    <#if firstName??>
-      and u.first_name = :firstName
-    </#if>
- ]]>
+    <sql name="findByLastNameMap">
+        <![CDATA[
+          select * from MY_USER u where u.last_name = :data.lastName
+        ]]>
+    </sql>
 
-<sql name="findByLastName3">
- <![CDATA[
- select u.first_name, u.last_name from MY_USER u where u.last_name = :data.lastName
- ]]>
-</sql>
+    <sql name="findByLastNameMapAndListx">
+        <![CDATA[
+          select * from MY_USER u where 1=1
+           <#if (data.lastName)??>
+              and u.last_name = :data.lastName 
+          </#if>
+          <#if firstNames??>
+              and u.first_name in (:firstNames)
+          </#if>
+        ]]>
+    </sql>
 </sqls>
 ```
 
 _**注意**_
 
-* findByLastName1演示了通过DomainClass返回数据；
-* findByLastName2演示了通过Vo返回数据；
-* findByLastName3演示了通过Map传递参数给SQL语句；
+* findByLastNameVo演示了通过Vo返回数据；
+* findByLastNameMap演示了通过Map传递参数给SQL语句，通过DomainClass返回数据；
 
 * TemplateQuery的查询结果会自动转换到你要返回的类型，但是返回类型中的属性名称与数据库列名称必须对应起来，默认会将返回类型的属性名称的大写字母转换为\_加小写，比如firstName会转换为first\_name与数据库列对应，数据库的列也会统一转换为小写；
 
@@ -257,6 +282,21 @@ _**注意**_
 
 * FreeMarker的语法全部可以用在SQL语句中，可以解析的参数都是来源于方法中的参数值，所有参数值都会放到一个Map中传递给FreeMarker，同样，Bean或者Map参数需要加上他们的名字，比如data.lastName
 
+为了减少编写XML模板压力，从3.0.1开始，除了支持XML格式模板外，还支持sftl模板，格式如下，具体放置路径同XML模板，只是把后缀改为.sftl：
+
+```
+--findByLastNameMapy
+    select * from MY_USER u where u.last_name = :data.lastName
+
+--findByLastNameMapAndListy
+    select * from MY_USER u where 1=1
+    <#if (data.lastName)??>
+      and u.last_name = :data.lastName 
+    </#if>
+    <#if firstNames??>
+      and u.first_name in (:firstNames)
+    </#if>
+```
 
 
 
