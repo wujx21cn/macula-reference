@@ -49,7 +49,6 @@ public abstract class MaculaException extends I18nException {
 
    系统类异常的错误码一般由父错误码+“两位数字”标识。
 
-
 ## 异常处理方式
 
 ### Service异常处理
@@ -76,7 +75,7 @@ public class ServiceExceptionHandler {
 
             ErrorMessage errorMessage = method.getAnnotation(ErrorMessage.class);
 
-            String message = errorMessage == null ? ex.getMessage() : errorMessage.value();
+            String message = errorMessage == null ? "org.macula.core.exception.ServiceException" : errorMessage.value();
 
             log.error(message, ex);
 
@@ -101,6 +100,10 @@ public class ServiceExceptionHandler {
 _**重要**_
 
 如无必要，不需要自己try异常，交由框架统一拦截处理，除非是你主动抛出业务类异常，或者捕获异常后有相应处理逻辑。特别提醒，如果在事务中，Service方法中并不能捕获到数据库类型的异常，因为事务结束后才会提交数据库，这个时候抛出的异常Service方法是捕获不到的。
+
+### ErrorMessage注解
+
+在你的Service方法中添加@ErrorMessage注解可以定制该方法出现异常时返回的错误信息，否则会统一返回“服务层异常”的消息提示。这里的消息支持i18n。
 
 ### Controller异常处理
 
@@ -259,16 +262,11 @@ $(document).ajaxError(function(e, xhr, settings, exception) {
 
 * 如果是普通的HTTP请求，则请在web.xml中配置，比如404、403等错误码，给用户一个友好的展示界面；
 
-
 * 如果是AJAX请求，则config.js中都做了相应的处理：
 
   * 301、302 重定向，AJAX会判断是否重定向到登录url，如果是会通过对话框弹出登录界面。否则重定向。
 
   * 404、403、500都会弹出对话框提醒。
-
-
-
-
 
 
 
