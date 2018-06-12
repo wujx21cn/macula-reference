@@ -1,800 +1,750 @@
+
 <!DOCTYPE HTML>
-<html lang="zh-tw" >
-    
+<html lang="zh" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>展示层 | Macula Reference</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>展示层 · Macula Reference</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.6">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
     
+        
     
 
         
     
     
-    <link rel="next" href="../chapter2/06_Timezone.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06_Timezone.html" />
     
     
-    <link rel="prev" href="../chapter2/04_Service.html" />
+    <link rel="prev" href="04_Service.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book"
-        data-level="2.6"
-        data-chapter-title="展示层"
-        data-filepath="chapter2/05_Controller.md"
-        data-basepath=".."
-        data-revision="Tue Nov 21 2017 11:31:07 GMT+0800 (CST)"
-        data-innerlanguage="">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-                
-                <li>
-                    <a href="http://macula.top" target="blank" class="custom-link">Macula Platform</a>
-                </li>
-            
-            
-
-            
-            <li class="divider"></li>
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        序言
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="chapter1/chapter1.html">
-            
-                
-                    <a href="../chapter1/chapter1.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        Macula介绍
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1" data-path="chapter1/01_Introduction.html">
-            
-                
-                    <a href="../chapter1/01_Introduction.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.1.</b>
-                        
-                        概述
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="chapter1/02_Quick_Start.html">
-            
-                
-                    <a href="../chapter1/02_Quick_Start.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.2.</b>
-                        
-                        快速开始
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="chapter1/03_Project_Building.html">
-            
-                
-                    <a href="../chapter1/03_Project_Building.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.3.</b>
-                        
-                        项目构建
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="chapter1/04_Release_Nodes.html">
-            
-                
-                    <a href="../chapter1/04_Release_Nodes.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.4.</b>
-                        
-                        发布说明
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="chapter2/chapter2.html">
-            
-                
-                    <a href="../chapter2/chapter2.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        核心技术
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1" data-path="chapter2/01_Configuration.html">
-            
-                
-                    <a href="../chapter2/01_Configuration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                        配置文件
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="chapter2/02_Project_Start.html">
-            
-                
-                    <a href="../chapter2/02_Project_Start.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                        项目集成
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="chapter2/02_Domain.html">
-            
-                
-                    <a href="../chapter2/02_Domain.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                        领域模型层
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4" data-path="chapter2/03_Repository.html">
-            
-                
-                    <a href="../chapter2/03_Repository.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                        数据存取层
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5" data-path="chapter2/04_Service.html">
-            
-                
-                    <a href="../chapter2/04_Service.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.</b>
-                        
-                        业务服务层
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.6" data-path="chapter2/05_Controller.html">
-            
-                
-                    <a href="../chapter2/05_Controller.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.6.</b>
-                        
-                        展示层
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.7" data-path="chapter2/06_Timezone.html">
-            
-                
-                    <a href="../chapter2/06_Timezone.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.7.</b>
-                        
-                        时间与格式
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.8" data-path="chapter2/07_Exception.html">
-            
-                
-                    <a href="../chapter2/07_Exception.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.8.</b>
-                        
-                        异常处理
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.9" data-path="chapter2/08_Cache.html">
-            
-                
-                    <a href="../chapter2/08_Cache.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.9.</b>
-                        
-                        缓存服务
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.10" data-path="chapter2/09_JUnit.html">
-            
-                
-                    <a href="../chapter2/09_JUnit.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.10.</b>
-                        
-                        单元与集成测试
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="chapter3/chapter3.html">
-            
-                
-                    <a href="../chapter3/chapter3.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        基础插件
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1" data-path="chapter3/02_Plugins_DataSet.html">
-            
-                
-                    <a href="../chapter3/02_Plugins_DataSet.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                        数据相关
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="chapter3/04_Plugins-User.html">
-            
-                
-                    <a href="../chapter3/04_Plugins-User.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                        用户信息和上下文
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="chapter3/05_Plugins_Authentication.html">
-            
-                
-                    <a href="../chapter3/05_Plugins_Authentication.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                        认证管理
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="chapter3/06_Plugins_Authority.html">
-            
-                
-                    <a href="../chapter3/06_Plugins_Authority.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                        授权管理
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5" data-path="chapter3/05_Plugins_Security.html">
-            
-                
-                    <a href="../chapter3/05_Plugins_Security.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.5.</b>
-                        
-                        安全控制
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.6" data-path="chapter3/08_Plugins_Expr.html">
-            
-                
-                    <a href="../chapter3/08_Plugins_Expr.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.6.</b>
-                        
-                        表达式解析
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.7" data-path="chapter3/10_OpenApi.html">
-            
-                
-                    <a href="../chapter3/10_OpenApi.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.7.</b>
-                        
-                        开放API
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="chapter4/chapter4.html">
-            
-                
-                    <a href="../chapter4/chapter4.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        扩展插件
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1" data-path="chapter4/01_Webapp.html">
-            
-                
-                    <a href="../chapter4/01_Webapp.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.1.</b>
-                        
-                        WEB应用基础
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="chapter4/02_Admin.html">
-            
-                
-                    <a href="../chapter4/02_Admin.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.2.</b>
-                        
-                        后台管理
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="chapter4/03_MDA.html">
-            
-                
-                    <a href="../chapter4/03_MDA.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.3.</b>
-                        
-                        表单与查询
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="chapter4/04_Rule.html">
-            
-                
-                    <a href="../chapter4/04_Rule.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.4.</b>
-                        
-                        规则引擎
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5" data-path="chapter4/05_Workflow.html">
-            
-                
-                    <a href="../chapter4/05_Workflow.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.5.</b>
-                        
-                        工作流
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.6" data-path="chapter4/06_Dubbo.html">
-            
-                
-                    <a href="../chapter4/06_Dubbo.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.6.</b>
-                        
-                        Dubbo
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.7" data-path="chapter4/07_ESB.html">
-            
-                
-                    <a href="../chapter4/07_ESB.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.7.</b>
-                        
-                        ESB
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.8" data-path="chapter4/08_MQ.html">
-            
-                
-                    <a href="../chapter4/08_MQ.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.8.</b>
-                        
-                        MQ
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.9" data-path="chapter4/09_Monitor.html">
-            
-                
-                    <a href="../chapter4/09_Monitor.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.9.</b>
-                        
-                        CAT
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="chapter5/chapter5.html">
-            
-                
-                    <a href="../chapter5/chapter5.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        技术标准
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1" data-path="chapter5/01_Standard_Code.html">
-            
-                
-                    <a href="../chapter5/01_Standard_Code.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.1.</b>
-                        
-                        Java代码规范
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" data-path="chapter5/02_Standard_Check.html">
-            
-                
-                    <a href="../chapter5/02_Standard_Check.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.2.</b>
-                        
-                        代码审计规范
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3" data-path="chapter5/03_Standard_JUnit.html">
-            
-                
-                    <a href="../chapter5/03_Standard_JUnit.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.3.</b>
-                        
-                        单元测试标准
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="chapter5/04_Standard_Library.html">
-            
-                
-                    <a href="../chapter5/04_Standard_Library.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.4.</b>
-                        
-                        第三方包使用标准
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="chapter5/05_Standard_Import.html">
-            
-                
-                    <a href="../chapter5/05_Standard_Import.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.5.</b>
-                        
-                        新技术引入标准
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="chapter6/chapter6.html">
-            
-                
-                    <a href="../chapter6/chapter6.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        附录
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1" data-path="chapter6/01_Tables.html">
-            
-                
-                    <a href="../chapter6/01_Tables.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                        表结构
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    本書使用 GitBook 釋出
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://macula.top" target="_blank" class="custom-link">Macula Platform</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1/chapter1.html">
+            
+                <a href="../chapter1/chapter1.html">
+            
+                    
+                    Macula介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/01_Introduction.html">
+            
+                <a href="../chapter1/01_Introduction.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/02_Quick_Start.html">
+            
+                <a href="../chapter1/02_Quick_Start.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter1/03_Project_Building.html">
+            
+                <a href="../chapter1/03_Project_Building.html">
+            
+                    
+                    项目构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter1/04_Release_Nodes.html">
+            
+                <a href="../chapter1/04_Release_Nodes.html">
+            
+                    
+                    发布说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_Configuration.html">
+            
+                <a href="01_Configuration.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02_Project_Start.html">
+            
+                <a href="02_Project_Start.html">
+            
+                    
+                    项目集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="02_Domain.html">
+            
+                <a href="02_Domain.html">
+            
+                    
+                    领域模型层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03_Repository.html">
+            
+                <a href="03_Repository.html">
+            
+                    
+                    数据存取层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="04_Service.html">
+            
+                <a href="04_Service.html">
+            
+                    
+                    业务服务层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.6" data-path="05_Controller.html">
+            
+                <a href="05_Controller.html">
+            
+                    
+                    展示层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="06_Timezone.html">
+            
+                <a href="06_Timezone.html">
+            
+                    
+                    时间与格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="07_Exception.html">
+            
+                <a href="07_Exception.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="08_Cache.html">
+            
+                <a href="08_Cache.html">
+            
+                    
+                    缓存服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="09_JUnit.html">
+            
+                <a href="09_JUnit.html">
+            
+                    
+                    单元与集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter3/chapter3.html">
+            
+                <a href="../chapter3/chapter3.html">
+            
+                    
+                    基础插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter3/02_Plugins_DataSet.html">
+            
+                <a href="../chapter3/02_Plugins_DataSet.html">
+            
+                    
+                    数据相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter3/04_Plugins-User.html">
+            
+                <a href="../chapter3/04_Plugins-User.html">
+            
+                    
+                    用户信息和上下文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter3/05_Plugins_Authentication.html">
+            
+                <a href="../chapter3/05_Plugins_Authentication.html">
+            
+                    
+                    认证管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter3/06_Plugins_Authority.html">
+            
+                <a href="../chapter3/06_Plugins_Authority.html">
+            
+                    
+                    授权管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter3/05_Plugins_Security.html">
+            
+                <a href="../chapter3/05_Plugins_Security.html">
+            
+                    
+                    安全控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../chapter3/08_Plugins_Expr.html">
+            
+                <a href="../chapter3/08_Plugins_Expr.html">
+            
+                    
+                    表达式解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../chapter3/10_OpenApi.html">
+            
+                <a href="../chapter3/10_OpenApi.html">
+            
+                    
+                    开放API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter4/chapter4.html">
+            
+                <a href="../chapter4/chapter4.html">
+            
+                    
+                    扩展插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter4/01_Webapp.html">
+            
+                <a href="../chapter4/01_Webapp.html">
+            
+                    
+                    WEB应用基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter4/02_Admin.html">
+            
+                <a href="../chapter4/02_Admin.html">
+            
+                    
+                    后台管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter4/03_MDA.html">
+            
+                <a href="../chapter4/03_MDA.html">
+            
+                    
+                    表单与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter4/04_Rule.html">
+            
+                <a href="../chapter4/04_Rule.html">
+            
+                    
+                    规则引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../chapter4/05_Workflow.html">
+            
+                <a href="../chapter4/05_Workflow.html">
+            
+                    
+                    工作流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../chapter4/06_Dubbo.html">
+            
+                <a href="../chapter4/06_Dubbo.html">
+            
+                    
+                    Dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../chapter4/07_ESB.html">
+            
+                <a href="../chapter4/07_ESB.html">
+            
+                    
+                    ESB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../chapter4/08_MQ.html">
+            
+                <a href="../chapter4/08_MQ.html">
+            
+                    
+                    MQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../chapter4/09_Monitor.html">
+            
+                <a href="../chapter4/09_Monitor.html">
+            
+                    
+                    CAT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter5/chapter5.html">
+            
+                <a href="../chapter5/chapter5.html">
+            
+                    
+                    技术标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter5/01_Standard_Code.html">
+            
+                <a href="../chapter5/01_Standard_Code.html">
+            
+                    
+                    Java代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter5/02_Standard_Check.html">
+            
+                <a href="../chapter5/02_Standard_Check.html">
+            
+                    
+                    代码审计规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter5/03_Standard_JUnit.html">
+            
+                <a href="../chapter5/03_Standard_JUnit.html">
+            
+                    
+                    单元测试标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../chapter5/04_Standard_Library.html">
+            
+                <a href="../chapter5/04_Standard_Library.html">
+            
+                    
+                    第三方包使用标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../chapter5/05_Standard_Import.html">
+            
+                <a href="../chapter5/05_Standard_Import.html">
+            
+                    
+                    新技术引入标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter6/chapter6.html">
+            
+                <a href="../chapter6/chapter6.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter6/01_Tables.html">
+            
+                <a href="../chapter6/01_Tables.html">
+            
+                    
+                    表结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >Macula Reference</a>
+        <a href=".." >展示层</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h3 id="&#x5C55;&#x793A;&#x5C42;">&#x5C55;&#x793A;&#x5C42;</h3>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5C55;&#x793A;&#x5C42;">&#x5C55;&#x793A;&#x5C42;</h3>
 <p>&#x5728;Macula&#x5F00;&#x53D1;&#x5E73;&#x53F0;&#x4E0B;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;Spring MVC + Freemarker&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x5C55;&#x73B0;&#x5C42;&#x3002;</p>
 <p>&#x540C;&#x65F6;&#x5BF9;&#x4E8E;Ajax&#x90E8;&#x5206;&#xFF0C;&#x5728;javascript&#x6846;&#x67B6;&#x4E2D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;jquery&#x6846;&#x67B6;&#x3002;</p>
 <h2 id="controller&#x7F16;&#x5199;">Controller&#x7F16;&#x5199;</h2>
 <h3 id="&#x4F7F;&#x7528;&#x57FA;&#x7C7B;controller">&#x4F7F;&#x7528;&#x57FA;&#x7C7B;Controller</h3>
 <p>&#x5728;&#x5C55;&#x793A;&#x5C42;&#x7F16;&#x5199;&#x7684;Controller&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x6269;&#x5C55;&#x81F3;BaseController</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(<span class="hljs-string">&quot;admin/macula-base&quot;</span>)
+<pre><code class="lang-java"><span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;admin/macula-base&quot;</span>)
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AdminMaculaBaseController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseController</span> </span>{
     <span class="hljs-comment">//something</span>
 }
@@ -833,15 +783,15 @@
 <p>&#x901A;&#x8FC7;Macula&#x5E73;&#x53F0;&#x6269;&#x5C55;&#x540E;&#x7684;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x5C06;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;&#x7ED1;&#x5B9A;&#xFF1A;</p>
 <pre><code>?user.userName=Wilson&amp;user.password=123456
 </code></pre><p>&#x4E3A;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x6269;&#x5C55;&#xFF0C;&#x4E3B;&#x8981;&#x5728;&#x4E8E;applicationContext-mvc.xml&#x6587;&#x4EF6;&#x4E2D;&#x7684;BeanArgumentResolver&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;customArgumentResolvers&quot;</span>&gt;</span>
-       <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.FormBeanArgumentResolver&quot;</span>&gt;</span>
-               <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;webBindingInitializer&quot;</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">&quot;webBindingInitializer&quot;</span> /&gt;</span>
-           <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
-       <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customArgumentResolvers&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.macula.core.mvc.FormBeanArgumentResolver&quot;</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;webBindingInitializer&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;webBindingInitializer&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
 </code></pre>
 <p>&#x901A;&#x8FC7;&#x5BF9;&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E0A;&#x8FF0;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
@@ -865,8 +815,8 @@
 </ol>
 <h3 id="html&#x8868;&#x5355;input-name&#x4E0E;&#x540E;&#x7AEF;&#x53C2;&#x6570;&#x8F6C;&#x6362;&#x89C4;&#x5219;">HTML&#x8868;&#x5355;input name&#x4E0E;&#x540E;&#x7AEF;&#x53C2;&#x6570;&#x8F6C;&#x6362;&#x89C4;&#x5219;</h3>
 <p>&#x672C;&#x8282;&#x7EE7;&#x7EED;&#x4E0A;&#x7EA7;&#x8BB2;&#x89E3;&#x590D;&#x6742;&#x7684;@FormBean&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x4E0E;HTML&#x8868;&#x5355;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#xFF0C;&#x5047;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@OpenApi</span>
-<span class="hljs-annotation">@RequestMapping</span>(...)
+<pre><code class="lang-java"><span class="hljs-meta">@OpenApi</span>
+<span class="hljs-meta">@RequestMapping</span>(...)
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saveUser</span><span class="hljs-params">(@FormBean User user)</span> </span>{
 }
 </code></pre>
@@ -897,31 +847,26 @@
 &lt;input name=<span class="hljs-string">&quot;user.date&quot;</span> &gt;
 </code></pre>
 <ul>
-<li>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#xFF1A;&#x4F8B;&#x5982;long,int,String&#x7B49;&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
-</ul>
-<ul>
-<li>POJO&#x5BF9;&#x8C61;&#xFF1A;&#x5982;User&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;.&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
-</ul>
-<ul>
-<li>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#xFF1A;&#x5982;String[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;0&#x201D;&#x3001;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;1&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
-</ul>
-<ul>
-<li>POJO&#x5BF9;&#x8C61;&#x6570;&#x7EC4;&#xFF1A;&#x5982;User[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[index].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;index&#x4E3A;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#xFF1B;</li>
-</ul>
-<ul>
-<li>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key]=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
-</ul>
-<ul>
-<li>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</li>
-</ul>
-<ul>
-<li>&#x5BF9;&#x4E8E;POJO&#x5BF9;&#x8C61;&#x4E2D;&#x5982;&#x679C;&#x542B;&#x6709;POJO&#x6570;&#x7EC4;&#x3001;Map&#x3001;POJO&#x5219;&#x89C4;&#x5219;&#x540C;&#x4E0A;&#xFF0C;&#x800C;&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#x9700;&#x8981;&#x5199;&#x6210;&#x201C;&#x5C5E;&#x6027;&#x540D;[index]=&#x503C;&#x201D;&#x3002;</li>
+<li><p>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#xFF1A;&#x4F8B;&#x5982;long,int,String&#x7B49;&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</p>
+</li>
+<li><p>POJO&#x5BF9;&#x8C61;&#xFF1A;&#x5982;User&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;.&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</p>
+</li>
+<li><p>&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#xFF1A;&#x5982;String[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;0&#x201D;&#x3001;&#x201C;&#x53C2;&#x6570;&#x540D;=&#x503C;1&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</p>
+</li>
+<li><p>POJO&#x5BF9;&#x8C61;&#x6570;&#x7EC4;&#xFF1A;&#x5982;User[]&#x3001;List&#xFF0C;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[index].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7B49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;index&#x4E3A;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#xFF1B;</p>
+</li>
+<li><p>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key]=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</p>
+</li>
+<li><p>Map&#xFF1A;&#x9700;&#x8981;&#x5F62;&#x6210;&#x201C;&#x53C2;&#x6570;&#x540D;[key].&#x5C5E;&#x6027;&#x540D;=&#x503C;&#x201D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x4F20;&#x9012;&#xFF1B;</p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;POJO&#x5BF9;&#x8C61;&#x4E2D;&#x5982;&#x679C;&#x542B;&#x6709;POJO&#x6570;&#x7EC4;&#x3001;Map&#x3001;POJO&#x5219;&#x89C4;&#x5219;&#x540C;&#x4E0A;&#xFF0C;&#x800C;&#x539F;&#x5B50;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#x9700;&#x8981;&#x5199;&#x6210;&#x201C;&#x5C5E;&#x6027;&#x540D;[index]=&#x503C;&#x201D;&#x3002;</p>
+</li>
 </ul>
 <h3 id="pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;">Pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</h3>
 <p>&#x5728;&#x4F7F;&#x7528;&#x4E86;Spring-Data&#x6846;&#x67B6;&#x591F;&#xFF0C;&#x5BF9;&#x4E8E;&#x591A;&#x6570;&#x5206;&#x9875;&#x5F0F;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x4F20;&#x5165;Pageable&#x53C2;&#x6570;&#x548C;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x6761;&#x4EF6;&#xFF0C;&#x5373;&#x53EF;&#x8FD4;&#x56DE;&#x5305;&#x62EC;&#x603B;&#x8BB0;&#x5F55;&#x6570;&#x3001;&#x5F53;&#x524D;&#x9875;&#x9762;&#x8BB0;&#x5F55;&#x7B49;&#x4FE1;&#x606F;&#x7684;Page&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#xFF0C;&#x5BF9;&#x4E8E;Controller&#x5C42;&#xFF0C;&#x65B9;&#x4FBF;&#x7684;&#x83B7;&#x5F97;&#x9875;&#x9762;&#x4F20;&#x9012;&#x7684;Pageable&#x53C2;&#x6570;&#x5E76;&#x6784;&#x9020;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x503C;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x7B80;&#x6D01;&#x548C;&#x6613;&#x7528;&#x6027;&#x4E0A;&#x7684;&#x63D0;&#x5347;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;Pageable&#x53C2;&#x6570;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x6BD4;&#x5982;Controller&#x4E2D;&#x7F16;&#x5199;&#xFF1A;</p>
 <ol>
-<li><pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/list&quot;</span>, method = RequestMethod.GET)
+<li><pre><code class="lang-java"><span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/list&quot;</span>, method = RequestMethod.GET)
 <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;User&gt; <span class="hljs-title">list</span><span class="hljs-params">(Pageable pageable)</span> </span>{
     Page&lt;User&gt; page = userRespository.findAll(pageable);
     <span class="hljs-comment">// other coding...</span>
@@ -929,18 +874,18 @@
 }
 </code></pre>
 <p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x6269;&#x5C55;&#xFF0C;&#x4E3B;&#x8981;&#x5728;applicationContext-mvc.xml&#x6587;&#x4EF6;&#x4E2D;&#x7684;PageableArgumentResolver&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;messageConverters&quot;</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">&quot;messageConverters&quot;</span> /&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;webBindingInitializer&quot;</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">&quot;webBindingInitializer&quot;</span> /&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;customArgumentResolvers&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.PageableArgumentResolver&quot;</span> /&gt;</span>           
-      <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;messageConverters&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;messageConverters&quot;</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;webBindingInitializer&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;webBindingInitializer&quot;</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customArgumentResolvers&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.macula.core.mvc.PageableArgumentResolver&quot;</span> /&gt;</span>           
+      <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
 </code></pre>
 <p>Pageable&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65F6;&#xFF0C;&#x5C06;&#x76F4;&#x63A5;&#x4ECE;Request&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x6784;&#x5EFA;&#x591A;&#x4E2A;Pageable&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;@Qualifier&#x6765;&#x6307;&#x5B9A;&#x522B;&#x540D;&#xFF0C;&#x8FD9;&#x6837;&#x5728;Request&#x4E2D;&#x83B7;&#x53D6;&#x5C5E;&#x6027; &#x522B;&#x540D;+ &quot;_&quot; + &#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x6765;&#x6784;&#x5EFA;Pageable&#x5BF9;&#x8C61;&#x3002;</p>
-<p>request&#x53C2;&#x6570;&#x5305;&#x62EC;&#xFF1A;page(&#x9875;&#x7801;)&#x3001;rows(&#x6BCF;&#x9875;&#x884C;&#x6570;)&#x3001;sort(&#x6309;&#x4EC0;&#x4E48;&#x6392;&#x5E8F;)&#x3001;order&#xFF08;ASC&#x5347;&#x5E8F;&#xFF0C;DESC&#x964D;&#x5E8F;)</p>
+<p>request&#x53C2;&#x6570;&#x5305;&#x62EC;&#xFF1A;page(&#x9875;&#x7801;)&#x3001;rows(&#x6BCF;&#x9875;&#x884C;&#x6570;)&#x3001;sort(&#x6309;&#x7167;sort=field1,field2,asc&amp;sort=field3,field4,desc&#x683C;&#x5F0F;)</p>
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
 <p><em>&#x8FD9;&#x91CC;Pageable&#x4E0E;Bean&#x6784;&#x5EFA;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;Pageable&#x76F4;&#x63A5;&#x4ECE;Request&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5728;&#x901A;&#x8FC7;@Qualifier&#x6307;&#x5B9A;&#x522B;&#x540D;&#x65F6;&#xFF0C;Bean&#x7684;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#x89C4;&#x5219;&#x662F; &#x522B;&#x540D;+ &quot;.&quot; + &#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x800C;Pageable&#x7684;&#x89C4;&#x5219;&#x662F; &#x522B;&#x540D;+ &quot;_</em>&quot; +&#x5C5E;&#x6027;&#x540D;&#x3002;</p>
 </li>
@@ -948,13 +893,13 @@
 <h3 id="id&#x5230;domain&#x7C7B;&#x578B;&#x8F6C;&#x6362;">ID&#x5230;Domain&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
 <p>&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x7F16;&#x8F91;&#x65F6;&#x6216;&#x8005;&#x5728;&#x67E5;&#x770B;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x503C;&#xFF08;&#x901A;&#x5E38;&#x662F;Long&#x578B;&#xFF09;&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#x5177;&#x4F53;&#x7684;&#x8BB0;&#x5F55;&#x4FE1;&#x606F;&#xFF0C;&#x5728;Macula&#x5E73;&#x53F0;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#xFF0C;&#x5BF9;&#x4E8E;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;Domain&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;ConversionService&#x76F4;&#x63A5;&#x8F6C;&#x6362;&#x3002;</p>
 <p>&#x5BF9;&#x5E94;&#x7684;applicationContext-mvc.xml&#x4E2D;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;conversionService&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;converters&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.RepositoryConverter&quot;</span> /&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;conversionService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;converters&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.macula.core.mvc.RepositoryConverter&quot;</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
 </code></pre>
 <p>&#x914D;&#x7F6E;&#x8BE5;&#x8F6C;&#x5316;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;Persistable&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x5B9A;&#x4E49;&#x4E86;&#x76F8;&#x5BF9;&#x5E94;&#x7684;JpaRepository&#xFF0C;&#x5426;&#x5219;&#x4E5F;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x8F6C;&#x6362;&#x3002;</p>
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
@@ -964,7 +909,7 @@
 <li><em>&#x5F85;&#x8F6C;&#x5316;&#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;Persistable&#x63A5;&#x53E3;</em></li>
 <li><p><em>&#x8BE5;&#x8F6C;&#x6362;Domain&#x5BF9;&#x8C61;&#xFF0C;&#x5728;Spring&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4E86;&#x76F8;&#x5E94;&#x7684;JpaRepository Bean&#xFF0C;&#x7528;&#x6765;&#x901A;&#x8FC7;&#x4E3B;&#x952E;&#x8F7D;&#x5165;&#x8BE5;&#x5BF9;&#x8C61;&#x503C;</em></p>
 <p><em><strong>&#x4F8B; 2. &#x901A;&#x8FC7;&#x4F20;&#x5165;&#x4E3B;&#x952E;&#xFF0C;&#x76F4;&#x63A5;&#x8F6C;&#x5316;&#x4E3A;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;</strong></em></p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/{userId}/edit&quot;</span>, method = RequestMethod.GET)
+<pre><code class="lang-java"><span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/test/user/{userId}/edit&quot;</span>, method = RequestMethod.GET)
 <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">edit</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;userId&quot;</span>)</span> User user) </span>{
     <span class="hljs-keyword">return</span> user;
 }
@@ -1382,7 +1327,7 @@ ddddadf
 &lt;/@macula.notAuthorized&gt;
 </code></pre><h3 id="&#x4E0B;&#x62C9;&#x6846;">&#x4E0B;&#x62C9;&#x6846;</h3>
 <p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x770B;Macula&#x4E2D;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x7EFF;&#x8272;&#x65B9;&#x6846;&#x4E2D;&#x6240;&#x793A;&#xFF1A;</p>
-<p><img src="../images/chapter2/macula_select.png" alt="macula_select"></p>
+<p><img src="../images/chapter2/macula_select.png" alt="macula\_select"></p>
 <p>&#x8981;&#x5B9E;&#x73B0;&#x4E0B;&#x62C9;&#x6846;&#x9996;&#x5148;&#x9700;&#x8981;&#x6709;&#x4E0B;&#x62C9;&#x6846;&#x9009;&#x9879;&#x3002;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x9009;&#x9879;&#x662F;&#x9759;&#x6001;&#x7684;&#x60C5;&#x5F62;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x7684;&#x662F;&#x4E0B;&#x62C9;&#x6846;&#x4E2D;&#x7684;&#x9009;&#x9879;&#x662F;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x9009;&#x9879;&#x7531; name &#x548C; value&#x4E24;&#x9879;&#x7EC4;&#x6210;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x5230; Macula &#x7684;&#x6570;&#x636E;&#x53C2;&#x6570;&#x529F;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x53C2;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x3002;&#x6570;&#x636E;&#x53C2;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x9009;&#x9879;&#x6709;&#x4E09;&#x79CD;&#x5F62;&#x5F0F;&#x3002;</p>
 <ol>
 <li><p>&#x5178;&#x578B;&#x7684;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -1448,8 +1393,6 @@ ${userPrincipal.getNickname()!&quot;&quot;}
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>&#x524D;&#x7AEF;</p>
 <ul>
 <li><p>frontRootMenu&#xFF1A;&#x524D;&#x7AEF;&#x6839;&#x83DC;&#x5355;</p>
@@ -1458,8 +1401,6 @@ ${userPrincipal.getNickname()!&quot;&quot;}
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>&#x79FB;&#x52A8;&#x7AEF;</p>
 <ul>
 <li><p>mobileRootMenu&#xFF1A;&#x79FB;&#x52A8;&#x7AEF;&#x6839;&#x83DC;&#x5355;</p>
@@ -1510,8 +1451,8 @@ ${userPrincipal.getNickname()!&quot;&quot;}
 <p>&#x5728;&#x5BF9;REST&#x7684;&#x652F;&#x6301;&#x65B9;&#x9762;&#xFF0C;&#x4F7F;&#x7528;Spring&#x7684;REST&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;macula&#x5E73;&#x53F0;&#x63D0;&#x4F9B;@OpenApi&#x6CE8;&#x89E3;&#x66FF;&#x6362;@ResponseBody&#x6CE8;&#x89E3;&#xFF0C;&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#x5728;&#x80FD;&#x4F7F;&#x7528;REST&#x7684;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;REST&#x65B9;&#x5F0F;&#x3002;</p>
 <p>&#x5728;Macula&#x5E73;&#x53F0;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x5C06;&#x4E0D;&#x901A;&#x8FC7;&#x5730;&#x5740;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x800C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x5730;&#x5740;&#x4FE1;&#x606F;&#x6765;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x503C;&#x3002;</p>
 <p>&#x5982;&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;&#xFF1A;/admin/macula-uim/user/delete/user1 &#x53EF;&#x901A;&#x8FC7;Controller&#x4E2D;&#x5B9A;&#x4E49;</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@RequestMapping</span>(value = <span class="hljs-string">&quot;/admin/macula-uim/user/delete/{userName}&quot;</span>, method = RequestMethod.DELETE)
-<span class="hljs-annotation">@OpenApi</span>
+<pre><code class="lang-java"><span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/admin/macula-uim/user/delete/{userName}&quot;</span>, method = RequestMethod.DELETE)
+<span class="hljs-meta">@OpenApi</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> ExecuteResponse <span class="hljs-title">delete</span><span class="hljs-params">(@PathVariable String userName)</span> </span>{
     <span class="hljs-comment">//do something</span>
 }
@@ -1622,60 +1563,92 @@ ${userPrincipal.getNickname()!&quot;&quot;}
 <p><em><strong>&#x91CD;&#x8981;</strong></em></p>
 <p><em>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x5BF9;&#x7F16;&#x7A0B;&#x7684;&#x5E72;&#x6270;&#xFF0C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Controller&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4ECD;&#x7136;&#x6309;&#x7167;Service&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x4E8E;&#x539F;&#x4F7F;&#x7528;@ResponseBody&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#xFF0C;&#x5219;&#x901A;&#x8FC7;&#x4F7F;&#x7528;@OpenApi&#x6CE8;&#x89E3;&#x6765;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x5BF9;&#x5E94;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x91C7;&#x7528;@OpenApi &#x6CE8;&#x89E3;&#x540E;&#xFF0C;&#x975E;Response&#x3001;Map&#x3001;Model&#x7B49;&#x7C7B;&#x578B;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x4F1A;&#x88AB;&#x5305;&#x88F9;&#x6210;ExecuteResponse&#xFF0C;&#x800C;Page&lt;?&gt;&#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x88AB;&#x5305;&#x88F9;&#x6210;PageResponse&#x3002;</em></p>
 <p>@OpenApi&#x6CE8;&#x89E3;&#x7684;&#x542F;&#x7528;&#x9700;&#x8981;&#x914D;&#x7F6E;RequestMappingHandlerAdapter&#x7684;customReturnValueHandlers&#x5C5E;&#x6027;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;customReturnValueHandlers&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;org.macula.core.mvc.OpenApiReturnValueHandler&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">constructor-arg</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">&quot;messageConverters&quot;</span>/&gt;</span>              
-        <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customReturnValueHandlers&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.macula.core.mvc.OpenApiReturnValueHandler&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;messageConverters&quot;</span>/&gt;</span>              
+        <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
 </code></pre>
 <h2 id=""> </h2>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../chapter2/04_Service.html" class="navigation navigation-prev " aria-label="Previous page: 业务服务层"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../chapter2/06_Timezone.html" class="navigation navigation-next " aria-label="Next page: 时间与格式"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04_Service.html" class="navigation navigation-prev " aria-label="Previous page: 业务服务层">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06_Timezone.html" class="navigation navigation-next " aria-label="Next page: 时间与格式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"展示层","level":"1.3.6","depth":2,"next":{"title":"时间与格式","level":"1.3.7","depth":2,"path":"chapter2/06_Timezone.md","ref":"chapter2/06_Timezone.md","articles":[]},"previous":{"title":"业务服务层","level":"1.3.5","depth":2,"path":"chapter2/04_Service.md","ref":"chapter2/04_Service.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Macula Reference","language":"zh","links":{"sidebar":{"Macula Platform":"http://macula.top"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*","description":"Macula Framework and Plugins Reference!"},"file":{"path":"chapter2/05_Controller.md","mtime":"2018-06-12T14:34:50.597Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T14:40:16.188Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+
