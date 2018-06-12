@@ -282,6 +282,8 @@ _**注意**_
 
 * FreeMarker的语法全部可以用在SQL语句中，可以解析的参数都是来源于方法中的参数值，所有参数值都会放到一个Map中传递给FreeMarker，同样，Bean或者Map参数需要加上他们的名字，比如data.lastName
 
+#### sftl格式模板
+
 为了减少编写XML模板压力，从3.0.1开始，除了支持XML格式模板外，还支持sftl模板，格式如下，具体放置路径同XML模板，只是把后缀改为.sftl：
 
 ```
@@ -298,5 +300,11 @@ _**注意**_
     </#if>
 ```
 
+#### TemplateQuery使用优先级
 
+TemplateQuery支持通过注解、文件、配置属性提供SQL，如果出现RepositoryName加MethodName重复，则配置属性优先，注解次之，文件中的SQL最后。
+
+#### 使用通用配置热修复TemplateQuery的SQL
+
+线上运行的系统有时发现TemplateQuery的SQL写得有问题，可以通过Macula支持的基于zookeeper的通用配置临时添加一个属性热修复。具体属性KEY是macula.templateQuery.{repositoryName}.{methodName}，内容是SQL模板。请谨慎使用，待程序修复后要即时删除该配置，否则永远是这个配置优先。
 

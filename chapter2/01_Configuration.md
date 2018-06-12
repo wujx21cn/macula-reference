@@ -6,7 +6,6 @@
 
   * 一般情况下参考框架的配置，或者你的项目不添加这个文件，直接使用框架的。
 
-
 * **Spring配置**
 
   * applicationContext-root.xml  数据库相关、Redis相关等需要连接外部资源的配置
@@ -27,8 +26,6 @@
 * ehcache.xml
 
   * ehcache配置
-
-
 
 ## web.xml配置
 
@@ -384,7 +381,7 @@ macula.frontRootMenu = FRONT_GROUP
 
 _**重要**_
 
-_**`上述所有配置都可以通过启动命令行设置来覆盖上述默认配置。`**_
+`上述所有配置都可以通过启动命令行设置来覆盖上述默认配置。`
 
 ### 2\) log4j.properties
 
@@ -537,7 +534,6 @@ config.decrypt=false
   ```
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
-
 
 
 
