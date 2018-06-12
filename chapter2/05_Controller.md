@@ -126,7 +126,6 @@ public class AdminMaculaBaseController extends BaseController {
    _主要注意在同一个RequestMapping的方法中，如果有多个通过@FormBean注释的参数，在第一个使用FormBean注释的参数中加入该特性即可，其他不要加。  
    特别地，加入了自动控制防重复提交后，生成的客户端token只能进行一次校验即失效，所以在提交后，如果表单需要再次提交，需要更新隐藏的token的值。在默认情况下，调用$\(form\).trigger\('changeCaptcha'\)即可更新，如果需要定制，可参考macula.ftl中的实现，做自定义的宏来处理。_
 
-
 ### HTML表单input name与后端参数转换规则
 
 本节继续上级讲解复杂的@FormBean对象是如何与HTML表单数据绑定的，假如：
@@ -172,24 +171,17 @@ public class Org {
 
 * 原子类型：例如long,int,String等，需要形成“参数名=值”的键值对传递；
 
-
 * POJO对象：如User，需要形成“参数名.属性名=值”的键值对传递；
-
 
 * 原子类型数组：如String\[\]、List，需要形成“参数名=值0”、“参数名=值1”等的键值对传递；
 
-
 * POJO对象数组：如User\[\]、List，需要形成“参数名\[index\].属性名=值”等的键值对，index为数组下标；
-
 
 * Map：需要形成“参数名\[key\]=值”的键值对传递；
 
-
 * Map：需要形成“参数名\[key\].属性名=值”的键值对传递；
 
-
 * 对于POJO对象中如果含有POJO数组、Map、POJO则规则同上，而原子类型数组需要写成“属性名\[index\]=值”。
-
 
 ### Pageable参数绑定
 
@@ -222,12 +214,11 @@ public class Org {
 
    Pageable参数绑定时，将直接从Request参数中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序\)、order（ASC升序，DESC降序\)
+   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序,格式是field1,field2...,asc或者desc，可以多个sort参数，最后一个表示排序类型\)
 
    _**重要**_
 
    _这里Pageable与Bean构建的区别在于，默认情况下Pageable直接从Request中获取数据，而在通过@Qualifier指定别名时，Bean的属性获取规则是 别名+ "." + 属性名，而Pageable的规则是 别名+ "\__" +属性名。
-
 
 ### ID到Domain类型转换
 
@@ -267,7 +258,6 @@ _除了加入该ConversionService外，还需要注意：_
   如上面的Controller中的定义可见，传入的userId是一个字符串（或者可以认为是Long型），但在edit方法中，可直接定义为User user，即由macula平台实现了对主键到相应Domain实例的转换。
 
   当然，这里的User对象实现了Persistable接口，并已有相应的UserRepository extends `JpaRepository<User>的实现。`
-
 
 ### ExcelView
 
@@ -518,7 +508,6 @@ _**提示**_
 
 * require 要引入的MVC JS文件，支持angularjs、knockoutjs、vue
 
-
 这个宏是业务页面的主要的宏，一般情况下，不要脱离这个宏做页面，这样未来修改时可以整体替换。
 
 ### 后端页面布局定制
@@ -749,7 +738,7 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
 
 我们先来看看Macula中下拉框的样子，如下图绿色方框中所示：
 
-![macula_select](../images/chapter2/macula_select.png)
+![macula\_select](../images/chapter2/macula_select.png)
 
 要实现下拉框首先需要有下拉框选项。下拉框的选项是静态的情形很简单，在这里我们讨论的是下拉框中的选项是从数据库中获取的。我们知道下拉框的选项由 name 和 value两项组成。在这里，我们需要用到 Macula 的数据参数功能。我们可以在数据参数中定义这些选项。数据参数中定义的选项有三种形式。
 
@@ -782,7 +771,6 @@ Macula 使用 Mower 作为前端开发框架。有关 Mower 的详细介绍请�
    ```
    !select app_name as label, app_id as code from ma_base_application
    ```
-
 
 有关数据参数的详细介绍，请参阅“基础插件”中的“数据提供”一节。
 
@@ -860,23 +848,17 @@ macula框架在Freemarker中默认有如下变量：
 
   * adminMainMenu：父亲是根的二级菜单
 
-
-
 * 前端
 
   * frontRootMenu：前端根菜单
 
   * frontMainMenu：父亲是根的二级菜单
 
-
-
 * 移动端
 
   * mobileRootMenu：移动端根菜单
 
   * mobileMainMenu：父亲是根的二级菜单
-
-
 
 获取绝对地址方法
 
@@ -889,7 +871,6 @@ macula框架在Freemarker中默认有如下变量：
 * hasAccess\(url, method\) 返回指定的url和method是否可以访问
 
 * getAbsoluteUrl\(base, url, default\) 返回url的绝对路径，如果url不是以http/https开头，会自动加上base
-
 
 ## 国际化
 
