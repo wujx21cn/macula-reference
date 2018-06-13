@@ -214,11 +214,7 @@ public class Org {
 
    Pageable参数绑定时，将直接从Request参数中获取，如果在一个方法中，需要构建多个Pageable对象，可通过@Qualifier来指定别名，这样在Request中获取属性 别名+ "\_" + 属性名，来构建Pageable对象。
 
-<<<<<<< HEAD
    request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按什么排序,格式是field1,field2...,asc或者desc，可以多个sort参数，最后一个表示排序类型\)
-=======
-   request参数包括：page\(页码\)、rows\(每页行数\)、sort\(按照sort=field1,field2,asc&sort=field3,field4,desc格式\)
->>>>>>> 868599e9aa0ca34fc6e1de83ef28424436233223
 
    _**重要**_
 
