@@ -233,7 +233,7 @@ Macula开发平台基于Spring框架开发，使用者需要了解Spring的基�
                </list>
            </property>
            <property name="defaultEncoding" value="utf-8" />
-           <property name="fallbackToSystemLocale" value="false" />
+           <property name="fallbackToSystemLocale" value="false" />v
        </bean>
 
        <aop:aspectj-autoproxy />
@@ -335,7 +335,7 @@ macula.accessLog = true
 #是否关闭事件广播
 #macula.disableBroadcast = true
 
-#事件广播方式，默认是http，可以配置http、redis、zookeeper(采用spring-integration广播)
+#事件广播方式，默认是redis，可以配置http、redis、zookeeper
 macula.events.transport = redis
 
 #配置需要保护的地址
@@ -534,6 +534,8 @@ config.decrypt=false
   ```
 
 * 其他如MongoDB等配置采用类似方式即可。如果启动时没有加入-Dmacula.profile，则系统会在classpath的根路径下寻找上述properties文件，同时，Configuration.getProfile\(\)和Configuration.getProfilePath\(\)返回空串。
+
+* 在应用的启动脚本 中添加 -Dmacula.projectId参数（例如： -Dmacula.projectId=bupreq-111.yunxiao），框架会在框架中与域名有关的地方，将原本的域名进行转换。如：https://po-dev.infinitus.com.cn -> http://po-bupreq-111.yunxiao.infinitus.com.cn
 
 
 

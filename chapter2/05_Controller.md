@@ -661,6 +661,9 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 
 </#macro>
 
+<#macro panel_toolbar_advanced_query>
+
+</#macro>
 <#------------------------------FRONT------------------------------------->
 <#macro main_breadcrumb rootType = 'admin' menuCode = ''>
 <!-- BEGIN BREADCRUMB -->
@@ -712,6 +715,66 @@ u目录的ui.ftl提供了框架默认的UI宏，包括：
 ```
 
 你可以覆盖ui/app/ui.ftl和ui.js来定义你的UI宏。
+
+#### 高级查询自动关联
+这个以一个例子来说明。如下图所示，有一个根据名称和编码的快捷查询，在其右侧还有一个高级查询，点击高级查询按钮，dropdown里面的查询条件更丰富一些。用户在快捷查询中的名称、编码填了内容后，发现当前条件还没能筛选出满意的内容，当他点击高级查询时，在高级查询dropdown里的相应字段（菜单名称、编码）的内容会用快捷查询的相应内容自动填充，并把它们的值关联起来。
+
+![](/images/chapter2/advquery-004.png)
+
+这个主要是通过框架中定义的panel_toolbar_query和panel_toolbar_advanced_query这两个宏实现的。两个宏中的input元素通过id进行value的关联。程序会遍历panel_toolbar_query中的input元素的id，然后在panel_toolbar_advanced_query找到前缀为advanced_query_相应的id进行关联。如下例中的id分别为“name”和“advanced_query_name”的两个元素。
+
+```html
+<@ui.panel_toolbar_query>
+    <form class="form-inline" id="form-search">
+        <label style="color: #333;">名称</label>
+        <input type="text" class="input-sm form-control" size="5" id="name" name="name">
+        <label style="color: #333;">编码</label>
+        <input type="text" class="input-sm form-control" size="5" id="code" name="code">
+        <a href="#" id="search-submit-action-${code}" class="btn btn-default btn-sm">
+            <i class="fa fa-search"></i>
+        </a>
+    </form>
+</@ui.panel_toolbar_query>
+<@ui.panel_toolbar_advanced_query>
+    <form class="form-horizontal" id="form-advanced-search">
+        <div class="form-body" style="width: 420px; height: 280px; padding: 10px 30px 0 0; text-align: right;">
+            <div class="form-group row">
+                <label class="col-md-4" style="padding-top: 5px">菜单名称</label>
+                <div class="col-md-8">
+                    <input type="text"  class="form-control input-sm" maxlength="50" id="advanced_query_name" name="name"/>
+                </div>
+            </div>
+…
+…
+</@ui.panel_toolbar_advanced_query>
+```
+
+另外，panel_toolbar_advanced_query有个参数“customDivId”,可以让我们把高级查询的内容放到一个自定义的div里而不是默认的dropdown中，当点击“高级查询”时div会自动toggle，相应的字段也会关联。
+
+![](/images/chapter2/advquery-005.png)
+
+```html
+    <div class = "row">
+        <@ui.panel_toolbar_query>
+            <form class="form-inline" id="form-search">
+                <label style="color: #333;">名称</label>
+                <input type="text" class="input-sm form-control" size="5" id="name" name="name">
+                <label style="color: #333;">编码</label>
+                <input type="text" class="input-sm form-control" size="5" id="code" name="code">
+                <a href="#" id="search-submit-action-${code}" class="btn btn-default btn-sm">
+                    <i class="fa fa-search"></i>
+                </a>
+            </form>
+        </@ui.panel_toolbar_query>
+        <@ui.panel_toolbar_advanced_query customDivId="myDiv">
+        </@ui.panel_toolbar_advanced_query>
+    </div>
+</div>
+<div id="myDiv">
+…
+…
+</div>
+```
 
 ## 前端开发框架
 
