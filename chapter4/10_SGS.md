@@ -13,7 +13,7 @@
 <dependency>
     <groupId>org.macula.plugins</groupId>
     <groupId>org.macula.plugins</groupId>
-    <version>3.0.0.RELEASE</version>
+    <version>3.0.9.RELEASE</version>
 </dependency>
 ```        
 ### 2. 在项目中加入以下 Spring Bean 配置
